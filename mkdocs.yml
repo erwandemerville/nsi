@@ -1,0 +1,71 @@
+site_name: Numérique et sciences informatiques
+theme:
+  name: material
+  palette:
+    # Palette toggle for light mode
+    - scheme: default
+      primary: blue grey
+      toggle:
+        icon: material/weather-night
+        name: Passer en mode nuit
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue grey
+      toggle:
+        icon: material/weather-sunny
+        name: Passer en mode jour
+
+site_url: https://nsi.erwandemerville.fr/
+nav:
+  - Première:
+    - Tris:
+      - Accueil: premiere/tris/index.md
+      - Tri par sélection: premiere/tris/tri_selection.md
+      - Tri par insertion: premiere/tris/tri_insertion.md
+  - Terminale:
+    - Arbres:
+      - Accueil: terminale/arbres/index.md
+      - Cours:
+        - Définitions et vocabulaire: terminale/arbres/vocabulaire.md
+        - Parcours d'arbres binaires: terminale/arbres/parcours.md
+        - Type abstrait "Arbre binaire": terminale/arbres/type_abstrait.md
+        - Arbres binaires de recherche: terminale/arbres/abr.md
+      - Activités Python:
+        - Implémentation d'un arbre binaire: terminale/arbres/implementation_arbres.md
+        - Implémentation d'un arbre binaire de recherche: terminale/arbres/implementation_abr.md
+      - Exercices:
+        - Vocabulaire sur les arbres: terminale/arbres/exercices_vocabulaire.md
+        - Parcours d'arbres binaires: terminale/arbres/exercices_parcours.md
+        - Arbre binaires de recherche: terminale/arbres/exercices_abr.md
+        - Implémentations d'arbres binaires et ABR: terminale/arbres/implementations_arbres.md
+      - Évaluations:
+        - Évaluation 1 corrigée: terminale/arbres/evaluation_correction.pdf
+        - Évaluation 2: terminale/arbres/evaluation_v2.pdf
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - toc:
+      title: Sur cette page
+  - admonition
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.details
+  - pymdownx.superfences
+  - attr_list
+  - md_in_html
+
+extra_css:
+  - stylesheets/extra.css
+  - premiere/tris/stylesheets/style_animation_tri_selection.css
+  - premiere/tris/stylesheets/style_animation_tri_insertion.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - premiere/tris/javascripts/animation_tri_selection.js
+  - premiere/tris/javascripts/animation_tri_insertion.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
