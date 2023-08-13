@@ -1,6 +1,6 @@
 # Arbres : structures de données et algorithmes
 
-Bienvenue, ce cours se décompose en plusieurs parties :
+Ce cours se décompose en plusieurs parties :
 
 * **COURS**
     * [Arbres : définitions et vocabulaire](vocabulaire.md)
@@ -18,9 +18,3 @@ Bienvenue, ce cours se décompose en plusieurs parties :
 * **EVALUATIONS**
     * [Évaluation 1 corrigée](evaluation_correction.pdf)
     * [Évaluation 2](evaluation_v2.pdf)
-
----
-
-*Demerville Erwan*
-
-Me contacter : <demerville.erwan@gmail.com>

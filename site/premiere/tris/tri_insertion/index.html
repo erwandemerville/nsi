@@ -1,0 +1,1573 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/tris/tri_insertion/">
+      
+      
+        <link rel="prev" href="../tri_selection/">
+      
+      
+        <link rel="next" href="../../../terminale/arbres/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.20">
+    
+    
+      
+        <title>Tri par insertion - Numérique et sciences informatiques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../stylesheets/style_animation_tri_selection.css">
+    
+      <link rel="stylesheet" href="../stylesheets/style_animation_tri_insertion.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#le-tri-par-insertion" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numérique et sciences informatiques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tri par insertion
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Passer en mode nuit"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Passer en mode nuit" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Passer en mode jour"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Passer en mode jour" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Numérique et sciences informatiques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Première
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Première
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+          Tris
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Tris
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tri_selection/" class="md-nav__link">
+        Tri par sélection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Tri par insertion
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Tri par insertion
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#presentation-du-tri-par-insertion" class="md-nav__link">
+    Présentation du tri par insertion
+  </a>
+  
+    <nav class="md-nav" aria-label="Présentation du tri par insertion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avec-un-jeu-de-cartes" class="md-nav__link">
+    Avec un jeu de cartes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trier-un-tableau" class="md-nav__link">
+    Trier un tableau
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lalgorithme" class="md-nav__link">
+    L'algorithme
+  </a>
+  
+    <nav class="md-nav" aria-label="L'algorithme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presentation-de-lalgorithme" class="md-nav__link">
+    Présentation de l'algorithme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#une-petite-animation" class="md-nav__link">
+    Une petite animation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-en-python" class="md-nav__link">
+    Implémentation en Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cout-de-lalgorithme" class="md-nav__link">
+    Coût de l'algorithme
+  </a>
+  
+    <nav class="md-nav" aria-label="Coût de l'algorithme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminaison-du-tri-par-insertion" class="md-nav__link">
+    Terminaison du tri par insertion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correction-du-tri-par-insertion" class="md-nav__link">
+    Correction du tri par insertion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Terminale
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Terminale
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Arbres
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Arbres
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/" class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+          Cours
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cours
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/vocabulaire/" class="md-nav__link">
+        Définitions et vocabulaire
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/parcours/" class="md-nav__link">
+        Parcours d'arbres binaires
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/type_abstrait/" class="md-nav__link">
+        Type abstrait "Arbre binaire"
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/abr/" class="md-nav__link">
+        Arbres binaires de recherche
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+          Activités Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Activités Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/implementation_arbres/" class="md-nav__link">
+        Implémentation d'un arbre binaire
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/implementation_abr/" class="md-nav__link">
+        Implémentation d'un arbre binaire de recherche
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
+          Exercices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Exercices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/exercices_vocabulaire/" class="md-nav__link">
+        Vocabulaire sur les arbres
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/exercices_parcours/" class="md-nav__link">
+        Parcours d'arbres binaires
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/exercices_abr/" class="md-nav__link">
+        Arbre binaires de recherche
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/implementations_arbres/" class="md-nav__link">
+        Implémentations d'arbres binaires et ABR
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+          Évaluations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Évaluations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/evaluation_correction.pdf" class="md-nav__link">
+        Évaluation 1 corrigée
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/evaluation_v2.pdf" class="md-nav__link">
+        Évaluation 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#presentation-du-tri-par-insertion" class="md-nav__link">
+    Présentation du tri par insertion
+  </a>
+  
+    <nav class="md-nav" aria-label="Présentation du tri par insertion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avec-un-jeu-de-cartes" class="md-nav__link">
+    Avec un jeu de cartes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#trier-un-tableau" class="md-nav__link">
+    Trier un tableau
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lalgorithme" class="md-nav__link">
+    L'algorithme
+  </a>
+  
+    <nav class="md-nav" aria-label="L'algorithme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presentation-de-lalgorithme" class="md-nav__link">
+    Présentation de l'algorithme
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#une-petite-animation" class="md-nav__link">
+    Une petite animation
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-en-python" class="md-nav__link">
+    Implémentation en Python
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cout-de-lalgorithme" class="md-nav__link">
+    Coût de l'algorithme
+  </a>
+  
+    <nav class="md-nav" aria-label="Coût de l'algorithme">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#terminaison-du-tri-par-insertion" class="md-nav__link">
+    Terminaison du tri par insertion
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#correction-du-tri-par-insertion" class="md-nav__link">
+    Correction du tri par insertion
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="le-tri-par-insertion">Le tri par insertion</h1>
+<p>Nous avons vu la méthode de <strong>tri par sélection</strong>, qui a l'avantage d'être facile à appréhender, mais qui s'avère être fortement coûteuse (coût <strong>quadratique</strong> dans <strong>tous les cas</strong>).<br />
+Voyons s'il n'existe pas d'autres algorithmes de tri plus intéressants.</p>
+<h2 id="presentation-du-tri-par-insertion">Présentation du tri par insertion</h2>
+<h3 id="avec-un-jeu-de-cartes">Avec un jeu de cartes</h3>
+<p>Le <strong>tri par insertion</strong> est un autre algorithme de tri par <strong>comparaisons</strong>, dont le principe est un peu différent, mais plus "naturel".</p>
+<p>Dans cette partie, on verra comment trier une <strong>suite de cartes</strong> en utilisant la méthode de <strong>tri par insertion</strong>. On utilisera l'<strong>ordre</strong> suivant (de la carte la plus <em>faible</em> à la plus <em>forte</em>) :</p>
+<p><img alt="Ordre des cartes" src="../images/ordre_cartes.png" /></p>
+<p><em>Note</em> : Si vous avez une carte <em>Joker</em> dans votre jeu, on considèrera qu'elle est plus forte que toutes les autres cartes.</p>
+<div class="admonition success">
+<p class="admonition-title">Activité préliminaire</p>
+<p>Munissez-vous d'un paquet de carte, <strong>mélangez-le</strong>, et placez-le en <strong>face cachée</strong>.<br />
+Vous disposez d'une <strong>zone de jeu</strong> dans laquelle vous ajouterez les cartes <strong>une par une</strong>, de manière à <strong>toujours</strong> avoir une <strong>suite de cartes triée</strong>.<br />
+L'objectif est de <strong>trier les 7 premières cartes</strong> du paquet.</p>
+<ul>
+<li>Prenez la <strong>première carte</strong> du paquet et posez-la (face visible) dans votre zone de jeu.<br />
+La suite de cartes de votre zone de jeu (composée pour le moment d'une seule carte) est-elle triée ?</li>
+<li>Prenez la <strong>deuxième carte</strong> du paquet, et intégrez-la à votre <strong>suite de cartes</strong> de manière à ce que celle-ci <strong>reste triée</strong>.</li>
+<li>Prenez la <strong>troisième carte</strong> du paquet et faites de même. Répétez cela jusqu'à avoir une <strong>suite</strong> de <strong>7 cartes triées</strong> dans votre zone de jeu.</li>
+</ul>
+<p><strong>Question</strong> : <strong>Décrivez la méthode</strong> que vous avez suivi pour intégrer chaque nouvelle carte à votre suite de cartes triée.</p>
+</div>
+<hr />
+<p>Voici le <strong>déroulement</strong> de la <strong>méthode de tri par insertion</strong> sur une <strong>suite de cartes</strong>.<br />
+On souhaite trier la suite de cartes suivantes :</p>
+<figure>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/01.png" width="80%" /></p>
+<figcaption>Une suite de 5 cartes.</figcaption>
+<p></center></p>
+</figure>
+<div class="admonition info">
+<p class="admonition-title">Composition du tableau</p>
+<p>On distingue <strong>deux parties</strong> dans le tableau :</p>
+<ul>
+<li>une <strong>partie triée</strong> (en <span style="color:green">vert</span>), initialement composée <strong>de la première carte</strong>.</li>
+<li>une <strong>partie non-triée</strong> (en <span style="color:gray">gris</span>), initialement composée du <strong>reste des cartes</strong>.</li>
+</ul>
+<p>On dispose également d'une <strong>zone mémoire</strong> dans laquelle peut <strong>placer une carte temporairement</strong>.</p>
+</div>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/02.png" width="60%" />
+</center></p>
+<p>On commence donc par traiter la <strong>deuxième carte du tableau</strong>, qui est la <strong>première carte</strong> de la <strong>partie non-triée</strong>. On place cette carte dans la zone <strong>mémoire</strong>.</p>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/02b.png" width="60%" />
+</center></p>
+<p>Ensuite, on procède comme suit :</p>
+<div class="admonition tip">
+<p class="admonition-title">Placer la carte à sa bonne position</p>
+<ul>
+<li>En partant de la carte positionnée <strong>juste à gauche</strong> de celle que l'on cherche à trier (c'est-à-dire la dernière carte de la <strong>partie triée</strong> du tableau), et en allant jusqu'à la <strong>première carte</strong> du tableau :<ul>
+<li>On <strong>décale d'une position à droite chaque carte</strong> dont la <strong>valeur</strong> est <strong>strictement supérieure</strong> à la carte que l'on cherche à replacer.</li>
+<li>On s'arrête <strong>uniquement</strong> si la <strong>carte</strong> n'a <strong>pas</strong> une valeur <strong>supérieure</strong>, ou si l'on a parcouru <strong>toutes les cartes</strong>.</li>
+</ul>
+</li>
+<li>On <strong>replace</strong> la <strong>carte</strong> (actuellement en <em>mémoire</em>) à <strong>sa bonne position</strong>.</li>
+</ul>
+</div>
+<p>Ici, la carte qui précède celle à replacer (qui se trouve en mémoire) est <strong>inférieure</strong> à la carte à replacer. Cela signifie que notre carte est <strong>déjà à sa bonne position</strong>.</p>
+<p>Il n'y a donc <strong>pas de décalage à faire</strong>, et on <strong>replace</strong> la <strong>carte</strong> à sa <strong>position initiale</strong>.</p>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/02c.png" width="60%" />
+</center></p>
+<p>La <strong>partie triée</strong> de notre tableau est maintenant composée des <strong>deux premières cartes</strong>.</p>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/03.png" width="60%" />
+</center></p>
+<p>On fait de même avec la <strong>troisième carte</strong> du tableau (première carte de la <strong>partie non-triée</strong>).</p>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/03b.png" width="60%" />
+</center></p>
+<p>Ici encore, la carte était déjà à sa bonne position.</p>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/03c.png" width="60%" />
+</center></p>
+<p>On a maintenant <strong>3 cartes</strong> dans la <strong>partie triée</strong> du tableau.<br />
+On met la <strong>quatrième carte</strong> (de <em>valeur 3</em>) en <strong>mémoire</strong>.</p>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/05.png" width="60%" />
+</center></p>
+<p>On constate que les <strong>deux cartes précédentes</strong> (de <em>valeurs 8</em> et <em>4</em>) ont une valeur <strong>supérieure</strong> à celle de la carte que l'on souhaite trier. Il faut donc <strong>déplacer à droite</strong> ces deux cartes.</p>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/06.png" width="60%" />
+</center></p>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/07.png" width="60%" />
+</center></p>
+<p>On peut maintenant <strong>repositionner</strong> notre carte.</p>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/08.png" width="60%" />
+</center></p>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/09.png" width="60%" />
+</center></p>
+<p>Il ne reste ainsi <strong>plus qu'une seule carte</strong> dans la <strong>partie non-triée</strong> de notre tableau.</p>
+<p>On répète le même principe, on place cette <strong>carte</strong> en <strong>mémoire</strong>.</p>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/10.png" width="60%" />
+</center></p>
+<p>Ici, il n'y a que la <strong>carte précédente</strong> à déplacer.</p>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/11.png" width="60%" />
+</center></p>
+<p>Puis on repositionne notre carte.</p>
+<p><center>
+<img alt="Suite de 5 cartes" src="../images/cartes_insertion/12.png" width="60%" />
+</center></p>
+<p>Et voilà, on vient de <strong>trier</strong> une <strong>suite de 5 cartes</strong> par la <strong>méthode de tri par insertion</strong> !</p>
+<div class="admonition note">
+<p class="admonition-title">À vous de jouer</p>
+<p>Disposez une <strong>suite de 7 cartes</strong> choisies <strong>au hasard</strong> dans un paquet de cartes.<br />
+Votre <strong>zone de jeu</strong> est composée de votre <strong>suite de cartes</strong> et d'un <strong>emplacement mémoire</strong>.<br />
+Effectuez le tri de votre suite de cartes en utilisant la méthode de <strong>tri par insertion</strong> présentée ci-dessus.</p>
+</div>
+<h3 id="trier-un-tableau">Trier un tableau</h3>
+<p>On a donc vu que la méthode de <strong>tri par insertion</strong> avait l'avantage d'être assez <strong>naturelle</strong>, raison pour laquelle elle est souvent utilisée pour trier des <strong>cartes à jouer</strong>.</p>
+<p>Appliquons à présent ce <strong>tri</strong> sur des <strong>tableaux d'entiers</strong>.</p>
+<p>On rappelle le <strong>principe</strong> du <strong>tri par insertion</strong> :</p>
+<ul>
+<li>on fait comme si les <strong>éléments</strong> de la <strong>partie non-triée</strong> du tableau étaient donnés <strong>un par un</strong>, le <strong>premier élément du tableau</strong> constituant, <strong>à lui seul</strong>, un <strong>tableau triée</strong> de <em>longueur 1</em>,</li>
+<li>on y <strong>range</strong> ensuite le <strong>deuxième élément du tableau</strong> pour constituer un <strong>tableau trié</strong> de <em>longueur 2</em>,</li>
+<li>puis on y range le <strong>troisième élément</strong> pour obtenir un <strong>tableau trié</strong> <em>longueur 3</em>,</li>
+<li>et ainsi de suite jusqu’à avoir traité le dernier élément...</li>
+</ul>
+<p>On insère donc à la <strong>n<sup>ième</sup> itération</strong> le <strong>n<sup>ième</sup> élément</strong> à sa <strong>bonne position</strong> en décalant à droite tous les éléments de la <strong>partie triée</strong> du tableau qui lui sont supérieurs.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice - Trier un tableau</p>
+<p>On souhaite trier le tableau suivant avec le <strong>tri par insertion</strong> : <code>[5, 3, 1, 4, 6, 2]</code>.<br />
+Indiquez quel est l'<strong>état du tableau</strong> après chaque <strong>insertion d'élément</strong>.</p>
+<p><figure markdown>
+<center>
+<img alt="Tableau exercice tri insertion" src="../images/exo_tri_insertion.png" />
+<figcaption>Source : <a href="http://fractale.gecif.net/nsi/pdf/cours/algorithmes/algo_tri.pdf" target="_blank">http://fractale.gecif.net/nsi/pdf/cours/algorithmes/algo_tri.pdf</a></figcaption>
+</center>
+</figure></p>
+<p>Faites de même avec le tableau <code>[2,8,1,5,2,3]</code>.</p>
+</div>
+<h2 id="lalgorithme">L'algorithme</h2>
+<h3 id="presentation-de-lalgorithme">Présentation de l'algorithme</h3>
+<div class="admonition info">
+<p class="admonition-title">Note</p>
+<p>Dans la partie précédente, on a souvent parlé de "déplacements" de cartes. En machine, ces déplacements seront implémentés sous la forme de <strong>copies d'éléments</strong>, en réalisant des affectations.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithme du tri par insertion</p>
+<p><div style="font-size:1.1em">
+<strong>ALGORITHME</strong> : tri_insertion<br />
+<strong>ENTRÉE</strong> :<br />
+&emsp;&emsp;<code>tableau</code> : un <strong>tableau</strong> d'éléments<br />
+<strong>SORTIE</strong> : aucune (tri en place)</p>
+<p><strong>DÉBUT</strong><br />
+&emsp;&emsp;<strong>POUR</strong> i <strong>ALLANT DE</strong> 1 <strong>À</strong> longueur(tableau) - 1<br />
+&emsp;&emsp;&emsp;&emsp;cle ← tableau[i]<br />
+&emsp;&emsp;&emsp;&emsp;j ← i <span class="arithmatex">\(-\)</span> 1<br />
+&emsp;&emsp;&emsp;&emsp;<strong>TANT QUE</strong> j ≥ 0 <strong>ET QUE</strong> tableau[j] &gt; cle<br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;tableau[j + 1] ← tableau[j]<br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;j ← j <span class="arithmatex">\(-\)</span> 1<br />
+&emsp;&emsp;&emsp;&emsp;<strong>FIN TANT QUE</strong><br />
+&emsp;&emsp;&emsp;&emsp;tableau[j + 1] ← cle<br />
+&emsp;&emsp;<strong>FIN POUR</strong><br />
+&emsp;&emsp;Renvoyer <strong>∅</strong><br />
+<strong>FIN ALGORITHME</strong>
+</div></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 1</p>
+<p><strong>Déroulez</strong> l'algorithme sur le tableau <code>[5, 3, 1, 4, 6, 2]</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<ol>
+<li>Pourquoi commence t-on la boucle <strong>POUR</strong> à partir de <strong>1</strong> ?</li>
+<li><strong>Expliquez</strong> à quoi sert la 3<sup>ème</sup> <strong>ligne</strong> de l'<strong>algorithme</strong> : <code>j ← i - 1</code>.</li>
+<li>Dans le <strong>TANT QUE</strong>, à quoi sert la première condition <code>j ≥ 0</code> ? La deuxième condition <code>tableau[j] &gt; cle</code> ? Pourrait t-on inverser les deux conditions ?</li>
+<li>À quoi sert la ligne <code>tableau[j + 1] ← tableau[j]</code> dans le <strong>TANT QUE</strong> ?</li>
+<li>Pourquoi <strong>décrémente t-on</strong> (c'est-à-dire que l'on diminue de 1) la valeur de <code>j</code> à chaque tour de la boucle <strong>TANT QUE</strong> ?</li>
+<li>Expliquez l'<strong>affectation</strong> <code>tableau[j + 1] ← cle</code> après la boucle <strong>TANT QUE</strong>.</li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Tri stable</p>
+<p>Le <strong>tri par insertion</strong>, écrit comme ci-dessus, est dit "<strong>stable</strong>" car, en cas de <strong>valeurs identiques</strong> dans le tableau initial, leur <strong>ordre</strong> relatif n’est <strong>pas modifié</strong>.</p>
+</div>
+<h3 id="une-petite-animation">Une petite animation</h3>
+<div class="admonition success">
+<p class="admonition-title">Simulation du tri par insertion</p>
+<p><span style="color:green">En vert</span> : éléments déjà triés<br />
+<span style="color:#a3a3a3">En gris</span> : éléments à trier
+<div class="container-trii">
+    <div class="array-trii-wrapper">
+        <ul id="array-trii"></ul>
+    </div>
+    <div class="memory">
+        <label for="memory-value">Espace mémoire:</label>
+        <input id="memory-value" type="text" readonly>
+    </div>
+    <div class="buttons-trii">
+        <button id="start-sort" class="md-button">Lancer le tri</button>
+        <button id="step-sort" class="md-button">Pas à pas</button>
+    </div>      <br />
+</div></p>
+</div>
+<h2 id="implementation-en-python">Implémentation en Python</h2>
+<p>Maintenant que l'on a déterminé l'<strong>algorithme</strong> du <strong>tri par insertion</strong>, on peut l'<strong>implémenter en Python</strong>.</p>
+<p><strong>Téléchargez</strong> le programme squelette (à compléter) ci-dessous.</p>
+<div class="admonition success">
+<p class="admonition-title"><span id="fichiers_python">Fichiers Python</span></p>
+<ul>
+<li><a href="../src/tri_insertion.py" target="_blank">tri_insertion.py</a> : programme <strong>Python</strong> avec les fonctions à compléter.</li>
+<li>(à venir) : programme <strong>Python</strong> corrigé.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Module <em>doctest</em></p>
+<p>Dans la <strong>docstring</strong> de la fonction <code>tri_insertion</code>, des <strong>tests</strong> sont présents. Ces tests sont exécutés par le module natif <em>doctest</em>. Lorsque vous <strong>exécutez</strong> le programme, si les tests réussissent, <strong>rien ne se passera</strong>. Sinon, vous obtiendrez des informations sur les tests qui ont échoué.</p>
+<p>La fonction <code>testmod</code> (qui exécute les <strong>tests</strong>) est appelée dans la <strong>dernière ligne</strong> du programme. Pour obtenir davantage d'informations sur les erreurs liées aux tests, vous pouvez activer le mode <em>verbeux</em> en remplaçant le paramètre <code>verbose=False</code> par <code>verbose=True</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice préliminaire</p>
+<p>Dans les <strong>tests</strong> présents dans la docstring de la fonction <code>tri_insertion</code>, la première instruction est la suivante :<br />
+<code>&gt;&gt;&gt; l = [randint(0, 99) for _ in range(10)]</code><br />
+<strong>Expliquez</strong> ce que fait cette instruction.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 1</p>
+<p><strong>Écrivez</strong> la fonction <code>tri_insertion</code>. Exécutez le programme pour vous assurer que votre fonction soit correcte (il ne doit rien se passer).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<p><strong>Écrivez</strong> la fonction <code>tri_insertion_decroissant</code> permettant de <strong>trier un tableau dans l'ordre décroissant</strong>. Que faut-il changer par rapport à la fonction <code>tri_insertion</code> ?</p>
+</div>
+<h2 id="cout-de-lalgorithme">Coût de l'algorithme</h2>
+<p>Comme pour le tri par sélection, on analysera le <strong>coût algorithmique</strong> du <strong>tri par insertion</strong> en comptant le <strong>nombre de comparaisons</strong> effectuées entre deux éléments du tableau.</p>
+<div class="admonition success">
+<p class="admonition-title"><span id="fichiers_python">Fichier Python</span></p>
+<ul>
+<li><a href="../src/tri_insertion_comp.py" target="_blank">tri_insertion_comp.py</a> : programme <strong>Python</strong> permettant de visualiser le déroulement du tri et le nombre de comparaisons effectuées.</li>
+</ul>
+<p>Vous n'avez pas besoin de modifier ce fichier en dehors du contenu des deux <strong>variables globales</strong> :</p>
+<ul>
+<li><code>TABLEAU</code> : Tableau donné en <strong>entrée</strong> à la fonction effectuant le <strong>tri par insertion</strong>.</li>
+<li><code>MODE_SLEEP</code> : Permet d'activer le mode "pas à pas". En activant ce mode, vous devrez appuyer sur la touche "Entrer" lorsque demandé afin de passer à l'étape suivante. Affectez la variable à <code>True</code> activer ce mode, ou à <code>False</code> sinon.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 1</p>
+<p>Téléchargez le <strong>fichier Python</strong> ci-dessus.</p>
+<ol>
+<li>Exécutez ce programme avec un <strong>tableau</strong> de <strong>5 éléments triés dans l'ordre décroissant</strong>. Combien y a t-il de comparaisons :<ul>
+<li>à la <strong>première</strong> itération (<span class="arithmatex">\(i = 1\)</span>) ?</li>
+<li>à la <strong>deuxième</strong> itération (<span class="arithmatex">\(i = 2\)</span>) ?</li>
+<li>à la <strong>troisième</strong> itération (<span class="arithmatex">\(i = 3\)</span>) ?</li>
+<li>à la <strong>quatrième</strong> itération (<span class="arithmatex">\(i = 4\)</span>) ?</li>
+<li>au <strong>total</strong> ?</li>
+</ul>
+</li>
+<li>Faites la même chose que précédemment avec un <strong>tableau</strong> de <strong>5 éléments triés dans l'ordre croissant</strong>.</li>
+<li>Selon vous, quel est le <strong>meilleur des cas</strong> et le <strong>pire des cas</strong> concernant le tableau donné en entrée de la fonction de <strong>tri par insertion</strong> ?</li>
+</ol>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Rappel sur les complexités</p>
+<p>Voici un rappel sur les différentes complexités :</p>
+<ul>
+<li>Logarithmique <span class="arithmatex">\(Θ(log~n)\)</span> : la complexité évolue <strong>moins vite</strong> que le nombre <strong>n</strong> de données (par exemple : si on multiplie le nombre de données <strong>n</strong> par <strong>2</strong>, on ne rajoute qu'<strong>une seule</strong> opération).</li>
+<li>Linéaire <span class="arithmatex">\(Θ(n)\)</span> : la complexité évolue <strong>comme</strong> le nombre <strong>n</strong> de données (par exemple : si on multiplie le nombre de données <strong>n</strong> par <strong>2</strong>, le temps d'exécution est multiplié par <strong>2</strong>).</li>
+<li>Quasi-linéaire <span class="arithmatex">\(O(n~log~n)\)</span> : Intermédiaire entre linéaire et quadratique. En pratique, un algorithme de complexité quasi-linéaire a un comportement très proche d’un algorithme de complexité linéaire.</li>
+<li>Quadratique <span class="arithmatex">\(Θ(n^2)\)</span> : la complexité évolue <strong>comme le carré</strong> du nombre <strong>n</strong> de données (par exemple : si on multiplie le nombres de données <strong>n</strong> par <strong>2</strong>, le temps d'exécution est multiplié par <strong>4</strong>).</li>
+<li>Exponentielle <span class="arithmatex">\(Θ(2^n)\)</span> : la complexité évolue à terme <strong>beaucoup plus vite</strong> que n'importe quelle fonction polynomiale du nombre <strong>n</strong> de données (par exemple : si on multiplie le nombre de données <strong>n</strong> par <strong>100</strong>, le temps d'exécution est multiplié par <span class="arithmatex">\(2^{100}\)</span>, soit <strong>1267650600228229401496703205376</strong>).</li>
+</ul>
+<p><figure markdown>
+<center>
+<img alt="Graphe des complexités algorithmiques" src="../images/graphique_complexites.png" />
+<figcaption>Courbes d'évolution des différentes complexités algorithmiques.<br />(généré avec <a href="../src/graphique_complexites.py" target="_blank">ce programme</a>)</figcaption>
+</center>
+</figure></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<p>Exécutez le programme avec des <strong>tableaux triés dans l'ordre croissant</strong> de différentes <strong>longueurs</strong>. Pour une longueur <span class="arithmatex">\(n\)</span> donnée, quel sera le nombre <span class="arithmatex">\(C(n)\)</span> de <strong>comparaisons</strong> obtenu dans le cas où le <strong>tableau</strong> est <strong>trié dans l'ordre croissant</strong> ?</p>
+<p>En déduire le <strong>coût du tri par insertion</strong> dans le <strong>meilleur des cas</strong> (logarithmique ? linéaire ? quasi-linéaire ? quadratique ? exponentiel ?).</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 3</p>
+<p>Exécutez le programme avec des <strong>tableaux triés dans l'ordre décroissant</strong> :</p>
+<ul>
+<li>de longueur <span class="arithmatex">\(5\)</span>,</li>
+<li>de longueur <span class="arithmatex">\(6\)</span>,</li>
+<li>de longueur <span class="arithmatex">\(7\)</span>.</li>
+</ul>
+<p>On notera le nombre de comparaisons sous la forme <span class="arithmatex">\(C(n) = C_i(1) + C_i(2) + [...] + C_i(n-2) + C_i(n - 1)\)</span> avec <span class="arithmatex">\(n\)</span> la <strong>longueur du tableau</strong> et <span class="arithmatex">\(C_i(i)\)</span> le <strong>nombre de comparaisons</strong> effectuées à l'<strong>itération</strong> <span class="arithmatex">\(i\)</span>.</p>
+<p>Pour une longueur <span class="arithmatex">\(n\)</span> donnée, quel sera donc le nombre <span class="arithmatex">\(C(n)\)</span> de <strong>comparaisons</strong> obtenu dans le cas où le <strong>tableau</strong> est <strong>trié dans l'ordre décroissant</strong> ?</p>
+<p>En déduire le <strong>coût du tri par insertion</strong> dans le <strong>meilleur des cas</strong> (logarithmique ? linéaire ? quasi-linéaire ? quadratique ? exponentiel ?).</p>
+</div>
+<h3 id="terminaison-du-tri-par-insertion">Terminaison du tri par insertion</h3>
+<p>Pour démontrer la <strong>terminaison</strong> de notre algorithme, il faut exhiber un <strong>variant de boucle</strong> pour <strong>chacune des boucles</strong> de l'algorithme.</p>
+<div class="admonition success">
+<p class="admonition-title">Variant de boucle</p>
+<p>On appelle <strong>variant de boucle</strong> toute <strong>quantité</strong> <span class="arithmatex">\(v\)</span> (qui peut être déterminée en fonction des différentes <strong>variables</strong> du programme) telle que :</p>
+<ul>
+<li><span class="arithmatex">\(v\)</span> ne prend que des valeurs <strong>entières</strong>,</li>
+<li><span class="arithmatex">\(v\)</span> est initialement <strong>positive</strong>,</li>
+<li><span class="arithmatex">\(v\)</span> <strong>décroit strictement</strong> à chaque passage dans la boucle.</li>
+</ul>
+<p>On exhibe un <strong>variant de boucle</strong> pour démontrer qu'une boucle <strong>se termine</strong>, en un temps fini. <br />
+S'il existe plusieurs boucles dans un programme, il faut trouver autant de variants qu'il y en a.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Prouver la terminaison</p>
+<p>Concrètement, on peut prouver la <strong>terminaison</strong> d'un algorithme en montrant que les deux propositions suivantes sont <strong>vraies</strong> :</p>
+<ul>
+<li>Proposition A : les <strong>boucles</strong> peuvent s'exprimer sous la forme <strong>TANT QUE</strong> <span style="color:#23ab32">VARIANT</span> <strong>&gt; 0</strong></li>
+<li>Proposition B : le <span style="color:#23ab32">VARIANT</span> est une <strong>suite d'entiers strictement décroissante</strong>.</li>
+</ul>
+<p>Si les deux propositions <strong>A</strong> et <strong>B</strong> sont vraies (<span class="arithmatex">\(A \land B\)</span>), l'algorithme s'arrêtera <strong>toujours</strong>. Autrement (au moins l'une des deux propositions n'est pas vérifiée, <span class="arithmatex">\(\neg(A \land B)\)</span>), il existe au moins un cas où l'algorithme ne se terminera pas.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Exemple</p>
+<p>Démontrons que la boucle <strong>POUR</strong> suivante se termine :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>POUR i ALLANT DE 10 à 49 AVEC UN PAS DE 5:
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    Instructions ne modifiant pas la valeur de i...
+</code></pre></div>
+<p>On peut ré-écrire cette boucle <strong>POUR</strong> avec une boucle <strong>TANT QUE</strong> :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>i = 10
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>TANT QUE i &lt; 50:
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    Instructions ne modifiant pas la valeur de i...
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    i = i + 5
+</code></pre></div>
+<p>Si on note <span class="arithmatex">\(n\)</span> le <strong>nombre de tours de boucle</strong> effectué, on peut représenter les valeurs successives que va prendre <span class="arithmatex">\(i\)</span> sous la forme d'une suite arithmétique :<br />
+<span class="arithmatex">\(i_n = i_0 + r*n\)</span>, avec <span class="arithmatex">\(i_0\)</span> la <strong>valeur initiale</strong> de <span class="arithmatex">\(i_n\)</span> et <span class="arithmatex">\(r\)</span> la <strong>raison</strong> de la suite.</p>
+<p>Ici, <span class="arithmatex">\(i_0 = 10\)</span> et <span class="arithmatex">\(r = 5\)</span>.<br />
+Donc <span class="arithmatex">\(i_n = 10 + 5n\)</span>.</p>
+<p>On peut donc ré-écrire la condition <strong>TANT QUE</strong> de la manière suivante :</p>
+<p>TANT QUE <span class="arithmatex">\(i_n &lt; 50\)</span><br />
+TANT QUE <span class="arithmatex">\(10 + 5n &lt; 50\)</span><br />
+TANT QUE <span class="arithmatex">\(0 &lt; 50 - 10 - 5n\)</span><br />
+TANT QUE <span class="arithmatex">\(50 - 10 - 5n &gt; 0\)</span><br />
+TANT QUE <span class="arithmatex">\(40 - 5n &gt; 0\)</span></p>
+<p>On obtient donc notre <strong>variant</strong> <span class="arithmatex">\(v_n\)</span> qui prend la forme d'une nouvelle <strong>suite arithmétique</strong> :<br />
+<span class="arithmatex">\(v_n = v_0 - r*n\)</span> avec <span class="arithmatex">\(v_0 = 40\)</span> pour <strong>valeur initiale</strong> et <span class="arithmatex">\(r = -5\)</span> pour <strong>raison</strong> de la suite.<br />
+Donc :<br />
+<span class="arithmatex">\(v_n = 40 - 5n\)</span> est un <strong>variant de la boucle</strong> car il s'agit d'une suite <strong>d'entiers</strong>, <strong>initialement positive</strong> et qui <strong>décroit strictement</strong> à chaque tour de boucle (car la <strong>raison</strong> est <strong>négative</strong>).</p>
+<p>On a trouvé un <strong>variant</strong>, et donc <strong>démontré la terminaison de notre boucle</strong>.</p>
+</div>
+<p>On rappelle l'algorithme du <strong>tri par insertion</strong> :</p>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithme du tri par insertion</p>
+<p><div style="font-size:1.1em">
+<strong>ALGORITHME</strong> : tri_insertion<br />
+<strong>ENTRÉE</strong> :<br />
+&emsp;&emsp;<code>tableau</code> : un <strong>tableau</strong> d'éléments<br />
+<strong>SORTIE</strong> : aucune (tri en place)</p>
+<p><strong>DÉBUT</strong><br />
+&emsp;&emsp;<strong>POUR</strong> i <strong>ALLANT DE</strong> 1 <strong>À</strong> longueur(tableau) - 1<br />
+&emsp;&emsp;&emsp;&emsp;cle ← tableau[i]<br />
+&emsp;&emsp;&emsp;&emsp;j ← i <span class="arithmatex">\(-\)</span> 1<br />
+&emsp;&emsp;&emsp;&emsp;<strong>TANT QUE</strong> j ≥ 0 <strong>ET QUE</strong> tableau[j] &gt; cle<br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;tableau[j + 1] ← tableau[j]<br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;j ← j <span class="arithmatex">\(-\)</span> 1<br />
+&emsp;&emsp;&emsp;&emsp;<strong>FIN TANT QUE</strong><br />
+&emsp;&emsp;&emsp;&emsp;tableau[j + 1] ← cle<br />
+&emsp;&emsp;<strong>FIN POUR</strong><br />
+&emsp;&emsp;Renvoyer <strong>∅</strong><br />
+<strong>FIN ALGORITHME</strong>
+</div></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 1</p>
+<p>Montrer la terminaison de la boucle <strong>TANT QUE</strong>. Il y a deux conditions qui doivent être vérifiées pour pouvoir rentrer dans la boucle. Si une seule des deux conditions (<span class="arithmatex">\(j ≥ 0\)</span> ou <span class="arithmatex">\(tableau[j] &gt; cle\)</span>) n'est plus vérifiée, alors la boucle s'arrête.</p>
+<p>On ne tiendra compte ici que de la <strong>première condition</strong> : <code>TANT QUE j ≥ 0</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<p>Enfin, montrer la terminaison de la boucle <strong>POUR</strong> principale de l'algorithme.</p>
+</div>
+<h3 id="correction-du-tri-par-insertion">Correction du tri par insertion</h3>
+<p>Dans les deux parties précédentes, nous avons montré :</p>
+<ul>
+<li>Le <strong>coût algorithmique</strong> de l'algorithme du tri par insertion, qui est <strong>quadratique</strong> dans le <strong>pire des cas</strong>, c'est-à-dire en <span class="arithmatex">\(O(n^2)\)</span>, et qui est <strong>linéaire</strong> dans le <strong>meilleur des cas</strong>, c'est-à-dire en <span class="arithmatex">\(O(n)\)</span>.</li>
+<li>La <strong>terminaison</strong> de l'algorithme. On sait que l'algorithme finira toujours par se terminer.</li>
+</ul>
+<p>Il reste toutefois à démontrer que l'algorithme <strong>renvoie toujours un résultat correct</strong>.</p>
+<p>On rappelle que la <strong>preuve de correction</strong> d'un algorithme permet d'affirmer :</p>
+<ul>
+<li>qu'il <strong>fournit toujours la bonne réponse</strong></li>
+<li>sur <strong>toutes les entrées valides</strong> qu'on lui donne (les entrées qui respectent les <strong>préconditions</strong>).</li>
+</ul>
+<p>Pour démontrer la correction du <strong>tri par insertion</strong>, il faut déterminer un <strong>invariant de boucle</strong> pour la <strong>boucle principale</strong> de notre algorithme.</p>
+<div class="admonition tip">
+<p class="admonition-title">Invariant de boucle</p>
+<p>On appelle <strong>invariant de boucle</strong> une <strong>propriété</strong> <span class="arithmatex">\(P\)</span> qui est <strong>vraie avant et après chaque itération</strong> de la boucle.</p>
+</div>
+<p>On rappelle que l'on <strong>démontre</strong> un <strong>invariant</strong> en utilisant un <strong>raisonnement par récurrence</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Démonstration de l'invariant par récurrence</p>
+<p>Pour montrer à l'aide d'une <strong>récurrence simple</strong> qu'une proposition <span class="arithmatex">\(P(k)\)</span> est vérifiée pour tout entier <span class="arithmatex">\(k \ge 0\)</span>, avec <span class="arithmatex">\(k\)</span> le nombre d'itérations de la boucle effectuées :</p>
+<ul>
+<li><strong>Initialisation</strong> : on vérifie que la proposition est <strong>vraie</strong> au <strong>rang initial</strong> <span class="arithmatex">\(0\)</span>, c'est-à-dire <strong>avant le premier passage</strong> dans la <strong>boucle</strong>.</li>
+<li><strong>Conservation</strong> : on suppose que la proposition est <strong>vraie à un certain rang</strong> <span class="arithmatex">\(k \ge 0\)</span> fixé, c'est-à-dire <strong>après</strong> <span class="arithmatex">\(k\)</span> <strong>tours de boucle</strong>, et on en déduit qu'elle est <strong>vraie</strong> au <strong>rang suivant</strong> <span class="arithmatex">\(k + 1\)</span>, c'est-à-dire après <strong>un tour de boucle en plus</strong>. On peut écrire <span class="arithmatex">\(P_k \implies P_{k+1}\)</span>.</li>
+<li><strong>Terminaison</strong> : on exploite les deux phases précédentes et on montre que la proposition est <strong>vraie</strong> sur <strong>toutes les données</strong> une fois la <strong>dernière itération</strong> de la <strong>boucle</strong> effectuée.</li>
+</ul>
+</div>
+<hr />
+<p>Dans la cas du tri par insertion, on peut décomposer le problème en :</p>
+<ul>
+<li>un <strong>sous-tableau trié</strong> à gauche, initialement composé du <strong>premier élément</strong>,</li>
+<li>un <strong>sous-tableau non-trié</strong> à droite.</li>
+</ul>
+<div class="admonition success">
+<p class="admonition-title">Une proposition d'invariant</p>
+<p>On propose l'invariant <span class="arithmatex">\(P_k\)</span> suivant : « Après <span class="arithmatex">\(k\)</span> tours de boucle, <span class="arithmatex">\(k+1\)</span> éléments sont triés dans le sous-tableau <span class="arithmatex">\([0;k]\)</span> de gauche. »</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithme du tri par insertion</p>
+<p><div style="font-size:1.1em">
+<strong>ALGORITHME</strong> : tri_insertion<br />
+<strong>ENTRÉE</strong> :<br />
+&emsp;&emsp;<code>tableau</code> : un <strong>tableau</strong> d'éléments<br />
+<strong>SORTIE</strong> : aucune (tri en place)</p>
+<p><strong>DÉBUT</strong><br />
+&emsp;&emsp;<strong>POUR</strong> i <strong>ALLANT DE</strong> 1 <strong>À</strong> longueur(tableau) - 1<br />
+&emsp;&emsp;&emsp;&emsp;cle ← tableau[i]<br />
+&emsp;&emsp;&emsp;&emsp;j ← i <span class="arithmatex">\(-\)</span> 1<br />
+&emsp;&emsp;&emsp;&emsp;<strong>TANT QUE</strong> j ≥ 0 <strong>ET QUE</strong> tableau[j] &gt; cle<br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;tableau[j + 1] ← tableau[j]<br />
+&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;j ← j <span class="arithmatex">\(-\)</span> 1<br />
+&emsp;&emsp;&emsp;&emsp;<strong>FIN TANT QUE</strong><br />
+&emsp;&emsp;&emsp;&emsp;tableau[j + 1] ← cle<br />
+&emsp;&emsp;<strong>FIN POUR</strong><br />
+&emsp;&emsp;Renvoyer <strong>∅</strong><br />
+<strong>FIN ALGORITHME</strong>
+</div></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 1 : Initialisation</p>
+<p>Commençons par l'<strong>initialisation</strong>.
+Avant de rentrer dans la boucle (<span class="arithmatex">\(k=0\)</span>), l'<strong>invariant</strong> <span class="arithmatex">\(P_k\)</span> est-il vérifié ?</p>
+</div>
+<details class="tip">
+<summary>Réponse 1</summary>
+<p>Avant de rentrer dans la boucle (k=0), notre sous-tableau trié ne contient que la première valeur.
+Or, un sous-tableau ne contenant qu'<strong>un élément</strong> est <strong>trié</strong>.</p>
+<p><span class="arithmatex">\(P_k\)</span> correspond à cette proposition :</p>
+<p>« Après <span class="arithmatex">\(k\)</span> tours de boucle, <span class="arithmatex">\(k+1\)</span> éléments sont triés dans le sous-tableau <span class="arithmatex">\([0;k]\)</span> de gauche. »</p>
+<p><span class="arithmatex">\(P_0\)</span> correspond donc à :</p>
+<p>« Après 0 tours de boucle, 1 élément est trié dans le sous-tableau [0;0] de gauche. »</p>
+<p>La propriété <span class="arithmatex">\(P_0\)</span> est vérifiée, on a terminé la phase d'<strong>initialisation</strong>.</p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<p>Quelle va être la valeur :</p>
+<ul>
+<li>de <span class="arithmatex">\(i\)</span> lors du <strong>premier tour de la boucle POUR principale</strong> ?</li>
+<li>de <span class="arithmatex">\(j\)</span> avant de rentrer dans le <strong>TANT QUE</strong> lors du premier tour de la boucle principale ?</li>
+</ul>
+<p>Indiquez quelle est la relation entre <span class="arithmatex">\(k\)</span> et <span class="arithmatex">\(i\)</span>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 3 : Conservation</p>
+<p>Démontrons maintenant la <strong>conservation</strong>, c'est-à-dire que <span class="arithmatex">\(P_k \implies P_{k+1}\)</span>.<br />
+Pour cela, on suppose d'abord <strong>vraie</strong> la proposition <span class="arithmatex">\(P_k\)</span> : « Après <span class="arithmatex">\(k\)</span> tours de boucle, <span class="arithmatex">\(k+1\)</span> éléments sont triés dans le sous-tableau <span class="arithmatex">\([0;k]\)</span> de gauche. »<br />
+Il faut maintenant démontrer que la proposition <span class="arithmatex">\(P_{k+1}\)</span> est également <strong>vraie</strong>.</p>
+<p>On distinguera pour cela <strong>trois cas</strong> :</p>
+<ul>
+<li>le cas où la <strong>clé</strong> (d'indice <span class="arithmatex">\(k+1\)</span>) est <strong>inférieure</strong> à tous les éléments du sous-tableau trié <span class="arithmatex">\([0;k]\)</span>,</li>
+<li>le cas où la <strong>clé</strong> (d'indice <span class="arithmatex">\(k+1\)</span>) est <strong>supérieure</strong> à tous les éléments du sous-tableau trié <span class="arithmatex">\([0;k]\)</span>,</li>
+<li>le cas où la <strong>clé</strong> (d'indice <span class="arithmatex">\(k+1\)</span>) est <strong>inférieure</strong> à certains éléments du sous-tableau trié <span class="arithmatex">\([0;k]\)</span>, mais pas tous.</li>
+</ul>
+</div>
+<details class="tip">
+<summary>Réponse 3</summary>
+<p>Au début du tour de boucle <span class="arithmatex">\(k+1\)</span> :</p>
+<ul>
+<li>l'indice <span class="arithmatex">\(i\)</span> est égal à <span class="arithmatex">\(k+1\)</span>,</li>
+<li>on dispose d'un sous-tableau <span class="arithmatex">\([0;k]\)</span> trié auquel on va rajouter un nouvel élément, la clé d'indice <span class="arithmatex">\(k+1\)</span>.</li>
+</ul>
+<p><strong>Cas 1 : clé (indice <span class="arithmatex">\(k+1\)</span>) inférieure aux éléments de [0;k]</strong> :</p>
+<ul>
+<li>La boucle <strong>TANT QUE</strong> continue jusqu'à avoir parcouru tous les éléments du sous-tableau trié, car tous les éléments ont une valeur <strong>supérieure</strong> à la <strong>clé</strong>. On <strong>décale</strong> donc tous les éléments du <strong>sous-tableau trié</strong> d'une case vers la <strong>droite</strong>.<br />
+Les éléments de <span class="arithmatex">\([0;k]\)</span> sont à présent dans <span class="arithmatex">\([1;k+1]\)</span>.</li>
+<li>L'ordre des éléments est conservé (on les a seulement décalé).</li>
+<li>Après la dernière itération, <span class="arithmatex">\(j\)</span> vaut donc <span class="arithmatex">\(-1\)</span>, et la <strong>clé</strong> est <strong>replacée</strong> en position.</li>
+</ul>
+<p>La clé est donc maintenant à l'indice <span class="arithmatex">\(0\)</span> et est inférieure à tous les éléments du sous-tableau <span class="arithmatex">\([1;k+1]\)</span>. On peut donc affirmer que le tableau [0;k+1] est maintenant <strong>trié en ordre croissant</strong>.</p>
+<p>Donc <span class="arithmatex">\(P_{k+1}\)</span> est VRAI.</p>
+<p><strong>Cas 2 : clé (indice <span class="arithmatex">\(k+1\)</span>) supérieure (ou égale) aux éléments de <span class="arithmatex">\([0;k]\)</span></strong></p>
+<ul>
+<li>On ne rentre même pas dans le <strong>TANT QUE</strong> puisque l'une de ses conditions n'est pas vérifiée :<br />
+<code>TANT QUE j ≥ 0 et que t[j] &gt; cle</code></li>
+<li>On effectue qu'une seule comparaison entre la <strong>clé</strong> et l'<strong>élément qui le précède</strong>. <span class="arithmatex">\(j\)</span> vaut donc <span class="arithmatex">\(i-1\)</span> après la boucle <strong>TANT QUE</strong>, et on place la clé avec l'instruction <code>t[j+1] ← cle</code>.<br />
+La <strong>clé</strong> reste au même indice <span class="arithmatex">\(i\)</span>.</li>
+<li>Le sous-tableau <span class="arithmatex">\([0, k]\)</span> était déjà trié dans l'ordre croissant, on ne le change pas.</li>
+<li>On rajoute la <strong>clé</strong> (un élément plus grand ou égal à tous les autres) à l'indice <span class="arithmatex">\(k+1\)</span>.</li>
+</ul>
+<p>Finalement, on obtient un sous-tableau <span class="arithmatex">\([0; k+1]\)</span> <strong>trié</strong> après avoir effectué un tour de boucle supplémentaire de la boucle <strong>POUR</strong> principale.</p>
+<p>Donc <span class="arithmatex">\(P_{k+1}\)</span> est VRAI.</p>
+<p><strong>Cas 3 : clé (indice <span class="arithmatex">\(k+1\)</span>) inférieure à certains éléments de <span class="arithmatex">\([0;k]\)</span></strong></p>
+<p>Les éléments du sous-tableau <span class="arithmatex">\([0;k]\)</span> sont <strong>triés</strong>, cela signifie que l'on a d'abord une première partie des éléments inférieurs ou égaux à la clé, puis une deuxième partie des éléments supérieurs à la clé.</p>
+<ul>
+<li>Les éléments d'indice <span class="arithmatex">\([m;k]\)</span> sont <strong>supérieurs</strong> à la clé et vont donc être décalés à droite.</li>
+<li>Les éléments d'indice <span class="arithmatex">\([0;m-1]\)</span> sont <strong>inférieurs</strong> ou égaux à la clé et ne vont donc pas bouger.</li>
+</ul>
+<p>On rappelle les conditions du <strong>TANT QUE</strong> :
+<code>TANT QUE j ≥ 0 et que t[j] &gt; cle</code></p>
+<ul>
+<li>La seconde condition ne sera vraie que jusqu'à t[m] &gt; cle, on déplace donc d'une case à droite les éléments [m; k] qui vont se retrouver en [m+1; k+1]. L'ordre des éléments n'est pas change (puisqu'on les a juste décalé d'un cran vers la droite).</li>
+<li>Le sous-tableau [0;m-1] ne sera quant à lui pas modifié.</li>
+<li>A l'issue de la boucle, <span class="arithmatex">\(j\)</span> contiendra <span class="arithmatex">\(m-1\)</span>. L'instruction permettant de repositionner la <strong>clé</strong> au bon endroit est <code>t[j+1] ← cle</code>.<br />
+Donc la <strong>clé</strong> sera placée à l'indice <span class="arithmatex">\(m - 1 + 1 = m\)</span>.</li>
+<li>Finalement :<ul>
+<li>Le sous-tableau <span class="arithmatex">\([0; m-1]\)</span> est <strong>trié</strong> (pas de changement) et <strong>inférieur ou égal</strong> à la <strong>clé</strong>.</li>
+<li>La <strong>clé</strong> est à l'indice <span class="arithmatex">\(m\)</span>.</li>
+<li>Le sous-tableau <span class="arithmatex">\([m+1;k+1]\)</span> est <strong>trié</strong> et <strong>supérieur</strong> à la <strong>clé</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>Le sous-tableau <span class="arithmatex">\([0; k+1]\)</span> est donc bien trié après avoir effectué un tour de boucle supplémentaire.</p>
+<p>Donc <span class="arithmatex">\(P_{k+1}\)</span> est VRAI.</p>
+</details>
+<p><strong><u>Terminaison</u></strong></p>
+<p>Il ne reste plus qu'à vérifier la <strong>terminaison</strong>, c'est-à-dire si l'<strong>invariant</strong> vérifie <strong>toutes les données</strong> du tableau d'entrée.</p>
+<p>La boucle <strong>POUR</strong> principale va de <strong>1</strong> à <strong>longueur - 1</strong>.<br />
+L'algorithme aura donc, à la fin, fait <strong>longueur - 1</strong> tours de boucle.</p>
+<p>Or l'invariant <span class="arithmatex">\(P_k\)</span> est la propriété selon laquelle, « Après <span class="arithmatex">\(k\)</span> tours de boucle, <span class="arithmatex">\(k+1\)</span> éléments sont triés dans le sous-tableau <span class="arithmatex">\([0;k]\)</span> de gauche. »</p>
+<p>On avait remarqué la relation suivante entre <span class="arithmatex">\(i\)</span> et <span class="arithmatex">\(k\)</span> : <span class="arithmatex">\(k = i\)</span>.</p>
+<p>À la fin de l'algorithme, <span class="arithmatex">\(k\)</span> va donc valoir <span class="arithmatex">\(longueur-1\)</span>.</p>
+<p>Le nombre d'éléments triés correctement est donc <span class="arithmatex">\(k + 1 = longueur-1 + 1 = longueur\)</span> élements triés.</p>
+<p>Après le <strong>dernier tour de boucle</strong>, le <strong>sous-tableau trié</strong> contient donc <strong>longueur</strong> éléments triés, c'est-à-dire <strong>tout le tableau</strong>.</p>
+<p>La <strong>terminaison</strong> est démontrée : l'algorithme agit bien sur toutes les données.</p>
+<p>Finalement, la proposition <span class="arithmatex">\(P_k\)</span> est bien un <strong>invariant</strong> de la boucle principale de l'algorithme du tri par insertion, et permet de prouver sa correction.</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../../javascripts/mathjax.js"></script>
+        
+      
+        
+          <script src="../javascripts/animation_tri_selection.js"></script>
+        
+      
+        
+          <script src="../javascripts/animation_tri_insertion.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+    
+  </body>
+</html>

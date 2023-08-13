@@ -1,0 +1,1504 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/terminale/arbres/implementation_arbres/">
+      
+      
+        <link rel="prev" href="../abr/">
+      
+      
+        <link rel="next" href="../implementation_abr/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.2, mkdocs-material-9.1.20">
+    
+    
+      
+        <title>Implémentation d'un arbre binaire - Numérique et sciences informatiques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.eebd395e.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ecc896b0.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../premiere/tris/stylesheets/style_animation_tri_selection.css">
+    
+      <link rel="stylesheet" href="../../../premiere/tris/stylesheets/style_animation_tri_insertion.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#implementation-dun-arbre-binaire" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numérique et sciences informatiques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Implémentation d'un arbre binaire
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Passer en mode nuit"  type="radio" name="__palette" id="__palette_1">
+            
+              <label class="md-header__button md-icon" title="Passer en mode nuit" for="__palette_2" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+              </label>
+            
+          
+            
+            
+            
+            <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Passer en mode jour"  type="radio" name="__palette" id="__palette_2">
+            
+              <label class="md-header__button md-icon" title="Passer en mode jour" for="__palette_1" hidden>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+              </label>
+            
+          
+        </form>
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Numérique et sciences informatiques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Première
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Première
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_1" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1_1" id="__nav_1_1_label" tabindex="0">
+          Tris
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_1_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_1_1">
+          <span class="md-nav__icon md-icon"></span>
+          Tris
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/tris/" class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/tris/tri_selection/" class="md-nav__link">
+        Tri par sélection
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/tris/tri_insertion/" class="md-nav__link">
+        Tri par insertion
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Terminale
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Terminale
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+          Arbres
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Arbres
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../" class="md-nav__link">
+        Accueil
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2" id="__nav_2_1_2_label" tabindex="0">
+          Cours
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          Cours
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vocabulaire/" class="md-nav__link">
+        Définitions et vocabulaire
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../parcours/" class="md-nav__link">
+        Parcours d'arbres binaires
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../type_abstrait/" class="md-nav__link">
+        Type abstrait "Arbre binaire"
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../abr/" class="md-nav__link">
+        Arbres binaires de recherche
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_3" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_3" id="__nav_2_1_3_label" tabindex="0">
+          Activités Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_3_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          Activités Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Implémentation d'un arbre binaire
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Implémentation d'un arbre binaire
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#operations-de-base" class="md-nav__link">
+    Opérations de base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-dun-nouvel-arbre" class="md-nav__link">
+    Création d'un nouvel arbre
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quelques-mesures-sur-les-arbres" class="md-nav__link">
+    Quelques mesures sur les arbres
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parcours-darbres" class="md-nav__link">
+    Parcours d'arbres
+  </a>
+  
+    <nav class="md-nav" aria-label="Parcours d'arbres">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parcours-en-profondeur" class="md-nav__link">
+    Parcours en profondeur
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parcours-en-largeur" class="md-nav__link">
+    Parcours en largeur
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementation_abr/" class="md-nav__link">
+        Implémentation d'un arbre binaire de recherche
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_4" id="__nav_2_1_4_label" tabindex="0">
+          Exercices
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_4">
+          <span class="md-nav__icon md-icon"></span>
+          Exercices
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercices_vocabulaire/" class="md-nav__link">
+        Vocabulaire sur les arbres
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercices_parcours/" class="md-nav__link">
+        Parcours d'arbres binaires
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercices_abr/" class="md-nav__link">
+        Arbre binaires de recherche
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../implementations_arbres/" class="md-nav__link">
+        Implémentations d'arbres binaires et ABR
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_5" id="__nav_2_1_5_label" tabindex="0">
+          Évaluations
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_1_5">
+          <span class="md-nav__icon md-icon"></span>
+          Évaluations
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../evaluation_correction.pdf" class="md-nav__link">
+        Évaluation 1 corrigée
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../evaluation_v2.pdf" class="md-nav__link">
+        Évaluation 2
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#operations-de-base" class="md-nav__link">
+    Opérations de base
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creation-dun-nouvel-arbre" class="md-nav__link">
+    Création d'un nouvel arbre
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quelques-mesures-sur-les-arbres" class="md-nav__link">
+    Quelques mesures sur les arbres
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parcours-darbres" class="md-nav__link">
+    Parcours d'arbres
+  </a>
+  
+    <nav class="md-nav" aria-label="Parcours d'arbres">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parcours-en-profondeur" class="md-nav__link">
+    Parcours en profondeur
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parcours-en-largeur" class="md-nav__link">
+    Parcours en largeur
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="implementation-dun-arbre-binaire">Implémentation d'un arbre binaire</h1>
+<p>Il y a de nombreuses manières d'implémenter un <strong>arbre binaire</strong>.</p>
+<p>Dans cette partie, on proposera une manière parmi d'autres d'implémenter cette structure de données. Pour vous entraîner sur d'autres implémentations, voir la partie <em>exercices</em>.</p>
+<p>En langage <em>Python</em>, on ne peut pas avoir plusieurs <strong>constructeurs</strong> dans une classe.<br />
+On aura donc <strong>un seul constucteur</strong> pouvant être appelé de <strong>deux façons différentes</strong> :</p>
+<ul>
+<li><code>Arbre()</code> : création d'un <strong>arbre binaire vide</strong>, les attributs <code>racine</code>, <code>gauche</code> et <code>droite</code> seront automatiquement affectés à <code>None</code>.</li>
+<li><code>Arbre(racine, gauche, droite)</code> : création d'un <strong>arbre binaire non vide</strong>, dont la <code>racine</code> est la <strong>valeur</strong> (l'<em>étiquette</em>) du <strong>noeud racine</strong>, et <code>gauche</code> et <code>droite</code> sont également de type <code>Arbre</code>.</li>
+</ul>
+<p><em>Note</em> : Une <strong>feuille</strong> est donc une instance  de <code>Arbre</code> dont le <strong>sous-arbre gauche</strong> et le <strong>sous-arbre droit</strong> sont des <strong>arbres vides</strong>.</p>
+<div class="admonition success">
+<p class="admonition-title">À télécharger</p>
+<p>Récupérez les fichiers suivants :</p>
+<ul>
+<li><a href="../src/arbre_binaire.py" target="_blank">arbre_binaire.py</a> - Classe <code>Arbre</code> à compléter représentant un <strong>arbre binaire</strong>.</li>
+<li><a href="../src/dessin.py" target="_blank">dessin.py</a> - Quelques fonctions annexes utilisées pour dessiner un arbre avec le module <code>Graphviz</code>. (Vous n'avez pas besoin d'ouvrir ou de modifier ce fichier.)</li>
+</ul>
+<p>Si vous utilisez les <strong>machines du <em>lycée</em></strong>:</p>
+<ul>
+<li><a href="../src/windows_graphviz.zip" target="_blank">windows_graphviz.zip</a> - Décompressez l'archive <strong>dans le répertoire où se trouvent vos fichiers Python</strong>. Vous devez avoir <code>arbre_binaire.py</code>, <code>dessin.py</code> et un dossier <code>Graphviz</code> au même endroit.<br />Contient les exécutables de <em>Graphviz</em>.</li>
+</ul>
+</div>
+<details class="tip">
+<summary>Corrigé complet</summary>
+<p><a href="../src/arbre_binaire_corr.py" target="_blank">Cliquez ici</a> pour télécharger le corrigé complet des méthodes et fonctions associées à cette activité.</p>
+</details>
+<details class="note">
+<summary>Installation de <em>Graphviz</em> sur votre machine personnelle</summary>
+<p>Pour utiliser la fonction <code>dessiner</code>, le module <code>Graphviz</code> et les exécutables associés doivent être installés sur votre machine. Voici comment procéder.</p>
+<p><u><strong>Étape 1</strong></u> - <strong>Installer le module Graphviz</strong></p>
+<p><strong>Méthode 1</strong> :</p>
+<p>Dans <strong>Thonny</strong>, allez dans l'onglet "Outils", puis "Gérer les paquets". Recherchez "graphviz", puis cliquez sur le bouton <strong><em>Installer</em></strong>.</p>
+<p><strong>Méthode 2</strong> :</p>
+<p>Ouvrez l'<strong>invite de commande Windows</strong> (ou le <em>terminal</em> si vous utilisez <em>Linux</em>), puis exécutez simplement la commande suivante :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>pip install graphviz
+</code></pre></div>
+<p><u><strong>Étape 2</strong></u> - <strong>Installer les exécutables</strong></p>
+<p>Si vous êtes sur <strong>Windows</strong>, <a href="https://graphviz.org/download/#windows" target="_blank">cliquez ici</a> puis <strong>téléchargez et installez</strong> la <strong>dernière version</strong> de <em>Graphviz</em> (choisissez l'<code>EXE Installer</code> correspondant à la version de votre système d'exploitation, <em>32 bits</em> ou <em>64 bits</em>. Si vous avez un doute, choisissez la version <em>32 bits</em> ou lisez <a href="https://lecrabeinfo.net/32-ou-64-bits-comment-savoir.html#windows-32-bits-ou-64-bits" target="_blank">cet article</a> pour connaître la version de votre système.)</p>
+<p>Si vous êtes sur <strong>Linux</strong>, <a href="https://graphviz.org/download/#linux" target="_blank">cliquez ici</a> puis installez le paquet <code>graphviz</code> en exécutant dans le <em>terminal</em> la commande associée à votre distribution (<em>Ubuntu</em>, <em>Fedora</em>, etc.).</p>
+<p>Si vous êtes sur <strong>macOS</strong>, <a href="https://graphviz.org/download/#mac" target="_blank">cliquez ici</a> puis exécutez l'une des commandes indiquées.</p>
+</details>
+<h2 id="operations-de-base">Opérations de base</h2>
+<p>Intéressons-nous d'abord aux <strong>opérations de base</strong> pouvant être effectuées sur notre arbre.</p>
+<p>On définira ces opérations sous les deux formes suivantes :</p>
+<ul>
+<li>avec des <strong>méthodes</strong> dans notre classe,</li>
+<li>avec des <strong>fonctions d'interface en dehors de la classe</strong>, qui prendront un objet de type <code>Arbre</code> en entrée.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>On pourra donc effectuer nos opérations de base de deux manières différentes.
+Si l'on crée un <strong>arbre binaire</strong> dans une variable <code>mon_arbre</code> et que l'on souhaite, par exemple, récupérer la valeur de sa racine, on pourra soit écrire <code>valeur_racine(mon_arbre)</code>, soit <code>mon_arbre.valeur_racine()</code>.</p>
+<p>On a choisi de faire ainsi pour simplifier les choses et éviter les confusions, mais il faut bien faire la différences entre l'appel de <strong>méthodes</strong> associées à un objet, et l'appel de <strong>fonctions</strong> définies hors d'une classe.</p>
+</div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="sd">&#39;&#39;&#39; Classe implémentant un Arbre Binaire. &#39;&#39;&#39;</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="k">class</span> <span class="nc">Arbre</span><span class="p">:</span>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valeur</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gauche</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">droite</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Crée un nouvel arbre binaire.</span>
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="sd">        :param valeur: (int|str) La valeur du noeud racine, soit un entier, soit une chaîne de caractères</span>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="sd">        :param gauche: (Arbre) Le sous-arbre binaire gauche (None pour arbre binaire vide)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="sd">        :param droite: (Arbre) Le sous-arbre binaire droit (None pour arbre binaire vide)</span>
+<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="sd">        :CU: Si valeur est à None, gauche et droite doivent être également à None (cas de l&#39;arbre vide),</span>
+<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="sd">        sinon, gauche et droite doivent être de type Arbre. &#39;&#39;&#39;</span>
+<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="k">assert</span> <span class="p">(</span><span class="n">valeur</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">gauche</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">droite</span> <span class="o">==</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> \
+<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>               <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">valeur</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">gauche</span><span class="p">)</span> <span class="o">==</span> <span class="n">Arbre</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">droite</span><span class="p">)</span> <span class="o">==</span> <span class="n">Arbre</span><span class="p">)</span>
+<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">valeur</span>
+<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">gauche</span>
+<a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="n">droite</span>
+<a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>
+<a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>    <span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Renvoie True si l&#39;arbre binaire est vide, False s&#39;il ne l&#39;est pas. &#39;&#39;&#39;</span>
+<a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+<a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        <span class="k">pass</span>
+<a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>
+<a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>    <span class="k">def</span> <span class="nf">racine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Renvoie le Noeud racine de l&#39;arbre binaire.</span>
+<a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="sd">        :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>
+<a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a>        <span class="k">pass</span>
+<a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+<a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>    <span class="k">def</span> <span class="nf">valeur_racine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Renvoie la valeur de la racine de l&#39;arbre binaire.</span>
+<a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a><span class="sd">        :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>
+<a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>        <span class="k">pass</span>
+<a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>
+<a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a>    <span class="k">def</span> <span class="nf">gauche</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Renvoie le sous-arbre gauche de l&#39;arbre binaire.</span>
+<a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a><span class="sd">        :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>
+<a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>        <span class="k">pass</span>
+<a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>
+<a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>    <span class="k">def</span> <span class="nf">droite</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Renvoie le sous-arbre droit de l&#39;arbre binaire.</span>
+<a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a><span class="sd">        :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a>        <span class="k">pass</span>
+<a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>
+<a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>    <span class="k">def</span> <span class="nf">est_feuille</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Renvoie True si l&#39;arbre binaire est une feuille, False s&#39;il ne l&#39;est pas.</span>
+<a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a><span class="sd">        :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a>
+<a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>        <span class="k">pass</span>
+<a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>
+<a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a><span class="c1"># Les fonctions d&#39;interface (vous pouvez les utiliser au lieu des méthodes, au choix), à compléter :</span>
+<a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>
+<a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie True si l&#39;arbre binaire ab est vide, False sinon. &#39;&#39;&#39;</span>
+<a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>
+<a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>    <span class="k">pass</span>
+<a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>
+<a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a><span class="k">def</span> <span class="nf">racine</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Arbre</span><span class="p">:</span>
+<a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie le Noeud racine de l&#39;arbre binaire.</span>
+<a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="sd">    :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>
+<a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>    <span class="k">pass</span>
+<a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>
+<a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a><span class="k">def</span> <span class="nf">valeur_racine</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;int|str&#39;</span><span class="p">:</span>
+<a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie la valeur de la racine de l&#39;arbre binaire.</span>
+<a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a><span class="sd">    :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>
+<a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a>    <span class="k">pass</span>
+<a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a>
+<a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a><span class="k">def</span> <span class="nf">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Arbre</span><span class="p">:</span>
+<a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie le sous-arbre gauche de l&#39;arbre binaire.</span>
+<a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a><span class="sd">    :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>
+<a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>    <span class="k">pass</span>
+<a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>
+<a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a><span class="k">def</span> <span class="nf">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Arbre</span><span class="p">:</span>
+<a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie le sous-arbre droit de l&#39;arbre binaire.</span>
+<a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a><span class="sd">    :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>
+<a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>    <span class="k">pass</span>
+<a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>
+<a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a><span class="k">def</span> <span class="nf">est_feuille</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie True si l&#39;arbre binaire est une feuille, False s&#39;il ne l&#39;est pas.</span>
+<a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a><span class="sd">    :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-1-87" name="__codelineno-1-87" href="#__codelineno-1-87"></a>
+<a id="__codelineno-1-88" name="__codelineno-1-88" href="#__codelineno-1-88"></a>    <span class="k">pass</span>
+</code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Dans cette implémentation, on n'utilise pas de classe <code>Noeud</code> pour représenter les <strong>noeuds</strong> de l'arbre (ce qui diffère du <em>type abstrait</em>). On considère que le <strong>noeud racine</strong> d'un arbre est l'<strong>arbre lui-même</strong>. La méthode nommée <code>racine</code> renverra donc simplement <strong>l'adresse de l'instance de la classe <code>Arbre</code></strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Complétez le corps de chaque méthode de la classe <code>Arbre</code>.</p>
+</div>
+<details class="tip">
+<summary>Solution</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="sd">&#39;&#39;&#39; Classe implémentant un Arbre Binaire. &#39;&#39;&#39;</span>
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>
+<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="k">class</span> <span class="nc">Arbre</span><span class="p">:</span>
+<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">valeur</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">gauche</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">droite</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Crée un nouvel arbre binaire.</span>
+<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sd">        :param valeur: (int|str) La valeur du noeud racine, soit un entier, soit une chaîne de caractères</span>
+<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="sd">        :param gauche: (Arbre) Le sous-arbre binaire gauche (None pour arbre binaire vide)</span>
+<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="sd">        :param droite: (Arbre) Le sous-arbre binaire droit (None pour arbre binaire vide)</span>
+<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="sd">        :CU: Si valeur est à None, gauche et droite doivent être également à None (cas de l&#39;arbre vide),</span>
+<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="sd">        sinon, gauche et droite doivent être de type Arbre. &#39;&#39;&#39;</span>
+<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>
+<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="k">assert</span> <span class="p">(</span><span class="n">valeur</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">gauche</span> <span class="o">==</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">droite</span> <span class="o">==</span> <span class="kc">None</span><span class="p">)</span> <span class="ow">or</span> \
+<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>               <span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">valeur</span><span class="p">)</span> <span class="ow">in</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">str</span><span class="p">)</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">gauche</span><span class="p">)</span> <span class="o">==</span> <span class="n">Arbre</span> <span class="ow">and</span> <span class="nb">type</span><span class="p">(</span><span class="n">droite</span><span class="p">)</span> <span class="o">==</span> <span class="n">Arbre</span><span class="p">)</span>
+<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>
+<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">=</span> <span class="n">valeur</span>
+<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">g</span> <span class="o">=</span> <span class="n">gauche</span>
+<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">d</span> <span class="o">=</span> <span class="n">droite</span>
+<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>
+<a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>    <span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Renvoie True si l&#39;arbre binaire est vide, False s&#39;il ne l&#39;est pas. &#39;&#39;&#39;</span>
+<a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>
+<a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span> <span class="o">==</span> <span class="kc">None</span>
+<a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>
+<a id="__codelineno-2-24" name="__codelineno-2-24" href="#__codelineno-2-24"></a>    <span class="k">def</span> <span class="nf">racine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-2-25" name="__codelineno-2-25" href="#__codelineno-2-25"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Renvoie le Noeud racine de l&#39;arbre binaire.</span>
+<a id="__codelineno-2-26" name="__codelineno-2-26" href="#__codelineno-2-26"></a><span class="sd">        :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-2-27" name="__codelineno-2-27" href="#__codelineno-2-27"></a>
+<a id="__codelineno-2-28" name="__codelineno-2-28" href="#__codelineno-2-28"></a>        <span class="k">return</span> <span class="bp">self</span>
+<a id="__codelineno-2-29" name="__codelineno-2-29" href="#__codelineno-2-29"></a>
+<a id="__codelineno-2-30" name="__codelineno-2-30" href="#__codelineno-2-30"></a>    <span class="k">def</span> <span class="nf">valeur_racine</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-2-31" name="__codelineno-2-31" href="#__codelineno-2-31"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Renvoie la valeur de la racine de l&#39;arbre binaire.</span>
+<a id="__codelineno-2-32" name="__codelineno-2-32" href="#__codelineno-2-32"></a><span class="sd">        :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-2-33" name="__codelineno-2-33" href="#__codelineno-2-33"></a>
+<a id="__codelineno-2-34" name="__codelineno-2-34" href="#__codelineno-2-34"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">v</span>
+<a id="__codelineno-2-35" name="__codelineno-2-35" href="#__codelineno-2-35"></a>
+<a id="__codelineno-2-36" name="__codelineno-2-36" href="#__codelineno-2-36"></a>    <span class="k">def</span> <span class="nf">gauche</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-2-37" name="__codelineno-2-37" href="#__codelineno-2-37"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Renvoie le sous-arbre gauche de l&#39;arbre binaire.</span>
+<a id="__codelineno-2-38" name="__codelineno-2-38" href="#__codelineno-2-38"></a><span class="sd">        :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-2-39" name="__codelineno-2-39" href="#__codelineno-2-39"></a>
+<a id="__codelineno-2-40" name="__codelineno-2-40" href="#__codelineno-2-40"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">g</span>
+<a id="__codelineno-2-41" name="__codelineno-2-41" href="#__codelineno-2-41"></a>
+<a id="__codelineno-2-42" name="__codelineno-2-42" href="#__codelineno-2-42"></a>    <span class="k">def</span> <span class="nf">droite</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-2-43" name="__codelineno-2-43" href="#__codelineno-2-43"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Renvoie le sous-arbre droit de l&#39;arbre binaire.</span>
+<a id="__codelineno-2-44" name="__codelineno-2-44" href="#__codelineno-2-44"></a><span class="sd">        :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-2-45" name="__codelineno-2-45" href="#__codelineno-2-45"></a>
+<a id="__codelineno-2-46" name="__codelineno-2-46" href="#__codelineno-2-46"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">d</span>
+<a id="__codelineno-2-47" name="__codelineno-2-47" href="#__codelineno-2-47"></a>
+<a id="__codelineno-2-48" name="__codelineno-2-48" href="#__codelineno-2-48"></a>    <span class="k">def</span> <span class="nf">est_feuille</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+<a id="__codelineno-2-49" name="__codelineno-2-49" href="#__codelineno-2-49"></a><span class="w">        </span><span class="sd">&#39;&#39;&#39; Renvoie True si l&#39;arbre binaire est une feuille, False s&#39;il ne l&#39;est pas.</span>
+<a id="__codelineno-2-50" name="__codelineno-2-50" href="#__codelineno-2-50"></a><span class="sd">        :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-2-51" name="__codelineno-2-51" href="#__codelineno-2-51"></a>
+<a id="__codelineno-2-52" name="__codelineno-2-52" href="#__codelineno-2-52"></a>        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">gauche</span><span class="p">()</span><span class="o">.</span><span class="n">est_vide</span><span class="p">()</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">droite</span><span class="p">()</span><span class="o">.</span><span class="n">est_vide</span><span class="p">()</span>
+<a id="__codelineno-2-53" name="__codelineno-2-53" href="#__codelineno-2-53"></a>
+<a id="__codelineno-2-54" name="__codelineno-2-54" href="#__codelineno-2-54"></a><span class="c1"># Les fonctions d&#39;interface (vous pouvez les utiliser au lieu des méthodes de classe, au choix) :</span>
+<a id="__codelineno-2-55" name="__codelineno-2-55" href="#__codelineno-2-55"></a>
+<a id="__codelineno-2-56" name="__codelineno-2-56" href="#__codelineno-2-56"></a><span class="k">def</span> <span class="nf">est_vide</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-2-57" name="__codelineno-2-57" href="#__codelineno-2-57"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie True si l&#39;arbre binaire ab est vide, False sinon. &#39;&#39;&#39;</span>
+<a id="__codelineno-2-58" name="__codelineno-2-58" href="#__codelineno-2-58"></a>
+<a id="__codelineno-2-59" name="__codelineno-2-59" href="#__codelineno-2-59"></a>    <span class="k">return</span> <span class="n">ab</span><span class="o">.</span><span class="n">v</span> <span class="o">==</span> <span class="kc">None</span>
+<a id="__codelineno-2-60" name="__codelineno-2-60" href="#__codelineno-2-60"></a>
+<a id="__codelineno-2-61" name="__codelineno-2-61" href="#__codelineno-2-61"></a><span class="k">def</span> <span class="nf">racine</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Arbre</span><span class="p">:</span>
+<a id="__codelineno-2-62" name="__codelineno-2-62" href="#__codelineno-2-62"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie le Noeud racine de l&#39;arbre binaire.</span>
+<a id="__codelineno-2-63" name="__codelineno-2-63" href="#__codelineno-2-63"></a><span class="sd">    :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-2-64" name="__codelineno-2-64" href="#__codelineno-2-64"></a>
+<a id="__codelineno-2-65" name="__codelineno-2-65" href="#__codelineno-2-65"></a>    <span class="k">return</span> <span class="n">ab</span>
+<a id="__codelineno-2-66" name="__codelineno-2-66" href="#__codelineno-2-66"></a>
+<a id="__codelineno-2-67" name="__codelineno-2-67" href="#__codelineno-2-67"></a><span class="k">def</span> <span class="nf">valeur_racine</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s1">&#39;int|str&#39;</span><span class="p">:</span>
+<a id="__codelineno-2-68" name="__codelineno-2-68" href="#__codelineno-2-68"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie la valeur de la racine de l&#39;arbre binaire.</span>
+<a id="__codelineno-2-69" name="__codelineno-2-69" href="#__codelineno-2-69"></a><span class="sd">    :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-2-70" name="__codelineno-2-70" href="#__codelineno-2-70"></a>
+<a id="__codelineno-2-71" name="__codelineno-2-71" href="#__codelineno-2-71"></a>    <span class="k">return</span> <span class="n">ab</span><span class="o">.</span><span class="n">v</span>
+<a id="__codelineno-2-72" name="__codelineno-2-72" href="#__codelineno-2-72"></a>
+<a id="__codelineno-2-73" name="__codelineno-2-73" href="#__codelineno-2-73"></a><span class="k">def</span> <span class="nf">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Arbre</span><span class="p">:</span>
+<a id="__codelineno-2-74" name="__codelineno-2-74" href="#__codelineno-2-74"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie le sous-arbre gauche de l&#39;arbre binaire.</span>
+<a id="__codelineno-2-75" name="__codelineno-2-75" href="#__codelineno-2-75"></a><span class="sd">    :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-2-76" name="__codelineno-2-76" href="#__codelineno-2-76"></a>
+<a id="__codelineno-2-77" name="__codelineno-2-77" href="#__codelineno-2-77"></a>    <span class="k">return</span> <span class="n">ab</span><span class="o">.</span><span class="n">g</span>
+<a id="__codelineno-2-78" name="__codelineno-2-78" href="#__codelineno-2-78"></a>
+<a id="__codelineno-2-79" name="__codelineno-2-79" href="#__codelineno-2-79"></a><span class="k">def</span> <span class="nf">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Arbre</span><span class="p">:</span>
+<a id="__codelineno-2-80" name="__codelineno-2-80" href="#__codelineno-2-80"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie le sous-arbre droit de l&#39;arbre binaire.</span>
+<a id="__codelineno-2-81" name="__codelineno-2-81" href="#__codelineno-2-81"></a><span class="sd">    :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-2-82" name="__codelineno-2-82" href="#__codelineno-2-82"></a>
+<a id="__codelineno-2-83" name="__codelineno-2-83" href="#__codelineno-2-83"></a>    <span class="k">return</span> <span class="n">ab</span><span class="o">.</span><span class="n">d</span>
+<a id="__codelineno-2-84" name="__codelineno-2-84" href="#__codelineno-2-84"></a>
+<a id="__codelineno-2-85" name="__codelineno-2-85" href="#__codelineno-2-85"></a><span class="k">def</span> <span class="nf">est_feuille</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-2-86" name="__codelineno-2-86" href="#__codelineno-2-86"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie True si l&#39;arbre binaire est une feuille, False s&#39;il ne l&#39;est pas.</span>
+<a id="__codelineno-2-87" name="__codelineno-2-87" href="#__codelineno-2-87"></a><span class="sd">    :CU: L&#39;arbre n&#39;est PAS vide &#39;&#39;&#39;</span>
+<a id="__codelineno-2-88" name="__codelineno-2-88" href="#__codelineno-2-88"></a>
+<a id="__codelineno-2-89" name="__codelineno-2-89" href="#__codelineno-2-89"></a>    <span class="k">return</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span> <span class="ow">and</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+</code></pre></div>
+</details>
+<h2 id="creation-dun-nouvel-arbre">Création d'un nouvel arbre</h2>
+<p>Essayons de créer l'arbre suivant en utilisant notre classe <code>Arbre</code> :</p>
+<figure>
+<p><img alt="Dessin d'un arbre binaire" src="../images/arbre_implementation.png" width="350px" />
+  </p>
+<figcaption>Arbre binaire créé avec la classe Arbre</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>L'affichage avec <code>Graphviz</code> ne permettant pas toujours de bien distinguer visuellement les sous-arbres gauches des sous-arbres droits, on a ajouté l'information <code>G</code> ou <code>D</code> sur chaque <strong>arête</strong>, indiquant respectivement qu'il s'agit du <strong>sous-arbre gauche</strong> ou du <strong>sous-arbre droit</strong>.</p>
+</div>
+<p>Voici une instruction permettant de <strong>créer cet arbre</strong> à l'aide de notre classe <code>Arbre</code> et de le stocker dans une variable <code>a</code> :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>              <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span>
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>                    <span class="n">Arbre</span><span class="p">(),</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>                    <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span>
+<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>                          <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">Arbre</span><span class="p">()),</span>
+<a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>                          <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">Arbre</span><span class="p">())</span>
+<a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>                          <span class="p">)</span>
+<a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>                    <span class="p">),</span>
+<a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>              <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span>
+<a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>                    <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">Arbre</span><span class="p">()),</span>
+<a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>                    <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">Arbre</span><span class="p">())</span>
+<a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>                    <span class="p">)</span>
+<a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>              <span class="p">)</span>
+</code></pre></div>
+<p>Bien sûr, on aurait pu l'écrire sur une seule ligne :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">Arbre</span><span class="p">()),</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">Arbre</span><span class="p">()))),</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">Arbre</span><span class="p">()),</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">Arbre</span><span class="p">())))</span>
+</code></pre></div>
+<p>On aurait également pu créer plusieurs variables de manière à décomposer l'<strong>arbre</strong> :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>    <span class="c1"># Création des feuilles</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>    <span class="n">fd</span> <span class="o">=</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">Arbre</span><span class="p">())</span>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    <span class="n">ff</span> <span class="o">=</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">Arbre</span><span class="p">())</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">fg</span> <span class="o">=</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;G&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">Arbre</span><span class="p">())</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">fe</span> <span class="o">=</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;E&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">Arbre</span><span class="p">())</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="c1"># Création des sous-arbres</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">sah</span> <span class="o">=</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;H&#39;</span><span class="p">,</span> <span class="n">fd</span><span class="p">,</span> <span class="n">ff</span><span class="p">)</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="n">sab</span> <span class="o">=</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="n">fg</span><span class="p">,</span> <span class="n">fe</span><span class="p">)</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="n">saa</span> <span class="o">=</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="n">Arbre</span><span class="p">(),</span> <span class="n">sah</span><span class="p">)</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>    <span class="c1"># Création de l&#39;arbre final</span>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="n">ab</span> <span class="o">=</span> <span class="n">Arbre</span><span class="p">(</span><span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="n">saa</span><span class="p">,</span> <span class="n">sab</span><span class="p">)</span>
+</code></pre></div>
+<p>Enfin, pour <strong>dessiner</strong> cet arbre, on peut utiliser la fonction <strong>dessiner</strong> importée depuis <code>dessin.py</code> :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>    <span class="n">dessiner</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span>
+</code></pre></div>
+<p>Si l'on souhaite accéder par exemple au <strong>noeud ayant pour valeur B</strong>, qui est équivalent à l'<strong>arbre</strong> dont <code>valeur_racine() == 'B'</code>, on utilisera l'instruction :</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>    <span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span><span class="o">.</span><span class="n">racine</span><span class="p">()</span>
+</code></pre></div>
+ou simplement</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>    <span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span>
+</code></pre></div>
+<p>et si on veut récupérer la <strong>valeur</strong> de ce <strong>noeud</strong> :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>    <span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span><span class="o">.</span><span class="n">valeur_racine</span><span class="p">()</span>
+</code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Comment récupérer la <strong>feuille</strong> ayant pour valeur <strong>D</strong> ?</p>
+</div>
+<details class="tip">
+<summary>Solution</summary>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>    <span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span><span class="o">.</span><span class="n">droite</span><span class="p">()</span><span class="o">.</span><span class="n">gauche</span><span class="p">()</span><span class="o">.</span><span class="n">racine</span><span class="p">()</span>
+</code></pre></div>
+ou simplement</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>    <span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span><span class="o">.</span><span class="n">droite</span><span class="p">()</span><span class="o">.</span><span class="n">gauche</span><span class="p">()</span>
+</code></pre></div>
+<p>et pour récupérer la <strong>valeur</strong> qu'elle contient :</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>    <span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span><span class="o">.</span><span class="n">droite</span><span class="p">()</span><span class="o">.</span><span class="n">gauche</span><span class="p">()</span><span class="o">.</span><span class="n">valeur_racine</span><span class="p">()</span>
+</code></pre></div>
+</details>
+<h2 id="quelques-mesures-sur-les-arbres">Quelques mesures sur les arbres</h2>
+<div class="admonition warning">
+<p class="admonition-title">Important</p>
+<p>Pour les mesures suivantes, on considèrera que la <strong>profondeur du noeud racine</strong> est de <strong>0</strong>. Ainsi, on considèrera que la <strong>hauteur</strong> de l'<strong>arbre vide</strong> est de <strong>-1</strong>. Il s'agit d'un choix arbitraire, on aurait très bien pu choisir une profondeur de 1 pour le noeud racine (auquel cas l'arbre vide serait de hauteur 0).</p>
+</div>
+<p>On rappelle que pour écrire des fonctions de manière <strong>récursive</strong>, vous devez toujours distinguer :</p>
+<ul>
+<li>au moins un <strong>cas de base</strong> (condition d'arrêt), qui ici peut être par exemple le cas où l'<strong>arbre est vide</strong> ou encore le cas où l'<strong>arbre est une feuille</strong>. Un cas de base est un cas <strong>non récursif</strong>, pour lequel la valeur renvoyée par la fonction est directement définie.</li>
+<li>au moins un <strong>cas général</strong>, ou <strong>cas récursif</strong>, c'est-à-dire un cas dans lequel la fonction est appelée récursivement et où le résultat renvoyé est calculé en utilisant le résultat du (ou des) appel(s) récursif(s). À chaque appel récursif, la valeur d'au moins un des
+paramètres de la fonction doit changer, de manière à <strong>converger vers le cas de base</strong>.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Complétez les fonctions <code>taille</code>, <code>hauteur</code>, <code>nb_feuilles</code> et <code>est_present</code>. Ces fonctions doivent être écrites de manière <strong>récursive</strong>.</p>
+</div>
+<details class="question">
+<summary>Indice pour la fonction <code>taille</code></summary>
+<p>Pour écrire cette fonction, qui doit fonctionner autant sur un <strong>arbre vide</strong> que sur un <strong>arbre non vide</strong>, il convient d'abord de déterminer un <strong>cas de base</strong>, c'est-à-dire un cas <strong>non récursif</strong> de manière à ce que l'algorithme s'arrête à un moment donné.<br />
+Sur quel type d'arbres la fonction <code>taille</code> renverra <strong>toujours la même valeur</strong> ?</p>
+<ul>
+<li>Si l'on cherche la <strong>taille</strong> d'un <strong>arbre vide</strong>, on obtiendra <strong>toujours 0</strong> car un arbre vide ne contient <strong>pas de noeuds</strong>. C'est donc là notre <strong>cas de base</strong>.</li>
+</ul>
+<p>Ensuite, il faut détermine un cas général, c'est-à-dire un cas où l'on effectue un ou plusieurs appels récursifs à <code>taille</code>.</p>
+<ul>
+<li>Si l'on cherche la <em>taille</em> d'un <strong>arbre non vide</strong>, c'est-à-dire d'un arbre constitué d'un <strong>noeud racine</strong>, d'un <strong>sous-arbre gauche</strong> et d'un <strong>sous-arbre droit</strong>, on peut alors établir que la <strong>taille de l'arbre</strong> correspond à <em>1 (on compte le noeud racine) + la taille du sous-arbre gauche + la taille du sous-arbre droit</em>.<br />Au fur et à mesure des appels récursifs, on convergera vers le cas où l'arbre est vide, et donc la fonction finira par se terminer.</li>
+</ul>
+<p>Maintenant que l'on a déterminé ces deux cas en français, il ne reste plus qu'à les retranscrire en Python.</p>
+</details>
+<details class="question">
+<summary>Indice pour la fonction <code>hauteur</code></summary>
+<p>Cette fonction est assez proche de la fonction <code>taille</code>.
+On doit pouvoir déterminer la <strong>hauteur</strong> d'un arbre vide ou non.</p>
+<p>La <strong>profondeur du noeud racine</strong> est de <strong>0</strong>.</p>
+<ul>
+<li>On considèrera que la <strong>hauteur d'un arbre vide</strong> est <strong>toujours</strong> de <strong>-1</strong>, ce sera donc le <strong>cas de base</strong>.</li>
+<li>Pour le <strong>cas général</strong> (arbre <em>non vide</em>), il faut compter la <strong>racine</strong>, donc ajouter <strong>1</strong> à la hauteur de l'arbre, puis y ajouter <strong>la plus grande hauteur entre celle du sous-arbre gauche et celle du sous-arbre droit</strong> (appels récursifs).</li>
+</ul>
+<p><em>Note</em> : La fonction Python <code>max</code> permet de déterminer la plus grande valeur entière parmi plusieurs valeurs.</p>
+</details>
+<details class="tip">
+<summary>Solutions</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">def</span> <span class="nf">taille</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie la taille d&#39;un arbre. &#39;&#39;&#39;</span>
+<a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
+<a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a>    <span class="k">if</span> <span class="n">ab</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+<a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="n">taille</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span> <span class="o">+</span> <span class="n">taille</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
+<a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="k">def</span> <span class="nf">hauteur</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie la hauteur d&#39;un arbre. &#39;&#39;&#39;</span>
+<a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>
+<a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>    <span class="k">if</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">ab</span><span class="p">):</span>
+<a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a>        <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+<a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a>        <span class="k">return</span> <span class="mi">1</span> <span class="o">+</span> <span class="nb">max</span><span class="p">(</span><span class="n">hauteur</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">)),</span> <span class="n">hauteur</span><span class="p">(</span><span class="n">ab</span><span class="o">.</span><span class="n">droite</span><span class="p">()))</span>
+<a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>
+<a id="__codelineno-13-17" name="__codelineno-13-17" href="#__codelineno-13-17"></a><span class="k">def</span> <span class="nf">nb_feuilles</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<a id="__codelineno-13-18" name="__codelineno-13-18" href="#__codelineno-13-18"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie le nombre de feuilles d&#39;un arbre binaire. &#39;&#39;&#39;</span>
+<a id="__codelineno-13-19" name="__codelineno-13-19" href="#__codelineno-13-19"></a>
+<a id="__codelineno-13-20" name="__codelineno-13-20" href="#__codelineno-13-20"></a>    <span class="k">if</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">ab</span><span class="p">):</span>
+<a id="__codelineno-13-21" name="__codelineno-13-21" href="#__codelineno-13-21"></a>        <span class="k">return</span> <span class="mi">0</span>
+<a id="__codelineno-13-22" name="__codelineno-13-22" href="#__codelineno-13-22"></a>    <span class="k">elif</span> <span class="n">est_feuille</span><span class="p">(</span><span class="n">ab</span><span class="p">):</span>
+<a id="__codelineno-13-23" name="__codelineno-13-23" href="#__codelineno-13-23"></a>        <span class="k">return</span> <span class="mi">1</span>
+<a id="__codelineno-13-24" name="__codelineno-13-24" href="#__codelineno-13-24"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-13-25" name="__codelineno-13-25" href="#__codelineno-13-25"></a>        <span class="k">return</span> <span class="n">nb_feuilles</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">a</span><span class="p">))</span> <span class="o">+</span> <span class="n">nb_feuilles</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<a id="__codelineno-13-26" name="__codelineno-13-26" href="#__codelineno-13-26"></a>
+<a id="__codelineno-13-27" name="__codelineno-13-27" href="#__codelineno-13-27"></a><span class="k">def</span> <span class="nf">est_present</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">,</span> <span class="n">el</span><span class="p">:</span> <span class="s1">&#39;int|str&#39;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+<a id="__codelineno-13-28" name="__codelineno-13-28" href="#__codelineno-13-28"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie True si un noeud contenant l&#39;élément el est présent dans l&#39;arbre, False sinon. &#39;&#39;&#39;</span>
+<a id="__codelineno-13-29" name="__codelineno-13-29" href="#__codelineno-13-29"></a>
+<a id="__codelineno-13-30" name="__codelineno-13-30" href="#__codelineno-13-30"></a>    <span class="k">if</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">ab</span><span class="p">):</span>
+<a id="__codelineno-13-31" name="__codelineno-13-31" href="#__codelineno-13-31"></a>        <span class="k">return</span> <span class="kc">False</span>
+<a id="__codelineno-13-32" name="__codelineno-13-32" href="#__codelineno-13-32"></a>    <span class="k">elif</span> <span class="n">valeur_racine</span><span class="p">(</span><span class="n">ab</span><span class="p">)</span> <span class="o">==</span> <span class="n">el</span><span class="p">:</span>
+<a id="__codelineno-13-33" name="__codelineno-13-33" href="#__codelineno-13-33"></a>        <span class="k">return</span> <span class="kc">True</span>
+<a id="__codelineno-13-34" name="__codelineno-13-34" href="#__codelineno-13-34"></a>    <span class="k">else</span><span class="p">:</span>
+<a id="__codelineno-13-35" name="__codelineno-13-35" href="#__codelineno-13-35"></a>        <span class="k">return</span> <span class="n">est_present</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">el</span><span class="p">)</span> <span class="ow">or</span> <span class="n">est_present</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">a</span><span class="p">),</span> <span class="n">el</span><span class="p">)</span>
+</code></pre></div>
+</details>
+<h2 id="parcours-darbres">Parcours d'arbres</h2>
+<h3 id="parcours-en-profondeur">Parcours en profondeur</h3>
+<p>On rappelle le déroulement des parcours <strong>préfixe</strong>, <strong>infixe</strong> et <strong>suffixe</strong> (ou <em>postfixe</em>). Dans notre implémentation, on se contentera d'<strong>afficher</strong> les <strong>noeuds visités</strong> :</p>
+<div class="admonition info">
+<p class="admonition-title">Déroulement <em>parcours préfixe</em></p>
+<p><em>Précondition</em> : L'arbre n'est pas vide<br />
+Le <code>parcours_préfixe</code> se déroule comme suit :</p>
+<ol>
+<li>On <code>affiche</code> le <strong>nœud racine</strong> de l'arbre.</li>
+<li>On effectue le <code>parcours préfixe</code> du <strong>sous-arbre gauche</strong> (s'il est NON vide).</li>
+<li>On effectue le <code>parcours préfixe</code> du <strong>sous-arbre droit</strong> (s'il est NON vide).</li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Déroulement <em>parcours suffixe</em></p>
+<p><em>Précondition</em> : L'arbre n'est pas vide<br />
+Le <code>parcours_suffixe</code> se déroule comme suit :</p>
+<ol>
+<li>On effectue le <code>parcours suffixe</code> du <strong>sous-arbre gauche</strong> (s'il est NON vide).</li>
+<li>On effectue le <code>parcours suffixe</code> du <strong>sous-arbre droit</strong> (s'il est NON vide).</li>
+<li>On <code>affiche</code> le <strong>nœud racine</strong> de l'arbre.</li>
+</ol>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Déroulement <em>parcours infixe</em></p>
+<p><em>Précondition</em> : L'arbre n'est pas vide<br />
+Le <code>parcours_infixe</code> se déroule comme suit :</p>
+<ol>
+<li>On effectue le <code>parcours infixe</code> du <strong>sous-arbre gauche</strong> (s'il est NON vide).</li>
+<li>On <code>affiche</code> le <strong>nœud racine</strong> de l'arbre.</li>
+<li>On effectue le <code>parcours infixe</code> du <strong>sous-arbre droit</strong> (s'il est NON vide).</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Implémentez les algorithmes de parcours en profondeur <strong>préfixe</strong>, <strong>infixe</strong> et <strong>postfixe</strong> de manière <strong>récursive</strong>.</p>
+</div>
+<details class="tip">
+<summary>Solutions</summary>
+<p>On a défini chaque parcours <strong>de deux façons différentes</strong> :</p>
+<ul>
+<li>une fonction qui <strong>ne renvoie rien</strong> et se contente <strong>d'afficher</strong> chaque <strong>valeur de nœud</strong> en suivant l'ordre de parcours en question,</li>
+<li>une fonction qui <strong>renvoie une liste</strong> contenant les <strong>valeurs des nœuds</strong> visités selon l'ordre de parcours en question.</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">def</span> <span class="nf">parcours_prefixe</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Affiche les valeurs des noeuds de l&#39;arbre parcourus en ordre préfixe. &#39;&#39;&#39;</span>
+<a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>
+<a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">valeur_racine</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">)):</span>
+<a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>        <span class="n">parcours_prefixe</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">)):</span>
+<a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>        <span class="n">parcours_prefixe</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>
+<a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a><span class="k">def</span> <span class="nf">parcours_prefixe_l</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<a id="__codelineno-14-11" name="__codelineno-14-11" href="#__codelineno-14-11"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie une liste des valeurs des noeuds de l&#39;arbre parcourus en ordre préfixe. &#39;&#39;&#39;</span>
+<a id="__codelineno-14-12" name="__codelineno-14-12" href="#__codelineno-14-12"></a>
+<a id="__codelineno-14-13" name="__codelineno-14-13" href="#__codelineno-14-13"></a>    <span class="n">res</span> <span class="o">=</span> <span class="p">[</span><span class="n">valeur_racine</span><span class="p">(</span><span class="n">ab</span><span class="p">)]</span>
+<a id="__codelineno-14-14" name="__codelineno-14-14" href="#__codelineno-14-14"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">)):</span>
+<a id="__codelineno-14-15" name="__codelineno-14-15" href="#__codelineno-14-15"></a>        <span class="n">res</span> <span class="o">+=</span> <span class="n">parcours_prefixe_l</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-16" name="__codelineno-14-16" href="#__codelineno-14-16"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">)):</span>
+<a id="__codelineno-14-17" name="__codelineno-14-17" href="#__codelineno-14-17"></a>        <span class="n">res</span> <span class="o">+=</span> <span class="n">parcours_prefixe_l</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-18" name="__codelineno-14-18" href="#__codelineno-14-18"></a>    <span class="k">return</span> <span class="n">res</span>
+<a id="__codelineno-14-19" name="__codelineno-14-19" href="#__codelineno-14-19"></a>
+<a id="__codelineno-14-20" name="__codelineno-14-20" href="#__codelineno-14-20"></a><span class="k">def</span> <span class="nf">parcours_suffixe</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-14-21" name="__codelineno-14-21" href="#__codelineno-14-21"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Affiche les valeurs des noeuds de l&#39;arbre parcourus en ordre suffixe. &#39;&#39;&#39;</span>
+<a id="__codelineno-14-22" name="__codelineno-14-22" href="#__codelineno-14-22"></a>
+<a id="__codelineno-14-23" name="__codelineno-14-23" href="#__codelineno-14-23"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">)):</span>
+<a id="__codelineno-14-24" name="__codelineno-14-24" href="#__codelineno-14-24"></a>        <span class="n">parcours_suffixe</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-25" name="__codelineno-14-25" href="#__codelineno-14-25"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">)):</span>
+<a id="__codelineno-14-26" name="__codelineno-14-26" href="#__codelineno-14-26"></a>        <span class="n">parcours_suffixe</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-27" name="__codelineno-14-27" href="#__codelineno-14-27"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">valeur_racine</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-28" name="__codelineno-14-28" href="#__codelineno-14-28"></a>
+<a id="__codelineno-14-29" name="__codelineno-14-29" href="#__codelineno-14-29"></a><span class="k">def</span> <span class="nf">parcours_suffixe_l</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<a id="__codelineno-14-30" name="__codelineno-14-30" href="#__codelineno-14-30"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie une liste des valeurs des noeuds de l&#39;arbre parcourus en ordre suffixe. &#39;&#39;&#39;</span>
+<a id="__codelineno-14-31" name="__codelineno-14-31" href="#__codelineno-14-31"></a>
+<a id="__codelineno-14-32" name="__codelineno-14-32" href="#__codelineno-14-32"></a>    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-14-33" name="__codelineno-14-33" href="#__codelineno-14-33"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">)):</span>
+<a id="__codelineno-14-34" name="__codelineno-14-34" href="#__codelineno-14-34"></a>        <span class="n">res</span> <span class="o">+=</span> <span class="n">parcours_suffixe_l</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-35" name="__codelineno-14-35" href="#__codelineno-14-35"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">)):</span>
+<a id="__codelineno-14-36" name="__codelineno-14-36" href="#__codelineno-14-36"></a>        <span class="n">res</span> <span class="o">+=</span> <span class="n">parcours_suffixe_l</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-37" name="__codelineno-14-37" href="#__codelineno-14-37"></a>    <span class="n">res</span> <span class="o">+=</span> <span class="p">[</span><span class="n">valeur_racine</span><span class="p">(</span><span class="n">ab</span><span class="p">)]</span>
+<a id="__codelineno-14-38" name="__codelineno-14-38" href="#__codelineno-14-38"></a>    <span class="k">return</span> <span class="n">res</span>
+<a id="__codelineno-14-39" name="__codelineno-14-39" href="#__codelineno-14-39"></a>
+<a id="__codelineno-14-40" name="__codelineno-14-40" href="#__codelineno-14-40"></a><span class="k">def</span> <span class="nf">parcours_infixe</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-14-41" name="__codelineno-14-41" href="#__codelineno-14-41"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Affiche les valeurs des noeuds de l&#39;arbre parcourus en ordre infixe. &#39;&#39;&#39;</span>
+<a id="__codelineno-14-42" name="__codelineno-14-42" href="#__codelineno-14-42"></a>
+<a id="__codelineno-14-43" name="__codelineno-14-43" href="#__codelineno-14-43"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">)):</span>
+<a id="__codelineno-14-44" name="__codelineno-14-44" href="#__codelineno-14-44"></a>        <span class="n">parcours_infixe</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-45" name="__codelineno-14-45" href="#__codelineno-14-45"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">valeur_racine</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-46" name="__codelineno-14-46" href="#__codelineno-14-46"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">)):</span>
+<a id="__codelineno-14-47" name="__codelineno-14-47" href="#__codelineno-14-47"></a>        <span class="n">parcours_infixe</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-48" name="__codelineno-14-48" href="#__codelineno-14-48"></a>
+<a id="__codelineno-14-49" name="__codelineno-14-49" href="#__codelineno-14-49"></a><span class="k">def</span> <span class="nf">parcours_infixe_l</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+<a id="__codelineno-14-50" name="__codelineno-14-50" href="#__codelineno-14-50"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie une liste des valeurs des noeuds de l&#39;arbre parcourus en ordre infixe. &#39;&#39;&#39;</span>
+<a id="__codelineno-14-51" name="__codelineno-14-51" href="#__codelineno-14-51"></a>
+<a id="__codelineno-14-52" name="__codelineno-14-52" href="#__codelineno-14-52"></a>    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-14-53" name="__codelineno-14-53" href="#__codelineno-14-53"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">)):</span>
+<a id="__codelineno-14-54" name="__codelineno-14-54" href="#__codelineno-14-54"></a>        <span class="n">res</span> <span class="o">+=</span> <span class="n">parcours_infixe_l</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-55" name="__codelineno-14-55" href="#__codelineno-14-55"></a>    <span class="n">res</span> <span class="o">+=</span> <span class="p">[</span><span class="n">valeur_racine</span><span class="p">(</span><span class="n">ab</span><span class="p">)]</span>
+<a id="__codelineno-14-56" name="__codelineno-14-56" href="#__codelineno-14-56"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">)):</span>
+<a id="__codelineno-14-57" name="__codelineno-14-57" href="#__codelineno-14-57"></a>        <span class="n">res</span> <span class="o">+=</span> <span class="n">parcours_infixe_l</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-14-58" name="__codelineno-14-58" href="#__codelineno-14-58"></a>    <span class="k">return</span> <span class="n">res</span>
+</code></pre></div>
+</details>
+<h3 id="parcours-en-largeur">Parcours en largeur</h3>
+<p>Contrairement aux algorithmes de <strong>parcours en profondeur</strong>, on implémentera le <strong>parcours en largeur</strong> de manière <strong>itérative</strong> et non récursive.</p>
+<p>On utilisera une structure de <strong>file</strong> pour stocker les <strong>noeuds à visiter</strong>, qu'on choisira de représenter par une <em>liste Python</em>. Les opérations sur cette file sont les suivantes :</p>
+<ul>
+<li><code>file.pop(0)</code> : défiler (récupérer le premier élément de la file et le retirer de la file),</li>
+<li><code>file.append(element)</code> : enfiler (ajouter un élément à la fin de la file).</li>
+</ul>
+<p>Voici le déroulement du <strong>parcours en largeur</strong> :</p>
+<div class="admonition info">
+<p class="admonition-title">Déroulement <em>parcours en largeur</em></p>
+<p><em>Précondition</em> : L'arbre n'est pas vide<br />
+Le <code>parcours_en_largeur</code> se déroule comme suit :</p>
+<ol>
+<li>On <code>crée</code> une <strong>nouvelle file vide</strong>.</li>
+<li>On <code>enfile</code> dedans le <strong>noeud racine</strong> de l'arbre (qui est, dans notre implémentation, équivalent à l'arbre lui-même).</li>
+<li><em>TANT QUE</em> la <strong>file</strong> n'est <strong>PAS vide</strong> :<ol>
+<li>On <code>défile</code> la <strong>file</strong> et on stocke le <strong>noeud récupéré</strong> dans une variable.</li>
+<li>On <code>affiche</code> la <strong>valeur du noeud récupéré</strong>.</li>
+<li>Si le <strong>sous-arbre gauche</strong> à ce <strong>noeud</strong> n'est <strong>PAS vide</strong>, on l'<code>enfile</code> dans la <strong>file</strong>.</li>
+<li>Si le <strong>sous-arbre droit</strong> à ce <strong>noeud</strong> n'est <strong>PAS vide</strong>, on l'<code>enfile</code> dans la <strong>file</strong>.</li>
+</ol>
+</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire</p>
+<p>Implémentez l'algorithme de parcours en largeur.</p>
+</div>
+<details class="tip">
+<summary>Solution</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">def</span> <span class="nf">parcours_en_largeur</span><span class="p">(</span><span class="n">ab</span><span class="p">:</span> <span class="n">Arbre</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Affiche les valeurs des noeuds de l&#39;arbre parcourus en largeur.</span>
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="sd">    :CU: L&#39;arbre a est NON VIDE &#39;&#39;&#39;</span>
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>    <span class="n">file</span> <span class="o">=</span> <span class="p">[]</span>
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>    <span class="n">file</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">racine</span><span class="p">(</span><span class="n">ab</span><span class="p">))</span>
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>    <span class="k">while</span> <span class="n">file</span><span class="p">:</span>
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>        <span class="n">n</span> <span class="o">=</span> <span class="n">file</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">valeur_racine</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<a id="__codelineno-15-10" name="__codelineno-15-10" href="#__codelineno-15-10"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">n</span><span class="p">)):</span>
+<a id="__codelineno-15-11" name="__codelineno-15-11" href="#__codelineno-15-11"></a>            <span class="n">file</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">gauche</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+<a id="__codelineno-15-12" name="__codelineno-15-12" href="#__codelineno-15-12"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">est_vide</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">n</span><span class="p">)):</span>
+<a id="__codelineno-15-13" name="__codelineno-15-13" href="#__codelineno-15-13"></a>            <span class="n">file</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">droite</span><span class="p">(</span><span class="n">n</span><span class="p">))</span>
+</code></pre></div>
+</details>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.220ee61c.min.js"></script>
+      
+        
+          <script src="../../../javascripts/mathjax.js"></script>
+        
+      
+        
+          <script src="../../../premiere/tris/javascripts/animation_tri_selection.js"></script>
+        
+      
+        
+          <script src="../../../premiere/tris/javascripts/animation_tri_insertion.js"></script>
+        
+      
+        
+          <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        
+      
+        
+          <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        
+      
+    
+  </body>
+</html>

@@ -1,6 +1,31 @@
 site_name: Numérique et sciences informatiques
 theme:
   name: material
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    # - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.prune
+    # - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    # - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
   palette:
     # Palette toggle for light mode
     - scheme: default
@@ -14,17 +39,24 @@ theme:
       toggle:
         icon: material/weather-sunny
         name: Passer en mode jour
+  font:
+    text: Roboto
+    code: Roboto Mono
 
 site_url: https://nsi.erwandemerville.fr/
 nav:
+  - Accueil:
+    - index.md
   - Première:
+    - premiere/index.md
     - Tris:
-      - Accueil: premiere/tris/index.md
+      - premiere/tris/index.md
       - Tri par sélection: premiere/tris/tri_selection.md
       - Tri par insertion: premiere/tris/tri_insertion.md
   - Terminale:
+    - terminale/index.md
     - Arbres:
-      - Accueil: terminale/arbres/index.md
+      - terminale/arbres/index.md
       - Cours:
         - Définitions et vocabulaire: terminale/arbres/vocabulaire.md
         - Parcours d'arbres binaires: terminale/arbres/parcours.md
@@ -47,13 +79,16 @@ markdown_extensions:
       generic: true
   - pymdownx.highlight:
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - toc:
       title: Sur cette page
+      permalink: true
   - admonition
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.details
   - pymdownx.superfences
+  - pymdownx.details
   - attr_list
   - md_in_html
 
