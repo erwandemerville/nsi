@@ -28,8 +28,7 @@ theme:
     # - toc.integrate
   palette:
     # Palette toggle for light mode
-    - scheme: default
-      primary: blue grey
+    - scheme: my_theme
       toggle:
         icon: material/weather-night
         name: Passer en mode nuit
@@ -44,17 +43,29 @@ theme:
     code: Roboto Mono
 
 site_url: https://nsi.erwandemerville.fr/
+copyright: Copyright &copy; 2023 - Erwan Demerville
 nav:
   - Accueil:
     - index.md
   - Première:
     - premiere/index.md
+    - Découverte de Thonny:
+      - premiere/thonny/index.md
+    - Les bases de Python:
+      - premiere/bases_python/index.md
     - Tris:
       - premiere/tris/index.md
       - Tri par sélection: premiere/tris/tri_selection.md
       - Tri par insertion: premiere/tris/tri_insertion.md
   - Terminale:
     - terminale/index.md
+    - Modularité:
+      - terminale/modularite/index.md
+      - Activité - Utilisation d'une API: terminale/modularite/api.md
+      - Gestion de modules: terminale/modularite/modules.md
+    - Mise au point de programmes:
+      - terminale/mise_au_point/index.md
+      - Activité préliminaire: terminale/mise_au_point/preliminaire.md
     - Arbres:
       - terminale/arbres/index.md
       - Cours:

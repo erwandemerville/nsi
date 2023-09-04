@@ -1,3 +1,9 @@
 .md-typeset .admonition, .md-typeset .tip, .md-typeset .note, .md-typeset .info, .md-typeset .question, .md-typeset .warning {
   font-size: 14px;
 }
+
+[data-md-color-scheme="my_theme"] {
+  --md-primary-fg-color:        #6741a8;
+  --md-primary-fg-color--light: #6741a8;
+  --md-primary-fg-color--dark:  #6741a8;
+}
