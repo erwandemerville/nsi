@@ -2,6 +2,17 @@
 
 Une **API** (Application Programming Interface) permet aux développeurs d'**intégrer** une application à une autre. Cela peut permettre par exemple de récupérer des données structurées depuis un site web pour les exploiter de manière automatisée dans un programme.
 
+Il existe différents types d'API, notamment les **API Web** permettant d'**accéder à des données**.  
+Pour ce type d'API, une méthode consiste à émettre une **requête HTTP** permettant de récupérer des **données** sur un serveur web.
+
+Il existe différents formats structurants de données, notamment le format **XML** (proche du HTML) et le format **JSON**, qui sont devenus des standards.
+
+Voici quelques exemples d'API :
+
+- [https://openweathermap.org/api](https://openweathermap.org/api){ target="_blank" } - Diverses API concernant le climat et la météo,
+- [https://openfoodfacts.org/data](https://openfoodfacts.org/data){ target="_blank" } - Base de données collaborative, libre et ouverte des produits alimentaires du monde entier,
+- [https://openstreetmap.fr/](https://openstreetmap.fr/){ target="_blank" } - Un projet collaboratif de cartographie en ligne qui vise à constituer une base de données géographiques libre du monde, en utilisant le système GPS et d'autres données libres.
+
 ## Activité - Récupérer la météo dans un programme Python
 
 Pour cette activité, on souhaite récupérer des données sur la **météo** de différentes villes en utilisant les données fournies par l'API de [openweathermap.org](https://openweathermap.org/){ target="_blank" }.
