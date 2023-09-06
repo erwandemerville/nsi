@@ -134,9 +134,7 @@ Vous allez créer un module permettant d'effectuer un certain nombre d'opératio
 !!! note "Exercice 3"
     Complétez la fonction `moyenne` permettant de calculer la moyenne des éléments d'une liste, en utilisant la fonction `sum_lst` de `operations`.
 
-## Aller plus loin (s'il vous reste du temps)
-
-[Cliquez ici](pdf/exercices_supplementaires.pdf){ target="_blank" } pour accéder à une fiche d'exercices (issue du *Balabonski Terminale*).
+## La notion d'interface
 
 !!! quote "Extrait du *Balabonski Terminale*"
     Pour chaque module, on distingue:
@@ -158,4 +156,4 @@ Vous allez créer un module permettant d'effectuer un certain nombre d'opératio
     En Python, l'auteur d'un module peut indiquer que certains éléments sont **privés** (c'est-à-dire encapsulés) en faisant commencer leur nom par un caractère `_`. Toutefois, contrairement à d'autres langages, en **Python**, on ne peut pas réellement empêcher l'utilisation de données "privées". Il s'agit plus d'une indication tacite à destination de l'utilisateur, que celui-ci doit respecter pour garantir le bon fonctionnement du module.
 
 !!! note "Exercices"
-    Réalisez les exercice **18, 19 et 20** de la fiche PDF proposée.
+    [Cliquez ici](pdf/exercices_supplementaires.pdf){ target="_blank" } pour télécharger la fiche d'exercices (issue du *Balabonski Terminale*), puis réalisez les exercice **18, 19 et 20**.
