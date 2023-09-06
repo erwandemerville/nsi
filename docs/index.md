@@ -1,5 +1,12 @@
 # Numérique et sciences informatiques
 
+!!! warning "NSI TERMINALE - Pour le vendredi 08/09/23"
+    Je vous demande de terminer l'[activité sur les API](terminale/modularite/api.md), c'est-à-dire l'**exercice 3**. J'ai rajouté de nombreuses informations sur la page pour vous aider, n'hésitez pas à relire l'activité tranquillement chez vous.
+
+    Vous pouvez également re-télécharger le fichier `meteo.py`, j'y ai rajouté les corrections des deux premiers exercices.
+
+    Merci et à vendredi !
+
 Bienvenue, ici vous retrouverez tous les cours, exercices, activités et évaluations réalisés dans le cadre de la **spécialité NSI** (première et terminale).
 
 En cas de questionnements liés à un cours, vous pouvez me contacter à l'adresse mail suivante :  

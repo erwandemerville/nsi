@@ -23,7 +23,7 @@ Plus précisément, on utilisera la **météo actuelle**, vous pouvez vous rendr
 !!! success "À télécharger"
     - [meteo.py](src/meteo.py){ target="_blank" } : Programme initial à compléter
 
-Le module `requests` de Python permet de récupérer des données sur le web **au format JSON** et de les intégrer dans un **dictionnaire**.
+Le module `requests` de Python permet d'effectuer des **appels d'API** à l'aide de **requêtes HTTP**, et ainsi de de récupérer des données sur le web **au format JSON** et de les intégrer dans un **dictionnaire**.
 
 !!! tip "Utilisation du programme"
     Ouvrez le script `meteo.py` dans **Thonny** (ou dans votre IDE préféré), puis exécutez-le.
@@ -45,8 +45,79 @@ Le module `requests` de Python permet de récupérer des données sur le web **a
     'cod': 200}
     ```
 
+!!! tip "Remarque 1 : Les f-strings"
+    Lorsque vous souhaitez intégrer la valeur d'une variable à une chaîne de caractères, vous avez sans doute l'habitude d'utiliser la **concaténation** (avec le symbole `+`).  
+    Par exemple :
+
+    ```python
+    >>> prenom = 'Erwan'
+    >>> 'Bonjour ' + prenom + ' !'
+    'Bonjour Erwan !'
+    ```
+
+    Dans la fonction `get_weather` de notre programme, vous pouvez voir la ligne suivante (ligne **12**):
+    ```python
+    url = f"https://api.openweathermap.org/data/2.5/weather?q={ville},{PAYS}&appid={API_KEY}&units=metric"
+    ```
+
+    Ici, la chaîne de caractères créée est un peu particulière : il s'agit d'une **f-string**.  
+    Une **f-string** permet d'intégrer facilement des variables à une chaîne de caractères. Il suffit de rajouter un `f` devant la chaîne de caractères, puis de mettre le nom des variables entre accolades. De cette manière, les noms des variables entre accolades seront remplacés par la **valeur** qui leur est associée.
+
+    En reprenant l'exemple précédent :
+
+    ```python
+    >>> prenom = 'Erwan'
+    >>> f'Bonjour {prenom} !'
+    'Bonjour Erwan !'
+    ```
+
+!!! tip "Remarque 2 : Les annotations de types"
+    Chaque fonction de notre fichier `meteo.py` utilise ce que l'on appelle des **annotations de types**. Par exemple, si l'on regarde l'en-tête de la fonction `get_weather` :
+
+    ```python
+    def get_weather(ville: str) -> dict:
+    ```
+
+    Ici, on indique que la paramètre `ville` doit être de type `str` (une **chaîne de caractères**), et que la fonction doit **renvoyer** un **dictionnaire**. Il s'agit simplement d'une **indication** qui n'a aucun effet sur l'exécution du programme.
+
+    On aurait pu, à la place, donner ces indications dans la **docstring**, par exemple :
+
+    ```python
+    def get_weather(ville: str) -> dict:
+        ''' Renvoie un dictionnaire contenant les données sur la météo actuelle de la ville entrée.
+        :param ville: (str) Le nom de la ville dont on souhaite obtenir la météo
+        :return: (dict) Le dictionnaire contenant les données sur la météo
+        '''
+    ```
+
+    Si l'on regarde l'en-tête de notre fonction `get_temp_from_lat_long` :
+    
+    ```python
+    def get_temp_from_lat_long(lat: float, long: float) -> None:
+    ```
+    
+    On peut voir qu'elle doit renvoyer un objet de type `None` : autrement dit, elle ne **doit rien renvoyer**. (Effectivement, il s'agit d'une fonction qui doit simplement **afficher** quelque chose. Les fonctions qui ne renvoient rien peuvent également être appelées **procédures**.)
+
 !!! note "Exercice 1"
     Complétez la fonction `temperature_ressentie` permettant d'**afficher** la température ressentie (*feels_like*) dans une ville donnée en entrée.
+
+??? tip "Corrigé exercice 1"
+    Il faut simplement récupérer les données sur la ville passée en argument à la fonction, en rappelant la fonction `get_weather`, puis afficher avec `print` la valeur associée à la clé `feels_like` du dictionnaire lui-même associé à la clé `main` du dictionnaire principal :
+
+    ```python
+    def temperature_ressentie(ville: str) -> None:
+        ''' Affiche la température ressentie (en degrés) dans la ville spécifiée. '''
+        
+        donnees = get_weather(ville)
+        print(f"Température ressentie à {ville} : {donnees['main']['feels_like']} °C.")
+    ```
+
+    Un petit test dans la console de Thonny donnera quelque chose comme ceci :
+
+    ```python
+    >>> temperature_ressentie('Paris')
+    Température ressentie à Paris : 33.02 °C.
+    ```
 
 !!! tip "Rappel"
     En bas du script, vous pouvez voir le bloc de code suivant :
@@ -64,8 +135,213 @@ Le module `requests` de Python permet de récupérer des données sur le web **a
 
     Faites le test avec `lat = 50.65243094755832, long = 3.0266403128894583` (localisation de Lambersart).
 
+???+ tip "Température en degrés celsius"
+    Par défaut, les températures obtenues sont en **degrés Kelvin**. Si vous souhaitez obtenir les températures en **degrés Celsius**, il faut indiquer dans la requête HTTP que l'on souhaite utiliser le **système métrique**.
+
+    Pour cela, il faut ajouter le paramètre `units` avec la valeur `metric` à votre requête. Autrement dit, à la fin de votre **URL**, vous devez ajouter `&units=metric` (le `&` permet de faire la séparation avec le paramètre précédent).
+
+??? tip "Corrigé exercice 2"
+    On s'inspire du code des fonctions `get_weather` et `temperature_ressentie` :
+
+    ```python
+    def get_temp_from_lat_long(lat: float, long: float) -> None:
+        ''' Affiche la température (en degrés) d'une ville dont on fournit la latitude et la longitude. '''
+        
+        url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&appid={API_KEY}&units=metric"
+        r = requests.get(url)
+        donnees = r.json()
+
+        print(f"Température : {donnees['main']['temp']} °C.")
+    ```
+
+---
+
 On souhaite maintenant obtenir les **prévisions météo** d'une ville de manière à **afficher une courbe d'évolution** de la **température** (*temp*) prévue.  
-L'API permet d'obtenir les prévisions des **5 prochains jours**, à raison **d'une mesure toutes les 3 heures**. Ainsi, on obtiendra **40 mesures**, voir [cette page](https://openweathermap.org/forecast5){ target="_blank" } pour la documentation.
+L'API permet d'obtenir les prévisions des **5 prochains jours**, à raison **d'une mesure toutes les 3 heures**. La page documentant les **appels d'API** permettant d'obtenir ces prévisions est la suivante : [https://openweathermap.org/forecast5](https://openweathermap.org/forecast5){ target="_blank" }.
+
+Ainsi, on obtiendra une liste **40 mesures**, la première mesure correspondant aux données sur la météo à l'heure actuelle, la deuxième mesure correspondant à la météo prévue **dans 3 heures**, la troisième à celle prévue **dans 6 heures**, et ainsi de suite...
+
+Si l'on regarde un exemple de réponse de l'API :
+
+??? quote "Exemple de réponse de l'API"
+    ```json
+    {
+    "cod": "200",
+    "message": 0,
+    "cnt": 40,
+    "list": [
+        {
+        "dt": 1661871600,
+        "main": {
+            "temp": 296.76,
+            "feels_like": 296.98,
+            "temp_min": 296.76,
+            "temp_max": 297.87,
+            "pressure": 1015,
+            "sea_level": 1015,
+            "grnd_level": 933,
+            "humidity": 69,
+            "temp_kf": -1.11
+        },
+        "weather": [
+            {
+            "id": 500,
+            "main": "Rain",
+            "description": "light rain",
+            "icon": "10d"
+            }
+        ],
+        "clouds": {
+            "all": 100
+        },
+        "wind": {
+            "speed": 0.62,
+            "deg": 349,
+            "gust": 1.18
+        },
+        "visibility": 10000,
+        "pop": 0.32,
+        "rain": {
+            "3h": 0.26
+        },
+        "sys": {
+            "pod": "d"
+        },
+        "dt_txt": "2022-08-30 15:00:00"
+        },
+        {
+        "dt": 1661882400,
+        "main": {
+            "temp": 295.45,
+            "feels_like": 295.59,
+            "temp_min": 292.84,
+            "temp_max": 295.45,
+            "pressure": 1015,
+            "sea_level": 1015,
+            "grnd_level": 931,
+            "humidity": 71,
+            "temp_kf": 2.61
+        },
+        "weather": [
+            {
+            "id": 500,
+            "main": "Rain",
+            "description": "light rain",
+            "icon": "10n"
+            }
+        ],
+        "clouds": {
+            "all": 96
+        },
+        "wind": {
+            "speed": 1.97,
+            "deg": 157,
+            "gust": 3.39
+        },
+        "visibility": 10000,
+        "pop": 0.33,
+        "rain": {
+            "3h": 0.57
+        },
+        "sys": {
+            "pod": "n"
+        },
+        "dt_txt": "2022-08-30 18:00:00"
+        },
+        {
+        "dt": 1661893200,
+        "main": {
+            "temp": 292.46,
+            "feels_like": 292.54,
+            "temp_min": 290.31,
+            "temp_max": 292.46,
+            "pressure": 1015,
+            "sea_level": 1015,
+            "grnd_level": 931,
+            "humidity": 80,
+            "temp_kf": 2.15
+        },
+        "weather": [
+            {
+            "id": 500,
+            "main": "Rain",
+            "description": "light rain",
+            "icon": "10n"
+            }
+        ],
+        "clouds": {
+            "all": 68
+        },
+        "wind": {
+            "speed": 2.66,
+            "deg": 210,
+            "gust": 3.58
+        },
+        "visibility": 10000,
+        "pop": 0.7,
+        "rain": {
+            "3h": 0.49
+        },
+        "sys": {
+            "pod": "n"
+        },
+        "dt_txt": "2022-08-30 21:00:00"
+        },
+        ....
+        {
+        "dt": 1662292800,
+        "main": {
+            "temp": 294.93,
+            "feels_like": 294.83,
+            "temp_min": 294.93,
+            "temp_max": 294.93,
+            "pressure": 1018,
+            "sea_level": 1018,
+            "grnd_level": 935,
+            "humidity": 64,
+            "temp_kf": 0
+        },
+        "weather": [
+            {
+            "id": 804,
+            "main": "Clouds",
+            "description": "overcast clouds",
+            "icon": "04d"
+            }
+        ],
+        "clouds": {
+            "all": 88
+        },
+        "wind": {
+            "speed": 1.14,
+            "deg": 17,
+            "gust": 1.57
+        },
+        "visibility": 10000,
+        "pop": 0,
+        "sys": {
+            "pod": "d"
+        },
+        "dt_txt": "2022-09-04 12:00:00"
+        }
+    ],
+    "city": {
+        "id": 3163858,
+        "name": "Zocca",
+        "coord": {
+        "lat": 44.34,
+        "lon": 10.99
+        },
+        "country": "IT",
+        "population": 4593,
+        "timezone": 7200,
+        "sunrise": 1661834187,
+        "sunset": 1661882248
+    }
+    }
+    ```
+
+On peut voir qu'une **liste Python** est associée à la clé `list` du dictionnaire principal obtenu. Ce tableau contient lui-même **40 dictionnaires**, chacun correspondant à une mesure de la météo.
 
 Voici un exemple de graphe affichant la comparaison entre l'évolution de la température de la ville de **Paris** et celle de la ville de **Lambersart**, sur les 5 prochains jours :
 
@@ -79,7 +355,212 @@ Voici un exemple de graphe affichant la comparaison entre l'évolution de la tem
 
     Faites le test avec deux villes de votre choix.
 
-!!! tip "Aide exercice 3"
-    Vous pouvez consulter [cette page](http://www.python-simple.com/python-matplotlib/pyplot.php){ target="_blank" } pour des rappels concernant le module **pyplot**. N'oubliez pas d'importer le module dans votre script !
+    Pour procéder, vous pouvez découper votre travail en **3 étapes** :
+
+    <u>**Étape 1**</u> : Récupérer les **dictionnaires** contenant les **données** sur la **ville 1** et sur la **ville 2**. Pour vous aider (et parce qu'on manipule des objets, notion qui n'a pas encore été étudiée), je vous donne le code permettant de récupérer et de stocker ces données dans une variable `r1` pour la ville 1 et `r2` pour la ville 2 :
+
+    ```python
+        url1 = f"https://api.openweathermap.org/data/2.5/forecast?q={ville1},{PAYS}&appid={API_KEY}&units=metric"
+        url2 = f"https://api.openweathermap.org/data/2.5/forecast?q={ville2},{PAYS}&appid={API_KEY}&units=metric"
+        r1 = requests.get(url1).json()  # r1 contient le dictionnaire contenant les données sur la ville 1
+        r2 = requests.get(url2).json()  # r2 contient le dictionnaire contenant les données sur la ville 2
+    ```
+
+    <u>**Étape 2**</u> : Créer **deux tableaux** contenant respectivement les **40 températures** de la **ville 1** et les **40 températures** de la **ville 2**. Vous pouvez (mais ce n'est pas obligatoire) pour cela utiliser la méthode de création de **listes par compréhension**.
+   
+    On rappelle que les données sur les 40 mesures d'une ville sont contenues dans 40 dictionnaires, eux-mêmes contenus dans une **liste** associée à la clé `list` du dictionnaire principal.
+
+    Pour revoir un exemple de réponse de l'API pour vous aider, vous pouvez dérouler le bloc suivant :
+
+    ??? quote "Exemple de réponse de l'API"
+        ```json
+        {
+        "cod": "200",
+        "message": 0,
+        "cnt": 40,
+        "list": [
+            {
+            "dt": 1661871600,
+            "main": {
+                "temp": 296.76,
+                "feels_like": 296.98,
+                "temp_min": 296.76,
+                "temp_max": 297.87,
+                "pressure": 1015,
+                "sea_level": 1015,
+                "grnd_level": 933,
+                "humidity": 69,
+                "temp_kf": -1.11
+            },
+            "weather": [
+                {
+                "id": 500,
+                "main": "Rain",
+                "description": "light rain",
+                "icon": "10d"
+                }
+            ],
+            "clouds": {
+                "all": 100
+            },
+            "wind": {
+                "speed": 0.62,
+                "deg": 349,
+                "gust": 1.18
+            },
+            "visibility": 10000,
+            "pop": 0.32,
+            "rain": {
+                "3h": 0.26
+            },
+            "sys": {
+                "pod": "d"
+            },
+            "dt_txt": "2022-08-30 15:00:00"
+            },
+            {
+            "dt": 1661882400,
+            "main": {
+                "temp": 295.45,
+                "feels_like": 295.59,
+                "temp_min": 292.84,
+                "temp_max": 295.45,
+                "pressure": 1015,
+                "sea_level": 1015,
+                "grnd_level": 931,
+                "humidity": 71,
+                "temp_kf": 2.61
+            },
+            "weather": [
+                {
+                "id": 500,
+                "main": "Rain",
+                "description": "light rain",
+                "icon": "10n"
+                }
+            ],
+            "clouds": {
+                "all": 96
+            },
+            "wind": {
+                "speed": 1.97,
+                "deg": 157,
+                "gust": 3.39
+            },
+            "visibility": 10000,
+            "pop": 0.33,
+            "rain": {
+                "3h": 0.57
+            },
+            "sys": {
+                "pod": "n"
+            },
+            "dt_txt": "2022-08-30 18:00:00"
+            },
+            {
+            "dt": 1661893200,
+            "main": {
+                "temp": 292.46,
+                "feels_like": 292.54,
+                "temp_min": 290.31,
+                "temp_max": 292.46,
+                "pressure": 1015,
+                "sea_level": 1015,
+                "grnd_level": 931,
+                "humidity": 80,
+                "temp_kf": 2.15
+            },
+            "weather": [
+                {
+                "id": 500,
+                "main": "Rain",
+                "description": "light rain",
+                "icon": "10n"
+                }
+            ],
+            "clouds": {
+                "all": 68
+            },
+            "wind": {
+                "speed": 2.66,
+                "deg": 210,
+                "gust": 3.58
+            },
+            "visibility": 10000,
+            "pop": 0.7,
+            "rain": {
+                "3h": 0.49
+            },
+            "sys": {
+                "pod": "n"
+            },
+            "dt_txt": "2022-08-30 21:00:00"
+            },
+            ....
+            {
+            "dt": 1662292800,
+            "main": {
+                "temp": 294.93,
+                "feels_like": 294.83,
+                "temp_min": 294.93,
+                "temp_max": 294.93,
+                "pressure": 1018,
+                "sea_level": 1018,
+                "grnd_level": 935,
+                "humidity": 64,
+                "temp_kf": 0
+            },
+            "weather": [
+                {
+                "id": 804,
+                "main": "Clouds",
+                "description": "overcast clouds",
+                "icon": "04d"
+                }
+            ],
+            "clouds": {
+                "all": 88
+            },
+            "wind": {
+                "speed": 1.14,
+                "deg": 17,
+                "gust": 1.57
+            },
+            "visibility": 10000,
+            "pop": 0,
+            "sys": {
+                "pod": "d"
+            },
+            "dt_txt": "2022-09-04 12:00:00"
+            }
+        ],
+        "city": {
+            "id": 3163858,
+            "name": "Zocca",
+            "coord": {
+            "lat": 44.34,
+            "lon": 10.99
+            },
+            "country": "IT",
+            "population": 4593,
+            "timezone": 7200,
+            "sunrise": 1661834187,
+            "sunset": 1661882248
+        }
+        }
+        ```
+
+    <u>**Étape 3**</u> : Enfin, il ne reste plus qu'à créer les deux courbes avec la fonction `plot`, puis à les afficher avec la fonction `show` de **pyplot**. Voir [documentation de pyplot](http://www.python-simple.com/python-matplotlib/pyplot.php){ target="_blank" }.
+
+    Vous devrez donc appeler deux fois la fonction `plot`, en donnant les tableaux créés précédemment en entrées.
+
+!!! tip "Aide Pyplot"
+    Vous pouvez consulter [cette page](http://www.python-simple.com/python-matplotlib/pyplot.php){ target="_blank" } pour des rappels concernant le module **pyplot** contenu dans la bibliothèque **Matplotlib**. N'oubliez pas d'importer le module dans votre script s'il ne l'est pas, en rajoutant cette ligne au début de votre script :
+    
+    ```python
+    from matplotlib import pyplot
+    ```
+
+    **Si le module n'est pas installé sur votre machine, vous devez l'installer**. Pour cela, dans Thonny, cliquez sur "Outils" puis sur "Gérer les paquets", puis recherchez et installez le paquet **Matplotlib**.
 
     En l'occurence, vous n'aurez besoin que des fonctions `plot` et `show`, et éventuellement de `legend` si vous souhaitez afficher des légendes.
