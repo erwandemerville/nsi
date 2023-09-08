@@ -70,6 +70,28 @@ On utilise pour cela une **docstring** (commentaire sur plusieurs lignes) qui :
     * indique les **erreurs levées** en cas de mauvaise utilisation...
     * etc.
 
+Voici un exemple avec une fonction `produit` qio calcule le produit de deux entiers `a` et `b` :
+
+```python
+def produit(a, b):
+    ''' Fonction qui renvoie le produit de a et b.
+    :CU: type(a) == type(b) == int
+    :param a: (int) Un entier
+    :param b: (int) Un autre entier
+    :return: (int) Le produit de a et b
+    
+    :Exemple:
+    >>> produit(4, 6)
+    24
+    '''
+    assert type(a) == type(b) == int
+    res = 0
+    for _ in range(b):
+        res += a
+    assert res == a*b
+    return res
+```
+
 ??? tip "Rappels annotations de types"
     On peut également indiquer les **types des paramètres** de fonctions sous la forme d'**annotations de types**, plutôt que de les spécifier dans la docstring. Une fonction `produit` qui calcule le produit de deux entiers `a` et `b` pourrait donc être présentée ainsi :
 
@@ -107,6 +129,11 @@ Par exemple, les instructions suivantes permettent d'afficher toute la documenta
 >>> import random
 >>> help(random)
 ```
+
+De plus, le module **pydoc** permet de **générer de la documentation** à partir de **docstrings**.
+
+`pydoc <nom_classe>` : Afficher la documentation sur terminal<br />
+`pydoc -w <nom_classe>` : Générer un fichier HTML
 
 !!! note "À vous de jouer"
     À l'aide de la fonction `help`, déterminez à quoi sert la fonction `randrange` du module `random`, le nombre et le nom de ses paramètres. Combien y a t-il de paramètres **obligatoires** ? **Facultatifs** ?
