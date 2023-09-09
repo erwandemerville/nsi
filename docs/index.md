@@ -1,16 +1,23 @@
 # Numérique et sciences informatiques
 
-!!! warning "NSI TERMINALE - Pour le vendredi 08/09/23"
-    Je vous demande de terminer l'[activité sur les API](terminale/modularite/api.md), c'est-à-dire l'**exercice 3**. J'ai rajouté de nombreuses informations sur la page pour vous aider, n'hésitez pas à relire l'activité tranquillement chez vous.
+!!! warning "NSI TERMINALE - Pour le lundi 11/09/23"
+    Merci de terminer les **exercices 1, 2 et 3** de l'[activité sur la création de modules](https://nsi.erwandemerville.fr/terminale/modularite/modules/#activite-creer-un-module){ target="_blank" }.
 
-    Vous pouvez également re-télécharger le fichier `meteo.py`, j'y ai rajouté les corrections des deux premiers exercices.
+    **Aide** : Pour la fonction `to_bin` du fichier `main.py`, vous devez, comme indiqué dans l'énoncé, réutiliser la fonction `ajouter_debut` de `operations.py` (n'oubliez pas de l'importer). La méthode la plus simple d'écrire cette fonction est d'utiliser les opérateurs Python `//` pour obtenir le **quotient** d'une division et `%` pour obtenir le **reste** d'une division euclidienne. À chaque itération de la boucle `while`, il faut ajouter au début de `lst` le **reste** de la division de `ent` par `2`, puis ré-itérer la boucle avec le **quotient** de la division de `ent` par `2`.
 
-    Merci et à vendredi !
+    Si vous avez fait quelque chose de plus compliqué mais que votre programme fonctionne quand même, ça va aussi !
+
+    **IMPORTANT** : Il y a une petite erreur dans l'exemple de la fonction `ajouter_debut` de `operations.py` et dans celui de `to_bin` de `main.py`. Il manque des espaces entre les chiffres des listes en sortie (si on ne les mets pas, le test échouera toujours) :
+
+    - Dans `to_bin` : `[1,0,1,0]` devient `[1, 0, 1, 0]`
+    - Dans `ajouter_debut` : `[8,2,9,4,5]` devient `[8, 2, 9, 4, 5]`
+
+    Merci et à lundi !
+    
 
 Bienvenue, ici vous retrouverez tous les cours, exercices, activités et évaluations réalisés dans le cadre de la **spécialité NSI** (première et terminale).
 
-En cas de questionnements liés à un cours, vous pouvez me contacter à l'adresse mail suivante :  
-<erwan.demerville@ac-lille.fr>
+En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit, n'hésitez pas à me contacter **via la messagerie de l'[ENT](https://enthdf.fr/){ target="_blank" }**.
 
 !!! success "Programmes officiels"
     * [Programme de première NSI](bo/BO_NSI_Premiere.pdf){ target="_blank" }

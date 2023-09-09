@@ -7,7 +7,7 @@ def to_bin(ent: int) -> list:
 
     :Exemples:
     >>> to_bin(10)
-    [1,0,1,0]
+    [1, 0, 1, 0]
     '''
     
     lst = []
@@ -19,7 +19,7 @@ def moyenne(lst: list) -> float:
     ''' Renvoie la moyenne des éléments d'une liste.
 
     :Exemples:
-    >>> moyenne([12,15,10,20])
+    >>> moyenne([12, 15, 10, 20])
     14.25
     '''
     
