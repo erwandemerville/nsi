@@ -150,7 +150,7 @@ L’instruction `z=x+y` associe la valeur de l’expression située à droite du
 
     Si l'on avait utilisé l'opérateur `//`, c'est-à-dire si l'on avait saisi `z // 2`, on aurait obtenu le **quotient de la division euclidienne** entre les opérandes `z` et `2`, c'est-à-dire l'entier `11`. L'opérateur permettant d'obtenir le **reste d'une division euclidienne** est `%`.
 
-    Vous découvrirez tout cela dans la partie [Les bases du Python](/premiere/bases_python/).
+    Vous découvrirez tout cela dans la partie [Les bases du Python](../bases_python/index.md).
 
 !!! note "Exercice 6"
     Voici un **algorithme** écrit en **pseudo-code** :
