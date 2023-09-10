@@ -85,6 +85,7 @@ nav:
       - Évaluations:
         - Évaluation 1 corrigée: terminale/arbres/evaluation_correction.pdf
         - Évaluation 2: terminale/arbres/evaluation_v2.pdf
+  - Rendu des travaux: rendus.md
 
 markdown_extensions:
   - pymdownx.arithmatex:
@@ -103,6 +104,9 @@ markdown_extensions:
   - pymdownx.details
   - attr_list
   - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
 
 extra_css:
   - stylesheets/extra.css
