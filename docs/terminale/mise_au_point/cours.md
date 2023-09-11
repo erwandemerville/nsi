@@ -1,4 +1,4 @@
-!!! quote "Sources"
+??? quote "Sources"
     - [dautrylimoges.scenari-community.org](https://dautrylimoges.scenari-community.org/TNSI/MiseAuPtPgmes_Bugs_TNSI_web/co/0BO_MiseAuPt_Bugs.html){ target="_blank" }  
     - [silanus.fr](http://www.silanus.fr/nsi/premiere/python/erreur.html#_erreurs_a_lexecution){ target="_blank" } 
     - [lamadone.frama.io](https://lamadone.frama.io/informatique/terminale-nsi/mise_au_point_des_programmes.html){ target="_blank" } 
@@ -13,7 +13,7 @@ Extrait du programme officiel :
 | ---------------------------------------------------- | ------------------------------------------------------------ | ------------------------------------------------------------ |
 | Mise au point des programmes. Gestion des bugs. | Dans la pratique de la programmation, **savoir répondre aux causes typiques de bugs** : problèmes liés au typage, effets de bord non désirés, débordements  dans les tableaux, instruction conditionnelle non exhaustive, choix des  inégalités, comparaisons et calculs entre flottants, mauvais nommage des variables, etc. | On prolonge le travail entrepris en classe de première sur l'utilisation de la **spécification**, des **assertions**, de la **documentation des programmes** et de la construction de **jeux de tests**. |
 
-Lorsque l’on exécute un **programme**, il peut ne pas fonctionner comme prévu. Par exemple, il peut boucler indéfiniment, ou bien ne pas produire le résultat escompté. Et même s’il fonctionne comme prévu, rien ne garantit qu'il fournisse toujours un résultat correct quelles que soient les données d’entrée qu’on lui fournit.
+Lorsque l’on exécute un **programme**, il peut ne pas fonctionner comme prévu. Par exemple, il peut boucler indéfiniment, ou bien ne pas produire le résultat escompté. Et même s’il fonctionne comme prévu, rien ne garantit qu'il fournisse toujours un résultat correct quelles que soient les données d’entrée qu’on lui fournit. Un **dysfonctionnement** dans un programme informatique lié à un **défaut de conception** est appelé **"bug"** :material-bug:.
 
 Les bugs causent chaque année des **millions d’euros de perte** pour les entreprises et les États (on peut parler du fameux **bug** ayant causé l'[explosion de la fusée Ariane 5](https://fr.wikipedia.org/wiki/Vol_501_d%27Ariane_5){ target="_blank" }), voire sont parfois responsables de **morts civiles ou militaires**.
 
@@ -24,7 +24,10 @@ Par ailleurs, un **bug** peut produire un **résultat erroné**, un **effet de b
 
 Autrement dit, pour que le programme soit correct, il ne doit pas y avoir de **bug**.
 
-## Bugs
+## :material-bug: Bugs
+
+!!! tip "Point historique"
+    Le terme **bug** (*insecte* en français) est apparu sur un document de 1947, écrit par un groupe travaillant sur le calculateur *Mark II* à l'université d'Harvard. Ce terme était toutefois déjà employé en électricité depuis des dizaines d'années pour évoquer un problème de fonctionnement ou de connexion d'un appareil électrique. Cela a été confirmé par Grace Hopper, informaticienne américaine ayant travaillé sur le *Mark I* puis sur le *Mark II* depuis 1943.
 
 Bien sûr, le but est d'éviter autant que possible l'écriture de **bugs**. Pour ce faire, on peut utiliser des **méthodes de développement** particulières, ou des **outils** d’aide au développement (certains ***IDE*** sont capables de détecter des erreurs avant l'exécution du programme). Malheureusement, on finit en général tôt ou tard par introduire des bugs dans un programme, auquel cas il faut :
 
@@ -33,6 +36,123 @@ Bien sûr, le but est d'éviter autant que possible l'écriture de **bugs**. Pou
 - **corriger** le bug.
 
 C’est ce qu’on appelle la **mise au point**, ou le **déboguage**.
+
+### Un exemple
+
+Voici un programme utilisant le module `Turtle`, un module permettant de faire du dessin vectoriel en déplaçant une tortue sur l'écran :
+
+```python
+from turtle import *
+
+def m1(taille):
+    forward(taille)
+    left(60)
+    forward(taille)
+    right(120)
+    forward(taille)
+    left(60)
+    forward(taille)
+    
+def m2(taille):
+    forward(taille)
+    left(60)
+    forward(taille)
+    right(120)
+    forward(taille)
+    left(60)
+    forward(taille)
+    left(60)
+    
+def courbe(longueur, niveau, motif):
+    if niveau == 1:
+        motif(longueur)
+    else:
+        longueur = longueur / 3
+        niveau = niveau - 1
+        courbe(longueur, niveau, motif)
+        lt(60)
+        courbe(longueur, niveau, motif)
+        rt(120)
+        courbe(longueur, niveau, motif)
+        lt(60)
+        courbe(longueur, niveau, motif)
+
+up()
+goto(-300, -160)
+down()
+speed(0)
+ht()
+width(4)
+color('black')
+courbe(200, 4, m1)
+up()
+goto(-300, -160)
+down()
+color('red')
+courbe(200, 4, m2)
+```
+
+Les différences entre la fonction `m1` et `m2` sont **minimes** : Il y a **une seule instruction** en plus à la fin de la fonction `m2` : `left(60)`. Et pourtant, en exécutant le programme, voici **en noir** le tracé utilisant la fonction `m1`, et **en rouge** le tracé utilisant la fonction `m2` :
+
+<figure markdown>
+  ![Capture d'écran de Turtle](images/turtle_comparaison.png){ width="500" }
+  <figcaption>Capture d'écran de Turtle</figcaption>
+</figure>
+
+On voit donc qu'un tout petit élément peut avoir un impact énorme sur le fonctionnement d'un programme ! D'où l'importance de prévenir les erreurs, mêmes celles qui peuvent sembler minimes.
+
+### Déceler l'origine d'un bug
+
+Pour comprendre la cause d’un **bug**, il faut d'abord comprendre comment s’est déroulée l’**exécution du programme** qui a amené au bug. Il est important d'être capable de **simuler à la main** l'exécution du programme.
+
+Il est également important de connaître, pour chaque fonction, quelles sont les **préconditions**, c'est-à-dire les **conditions sur les paramètres d'entrée**. On peut pour cela définir des **assertions** à l'intérieur de nos fonctions pour vérifier les préconditions, ou **au minimum** définir les préconditions à l'intérieur de la **docstring** de nos fonctions.
+
+Par exemple, voici une fonction `maximum` renvoyant le maximum d'une liste de nombres **positifs ou nuls** :
+
+```python
+def maximum(liste):
+    '''
+    Fonction renvoyant le maximum d’une liste.
+    :CU: la liste doit contenir des nombres exclusivement positifs ou nuls
+    '''
+    
+    valeur_max = 0
+    for valeur in liste:
+        if valeur > valeur_max:
+            valeur_max = valeur
+    return valeur_max
+```
+
+Ici, `CU` signifie "**conditions d'utilisation**" (on y indique les **préconditions** relatives aux paramètres d'entrée). Sur la forme de votre docstring, il n'y a pas de règle particulière. On aurait pu écrire `assert` ou encore `préconditions` au lieu de `CU`, par exemple.
+
+Si l'on ajoute des **assertions** à l'intérieur de notre fonction :
+
+```python
+def maximum(liste):
+    '''
+    Fonction renvoyant le maximum d’une liste.
+    :CU: la liste doit contenir des nombres exclusivement positifs ou nuls
+    '''
+
+    assert all(el >= 0 for el in liste)
+    valeur_max = 0
+    for valeur in liste:
+        if valeur > valeur_max:
+            valeur_max = valeur
+    return valeur_max
+```
+
+
+Pour effectuer une analyse **pas-à-pas** de votre code, vous pouvez également utiliser un **débuggueur**. De nombreux **IDE** sont dotés d'un **débuggueur**, c'est le cas notamment de **Thonny**. (Pour débugguer un script avec **Thonny**, il faut cliquer sur la petite icône à droite de l'icône d'exécution du script courant.)
+
+<figure markdown>
+  ![Débuggueur de Thonny](images/debug.png){ width="500" }
+  <figcaption>Débuggueur de Thonny</figcaption>
+</figure>
+
+Par ailleurs, une autre technique plus primaire mais fort utile consiste à ajouter des **affichages** à l'intérieur de vos fonctions, avec la fonction `print`, de manière à observer l'évolution du contenu des variables.
+
+---
 
 !!! tip "En savoir plus"
     Pour en savoir plus sur la gestion des bugs, je vous recommande de lire [ce document](https://eduscol.education.fr/document/7307/download){ target="_blank" } proposé par Eduscol.
@@ -148,7 +268,6 @@ def mystere():
   for i in L:
     return i == 1
 
-
 def autre_fonction():
   assert L == [3,2,1]
 ```
@@ -197,7 +316,16 @@ Traceback (most recent call last):
 ValueError: nonintegerstop for randrange()
 ```
 
-### Autres types d'erreur...
+### Erreurs liés au nommage des variables
+
+Le **bon nommage des variables** est particulièrement important car il permet d'améliorer la **lisibilité** du programme, et également d'éviter le **masquage de variables**.
+
+Le **masquage de variables** peut survenir lorsque :
+
+- Vous importez une **bibliothèque** et déclarez une fonction dans votre programme qui a **le même nom** qu'une fonction de votre bibliothèque. Cela peut survenir lorsque vous effectuez des imports de la forme `from ma_bibliotheque import *`, **il faut vraiment éviter ce type d'imports**. Il vaut mieux effectuer des imports de la forme `import ma_bibliotheque` ou encore `import ma_bibliotheque as mb`, cela permet de faire des appels de fonctions de la forme `mb.ma_fonction`.
+- Vous utiliser une **variable globale** à l'intérieur d'une fonction qui porte **le même nom** qu'un des **paramètres** de la fonction. Pour éviter cela, on peut par exemple ajouter `g_` devant le nom de toutes nos variables globales. Par ailleurs, en général, les variables globales sont utilisées comme des **constantes**, et on met leurs noms en majuscules par convention.
+
+### Autres types d'erreurs...
 
 * Erreurs de syntaxe et d'indentation :
     * `SyntaxError` : erreur de parenthèse manquante.<br />
@@ -205,7 +333,7 @@ ValueError: nonintegerstop for randrange()
     * `IdentationError` (hérite de `SyntaxError`) : Indentation oubliée, trop grande, blocs mal délimités, etc.
 * Erreurs d'exécution d'opérations de base :
     * `IndexError` : Accès à un index non présent dans une liste, un tuple, un str...<br />
-      Exemple : [1,2,3][3]
+      Exemple : `[1,2,3][3]`
     * `KeyError` : Erreur de clé avec un dictionnaire.
     * `NameError` Nom de fonction ou de variable mal orthographié.<br />
       Exemple : `prout("Bonsoir")`
@@ -213,13 +341,12 @@ ValueError: nonintegerstop for randrange()
     * `TypeError` : Opération impossible entre deux types, conversion de type impossible.<br />
       Exemple : `"3" * "5"`
     * `ZeroDivisionError` : Levée en cas de division par zéro.
+* Oubli du `return` dans une fonction.
 
 ### Exercices
 
 !!! note "À vous de jouer !"
-    [Cliquez-ici](http://www.silanus.fr/nsi/premiere/python/erreur.html#_trouver_les_erreurs){ target="_blank" } pour accéder à l'exercice.
-
-    Pour chacun des programmes, **trouvez l'erreur** d'abord **de tête** avant de vérifier avec Thonny, puis **déterminez la nature** de l'erreur (est-ce une erreur de syntaxe ? de typage ? de sémantique ? ...)
+    [Cliquez-ici](http://www.silanus.fr/nsi/premiere/python/erreur.html#_trouver_les_erreurs){ target="_blank" } pour accéder aux exercices.
 
 ## Spécification et tests
 
@@ -228,7 +355,7 @@ ValueError: nonintegerstop for randrange()
 !!! warning "Attention !"
     **Les jeux de tests ne permettent pas de garantir qu'un programme est correct**, à moins que ceux-ci soient exhaustifs (c'est-à-dire que l'on teste notre programme avec toutes les entrées possibles, ce qui n'est pas envisageable la plupart du temps.)
 
-    Si l'on veut **prouver** qu'un programme est **correct**, il faut utiliser la notion d'**invariant** vue en première.
+    Si l'on veut **prouver** qu'un programme est **correct**, il faut utiliser la notion d'**invariant** vue en première, et pour prouver que notre programme **se termine**, il faut utiliser la notion de **variant**. Lorsque l'on parvient à exhiber un **variant** et un **invariant**, on peut les vérifier avec des **assertions** à l'intérieur de notre programme (voir [activité préliminaire](preliminaire.md).)
 
 Durant la phase de conception d'un programme, on commence par
 
@@ -245,26 +372,24 @@ Les **tests** vérifient que les **sorties du programme** sont conformes à ce q
 !!! quote "Les différents types de tests - Eduscol"
     On peut classer les **tests** selon différents critères :
 
-        - le **niveau des tests** (tests unitaires, tests d’intégration, tests de recette) ;
-        - le **processus de conception** des tests (tests *boîte blanche*, tests *boîte noire*) ;
-        - le **sujet** du test (*tests fonctionnels*, tests de *montée en charge*, tests d’*utilisabilité*,
+    - le **niveau des tests** (tests unitaires, tests d’intégration, tests de recette) ;
+    - le **processus de conception** des tests (tests *boîte blanche*, tests *boîte noire*) ;
+    - le **sujet** du test (*tests fonctionnels*, tests de *montée en charge*, tests d’*utilisabilité*,
     etc.).
 
     Voici quelques définitions essentielles concernant les tests.
 
-    On appelle cas de test un triplet (descriptif, données d’entrée, résultat attendu) précisant, pour des données précises, le résultat attendu de la partie du programme que l’on veut tester.
+    - **cas de test** : triplet (descriptif, données d’entrée, résultat attendu) précisant, pour des données précises, le résultat attendu de la partie du programme que l’on veut tester.
+    - **jeu de tests** : ensemble de cas de test destinés à valider une partie précise du fonctionnement d’un programme. Le terme **test** peut se référer suivant les circonstances à un cas de test, à un jeu de tests, ou au processus de test en général.
+    - **test unitaire** : test destiné à tester une petite partie d'un programme (comme une fonction) indépendamment des autres parties.
+    - **test d’intégration** : un test d’intégration est un test destiné à vérifier que 2 parties d’un programme, développées a priori indépendamment l’une de l’autre, fonctionnent correctement lorsqu’elles sont mises ensemble.
+  
+    On distingue également les **tests « boîte noire »** et les **tests « boîte blanche »** (à noter que ces notions ne sont **pas au programme**) :
 
-    On appelle jeu de tests un ensemble de cas de test destinés à valider une partie précise du fonctionnement d’un programme.
+    - Un **test « boîte noire »** est un test qui est conçu à partir des données d’entrées potentielles, indépendamment du code écrit. Un test « boîte noire » peut donc être écrit avant le code, ou s’il est écrit après, il doit être écrit par quelqu’un qui ne connaît pas le code.  
+    <u>Exemple</u> : une fonction doit générer l’en-tête d’une lettre. Pour cela, elle prend en paramètre un objet représentant le destinataire de la lettre (prénom, nom, sexe). Sans connaître le code de la fonction, on peut déjà envisager 2 cas de test, un pour un homme et un pour une femme, et vérifier que dans le premier cas l’en-tête commence par « Cher » alors qu’il commence par « Chère » dans le second cas.
 
-    Le terme test peut se référer suivant les circonstances à un cas de test, à un jeu de tests, ou au processus de test en général.
-
-    Un test unitaire est un test concernant une petite unité d’un programme ; typiquement, une fonction.
-
-    Un test « boîte noire» est un test qui est conçu à partir des données d’entrées potentielles, indépendamment du code écrit. Un test « boîte noire » peut donc être écrit avant le code, ou s’il est écrit après, il doit être écrit par quelqu’un qui ne connaît pas le code.
-
-    Exemple : une fonction doit générer l’en-tête d’une lettre. Pour cela, elle prend en paramètre un objet représentant le destinataire de la lettre (prénom, nom, sexe). Sans connaître le code de la fonction, on peut déjà envisager 2 cas de test, un pour un homme et un pour une femme, et vérifier que dans le premier cas l’en-tête commence par « Cher » alors qu’il commence par « Chère » dans le second cas.
-
-    Un test « boîte blanche » est un test qui est conçu à partir du programme. Le but de ce
+    - Un **test « boîte blanche »** est un test qui est conçu à partir du programme. Le but de ce
     type de test est de tester les différents cas prévus par le programme.
 
 !!! tip "En savoir plus"
@@ -318,9 +443,7 @@ assert trouver_indice([], 1) == None, "Erreur lors d'un test avec une liste vide
 ```
 
 !!! note "À vous de jouer !"
-    Voici une fonction avec sa spécification :
-
-    Ecrivez une fonction `est_pair` qui renvoie `True`si un nombre `n` donné est pair, `False` sinon, puis créez un ensemble de tests de votre fonction à l'aide d'**assertions**.
+    Écrivez une fonction `est_pair` qui renvoie `True`si un nombre `n` donné est pair, `False` sinon, puis créez un ensemble de tests de votre fonction à l'aide d'**assertions**.
 
     Documentez-bien votre fonction à l'aide d'une **docstring** et éventuellement d'**annotations de types**.
 
@@ -332,4 +455,6 @@ assert trouver_indice([], 1) == None, "Erreur lors d'un test avec une liste vide
 ## Exercices
 
 !!! success "À télécharger"
-    [Cliquez ici](pdf/exercices_Hachette.pdf){ target="_blank" } pour télécharger la fiche d'exercices (issue du *Hachette Terminale*).
+    [Cliquez ici](pdf/exercices_Hachette.pdf){ target="_blank" } pour télécharger la fiche d'exercices (issue du *Hachette Terminale 2022*).
+
+    [Télécharger les ressources](src/ressources_exercices.zip) (fichiers Python et CSV liés aux exercices).
