@@ -18,3 +18,14 @@ Téléchargez, lisez attentivement et complétez chaque notebook dans l'ordre.
 
 !!! tip "Ouvrir un notebook"
     Pour ouvrir un **notebook**, cliquez sur le menu "Démarrer" et cherchez l'application **Jupyter notebook**, puis lancez-la. Rendez-vous ensuite dans le dossier contenant les notebooks que vous avez téléchargés, et cliquez sur le notebook que vous souhaitez ouvrir puis sur "Open" (ou double-cliquez dessus).
+
+---
+
+!!! success "Plus d'exercices"
+    Voici quelques exercices supplémentaires issus du *Hachette Première 2021* pour vous entraîner sur les notions de base du langage Python.
+
+    | Fiche d'exercices                                            | Ressources                                                   | Description                                                  |
+    | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+    | [Commencer à programmer](hachette/exercices_bases.pdf){ target="_blank" } | /                                                            | Types de base, variables, affectations, instructions, conditions, boucles, fonctions... |
+    | [Types structurés](hachette/exercices_types_structures.pdf){ target="_blank" } | [Télécharger](hachette/ressources_types_structures.zip){ target="_blank" } | Types simples et structurés, tuples, tableaux, chaînes de caractères, dictionnaires, valeurs et références... |
+    | [Les tableaux](hachette/exercices_tableaux.pdf){ target="_blank" } | [Télécharger](hachette/ressources_tableaux.zip){ target="_blank" } | Recherche dans un tableau, matrices, lister occurences d'une valeur, organisation des tableaux en mémoire, références... |
