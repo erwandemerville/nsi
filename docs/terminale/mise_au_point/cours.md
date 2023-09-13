@@ -123,7 +123,7 @@ def maximum(liste):
     return valeur_max
 ```
 
-Ici, `CU` signifie "**conditions d'utilisation**" (on y indique les **préconditions** relatives aux paramètres d'entrée). Sur la forme de votre docstring, il n'y a pas de règle particulière. On aurait pu écrire `assert` ou encore `préconditions` au lieu de `CU`, par exemple.
+Ici, `CU` signifie "**conditions d'utilisation**" (on y indique les **préconditions** relatives aux **paramètres** d'entrée). Sur la forme de votre docstring, il n'y a pas de règle particulière. On aurait pu écrire `assert` ou encore `préconditions` au lieu de `CU`, par exemple.
 
 Si l'on ajoute des **assertions** à l'intérieur de notre fonction :
 
@@ -357,40 +357,68 @@ Le **masquage de variables** peut survenir lorsque :
 
     Si l'on veut **prouver** qu'un programme est **correct**, il faut utiliser la notion d'**invariant** vue en première, et pour prouver que notre programme **se termine**, il faut utiliser la notion de **variant**. Lorsque l'on parvient à exhiber un **variant** et un **invariant**, on peut les vérifier avec des **assertions** à l'intérieur de notre programme (voir [activité préliminaire](preliminaire.md).)
 
-Durant la phase de conception d'un programme, on commence par
+Durant la phase de conception d'un programme, on commence par :
 
-- écrire la **spécification** du programme (en utilisant des *docstrings* : chaines de caractères situées en début de programme.)
+- écrire la **spécification** du programme
 
 - écrire des **jeux de tests** pour valider le fonctionnement du programme.
 
-La **spécification indique ce que fait un programme**, décrit les **entrées et sorties** ainsi que leurs **types**, propose éventuellement des **tests** d'exécution... Elle peut prendre la forme d'un simple titre, d'un long document, une spécification formelle écrite dans un langage dédié, un ensemble d’exemples d’utilisation, un ensemble de cas de tests, etc.
+La **spécification d'une fonction** :
 
-Les **tests** vérifient que les **sorties du programme** sont conformes à ce que l'on attend.
+- décrit **ce que fait la fonction**.
+- **liste ses paramètres** d'entrée et **leur type**
+- indique le **type de la valeur de retour**
+- éventuellement :
+    - spécifie les **préconditions** (parfois appelées *conditions d'utilisation*) sur les **paramètres** d'entrée,
+    - indique les **effets de bord** de la fonction,
+    - propose des **exemples** d'utilisation de la fonction,
+    - indique les **erreurs levées** en cas de mauvaise utilisation,
+    - etc.
+
+Elle peut prendre diverses formes, comme un simple titre, un long document, une spécification formelle écrite dans un langage dédié, un ensemble d’exemples d’utilisation, un ensemble de cas de tests, etc.
+
+En **Python**, on utilise des **docstrings** (chaînes de caractères sous la forme `""" [...] """` ou `''' [...] '''`) pour spécifier les **fonctions**, **programmes**, **classes**, etc.
+
+Les **tests** doivent donc se baser sur cette **spécification** qui indique ce que le programme **est censé faire** et **ne pas faire**.
 
 ### Plusieurs types de tests
 
-!!! quote "Les différents types de tests - Eduscol"
+!!! abstract "Les différents types de tests"
     On peut classer les **tests** selon différents critères :
 
-    - le **niveau des tests** (tests unitaires, tests d’intégration, tests de recette) ;
+    - le **niveau des tests** (tests *unitaires*, tests *d’intégration*, tests *de recette*) ;
     - le **processus de conception** des tests (tests *boîte blanche*, tests *boîte noire*) ;
-    - le **sujet** du test (*tests fonctionnels*, tests de *montée en charge*, tests d’*utilisabilité*,
+    - le **sujet** du test (tests *fonctionnels*, tests de *montée en charge*, tests d’*utilisabilité*,
     etc.).
 
     Voici quelques définitions essentielles concernant les tests.
 
     - **cas de test** : triplet (descriptif, données d’entrée, résultat attendu) précisant, pour des données précises, le résultat attendu de la partie du programme que l’on veut tester.
     - **jeu de tests** : ensemble de cas de test destinés à valider une partie précise du fonctionnement d’un programme. Le terme **test** peut se référer suivant les circonstances à un cas de test, à un jeu de tests, ou au processus de test en général.
+
+    **<u>Niveaux des tests</u>** :
+
     - **test unitaire** : test destiné à tester une petite partie d'un programme (comme une fonction) indépendamment des autres parties.
-    - **test d’intégration** : un test d’intégration est un test destiné à vérifier que 2 parties d’un programme, développées a priori indépendamment l’une de l’autre, fonctionnent correctement lorsqu’elles sont mises ensemble.
+    - **test d’intégration** : test destiné à vérifier que 2 parties d’un programme, développées a priori indépendamment l’une de l’autre, fonctionnent correctement lorsqu’elles sont mises ensemble.
+    - **test de recette** : test destiné à vérifier une fonctionnalité générale d’un logiciel dans son ensemble.
+
+    **<u>Processus de conception</u>** :
   
-    On distingue également les **tests « boîte noire »** et les **tests « boîte blanche »** (à noter que ces notions ne sont **pas au programme**) :
+    On distingue les **tests « boîte noire »** et les **tests « boîte blanche »** (à noter que ces notions ne sont **pas au programme**) :
 
     - Un **test « boîte noire »** est un test qui est conçu à partir des données d’entrées potentielles, indépendamment du code écrit. Un test « boîte noire » peut donc être écrit avant le code, ou s’il est écrit après, il doit être écrit par quelqu’un qui ne connaît pas le code.  
     <u>Exemple</u> : une fonction doit générer l’en-tête d’une lettre. Pour cela, elle prend en paramètre un objet représentant le destinataire de la lettre (prénom, nom, sexe). Sans connaître le code de la fonction, on peut déjà envisager 2 cas de test, un pour un homme et un pour une femme, et vérifier que dans le premier cas l’en-tête commence par « Cher » alors qu’il commence par « Chère » dans le second cas.
 
     - Un **test « boîte blanche »** est un test qui est conçu à partir du programme. Le but de ce
     type de test est de tester les différents cas prévus par le programme.
+
+    **<u>Sujets du test</u>** :
+
+    - **test fonctionnel** : test visant à déterminer la **correction** de l’**état final** par rapport à l’**état initial** d'un programme. Si l'on parle de **fonctions**, il s'agit de déterminer la **correction** de la **valeur de retour** (c'est-à-dire vérifier que la valeur de retour soit bien celle qui est attendue) de la fonction par rapport aux **données d'entrée**. Souvent un **test « boîte noire »**.
+    - **test structurel** : test vérifiant le **fonctionnement interne** d'un programme. Souvent un **test « boîte blanche »**.
+    - **test de montée en charge** : test visant à vérifier si un serveur continue à bien fonctionner avec un grand nombre de sollicitations simultanées.
+    - **test d'utilisabilité** : test destiné à évaluer l’**ergonomie** (efficacité et simplicité de l'interface utilisateur) d’un programme.
+    - **test de performance** : test vérifiant que le logiciel se comporte correctement lorsqu’il est confronté à des **données de grande taille** ou, pour un serveur, à un **grand nombre de connexions**.
 
 !!! tip "En savoir plus"
     Pour en savoir plus sur l'écriture de tests, je vous recommande [ce très bon document](https://eduscol.education.fr/document/7298/download){ target="_blank" } proposé par Eduscol.
@@ -447,12 +475,28 @@ assert trouver_indice([], 1) == None, "Erreur lors d'un test avec une liste vide
 
     Documentez-bien votre fonction à l'aide d'une **docstring** et éventuellement d'**annotations de types**.
 
+!!! note "Quelques exercices"
+    Voici deux exercices pour vous entraîner à écrire des tests à l'aide d'assertions :
+
+    - [Exercice - La fonction Factorielle](http://www.silanus.fr/nsi/premiere/python/erreur.html#_travail_faire_la_fonction_factorielle){ target="_blank" }
+    - [Exercice - Que fait ce programme ?](http://www.silanus.fr/nsi/premiere/python/erreur.html#_travail_faire_que_fait_ce_programme){ target="_blank" }
+
 ### Quelques modules de tests
 
-**doctest**, **pytest**, **unittest**...
+!!! warning "Pas au programme"
+    Les modules de tests sont présentés ici pour votre culture générale, et parce qu'ils vous seront bien utiles si vous souhaitez continuer à travailler dans l'informatique après le bac.
+
+    Toutefois, dans le cadre des sujets proposés au bac, les **tests** sont principalement effectués à l'aide d'**assertions**. La connaissance des modules de tests présentés ici ne sont donc pas exigibles.
+    
+Il existe principalement **3 modules Python** pour écrire et exécuter des tests :
+
+- `unittest` : outil de base, intégré à Python ;
+- `doctest` : outil externe qui permet d’exécuter des tests inclus dans la documentation des fonctions. Les tests servent alors également de documentation de la fonction ;
+- `pytest` : outil externe qui permet d’exécuter des tests écrits dans des fichiers dédiés. C’est l’outil le plus utilisé, car le plus complet.
+
 (En construction...)
 
-## Exercices
+## Plus d'exercices
 
 !!! success "À télécharger"
     [Cliquez ici](pdf/exercices_Hachette.pdf){ target="_blank" } pour télécharger la fiche d'exercices (issue du *Hachette Terminale 2022*).
