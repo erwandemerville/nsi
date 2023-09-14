@@ -17,7 +17,12 @@ Téléchargez, lisez attentivement et complétez chaque notebook dans l'ordre.
 | [Chapitre 7 - Listes](notebooks/Chapitre%207%20Listes.ipynb) | Utilisation des listes Python. |
 
 !!! tip "Ouvrir un notebook"
-    Pour ouvrir un **notebook**, cliquez sur le menu "Démarrer" et cherchez l'application **Jupyter notebook**, puis lancez-la. Rendez-vous ensuite dans le dossier contenant les notebooks que vous avez téléchargés, et cliquez sur le notebook que vous souhaitez ouvrir puis sur "Open" (ou double-cliquez dessus).
+    Pour ouvrir un **notebook depuis votre environnement de travail personnel** :
+    
+    - cliquez sur le menu "Démarrer" et cherchez l'application **Anaconda Powershell Prompt**, puis lancez-la. 
+    - Saisissez la **commande** `cd H:\Travail` pour entrer dans votre **espace de travail** personnel.
+    - Saisissez la **commande** `jupyter notebook` pour **lancer Jupyter**.
+    - Rendez-vous ensuite dans le dossier contenant vos notebooks, et cliquez sur le notebook que vous souhaitez ouvrir puis sur "Open" (ou double-cliquez dessus).
 
 ---
 
