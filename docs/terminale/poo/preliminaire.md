@@ -3,7 +3,7 @@
 !!! quote "Source"
     Inspiré d'une activité du *Hachette NSI Terminale*.
 
-Pour simuler la trajectoire d’un projectile que l’on lance en l’air avec une certaine vitesse et qui est soumis à la gravité, on a besoin de connaître sa position x, y et sa vitesse vx, vy. Après un intervalle de temps dt, la position et la vitesse du projectile sont modifiées comme suit :
+Pour simuler la trajectoire d’un projectile que l’on lance en l’air avec une certaine vitesse et qui est soumis à la gravité, on a besoin de connaître sa position $x$, $y$ et sa vitesse $vx$, $vy$. Après un intervalle de temps dt, la position et la vitesse du projectile sont modifiées comme suit :
 
 - $x = x + dt × vx ; y = y + dt × vy$ ;
 - $vy = vy − g × dt$ où $g$ est l’intensité de la pesanteur ($9,81 m/s^2$ sur Terre).
@@ -34,3 +34,13 @@ balle.vy = 20  # et son attribut vy
 
 !!! note "Exercice 3"
     **Modifier** la **fonction** `pas` pour qu’elle **affiche la trajectoire de la balle** en **dessinant un trait** depuis sa dernière position. On utilisera la bibliothèque `turtle` et la fonction `goto(x,y)` qui déplace la tortue à la position `x`, `y` en **traçant un trait**.
+
+La fonction `pas` n’a de sens que si on lui passe un projectile comme premier paramètre. Pour rendre cela explicite, on peut la définir *à l’intérieur* de la classe `Projectile`. On dit que l’on définit la **méthode** `pas` de la classe `Projectile`. Au lieu d’appeler la fonction `pas(balle, dt)`, on utilise la notation pointée pour appeler cette méthode : `balle.pas(dt)`.
+
+```python
+class Projectile:
+    def pas(self , dt):  # définir la méthode `pas` dans la classe `Projectile`
+        ...  # `self` est l'objet pour lequel on a appelé la méthod
+...
+balle.pas(dt)  # appeler la méthode `pas` pour l'objet `balle`
+```

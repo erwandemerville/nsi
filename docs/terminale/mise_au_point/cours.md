@@ -496,6 +496,11 @@ Il existe principalement **3 modules Python** pour écrire et exécuter des test
 
 (En construction...)
 
+## Aller plus loin : La programmation défensive
+
+(En construction...)
+try... except... 
+
 ## Plus d'exercices
 
 !!! success "À télécharger"
