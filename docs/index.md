@@ -38,3 +38,4 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Modularité](terminale/modularite/index.md) | Création et utilisation de modules et d'API. |
 | [Mise au point des programmes](terminale/mise_au_point/index.md) | Types de données, annotations, tests... |
 | [Les arbres](terminale/arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |
+| [Programmation orientée objet](terminale/poo/index.md) | Découverte des classes en Python. |
