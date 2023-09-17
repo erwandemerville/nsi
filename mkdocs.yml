@@ -53,6 +53,8 @@ nav:
       - premiere/thonny/index.md
     - Les bases de Python:
       - premiere/bases_python/index.md
+      - Introduction au Python: premiere/bases_python/cours.md
+      - Notebooks et exercices: premiere/bases_python/notebooks.md
     - Tris:
       - premiere/tris/index.md
       - Tri par sélection: premiere/tris/tri_selection.md
