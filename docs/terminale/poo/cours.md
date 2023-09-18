@@ -146,6 +146,49 @@ Les variables `a` et `b` font ici référence **au même objet**. En effet, lors
 
 ## Définir les méthodes
 
+Une **méthode** est une **fonction définie à l'intérieur d'une classe**.
+
+Par exemple, si l'on reprend notre classe `Point`, on peut par exemple créer une **méthode** permettant de **modifier** les **attributs** `x` et `y` en y **ajoutant** respectivement une valeur `dx` et `dy` données.
+
+```python
+class Point:
+    "Definition d'un point geometrique"
+    
+    def deplacer(self, dx, dy):
+        self.x = self.x + dx
+        self.y = self.y + dy
+```
+
+Si l'on veut **appeler** cette **méthode**, on procédera comme suit :
+
+```python
+a = Point()
+a.x = 1  # initialiser l'attribut x à 1
+a.y = 2  # initialiser l'attribut y à 2
+print("a : x =", a.x, "y =", a.y)
+a.deplacer(4, 6)  # Appel de la méthode deplacer de la classe Point
+print("a : x =", a.x, "y =", a.y)
+```
+
+[Visualiser sur Python Tutor](https://pythontutor.com/render.html#code=class%20Point%3A%0A%20%20%20%20%22Definition%20d'un%20point%20geometrique%22%0A%20%20%20%20%0A%20%20%20%20def%20deplacer%28self,%20dx,%20dy%29%3A%0A%20%20%20%20%20%20%20%20self.x%20%3D%20self.x%20%2B%20dx%0A%20%20%20%20%20%20%20%20self.y%20%3D%20self.y%20%2B%20dy%0A%0Aa%20%3D%20Point%28%29%0Aa.x%20%3D%201%20%20%23%20initialiser%20l'attribut%20x%20%C3%A0%201%0Aa.y%20%3D%202%20%20%23%20initialiser%20l'attribut%20y%20%C3%A0%202%0Aa.deplacer%284,%206%29%20%20%23%20Appel%20de%20la%20m%C3%A9thode%20deplacer%20de%20la%20classe%20Point&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){ .md-button target="_blank" }
+
+Pour définir une méthode, il faut :
+
+- indiquer son nom (ici `deplace()`).
+- indiquer les **arguments** entre des **parenthèses**. Le premier argument d’une **méthode** doit être `self`.
+
+Pour accéder aux méthodes d’un objet, on indique :
+
+- le **nom de la variable** qui fait **référence à cet objet**
+- un **point**
+- le **nom de la méthode**
+
+### Le constructeur
+
+(En construction...)
+
+### Accesseurs et mutateurs
+
 (En construction...)
 
 ## Manipulation des objets

@@ -23,3 +23,9 @@ Voici quelques sujets pratiques issus d'épreuves de bac de ces dernières anné
 | -------- | ------------- | ----------- |
 | [2022 - Sujet 5](exercices/22-NSI-05.pdf){ target="_blank" }  | [Télécharger](exercices/22-NSI-05.py){ target="_blank" }       | Un jeu de cartes en POO        |
 | [2023 - Sujet 32](exercices/23-NSI-32.pdf){ target="_blank" }  | [Télécharger](exercices/23-NSI-32.py){ target="_blank" }       | Encore un jeu de cartes.        |
+
+## Extrait d'épreuve écrite du baccalauréat
+
+!!! success "Activité - *Le codage de César*"
+    - [activite_codage_cesar.pdf](exercices/bac_sujet_06_2021/activite_codage_cesar.pdf){ target="_blank" } - Activité qui reprend un sujet du bac de 2021 sur le *codage de César*.
+    - [cesar.py](exercices/bac_sujet_06_2021/cesar.py){ target="_blank" } - Fichier *Python* à utiliser pour l'activité.
