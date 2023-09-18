@@ -151,8 +151,3 @@ Les variables `a` et `b` font ici référence **au même objet**. En effet, lors
 ## Manipulation des objets
 
 (En construction...)
-
-## Exercices
-
-!!! success "Télécharger les notebooks de TD"
-    - [Télécharger le TD 1](TD/TD1%20sur%20la%20POO.ipynb){ target="_blank" } - TD 1 sur la POO.

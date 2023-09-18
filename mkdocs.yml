@@ -1,6 +1,7 @@
 site_name: Numérique et sciences informatiques
 theme:
   name: material
+  custom_dir: my_theme_customizations/
   features:
     - announce.dismiss
     - content.action.edit
@@ -49,11 +50,10 @@ nav:
     - index.md
   - Première:
     - premiere/index.md
-    - Découverte de Thonny:
-      - premiere/thonny/index.md
     - Les bases de Python:
       - premiere/bases_python/index.md
       - Introduction au Python: premiere/bases_python/cours.md
+      - Découverte de l'IDE Thonny: premiere/bases_python/thonny.md
       - Notebooks et exercices: premiere/bases_python/notebooks.md
     - Tris:
       - premiere/tris/index.md
@@ -73,6 +73,7 @@ nav:
       - terminale/poo/index.md
       - Activité d'introduction: terminale/poo/preliminaire.md
       - Cours: terminale/poo/cours.md
+      - Exercices: terminale/poo/exercices.md
     - Arbres:
       - terminale/arbres/index.md
       - Cours:
@@ -113,6 +114,10 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:materialx.emoji.twemoji
       emoji_generator: !!python/name:materialx.emoji.to_svg
+
+plugins:
+    - search
+    - macros
 
 extra_css:
   - stylesheets/extra.css

@@ -40,7 +40,16 @@ La fonction `pas` n’a de sens que si on lui passe un projectile comme premier 
 ```python
 class Projectile:
     def pas(self , dt):  # définir la méthode `pas` dans la classe `Projectile`
-        ...  # `self` est l'objet pour lequel on a appelé la méthod
+        ...              # `self` est l'objet pour lequel on a appelé la méthod
 ...
-balle.pas(dt)  # appeler la méthode `pas` pour l'objet `balle`
+balle.pas(dt)            # appeler la méthode `pas` pour l'objet `balle`
 ```
+
+!!! note "Exercice 4"
+    Modifier le **programme** précédent pour définir la fonction `pas` sous forme d’une méthode de la classe `Projectile`.
+
+!!! note "Exercice 5"
+    Modifier la **méthode** `pas` pour programmer le rebond sur le sol : si la coordonnée $y$ du projectile devient négative, on inverse la vitesse verticale $vy$
+
+!!! note "Exercice 6"
+    Modifier le **programme** pour **créer plusieurs balles** avec des **positions** et des **vitesses initiales différentes** et **lancer la simulation** en appelant **répétitivement** la **méthode** `pas` de **chaque balle** à tour de rôle.

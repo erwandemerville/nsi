@@ -498,8 +498,47 @@ Il existe principalement **3 modules Python** pour écrire et exécuter des test
 
 ## Aller plus loin : La programmation défensive
 
-(En construction...)
-try... except... 
+* La **programmation défensive** consiste à écrire son code de façon à **s'attendre au pire**.
+* Il s'agit d'anticiper le **comportement de l'utilisateur final** :
+    * Vérifier que les **données** saisies et leur **type** sont "correctes" (= respectent la **spécification**).
+    * Si ce n'est pas le cas, **interrompre le programme**, éventuellement afficher un message d'erreur...
+
+Dans le cadre d'une fonction, il s'agit de s'assurer du respect :
+* des **préconditions** : conditions sur les **arguments d'entrée**.
+* des **postconditions** : conditions sur la **valeur de sortie**.
+
+## Gérer les exceptions
+
+Un bloc d'instructions `try... except...` permet d'effectuer des actions lorsque des erreurs spécifiques sont levées.
+
+```python
+try:
+    a = int(input('a ? '))
+    b = int(input('b ? '))
+    print(a, '/', b, '=', a / b)
+except ValueError:
+    print('Erreur de conversion.')
+except ZeroDivisionError:
+    print('Division par zéro.')
+except:
+    print('Autre erreur.')
+```
+
+Toutes les exceptions (`valueError`, `typeError`, etc.) natives de Python sont en fait dérivées d'une classe `Exception`. Ainsi, ce sont des **objets**, que l'on peut récupérer en précisant un nom de variable après `except` comme dans cet exemple :
+
+```python
+try:
+    a = int(input('a ? '))
+    b = int(input('b ? '))
+    print(a, '/', b, '=', a / b)
+except Exception as e:
+    print(type(e))
+    print(e)
+```
+
+Il est également possible de créer ses propres exceptions dérivées de cette classe.
+
+Plus d'informations [sur cette page](https://python.developpez.com/tutoriels/apprendre-programmation-python/notions-avancees/?page=gestion-d-erreurs#LIV-C-1){ target="_blank" }
 
 ## Plus d'exercices
 
