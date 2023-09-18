@@ -182,5 +182,14 @@ Vous allez créer un module permettant d'effectuer un certain nombre d'opératio
 
     En Python, l'auteur d'un module peut indiquer que certains éléments sont **privés** (c'est-à-dire encapsulés) en faisant commencer leur nom par un caractère `_`. Toutefois, contrairement à d'autres langages, en **Python**, on ne peut pas réellement empêcher l'utilisation de données "privées". Il s'agit plus d'une indication tacite à destination de l'utilisateur, que celui-ci doit respecter pour garantir le bon fonctionnement du module.
 
-!!! note "Exercices"
-    [Cliquez ici](pdf/exercices_supplementaires.pdf){ target="_blank" } pour télécharger la fiche d'exercices (issue du *Balabonski Terminale*), puis réalisez les exercice **18, 19 et 20**.
+!!! note "À vous de jouer !"
+    Voici une **interface** permettant de **créer et manipuler des dictionnaires** :
+
+    | fonction         | description                                                  |
+    | ---------------- | ------------------------------------------------------------ |
+    | `cree()`         | crée et renvoie un dictionnaire vide                         |
+    | `cle(d, k)`      | renvoie `True` si et seulement si le dictionnaire `d`contient la clé `k`. |
+    | `lit(d, k)`      | renvoie la valeur associée à la clé `k` dans le dictionnaire `d`, et `None` si la clé `k` n'apparait pas. |
+    | `ecrit(d, k, v)` | ajoute au dictionnaire `d` l'association entre la clé `k` et la valeur `v`, en remplaçant une éventuelle association déjà présente pour `k`. |
+
+    **Implémentez un module** `dictionnaire` qui correspond à cette interface.

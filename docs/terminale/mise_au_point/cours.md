@@ -494,7 +494,12 @@ Il existe principalement **3 modules Python** pour écrire et exécuter des test
 - `doctest` : outil externe qui permet d’exécuter des tests inclus dans la documentation des fonctions. Les tests servent alors également de documentation de la fonction ;
 - `pytest` : outil externe qui permet d’exécuter des tests écrits dans des fichiers dédiés. C’est l’outil le plus utilisé, car le plus complet.
 
-(En construction...)
+!!! tip "Exemples d'utilisation des modules"
+    | fichier          | description                                                  |
+    | ---------------- | ------------------------------------------------------------ |
+    | [exemple_doctest.py](src/exemple_doctest.py){ target="_blank" }        | Un exemple d'utilisation du module **doctest**.                         |
+    | [exemple_pytest.py](src/exemple_pytest.py){ target="_blank" }        | Un exemple d'utilisation du module **pytest**.                         |
+    | [exemple_unittest.py](src/exemple_unittest.py){ target="_blank" }        | Un exemple d'utilisation du module **unittest**.                         |
 
 ## Aller plus loin : La programmation défensive
 
@@ -539,10 +544,3 @@ except Exception as e:
 Il est également possible de créer ses propres exceptions dérivées de cette classe.
 
 Plus d'informations [sur cette page](https://python.developpez.com/tutoriels/apprendre-programmation-python/notions-avancees/?page=gestion-d-erreurs#LIV-C-1){ target="_blank" }
-
-## Plus d'exercices
-
-!!! success "À télécharger"
-    [Cliquez ici](pdf/exercices_Hachette.pdf){ target="_blank" } pour télécharger la fiche d'exercices (issue du *Hachette Terminale 2022*).
-
-    [Télécharger les ressources](src/ressources_exercices.zip) (fichiers Python et CSV liés aux exercices).
