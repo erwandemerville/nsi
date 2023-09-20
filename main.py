@@ -93,10 +93,9 @@ def define_env(env):
         docs_path = f"""docs/"""
 
         try:
-            # relative_path = "scripts" if path == "" else path
-            relative_path = "scripts"
+            relative_path = "scripts" if path == "" else path
             with open(
-                f"""{docs_path}/{relative_path}/{script_name}.{extension}"""
+                f"""{docs_path}{relative_path}/{script_name}.{extension}"""
             ) as filename:
                 content = "".join(filename.readlines())
                 content = content + "\n"
@@ -121,33 +120,39 @@ def define_env(env):
 
     # TODO : this issue concerning the urls must be closed ASAP
     def get_filepath() -> str:
-        print("docs_dirs", env.conf["docs_dir"])
-        print(
-            "P1",
-            env.variables.page.abs_url,
-            "/".join(
+        # print("docs_dirs", env.conf["docs_dir"])
+        # print(
+        #     "P1",
+        #     env.variables.page.abs_url,
+        #     "/".join(
+        #         filter(
+        #             lambda folder: folder != "",
+        #             convert_url_to_utf8(env.variables.page.url).split("/")[:-2],
+        #         )
+        #     ),
+        # )
+        # print(
+        #     "P2",
+        #     env.variables.page.abs_url,
+        #     "/".join(
+        #         filter(
+        #             lambda folder: folder != "",
+        #             convert_url_to_utf8(env.variables.page.abs_url).split("/")[2:-2],
+        #         )
+        #     ),
+        # )
+        # return "/".join(
+        #     filter(
+        #         lambda folder: folder != "",
+        #         convert_url_to_utf8(env.variables.page.abs_url).split("/")[2:-2],
+        #     )
+        # )
+        return "/".join(
                 filter(
                     lambda folder: folder != "",
                     convert_url_to_utf8(env.variables.page.url).split("/")[:-2],
                 )
-            ),
-        )
-        print(
-            "P2",
-            env.variables.page.abs_url,
-            "/".join(
-                filter(
-                    lambda folder: folder != "",
-                    convert_url_to_utf8(env.variables.page.abs_url).split("/")[2:-2],
-                )
-            ),
-        )
-        return "/".join(
-            filter(
-                lambda folder: folder != "",
-                convert_url_to_utf8(env.variables.page.abs_url).split("/")[2:-2],
             )
-        )
 
     # TODO : handle the case where the same files are loaded on the same page.
     def generate_id_ide(content: str) -> str:
@@ -367,6 +372,8 @@ def define_env(env):
 
     @env.macro
     def insert_remark_file(script_name: str, key_ide: str) -> str:
+        ''' Fonction permettant d'insérer des remarques sous un IDE. '''
+
         IDE_calls_from_md_file = [
             elt for elt in env.page.markdown.split("\n") if test_style(script_name, elt)
         ]
@@ -388,7 +395,6 @@ def define_env(env):
                 if key_ide == ""
                 else f""
             )
-
             block_remark += f"""
 {leading_spaces}--8<--- "{get_custom_dir()}/pyodide-mkdocs/end_REM.md"
 """
@@ -400,6 +406,7 @@ def define_env(env):
     def insert_corr_content(
         editor_name: str, ide_corr_content: str, key_ide: str
     ) -> str:
+        ''' Crée un bloc de correction. (BUGS À CORRIGER !) '''
         return f"""<span id="corr_content_{editor_name}" class="py_mk_hide" data-strudel="{str(key_ide)}">{ide_corr_content}</span>"""
 
     @env.macro
@@ -414,7 +421,10 @@ def define_env(env):
         @details : Two modes are available : vertical or horizontal. Buttons are added through functional calls.
         Last span hides the code content of the IDE when loaded.
         """
+        if script_name[-3:] == '.py': script_name = script_name[:-3]
+
         filepath = get_filepath()
+        # print(f'filepath = {filepath}')
 
         ide_content = read_external_file(script_name, filepath)
         id_ide = generate_id_ide(ide_content)
@@ -444,13 +454,15 @@ def define_env(env):
 
         div_exercise += insert_content(editor_name, ide_content)
 
-        # key_ide = generate_key(filepath)
-        # ide_corr_content = read_external_file(
-        #     f"""{'/'.join(script_name.split('/')[:-1])}/{script_name.split('/')[-1]}_corr""",
-        #     filepath,
-        # )
-        # div_exercise += insert_corr_content(editor_name, ide_corr_content, key_ide)
-        # div_exercise += insert_remark_file(script_name, key_ide)
+        key_ide = generate_key(filepath)
+        ide_corr_content = read_external_file(
+            f"""{'/'.join(script_name.split('/')[:-1])}/{script_name.split('/')[-1]}_corr""",
+            filepath,
+        )
+        div_exercise += insert_corr_content(editor_name, ide_corr_content, key_ide)
+
+        if os.path.exists(f"docs/{filepath if filepath != '' else 'scripts'}/{script_name}_REM.md"):
+            div_exercise += insert_remark_file(script_name, key_ide)
 
         return div_exercise
 

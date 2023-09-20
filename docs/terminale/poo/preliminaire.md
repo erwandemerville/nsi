@@ -8,7 +8,7 @@ Pour simuler la trajectoire d’un projectile que l’on lance en l’air avec u
 - $x = x + dt × vx ; y = y + dt × vy$ ;
 - $vy = vy − g × dt$ où $g$ est l’intensité de la pesanteur ($9,81 m/s^2$ sur Terre).
 
-Pour représenter le projectile, nous allons utiliser un nouveau type de données : un objet . Pour créer un objet représentant un projectile, il faut d’abord définir une classe, que l’on appelle ici `Projectile` . La fonction `Projectile()` **renvoie** alors un **nouvel objet**, qui est comme une coquille vide. On peut ensuite « remplir » cette coquille avec les attributs qui représentent l’état du projectile, ici `x`, `y`, `vx` et `vy`, auxquels on accède par la notation pointée :
+Pour représenter le projectile, nous allons utiliser un nouveau type de données : un objet . Pour créer un objet représentant un projectile, il faut d’abord définir une classe, que l’on appelle ici `Projectile` . La fonction `Projectile()` **renvoie** alors un **nouvel objet**, qui est comme une coquille vide. On peut ensuite « remplir » cette coquille avec les attributs qui représentent l’état du projectile, ici `x`, `y`, `vx` et `vy`, auxquels on accède par la **notation pointée** :
 
 ```python
 class Projectile:  # déclarer une classe
@@ -27,7 +27,7 @@ balle.vy = 20  # et son attribut vy
 </figure>
 
 !!! note "Exercice 1"
-    Écrire la **fonction** `pas(balle, dt)` qui prend une balle en paramètre et modifie son état après l’intervalle de temps `dt`.
+    Écrire la **fonction** `pas(balle, dt)` qui prend une balle en paramètre et modifie son état après l’intervalle de temps `dt` (vous devez donc redéfinir les **attributs** `x`, `y` et `vy`).
 
 !!! note "Exercice 2"
     Écrire un **programme** qui **crée une balle** et **appelle 50 fois la fonction** `pas` avec le paramète `dt = 0.1` en **affichant** la **position de la balle**.
@@ -49,7 +49,7 @@ balle.pas(dt)            # appeler la méthode `pas` pour l'objet `balle`
     Modifier le **programme** précédent pour définir la fonction `pas` sous forme d’une méthode de la classe `Projectile`.
 
 !!! note "Exercice 5"
-    Modifier la **méthode** `pas` pour programmer le rebond sur le sol : si la coordonnée $y$ du projectile devient négative, on inverse la vitesse verticale $vy$
+    Modifier la **méthode** `pas` pour programmer le **rebond sur le sol** : si la coordonnée $y$ du projectile devient **négative**, on **inverse** la **vitesse verticale** $vy$
 
 !!! note "Exercice 6"
     Modifier le **programme** pour **créer plusieurs balles** avec des **positions** et des **vitesses initiales différentes** et **lancer la simulation** en appelant **répétitivement** la **méthode** `pas` de **chaque balle** à tour de rôle.

@@ -196,18 +196,14 @@ L’instruction `z = x + y` associe la valeur de l’expression située à droit
 !!! note "À vous de jouer !"
     Voici une suite d'instructions :
 
-    {{ IDEv('premiere/bases_python/01') }}
+    {{ IDEv('scripts/01') }}
 
     Quelle sera la valeur contenue dans la variable `c` après avoir saisi ces instructions ?   
     Vérifiez en **exécutant** le programme.
 
     **Même question avec la suite d'instructions suivante :**
 
-    ```python
-    a = 4
-    a = a * a
-    b = a + 4
-    ```
+    {{ IDEv('scripts/02') }}
 
 !!! note "À vous de jouer 2 !"
     Voici une suite d'instructions :
