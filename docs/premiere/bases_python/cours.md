@@ -226,8 +226,109 @@ L’instruction `z = x + y` associe la valeur de l’expression située à droit
 
 ### Mode programme
 
+Le **mode programme** de **Python** consiste à écrire une **suite d’instructions** dans un **fichier** et à les faire **exécuter** par l’**interpréteur Python**. Cette suite d’instructions s’appelle un **programme** (ou **code source**). Cela permet d'éviter d'avoir à ressaisir à chaque fois les instructions dans le mode interactif. Cela permet de faire la distinction entre le rôle de **programmeur** et celui d’**utilisateur** d’un programme.
+
+### Affichage sur la sortie standard
+
+Contrairement au **mode interactif**, en **mode programme**, les résultats des expressions calculées ne sont plus affichés à l’écran. Il faut utiliser pour ceci une instruction explicite d’affi- chage. En Python, elle s’appelle `print`. Par exemple :
+
+{{ IDEv('scripts/03.py') }}
+
+On peut également fournir à `print` une **expression**, qui sera **calculée** puis **affichée** :
+
+{{ IDEv('scripts/04.py') }}
+
+`print` est également capable d'**afficher du texte**, qui doit être mis entre guillemets `"` ou apostrophes `'`, par exemple :
+
+{{ IDEv('scripts/05.py') }}
+
+On peut également afficher **la valeur d'une variable**, exemple :
+
+{{ IDEv('scripts/07.py') }}
+
+Si l'on souhaite inclure **la valeur d'une variable** dans un **texte affiché** par `print`, on peut procéder de différentes façons :
+
+- **avec la concaténation** : on peut inclure notre **variable** dans une **chaîne de caractères** en utilisant la **concaténation de chaînes de caractères**. Pour cela, on transforme notre variable de type `int` en type `str` (c'est-à-dire en chaîne de caractères) avec la fonction `str()`, et on effectue la concaténation en utilisant un `+`.
+- avec des **f-strings** (pas au programme) : si on ajoute un `f` devant notre chaîne de caractères, on peut inclure nos variables **entre crochets**, et elles seront remplacées par leur valeur. Il n'y a, dans ce cas, pas besoin de convertir le type de nos variables en `str`.
+- en donnant **plusieurs valeurs** (plusieurs *arguments*) à notre fonction `print` : dans ce cas, `print` affichera chaque valeur les unes à la suite des autres, que cela soit des chaînes de caractères ou non.
+
+{{ IDE('scripts/06.py') }}
+
+La fonction `print` effectue par défaut un **retour à la ligne** après avoir affiché les valeurs que vous lui avez donné. Pour changer ce comportement, on peut ajouter le paramètre `end` :
+
+{{ IDE('scripts/09.py') }}
+
+## Interaction avec l'utilisateur, lire sur l'entrée standard
+
+Pour demander à l'utilisateur de **saisir une valeur**, de manière à pouvoir la **stocker dans une variable** et en faire quelque chose, on utilise la fonction `input`.
+
+{{ IDEv('scripts/08.py') }}
+
+!!! warning "Attention au type"
+    La valeur renvoyée par la fonction `input` est de type `str` (chaîne de caractères). Si vous voulez utiliser cette valeur dans une **opération arithmétique** par exemple, il faut donc la convertir en `int` (nombre entier), d'où l'utilisation de la fonction `int` ci-dessus.
+
+L'instruction `input` ne s'arrête que **lorsque l'utilisateur a appuyé sur la touche `Entrée`**.
+
 ## Les boucles bornées `for`
+
+Répéter plusieurs fois les mêmes instructions est assez rébarbatif. C'est pour cela qu'il existe une instruction appelée **boucle bornée**, utilisant le mot-clé `for`, qui permet de répéter plusieurs fois un bloc d'instructions. Par exemple :
+
+{{ IDEv('scripts/10.py') }}
+
+Dans la fonction `range`, on indique **le nombre de fois** que l'on souhaite **afficher l'instruction** `print`. Ici, on l'affiche **10 fois**.
+
+En réalité, ce qu'il se passe, c'est que la boucle va **itérer** de la valeur `0` à la valeur `9` (la valeur indiquée dans le `range` moins 1), et la variable `i` fournie à notre boucle, que l'on appelle l'**indice de boucle**, va à chaque fois prendre cette valeur. On dit que `i` **incrémente** (augmente de **1**) à chaque **itération** de la boucle.
+
+Si l'on affiche ce que contient notre **variable** `i` à chaque fois :
+
+{{ IDEv('scripts/11.py') }}
+
+On peut utiliser le `range` de plusieurs manière différentes :
+
+- `range(valeur)` : avec **une seule valeur** entière, la boucle va itérer de `0` à `valeur - 1`,
+- `range(min, max)` : avec **deux valeurs** entières, la boucle va itérer de `min` à `max - 1`,
+- `range(min, max, pas)` : avec **trois valeurs** entières, la boucle va itérer de `min` à `max - 1` avec un **pas** de `pas`. Si l'on n'indique pas ce **pas**, il est de **1** par défaut.
+
+Par exemple, si l'on souhaite afficher tous les nombres **pairs** de **2** à **98** :
+
+{{ IDEv('scripts/12.py') }}
+
+Ici, on a appelé l'**indice de boucle** `nb`. On peut l'appeller comme on veut, mais on utilise souvent des noms à une lettre comme `i`, `j` et `k`.
+
+On peut également passée la valeur de retour d'un `input` à l'intérieur d'un `range`, par exemple :
+
+{{ IDEv('scripts/13.py') }}
+
+!!! warning "Attention au type"
+    Le `range` ne prend que des **entiers**. Si vous souhaitez lui passer la valeur de retour d'un `input`, il faut donc convertir cette valeur en valeur entière avec la fonction `int`.
 
 ## Comparaisons, booléens, tests
 
+(En construction...)
+
 ## Les fonctions
+
+Vous avez jusqu'ici utilisé plusieurs **fonctions natives de Python**, comme `print`, `input`, `int` (la fonction, pas le type), `range`...
+
+Les **fonctions** permettent de créer des **fragments de code réutilisables**. Cela va nous permettre d'aller beaucoup plus loin dans la conception de nos programmes, en créant des fonctions pour effectuer certaines tâches autant de fois qu'on le souhaite, et pour différentes valeurs d'entrée.
+
+Pour définir une fonction, on utilise le **mot-clé** `def`, suivi du **nom de la fonction**, suivi de `:`, puis vient ensuite (à la ligne, avec une **identation**) le bloc d'instructions à exécuter dans la fonction.
+
+!!! note "Une fonction = une tâche"
+    Il est fortement conseillé, pour la clarté du code, de faire en sorte qu'**une fonction représente une seule tâche**.
+
+Par exemple, voici une fonction qui **prend deux nombres entiers** et **renvoie la somme de ces deux nombres** :
+
+{{ IDEv('scripts/14.py') }}
+
+Pour **tester cette fonction**, vous pouvez l'**appeler dans l'interpréteur** (en saisissant l'instruction d'appel après les trois chevrons `>>>` et en appuyant sur la touche `Entrée`). Par exemple, **entrez l'instruction** `somme(3,5)` dans l'interpréteur ci-dessus pour observer le résultat.
+
+Vous pouvez également appeller cette fonction directement dans le programme, mais pour afficher la valeur renvoyée, il faudra ajouter un `print :
+
+{{ IDEv('scripts/16.py') }}
+
+La **valeur renvoyée par la fonction** est indiquée avec le **mot-clé** `return`. Lorsque le `return` est rencontré, on sort de la fonction. Ainsi, si vous rajoutez des instructions **après** ce `return`, elles ne seront pas exécutées, exemple :
+
+{{ IDEv('scripts/15.py') }}
+
+(à suivre...)
