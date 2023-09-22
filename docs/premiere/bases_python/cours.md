@@ -1,8 +1,5 @@
-??? quote "Source"
-    - Inspiré du *Balabonski Première*.
-
 !!! warning "En construction"   
-    Ce cours est encore en construction, de nouvelles informations y seront prochainement ajoutées.
+    Le cours n'est pas encore complet, mais l'essentiel y est. De nouveaux détails y seront ajoutés très bientôt.
 
 # Introduction à la programmation avec Python
 
@@ -304,7 +301,42 @@ On peut également passée la valeur de retour d'un `input` à l'intérieur d'un
 
 ## Comparaisons, booléens, tests
 
-(En construction...)
+Une part importante de la conception d’un programme consiste à imaginer les différents **cas de figure possibles**, notamment selon les **entrées fournies** par l’utilisateur ou les **valeurs** des différentes **variables**, de manière à adapter le programme à chacun des cas. Pour traduire cela dans l’écriture du programme, on peut utiliser des instructions de **branchement** (`if`, `elif`, `else`) qui rassemblent **plusieurs blocs de code alternatifs**, chacun associé à une **condition logique**, et qui à chaque exécution sélectionne au plus l’un de ces blocs.
+
+### Les instructions de branchement
+
+Les instructions `if` (*si*), `elif` (*sinon si*) et `else` (*sinon*) permettent d'exécuter des blocs de code uniquement lorsqu'une **condition** est remplie. Par exemple, voici un programme qui demande à l'utilisateur de saisir un nombre et affiche un message différent selon le nombre saisi :
+
+{{ IDEv('scripts/17.py') }}
+
+Le programme est executé **séquentiellement**, autrement dit, on vérifie d'abord la première condition, si elle est vraie, alors on affiche le message indiqué, sinon on passe à la deuxième condition, et ainsi de suite...
+
+Le comportement de ce programme est donc le suivant :
+
+- **si** `nb` est inférieur à `5` (donc compris entre `0` et `4` inclus), on affiche `"Vous êtes un bébé."`,
+- **sinon si** `nb` est inférieur à `12` (donc compris entre `5` et `11` inclus), on affiche `"Vous êtes un enfant."`,
+- **sinon si** `nb` est inférieur à `18` (donc compris entre `12` et `17` inclus), on affiche `"Vous êtes un ado."`,
+- **sinon si** `nb` est inférieur à `40` (donc compris entre `18` et `39` inclus), on affiche `"Vous êtes un adulte."`,
+- **sinon si** `nb` est inférieur à `60` (donc compris entre `40` et `59` inclus), on affiche `"Vous êtes un vieil adulte."`,
+- **sinon**, (donc si l'âge est au moins de `60`), on affiche `"Vous êtes un vieillard."`.
+
+**Une seule branche** est donc choisie en fonction de la valeur de `nb`, et **un seul message** sera donc affiché.
+
+Voici les symboles permettant d'effectuer des **comparaisons** :
+
+| >    | plus grand que | >=   | supérieur ou égal à | ==   | égal à       |
+| ---- | -------------- | ---- | ------------------- | ---- | ------------ |
+| <    | plus petit que | <=   | inférieur ou égal à | !=   | différent de |
+
+!!! warning "Homogénéité des valeurs comparées"
+    Lorsque vous effectuez une **comparaison** (utilisant l'un des symboles ci-dessus), il faut vous assurer que vous compariez bien ce qui est comparable. Vous pouvez comparer des entiers entre eux, des flottants entre eux, des chaînes de caractères entre eux, ou encore comparer un entier avec un flottant... Mais vous ne pouvez pas, par exemple, comparer un **entier** avec une **chaîne de caractères**, ou vous obtiendrez une erreur.
+
+    ```python
+    >>> 1 < "123"
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    TypeError: '<' not supported between instances of 'int' and 'str'
+    ```
 
 ## Les fonctions
 
