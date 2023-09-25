@@ -84,8 +84,8 @@ p2 = Point()
 
 Nous avons ici **2 instances** de la classe `Point` (soit **2 objets**) :
 
-- la première à laquelle on fait référence au moyen de la variable `a`,
-- la seconde à laquelle on fait référence au moyen de la variable `b`.
+- la première à laquelle on fait référence au moyen de la variable `p1`,
+- la seconde à laquelle on fait référence au moyen de la variable `p2`.
 
 ```python
 >>> print(p1)
@@ -264,6 +264,8 @@ Voici une nouvelle version de notre classe `Point` incluant le **constructeur** 
 
 {{ IDE('scripts/01.py') }}
 
+Il faut bien faire la distinction entre la **définition d'une classe**, et les **instances de cette classe**. Lors de la **création d'un objet** (c'est-à-dire d'une **instance d'une classe**), on passe des **arguments** (un peu comme lorsque l'on appelle une fonction), qui sont automatiquement passés en **entrées** du **constructeur de la classe**. Le constructeur va ensuite **définir les attributs** en utilisant ces valeurs.
+
 ### Accesseurs et mutateurs
 
 - les **accesseurs** (ou *getters*) fournissent des informations relatives à l’état d’un objet, c’est-à-dire aux valeurs de certains de ses attributs sans les modifier ;
@@ -309,6 +311,8 @@ Voici quelques caractéristiques supplémentaires sur les classes :
     - Une méthode `deplacer` qui prend deux paramètres `dx` et `dy` (ne pas oublier également `self`) et qui **déplace le segment** (c'est-à-dire les deux points du segments),
     - une méthode `milieu` qui ne prend pas de paramètres (en dehors de `self` bien sûr) et qui renvoie un **nouveau point** situé **au milieu du segment**.
     - une méthode spéciale `__len__` qui renvoie **la longueur du segment**, on rappelle la formule : si l'on a deux points $P1(X1, Y1)$ et $P2(X2, Y2)$, la longueur est $\sqrt{(X2-X1)² + (Y2-Y1)²}$
+
+    En dessous de la définition des classes, des instructions qui permettent de **créer un nouveau segment** (c'est-à-dire une **instance** de la classe `Segment`) sont présentes. Après avoir exécuté le programme, vous pouvez faire des tests de manipulation de votre **objet** stocké dans `s` dans l'interpréteur Python. Pour appeler une **méthode** de la **classe** `Segment` sur votre objet dont la référence est stockée dans `s`, vous devrez donc saisir `s.nom_de_la_methode(ARGUMENTS ÉVENTUELS)`.
 
     Vous pouvez réaliser cet exercice directement ci-dessous, ou bien sur l'**IDE** de votre choix.
 

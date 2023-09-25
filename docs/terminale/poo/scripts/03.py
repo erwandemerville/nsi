@@ -26,3 +26,8 @@ class Segment:
         pass  # à compléter
 
     pass  # à compléter
+
+# Exemple de création d'un segment
+p1 = Point(5, 2)  # création d'un premier point
+p2 = Point(10, 1)  # création d'un second point
+s = Segment(p1, p2)  # création d'un segment à partir des deux points
