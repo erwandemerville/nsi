@@ -353,9 +353,9 @@ Par exemple, voici une fonction qui **prend deux nombres entiers** et **renvoie 
 
 {{ IDEv('scripts/14.py') }}
 
-Pour **tester cette fonction**, vous pouvez l'**appeler dans l'interpréteur** (en saisissant l'instruction d'appel après les trois chevrons `>>>` et en appuyant sur la touche `Entrée`). Par exemple, **entrez l'instruction** `somme(3,5)` dans l'interpréteur ci-dessus pour observer le résultat.
+Pour **tester cette fonction**, vous pouvez l'**appeler dans l'interpréteur**  (en saisissant l'instruction d'appel après les trois chevrons `>>>` et en appuyant sur la touche `Entrée`) après avoir exécuté le programme. Par exemple, **entrez l'instruction** `somme(3,5)` dans l'interpréteur ci-dessus après exécution du programme pour observer le résultat.
 
-Vous pouvez également appeller cette fonction directement dans le programme, mais pour afficher la valeur renvoyée, il faudra ajouter un `print :
+Vous pouvez également appeller cette fonction directement dans le programme, mais pour afficher la valeur renvoyée, il faudra ajouter un `print` :
 
 {{ IDEv('scripts/16.py') }}
 
@@ -363,4 +363,28 @@ La **valeur renvoyée par la fonction** est indiquée avec le **mot-clé** `retu
 
 {{ IDEv('scripts/15.py') }}
 
-(à suivre...)
+### Fonctions sans paramètres
+
+Une fonction peut **ne pas avoir de paramètres**. Par exemple, voici une fonction qui renvoie une valeur aléatoire entre 1 et 100, en appelant la fonction `randint` du module `random` :
+
+{{ IDEv('scripts/18.py') }}
+
+Ici, on appelle la fonction sans lui fournir de valeurs, mais la fonction appelée renvoie bien une valeur (le mot-clé `return` est bien présent).
+
+### Fonctions sans valeur de retour : procédures
+
+Il est également possible de créer une **fonction** qui ne contient **pas de valeur de retour** (pas de `return`). Par exemple :
+
+{{ IDEv('scripts/19.py') }}
+
+On crée ici une fonction qui contient un paramètre `message`, et qui **affiche** avec `print` ce message, mais ne **renvoie** rien. La fonction est ensuite appelée, avec le message `"HOURAAAAAAAAAAA !!!"` qui est donc affiché.
+
+Les fonctions qui ne **renvoient rien** peuvent être appelées **procédures**. Toutefois, en **Python**, il n'y a techniquement pas de distinction entre les fonctions et les procédures, contrairement à d'autres langages comme le **Java** par exemple.
+
+### Variables locales et globales
+
+Lorsque vous définissez une **variable à l'intérieur** d'une **fonction**, cette variable n'existe **qu'à l'intérieur de la fonction**.
+
+Par exemple, dans la fonction ci-dessous, on a créé une variable `resultat`. Cette variable n'existe qu'à l'intérieur de la fonction, vous pourriez donc avoir une autre variable `resultat` à l'extérieur de la fonction, qui contiendrait une autre valeur.
+
+{{ IDEv('scripts/20.py') }}
