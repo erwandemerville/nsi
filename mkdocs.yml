@@ -53,6 +53,7 @@ nav:
     - Les bases de Python:
       - premiere/bases_python/index.md
       - Introduction au Python: premiere/bases_python/cours.md
+      - Correction DM 1: premiere/bases_python/dm1.md
       - Découverte de l'IDE Thonny: premiere/bases_python/thonny.md
       - Notebooks et exercices: premiere/bases_python/notebooks.md
     - Représentation des données:

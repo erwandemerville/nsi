@@ -1,6 +1,3 @@
-!!! warning "En construction"   
-    Le cours n'est pas encore complet, mais l'essentiel y est. De nouveaux détails y seront ajoutés très bientôt.
-
 # Introduction à la programmation avec Python
 
 ## Vous avez dit "programme" ?
