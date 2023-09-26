@@ -3,6 +3,8 @@
 !!! success "Télécharger le DM"
     - [DM1.pdf](dm1/DM1.pdf){ target="_blank" } - Énoncé du DM 1.
 
+## Correction partie papier
+
 !!! tip "Exercice 1 - Vrai ou Faux ?"
     1. Après les instructions `x = 3`, `y = 5`, `x = y`, `y = x`, la valeur de x est 5 et la valeur de y est 3.  
     <span style="color:green">C'est ***faux***. Pour inverser les valeurs de `x` et de `y`, on a besoin d'une **troisième variable temporaire** pour y stocker l'une des deux valeurs. Sinon, la valeur de `x` est perdue car la variable prend la valeur de `y`. Une solution :
@@ -190,3 +192,65 @@
     ```
 
     Le pourcentage se calcule avec un simple **produit en croix** : les `n` tirages correspondent à **100%** des tirages, et on cherche le pourcentage pour le nombre `compteur` de tirages (`compteur` contient le nombre de fois où l'on a tiré la valeur `6`).
+
+## Correction partie ordinateur
+
+!!! tip "Exercice 1"
+    Écrire un **programme** qui **trace** la **figure** ci-dessous en utilisant **deux boucles imbriquées**. Vous utiliserez le **module Python** *Turtle*. Vous pouvez **importer toutes les fonctions** du module en plaçant cette ligne au début de votre programme : `from turtle import *`.
+
+    ```python
+    from turtle import *
+
+    penup()
+    goto(-240,0)
+    pendown()
+    for i in range(9):
+        côté = 10 * (i + 1)
+        for j in range(4):
+            forward(côté)
+            left(90)
+        penup()
+        forward(côté + 10)
+        pendown()
+    done()
+    ```
+
+!!! tip "Exercice 2"
+    Écrire un **programme** qui **demande à l’utilisateur** de **saisir un entier naturel** `n` et qui **calcule** la **somme des carrés** des **entiers** de **1** à `n`.  
+    Afin de vérifier votre programme, voici un exemple : 1² + 2² + 3² + ... + 10² = 385
+
+    ```python
+    n = int(input("Veuillez saisir un entier naturel : "))
+    somme = 0
+    for i in range(1,n+1):
+        somme = somme + i * i   # ou somme += i*i
+    print(somme)
+    ```
+
+!!! tip "Exercice 3"
+    Au jeu de ***Mölkky***, chaque joueur marque à son tour de jeu entre **0** et **12 points**, qui viennent s’ajouter à son **score** précédent. Mais gare ! Quiconque **dépasse** le score cible de **51 points** revient immédiatement à **25 points**.  
+    Écrire un **programme** qui **demande un score** et un **nombre de points marqués**, et qui **affiche** le **nouveau score** ou **signale** une éventuelle **victoire**.  
+    *Sources : Numérique et Sciences Informatiques 1ère, Balabonski et al., Ed. Ellipses.*
+
+    ```python
+    score = int(input("Quel est votre score ? "))
+    nbPoints = int(input("Combien de points avez-vous marqué (entre 0 et 12) ? "))
+    score = score + nbPoints
+    if score > 51:
+        score = 25
+    print("Votre nouveau score est",score)
+    if score == 51:
+        print("Bravo, vous avez gagné!")
+    ```
+
+!!! tip "Exercice 4"
+    Écrire un **programme** qui **demande à l’utilisateur** de **saisir** un **entier naturel** `n` et qui **affiche** tous ses **diviseurs** les uns après les autres. Les **diviseurs** devront être tous **écrits sur une même ligne et séparés par un tiret**.  
+    *Exemple avec les diviseurs de 15 : 1-3-5-15.*
+
+    ```python
+    n = int(input("Veuillez saisir un entier naturel : "))
+    for i in range(1,n):
+        if n % i == 0:
+            print(i,end="-")
+    print(n)
+    ```
