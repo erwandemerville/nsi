@@ -17,7 +17,16 @@ L'encodage le plus simple est celui des **nombres entiers naturels** (nombres en
 
 Pour représenter des nombres, les ordinateurs utilisent le **système binaire** :  
 Le codage binaire d’un **nombre positif** $n$ est la suite de **bits** $b_k ... b_o$ telle que
-$n = b_k × 2^k + b_{k − 1} × 2^{k − 1} + ... + b_1 × 2^1 + b_0 × 2^0$ . Ainsi le nombre $42$ en **décimal** est représenté par $101010$ en **binaire** : $42 = 1 × 25 + 1 × 2 3 + 1 × 2 0 = 32 + 8 + 2$.
+$n = b_k × 2^k + b_{k − 1} × 2^{k − 1} + ... + b_1 × 2^1 + b_0 × 2^0$ . Ainsi le nombre $42$ en **décimal** est représenté par $101010$ en **binaire** :  
+$42 = \textbf{1} × 2⁵ + \textbf{0} × 2⁴ + \textbf{1} × 2³ + \textbf{0} × 2² + \textbf{0} × 2¹ + \textbf{1} × 2⁰$  
+$42 = \textbf{1} × 2⁵ + \textbf{1} × 2³ + \textbf{1} × 2⁰$  
+$42 = 32 + 8 + 2$
+
+!!! note "À vous de jouer"
+    Voici des **nombres entiers** en **base binaire**, donner l'**écriture** en **base décimale** de ces nombres :
+
+    - ...
+    - ...
 
 Le **codage binaire** d'un nombre décimal consiste à passer de la **base 10** (base *décimale*) à la **base 2**, mais il existe d'autres bases comme la **base 8** (base *octale*), ou la **base 16** (base *hexadécimale*).
 
@@ -67,7 +76,7 @@ Le **codage binaire** d'un nombre décimal consiste à passer de la **base 10** 
 
     Cette manière d'**encoder les entiers naturels** à l'aide de **séquences** de $k$ **bits** permet de représenter les entiers de $0$ à $2^k − 1$. Sur **1 octet** (= **8 bits**) par exemple, on peut donc représenter les **entiers naturels** de $0$ à $255$.
 
-??? tip "Rappels - Base 16 (hexadécimale)
+??? tip "Rappels - Base 16 (hexadécimale)"
     ...
 
 ### Méthode des divisions euclidiennes successives
@@ -168,9 +177,35 @@ Plusieurs **conventions de représentation** existent. Le choix de la convention
 
 Dans cette convention, le **bit de poids fort** (c'est-à-dire celui qui est tout à gauche de l'écriture) correspond au **signe** ($0$ pour un entier positif, $1$ pour un entier négatif). Tous les autres bits codent la **valeur absolue du nombre**.
 
+<u>Exemple</u> :
+
+- Représentation de $+ 7710$ sur **8 bits** : $01001101_2$.
+- Représentation de $– 7710$ sur **8 bits** : $11001101_2$.
+
 ### Convention du complément à 2
 
-(en construction...)
+Le **complément à 2** ou *complément vrai* d’un nombre binaire $N = b_{n–1} ... b_0$ s’obtient en ajoutant la valeur $1$ au **complément restreint** ou **complément à 1** de ce nombre.
+
+Le **complément à 1** ou *complément restreint* d’un nombre binaire $N = b_{n-1} ... b_0$ s’obtient en **inversant** la **valeur** de **chacun des bits** de ce nombre.
+
+<u>Exemple</u> :
+
+|                      | $10001001_2$  |
+| -------------------- | -------- |
+| complément à 1 | $01110110_2$ |
+|                      | + $1_2$      |
+| complément à 2       | $01110111_2$ |
+
+Dans la convention du **complément à 2**, un nombre **négatif** $– N$ exprimé sur $n$ **bits** est représenté en prenant le **complément à 2** de son **équivalent positif** $+ N$. Un nombre positif $+ N$ est quant à lui représenté par sa **valeur binaire** sur $n$ **bits**.
+
+<u>Exemple</u> :
+
+| Représentation de $+ 77_{10}$ sur 8 bits :  | $01001101_2$ |              |
+| ------------------------------------------ | ------------ | ------------ |
+| **Représentation de $– 77_{10}$ sur 8 bits :** | $+ 77_{10}$  | $01001101_2$ |
+| complément restreint :                     |              | $10110010_2$ |
+|                                            | $+$          | $1_2$        |
+| complément vrai :                          |              | $10110011_2$ |
 
 !!! note "Exercice 6"
     Donner la **représentation** en **complément à 2** et sur **8 bits** des entiers **-10**, **-128**, **-42** et **97**.
@@ -212,8 +247,25 @@ Il existe des solutions pour tester l'existence d'un dépassement, par exemple e
 
 ## Représentation des nombres réels
 
-(en construction...)
+Nous avons vu que le langage Python était capable de calculer des nombres décimaux particuliers appelés **nombres flottants** (type `float`). Nous allons voir que ces nombres ont un encodage très compact, ce codage pouvant être sur **32** ou sur **64 bits**, ce qui permet de représenter des nombres très grands ou de très petits nombres, bien au-delà de ce qu’il est possible de représenter avec un codage des entiers sur le même nombre de bits.
+
+Pour **représenter en binaire** des nombres réels (nombres vec une partie fractionnaire), il faut décom- poser celle-ci en une **somme de puissances inverses** de **2** : $b_1 ... b_k$ est la représentation binaire de $d(0 \lt d \lt 1)$ si :  
+$d = b_1 × 2^{-1} + b_2 × 2^{-2} + b_3 × 2^{-3} + ... + b_k × 2^{-k}$  
+$d = b_1 × \frac{1}{2} + b_2 × \frac{1}{2^2} + b_3 × \frac{1}{2³} + ... + b_k × \frac{1}{2^k}$.
+
+!!! warning "Codage inexact"
+    Contrairement au codage de la partie entière, le codage de la **partie décimale** peut être **infini**, de la même façon que des nombres fractionnaires peuvent avoir une partie décimales infinie, come par exemple $\frac{1}{3} = 0,3333...$.
+
+    Il y a donc des nombres décimaux que l'on ne peut pas **représenter de manière exacte** en **machine**. Si l'on prend le nombre `0.3` par exemple, le nombre de bits nécessaire pour le représenter est infini. Si on le représente sur **un octet** par exemple, son **écriture binaire** serait `01001100`, soit :  
+    $0 × \frac{1}{2} + 1 × \frac{1}{4} + 0 × \frac{1}{8}+ 0 × \frac{1}{16} + 1 × \frac{1}{32} + 1 × \frac{1}{64} + 0 × \frac{1}{2} + 0 × \frac{1}{256}$, ce qui vaut $0,296875$.
+
+!!! note "À vous de jouer"
+    Essayez de saisir dans l'**interpréteur Python** l'expression `0.1 + 0.2`. Que devriez-vous obtenir ? Qu'obtenez-vous, et pourquoi ?
 
 ### Codage en virgule fixe
 
+(en construction...)
+
 ### Codage en virgule flottante
+
+(en construction...)
