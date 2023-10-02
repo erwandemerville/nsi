@@ -81,6 +81,10 @@ nav:
       - Cours: terminale/poo/cours.md
       - TP - Un jeu Pokémon: terminale/poo/pokemon.md
       - Exercices: terminale/poo/exercices.md
+    - Récursivité:
+      - terminale/recursivite/index.md
+      - Cours : terminale/recursivite/cours.md
+      - Exercices : terminale/recursivite/exercices.md
     - Arbres:
       - terminale/arbres/index.md
       - Cours:

@@ -19,7 +19,7 @@ Tout au long de l'année, nous utiliserons un **IDE** (pour *integrated developm
 <figure markdown>
   ![Interface de Thonny](images/captureThonny1.png)
   <figcaption>Source : <a href="https://www.zonensi.fr/Maths/Seconde/AlgoBases/ProgrammationPythonThonny/" target="_blank">zonensi</a><br />
-  <a href="images/captureThonny1.png" target="_blank">Ouvrir l'image en plein écran</a></figcaption>
+  <a href="../images/captureThonny1.png" target="_blank">Ouvrir l'image en plein écran</a></figcaption>
 </figure>
 
 !!! info

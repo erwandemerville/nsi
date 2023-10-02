@@ -179,8 +179,23 @@ Dans cette convention, le **bit de poids fort** (c'est-à-dire celui qui est tou
 
 <u>Exemple</u> :
 
-- Représentation de $+ 7710$ sur **8 bits** : $01001101_2$.
-- Représentation de $– 7710$ sur **8 bits** : $11001101_2$.
+- Représentation de $+ 77_{10}$ sur **8 bits** : $01001101_2$.
+- Représentation de $– 77_{10}$ sur **8 bits** : $11001101_2$.
+
+On peut faire les **remarques** suivantes sur cette représentation :
+
+– deux représentations de la valeur $0$ sont possibles, l'une correspondant à un zéro **positif** ($00000000_2$ = $(+ 0)_{10}$ sur 8 bits), l'autre à un zéro **négatif** ($10000000_2$ = $(– 0)_{10}$ sur $8$ bits);
+– l’intervalle des nombres signés représentables est **borné** en fonction de la **longueur de la chaîne binaire** utilisée pour la représentation. Sur $8$ bits par exemple, l’intervalle des nombres représentables est $[11111111_2, 011111111_2]$, soit l’intervalle $[-127_{10}, + 127_{10}]$. L’arithmétique des machines est donc différente de celle de l’être humain puisque l’intervalle des nombres n’est pas infini, mais dépend de la longueur des chaînes de bits manipulées par la machine;
+- pour effectuer une **soustraction**, il est nécessaire d'utiliser un circuit particulier différent de celui permettant d'effectuer des **additions**.
+
+Voici les **valeurs représentables** avec cette convention selon la **longueur de la chaine de bits** fixée :
+
+| Longueur de la chaine de bits | Intervalle de base 10                |
+| ----------------------------- | ------------------------------------ |
+| $8$ bits                      | $[- 127, + 127]$                     |
+| $16$ bits                     | $[- 32 767, + 32 767]$               |
+| $32$ bits                     | $[– 2 147 483 647, + 2 147 483 647]$ |
+| $p$ bits                      | $[– 2^{p – 1} – 1, + 2^{p – 1} – 1]$ |
 
 ### Convention du complément à 2
 
@@ -206,6 +221,64 @@ Dans la convention du **complément à 2**, un nombre **négatif** $– N$ expri
 | complément restreint :                     |              | $10110010_2$ |
 |                                            | $+$          | $1_2$        |
 | complément vrai :                          |              | $10110011_2$ |
+
+On peut faire les **remarques** suivantes sur cette représentation :
+
+– **une seule représentation** du **zéro** est admise : $00000000_2$ = $(+ 0)$_{10} sur $8$ bits.
+– l’intervalle des nombres signés représentables est **borné** en fonction de la **longueur de la chaîne binaire** utilisée pour la représentation. Sur $8$ bits par exemple, l’intervalle des nombres représentables est $[10000000_2, 011111111_2]$, soit l’intervalle $[– 128_{10}, + 127_{10}]$. La chaîne $10000000_2$ après le **complément à 2** donne de nouveau la chaîne $10000000_2$. Par convention, elle représente la valeur $- 128_{10}$ ;
+– pour effectuer une **soustraction**, il n'est pas nécessaire d'utiliser un **circuit** particulier, puisque soustraire un nombre **A** à un autre nombre **B** équivaut à additionner au nombre **B** le **complément à 2** du nombre **A**.
+
+Voici les **valeurs représentables** avec cette convention selon la **longueur de la chaine de bits** fixée :
+
+| Longueur de la chaine de bits | Intervalle de base 10                |
+| ----------------------------- | ------------------------------------ |
+| $8$ bits                      | $[- 128, + 127]$                     |
+| $16$ bits                     | $[- 32 768, + 32 767]$               |
+| $32$ bits                     | $[– 2 147 483 648, + 2 147 483 647]$ |
+| $p$ bits                      | $[– 2^{p – 1}, + 2^{p – 1} – 1]$ |
+
+#### Bit de carry
+
+Lors d’une opération arithmétique effectuée sur des nombres de $p$ **bits**, un $p + 1er$ **bit** peut être généré. Ce bit supplémentaire de **poids fort** est mémorisé comme étant le **bit de carry** par un **indicateur de 1 bit** noté $C$ dans un registre du processeur appelé **registre d'état** (*PSW*).
+
+*<u>Par exemple</u>*, l'addition de $0111 1111_2$ ($+ 127$) et $1111 1110$ ($- 2$) :
+
+|      |      | $0111$ | $1111_2$ |
+| ---- | ---- | ------ | -------- |
+| +    |      | $1111$ | $1110_2$ |
+|      | 1    | $0111$ | $1101_2$ |
+
+Ici, le **9ème bit** est le **bit de carry**.
+
+#### Overflow
+
+Lorsque l'on effectue une **opération mathématique** impliquant des nombres de même signe et ayant chacun $p$ **bits**, il est possible que le résultat **dépasse la capacité de représentation de la machine**. En d'autres termes, ce résultat peut être en dehors de la plage des nombres que la machine peut représenter en utilisant la convention choisie pour ces nombres signés.
+
+Dans de tels cas, le résultat obtenu est incorrect par rapport à son **interprétation** prévue : on appelle cela un ***overflow*** ou un *dépassement de capacité*. Tout comme le *carry*, la survenue d'un overflow est enregistrée dans le **registre d'état** (*PSW*) du processeur à l'aide d'un **indicateur d'un bit**, généralement noté $O$.
+
+*<u>Par exemple</u>*, si l'on effectue l'**addition** des nombres $+ 127_{10}$ et $+ 2_{10}$ représentés selon la convention du **complément à 2** :
+
+|      | $0111$ | $1111_2$ |
+| ---- | ------ | -------- |
+| +    | $0000$ | $0010_2$ |
+|      | $1000$ | $0001_2$ |
+
+Le **résultat obtenu** est le nombre $– 127_{10}$ et non pas la valeur attendue $+ 129_{10}$. Il y a ici un **dépassement de capacité**. En effet, l’intervalle des nombres représentables sur $8$ **bits** selon la convention du **complément à 2** est $[– 127_{10}, + 127_{10}]$.
+
+---
+
+!!! question "Pourquoi préfère t-on cette convention ?"
+    La convention du **complément à 2** est généralement préférée à celle de la **valeur signée** pour les raisons suivantes :
+    
+    1. **Simplicité des opérations arithmétiques** : Avec le complément à 2, les opérations arithmétiques telles que l'addition et la soustraction fonctionnent de la même manière que pour les nombres non signés, en utilisant le même matériel de calcul. Cela simplifie considérablement la conception des circuits électroniques et les opérations de base, car il n'est pas nécessaire de traiter les cas spéciaux pour les nombres signés.
+
+    2. **Unicité de la représentation** : En utilisant le complément à 2, chaque nombre a une représentation unique. Cela signifie qu'il n'y a pas de valeur positive et négative qui se chevauchent, ce qui évite les ambiguïtés.
+
+    3. **Facilité de conversion** : La conversion entre nombres signés et non signés (et vice versa) est plus simple avec le complément à 2 que avec d'autres méthodes de représentation signée. Il suffit d'appliquer le complément à 2 sur un nombre négatif pour obtenir sa représentation positive, et vice versa.
+
+    4. **Prise en charge native des opérations binaires** : Le complément à 2 est idéal pour les ordinateurs, qui traitent naturellement les opérations binaires. La représentation en complément à 2 facilite les opérations bit à bit, ce qui est essentiel pour la conception des processeurs.
+
+    5. **Gestion de l'overflow** : Lorsque des opérations arithmétiques dépassent la capacité de stockage d'un registre, le complément à 2 permet de gérer naturellement les dépassements (overflow) sans nécessiter de matériel ou de logiciel supplémentaire compliqué.
 
 !!! note "Exercice 6"
     Donner la **représentation** en **complément à 2** et sur **8 bits** des entiers **-10**, **-128**, **-42** et **97**.
@@ -249,23 +322,129 @@ Il existe des solutions pour tester l'existence d'un dépassement, par exemple e
 
 Nous avons vu que le langage Python était capable de calculer des nombres décimaux particuliers appelés **nombres flottants** (type `float`). Nous allons voir que ces nombres ont un encodage très compact, ce codage pouvant être sur **32** ou sur **64 bits**, ce qui permet de représenter des nombres très grands ou de très petits nombres, bien au-delà de ce qu’il est possible de représenter avec un codage des entiers sur le même nombre de bits.
 
-Pour **représenter en binaire** des nombres réels (nombres vec une partie fractionnaire), il faut décom- poser celle-ci en une **somme de puissances inverses** de **2** : $b_1 ... b_k$ est la représentation binaire de $d(0 \lt d \lt 1)$ si :  
+Pour **représenter en binaire** des **nombres réels** (nombres avec une partie fractionnaire), il faut décom- poser celle-ci en une **somme de puissances inverses** de **2** : $b_1 ... b_k$ est la représentation binaire de $d(0 \lt d \lt 1)$ si :  
 $d = b_1 × 2^{-1} + b_2 × 2^{-2} + b_3 × 2^{-3} + ... + b_k × 2^{-k}$  
 $d = b_1 × \frac{1}{2} + b_2 × \frac{1}{2^2} + b_3 × \frac{1}{2³} + ... + b_k × \frac{1}{2^k}$.
 
 !!! warning "Codage inexact"
-    Contrairement au codage de la partie entière, le codage de la **partie décimale** peut être **infini**, de la même façon que des nombres fractionnaires peuvent avoir une partie décimales infinie, come par exemple $\frac{1}{3} = 0,3333...$.
+    Contrairement au codage de la partie entière, le codage de la **partie décimale** peut être **infini**, de la même façon que des nombres fractionnaires peuvent avoir une partie décimales infinie, comme par exemple $\frac{1}{3} = 0,3333...$.
 
     Il y a donc des nombres décimaux que l'on ne peut pas **représenter de manière exacte** en **machine**. Si l'on prend le nombre `0.3` par exemple, le nombre de bits nécessaire pour le représenter est infini. Si on le représente sur **un octet** par exemple, son **écriture binaire** serait `01001100`, soit :  
     $0 × \frac{1}{2} + 1 × \frac{1}{4} + 0 × \frac{1}{8}+ 0 × \frac{1}{16} + 1 × \frac{1}{32} + 1 × \frac{1}{64} + 0 × \frac{1}{2} + 0 × \frac{1}{256}$, ce qui vaut $0,296875$.
 
-!!! note "À vous de jouer"
+    Les **nombres réels** représentables avec une **partie décimale finie** en **binaire** sont ceux dont le dénominateur est une **puissance de 2**, comme $\frac{1}{2}$, $\frac{1}{4}$, $\frac{1}{8}$...
+
+!!! note "À vous de jouer 1"
     Essayez de saisir dans l'**interpréteur Python** l'expression `0.1 + 0.2`. Que devriez-vous obtenir ? Qu'obtenez-vous, et pourquoi ?
+
+!!! note "À vous de jouer 2"
+    Quelle est la **représentation binaire** du nombre réel dont l'écriture décimale est $1.25$ ? $12.125$ ? $0.3$ (sur 8 bits) ?
+
+!!! note "À vous de jouer 3"
+    Quelle est la **représentation décimale** du nombre réel dont l'écriture binaire est : $0.0101$ ? $1011.00001$ ?
 
 ### Codage en virgule fixe
 
-(en construction...)
+Une approche initiale pour la représentation des nombres réels avec une partie fractionnaire est le codage en **virgule fixe**, où la **partie entière** et la **partie décimale** sont toutes deux représentées sur un **nombre préalablement défini de bits**, par exemple 8 bits chacune.
 
-### Codage en virgule flottante
+Cependant, cette méthode présente des limitations importantes. Tout d'abord, l'intervalle de nombres que l'on peut représenter reste restreint, correspondant à la plage d'entiers sur 8 bits, c'est-à-dire $[-128, +127]$. De plus, la représentation de la **partie décimale** est également **limitée**, avec la possibilité de représenter seulement $256$ valeurs distinctes. En conséquence il devient impossible de représenter tous les nombres réels, tous les nombres décimaux, et même des nombres "simples" tels que $0,1$ de manière exacte. Seules quelques valeurs décimales spécifiques peuvent être représentées précisément, tandis que d'autres doivent être approximées. Ces approximations sont la principale source d'erreurs de calcul.
 
-(en construction...)
+### Codage en virgule flottante - Norme IEEE 754
+
+La **norme IEEE 754** définit un **format standardisé** qui vise à unifier la représentation des nombres flottants, qui est très diverse selon les constructeurs.
+
+!!! abstract "Formats de représentation"
+    Cette norme propose **deux formats de représentation** : un format **simple précision** sur **32 bits** et un format **double précision** sur **64 bits**.
+
+    ![Les formats IEEE 754](images/formats_IEEE754.png){ width="600" }
+
+En **simple précision**, la **chaîne de 32 bits** représentant le nombre est décomposée en :
+
+- **1 bit de signe** indiquant le signe de la mantisse, 
+- **8 bits** pour l’**exposant**,
+- **23 bits** pour le **codage de la mantisse**.
+
+En **double précision**, la **chaîne de 64 bits** représentant le nombre est décomposée en :
+
+- **1 bit de signe** indiquant le signe de la mantisse, 
+- **11 bits** pour l’**exposant**,
+- **52 bits** pour le **codage de la mantisse**.
+
+!!! abstract "Représentation d'un nombre flottant"
+    La **représentation d’un nombre flottant** est similaire à l’**écriture scientifique** d’un **nombre décimal**, à savoir une **décomposition en trois parties** : un signe $s$, une mantisse $m$ et un exposant $n$. De manière générale, un nombre flottant a la forme suivante :
+
+    <center>
+    <span style="font-size: 1.5em;"> $(−1)^sm × 2^{(n−d)}$</span>
+    </center>
+
+La norme **IEEE 754** présente quelques différences avec l’**écriture scientifique** :
+
+- la **base** choisie est maintenant la **base 2**,
+- la **mantisse** est maintenant dans l’intervalle $[1, 2[$,
+- l’**exposant** $n$ est **décalé** (ou **biaisé**) d’une valeur $d$ qui dépend du **format** choisi (**32** ou **64 bits**).
+
+#### Bit de signe
+
+Le **signe** $s$ est codé sur **un bit** (le **bit de poids fort** de l’entier de **32 bits** ou de **64 bits**) : ce bit vaut $0$ si le nombre représenté est **positif**, et $1$ s'il est **négatif**.
+
+#### Exposant
+
+Pour pouvoir représenter à la fois des **exposants positifs** et **négatifs** dans la **norme IEEE 754**, une méthode différente du **complément à 2** est employée. Cette méthode consiste à **stocker l'exposant** sous une **forme décalée**, en tant qu'**entier non signé**. Plus précisément, l'**exposant décalé**, noté $n$, est représenté par un **entier** de **8 bits** pouvant prendre des valeurs entre $0$ et $255$ :
+
+- dans le format **32 bits**, ce décalage est de $d = +127_{10}$, ce qui permet de représenter des exposants signés dans l'intervalle $[-127_{10}, + 128_{10}]$. Toutefois, les valeurs $0_{10}$ et $255_{10}$ sont **réservées** pour représenter des **cas spéciaux**, donc les exposants signés **réellement utilisables** se situent dans l'intervalle $[-126_{10}, + 127_{10}]$,
+- dans le format **64 bits**, ce décalage est de $d = +1023_{10}$, ce qui permet de représenter des exposants signés dans l'intervalle $[-1023_{10}, + 1024_{10}]$. Toutefois, les valeurs $0_{10}$ et $2047_{10}$ sont **réservées** pour représenter des **cas spéciaux**, donc les exposants signés **réellement utilisables** se situent dans l'intervalle $[-1022_{10}, + 1023_{10}]$.
+
+#### Mantisse
+
+La **mantisse** $m$ est toujours comprise dans l’intervalle $[1, 2[$, et représente un **nombre** de la forme $1, xx . . . xx$, c’est-à-dire un nombre commençant nécessairement par le **chiffre 1**. Par conséquent, pour gagner 1 bit de précision, les **23 bits** dédiés à la **mantisse** (en *simple précision*) sont uniquement utilisés pour représenter les** chiffres après la virgule**, qu’on appelle la **fraction** de la mantisse. Ainsi, si les **23 bits** dédiés à la mantisse sont $b_1 b_2 . . . b_{23}$ , alors la mantisse représente le nombre $1 + b_1 × 2^{−1} + b_2 × 2^{−2} + · · · + b_{23} × 2^{−23}$
+
+!!! quote "Un exemple (*extrait du Balabonski Première*)"
+    Voici un **mot de 32 bits** et le **nombre décimal** qu'il représente.
+
+    ![Mot en décimal](images/exemple_iee754.png){ width="450" }
+
+#### Récapitulatif des encodages
+
+|               | exposant ($e$) | fraction ($f$) | valeur                         |
+| ------------- | -------------- | -------------- | ------------------------------ |
+| **$32$ bits** | 8 *bits*       | 23 *bits*      | $(−1)^s × 1, f × 2^{(e−127)}$  |
+| **$64$ bits** | 11 *bits*      | 52 *bits*      | $(−1)^s × 1, f × 2^{(e−1023)}$ |
+
+En **simple précision** (**32 bits**), les **nombres flottants positifs** peuvent
+représenter les **nombres décimaux** compris (approximativement) dans l’intervalle $[10^{−38}, 10^{38}]$.
+
+En **double précision** (**64 bits**), cet intervalle est (approximativement) de $[10^{−308}, 10^{308}]$.
+
+!!! tip "Exemple"
+    On cherche à **représenter** le **nombre** $– 10,125_{10}$ selon le format **IEEE 754 simple précision**.
+
+    $10,125_{10} = 1010,001{2} = 1,010001{2} × 2^3$.
+
+    L’exposant $e = 3$ est translaté de la valeur $+127_{10}$.  
+    $e' = e + 127_{10} = 130_{10} = 10000010_2$.
+
+    Le **signe** de la mantisse est **négatif** et vaut donc **1**.
+
+    Finalement, le codage du nombre $- 10,125_{10}$ donne la **chaîne binaire** suivante :
+    $1~10000010~01000100000000000000000_2 = C1220000_{16}$
+
+#### Valeurs spéciales
+
+| signe | exposant | fraction | valeur spéciale |
+| ----- | -------- | -------- | --------------- |
+| 0     | 0        | 0        | $+0$            |
+| 1     | 0        | 0        | $-0$            |
+| 0     | 255      | 0        | $+\infty$       |
+| 1     | 255      | 0        | $-\infty$       |
+| 0     | 255      | $\ne 0$  | $NaN$           |
+
+## Exercices
+
+!!! note "Exercice 8"
+    Donner la **représentation flottante** en **simple précision** de $128$ et $−32,75$.
+
+!!! note "Exercice 9"
+    Donner la **valeur décimale** des **nombres flottants** suivants codés en **simple précision** :
+
+    - $1~01111110~11110000000000000000000$,
+    - $0~10000011~11100000000000000000000$.
