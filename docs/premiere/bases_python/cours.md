@@ -243,7 +243,7 @@ On peut également afficher **la valeur d'une variable**, exemple :
 Si l'on souhaite inclure **la valeur d'une variable** dans un **texte affiché** par `print`, on peut procéder de différentes façons :
 
 - **avec la concaténation** : on peut inclure notre **variable** dans une **chaîne de caractères** en utilisant la **concaténation de chaînes de caractères**. Pour cela, on transforme notre variable de type `int` en type `str` (c'est-à-dire en chaîne de caractères) avec la fonction `str()`, et on effectue la concaténation en utilisant un `+`.
-- avec des **f-strings** (pas au programme) : si on ajoute un `f` devant notre chaîne de caractères, on peut inclure nos variables **entre crochets**, et elles seront remplacées par leur valeur. Il n'y a, dans ce cas, pas besoin de convertir le type de nos variables en `str`.
+- avec des **f-strings** (pas au programme) : si on ajoute un `f` devant notre chaîne de caractères, on peut inclure nos variables **entre accolades**, et elles seront remplacées par leur valeur. Il n'y a, dans ce cas, pas besoin de convertir le type de nos variables en `str`.
 - en donnant **plusieurs valeurs** (plusieurs *arguments*) à notre fonction `print` : dans ce cas, `print` affichera chaque valeur les unes à la suite des autres, que cela soit des chaînes de caractères ou non.
 
 {{ IDE('scripts/06.py') }}
@@ -271,7 +271,13 @@ Répéter plusieurs fois les mêmes instructions est assez rébarbatif. C'est po
 
 Dans la fonction `range`, on indique **le nombre de fois** que l'on souhaite **afficher l'instruction** `print`. Ici, on l'affiche **10 fois**.
 
-En réalité, ce qu'il se passe, c'est que la boucle va **itérer** de la valeur `0` à la valeur `9` (la valeur indiquée dans le `range` moins 1), et la variable `i` fournie à notre boucle, que l'on appelle l'**indice de boucle**, va à chaque fois prendre cette valeur. On dit que `i` **incrémente** (augmente de **1**) à chaque **itération** de la boucle.
+En réalité, ce qu'il se passe, c'est que la boucle va **itérer** de la valeur `i = 0` à la valeur `i = 9` (la valeur indiquée dans le `range` moins 1), la variable `i` fournie à notre boucle étant ce l'on appelle l'**indice de boucle**. On dit que `i` **incrémente** (augmente de **1**) à chaque **itération** de la boucle.
+
+En **pseudo-langage**, on pourrait traduire ce programme de la manière suivante :  
+```
+POUR i ALLANT DE 0 à 9 :
+    AFFICHER "Je ne dois pas bavarder en cours"
+```
 
 Si l'on affiche ce que contient notre **variable** `i` à chaque fois :
 
@@ -289,7 +295,7 @@ Par exemple, si l'on souhaite afficher tous les nombres **pairs** de **2** à **
 
 Ici, on a appelé l'**indice de boucle** `nb`. On peut l'appeller comme on veut, mais on utilise souvent des noms à une lettre comme `i`, `j` et `k`.
 
-On peut également passée la valeur de retour d'un `input` à l'intérieur d'un `range`, par exemple :
+On peut également passer la valeur de retour d'un `input` à l'intérieur d'un `range`, par exemple :
 
 {{ IDEv('scripts/13.py') }}
 
@@ -385,3 +391,205 @@ Lorsque vous définissez une **variable à l'intérieur** d'une **fonction**, ce
 Par exemple, dans la fonction ci-dessous, on a créé une variable `resultat`. Cette variable n'existe qu'à l'intérieur de la fonction, vous pourriez donc avoir une autre variable `resultat` à l'extérieur de la fonction, qui contiendrait une autre valeur.
 
 {{ IDEv('scripts/20.py') }}
+
+## Les boucles non bornées `while`
+
+Nous avons vu qu'il était possible de créer des **boucles bornées** à l'aide d'instructions utilisant le mot-clé `for`.
+
+On peut également créer des boucles **non bornées** à l'aide du **mot-clé** `while` (qui signifie *TANT QUE* en français).
+
+Une **boucle bornée** permet d'exécuter un **bloc d'instructions** plusieurs fois, et de continuer **TANT QUE** une **condition donnée** est **vérifiée**.
+
+La **structure** d'une boucle `while` en Python est la suivante :
+
+```python
+while condition:
+    # Bloc d'instructions à répéter tant que la condition est vraie
+```
+
+La boucle `while` commence par **évaluer la condition** :
+
+- **Si** la **condition** est **vraie**, le **bloc d'instructions** à l'intérieur de la boucle est **exécuté**.
+- Après chaque exécution du bloc, la **condition** est à nouveau **évaluée** :
+    - **Tant que** la **condition** reste **vraie**, la boucle **continue de s'exécuter**.
+    - Dès que la **condition** devient **fausse**, la boucle **s'arrête**.
+
+Voici un premier <u>exemple</u> d'utilisation d'une boucle `while` (cliquez sur le premier bouton, *Lancer*, pour exécuter le programme):
+
+{{ IDEv('scripts/21.py') }}
+
+Dans cet exemple, la boucle `while` est utilisée pour **afficher les nombres de `1` à `5`**.  
+La variable `i` est initialisée à `1`, et la boucle continue **TANT QUE** `i` est **inférieur ou égal** à `5`. À **chaque itération de la boucle**, la valeur de `i` est ici **affichée** (à l'aide du `print`), puis est **incrémentée de `1`** à l'aide de l'instruction `i += 1`. La boucle **s'arrête** lorsque `i` atteint `6`, car **la condition devient fausse**.
+
+Voici un autre <u>exemple</u> un peu plus concret de l'utilisation d'une boucle `while` :
+
+{{ IDE('scripts/22.py') }}
+
+Dans cet exemple, une boucle `while` est utilisée pour **demander à l'utilisateur** (à l'aide de la fonction `input`) de **saisir un mot de passe** jusqu'à **trois essais**.  
+La boucle **continue tant qu'il reste des essais** (tant que `essais_restants > 0`) :
+
+- Si **l'utilisateur saisit le mot de passe correct** (c'est-à-dire lorsque `tentative == mot_de_passe`), la boucle **s'arrête** à l'aide de l'instruction `break`. L'instruction `break` permet de **sortir directement** de la boucle, et évite donc de ré-évaluer sa condition.
+- Sinon, le **nombre d'essais restants** est **décrémenté** (cela signifie que l'on **soustrait 1** à `essais_restants`), et un message est **affiché** (à l'aide de la fonction `print`) pour informer l'utilisateur du **nombre d'essais restants**.
+
+Une fois que l'on est **sorti de la boucle** (ce qui se produit soit si on a rencontré l'instruction `break`, soit si la **condition** de la boucle est **fausse**), on **affiche** un message d'accès refusé si le nombre maximal d'essais a été atteint.
+
+!!! warning "Attention aux boucles infinies !"
+    Dans une boucle non bornée `while`, contrairement à une boucle bornée `for`, il y a un risque de créer **boucle infinie**, c'est-à-dire une boucle dont la **condition n'est jamais évaluée à `False`**. Par exemple :
+
+    ```python
+    i = 1
+    while i < 5:
+        print(i)
+    ```
+
+    Ici, on n'a pas écrit d'instruction permettant d'**incrémenter** la variable `i`, donc la **condition** `i < 5` sera **toujours vraie**. Le programme ne s'arrêtera donc **jamais**.
+
+!!! note "À vous de jouer !"
+    Écrivez un **programme** en Python qui **demande à l'utilisateur** d'entrer un **nombre entier positif `n`**. Ensuite, utilisez une **boucle** `while` pour **calculer** la **somme de tous les entiers de `1` à `n`**. **Affichez** ensuite le **résultat**.
+
+    Voici un exemple d'exécution du programme :
+
+    ```yaml
+    Entrez un nombre entier positif : 5
+    La somme des entiers de 1 à 5 est : 15
+    ```
+
+    ??? tip "Cliquez ici pour afficher l'aide"
+        Voici comment procéder pour réaliser ce programme :
+
+        1. Utilisez la fonction `input` pour demander à l'utilisateur de **saisir** un **nombre entier positif**, vous stockerez la valeur saisie dans une **variable** que vous pourrez appeler `n`. N'oubliez de **convertir** cette valeur en **entier** à l'aide de la fonction `int`.
+        2. Créez une **variable** pour **accumuler la somme totale**, que vous **initialiserez** à `0` avant d'entrer dans la boucle.
+        3. Créez une **variable** que vous appelerez `i` par exemple, qui prendra chaque valeur de 1 à `n`.
+        4. Utilisez une boucle `while` qui continue **tant que** `i` est **inférieur ou égal à** `n`, pour **ajouter les entiers** de `1` à `n` à la **somme totale**.
+        5. N'oubliez pas d'**incrémenter la valeur de** `i` à **chaque itération de la boucle**.
+        6. Enfin, après la boucle, **affichez le résultat** à l'aide de la fonction `print`.
+
+    Vous pouvez réaliser ce programme sur ***Thonny*** ou dans l'**IDE ci-dessous** (vous pourrez *télécharger* votre programme en cliquant sur le *deuxième bouton* pour le conserver.)
+
+    {{ IDE() }}
+
+## Les listes
+
+En programmation en langage **Python**, les **listes** sont l'une des **structures de données** les plus couramment utilisées. Une **liste** (**objet** de type `list`) est une **collection ordonnée d'éléments** pouvant être de différents **types** (*nombres entiers*, *flottants*, *chaînes de caractères*, *objets*, etc.). Les listes sont extrêmement flexibles et permettent de stocker et de manipuler des données de manière efficace.
+
+### Création d'une liste
+
+Pour **créer une liste** en Python, vous pouvez utiliser des crochets `[]` et séparer les éléments par des **virgules**. Voici comment créer une liste simple :
+
+```python
+ma_liste = [1, 2, 3, 4, 5]
+```
+
+Une liste peut contenir **n'importe quel type d'élément**, y compris **d'autres listes**. Par exemple :
+
+```python
+liste_mixte = [1, "texte", 3.14, [10, 20, 30]]
+```
+
+### Accès aux éléments d'une liste
+
+Vous pouvez **accéder** aux **éléments individuels d'une liste** en utilisant leur **indice** (*position*) dans la **liste**. L'indice **commence à `0`** pour le **premier élément**. Voici comment accéder aux éléments d'une liste :
+
+```python
+ma_liste = [10, 20, 30, 40, 50]
+
+# Accès au premier élément (indice 0)
+premier_element = ma_liste[0]  # premier_element contient maintenant 10
+
+# Accès au troisième élément (indice 2)
+troisieme_element = ma_liste[2]  # troisieme_element contient maintenant 30
+```
+
+### Modification des éléments d'une liste
+
+Les éléments d'une liste peuvent être **modifiés** en **utilisant leur indice**. Par exemple :
+
+```python
+ma_liste = [10, 20, 30, 40, 50]
+
+# Modification du deuxième élément (indice 1)
+ma_liste[1] = 25  # La liste devient maintenant [10, 25, 30, 40, 50]
+```
+
+### Ajout et suppression d'éléments
+
+Pour **ajouter un élément à la fin d'une liste**, vous pouvez utiliser la **méthode** `append()` :
+
+```python
+ma_liste = [1, 2, 3]
+ma_liste.append(4)  # La liste devient maintenant [1, 2, 3, 4]
+```
+
+Pour **supprimer un élément** en fonction de **sa valeur**, vous pouvez utiliser la **méthode** `remove()` :
+
+```python
+ma_liste = [1, 2, 3, 4, 5]
+ma_liste.remove(3)  # La liste devient maintenant [1, 2, 4, 5]
+```
+
+Pour **supprimer un élément** en fonction de **son indice**, vous pouvez utiliser le **mot-clé** `del` :
+
+```python
+ma_liste = [1, 2, 3, 4, 5]
+del ma_liste[2]  # La liste devient maintenant [1, 2, 4, 5]
+```
+
+À noter que la **suppression d'éléments dans une liste** n'est pas au programme de *première*, ni même de *terminale*. Vous ne serez donc pas interrogés dessus, mais cela peut s'avérer bien utile tout de même.
+
+### Parcours d'une liste avec des boucles
+
+Les **listes** sont souvent parcourues à l'aide de **boucles bornées** `for`. Voici comment **parcourir une liste** et **afficher ses éléments** :
+
+{{ IDE('scripts/25.py') }}
+
+Ce code affichera chaque élément de la liste sur une ligne différente.
+
+Une **autre méthode** pour **parcourir une liste** et **afficher ses éléments** consiste à utiliser **l'indice de ses éléments** : On souhaite maintenant **parcourir**, à l'aide d'une boucle `for`, chaque élément à partir de l'**indice** `0` (indice du **premier élément**), et jusqu'à l'**indice du dernier élément**.
+
+On peut faire cela en utilisant une boucle `for` avec la fonction `range()` pour **générer des indices**, puis en **accédant aux éléments de la liste** à l'aide de ces **indices**. Voici comment cela fonctionne :
+
+{{ IDE('scripts/23.py') }}
+
+Dans cet exemple, nous avons utilisé la fonction `len` sur `ma_liste` pour **obtenir la longueur de la liste**, c'est-à-dire **son nombre d'éléments**. Ensuite, nous avons utilisé `range(longueur)` pour générer une **séquence d'indices** de `0` à `longueur - 1`. À **chaque itération de la boucle**, nous avons **accédé** à **l'élément d'indice** `i` à l'aide de `ma_liste[i]`, puis nous l'avons **affiché**.
+
+On aurait pu écrire ce programme de manière plus simple, comme ceci :
+
+{{ IDE('scripts/24.py') }}
+
+Ici, on a mis directement `len(ma_liste)` à l'intérieur du `range`, ce qui évite de créer une **variable** supplémentaire.
+
+### À vous de jouer !
+
+!!! note "Exercice : Manipulation de listes"
+    Créez un **programme** en réalisant les tâches suivantes :
+
+    1. **Créez une liste** appelée `nombres` contenant les **entiers** de `1` à `5`.
+    2. Utilisez une **boucle** `for` pour **parcourir la liste** `nombres` et **afficher** chaque élément.
+    3. **Modifiez la liste** `nombres` pour qu'elle contienne **les carrés des nombres de** `1` **à** `5`. Cela signifie que la liste doit maintenant contenir `[1, 4, 9, 16, 25]`.
+    4. Utilisez à nouveau une **boucle** `for` pour **parcourir la liste mise à jour** et **afficher chaque élément**.
+
+    ??? tip "Aide - Code à trous"
+        Pour vous aider, vous pouvez réutiliser ce programme à trous :
+
+        ```python
+        # Créer une liste contenant les entiers de 1 à 5
+        nombres = .......
+
+        # Parcourir la liste et afficher chaque élément
+        print("Liste d'origine :")
+        for nombre in .......:
+            print(.......)
+
+        # Modifier la liste pour qu'elle contienne les carrés des nombres de 1 à 5
+        for ... in range(.......):
+            nombres[i] = ....... ** 2
+
+        # Parcourir la liste mise à jour et afficher chaque élément
+        print("\nListe mise à jour :")
+        for nombre in .......:
+            print(.......)
+        ```
+    
+    Vous pouvez réaliser ce programme sur ***Thonny*** ou dans l'**IDE ci-dessous** (vous pourrez *télécharger* votre programme en cliquant sur le *deuxième bouton* pour le conserver.)
+
+    {{ IDE() }}
