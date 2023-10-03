@@ -394,11 +394,9 @@ Par exemple, dans la fonction ci-dessous, on a créé une variable `resultat`. C
 
 ## Les boucles non bornées `while`
 
-Nous avons vu qu'il était possible de créer des **boucles bornées** à l'aide d'instructions utilisant le mot-clé `for`.
+Nous avons vu qu'il était possible de créer des **boucles bornées** à l'aide d'instructions utilisant le **mot-clé** `for`. Nous allons voir ici que l'on peut également créer des boucles **non bornées** à l'aide du **mot-clé** `while` (qui signifie *TANT QUE* en français).
 
-On peut également créer des boucles **non bornées** à l'aide du **mot-clé** `while` (qui signifie *TANT QUE* en français).
-
-Une **boucle bornée** permet d'exécuter un **bloc d'instructions** plusieurs fois, et de continuer **TANT QUE** une **condition donnée** est **vérifiée**.
+Une **boucle non bornée** permet d'exécuter un **bloc d'instructions** plusieurs fois, et de continuer **TANT QUE** une **condition donnée** est **vérifiée**.
 
 La **structure** d'une boucle `while` en Python est la suivante :
 
