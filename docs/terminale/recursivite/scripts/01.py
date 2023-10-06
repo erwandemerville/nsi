@@ -5,4 +5,4 @@ def compte_a_rebours(n):
         print(n)
         compte_a_rebours(n - 1)
 
-compte_a_rebours(10)
+compte_a_rebours(3)  # test avec n = 3
