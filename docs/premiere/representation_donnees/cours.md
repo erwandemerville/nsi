@@ -25,8 +25,12 @@ $42 = 32 + 8 + 2$
 !!! note "À vous de jouer"
     Voici des **nombres entiers** en **base binaire**, donner l'**écriture** en **base décimale** de ces nombres :
 
-    - ...
-    - ...
+    - $0100 1010_2$
+    - $1111 0101_2$
+
+??? tip "Correction"
+    - $0100 1010_2 = 2^1 + 2^3 + 2^6 = 2 + 8 + 64 = 74_{10}$
+    - $1111 0101_2 = 2^0 + 2^2 + 2^4 + 2^5 + 2^6 + 2^7 = 1 + 2 + 16 + 32 + 64 + 128 = 243_{10}$
 
 Le **codage binaire** d'un nombre décimal consiste à passer de la **base 10** (base *décimale*) à la **base 2**, mais il existe d'autres bases comme la **base 8** (base *octale*), ou la **base 16** (base *hexadécimale*).
 
@@ -184,8 +188,8 @@ Dans cette convention, le **bit de poids fort** (c'est-à-dire celui qui est tou
 
 On peut faire les **remarques** suivantes sur cette représentation :
 
-– deux représentations de la valeur $0$ sont possibles, l'une correspondant à un zéro **positif** ($00000000_2$ = $(+ 0)_{10}$ sur 8 bits), l'autre à un zéro **négatif** ($10000000_2$ = $(– 0)_{10}$ sur $8$ bits);
-– l’intervalle des nombres signés représentables est **borné** en fonction de la **longueur de la chaîne binaire** utilisée pour la représentation. Sur $8$ bits par exemple, l’intervalle des nombres représentables est $[11111111_2, 011111111_2]$, soit l’intervalle $[-127_{10}, + 127_{10}]$. L’arithmétique des machines est donc différente de celle de l’être humain puisque l’intervalle des nombres n’est pas infini, mais dépend de la longueur des chaînes de bits manipulées par la machine;
+- deux représentations de la valeur $0$ sont possibles, l'une correspondant à un zéro **positif** ($00000000_2$ = $(+ 0)_{10}$ sur 8 bits), l'autre à un zéro **négatif** ($10000000_2$ = $(– 0)_{10}$ sur $8$ bits);
+- l’intervalle des nombres signés représentables est **borné** en fonction de la **longueur de la chaîne binaire** utilisée pour la représentation. Sur $8$ bits par exemple, l’intervalle des nombres représentables est $[11111111_2, 011111111_2]$, soit l’intervalle $[-127_{10}, + 127_{10}]$. L’arithmétique des machines est donc différente de celle de l’être humain puisque l’intervalle des nombres n’est pas infini, mais dépend de la longueur des chaînes de bits manipulées par la machine;
 - pour effectuer une **soustraction**, il est nécessaire d'utiliser un circuit particulier différent de celui permettant d'effectuer des **additions**.
 
 Voici les **valeurs représentables** avec cette convention selon la **longueur de la chaine de bits** fixée :
@@ -224,9 +228,9 @@ Dans la convention du **complément à 2**, un nombre **négatif** $– N$ expri
 
 On peut faire les **remarques** suivantes sur cette représentation :
 
-– **une seule représentation** du **zéro** est admise : $00000000_2$ = $(+ 0)$_{10} sur $8$ bits.
-– l’intervalle des nombres signés représentables est **borné** en fonction de la **longueur de la chaîne binaire** utilisée pour la représentation. Sur $8$ bits par exemple, l’intervalle des nombres représentables est $[10000000_2, 011111111_2]$, soit l’intervalle $[– 128_{10}, + 127_{10}]$. La chaîne $10000000_2$ après le **complément à 2** donne de nouveau la chaîne $10000000_2$. Par convention, elle représente la valeur $- 128_{10}$ ;
-– pour effectuer une **soustraction**, il n'est pas nécessaire d'utiliser un **circuit** particulier, puisque soustraire un nombre **A** à un autre nombre **B** équivaut à additionner au nombre **B** le **complément à 2** du nombre **A**.
+- **une seule représentation** du **zéro** est admise : $00000000_2$ = $(+ 0)$_{10} sur $8$ bits.
+- l’intervalle des nombres signés représentables est **borné** en fonction de la **longueur de la chaîne binaire** utilisée pour la représentation. Sur $8$ bits par exemple, l’intervalle des nombres représentables est $[10000000_2, 011111111_2]$, soit l’intervalle $[– 128_{10}, + 127_{10}]$. La chaîne $10000000_2$ après le **complément à 2** donne de nouveau la chaîne $10000000_2$. Par convention, elle représente la valeur $- 128_{10}$ ;
+- pour effectuer une **soustraction**, il n'est pas nécessaire d'utiliser un **circuit** particulier, puisque soustraire un nombre **A** à un autre nombre **B** équivaut à additionner au nombre **B** le **complément à 2** du nombre **A**.
 
 Voici les **valeurs représentables** avec cette convention selon la **longueur de la chaine de bits** fixée :
 
