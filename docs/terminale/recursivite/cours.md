@@ -103,6 +103,14 @@ graph TD
     
     Ainsi, pour des valeurs de $n$ plus élevées, cette approche devient **inefficace**, et il est préférable d'utiliser des techniques de **programmation dynamique** pour **optimiser le calcul** des termes de Fibonacci (on abordera cela plus tard dans l'année).
 
+
+### Plusieurs cas récursifs
+
+??? quote "..."
+    (Voir Balabonski page 17)
+
+    Cas récursifs multiples. Il est également possible de définir une fonctionavec plusieurs cas récursifs. Par exemple, on peut donner une autre définitionpour puissance(x, n) en distinguant deux cas récursifs selon la parité de n.En effet, si n est pair, on a alors x n = (x n / 2 )2. De même, si n est impair, on aalors x n = x X (x(n-I)/2)2, où l'opération de division est supposée ici être ladivision entière. Ceci nous amène à définir la fonction puissance(x, n) de lamanière suivante, en supposant que l'on dispose d'une fonction carre(x) =x x x.puissance(x, n) ={ carre(puissance(x, x 1 x carre(puissance(x, n/2)) (n -1)/2))si n = 0,si n > 1 et n est pair,si n > 1 et n est impair.Pour des raisons dont nous discuterons un peu plus loin, cette définitionva nous permettre d'implémenter en Python une version plus efficace de lafonction puissance.
+
 ### À vous de jouer !
 
 !!! info "La fonction factorielle"

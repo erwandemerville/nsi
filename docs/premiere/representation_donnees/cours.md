@@ -371,7 +371,7 @@ En **double précision**, la **chaîne de 64 bits** représentant le nombre est 
 - **52 bits** pour le **codage de la mantisse**.
 
 !!! abstract "Représentation d'un nombre flottant"
-    La **représentation d’un nombre flottant** est similaire à l’**écriture scientifique** d’un **nombre décimal**, à savoir une **décomposition en trois parties** : un signe $s$, une mantisse $m$ et un exposant $n$. De manière générale, un nombre flottant a la forme suivante :
+    La **représentation d’un nombre flottant selon la norme IEEE 754** est similaire à l’**écriture scientifique** d’un **nombre décimal**, à savoir une **décomposition en trois parties** : un signe $s$, une mantisse $m$ et un exposant $n$. De manière générale, un nombre flottant a la forme suivante :
 
     <center>
     <span style="font-size: 1.5em;"> $(−1)^sm × 2^{(n−d)}$</span>

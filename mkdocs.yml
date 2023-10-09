@@ -103,6 +103,7 @@ nav:
       - Évaluations:
         - Évaluation 1 corrigée: terminale/arbres/evaluation_correction.pdf
         - Évaluation 2: terminale/arbres/evaluation_v2.pdf
+  - Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Rendu des travaux: rendus.md
 
 markdown_extensions:

@@ -13,6 +13,18 @@ En particulier, on s'inspirera du jeu **Pokémon**.
 
     Si vous souhaitez **tester le jeu**, vous pouvez [cliquer ici](https://replit.com/@erwandemerville/TP-Classes-Pokemon){ target="_blank" }.
 
+!!! tip "Correction + Un petit défi"
+    - [tp_pokemons_correction.zip](exercices/tp_pokemon_correction.zip){ target="_blank" } - Fichiers **corrigés** du TP Pokémon.
+
+    <u>Défi pour 1 point bonus au DS</u> :  
+    Vous souhaitez obtenir **un point bonus** au DS ?
+
+    Voici comment faire :
+
+    - Ajoutez **3 nouveaux pokémons** dans la base de données des pokémons (fichier `pokemons.txt`).
+    - Créez **un nouvel type d'attaque**.
+    - Réglez le soucis de la mort liée à un effet (vérifier l'état des pokémons après activation d'un effet, et mettre fin au tour si l'un des pokémons est KO).
+
 Ce projet est constitué des fichiers suivants :
 
 * `main.py` - Programme principal permettant l'exécution du jeu
