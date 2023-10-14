@@ -1,6 +1,3 @@
-!!! warning "En construction"
-    Ce cours est encore en construction...
-
 # Cours - La récursivité
 
 ## Introduction
@@ -106,10 +103,34 @@ graph TD
 
 ### Plusieurs cas récursifs
 
-??? quote "..."
-    (Voir Balabonski page 17)
+Il est également possible de définir une fonction **avec plusieurs cas récursifs**. Par exemple, on souhaite proposer une fonction `puissance(x, n)`, **renvoyant** le résultat de $x^n$, en distinguant **deux cas** en fonction de la **parité** de `n`.
 
-    Cas récursifs multiples. Il est également possible de définir une fonctionavec plusieurs cas récursifs. Par exemple, on peut donner une autre définitionpour puissance(x, n) en distinguant deux cas récursifs selon la parité de n.En effet, si n est pair, on a alors x n = (x n / 2 )2. De même, si n est impair, on aalors x n = x X (x(n-I)/2)2, où l'opération de division est supposée ici être ladivision entière. Ceci nous amène à définir la fonction puissance(x, n) de lamanière suivante, en supposant que l'on dispose d'une fonction carre(x) =x x x.puissance(x, n) ={ carre(puissance(x, x 1 x carre(puissance(x, n/2)) (n -1)/2))si n = 0,si n > 1 et n est pair,si n > 1 et n est impair.Pour des raisons dont nous discuterons un peu plus loin, cette définitionva nous permettre d'implémenter en Python une version plus efficace de lafonction puissance.
+Mathématiquement, on peut définir $x^n$ de la façon suivante :
+
+<center>
+$x^n=\left\{ \begin{array}{lll} 1 \;si \; n=0\\
+{(x^\frac{n}{2})}^2 \;si \; n \geq 1 \;et\; n \;pair\\
+x \times (x^{\frac{(n-1)}{2}})^2 \;si \; n \geq 1 \;et\; n \;impair \end{array} \right.$
+</center>
+
+On a donc ici **un cas de base** (non récursif) et **deux cas récursifs** selon si `n` est **pair** ou **impair**.
+
+L'opération de **division** est ici supposée être la **division entière** (on utilisera le symbole `//` en **Python**).
+
+On écrira pour implémenter cela :
+
+- une fonction `carre(x)` qui renvoie le **carré d'un nombre `x` donné**,
+- une fonction `puissance(x, n)` définie de la manière suivante :
+
+<center>
+$puissance(x,n)=\left\{ \begin{array}{lll} 1 \;si \; n=0\\
+carre(puissance(x,\frac{n}{2})) \;si \; n \geq 1 \;et\; n \;pair\\
+x \times carre(puissance(x,\frac{n-1}{2}) \;si \; n \geq 1 \;et\; n \;impair \end{array} \right.$
+</center>
+
+{{ IDE('scripts/04.py') }}
+
+Les seules opérations sont effectuées dans la fonction `carre(x)`.
 
 ### À vous de jouer !
 

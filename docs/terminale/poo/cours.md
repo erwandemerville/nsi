@@ -1,9 +1,6 @@
 ??? quote "Sources"
     - [courspython](https://courspython.com/classes-et-objets.html){ target="_blank" }
 
-!!! warning "En construction"
-    Ce cours est encore en construction. De nouvelles informations y seront ajoutées prochainement, et des modifications pourront être apportées.
-
 # Programmation orientée objet
 
 ## Introduction
@@ -317,3 +314,9 @@ Voici quelques caractéristiques supplémentaires sur les classes :
     Vous pouvez réaliser cet exercice directement ci-dessous, ou bien sur l'**IDE** de votre choix.
 
     {{ IDE('scripts/03.py') }}
+
+## Attributs et méthodes de classes
+
+### Attributs de classes
+
+### Méthodes de classes
