@@ -130,7 +130,7 @@ x \times carre(puissance(x,\frac{n-1}{2}) \;si \; n \geq 1 \;et\; n \;impair \en
 
 {{ IDE('scripts/04.py') }}
 
-Les seules opérations sont effectuées dans la fonction `carre(x)`.
+On constate donc que les seules **opérations arithmétiques** sont effectuées dans la fonction `carre(x)`, et dans le cas où `n` est **impair** dans la fonction `puissance(x,n)`. Les **appels récursifs** font que ces opérations sont répétées autant de fois qu'il faut pour calculer $x^n$.
 
 ### À vous de jouer !
 
