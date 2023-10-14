@@ -14,7 +14,7 @@ En particulier, on s'inspirera du jeu **Pokémon**.
     Si vous souhaitez **tester le jeu**, vous pouvez [cliquer ici](https://replit.com/@erwandemerville/TP-Classes-Pokemon){ target="_blank" }.
 
 !!! tip "Correction + Un petit défi"
-    - [tp_pokemons_correction.zip](exercices/tp_pokemon_correction.zip){ target="_blank" } - Fichiers **corrigés** du TP Pokémon.
+    - [tp_pokemons_correction.zip](exercices/tp_pokemons_correction.zip){ target="_blank" } - Fichiers **corrigés** du TP Pokémon.
 
     <u>Défi pour 2 points bonus au DS</u> :  
     Vous souhaitez obtenir non pas **un point**, mais **<span style="font-size:1.2em; color:rgb(200,100,100);">DEUX POINTS BONUS</span>** à votre note obtenue au dernier DS sur la POO ?
