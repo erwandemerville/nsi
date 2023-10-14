@@ -16,14 +16,36 @@ En particulier, on s'inspirera du jeu **Pokémon**.
 !!! tip "Correction + Un petit défi"
     - [tp_pokemons_correction.zip](exercices/tp_pokemon_correction.zip){ target="_blank" } - Fichiers **corrigés** du TP Pokémon.
 
-    <u>Défi pour 1 point bonus au DS</u> :  
-    Vous souhaitez obtenir **un point bonus** au DS ?
+    <u>Défi pour 2 points bonus au DS</u> :  
+    Vous souhaitez obtenir non pas **un point**, mais **<span style="font-size:1.2em; color:rgb(200,100,100);">DEUX POINTS BONUS</span>** à votre note obtenue au dernier DS sur la POO ?
 
     Voici comment faire :
 
     - Ajoutez **3 nouveaux pokémons** dans la base de données des pokémons (fichier `pokemons.txt`).
-    - Créez **un nouvel type d'attaque**.
-    - Réglez le soucis de la mort liée à un effet (vérifier l'état des pokémons après activation d'un effet, et mettre fin au tour si l'un des pokémons est KO).
+    - Créez **un nouveau type d'attaque**, comme le sommeil par exemple (qui empêche un pokémon d'attaquer pendant un certain nombre de tours), ou encore la confusion (qui fait qu'un pokémon attaquant va subir des dégâts 50% du temps), vous pouvez consulter [cette page](https://www.pokepedia.fr/Statut){ target="_blank" } pour voir la liste des **statuts** possibles.
+    - Réglez le soucis de la **mort liée à un effet**. En effet, actuellement, lors de l'exécution de la méthode `activation_effets`, si les **points de vie** d'un pokémon atteignent `0`, et que le pokémon est donc **K.O.**, le tour actuel se déroule quand même.  
+    On peut constater cela dans la méthode `jouer` (lignes **164 à 181** dans `combat.py`) :
+    ```python linenums="1"
+    self.activation_effets()  # Activation des altérations d'états
+    print(f"TOUR {self.get_numero_tour()}")  # Affichage du numéro du tour
+    if tour == 0:  # C'est au pokémon du joueur de jouer
+        if not self.get_pokemon_joueur().get_etat()["nom_etat"] == 'paralysie':
+            print(f"C'est à {self.get_pokemon_joueur().get_nom()} de jouer !")
+            attaque = self.get_pokemon_joueur().choix_attaque()
+            self.attaquer(attaque, self.get_pokemon_joueur(), self.get_pokemon_ennemi())
+            sleep(3)  # Laisser un délai de 3 secondes
+        tour = 1
+    else:  # C'est au pokémon adverse de jouer
+        if not self.get_pokemon_ennemi().get_etat()["nom_etat"] == 'paralysie':
+            print(f"C'est à {self.get_pokemon_ennemi().get_nom()} de jouer.")
+            sleep(3)
+            attaque = self.get_pokemon_ennemi().choix_attaque_aleatoire()
+            self.attaquer(attaque, self.get_pokemon_ennemi(), self.get_pokemon_joueur())
+            sleep(3)
+        tour = 0
+    self.augmenter_tour()  # Incrémenter le nombre de tours
+    ```
+    Il faudrait donc faire en sorte que **si un pokémon meurt** à cause d'un **effet** (comme le *poison* ou le *drainage*), le combat **prenne immédiatement fin**. Il faudrait donc ne pas exécuter les **lignes 2 à 18** dans ce cas là.
 
 Ce projet est constitué des fichiers suivants :
 
