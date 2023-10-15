@@ -95,7 +95,7 @@ def define_env(env):
         try:
             relative_path = "scripts" if path == "" else path
             with open(
-                f"""{docs_path}{relative_path}/{script_name}.{extension}"""
+                f"""{docs_path}{relative_path}/{script_name}.{extension}""", encoding="utf8"
             ) as filename:
                 content = "".join(filename.readlines())
                 content = content + "\n"
@@ -575,9 +575,9 @@ def define_env(env):
 
         try:
             if path == "":
-                f = open(f"""{docs_path}/scripts/{input_file}""")
+                f = open(f"""{docs_path}/scripts/{input_file}""", encoding="utf8")
             else:
-                f = open(f"""{docs_path}/{path}/{input_file}""")
+                f = open(f"""{docs_path}/{path}/{input_file}""", encoding="utf8")
 
             content = list(map(lambda x: x[:-1], f.readlines()))
             header = content.pop(0).split(sep)
