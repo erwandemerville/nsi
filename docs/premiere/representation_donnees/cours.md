@@ -241,11 +241,37 @@ Voici les **valeurs représentables** avec cette convention selon la **longueur 
 | $32$ bits                     | $[– 2 147 483 648, + 2 147 483 647]$ |
 | $p$ bits                      | $[– 2^{p – 1}, + 2^{p – 1} – 1]$ |
 
+#### Binaire vers décimal
+
+L'**opération inverse**, permettant de **retrouver un entier codé** avec la **convention du complément à 2**, est assez simple à effectuer.
+
+Le **bit de poids fort** (celui qui est tout à gauche) de la **chaîne binaire** peut être également inter-prété comme **bit de signe**. Ainsi :
+
+- s'il vaut $\textbf{0}$, alors la **chaîne binaire** représente un **nombre positif** $+ N$ dont la **valeur décimale** est donnée directement par la **conversion de la chaîne** depuis la **base 2** vers la **base 10**;
+- s'il vaut $\textbf{1}$, alors la **chaîne binaire** représente un **nombre négatif** $– N$ dont la **valeur décimale** est celle du **nombre positif** associé $+ N$ obtenu en **complémentant de nouveau à 2** la chaîne, ou plus simplement en **inversant tous les bits situés à gauche de premier bit à 1** (en partant de la droite).
+
+!!! quote "Conversion binaire (complément à 2) vers décimal"
+    $0011~0011_2$ : Le **bit de poids fort est à 0** (nombre *positif*), donc on **convertit simplement vers la base 10** :
+
+    <center>
+    $0011~0011_2 = 2^0 + 2^1 + 2^4 + 2^5 = 1 + 2 + 16 + 32 = + 51_{10}$
+    </center>
+
+    $1011~1100_2$ : Le **bit de poids fort est à 1** (nombre *négatif*), donc :
+
+    - soit on refait le **complément à 2**,
+    - soit on inverse tous les bits situés **à gauche** du **premier bit à 1** en partant de la droite, ce qui donne ici : $\textbf{1011 1}100_2 → \textbf{0100 0}100_2$.  
+    $0100~0100_2 = 68_{10}$, donc il ne reste qu'à ajouter le **signe** $-$ 
+
+    <center>
+    $1011~1100_2 = - 68_{10}$
+    </center>
+
 #### Bit de carry
 
 Lors d’une opération arithmétique effectuée sur des nombres de $p$ **bits**, un $p + 1er$ **bit** peut être généré. Ce bit supplémentaire de **poids fort** est mémorisé comme étant le **bit de carry** par un **indicateur de 1 bit** noté $C$ dans un registre du processeur appelé **registre d'état** (*PSW*).
 
-*<u>Par exemple</u>*, l'addition de $0111 1111_2$ ($+ 127$) et $1111 1110$ ($- 2$) :
+*<u>Par exemple</u>*, l'addition de $0111~1111_2$ ($+ 127$) et $1111~1110$ ($- 2$) :
 
 |      |      | $0111$ | $1111_2$ |
 | ---- | ---- | ------ | -------- |
@@ -290,6 +316,9 @@ Le **résultat obtenu** est le nombre $– 127_{10}$ et non pas la valeur attend
 !!! note "Exercice 7"
     Donner en **base 10** la **valeur** des octets *signés* $11100111$ et $11000001$.
 
+!!! note "Plus d'exercices"
+    Vous pouvez également vous entraîner sur les exercices proposés à la fin de [cette page](https://iut-info.univ-reims.fr/users/nourrit/codages/page9.html){ target="_blank" } (*IUT de Reims*).
+
 ### Addition et soustraction de nombres entiers
 
 Pour **additionner deux nombres entiers** en **écriture binaire**, on utilise le **même principe** que dans le **système décimal**, en additionnant les chiffres un à un, de droite à gauche. La table d’addition des nombres binaires est la suivante :
@@ -297,7 +326,8 @@ Pour **additionner deux nombres entiers** en **écriture binaire**, on utilise l
 - 0 + 0 = 0
 - 0 + 1 = 1
 - 1 + 0 = 1
-- 1 + 1 = 10, c’est-à-dire 0 avec une retenue de 1
+- 1 + 1 = 10, c’est-à-dire **0** avec une **retenue** de **1**
+- 1 + 1 + 1 = 11, c’est-à-dire **1** avec une **retenue** de **1**
 
 On souhaite par exemple **additionner** les **entiers** $42_{10} = 00101010_2$ et $14_{10} = 00001110_2$ :
 
@@ -326,7 +356,7 @@ Il existe des solutions pour tester l'existence d'un dépassement, par exemple e
 
 Nous avons vu que le langage Python était capable de calculer des nombres décimaux particuliers appelés **nombres flottants** (type `float`). Nous allons voir que ces nombres ont un encodage très compact, ce codage pouvant être sur **32** ou sur **64 bits**, ce qui permet de représenter des nombres très grands ou de très petits nombres, bien au-delà de ce qu’il est possible de représenter avec un codage des entiers sur le même nombre de bits.
 
-Pour **représenter en binaire** des **nombres réels** (nombres avec une partie fractionnaire), il faut décom- poser celle-ci en une **somme de puissances inverses** de **2** : $b_1 ... b_k$ est la représentation binaire de $d(0 \lt d \lt 1)$ si :  
+Pour **représenter en binaire** des **nombres réels** (nombres avec une partie fractionnaire), il faut décomposer celle-ci en une **somme de puissances inverses** de **2** : $b_1 ... b_k$ est la représentation binaire de $d(0 \lt d \lt 1)$ si :  
 $d = b_1 × 2^{-1} + b_2 × 2^{-2} + b_3 × 2^{-3} + ... + b_k × 2^{-k}$  
 $d = b_1 × \frac{1}{2} + b_2 × \frac{1}{2^2} + b_3 × \frac{1}{2³} + ... + b_k × \frac{1}{2^k}$.
 
@@ -349,9 +379,16 @@ $d = b_1 × \frac{1}{2} + b_2 × \frac{1}{2^2} + b_3 × \frac{1}{2³} + ... + b_
 
 ### Codage en virgule fixe
 
-Une approche initiale pour la représentation des nombres réels avec une partie fractionnaire est le codage en **virgule fixe**, où la **partie entière** et la **partie décimale** sont toutes deux représentées sur un **nombre préalablement défini de bits**, par exemple 8 bits chacune.
+Une approche initiale pour la représentation des nombres réels avec une partie fractionnaire est le codage en **virgule fixe**, où la **partie entière** et la **partie décimale** sont toutes deux représentées sur un **nombre préalablement défini de bits**, par exemple **8 bits** chacune.
 
-Cependant, cette méthode présente des limitations importantes. Tout d'abord, l'intervalle de nombres que l'on peut représenter reste restreint, correspondant à la plage d'entiers sur 8 bits, c'est-à-dire $[-128, +127]$. De plus, la représentation de la **partie décimale** est également **limitée**, avec la possibilité de représenter seulement $256$ valeurs distinctes. En conséquence il devient impossible de représenter tous les nombres réels, tous les nombres décimaux, et même des nombres "simples" tels que $0,1$ de manière exacte. Seules quelques valeurs décimales spécifiques peuvent être représentées précisément, tandis que d'autres doivent être approximées. Ces approximations sont la principale source d'erreurs de calcul.
+Avec cette approche, pour encoder les **nombres réels négatifs**, on utilise simplement le **complément à 2** après avoir effectué le codage en virgule fixe du nombre positif équivalent.
+
+Cependant, cette méthode présente des limitations importantes. Tout d'abord, l'intervalle de nombres que l'on peut représenter reste restreint, correspondant à la plage d'entiers sur 8 bits, c'est-à-dire $[-128, +127]$. De plus, la représentation de la **partie décimale** est également **limitée**, avec la possibilité de représenter seulement $256$ valeurs distinctes. En conséquence il devient impossible de représenter tous les nombres réels, tous les nombres décimaux, et même des nombres "simples" tels que $0,1$ de manière exacte.  
+Seules quelques valeurs décimales spécifiques peuvent être représentées précisément, tandis que d'autres doivent être approximées. Ces approximations sont la principale source d'erreurs de calcul.
+
+<center>
+:material-arrow-right-box: [Voir des exemples d'encodage en virgule fixe](https://iut-info.univ-reims.fr/users/nourrit/codages/page11.html){ target="_blank" }
+</center>
 
 ### Codage en virgule flottante - Norme IEEE 754
 
@@ -378,7 +415,7 @@ En **double précision**, la **chaîne de 64 bits** représentant le nombre est 
     La **représentation d’un nombre flottant selon la norme IEEE 754** est similaire à l’**écriture scientifique** d’un **nombre décimal**, à savoir une **décomposition en trois parties** : un signe $s$, une mantisse $m$ et un exposant $n$. De manière générale, un nombre flottant a la forme suivante :
 
     <center>
-    <span style="font-size: 1.5em;"> $(−1)^sm × 2^{(n−d)}$</span>
+    <span style="font-size: 1.4em;"> $(−1)^sm × 2^{(n−d)}$</span>
     </center>
 
 La norme **IEEE 754** présente quelques différences avec l’**écriture scientifique** :
@@ -400,12 +437,36 @@ Pour pouvoir représenter à la fois des **exposants positifs** et **négatifs**
 
 #### Mantisse
 
-La **mantisse** $m$ est toujours comprise dans l’intervalle $[1, 2[$, et représente un **nombre** de la forme $1, xx . . . xx$, c’est-à-dire un nombre commençant nécessairement par le **chiffre 1**. Par conséquent, pour gagner 1 bit de précision, les **23 bits** dédiés à la **mantisse** (en *simple précision*) sont uniquement utilisés pour représenter les** chiffres après la virgule**, qu’on appelle la **fraction** de la mantisse. Ainsi, si les **23 bits** dédiés à la mantisse sont $b_1 b_2 . . . b_{23}$ , alors la mantisse représente le nombre $1 + b_1 × 2^{−1} + b_2 × 2^{−2} + · · · + b_{23} × 2^{−23}$
+La **mantisse** $m$ est toujours comprise dans l’intervalle $[1, 2[$, et représente un **nombre** de la forme $1, xx . . . xx$, c’est-à-dire un nombre commençant nécessairement par le **chiffre 1**. Par conséquent, pour gagner **1 bit** de précision, les **23 bits** (en *simple précision*) ou **52 bits** (en *double précision*) dédiés à la **mantisse** sont uniquement utilisés pour représenter les **chiffres après la virgule**, qu’on appelle la **fraction de la mantisse**.
 
-!!! quote "Un exemple (*extrait du Balabonski Première*)"
+Ainsi, si les **23 bits** dédiés à la mantisse sont $b_1 b_2 . . . b_{23}$ , alors la mantisse représente le nombre $1 + b_1 × 2^{−1} + b_2 × 2^{−2} + · · · + b_{23} × 2^{−23}$.
+
+!!! abstract "Représentation *normalisée* d'un nombre flottant"
+    Ainsi, avec la **mantisse** sous sa **forme normalisée**, les **nombres flottants** seront représentés comme suit.
+    
+    Sur **32 bits** :
+
+    <center>
+    <span style="font-size: 1.4em;">$(−1)^s \times 1, f \times 2^{(e−127)}$</span>
+    </center>
+
+    Sur **64 bits** :
+
+    <center>
+    <span style="font-size: 1.4em;">$(−1)^s \times 1, f \times 2^{(e−1023)}$</span>
+    </center>
+
+    où $s$ est le **bit de signe**, $f$ est la **fraction de la mantisse** et $e$ est l'**exposant**.
+
+!!! quote "Conversion binaire (virgule flottante) → décimal (*extrait du Balabonski Première*)"
     Voici un **mot de 32 bits** et le **nombre décimal** qu'il représente.
 
     ![Mot en décimal](images/exemple_iee754.png){ width="450" }
+
+    Pour voir des **exemples supplémentaires** :
+    <center>
+    :material-arrow-right-box: [IUT de Reims - Virgule flottante → décimal](https://iut-info.univ-reims.fr/users/nourrit/codages/page13.html){ target="_blank" }
+    </center>
 
 #### Récapitulatif des encodages
 
@@ -419,10 +480,10 @@ représenter les **nombres décimaux** compris (approximativement) dans l’inte
 
 En **double précision** (**64 bits**), cet intervalle est (approximativement) de $[10^{−308}, 10^{308}]$.
 
-!!! tip "Exemple"
+!!! quote "Conversion décimal → binaire (virgule flottante)"
     On cherche à **représenter** le **nombre** $– 10,125_{10}$ selon le format **IEEE 754 simple précision**.
 
-    $10,125_{10} = 1010,001{2} = 1,010001{2} × 2^3$.
+    $10,125_{10} = 1010,001_{2} = 1,010001_{2} × 2^3$.
 
     L’exposant $e = 3$ est translaté de la valeur $+127_{10}$.  
     $e' = e + 127_{10} = 130_{10} = 10000010_2$.
@@ -431,6 +492,11 @@ En **double précision** (**64 bits**), cet intervalle est (approximativement) d
 
     Finalement, le codage du nombre $- 10,125_{10}$ donne la **chaîne binaire** suivante :
     $1~10000010~01000100000000000000000_2 = C1220000_{16}$
+
+    Pour plus de détails sur ce codage et des exemples supplémentaires :
+    <center>
+    :material-arrow-right-box: [IUT de Reims - Codage en virgule flottante](https://iut-info.univ-reims.fr/users/nourrit/codages/page12.html){ target="_blank" }
+    </center>
 
 #### Valeurs spéciales
 
@@ -442,7 +508,33 @@ En **double précision** (**64 bits**), cet intervalle est (approximativement) d
 | 1     | 255      | 0        | $-\infty$       |
 | 0     | 255      | $\ne 0$  | $NaN$           |
 
-## Exercices
+#### Nombres dénormalisés
+
+Comme vu précédemment, si l’**exposant** $e$ d’un **nombre flottant** (sur **32 bits**) est compris entre $1$ et $254$, la valeur représentée par l’encodage est :
+
+<center>
+$(−1)^s \times 1, f \times 2^{(e−127)}$
+</center>
+
+Les nombres représentés ainsi sont dits **normalisés**. Avec cet encodage, le **plus petit nombre décimal positif représentable** est donc $2^{−126}$ (soit $∼ 10^{−38}$).
+
+Étant donné que la **mantisse** est **implicitement** de la forme $1, f$ , il n’y a pas de nombres représentables dans l’intervalle $[0, 2^{−126} [$, là où il y en a $2^{23}$ dans l’intervalle $[1 × 2^{−126} , 2 \times 2^{−126}]$ = $[2^{−126} , 2^{−125}]$.
+
+Afin de pouvoir représenter des **très petits nombres**, la norme ***IEEE 754*** permet d’encoder des nombres de la forme suivante, avec une **mantisse** commençant **implicitement** par un $0$ au lieu d'un $1$ :
+
+<center>
+$(−1)^s \times 0, f \times 2^{−126}$
+</center>
+
+On appelle ces nombres flottants des **nombres dénormalisés**, dont :
+
+- l'**exposant** $e$ est à $0$,
+- la **fraction** de la **mantisse** est **différente** de $0$. 
+
+La **plus petite valeur représentable** avec des **nombres dénormalisés** est ainsi :  
+$2^{−23} × 2^{−126} = 2^{−149}$ représentée par la **chaîne binaire** $0~00000000~00000000000000000000001_2$.
+
+### Exercices
 
 !!! note "Exercice 8"
     Donner la **représentation flottante** en **simple précision** de $128$ et $−32,75$.
@@ -452,3 +544,21 @@ En **double précision** (**64 bits**), cet intervalle est (approximativement) d
 
     - $1~01111110~11110000000000000000000$,
     - $0~10000011~11100000000000000000000$.
+
+!!! note "Plus d'exercices"
+    Vous pouvez également vous entraîner sur les exercices proposés par l'*IUT de Reims* :
+    
+    - Décimal → virgule flottante : [exercices à la fin de cette page](https://iut-info.univ-reims.fr/users/nourrit/codages/page12.html){ target="_blank" }
+    - Virgule flottante → décimal : [exercices à la fin de cette page](https://iut-info.univ-reims.fr/users/nourrit/codages/page13.html){ target="_blank" }
+
+## Représentation des textes
+
+La **représentation des caractères** dans un ordinateur permet de **stocker** ou d'**échanger des textes**. 
+
+Théoriquement, cela consiste simplement à **associer un numéro unique à chaque caractère**. Toutefois, le choix de la **norme d'encodage utilisée** nécessite de respecter certaines contraintes. Tout d’abord, il faut que tous les ordinateurs utilisent **le même encodage**. Ensuite, on doit pouvoir représenter le plus de caractères possible, notamment des caractères dits « non imprimables », qui peuvent correspondre à des actions comme celle permettant de **passer à la ligne** ou d'**émettre un beep**, mais aussi à des **commandes** de protocoles de communication comme *accuser réception*, *début de texte*, etc. Par ailleurs, le but est également d'être le plus compact possible pour économiser la mémoire ou le volume des échanges réseaux.
+
+(en construction...)
+
+### Norme ASCII
+
+### Norme Unicode
