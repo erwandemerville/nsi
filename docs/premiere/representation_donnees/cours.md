@@ -555,10 +555,98 @@ $2^{−23} × 2^{−126} = 2^{−149}$ représentée par la **chaîne binaire** 
 
 La **représentation des caractères** dans un ordinateur permet de **stocker** ou d'**échanger des textes**. 
 
-Théoriquement, cela consiste simplement à **associer un numéro unique à chaque caractère**. Toutefois, le choix de la **norme d'encodage utilisée** nécessite de respecter certaines contraintes. Tout d’abord, il faut que tous les ordinateurs utilisent **le même encodage**. Ensuite, on doit pouvoir représenter le plus de caractères possible, notamment des caractères dits « non imprimables », qui peuvent correspondre à des actions comme celle permettant de **passer à la ligne** ou d'**émettre un beep**, mais aussi à des **commandes** de protocoles de communication comme *accuser réception*, *début de texte*, etc. Par ailleurs, le but est également d'être le plus compact possible pour économiser la mémoire ou le volume des échanges réseaux.
-
-(en construction...)
+Théoriquement, cela consiste simplement à **associer un numéro unique à chaque caractère**. Toutefois, le choix de la **norme d'encodage utilisée** nécessite de respecter certaines contraintes. Tout d’abord, il faut que tous les ordinateurs utilisent **le même encodage**. Ensuite, on doit pouvoir représenter le plus de caractères possible, des caractères éditables comme des **lettres majuscules et minuscules**, des **signes de ponctuation** et **signes mathématiques**, mais aussi des caractères dits « non imprimables », qui peuvent correspondre à des actions comme celle permettant de **passer à la ligne** ou d'**émettre un beep**, mais aussi à des **commandes** de protocoles de communication comme *accuser réception*, *début de texte*, etc. Par ailleurs, le but est également d'être le plus compact possible pour économiser la mémoire ou le volume des échanges réseaux.
 
 ### Norme ASCII
 
+<figure markdown>
+  ![Table ASCII standard](images/table_ascii.png){ width="300" }
+  <figcaption>Table ASCII standard</figcaption>
+</figure>
+
+Le codage **ASCII** (*American Standard Code for Information Interchange*) est un **codage à 7 bits** qui permet donc de représenter **128 caractères**. Chacun des codes associés à un caractère est donné dans une **table à deux entrées**, la **première entrée** codant la **valeur du quartet de poids faible** et la **seconde entrée** codant la **valeur des 3 bits de poids fort** du code associé au caractère.
+
+Le caractère `A` est codé par la chaîne $100~0001_2$ soit le code hexadécimal $41_{16}$.
+
+Le code ASCII est notamment très utilisé sur les processeurs de la famille **Intel**.
+
+La table ASCII contient plusieurs catégories de caractères :
+
+- les lettres de l’alphabet latin en majuscule (entre $41$ et $5A$) et en minuscule (entre $61$ et $7A$) ;
+- les chiffres de $0$ à $9$ (entre $30$ et $39$) ;
+- des signes de ponctuations (comme la **virgule** `,` qui vaut $2C$), des parenthèses ou des crochets (comme le symbole `(` qui vaut $28$ ou le crochet ouvrant `[` qui vaut $5B$) ;
+- des opérateurs arithmétiques (comme le signe `+` qui vaut $2B$).
+
+La table ASCII contient également des **caractères spéciaux** :
+
+!!! quote "Quelques caractères spéciaux"
+
+    | caractère | numéro | signification          |
+    | --------- | ------ | ---------------------- |
+    | HT        | 09     | Tabulation horizontale |
+    | LF        | 0A     | Nouvelle ligne         |
+    | VT        | 0B     | Tabulation verticale   |
+    | FF        | 0C     | Nouvelle page          |
+    | CR        | 0D     | Retour chariot         |
+    | **SP**    | 20     | **Espace**             |
+    | BS        | 08     | Suppression            |
+    | DEL       | 7F     | Effacement             |
+
+Elle contient également des **caractères de contrôle** *non imprimables*, par exemple :
+
+!!! quote "Quelques caractères de contrôle"
+
+    | caractère | numéro | signification              |
+    | --------- | ------ | -------------------------- |
+    | SOH       | 01     | Début d’entête             |
+    | STX       | 02     | Début de texte             |
+    | ETX       | 03     | Fin de texte               |
+    | EOT       | 04     | Fin de transmission        |
+    | ENQ       | 05     | Demande                    |
+    | ACK       | 06     | Accusé de réception        |
+    | DC1       | 11     | Contrôle de périphérique 1 |
+    | BEL       | 07     | Son sur le haut-parleur    |
+
+!!! question "Bit de parité"
+    Même si **7 bits** suffisent pour représenter **128 caractères** (de `000 0000` à `111 1111`), en pratique chaque caractère occupe **1 octet** (8 bits) en mémoire. Le **bit** de **poids fort** est utilisé pour effectuer une **somme de contrôle** afin de détecter d’éventuelles erreurs de transmission. L'idée est de fixer la valeur de ce bit de manière à ce que le **nombre de bits** à `1` dans l’octet soit **toujours pair**. C’est la raison pour laquelle on appelle ce bit le **bit de parité**.
+
+!!! tip "ASCII et Python"
+    La fonction ord de Python renvoie le code ASCII correspondant à un caractère. L’entier renvoyé est en **base 10**, mais on peut le **convertir en hexadécimal** avec la fonction `hex`.
+
+    ```python
+    >>> ord(’A’)
+    65
+    >>> hex(ord(’A’))
+    '0x41'
+    ```
+
+    Inversement, la fonction chr renvoient le caractère correspondant à un entier.
+
+    ```python
+    >>> chr(0x26)
+    ’&’
+    ```
+
+    Les caractères peuvent également être saisis directement par leur code ASCII
+    en utilisant la notation \xhh, où hh est le code hexadécimal du caractère.
+
+    ```python
+    >>> print(’\x43e\x63i es\x74...’)
+    Ceci est...
+    ```
+
+!!! note "Exercice 10"
+
+    Donner le **codage ASCII** (en **hexadécimal** et **binaire**) des deux chaînes de caractères Python ci-dessous :
+
+    - `’bonjour tout le monde!’`
+    - `’’’programmer en Python’’’`
+
+!!! note "Exercice 11"
+    Écrire une fonction `printASCII(s)` qui affiche à l’écran les **codes ASCII au format hexadécimal** d’une chaîne de caractères. Utiliser cette fonction pour vérifier les réponses à l’exercice précédent.
+
 ### Norme Unicode
+
+Le codage **UNICODE** (*Universal Code*) est un code à **16 bits** en cours de définition qui a pour but de coder **le plus grand nombre possible de symboles en usage dans le monde**. Les **16 bits** de code permettent de coder **65 536 caractères différents**.
+
+**UNICODE** reprend le *codage ASCII* concernant les principaux caractères, en étendant le code à **16 bits**. Ainsi, le caractère `A` est codé par la chaîne hexadécimale $0041_{16}$. Ce code est notamment utilisé sous les processeurs de type *Pentium*.
