@@ -22,5 +22,5 @@ Les exercices contenus dans les notebooks suivants consistent en la réalisation
 | ----------- | ------------------------------------------------------------ | ------------------------ |
 | [Codage binaire - Entiers naturels](notebooks/Codage%20binaire%20-%20Entiers%20naturels.ipynb){ target="_blank" } | Exercices Python sur la représentation des entiers naturels. | Jacques CHOUTEAU         |
 | [Codage binaire - Entiers relatifs](notebooks/Codage%20binaire%20-%20Entiers%20relatifs.ipynb){ target="_blank" } | Exercices Python sur la représentation des entiers relatifs. | Jacques CHOUTEAU         |
-| [Codage binaire - Nombres réels](notebooks/Codage%20binaire%20-%20Nombre%20à%20virgule%20flottante.ipynb){ target="_blank" } | Exercices Python sur la représentation des nombres réels. | Jacques CHOUTEAU         |
+| [Codage binaire - Nombres réels](notebooks/Codage_binaire_flottants.ipynb){ target="_blank" } | Exercices Python sur la représentation des nombres réels. | Jacques CHOUTEAU         |
 | [Codage caractères - ASCII](notebooks/codage_ASCII.ipynb){ target="_blank" } | Exercices Python sur le codage ASCII. | Erwan DEMERVILLE         |
