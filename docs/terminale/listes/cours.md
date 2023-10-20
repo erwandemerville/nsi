@@ -98,4 +98,7 @@ On crée une classe `Cellule` permettant de représenter une **cellule** (ou un 
     - une **liste vide** représentée par la valeur `None`
     - une **liste** représentée par une **instance** de `Cellule`.
 
+!!! note "À faire"
+  Écrivez **de manière récursive** les **fonctions** `longueur`, `afficher`, `nieme_element`, `concatener` et `renverser`, en respectant bien la documentation.
+
 ### Autres implémentations
