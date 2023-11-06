@@ -44,6 +44,11 @@ Ainsi, on va initialement appeler `hanoi(n,"A","B","C")`, et lorsque l'on voudra
     - donner en **entrée** : `(n,"A","B","C")` où `n` est un entier.
     - obtenir en **sortie** : Les instructions à suivre pour déplacer les `n` disques de la tour `"A"` à la tour `"C"` donnée sous la forme `"A B"` pour signifier un déplacement de `A` vers `B` et affiché avec `print`.
 
+??? tip "Solution"
+    {{ IDE('scripts/hanoi.py') }}
+
+!!! success "Animation avec Tkinter"
+    Téléchargez et exécutez [ce script Python](scripts/hanoi_animation.py){ target="_blank" } pour observer une animation des tours de Hanoï utilisant le module `Tkinter` de **Python**.
 
 ## Sujets de bac
 

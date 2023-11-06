@@ -7,4 +7,5 @@
 | [Programmation orientée objet](poo/index.md) | Découverte des classes en Python. |
 | [Récursivité](recursivite/index.md) | Utilisation de la récursivité en langage Python. |
 | [Les listes chaînées](listes/index.md) | Structure de liste chaînée et implémentation. |
+| [Piles et files](pilesfiles/index.md) | Structures de piles et de files et implémentations. |
 | [Les arbres](arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |

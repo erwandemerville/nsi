@@ -89,6 +89,9 @@ nav:
       - terminale/listes/index.md
       - Cours: terminale/listes/cours.md
       - Exercices: terminale/listes/exercices.md
+    - Piles et files:
+      - terminale/pilesfiles/index.md
+      - Cours: terminale/pilesfiles/cours.md
     - Arbres:
       - terminale/arbres/index.md
       - Cours:
