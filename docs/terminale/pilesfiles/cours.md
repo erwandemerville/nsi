@@ -65,3 +65,26 @@ Comme dans le cas des **listes chaînées**, il y a plusieurs façons d'**implé
         On rappelle qu'il faut faire la distinction entre l'**interface** et les **implémentations**. On ne spécifie ici pas comment les données sont **représentées**, ni comment les opérations sont **implémentées**.
 
         Cette **définition abstraite** du type **Pile**, bien qu'étant **mutable** (on modifie directement la **pile** plutôt que d'en renvoyer une nouvelle), n'empêche toutefois pas de proposer par la suite une implémentation **non mutable**, tant que celle-ci suit les opérations définies.
+
+## Exemple d'utilisation d'une pile
+
+Un exemple d'utilisation d'une **pile** : les opérations d'**accès à une nouvelle page web** et de **retour en arrière** (retour à la dernière page web) sur un navigateur.
+
+On pourrait, en *Python*, définir ces **opérations** de cette manière :
+
+```python
+adresse_courante = ""
+adresses_precedentes = nouvelle_pile_vide()
+
+def aller_a(adresse_cible):
+    adresses_precedentes.empiler(adresse_courante)
+    adresse_courante = adresse_cible
+
+def retour():
+    if not adresses_precedentes.est_vide():
+        adresse_courante = adresses_precedentes.depiler()
+```
+
+## Implémentations d'une pile
+
+...
