@@ -433,7 +433,8 @@ Le **signe** $s$ est codé sur **un bit** (le **bit de poids fort** de l’entie
 Pour pouvoir représenter à la fois des **exposants positifs** et **négatifs** dans la **norme IEEE 754**, une méthode différente du **complément à 2** est employée. Cette méthode consiste à **stocker l'exposant** sous une **forme décalée**, en tant qu'**entier non signé**. Plus précisément, l'**exposant décalé**, noté $n$, est représenté par un **entier** de **8 bits** pouvant prendre des valeurs entre $0$ et $255$ :
 
 - dans le format **32 bits**, ce décalage est de $d = +127_{10}$, ce qui permet de représenter des exposants signés dans l'intervalle $[-127_{10}, + 128_{10}]$. Toutefois, les valeurs $0_{10}$ et $255_{10}$ sont **réservées** pour représenter des **cas spéciaux**, donc les exposants signés **réellement utilisables** se situent dans l'intervalle $[-126_{10}, + 127_{10}]$,
-- dans le format **64 bits**, ce décalage est de $d = +1023_{10}$, ce qui permet de représenter des exposants signés dans l'intervalle $[-1023_{10}, + 1024_{10}]$. Toutefois, les valeurs $0_{10}$ et $2047_{10}$ sont **réservées** pour représenter des **cas spéciaux**, donc les exposants signés **réellement utilisables** se situent dans l'intervalle $[-1022_{10}, + 1023_{10}]$.
+- dans le format **64 bits**, ce décalage est de $d = +1023_{10}$, ce qui permet de représenter des exposants signés dans l'intervalle $[-1023_{10}, + 1024_{10}]$. Toutefois, les valeurs $0_{10}$ et $2047_{10}$ sont **réservées** pour représenter des **cas spéciaux**, donc les exposants signés **réellement utilisables** se situent dans l'intervalle $[-1022_{10}, + 1023_{10}]$,
+- de manière **générale**, pour un **exposant** stocké sur un nombre $n$ de **bits**, le **décalage** sera de $2^{n - 1} - 1$.
 
 #### Mantisse
 
@@ -560,7 +561,7 @@ Théoriquement, cela consiste simplement à **associer un numéro unique à chaq
 ### Norme ASCII
 
 <figure markdown>
-  ![Table ASCII standard](images/table_ascii.png){ width="300" }
+  ![Table ASCII standard](images/table_ascii.png){ width="400" }
   <figcaption>Table ASCII standard</figcaption>
 </figure>
 
@@ -645,8 +646,58 @@ Elle contient également des **caractères de contrôle** *non imprimables*, par
 !!! note "Exercice 11"
     Écrire une fonction `printASCII(s)` qui affiche à l’écran les **codes ASCII au format hexadécimal** d’une chaîne de caractères. Utiliser cette fonction pour vérifier les réponses à l’exercice précédent.
 
+#### Normes ISO 8859
+
+Les **caractères imprimables** de la table **ASCII** se sont révélés rapidement insuffisants pour représenter efficacement des textes dans des langues autres que l'anglais. Cela est particulièrement évident pour les langues utilisant l'alphabet **latin**, car la table **ASCII** ne prend pas en compte de nombreux éléments tels que les **lettres accentuées** et les **symboles de monnaie**. Pour résoudre cette limitation, l'**ISO** (*Organisation Internationale de Normalisation*) a introduit la norme **ISO 8859**, une extension de l'**ASCII** qui utilise **huit bits par octet** pour représenter les **caractères**, permettant ainsi un total de **256 caractères encodés**. Malgré cette expansion, cela reste encore **insuffisant** pour englober tous les **caractères** utilisés dans les **langues latines**.
+
+Afin de maximiser la représentation des caractères, la norme **ISO 8859** propose plusieurs tables de correspondance, également appelées pages et notées **ISO-8859-n**, où **n** représente le numéro de la table. Bien que ces tables soient indépendantes les unes des autres, elles ont été conçues pour être compatibles entre elles. Les **premiers 128 caractères** correspondent à la norme **ASCII**, tandis que les **128 suivants** sont spécifiques à la table **n**. De plus, les caractères identiques ont le même code.
+
+La **norme 8859** inclut un total de **seize tables**, dont dix sont dédiées aux **langues latines**. Plutôt que de les référencer par leur nomenclature **ISO**, elles sont parfois appelées **latin-1**, **latin-2**, etc.
+
+<figure markdown>
+  ![Tables de la norme 8859](images/norme_8859.png){ width="420" }
+  <figcaption>Tables de la norme 8859</figcaption>
+</figure>
+
 ### Norme Unicode
 
 Le codage **UNICODE** (*Universal Code*) est un code à **16 bits** en cours de définition qui a pour but de coder **le plus grand nombre possible de symboles en usage dans le monde**. Les **16 bits** de code permettent de coder **65 536 caractères différents**.
 
 **UNICODE** reprend le *codage ASCII* concernant les principaux caractères, en étendant le code à **16 bits**. Ainsi, le caractère `A` est codé par la chaîne hexadécimale $0041_{16}$. Ce code est notamment utilisé sous les processeurs de type *Pentium*.
+
+Unicode, créé en 1991 et encore en développement, comporte déjà **137 374 caractères** d’une **centaine d’écritures** dont les **idéogrammes**, l’**alphabet grec** etc.
+
+La norme **Unicode** définit **plusieurs techniques d'encodage** pour représenter les **points de code** de manière plus ou moins économique, selon la technique choisie.
+Ces encodages, appelés **formats de transformation universelle** ou **Universal Transformation Format** (*UTF*) en anglais, portent les noms *UTF-n*, où *n* indique **le nombre minimal de bits utilisés** pour représenter un **point de code**.
+
+### UTF-8
+
+L’**unicode** et en particulier **UTF-8** vise à :
+
+- minimiser l’espace occupé par un caractère
+- proposer un encodage adaptable à tous les caractères employés sur terre
+- conserver l’ordre de la table ascii de départ
+
+**UTF-8** est utilisé par **90,5% des sites web** en *2017* et dans la **majorité des systèmes UNIX**.
+
+!!! info "Principe de l'encodage UTF-8"
+    Le principe de l’**encodage UTF-8** est le suivant :
+
+    - Si le **bit de poids fort** d’un octet est à **0**, alors il s’agit d’un **caractère ASCII codé sur les 7 bits restant**.
+    - Sinon, les **premiers bits de poids fort de l’octet** indiquent **le nombre d’octets utilisés pour encoder le caractère** à l’aide d’une **séquence de bits à 1 et se terminant par un bit à 0**.
+    *Par exemple, si le premier octet commence par $110xxxxx$, cela signifie que le caractère est codé par **2 octets** puisqu’il commence par une séquence de **deux bits** de poids fort à **1** suivie d’un **0**. De même, si le premier octet commence par $1110xxxx$, cela signifie que le caractère est codé par **3 octets**.*
+    - Enfin, dans le cas d’un **encodage** sur $k$ octets, les $k − 1$ octets qui suivent l’**octet de poids fort** doivent tous être de la forme $10xxxxxx$, c’est-à-dire commencer par deux bits de poids fort valant $10$.
+
+Voici un tableau résumant le principe de l’**encodage UTF-8**, avec la **plage des caractères représentables** selon le **nombre d’octets utilisés**.
+
+<figure markdown>
+  ![Principe de l'encodage UTF-8](images/principe_utf8.png){ width="420" }
+  <figcaption>Principe de l'encodage UTF-8</figcaption>
+</figure>
+
+Et voici quelques *exemples* de **représentations** de **points de code** selon le format **UTF-8** :
+
+<figure markdown>
+  ![Exemples de représentations selon UTF-8](images/exemples_utf8.png){ width="420" }
+  <figcaption>Exemples de représentations selon UTF-8</figcaption>
+</figure>
