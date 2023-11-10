@@ -87,4 +87,135 @@ def retour():
 
 ## Implémentations d'une pile
 
-...
+### Avec une liste Python
+
+On va utiliser une **liste Python** pour représenter le **contenu** de la pile.
+
+**Copiez-collez** le **code suivant** dans *Thonny* :
+
+```python
+class Pile:
+
+    def __init__(self):
+        ''' Constructeur de la classe Pile. '''
+
+        self.contenu = []
+
+    # Opérations de base
+
+    def est_vide(self) -> bool:
+        ''' Renvoie True si la pile est vide, False sinon. '''
+
+        pass
+
+    def empiler(self, elt) -> None:
+        ''' Empile un élément au sommet de la pile. '''
+
+        pass
+    
+    def depiler(self, elt) -> None:
+        ''' Dépiler l'élément au sommet de la pile. '''
+
+        pass
+
+    # Autres opérations
+
+    def nombre_elements(self) -> int:
+        ''' Renvoie le nb d'éléments de la pile. '''
+
+        pass
+
+    def vider(self) -> None:
+        ''' Vide la pile (supprime tous ses éléments). '''
+
+        pass
+
+    def obtenir_element(self) -> int:
+        ''' Renvoie l'élément au sommet de la pile SANS LE SUPPRIMER. '''
+
+        pass
+        
+    '''
+```
+
+### Avec une liste chaînée
+
+On va cette fois utiliser une **liste chaînée** pour représenter le **contenu** de notre `Pile`.
+
+**Copiez-collez** le **code suivant** dans *Thonny* :
+
+```python
+class Cellule:
+    ''' Une cellule d'une liste chaînée. '''
+
+    def __init__(self, v, s):
+        self.valeur = v  # Valeur contenue dans la cellule
+        self.suivante = s  # Cellule suivante
+
+class Pile:
+
+    def __init__(self):
+        ''' Constructeur de la classe Pile. '''
+
+        self.contenu = None
+
+    # Opérations de base
+
+    def est_vide(self) -> bool:
+        ''' Renvoie True si la pile est vide, False sinon. '''
+
+        pass
+
+    def empiler(self, elt) -> None:
+        ''' Empile un élément au sommet de la pile. '''
+
+        pass
+    
+    def depiler(self, elt) -> None:
+        ''' Dépiler l'élément au sommet de la pile. '''
+
+        pass
+
+    # Autres opérations
+
+    def nombre_elements(self) -> int:
+        ''' Renvoie le nb d'éléments de la pile. '''
+
+        pass
+
+    def vider(self) -> None:
+        ''' Vide la pile (supprime tous ses éléments). '''
+
+        pass
+
+    def obtenir_element(self) -> int:
+        ''' Renvoie l'élément au sommet de la pile SANS LE SUPPRIMER. '''
+
+        pass
+
+    '''
+
+```
+
+## Exercices
+
+!!! note "Exercice 1"
+    On souhaite utiliser une **pile** pour vérifier si une **expression arithmétique** est **bien parenthésée**. Écrire une fonction `est_bien_parenthesee(chaine)` qui renvoie `True` si l'expression est **bien parenthésée**, `False` sinon.
+
+    Par exemple :  
+    `est_bien_parenthesee('(1 + 3) * (6 + 7)')` renverra `True`.  
+    `est_bien_parenthesee('(6 + (4 * 5) - (2 + 1)')` renverra `False`.
+
+!!! note "Exercice 2"
+    L'écriture polonaise inverse des expressions arithmétiques place l'opérateur après ses opérandes. Cette notation ne nécessite aucune parenthèse ni aucune règle de priorité. Ainsi, l'expression polonaise inverse décrite par la chaîne de caractères `1 2 3 * + 4 *` désigne l'expression traditionnellement notée $(1 + 2 \times 3) \times 4$. 
+
+    La valeur d'une telle expression peut être calculée facilement en utilisant une **pile** pour stocker **les résultats intermédiaires**. Pour cela, on observe un à un les éléments de l'expression et on effectue les actions suivantes:
+    
+    - si on voit un nombre, on le place sur la pile;
+    - si on voit un opérateur binaire, on récupère les deux nombres au som-met de la pile, on leur applique l'opérateur, et on replace le résultat sur la pile.
+  
+    Si l'expression était bien écrite, il y a bien toujours deux nombres sur la pilelorsque l'on voit un opérateur, et à la fin du processus il reste exactementun nombre sur la pile, qui est le résultat.
+    
+    **Écrire** une **fonction** prenant en **paramètre** une **chaîne de caractères** représentant une expression en **notation polonaise inverse** composée d'**additions** et de **multiplications** de **nombres entiers** et **renvoyant la valeur de cette expression**. On supposera que les éléments de l'expression sont séparés par des **espaces**.
+    
+    *Attention* : cette fonction ne doit pas renvoyer de résultat si l'expression est mal écrite. 
