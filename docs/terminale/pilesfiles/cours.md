@@ -62,10 +62,25 @@ Comme dans le cas des **listes chaînées**, il y a plusieurs façons d'**implé
     | $vider :~Pile[Elements] \rightarrow \emptyset$                    | **Vide** le contenu de la **pile** donnée (supprime tous ses éléments).    |
     | $obtenir\_element :~Pile[Elements] \rightarrow Element$                 | Renvoie l'élément au **sommet de la pile** donnée, **sans le retirer**.     |
 
-    !!! warning "Type abstrait $\ne$ implémentation"
-        On rappelle qu'il faut faire la distinction entre l'**interface** et les **implémentations**. On ne spécifie ici pas comment les données sont **représentées**, ni comment les opérations sont **implémentées**.
+!!! abstract "Type abstrait *File*"
+    Voici *une manière* de définir l'**interface** `File` représentant une **file**.  
+    <span style="color:rgb(200,50,50)">(À compléter pour lundi 13/11/2023)</span>
 
-        Cette **définition abstraite** du type **Pile**, bien qu'étant **mutable** (on modifie directement la **pile** plutôt que d'en renvoyer une nouvelle), n'empêche toutefois pas de proposer par la suite une implémentation **non mutable**, tant que celle-ci suit les opérations définies.
+	**Utilise :** *Element*, *Entier*, *Booleen*<br />
+	**Opérations fondamentales (primitives):**
+
+    | Opération                                                    | Description                                                  |
+    | ------------------------------------------------------------ | ------------------------------------------------------------ |
+
+    Voici quelques **opérations supplémentaires** :
+
+    | Opération                                                  | Description                                                  |
+    | ---------------------------------------------------------- | ------------------------------------------------------------ |
+
+!!! warning "Type abstrait $\ne$ implémentation"
+    On rappelle qu'il faut faire la distinction entre l'**interface** et les **implémentations**. On ne spécifie ici pas comment les données sont **représentées**, ni comment les opérations sont **implémentées**.
+
+    Ces **définitions abstraites** du type **Pile** et **File**, bien qu'étant **mutables** (on modifie directement la structure plutôt que d'en renvoyer une nouvelle), n'empêchent toutefois pas de proposer par la suite des implémentations **non mutables**, tant que celles-ci suivent les **opérations définies**.
 
 ## Exemple d'utilisation d'une pile
 
@@ -370,7 +385,7 @@ Cela signifie que les **opérations** `enfiler` et `defiler` **modifieront direc
 
 ### Avec une liste Python
 
-(à faire pour lundi 13/11/2023)
+<span style="color:rgb(200,50,50)">(À compléter pour lundi 13/11/2023)</span>
 
 ## Exercices
 
