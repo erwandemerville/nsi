@@ -387,6 +387,14 @@ Cela signifie que les **opérations** `enfiler` et `defiler` **modifieront direc
 
 <span style="color:rgb(200,50,50)">(À compléter pour lundi 13/11/2023)</span>
 
+Ici, on représentera le **contenu de la file** avec une **liste Python** (qui sera affectée à un attribut `contenu`, comme pour notre première implémentation des piles).
+
+!!! note ""
+    Cette fois, les **éléments** ajoutés à la **file** (**enfilés**) seront ajoutés **d'un côté** de la *liste Python* de l'attribut `contenu`, et les **éléments défilés** seront retirés **de l'autre côté** de la *liste Python* de l'attribut `contenu`, puisque le *premier élément entré est le premier sorti*. On pourra procéder comme suit :
+
+    - l'opération `enfiler`, permettant d'**ajouter** un **nouvel élément** à la **file**, ajoutera cet élément **à la fin** de la *liste Python* de l'attribut `contenu`,
+    - l'opération `defiler`, permettant de **retirer** et de **renvoyer** un élément de la **file**, retirera et renverra l'élément situé **au début** de la *liste Python* de l'attribut `contenu`.
+
 ## Exercices
 
 !!! note "Exercice 1"
