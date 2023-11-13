@@ -661,16 +661,21 @@ La **norme 8859** inclut un total de **seize tables**, dont dix sont dédiées a
 
 ### Norme Unicode
 
-Le codage **UNICODE** (*Universal Code*) est un code à **16 bits** en cours de définition qui a pour but de coder **le plus grand nombre possible de symboles en usage dans le monde**. Les **16 bits** de code permettent de coder **65 536 caractères différents**.
+Les pages **ISO-8859-n**, bien qu'elles permettent un **encodage étendu**, ne conviennent pas pour les **textes** avec un **mélange de caractères** provenant de **différentes pages**. Pour remédier à cela, l'**ISO** a introduit l'**Universal Character Set** (*UCS*) sous la norme **ISO-10646**. Cette norme attribue à chaque caractère un **nom unique** et un **numéro** appelé **point de code**. Elle recense plus de **110 000 caractères** et peut contenir ceux de **n'importe quelle langue**, avec une capacité maximale de **4 294 967 295 caractères**.
 
-**UNICODE** reprend le *codage ASCII* concernant les principaux caractères, en étendant le code à **16 bits**. Ainsi, le caractère `A` est codé par la chaîne hexadécimale $0041_{16}$. Ce code est notamment utilisé sous les processeurs de type *Pentium*.
+Les **256 premiers points de code** de l'**ISO-8859-1** sont inclus par souci de compatibilité. La notation $U+xxxx$ représente les **points de code** du **jeu universel de caractères**, où chaque $x$ est un chiffre **hexadécimal**. Par exemple, $U+006F$ désigne le point de code de la lettre "o".
 
-Unicode, créé en 1991 et encore en développement, comporte déjà **137 374 caractères** d’une **centaine d’écritures** dont les **idéogrammes**, l’**alphabet grec** etc.
+!!! abstract ""
+    **UNICODE** reprend le *codage ASCII* concernant les **principaux caractères**, en étendant le code à **16 bits**. Ainsi, le caractère `A` a pour **point de code** $0041_{16}$.
 
-La norme **Unicode** définit **plusieurs techniques d'encodage** pour représenter les **points de code** de manière plus ou moins économique, selon la technique choisie.
-Ces encodages, appelés **formats de transformation universelle** ou **Universal Transformation Format** (*UTF*) en anglais, portent les noms *UTF-n*, où *n* indique **le nombre minimal de bits utilisés** pour représenter un **point de code**.
+    **Unicode**, créé en 1991 et encore en développement, comporte déjà **137 374 caractères** d’une **centaine d’écritures** dont les **idéogrammes**, l’**alphabet grec** etc.
+
+    La norme **Unicode** définit **plusieurs techniques d'encodage** pour représenter les **points de code** de manière plus ou moins économique, selon la technique choisie.
+    Ces encodages, appelés **formats de transformation universelle** ou **Universal Transformation Format** (*UTF*) en anglais, portent les noms *UTF-n*, où *n* indique **le nombre minimal de bits utilisés** pour représenter un **point de code**.
 
 ### UTF-8
+
+C’est le format **le plus utilisé sous Linux**, dans les **protocoles réseaux** et les **sites Web**. Comme son nom l’indique, il faut **seulement 8 bits** pour coder **les principaux caractères**. L’**UTF-8** est entièrement compatible avec le **standard ASCII**, c’est-à-dire que les **127 premiers caractères** sont représentés sur **1 octet**, exactement comme en *ASCII*. Les programmes fonctionnant sur des textes encodés en *ASCII* devraient également fonctionner si ces textes sont encodés en **UTF-8**.
 
 L’**unicode** et en particulier **UTF-8** vise à :
 
@@ -691,13 +696,29 @@ L’**unicode** et en particulier **UTF-8** vise à :
 Voici un tableau résumant le principe de l’**encodage UTF-8**, avec la **plage des caractères représentables** selon le **nombre d’octets utilisés**.
 
 <figure markdown>
-  ![Principe de l'encodage UTF-8](images/principe_utf8.png){ width="420" }
+  ![Principe de l'encodage UTF-8](images/principe_utf8.png){ width="550" }
   <figcaption>Principe de l'encodage UTF-8</figcaption>
 </figure>
 
 Et voici quelques *exemples* de **représentations** de **points de code** selon le format **UTF-8** :
 
 <figure markdown>
-  ![Exemples de représentations selon UTF-8](images/exemples_utf8.png){ width="420" }
+  ![Exemples de représentations selon UTF-8](images/exemples_utf8.png){ width="500" }
   <figcaption>Exemples de représentations selon UTF-8</figcaption>
 </figure>
+
+!!! note "Exercice 12"
+    Sachant que le **point de code** du **symbole** `é` est $233$, donner la **séquence de points de code** du mot `élégance`, puis les **octets en binaire** correspondant à l’encodage **UTF-8** de ce mot.
+
+    Voici comment procéder :
+
+    - Chercher le **point de code** de **chaque lettre** en **hexadécimal** et en **binaire**.
+    - En vous aidant de la table *Principe de l'encodage UTF-8* ci-dessus, retrouver l'**encodage** en **UTG-8** de **chaque symbole** en choisissant **le bon nombre d'octets**. On rappelle que les **symboles** présents dans la table *ASCII* (comme les lettres de `a` à `z`) sont codés sur **un seul octet**, donc avec *7 bits codants*.
+    - Enfin, écrire les **octets en binaire** correspondant à l'encodage du mot complet.
+
+!!! note "Exercice 13"
+    Pour chacun des **caractères** suivants, dont le **point de code** est donné en **décimal**, donner l’**encodage UTF-8** du caractère, en donnant les **octets en décimal** et en **hexadécimal**.
+
+    1. caractère `A` (point de code $65$)
+    2. caractère `è` (point de code $232$)
+    3. caractère (étoile) (point de code $8902$)
