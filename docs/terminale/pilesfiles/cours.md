@@ -71,11 +71,18 @@ Comme dans le cas des **listes chaînées**, il y a plusieurs façons d'**implé
 
     | Opération                                                    | Description                                                  |
     | ------------------------------------------------------------ | ------------------------------------------------------------ |
+    | $nouvelle\_file\_vide :~\rightarrow File~VIDE$                 | Renvoie une **nouvelle file VIDE**.                         |
+    | $est\_vide :~File \rightarrow Booleen$                   | Renvoie `True` si la file donnée est **vide**, `False` sinon.   |
+    | $enfiler :~File[Element] \times Element \rightarrow \emptyset$ | Ajoute un **nouvel élément** donné dans une **file d'éléments** donnée. |
+    | $defiler :~File[Element] \rightarrow Element$                      | Retire le **premier élément ajouté** à la **file NON VIDE donnée**, et **renvoie cet élément**. |
 
     Voici quelques **opérations supplémentaires** :
 
     | Opération                                                  | Description                                                  |
     | ---------------------------------------------------------- | ------------------------------------------------------------ |
+    | $nombre\_elements :~File[Elements] \rightarrow Entier$ | Renvoie le **nombre d'éléments** que contient une **file donnée**. |
+    | $vider :~File[Elements] \rightarrow \emptyset$                    | **Vide** le contenu de la **file** donnée (supprime tous ses éléments).    |
+    | $obtenir\_element :~File[Elements] \rightarrow Element$                 | Renvoie le **premier élément ajouté** à la **file** donnée, **sans le retirer**.     |
 
 !!! warning "Type abstrait $\ne$ implémentation"
     On rappelle qu'il faut faire la distinction entre l'**interface** et les **implémentations**. On ne spécifie ici pas comment les données sont **représentées**, ni comment les opérations sont **implémentées**.
@@ -395,6 +402,115 @@ Ici, on représentera le **contenu de la file** avec une **liste Python** (qui s
     - l'opération `enfiler`, permettant d'**ajouter** un **nouvel élément** à la **file**, ajoutera cet élément **à la fin** de la *liste Python* de l'attribut `contenu`,
     - l'opération `defiler`, permettant de **retirer** et de **renvoyer** un élément de la **file**, retirera et renverra l'élément situé **au début** de la *liste Python* de l'attribut `contenu`.
 
+??? tip "Voir l'implémentation complète"
+    ```python
+    class File:
+        def __init__(self):
+            ''' Constructeur de la classe File.
+            :param contenu: (list[int]) une liste d'entiers '''
+
+            self.contenu = []
+            
+        def est_vide(self) -> bool:
+            ''' Renvoie True si la file est vide, False sinon.'''
+            
+            return not self.contenu
+
+        def enfiler(self, elt) -> None:
+            ''' Enfile un élément dans la file. '''
+            
+            self.contenu.append(elt)
+        
+        
+        def defiler(self) -> int:
+            ''' Défile le premier élément ajouté à la file, et le renvoie.
+            LEVER UNE ERREUR si la file est VIDE. '''
+
+            if self.est_vide():
+                raise ValueError("La liste ne doit pas être vide")
+            else:
+                return self.contenu.pop(0)
+        
+        def nombre_elements(self) -> int:
+            ''' Renvoie le nombre d'éléments de la file. '''
+
+            return len(self.contenu)
+        
+        def vider(self) -> None:
+            ''' Vide la file (supprime tous ses éléments). '''
+
+            self.contenu = []
+        
+        def obtenir_element(self) -> int:
+            ''' Renvoie le premier élément ajouté à la file sans le supprimer. '''
+
+            if self.est_vide():
+                raise ValueError("La liste ne doit pas être vide")
+            else:
+                return self.contenu[0]
+    ```
+
+### Avec une liste chaînée
+
+Cette fois, l'implémentation d'une **file** avec une **liste chaînée** diffèrera un petit peu de notre implémentation d'une **pile**.
+
+En effet, dans une **pile**, on ajoutait et retirait les éléments du **même côté** de la **liste chaînée** utilisée pour stocker son contenu, puisque **dépiler** un élément dans une pile consiste à retirer le dernier élément ajouté.
+L'opération `empiler` consistait donc à **ajouter** un **élément** en **tête** de la **liste chaînée**, et l'opération dép`iler retirait l'**élément** en **tête** de la **liste chaînée**.
+
+Ici, dans le cas d'une **file**, on devra **ajouter** les **éléments** d'**un côté** de la **liste chaînée**, puis les **retirer** de l'**autre côté** de la **liste chaînée**.
+Pour éviter d'effectuer des **parcours de liste chaînée**, qui sont **coûteux**, on implémentera notre classe `File` avec **deux attributs** :
+
+- un attribut `tete` qui contiendra la **référence** de la **cellule tête** de la **liste chaînée** permettant de stocker les **éléments** de la **file**,
+- un attribut `queue` qui contiendra la **référence** de la **cellule queue** de la **liste chaînée** permettant de stocker les **éléments** de la **file**.
+
+Ainsi :
+
+- la méthode `enfiler` de notre classe `File` **ajoutera** un **élément** à la **queue** de la **liste chaînée**,
+- la méthode `defiler` de notre classe `File` **retirera** l'**élément** situé en **tête** de la **liste chaînée**.
+
+??? tip "Voir l'implémentation complète"
+    ```python
+    class Cellule:
+        ''' Implémentation d'une liste chaînée. '''
+        
+        def __init__(self, v, s):
+            self.valeur = v  # valeur de la cellule
+            self.suivante = s  # cellule suivante
+
+    class File:
+        
+        def __init__(self: 'File'):
+            # La liste chaînée ne contient initialement aucune cellule,
+            # donc la tête et la queue sont initialisées à None
+            self.tete = None
+            self.queue = None
+        
+        def est_vide(self: 'File') -> bool:
+            # Si la liste chaînée est vide, la tête et la queue contiennent None.
+            return self.tete is None
+        
+        def enfiler(self: 'File', elt: int) -> None:
+            a = Cellule(elt, None)  # on crée la nouvelle cellule que l'on ajoutera en queue de la liste chaînée
+            if self.est_vide():
+                # Si la liste chaînée est vide, la nouvelle cellule ajoutée
+                # sera alors à la fois la cellule tête et la cellule queue.
+                self.tete = a
+            else:
+                # Sinon, on lie l'ancienne cellule queue de la liste chaînée à notre nouvelle cellule.
+                self.queue.suivante = a
+            self.queue = a  # quoiqu'il en soit, la nouvelle cellule créée devient la queue de la liste chaînée
+        
+        def defiler(self: 'File') -> int:
+            if self.est_vide():
+                # On ne peut pas défiler sur une file vide, donc on lève une erreur.
+                raise IndexError("Impossible de défiler sur une file vide !")
+            j = self.tete.valeur  # on stocke la valeur de la cellule tête actuelle de la liste chaînée
+            self.tete = self.tete.suivante  # la nouvelle cellule tête est la cellule qui suit l'ancienne
+            if self.tete is None:  # si la nouvelle cellule tête est vide :
+                self.queue = None  # cela signifie que la liste chaînée est vide, donc la queue vaut aussi None
+            return j  # on renvoie la valeur de l'ancienne cellule tête que l'on avait stocké dans j
+    ```
+
 ## Exercices
 
 !!! note "Exercice 1"
@@ -410,9 +526,9 @@ Ici, on représentera le **contenu de la file** avec une **liste Python** (qui s
     La valeur d'une telle expression peut être calculée facilement en utilisant une **pile** pour stocker **les résultats intermédiaires**. Pour cela, on observe un à un les éléments de l'expression et on effectue les actions suivantes:
     
     - si on voit un nombre, on le place sur la pile;
-    - si on voit un opérateur binaire, on récupère les deux nombres au som-met de la pile, on leur applique l'opérateur, et on replace le résultat sur la pile.
+    - si on voit un opérateur binaire, on récupère les deux nombres au sommet de la pile, on leur applique l'opérateur, et on replace le résultat sur la pile.
   
-    Si l'expression était bien écrite, il y a bien toujours deux nombres sur la pilelorsque l'on voit un opérateur, et à la fin du processus il reste exactementun nombre sur la pile, qui est le résultat.
+    Si l'expression était bien écrite, il y a bien toujours deux nombres sur la pile lorsque l'on voit un opérateur, et à la fin du processus il reste exactement un nombre sur la pile, qui est le résultat.
     
     **Écrire** une **fonction** prenant en **paramètre** une **chaîne de caractères** représentant une expression en **notation polonaise inverse** composée d'**additions** et de **multiplications** de **nombres entiers** et **renvoyant la valeur de cette expression**. On supposera que les éléments de l'expression sont séparés par des **espaces**.
     
