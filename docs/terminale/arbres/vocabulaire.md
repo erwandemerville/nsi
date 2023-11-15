@@ -102,6 +102,7 @@ Un **arbre** est une structure de données :
 ### Définition
 
 Un **arbre binaire** est :
+
 - soit un **arbre vide**, qui ne contient **aucun noeud**,
 - soit un **arbre** possédant **un noeud**, appelé la **racine de l'arbre**, relié à exactement deux arbres binaires, respectivement appelés **sous-arbre gauche** et **sous-arbre droit** (pouvant être vides).
 
