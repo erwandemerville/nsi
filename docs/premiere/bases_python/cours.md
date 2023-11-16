@@ -478,6 +478,24 @@ Pour **créer une liste** en Python, vous pouvez utiliser des crochets `[]` et s
 ma_liste = [1, 2, 3, 4, 5]
 ```
 
+On aurait également pu créer cette **liste** en utilisant la méthode de **création par compréhension**, en utilisant une **boucle** :
+
+```python
+ma_liste = [v for v in range(1, 6)]
+```
+
+Si l'on voulait créer une **liste** contenant **tous les nombres pairs de 2 à 98** en utilisant la méthode **par compréhension**, on aurait écrit :
+
+```python
+ma_liste = [v for v in range(2, 99, 2)]
+```
+
+ou bien, en ajoutant une **condition** `if` :
+
+```python
+ma_liste = [v for v in range(2, 99) if v % 2 == 0]
+```
+
 Une liste peut contenir **n'importe quel type d'élément**, y compris **d'autres listes**. Par exemple :
 
 ```python
@@ -591,3 +609,33 @@ Ici, on a mis directement `len(ma_liste)` à l'intérieur du `range`, ce qui év
     Vous pouvez réaliser ce programme sur ***Thonny*** ou dans l'**IDE ci-dessous** (vous pourrez *télécharger* votre programme en cliquant sur le *deuxième bouton* pour le conserver.)
 
     {{ IDE() }}
+
+## Les chaînes de caractères
+
+Les **chaînes de caractères** offrent une certaine ressemblance avec les **tuples**, dans le sens où l'on peut **lire les caractères** de la même manière que l'on **lit les éléments d'un tuple**, mais on ne peut pas **modifier une chaîne de caractères**.
+
+En particulier, on peut obtenir la **taille d’une chaîne de caractères**, c’est-à-dire son **nombre de caractères**, avec l’opération `len` et **accéder au i-ième caractère** d’une chaîne avec les **crochets** :
+
+{{ IDEv('scripts/28.py') }}
+
+Voici deux manière dont on peut **parcourir une chaîne de caractères** pour **afficher chaque caractère un à un**, le principe est le même que pour les **listes** et les **tuples** :
+
+En récupérant directement chaque **élément** à chaque **itération** d'une **boucle** :
+
+{{ IDEv('scripts/26.py') }}
+
+En récupérant chaque **élément** par son **indice** (la variable `i` de la **boucle** prendra les valeurs `0`, puis `1`, puis `2`, juste qu'à l'indice du dernier élément):
+
+{{ IDEv('scripts/27.py') }}
+
+Une autre opération bien utile sur les **chaînes de caractères** est l'opération de **concaténation**. Cela permet de **créer une nouvelle chaîne** en combinant **deux chaînes de caractères** à l'aide du symbole `+`, par exemple (**exécutez** le script suivant pour observer le résultat de la concaténation de `a` et `b`):
+
+{{ IDEv('scripts/29.py') }}
+
+On peut également **chercher** un **caractère** ou même un **mot** dans une **chaîne de caractères** avec le mot-clé `in` :
+
+{{ IDEv('scripts/30.py') }}
+
+## Les dictionnaires
+
+...

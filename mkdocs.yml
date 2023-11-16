@@ -60,6 +60,9 @@ nav:
       - premiere/representation_donnees/index.md
       - Cours: premiere/representation_donnees/cours.md
       - Exercices et notebooks : premiere/representation_donnees/exercices.md
+    - Traitement des données en tables:
+      - premiere/traitement_donnees/index.md
+      - Cours: premiere/traitement_donnees/cours.md
     - Tris:
       - premiere/tris/index.md
       - Tri par sélection: premiere/tris/tri_selection.md
