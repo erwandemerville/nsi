@@ -28,16 +28,6 @@ Sur *Linux*, on peut lister récursivement les répertoires et fichiers du syst�
 	5. Quelle est la **hauteur** de l'arbre ?
 	6. Cet arbre est-il un **arbre binaire** ? Pourquoi ?
 
-??? tip "Correction exercice 1"
-
-	1. La taille est de **11**, car il y a 11 noeuds dans l'arbre.
-	2. En sachant que **chaque noeud**, à l'exception du **noeud racine**, possède exactement **une arête** le reliant à son **noeud père**, le nombre d'arêtes d'un arbre est toujours $taille - 1$.
-	Ici, le nombre d'arêtes est donc de 11 - 1 = **10**.
-	3. Une feuille est un noeud qui n'a **pas de noeuds fils**. Ici, les **feuilles** sont au nombre de **5** : *F2.txt*, *F6*, *F1.txt*, *D5*, *F3.txt*.
-	4. La **profondeur** du noeud **D5**, en considérant que la **racine** a une profondeur de **1**, est le nombre de **noeuds** qui le sépare de la racine : Elle est donc ici de **3**.
-	5. La **hauteur** d'un arbre est la **plus grande profondeur des feuilles de l'arbre**, ici elle est donc de **4**.
-	6. Dans un arbre binaire, un **noeud** ne peut avoir qu'**un, deux ou trois noeuds fils**. Ici, ce n'est pas le cas, l'arbre n'est donc pas un arbre binaire (on dira que c'est un **arbre enraciné**).
-
 ### Arbre d'une page HTML
 
 Voici le code HTML d'une page web :
@@ -99,18 +89,6 @@ L'arbre (appelé *arbre DOM*) représentant ce code HTML est le suivant :
 	3. Quels **types d'éléments** représentent les **feuilles** de l'arbre ?
 	4. Si les **nœuds** de l'arbre étaient des instances d'une classe `Noeud` caractérisés par une **étiquette** (`html`, `body`, etc) et des **données**, quelles pourraient être ces données ? (voir la balise `meta` ou `link` du code ci-dessus.)
 
-??? tip "Correction exercice 2"
-
-	Voici l'arbre obtenu à partir de ce code HTML :
-	![Arbre pokémons](images/arbre_pokemon.png)
-	
-	1. La taille est de **21** car il y a *21 noeuds** dans l'arbre.
-	2. La hauteur est la **profondeur des feuilles les plus éloignées de la racine**, elle est de **5** si la **profondeur** de la **racine** vaut **0**, et de **6** si la **profondeur** de la **racine** vaut **1**.
-	3. Les **feuilles de l'arbre** représentent :
-		- le **texte brut** contenu à l'intérieur des balises ouvrantes et fermantes,
-		- Les balises **autofermantes** (comme la balise `meta`, `link`, etc.)
-	4. Pour représenter correctement une page web, on aurait besoin d'un objet permettant de stocker **les attributs associés aux balises**. Par exemple ici, les attributs de la balise `link` sont `href` (qui vaut `main.css`, un fichier *CSS*) et `rel` (qui vaut `stylesheet`, indiquant que la ressource est une feuille de style CSS). En Python, on pourrait imaginer par exemple de stocker ces attributs dans un **dictionnaire**.
-
 ### Arbre d'une expression arithmétique
 
 Voici un **arbre binaire** représentant l'expression arithmétique $(6 + 9) / 3$ :
@@ -133,17 +111,6 @@ Voici un **arbre binaire** représentant l'expression arithmétique $(6 + 9) / 3
     
     4. Quelle est la **profondeur** des feuilles **les moins éloignées** de la **racine** ?
     5. Quelle est la **hauteur** de l'arbre ?
-
-??? tip "Correction exercice 3"
-
-	Voici l'arbre obtenu :
-	![Arbre d'une expression arithmétique](images/arbre_calcul_corr.png){ width="50%" }
-	
-	1. Il a une importance pour la **soustraction** et la **division**. On n'obtient par exemple pas le même résultat en faisant $30 - 24$ et $24 - 30$. Ici, on a en effet décidé que le **sous-arbre gauche** représentait l'**opérande gauche**, et le **sous-arbre droit** l'**opérande droite**.
-	2. L'arbre obtenu est de taille **9** (car il y a 9 noeuds).
-	3. Les feuilles de cet arbre sont `5`, `8`, `30`, `8` et `3`. Toutes les feuilles de l'arbre contiennent les **valeurs numériques**, tandis que les autres noeuds contiennent les opérateurs.
-	4. Les feuilles de l'arbre les moins éloignées de la racine sont de **profondeur 2** (en prenant **0** comme profondeur pour la racine.)
-	5. La hauteur de cet arbre est de **3**.
 
 ## Encadrement de la hauteur
 
@@ -169,31 +136,6 @@ Voici deux **arbres binaires** :
 		4. En déduire une expression calculant la **taille** $n$ (nombre de **nœuds**) d'un **arbre parfait** en fonction de sa **hauteur** $h$.
     7. Enfin, proposez d'abord un encadrement de la **taille d'un arbre binaire** notée $n$ en fonction de la **hauteur** notée $h$ (en utilisant vos réponses aux questions `5.` et `6.d.`).
 	À partir de l'encadrement précédent, déduire un **encadrement de la hauteur** d'un **arbre binaire** en fonction de sa **taille**.
-
-??? tip "Correction exercice 4"
-
-	1. L'arbre **A** est un **arbre filiforme**. L'arbre **B** est un **arbre complet**.
-	2. Un **arbre filiforme** s'apparente à une **liste chaînée**. En effet, chaque noeud pointe vers **un seul autre noeud** de l'arbre. On verra dans le cours sur les *arbres binaires de recherche* que la *recherche* et l'*insertion* dans un arbre filiforme n'est pas intéressante (car même coût que sur une liste chaînée).
-	3. Ces deux arbres sont de taille $n = 5$.
-	4. Un arbre de taille **5** peut être de **hauteur minimale 3** (arbre **B**) et de **hauteur maximale 5** (arbre **A**) avec une **profondeur 1** pour le **noeud racine**. Les différentes hauteurs possibles sont donc **3**, **4** et **5**.
-	5. Dans le cas où l'arbre est **filiforme**, la **hauteur** d'un arbre est égale à son **nombre de noeuds** (= sa **taille**). On peut donc écrire que $n = h$.
-	6. a. Voici l'arbre obtenu (il suffit d'ajouter deux noeuds dans le niveau le plus bas de l'arbre pour que celui-ci soit rempli et que l'arbre devienne un **arbre parfait**) :<br />
-	![Arbre parfait](images/encadrement_arbres_corr.png){ width="40%" }<br />
-	b. En notant $p$ la profondeur et $n_{p}$ le **nombre de noeuds** de profondeur $p$ :<br />
-	![Taille en fonction de profondeur](images/tableau_tailleprof.png){ width="26%" }<br />
-	c. Du tableau précédent, on peut déduire la relation $n_{p} = 2^{p-1}$.<br />
-    d. Finalement, la **taille** notée $n$ d'un **arbre parfait** en fonction de sa **hauteur** notée $h$ peut se calculer de la manière suivante :<br />
-    $n = 2^{0} + 2^{1} + [...] + 2^{h-1} = 2^{h} - 1$
-    
-    7. On a précédemment déterminé la **taille minimale** d'un arbre binaire en fonction de sa **hauteur** :<br />
-    $n_{min} = h$ (cas de l'**arbre filiforme**)<br />
-    On a également determiné la **taille maximale** d'un arbre binaire en fonction de sa **hauteur** :<br />
-    $n_{max} = 2^{h} - 1$ (cas de l'**arbre parfait**)<br />
-    On peut donc en déduire un **encadrement de la taille** d'un **arbre binaire** de façon générale, avec pour **profondeur racine 1** :<br />
-    $n_{min} \leq n \leq n_{max}$<br />
-    $h \leq n \leq 2^{h} - 1$<br /><br />
-    À partir de l'encadrement précédent, on peut retrouver l'**encadrement de la hauteur** $h$ :
-    $\lceil log_{2}(n+1) \rceil \leq h \leq n$
 
 ## Dénombrement d'arbres binaires
 

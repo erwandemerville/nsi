@@ -82,9 +82,6 @@ Pour cette activité, on écrira **toutes les opérations sous la forme de méth
 
         Pour utiliser les fonctions de `dessin.py`, vous devez également **dé-commenter** la **première ligne** `from dessin import dessiner` du fichier `abr.py`, qui a été commentée pour éviter les erreurs.
 
-??? tip "Corrigé complet"
-    [Cliquez ici](src/abr_corr.py){: target="_blank" } pour télécharger le corrigé complet de cette activité.
-
 !!! info "Important"
     Ici, on a fait le choix de travailler avec une structure **immuable**.<br />
     En l'occurence, la méthode `inserer` **renvoie** un **nouvel arbre binaire de recherche**, et **ne modifie pas** directement l'arbre sur lequel elle est appelée.
@@ -136,35 +133,6 @@ Vous pourrez utiliser les fonctions `min` et `max` de **Python**, qui renvoient 
         ...
     ```
 
-??? tip "Solution - Exercice 1"
-    ```python
-    def minimum(self: 'Arbre') -> int:
-    ''' Renvoie la valeur minimale des noeuds de l'arbre
-    :CU: L'abre n'est PAS vide '''
-
-    if self.est_feuille():
-        return self.valeur_racine()
-    elif self.gauche().est_vide():
-        return min(self.valeur_racine(), self.droite().minimum())
-    elif self.droite().est_vide():
-        return min(self.valeur_racine(), self.gauche().minimum())
-    else:
-        return min(self.gauche().minimum(), self.valeur_racine(), self.droite().minimum())
-
-    def maximum(self: 'Arbre') -> int:
-    ''' Renvoie la valeur maximale des noeuds de l'arbre
-    :CU: L'arbre n'est PAS vide '''
-
-    if self.est_feuille():
-        return self.valeur_racine()
-    elif self.gauche().est_vide():
-        return max(self.valeur_racine(), self.droite().maximum())
-    elif self.droite().est_vide():
-        return max(self.valeur_racine(), self.gauche().maximum())
-    else:
-        return max(self.gauche().maximum(), self.valeur_racine(), self.droite().maximum())
-    ```
-
 ## La méthode `est_abr`
 
 On peut maintenant écrire une méthode qui permet de vérifier qu'un **arbre binaire** créé avec la classe `Arbre` soit un **arbre binaire de recherche**.
@@ -208,23 +176,6 @@ La fonction `est_abr` **renvoie donc *False*** si l'**une de ces conditions** n'
         return ...
     ```
 
-??? tip "Solution - Exercice 2"
-    ```python
-    def est_ABR(self: 'Arbre') -> bool:
-    ''' Renvoie True si l'arbre binaire est un arbre binaire de recherche, False sinon. '''
-    
-    if self.est_vide() or self.est_feuille():
-        return True
-    else:
-        if not self.gauche().est_vide() and self.gauche().maximum() > self.valeur_racine():
-            return False
-        if not self.droite().est_vide() and self.droite().minimum() <= self.valeur_racine():
-            return False
-        if not self.gauche().est_ABR() or not self.droite().est_ABR():
-            return False
-        return True
-    ```
-
 Une autre solution plus simple pour vérifier si un arbre binaire **est un arbre binaire de recherche** est de vérifier **si la liste des valeurs des noeuds visités en ordre infixe est triée**.
 
 !!! note "Exercice 3"
@@ -232,19 +183,6 @@ Une autre solution plus simple pour vérifier si un arbre binaire **est un arbre
 
 ??? tip "Aide - Exercice 3"
 	Il suffit simplement de vérifier que la liste `lst_valeurs` soit **triée** en la **parcourant** et en vérifiant que **chaque élément** soit **supérieur** à l'**élément qui le précède**. Si l'on se rend compte qu'un élément est inférieur à son prédecesseur, on renvoie *False*. Sinon, on renvoie *True*.
-
-??? tip "Solution - Exercice 3"
-    ```python
-    def est_ABR_v2(self: 'Arbre') -> bool:
-    ''' Renvoie True si l'arbre binaire est un arbre binaire de recherche, False sinon.
-    Autre version, vérifiant si la liste des noeuds visités en ordre infixe est triée dans l'ordre croissant. '''
-    
-    lst_valeurs = self.parcours_infixe()  # Récupérer la liste des valeurs des noeuds visités en parcours infixe
-    for i in range(1, len(lst_valeurs)):
-        if lst_valeurs[i] < lst_valeurs[i - 1]:
-            return False
-    return True
-    ```
 
 ## Recherche dans un arbre binaire de recherche
 
@@ -267,23 +205,6 @@ Comme cela a été vu dans les [exercices](exercices_abr.md), la **rercherche** 
     En vous aidant du déroulement décrit ci-dessus, écrire le **code Python** de la méthode `rechercher`.<br />
     *Remarque* : On aura pas besoin de rajouter une condition dans le code pour vérifier si l'arbre binaire est bien un arbre binaire de recherche, car cela a été **spécifié** en tant que **condition d'utilisation** (*CU*) :<br /> `''' :CU: self.est_ABR() == True '''`
 
-??? tip "Solution - Exercice 4"
-
-    ```python
-    def rechercher(self: 'Arbre', elt: 'int|str') -> bool:
-    ''' Recherche l'élément elt dans l'arbre, renvoie True s'il est trouvé, False sinon.
-    :CU: self.est_ABR() == True '''
-    
-    if self.est_vide():
-        return False
-    elif self.valeur_racine() == elt:
-        return True
-    elif elt <= self.valeur_racine():
-        return self.gauche().rechercher(elt)
-    else:
-        return self.droite().rechercher(elt)
-    ```
-
 ## Insertion dans un arbre binaire de recherche
 
 !!! warning "À savoir pour le bac"
@@ -304,22 +225,6 @@ Enfin, l'**insertion dans un arbre binaire de recherche** est assez similaire à
     En vous aidant du déroulement décrit ci-dessus, écrire le **code Python** de la méthode `inserer`. **Attention**, `inserer` doit toujours **renvoyer un objet de type `Arbre`**.<br />
     *Remarque* : Ici également, on aura pas besoin de rajouter une condition dans le code pour vérifier si l'arbre binaire est bien un arbre binaire de recherche.
 
-??? tip "Solution - Exercice 5"
-
-    ```python
-    def inserer(self: 'Arbre', elt: 'int|str') -> 'Arbre':
-    ''' Insère l'élément elt dans l'arbre 
-    :CU: self.est_ABR() == True '''
-    
-    if self.est_vide():
-        return Arbre(elt, Arbre(), Arbre())
-    else:
-        if elt <= self.valeur_racine():
-            return Arbre(self.valeur_racine(), self.gauche().inserer(elt), self.droite())
-        else:
-            return Arbre(self.valeur_racine(), self.gauche(), self.droite().inserer(elt))
-    ```
-
 ## Trier une liste avec un arbre binaire de recherche
 
 !!! note "Exercice 6"
@@ -339,19 +244,6 @@ Enfin, l'**insertion dans un arbre binaire de recherche** est assez similaire à
     abr = Arbre()
     ```
 
-??? tip "Solution - Exercice 6"
-
-    ```python
-    def trier(liste: list) -> list:
-    ''' Trie les éléments (int|str) d'une liste dans l'ordre croissant.
-    Renvoie la liste triée. '''
-
-    abr = Arbre()
-    for el in liste:
-        abr = abr.inserer(el)
-    return abr.parcours_infixe()
-    ```
-
 ## Aller plus loin : minimum et maximum d'un arbre binaire de recherche
 
 Pour trouver le **plus petit élément** d'un **arbre binaire de recherche**, on procède comme suit : 
@@ -363,25 +255,3 @@ Pour le **maximum**, c'est le même principe mais avec le **sous-arbre droit**.
 
 !!! note "Exercice 7"
     Complétez les méthodes `minimum_abr` et `maximum_abr` qui renvoient la **valeur minimale** et la **valeur maximale** des **nœuds** de l'arbre **dans le cas d'un arbre binaire de recherche**.
-
-??? tip "Solution - Exercice 7"
-
-    ```python
-    def minimum_abr(self: 'Arbre') -> int:
-        ''' Renvoie la valeur minimale des noeuds de l'arbre binaire de recherche
-        :CU: self.est_ABR() == True and not self.est_vide() '''
-
-        if self.gauche().est_vide():
-            return self.valeur_racine()
-        else:
-            return self.gauche().minimum_abr()
-
-    def maximum_abr(self: 'Arbre') -> int:
-        ''' Renvoie la valeur maximale des noeuds de l'arbre binaire de recherche
-        :CU: self.est_ABR() == True and not self.est_vide() '''
-
-        if self.droite().est_vide():
-            return self.valeur_racine()
-        else:
-            return self.droite().maximum_abr()
-    ```

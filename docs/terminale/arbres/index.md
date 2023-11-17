@@ -15,6 +15,3 @@ Ce cours se décompose en plusieurs parties :
     * [Exercices - Parcours d'un arbre binaire](exercices_parcours.md)
     * [Exercices - Implémentations d'arbres binaires](implementations_arbres.md)
     * [Exercices - Arbres binaires de recherche](exercices_abr.md)
-* **EVALUATIONS**
-    * [Évaluation 1 corrigée](evaluation_correction.pdf)
-    * [Évaluation 2](evaluation_v2.pdf)

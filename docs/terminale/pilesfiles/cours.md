@@ -520,6 +520,20 @@ Ainsi :
     `est_bien_parenthesee('(1 + 3) * (6 + 7)')` renverra `True`.  
     `est_bien_parenthesee('(6 + (4 * 5) - (2 + 1)')` renverra `False`.
 
+??? tip "Correction exercice 1"
+
+    ```python
+    def est_bien_parenthesee(chaine):
+        pile = Pile()
+        for c in chaine:
+            if c == "(":
+                pile.empiler(c)
+            elif c == ")":
+                if pile.est_vide():
+                    return False
+        return pile.est_vide()
+    ```
+
 !!! note "Exercice 2"
     L'écriture polonaise inverse des expressions arithmétiques place l'opérateur après ses opérandes. Cette notation ne nécessite aucune parenthèse ni aucune règle de priorité. Ainsi, l'expression polonaise inverse décrite par la chaîne de caractères `1 2 3 * + 4 *` désigne l'expression traditionnellement notée $(1 + 2 \times 3) \times 4$. 
 
@@ -533,3 +547,25 @@ Ainsi :
     **Écrire** une **fonction** prenant en **paramètre** une **chaîne de caractères** représentant une expression en **notation polonaise inverse** composée d'**additions** et de **multiplications** de **nombres entiers** et **renvoyant la valeur de cette expression**. On supposera que les éléments de l'expression sont séparés par des **espaces**.
     
     *Attention* : cette fonction ne doit pas renvoyer de résultat si l'expression est mal écrite. 
+
+??? tip "Correction exercice 2"
+    On **itère** sur les **éléments obtenus** en **découpant la chaîne** au niveau des **espaces**. 
+    On isole d'abord les cas des opérateurs, qui sont les plus faciles à identifier, et on suppose que tout ce qui n'est pas `+` ou `*` est un **entier** (cette branche échouera si on trouve encore autre chose dans l'expression).
+    
+    À la fin, on **dépile** le **dernier élément** et on **vérifie** que la **pile** est bien **vide** avant de **renvoyer ce résultat**. Si à un moment donné, il était **impossible de dépiler**, alors le programme aura de toute façon **échoué**.
+    
+    ```python
+    def eval_polonaise_inverse(s):
+        pile = Pile()
+        for e in s.split(" "):
+            if e == "+" or e == "*":
+                x = pile.depiler()
+                y = pile.depiler()
+                z = x + y if e == "+" else x * y
+                pile.empiler(z)
+            else:
+                pile.empiler(int(e))
+        res = pile.depiler()
+        assert pile.est_vide()
+        return res
+    ```

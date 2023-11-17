@@ -95,6 +95,10 @@ nav:
     - Piles et files:
       - terminale/pilesfiles/index.md
       - Cours: terminale/pilesfiles/cours.md
+    - Bases de données:
+      - terminale/bdd/index.md
+      - Introduction aux bdd: terminale/bdd/introduction.md
+      - Modèle relationnel: terminale/bdd/modele_relationnel.md
     - Arbres:
       - terminale/arbres/index.md
       - Cours:
@@ -110,9 +114,6 @@ nav:
         - Parcours d'arbres binaires: terminale/arbres/exercices_parcours.md
         - Arbre binaires de recherche: terminale/arbres/exercices_abr.md
         - Implémentations d'arbres binaires et ABR: terminale/arbres/implementations_arbres.md
-      - Évaluations:
-        - Évaluation 1 corrigée: terminale/arbres/evaluation_correction.pdf
-        - Évaluation 2: terminale/arbres/evaluation_v2.pdf
   - Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Rendu des travaux: rendus.md
 
