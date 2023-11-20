@@ -38,7 +38,7 @@ Dufoux,Alex,21,05/07/65
 ```
 
 Chaque ligne correspond à un **enregistrement** (= **structure de données** éventuellement différentes).  
-La première ligne définit les **clés** ou **attributs**.
+La première ligne définit les **descripteurs** (également appelés **attributs**, **clés**, **champs**).
 
 ## Les banques de données
 

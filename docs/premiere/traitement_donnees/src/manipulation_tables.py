@@ -97,7 +97,7 @@ def moyenne_garcons_nsi(table, region):
     pass
 
 def lycees_academie(table, academie, fichier=FICHIER_SORTIE):
-    ''' Crée une nouvelle table contenant uniquement les lignes dont l' "ACADEMIE" est donnée,
+    ''' Crée une nouvelle table contenant uniquement les enregistrements dont l' "ACADEMIE" est donnée,
     puis enregistre cette table dans le fichier CSV spécifié (qui est initialisé à FICHIER_SORTIE).
     
     Faites le test pour l' "ACADEMIE" de "LILLE". '''
