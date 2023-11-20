@@ -635,7 +635,3 @@ Une autre opération bien utile sur les **chaînes de caractères** est l'opéra
 On peut également **chercher** un **caractère** ou même un **mot** dans une **chaîne de caractères** avec le mot-clé `in` :
 
 {{ IDEv('scripts/30.py') }}
-
-## Les dictionnaires
-
-...

@@ -62,6 +62,7 @@ nav:
       - Exercices et notebooks : premiere/representation_donnees/exercices.md
     - Traitement des données en tables:
       - premiere/traitement_donnees/index.md
+      - n-uplets et dictionnaires: premiere/traitement_donnees/n_uplets_dicos.md
       - Cours: premiere/traitement_donnees/cours.md
     - Tris:
       - premiere/tris/index.md
