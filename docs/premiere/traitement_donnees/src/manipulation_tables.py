@@ -54,6 +54,8 @@ def lister_colonnes(table):
 
 def chercher_academie(table, academie):
     ''' Renvoie True si le nom de l'académie donné est présent dans la table, False sinon.
+    :param table: (list of dict) la table sous la forme d'une liste de dictionnaires
+    :return: (bool) True ou False
     :Exemples:
     >>> table = lire_csv()
     >>> chercher_academie(table, 'GRENOBLE')
@@ -67,22 +69,28 @@ def chercher_academie(table, academie):
 
 def effectif_total_terminale(table, numero_etablissement):
     ''' Renvoie l' "EFFECTIF TOTAL EN TERMINALE GENERALE" de l'établissement dont le "NUMERO ETABLISSEMENT" est donné.
+    :param table: (list of dict) la table sous la forme d'une liste de dictionnaires
+    :param numero_etablissement: (str) le numéro associé à un établissement
 
     Faites le test avec le "LYCEE JEAN PERRIN" dont le "NUMERO ETABLISSEMENT" est "0590110Z". '''
     
     pass
 
 def effectif_total_eleves_nsi(table, numero_etablissement, rentree):
-    ''' Renvoie la somme des effectifs garçons (0747 - NUMERIQUE ET SCIENCES INFORMATIQUES - garcons)
-    + filles (0747 - NUMERIQUE ET SCIENCES INFORMATIQUES - filles) en NSI pour une "RENTREE SCOLAIRE" (année) donnée,
+    ''' Renvoie la somme des effectifs garçons ("0747 - NUMERIQUE ET SCIENCES INFORMATIQUES - garcons")
+    + filles ("0747 - NUMERIQUE ET SCIENCES INFORMATIQUES - fille"s) en NSI pour une "RENTREE SCOLAIRE" (année) donnée,
     et pour un "NUMERO ETABLISSEMENT" donné.
+    :param table: (list of dict) la table sous la forme d'une liste de dictionnaires
+    :param numero_etablissement: (str) le numéro associé à un établissement
+    :param rentree: (str) la rentrée scolaire souhaitée
     
-    Faites le test avec le LYCEE JEAN PERRIN pour la RENTRÉE 2020, dont le "NUMERO ETABLISSEMENT" est "0590110Z". '''
+    Faites le test avec le "LYCEE JEAN PERRIN" pour la "RENTREE SCOLAIRE" 2020, dont le "NUMERO ETABLISSEMENT" est "0590110Z". '''
     
     pass
 
 def compter_lycees_generaux(table):
     ''' Renvoie le nombre de lycées généraux.
+    :param table: (list of dict) la table sous la forme d'une liste de dictionnaires
     :return: (int) le nombre de lycées dont 'DENOMINATION' = 'LYCEE GENERAL'
     '''
     
@@ -91,6 +99,9 @@ def compter_lycees_generaux(table):
 def moyenne_garcons_nsi(table, region):
     ''' Renvoie la moyenne des effectifs de garçons en NSI ("0747 - NUMERIQUE ET SCIENCES INFORMATIQUES - garcons"),
     dans les lycées dont la "REGION ACADEMIQUE" est donnée.
+    :param table: (list of dict) la table sous la forme d'une liste de dictionnaires
+    :param region: (str) la région pour laquelle calculer la moyenne
+    :return: (float) la moyenne des effectifs de garçons en NSI
     
     Faites le test avec la "REGION ACADEMIQUE" des "HAUTS-DE-FRANCE". '''
     
@@ -99,12 +110,50 @@ def moyenne_garcons_nsi(table, region):
 def lycees_academie(table, academie, fichier=FICHIER_SORTIE):
     ''' Crée une nouvelle table contenant uniquement les enregistrements dont l' "ACADEMIE" est donnée,
     puis enregistre cette table dans le fichier CSV spécifié (qui est initialisé à FICHIER_SORTIE).
-    
+    :param table: (list of dict) la table sous la forme d'une liste de dictionnaires
+    :param academie: (str) l'académie dont on veut garder les enregistrements.
+    :param fichier: (str) le fichier de sortie (initialement égal au contenu de la variable globale FICHIER_SORTIE)
+
     Faites le test pour l' "ACADEMIE" de "LILLE". '''
     
+    pass
+
+# EXERCICE 4 - Fonctions à compléter
+# Les fonctions suivantes concernent la table du fichier fr-en-effectifs-specialites-doublettes-terminale-generale.csv
+
+def trier_selon_patronyme(table):
+    ''' Trier la table de donnée spar rapport à la colonne "PATRONYME".
+    :param table: (list of dict) la table sous la forme d'une liste de dictionnaires
+    :return: (list of dicts) renvoie une nouvelle table de données triée par rapport au patronyme des lycées '''
+
+    pass
+
+def trier_selon_effectif(table):
+    ''' Trier la table de donnée spar rapport à la colonne "EFFECTIF TOTAL EN TERMINALE GENERALE".
+    :param table: (list of dict) la table sous la forme d'une liste de dictionnaires
+    :return: (list of dicts) renvoie une nouvelle table de données triée par rapport à l'effectif total en terminale générale '''
+
+    pass
+
+def trier_selon_academie_et_effectif(table):
+    ''' Trier la table de donnée spar rapport à la colonne "ACADEMIE" et "EFFECTIF TOTAL EN TERMINALE GENERALE".
+    :param table: (list of dict) la table sous la forme d'une liste de dictionnaires
+    :return: (list of dicts) renvoie une nouvelle table de données triée par rapport à l'académie ET l'effectif total en terminale générale '''
+
+    pass
+
+# EXERCICE 4 - Fonctions à compléter
+
+def fusionner_deux_tables(table1, table2):
+    ''' Fusionner deux tables de données.
+    :param table1: (list of dicts) une table sous la forme d'une liste de dictionnaires
+    :param table2: (list of dicts) une table sous la forme d'une liste de dictionnaires
+    :return: (list of dicts) une table sous la forme d'une liste de dictionnaires '''
+
     pass
 
 if __name__ == '__main__':
     ''' Instructions exécutées si l'on exécute ce fichier directement. '''
 
-    pass
+    table = lire_csv()
+    sorted(table)

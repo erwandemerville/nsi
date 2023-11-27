@@ -223,3 +223,84 @@ Pour les **exercices suivants**, on travaillera avec notre fichier `fr-en-effect
 
 !!! note "Exercice 3"
     Complétez toutes les autres fonctions de `manipulation_tables.py`. Lisez bien les **docstrings** pour comprendre ce que doit faire chaque fonction.
+
+## Trier une table de données
+
+Une autre opération courante sur les **tables de données** consiste à **trier une table en fonction d'une clé donnée**.
+
+Si l'on essaie de **trier une liste de dictionnaires** avec la fonction native de *Python* `sorted`, voici ce qu'il se passe :
+
+```python
+>>> table = lire_csv()
+>>> sorted(table)
+Traceback (most recent call last):
+  File "/home/erwan/Documents/Gits/erwandemervillefr/git_nsi/docs/premiere/traitement_donnees/src/manipulation_tables.py", line 111, in <module>
+    sorted(table)
+TypeError: '<' not supported between instances of 'dict' and 'dict'
+```
+
+En effet, on ne peut pas **comparer directement deux dictionnaires**.
+
+Pour utiliser la **fonction** `sorted` sur notre **tableau de dictionnaires**, il faut indiquer comment se ramener à des **valeurs que Python sait comparer** (*nombres*, *chaînes de caractères*, *n-uplets*). Pour cela, on commence par **définir** une **fonction** qui **prend en argument un enresgistrement de la table** (donc un *dictionnaire*) et **renvoie** la **valeur que l’on souhaite comparer**.  
+Par exemple, si l'on travaille avec notre table des *effectifs d'élèves en enseignements de spécialité*, et qu'on souhaite **trier les enregistrements** par rapport à la **colonne** `"PATRONYME"`, on créera d'abord une **fonction** :
+
+```python
+def patronyme(e):
+    ''' Prend une entrée sur un lycée de la table et renvoie le patronyme du lycée.
+    :param e: (dict) un dictionnaire contenant les infos sur un lycée 
+    :return: (str) le patronyme du lycée '''
+
+    return e["PATRONYME"]
+```
+
+Ensuite, pour **trier notre table** par rapport au **patronyme**, et stocker le résultat dans une variable `nouvelle_table`, il ne restera plus qu'à faire :
+
+```python
+nouvelle_table = sorted(table, key=patronyme)
+```
+
+Le **paramètre** `key` prend la **fonction** `patronyme` que l'on a créé ci-dessus.  
+On peut également ajouter un **paramètre** `reverse` si l'on souhaite **trier dans l'ordre inverse** :
+
+```python
+nouvelle_table = sorted(table, key=patronyme, reverse=True)
+```
+
+!!! quote ""
+    À noter qu'il est également possible, plutôt que de créer une nouvelle table triée, de modifier directement la table de données initiale. Pour cela, on aurait utiliser la méthode `sort`, comme ceci :
+
+    ```python
+    table.sort(table, key=patronyme)
+    ```
+
+On peut également **trier** une **liste de dictionnaires** par rapport à **deux clés**.  
+Pour cela, la fonction que l'on donnera comme `key` de la fonction `sorted` renverra **un tuple de deux éléments**. Par exemple, si l'on souhaite **trier les enregistrements** de notre *table d'effectifs d'élèves en terminale générale* selon le `"DEPARTEMENT"` **ET** la `"COMMUNE"`, on écrira une fonction :
+
+```python
+def departement_puis_commune(e):
+    ''' Prend une entrée sur un lycée de la table et renvoie un tuple contenant le département et la commune.
+    :param e: (dict) un dictionnaire contenant les infos sur un lycée 
+    :return: (str) le patronyme du lycée '''
+
+    return e["DEPARTEMENT"], e["COMMUNE"]
+```
+
+Ainsi, pour récupérer les enregistrements triés dans une variable `nouvelle_table` :
+
+```python
+nouvelle_table = sorted(table, key=departement_puis_commune)
+```
+
+!!! question ""
+    Pour être plus précis, le **tri** va ici se faire d'abord par rapport au *département*, puis, si plusieurs **lycées** sont dans le même *département*, le tri se fera alors par rapport à la *commune*.
+
+!!! note "Exercice 4"
+    Complétez les fonctions `trier_selon_patronyme`, `trier_selon_effectif` et `trier_selon_academie_et_effectif` de `manipulation_tables.py`.  
+    Vous pourrez utiliser la fonction native `sorted` de *Python*.
+
+    À noter qu'il est possible de ==définir une fonction à l'intérieur d'une fonction==. Si vous avez besoin par exemple de créer une **fonction** permettant de **comparer l'élément souhaité** d'un **dictionnaire**, vous pourrez procéder ainsi.
+
+## Fusion de tables
+
+!!! note "Exercice 5"
+    Complétez la fonction `fusionner_deux_tables` de `manipulation_tables.py`.
