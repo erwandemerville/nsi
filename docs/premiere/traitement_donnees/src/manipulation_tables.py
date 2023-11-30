@@ -122,24 +122,37 @@ def lycees_academie(table, academie, fichier=FICHIER_SORTIE):
 # Les fonctions suivantes concernent la table du fichier fr-en-effectifs-specialites-doublettes-terminale-generale.csv
 
 def trier_selon_patronyme(table):
-    ''' Trier la table de donnée spar rapport à la colonne "PATRONYME".
+    ''' Trier la table de donnée par rapport à la colonne "PATRONYME".
     :param table: (list of dict) la table sous la forme d'une liste de dictionnaires
     :return: (list of dicts) renvoie une nouvelle table de données triée par rapport au patronyme des lycées '''
+
+    def patronyme(e):
+        ''' Prend un enregistrement de la table et renvoie la valeur associée à "PATRONYME". '''
+        pass
 
     pass
 
 def trier_selon_effectif(table):
-    ''' Trier la table de donnée spar rapport à la colonne "EFFECTIF TOTAL EN TERMINALE GENERALE".
+    ''' Trier la table de donnée par rapport à la colonne "EFFECTIF TOTAL EN TERMINALE GENERALE".
     :param table: (list of dict) la table sous la forme d'une liste de dictionnaires
     :return: (list of dicts) renvoie une nouvelle table de données triée par rapport à l'effectif total en terminale générale '''
+
+    def effectif(e):
+        ''' Prend un enregistrement de la table et renvoie la valeur associée à "EFFECTIF TOTAL EN TERMINALE GENERALE". '''
+        pass
 
     pass
 
 def trier_selon_academie_et_effectif(table):
-    ''' Trier la table de donnée spar rapport à la colonne "ACADEMIE" et "EFFECTIF TOTAL EN TERMINALE GENERALE".
+    ''' Trier la table de donnée par rapport à la colonne "ACADEMIE" et "EFFECTIF TOTAL EN TERMINALE GENERALE".
     :param table: (list of dict) la table sous la forme d'une liste de dictionnaires
     :return: (list of dicts) renvoie une nouvelle table de données triée par rapport à l'académie ET l'effectif total en terminale générale '''
 
+    def paacademie_puis_effectif(e):
+        ''' Prend un enregistrement de la table et renvoie un tuple de deux valeurs associées aux champs : 
+        "ACADEMIE" et "EFFECTIF TOTAL EN TERMINALE GENERALE". '''
+        pass
+    
     pass
 
 # EXERCICE 4 - Fonctions à compléter

@@ -273,14 +273,15 @@ nouvelle_table = sorted(table, key=patronyme, reverse=True)
     table.sort(table, key=patronyme)
     ```
 
-On peut également **trier** une **liste de dictionnaires** par rapport à **deux clés**.  
+On peut également **trier** une **liste de dictionnaires** par rapport à **deux clés**.
+
 Pour cela, la fonction que l'on donnera comme `key` de la fonction `sorted` renverra **un tuple de deux éléments**. Par exemple, si l'on souhaite **trier les enregistrements** de notre *table d'effectifs d'élèves en terminale générale* selon le `"DEPARTEMENT"` **ET** la `"COMMUNE"`, on écrira une fonction :
 
 ```python
 def departement_puis_commune(e):
     ''' Prend une entrée sur un lycée de la table et renvoie un tuple contenant le département et la commune.
     :param e: (dict) un dictionnaire contenant les infos sur un lycée 
-    :return: (str) le patronyme du lycée '''
+    :return: (tuple of str) un tuple contenant le département et la commune '''
 
     return e["DEPARTEMENT"], e["COMMUNE"]
 ```
