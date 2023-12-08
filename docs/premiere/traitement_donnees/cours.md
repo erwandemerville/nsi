@@ -305,3 +305,28 @@ nouvelle_table = sorted(table, key=departement_puis_commune)
 
 !!! note "Exercice 5"
     Complétez la fonction `fusionner_deux_tables` de `manipulation_tables.py`.
+
+La fonction précédente fonctionne si l'on **fusionne deux tables** avec **exactement** les **mêmes colonnes** (les mêmes attributs, dans le même ordre).
+
+Si deux tables ont des **colonnes en commun** et d'autres colonnes **qui diffèrent**, et que l'on souhaite **fusionner leur contenu**, il faut alors définir leur « domaine de valeur », c’est-à-dire quels sont les « champs » (ou colonnes) **communs aux deux tables**.
+
+Voici un exemple avec deux tables que l'on souhaite fusionner :
+
+```python
+table1 = [{"nom":"Duchmol","prenom":"Jean","moyenne":12},{"nom":"Martin","prenom":"Lise","moyenne":14}]
+table2 = [{"nom":"Duchmol","prenom":"Jean","classe":"3A"},{"nom":"Martin","prenom":"Lise","classe":"5B"}]
+```
+
+On dispose de ces deux tables qui contiennent toutes les deux une colonne *nom* et une colonne *prenom*. La différence est que la première table contient une colonne *moyenne* tandis que la deuxième table contient une colonne *classe*. On aimerait créer une **nouvelle table** contenant le *nom*, le *prénom*, la *moyenne* et la *classe* de chaque élève, c'est-à-dire :
+
+```python
+[{'nom': 'Duchmol', 'prenom': 'Jean', 'moyenne': 12, 'classe': '3A'}, {'nom': 'Martin', 'prenom': 'Lise', 'moyenne': 14, 'classe': '5B'}]
+```
+
+!!! note "Exercice 6"
+    Complétez les `...` de la **fonction à trous** suivante :
+
+    {{ IDE('scripts/fusion_tables.py') }}
+
+??? tip "Correction exercice 6"
+    {{ IDE('scripts/fusion_tables_corr.py') }}

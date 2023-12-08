@@ -102,6 +102,7 @@ nav:
       - Introduction aux bdd: terminale/bdd/introduction.md
       - Modèle relationnel: terminale/bdd/modele_relationnel.md
       - Le langage SQL: terminale/bdd/sql.md
+      - Activité - Une base de films: terminale/bdd/travail_films.pdf
     - Arbres:
       - terminale/arbres/index.md
       - Cours:
