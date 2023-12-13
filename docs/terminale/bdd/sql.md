@@ -299,16 +299,16 @@ Pour créer nos **tables de données**, on utilisera donc les **types** proposé
 
     ```sql
     INSERT INTO Auteurs(ID_Auteur, Nom, Prenom, Date_Naissance) VALUES
-        (1, 'Orwell', 'George', '1903-01-01'),
-        (2, 'Herbert', 'Frank', '1920-01-01'),
-        (3, 'Asimov', 'Isaac', '1920-01-01'),
-        (4, 'Huxley', 'Aldous', '1894-01-01'),
-        (5, 'Bradbury', 'Ray', '1920-01-01'),
-        (6, 'K. Dick', 'Philip', '1928-01-01'),
-        (7, 'Barjavel', 'René', '1911-01-01'),
-        (8, 'Boulle', 'Pierre', '1912-01-01'),
-        (9, 'Van Vogt', 'Alfred Elton', '1912-01-01'),
-        (10, 'Verne', 'Jules', '1828-01-01');
+        (1, 'Orwell', 'George', 1903),
+        (2, 'Herbert', 'Frank', 1920),
+        (3, 'Asimov', 'Isaac', 1920),
+        (4, 'Huxley', 'Aldous', 1894),
+        (5, 'Bradbury', 'Ray', 1920),
+        (6, 'K. Dick', 'Philip', 1928),
+        (7, 'Barjavel', 'René', 1911),
+        (8, 'Boulle', 'Pierre', 1912),
+        (9, 'Van Vogt', 'Alfred Elton', 1912),
+        (10, 'Verne', 'Jules', 1828);
     ```
 
     **^^Insérer les thèmes^^** :
@@ -510,3 +510,90 @@ L'intérêt d'une telle **base de données** est de pouvoir effectuer des **requ
     9 - **Afficher** les **noms des auteurs** qui ont **écrit des livres dans au moins deux langues différentes**.
 
     10 - **Afficher** les **thèmes des livres** ayant été **publiés après 1950** et **écrits par des auteurs nés avant 1920**, en indiquant le **nombre de livres par thème**, et en ne montrant que les **thèmes avec plus d'un livre**.
+
+## Mise à jour / suppression dans une table
+
+D'autres types d'opérations possibles sur les **tables** sont :
+
+- l'opération de **mise à jour** (modification d'*enregistrements* d'une table),
+- l'opération de **suppression** (suppression d'*enregistrements* d'une table).
+
+!!! note "À faire 5 - Modifier des données"
+    On va commencer par ajouter **quelques livres fictifs** dans notre **base de données de livres**.
+
+    Exécutez les **instructions SQL** suivantes (dans le bon ordre) :
+
+    ```sql
+    INSERT INTO Auteurs(ID_Auteur, Nom, Prenom, Date_Naissance) VALUES(11, 'Christophe', 'Jean', 1995);
+
+    INSERT INTO Livres (Titre, Annee_Publication, Langue_ID, Auteur_ID)
+    VALUES
+    ('Le Monde Imaginaire', 1980, 1, 11),
+    ('Voyage Interstellaire', 2005, 1, 11);
+    ('Retour vers le passé', 2022, 2, 11);
+    ```
+
+    *Note* : On n'a ici pas indiqué d'**ID** pour les livres, ils seront alors déterminés **automatiquement**.
+
+    1 - On souhaite **remplacer l'année de publication** du film `"Voyage Interstellaire"` par l'année `"1960"`.
+
+    ??? tip "Correction 1"
+        ```sql
+        UPDATE Livres SET Annee_Publication = 1960 WHERE ID_Livre = 5;
+        ```
+    
+    Les requêtes de **mise à jour** sont de la forme :  
+    `UPDATE <table> SET <attribut> = <nouvelle valeur> WHERE <condition>`
+
+    2 - On souhaite **supprimer touts les livres** dont l'**auteur** a l'identifiant `11`.
+
+    ??? tip "Correction 1"
+        ```sql
+        DELETE FROM Livres WHERE Auteur_ID = 11;
+        ```
+    
+    Les requêtes de **suppression** sont de la forme :  
+    `DELETE FROM <table> WHERE <condition>`
+
+    !!! success "Jointure dans un `UPDATE` (pas au programme)"
+        Il est possible de faire des **jointures** dans une **requête** `UPDATE`.  
+        Une telle requête sera de la forme suivante :
+
+        ```sql
+        UPDATE table1
+        SET table1.colonne1 = nouvelle_valeur
+        FROM table1
+        JOIN table2 ON table1.clé_primaire = table2.clé_étrangère
+        WHERE condition;
+        ```
+
+        Par exemple :
+
+        ```sql
+        UPDATE Livres
+        SET Langue_ID = 3
+        FROM Livres
+        JOIN Auteurs ON Livres.Auteur_ID = Auteurs.ID_Auteur
+        WHERE Auteurs.Nom = 'Asimov';
+        ```
+
+        Cette requête met à jour la colonne `Langue_ID` de la table `Livres` pour **tous les livres** écrits par l'**auteur** avec le **nom** `'Asimov'` en utilisant une **jointure** avec la table `Auteurs`.
+    
+    !!! success "Jointure dans un `DELETE` (pas au programme)"
+        La syntaxe standard **SQL** pour une requête de **suppression** (`DELETE`) **ne permet pas** directement l'utilisation de la clause `JOIN`. Cependant, vous pouvez utiliser une sous-requête (subquery) dans la clause `WHERE` pour atteindre un effet similaire.
+
+        Une telle requête sera de la forme suivante :
+
+        ```sql
+        DELETE FROM table1
+        WHERE colonne1 IN (SELECT colonne1 FROM table2 WHERE condition);
+        ```
+
+        Par exemple :
+
+        ```sql
+        DELETE FROM Livres
+        WHERE Auteur_ID IN (SELECT ID_Auteur FROM Auteurs WHERE Nom = 'Asimov');
+        ```
+
+        Cette requête **supprime** tous les **livres** dont l'**auteur** a le **nom** `'Asimov'`.
