@@ -60,11 +60,16 @@ nav:
       - premiere/representation_donnees/index.md
       - Cours: premiere/representation_donnees/cours.md
       - Exercices et notebooks : premiere/representation_donnees/exercices.md
+    - Circuits et logique booléenne:
+      - premiere/logiqueboole/index.md
+      - Cours: premiere/logiqueboole/cours.md
     - Traitement des données en tables:
       - premiere/traitement_donnees/index.md
       - n-uplets et dictionnaires: premiere/traitement_donnees/n_uplets_dicos.md
       - Cours: premiere/traitement_donnees/cours.md
       - Le module Pandas: premiere/traitement_donnees/pandas.md
+    - Projets avec Pyxel:
+      - premiere/pyxel/index.md
     - Tris:
       - premiere/tris/index.md
       - Tri par sélection: premiere/tris/tri_selection.md
@@ -118,7 +123,7 @@ nav:
         - Parcours d'arbres binaires: terminale/arbres/exercices_parcours.md
         - Arbre binaires de recherche: terminale/arbres/exercices_abr.md
         - Implémentations d'arbres binaires et ABR: terminale/arbres/implementations_arbres.md
-  - Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
+  - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Rendu des travaux: rendus.md
 
 markdown_extensions:
