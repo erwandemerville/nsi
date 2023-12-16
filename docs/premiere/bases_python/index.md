@@ -1,6 +1,6 @@
 # Les bases du langage Python
 
-| Liste des contenus                           | Contenu                             |
+| Liste des contenus                           | Description                         |
 | -------------------------------------------- | ----------------------------------- |
 | [Introduction à la programmation avec Python](cours.md) | Cours d'introduction au langage Python. |
 | [Correction du DM 1](dm1.md) | Correction du DM 1. |

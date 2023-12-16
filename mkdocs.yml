@@ -62,7 +62,8 @@ nav:
       - Exercices et notebooks : premiere/representation_donnees/exercices.md
     - Circuits et logique booléenne:
       - premiere/logiqueboole/index.md
-      - Cours: premiere/logiqueboole/cours.md
+      - Introduction: premiere/logiqueboole/introduction.md
+      - Fonctions et expressions: premiere/logiqueboole/fonctions.md
     - Traitement des données en tables:
       - premiere/traitement_donnees/index.md
       - n-uplets et dictionnaires: premiere/traitement_donnees/n_uplets_dicos.md
@@ -109,7 +110,7 @@ nav:
       - Introduction aux bdd: terminale/bdd/introduction.md
       - Modèle relationnel: terminale/bdd/modele_relationnel.md
       - Le langage SQL: terminale/bdd/sql.md
-      - Activité - Une base de films: terminale/bdd/travail_films.pdf
+      - Activité - Une base de films: terminale/bdd/src/activite_movies.zip
     - Arbres:
       - terminale/arbres/index.md
       - Cours:

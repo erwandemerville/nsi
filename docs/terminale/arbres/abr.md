@@ -78,6 +78,7 @@ Une autre notion qui va nous être utile est la notion d'**arbre équilibré**.
                 Renvoyer rechercher(gauche(abr), elt)
             Sinon :
                 Renvoyer rechercher(droite(abr), elt)
+        FIN
         ```
 
 Contrairement à la recherche dans un **arbre binaire** classique, on n'effectue pas la recherche dans les deux sous-arbres. En fonction de l'**élément** recherché, on effectue la recherche **soit** dans le **sous-arbre gauche** (si l'élément est **inférieur ou égal** à la **valeur de la racine**), soit dans le **sous-arbre droit** (si l'élément est **supérieur** à la **valeur de la racine**).
@@ -116,12 +117,8 @@ Si l'on reprend les arbres précédents :
                   elt : Element
         SORTIE : Arbre binaire de recherche
         DEBUT
-            Si abr EST VIDE, alors :
-                Renvoyer nouvel_ABR(elt, ARBRE_VIDE, ARBRE_VIDE)
-            Sinon si elt <= valeur_racine(abr), alors :
-                Renvoyer nouvel_ABR(valeur_racine(abr), insertion(gauche(abr)), droite(abr))
-            Sinon :
-                Renvoyer nouvel_ABR(valeur_racine(abr), gauche(abr), insertion(droite(abr)))
+            À COMPLÉTER
+        FIN
         ```
 
 ### Coût de la recherche
