@@ -60,10 +60,12 @@ nav:
       - premiere/representation_donnees/index.md
       - Cours: premiere/representation_donnees/cours.md
       - Exercices et notebooks : premiere/representation_donnees/exercices.md
-    - Circuits et logique booléenne:
-      - premiere/logiqueboole/index.md
-      - Introduction: premiere/logiqueboole/introduction.md
-      - Fonctions et expressions: premiere/logiqueboole/fonctions.md
+    - Architecture matérielle:
+      - premiere/archi/index.md
+      - Introduction à la logique booléenne: premiere/archi/introduction.md
+      - Fonctions et expressions: premiere/archi/fonctions.md
+      - Les circuits logiques: premiere/archi/circuits.md
+      - Modèle de Von Neumann: premiere/archi/vonneumann.md
     - Traitement des données en tables:
       - premiere/traitement_donnees/index.md
       - n-uplets et dictionnaires: premiere/traitement_donnees/n_uplets_dicos.md
