@@ -128,6 +128,8 @@ nav:
         - Parcours d'arbres binaires: terminale/arbres/exercices_parcours.md
         - Arbre binaires de recherche: terminale/arbres/exercices_abr.md
         - Implémentations d'arbres binaires et ABR: terminale/arbres/implementations_arbres.md
+    - Le module Pyxel:
+      - terminale/pyxel/index.md
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Rendu des travaux: rendus.md
 

@@ -10,3 +10,4 @@
 | [Piles et files](pilesfiles/index.md) | Structures de piles et de files et implémentations. |
 | [Les arbres](arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |
 | [Bases de données - représentations et applications](bdd/index.md) | Modèle relationnel, bases de données, SQL... |
+| [:video_game: Le module Pyxel](pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |
