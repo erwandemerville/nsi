@@ -8,28 +8,24 @@
       
       
       
-        <link rel="canonical" href="https://nsi.erwandemerville.fr/terminale/pyxel/">
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/terminale/pyxel/snake/">
       
       
-        <link rel="prev" href="../arbres/implementations_arbres/">
       
       
-        <link rel="next" href="../../rendus/">
-      
-      
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1">
     
     
       
-        <title>Le module Pyxel - Numérique et sciences informatiques</title>
+        <title>Un jeu de snake avec Pyxel - Numérique et sciences informatiques</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.45e1311d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.45e1311d.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,8 +46,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
-<script src="../../pyodide-mkdocs/utils.js"></script> 
-<script src="../../pyodide-mkdocs/interpreter.js"></script> 
+<script src="../../../pyodide-mkdocs/utils.js"></script> 
+<script src="../../../pyodide-mkdocs/interpreter.js"></script> 
 
     
       
@@ -63,13 +59,13 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-      <link rel="stylesheet" href="../../premiere/tris/stylesheets/style_animation_tri_selection.css">
+      <link rel="stylesheet" href="../../../premiere/tris/stylesheets/style_animation_tri_selection.css">
     
-      <link rel="stylesheet" href="../../premiere/tris/stylesheets/style_animation_tri_insertion.css">
+      <link rel="stylesheet" href="../../../premiere/tris/stylesheets/style_animation_tri_insertion.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -77,7 +73,7 @@
     
     
 
-<link rel="stylesheet" href="../../pyodide-mkdocs/pyoditeur.css">
+<link rel="stylesheet" href="../../../pyodide-mkdocs/pyoditeur.css">
 
 
 <input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
@@ -102,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#le-module-pyxel" class="md-skip">
+        <a href="#un-jeu-de-snake-avec-pyxel" class="md-skip">
           Skip to content
         </a>
       
@@ -116,7 +112,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -136,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Le module Pyxel
+              Un jeu de snake avec Pyxel
             
           </span>
         </div>
@@ -240,7 +236,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
     
@@ -260,7 +256,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../premiere/" class="md-tabs__link">
+        <a href="../../../premiere/" class="md-tabs__link">
           
   
     
@@ -276,13 +272,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -317,7 +311,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../rendus/" class="md-tabs__link">
+      <a href="../../../rendus/" class="md-tabs__link">
         
   
     
@@ -351,7 +345,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -392,7 +386,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -462,7 +456,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/" class="md-nav__link ">
+            <a href="../../../premiere/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -523,7 +517,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/bases_python/" class="md-nav__link ">
+            <a href="../../../premiere/bases_python/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -556,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/cours/" class="md-nav__link">
+      <a href="../../../premiere/bases_python/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -577,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/dm1/" class="md-nav__link">
+      <a href="../../../premiere/bases_python/dm1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -598,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/thonny/" class="md-nav__link">
+      <a href="../../../premiere/bases_python/thonny/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -619,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/notebooks/" class="md-nav__link">
+      <a href="../../../premiere/bases_python/notebooks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -672,7 +666,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/representation_donnees/" class="md-nav__link ">
+            <a href="../../../premiere/representation_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -705,7 +699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/representation_donnees/cours/" class="md-nav__link">
+      <a href="../../../premiere/representation_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -726,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/representation_donnees/exercices/" class="md-nav__link">
+      <a href="../../../premiere/representation_donnees/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -783,7 +777,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/archi/" class="md-nav__link ">
+            <a href="../../../premiere/archi/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -816,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/archi/introduction/" class="md-nav__link">
+      <a href="../../../premiere/archi/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -837,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/archi/fonctions/" class="md-nav__link">
+      <a href="../../../premiere/archi/fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -858,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/archi/circuits/" class="md-nav__link">
+      <a href="../../../premiere/archi/circuits/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -879,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/archi/vonneumann/" class="md-nav__link">
+      <a href="../../../premiere/archi/vonneumann/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -934,7 +928,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/traitement_donnees/" class="md-nav__link ">
+            <a href="../../../premiere/traitement_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -967,7 +961,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/traitement_donnees/n_uplets_dicos/" class="md-nav__link">
+      <a href="../../../premiere/traitement_donnees/n_uplets_dicos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -988,7 +982,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/traitement_donnees/cours/" class="md-nav__link">
+      <a href="../../../premiere/traitement_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1009,7 +1003,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/traitement_donnees/pandas/" class="md-nav__link">
+      <a href="../../../premiere/traitement_donnees/pandas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1083,7 +1077,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/pyxel/index.md" class="md-nav__link">
+      <a href="../../../premiere/pyxel/index.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1104,7 +1098,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/pyxel/snake.md" class="md-nav__link">
+      <a href="../../../premiere/pyxel/snake.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1125,7 +1119,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/pyxel/projetjv.md" class="md-nav__link">
+      <a href="../../../premiere/pyxel/projetjv.md" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1178,7 +1172,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/tris/" class="md-nav__link ">
+            <a href="../../../premiere/tris/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1211,7 +1205,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/tris/tri_selection/" class="md-nav__link">
+      <a href="../../../premiere/tris/tri_selection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1232,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/tris/tri_insertion/" class="md-nav__link">
+      <a href="../../../premiere/tris/tri_insertion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1265,8 +1259,6 @@
       
   
   
-    
-  
   
   
     
@@ -1301,17 +1293,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1328,7 +1320,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Terminale
@@ -1368,7 +1360,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../modularite/" class="md-nav__link ">
+            <a href="../../modularite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1401,7 +1393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modularite/api/" class="md-nav__link">
+      <a href="../../modularite/api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1422,7 +1414,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modularite/modules/" class="md-nav__link">
+      <a href="../../modularite/modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1477,7 +1469,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../mise_au_point/" class="md-nav__link ">
+            <a href="../../mise_au_point/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1510,7 +1502,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mise_au_point/preliminaire/" class="md-nav__link">
+      <a href="../../mise_au_point/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1531,7 +1523,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mise_au_point/cours/" class="md-nav__link">
+      <a href="../../mise_au_point/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1552,7 +1544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mise_au_point/activite_finale/" class="md-nav__link">
+      <a href="../../mise_au_point/activite_finale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1609,7 +1601,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../poo/" class="md-nav__link ">
+            <a href="../../poo/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1642,7 +1634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../poo/preliminaire/" class="md-nav__link">
+      <a href="../../poo/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1663,7 +1655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../poo/cours/" class="md-nav__link">
+      <a href="../../poo/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1684,7 +1676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../poo/pokemon/" class="md-nav__link">
+      <a href="../../poo/pokemon/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1705,7 +1697,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../poo/exercices/" class="md-nav__link">
+      <a href="../../poo/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1758,7 +1750,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../recursivite/" class="md-nav__link ">
+            <a href="../../recursivite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1791,7 +1783,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recursivite/cours/" class="md-nav__link">
+      <a href="../../recursivite/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1812,7 +1804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recursivite/exercices/" class="md-nav__link">
+      <a href="../../recursivite/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1865,7 +1857,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../listes/" class="md-nav__link ">
+            <a href="../../listes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1898,7 +1890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../listes/cours/" class="md-nav__link">
+      <a href="../../listes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1919,7 +1911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../listes/exercices/" class="md-nav__link">
+      <a href="../../listes/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1970,7 +1962,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../pilesfiles/" class="md-nav__link ">
+            <a href="../../pilesfiles/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2003,7 +1995,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pilesfiles/cours/" class="md-nav__link">
+      <a href="../../pilesfiles/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2060,7 +2052,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../bdd/" class="md-nav__link ">
+            <a href="../../bdd/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2093,7 +2085,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bdd/introduction/" class="md-nav__link">
+      <a href="../../bdd/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2114,7 +2106,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bdd/modele_relationnel/" class="md-nav__link">
+      <a href="../../bdd/modele_relationnel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2135,7 +2127,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bdd/sql/" class="md-nav__link">
+      <a href="../../bdd/sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2156,7 +2148,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bdd/src/activite_movies.zip" class="md-nav__link">
+      <a href="../../bdd/src/activite_movies.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2211,7 +2203,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../arbres/" class="md-nav__link ">
+            <a href="../../arbres/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2291,7 +2283,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/vocabulaire/" class="md-nav__link">
+      <a href="../../arbres/vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2312,7 +2304,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/parcours/" class="md-nav__link">
+      <a href="../../arbres/parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2333,7 +2325,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/type_abstrait/" class="md-nav__link">
+      <a href="../../arbres/type_abstrait/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2354,7 +2346,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/abr/" class="md-nav__link">
+      <a href="../../arbres/abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2426,7 +2418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/implementation_arbres/" class="md-nav__link">
+      <a href="../../arbres/implementation_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2447,7 +2439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/implementation_abr/" class="md-nav__link">
+      <a href="../../arbres/implementation_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2523,7 +2515,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/exercices_vocabulaire/" class="md-nav__link">
+      <a href="../../arbres/exercices_vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2544,7 +2536,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/exercices_parcours/" class="md-nav__link">
+      <a href="../../arbres/exercices_parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2565,7 +2557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/exercices_abr/" class="md-nav__link">
+      <a href="../../arbres/exercices_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2586,7 +2578,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/implementations_arbres/" class="md-nav__link">
+      <a href="../../arbres/implementations_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2620,8 +2612,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2635,17 +2625,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2657,7 +2647,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_10">
             <span class="md-nav__icon md-icon"></span>
             Le module Pyxel
@@ -2708,7 +2698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rendus/" class="md-nav__link">
+      <a href="../../../rendus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2757,26 +2747,15 @@
                   
 
 
-<h1 id="le-module-pyxel">Le module Pyxel<a class="headerlink" href="#le-module-pyxel" title="Permanent link">&para;</a></h1>
-<figure>
-<p><img alt="Logo de Pyxel" src="images/pyxel_logo.png" />
-  </p>
-<figcaption>Logo de Pyxel</figcaption>
-</figure>
-<table>
-<thead>
-<tr>
-<th>Liste des contenus</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="snake/" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.5 17H18c1.1 0 2-.9 2-2s-.9-2-2-2V9c0-1 0-2-1.08-2.86.05-.21.08-.42.08-.64C17 3.57 15 2 12.5 2c-2.26 0-4.12 1.31-4.43 3H6L3.71 2.79 3 3.5l2 2-2 2 .71.71L6 6h2.07c.31 1.69 2.17 3 4.43 3 .5 0 1-.08 1.43-.2.04.07.07.14.07.2v4H8c-1.1 0-2 .9-2 2s.9 2 2 2H6.5A2.5 2.5 0 0 0 4 19.5c0 .17 0 .34.05.5H4c-1.1 0-2 .9-2 2h17.5a2.5 2.5 0 0 0 0-5M12 5c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1Z"/></svg></span> Un jeu de Snake</a></td>
-<td>Réalisation d'un petit jeu de Snake pour introduire le module Pyxel.</td>
-</tr>
-</tbody>
-</table>
+<h1 id="un-jeu-de-snake-avec-pyxel">Un jeu de snake avec Pyxel<a class="headerlink" href="#un-jeu-de-snake-avec-pyxel" title="Permanent link">&para;</a></h1>
+<div class="admonition success">
+<p class="admonition-title">Énoncé et programme de base</p>
+<p>Voici le <strong>PDF</strong> de l'énoncé de l'exercice comportant des <em>trous</em>, ainsi qu'une structure de base pour votre programme.</p>
+<ul>
+<li><a href="../documents/Enonce_Snake_Pyxel.pdf" target="_blank">Snake - Énoncé à trous</a></li>
+<li><a href="../src/snake_base.py" target="_blank">Programme Python de base</a></li>
+</ul>
+</div>
 
 
 
@@ -2790,7 +2769,7 @@
 
 
                 
-<script src="../../pyodide-mkdocs/ide.js"></script> 
+<script src="../../../pyodide-mkdocs/ide.js"></script> 
 
               </article>
             </div>
@@ -2829,16 +2808,16 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
-        <script src="../../premiere/tris/javascripts/animation_tri_selection.js"></script>
+        <script src="../../../premiere/tris/javascripts/animation_tri_selection.js"></script>
       
-        <script src="../../premiere/tris/javascripts/animation_tri_insertion.js"></script>
+        <script src="../../../premiere/tris/javascripts/animation_tri_insertion.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
