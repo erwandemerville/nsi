@@ -130,6 +130,7 @@ nav:
         - Implémentations d'arbres binaires et ABR: terminale/arbres/implementations_arbres.md
     - Le module Pyxel:
       - terminale/pyxel/index.md
+      - Jeu de snake: terminale/pyxel/snake.md
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Rendu des travaux: rendus.md
 
