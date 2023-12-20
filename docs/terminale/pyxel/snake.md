@@ -96,4 +96,4 @@ if __name__ == "__main__":
     ![Instructions relatives à l'appui sur une touche](images/screen_deplacements.png)
 
     - Bien évidemment, vous devez **compléter** ce bout de code en **ajoutant les instructions** pour prendre en compte l'**appui** sur la **touche** ++arrow-up++ et sur la **touche** ++arrow-down++.
-    - Vous pouvez, si vous le souhaitez, remplacer les touches de flèches par les touches ++Z++, ++Q++, ++S++ et ++D++.
+    - Vous pouvez, si vous le souhaitez, remplacer les touches de flèches par les touches ++z++, ++q++, ++s++ et ++d++.
