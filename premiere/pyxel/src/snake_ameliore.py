@@ -34,8 +34,9 @@ def update():
         # insérer la tête au début
         snake.insert(0, head)
         
-        # effacer le dernier élément de snake :
-        snake.pop()
+        if not head == food:
+            # effacer le dernier élément de snake :
+            snake.pop()
     
     # Déplacement du snake
     if pyxel.btn(pyxel.KEY_ESCAPE):
@@ -59,9 +60,6 @@ def update():
     
     if head == food:
         score += 1
-        # insérer une case à la queue du snake
-        tail = [snake[-1][0] - direction[0], snake[-1][1] - direction[1]]
-        snake.insert(len(snake), tail)
         # replacer la nourriture tant qu'elle est sur le snake
         while food in snake:
             food = [randint(0, WIDTH/CASE - 1), randint(0, HEIGHT/CASE - 1)]
@@ -98,4 +96,6 @@ def draw():
     # 8 est la couleur rose
     pyxel.rect(x_food * CASE, y_food * CASE, CASE, CASE, 8)
 
+pyxel.load("my_resource.pyxres")
+pyxel.playm(0, loop=True)
 pyxel.run(update, draw)
