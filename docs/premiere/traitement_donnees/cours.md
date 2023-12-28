@@ -199,6 +199,13 @@ Ouvrons d'abord ce fichier avec *LibreOffice Calc* pour visuellement son contenu
         - `delim`, qui correspond au **délimiteur** à utiliser, initialisé à `;`,
         - `ordre`, initialisé à `None`, permettant si on le souhaite de définir l'**ordre des attributs** de la table.
 
+!!! tip "Correction des exercices"
+    Une **version corrigée** du fichier `manipulation_tables.py`, contenant des **explications détaillées**, est disponible :
+
+    <center>
+    [:material-cursor-default-click: Télécharger `manipulation_tables_corr.py`](src/manipulation_tables_corr.py){ target="_blank" }
+    </center>
+
 !!! note "Exercice 1 - *Créer un fichier CSV*"
     Compléter la **fonction** `creer_table_classe` qui consiste à **créer une table** dans un **fichier CSV** contenant le *nom*, *prénom*, l'*âge* et la *classe* de **chaque élève** de **première NSI**.
 
