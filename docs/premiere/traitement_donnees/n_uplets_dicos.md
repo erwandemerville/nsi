@@ -81,10 +81,12 @@ contient **quatre clés**, ici les **chaînes de caractères** `"nom"`, `"jour"`
 !!! abstract ""
     Si l'on souhaite représenter les données de `individus` dans un **dictionnaire**, on peut écrire :
 
+    ```python
     individus = [{'nom': "Alice", 'jour': 7, 'mois': 1, 'annee': 1941},
                 {'nom': "Bob", 'jour': 9, 'mois': 12, 'annee': 1909},
                 {'nom': "Charles", 'jour': 14, 'mois': 12, 'annee': 1965},
                 {'nom': "Delphine", 'jour': 11, 'mois': 1, 'annee': 1938}]
+    ```
 
 Contrairement à un **tableau** (représenté avec une **liste** en *Python*), les **clés** d’un **dictionnaire** ne sont pas limitées à un ensemble d’entiers de la forme `0`, `1`, . . . , `n − 1`.
 
