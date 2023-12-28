@@ -174,7 +174,7 @@ On peut également parcourir **à la fois les clés et les valeurs** avec la con
 
 {{ IDE('scripts/05.py') }}
 
-### Listes par compréhension
+### Dictionnaires par compréhension
 
 Enfin, tout comme pour les **listes**, il est possible de **construire un dictionnaire par compréhension**, par exemple :
 
