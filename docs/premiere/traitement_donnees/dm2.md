@@ -14,10 +14,12 @@
 
 !!! tip "Fichier `general.csv`"
     Pour les **questions 14 à 18**, un fichier `general.csv`, que vous devez avoir créé suite à la **question 13**, doit être utilisé.  
-    Si vous n'avez pas réussi à faire la **question 13**, vous pouvez télécharger le fichier ici et **le placer dans le même dossier que votre notebook**.
+    Si vous n'avez pas réussi à faire la **question 13**, vous pouvez télécharger le fichier manquant ici et **le placer dans le même dossier que votre notebook**.
+
+    Le fichier étant assez volumineux, il a été **compressé**. Décompressez l'archive `zip` pour récupérer le fichier `general.csv`.
 
     <center>
-    [:material-cursor-default-click: Télécharger `general.csv`](src/dm2/general.csv){ target="_blank" }
+    [:material-cursor-default-click: Télécharger `general.zip`](src/dm2/general.zip){ target="_blank" }
     </center>
 
 !!! note "Rendu de votre travail"
