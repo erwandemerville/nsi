@@ -62,7 +62,9 @@ Visionnez la petit vidéo suivante sur l'**histoire de l'architecture des ordina
 
     - **ENIAC** (*1946*) : Le premier ordinateur électronique à grande échelle, l'ENIAC, a marqué le passage des calculateurs mécaniques aux **machines électroniques programmables**.
 
-    - **"First Draft of a Report on the EDVAC"** de Von Neumann (*1945*) : Le document de Von Neumann a introduit le concept d'architecture von Neumann, standard pour la conception des ordinateurs modernes.
+    - **"First Draft of a Report on the EDVAC"** de Von Neumann (*1945*) : Le document de Von Neumann a introduit le concept d'architecture von Neumann, standard pour la conception des ordinateurs modernes. Il s'est basé sur les travaux d'**Alan Turing** (en 1936), notamment des concepts suivants :
+        - **Machine de Turing** : Turing a proposé un **modèle abstrait** de machine, connu sous le nom de machine de Turing, qui fonctionne selon des règles simples et manipule des symboles sur une bande infinie. Cette machine hypothétique possède une tête de lecture/écriture mobile qui peut se déplacer vers la gauche ou la droite et changer l'état de la machine en fonction des symboles lus. Voici une [petite vidéo du CNRS](https://images.cnrs.fr/video/3001){ target="_blank" } sur le sujet, que je vous invite à visionner.
+        - **Universalité** : Turing a démontré qu'il était possible de construire une machine de Turing universelle, capable de simuler n'importe quelle autre machine de Turing. Cette idée d'universalité signifie que, en principe, une seule machine pourrait exécuter n'importe quel programme, établissant ainsi le concept de programmabilité et d'instructions stockées.
 
     **Développements clés dans les composants électroniques** :
 

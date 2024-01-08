@@ -114,3 +114,12 @@ Voici une **version améliorée** du jeu dans laquelle :
 <center>
 [:material-cursor-default-click: Télécharger ce programme](src/snake_ameliore.py){ target="_blank" }
 </center>
+
+## Pistes d'amélioration
+
+On pourrait **améliorer davantage le jeu**, par exemple :
+
+- en faisant en sorte qu'en sortant de l'écran d'un côté, le **snake** réapparaisse de l'autre côté,
+- en ajoutant un écran de "Game Over" en cas d'échec,
+- en créant un système de niveaux de plus en plus durs et en y ajoutant des obstacles,
+- etc.
