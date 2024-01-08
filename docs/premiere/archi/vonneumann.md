@@ -103,9 +103,12 @@ L'**architecture de Von Neumann** repose sur le concept de ==**programme**== **s
 Le **modèle de Von Neumann** a donc joué un rôle crucial dans l'**évolution des ordinateurs** en les rendant **plus flexibles**, **programmables** et capables d'exécuter une **variété de tâches** en fonction des **instructions fournies**, contribuant ainsi de manière significative à l'essor de l'informatique moderne.
 
 <figure markdown>
-  ![Modèle de Von Neumann](images/Von_Neumann_1.png){ width="250" }
-  <figcaption>Modèle de Von Neumann</figcaption>
+  ![Modèle de Von Neumann](images/ualVonNeumann.png)
+  <figcaption>Modèle de Von Neumann (<a href="https://www.numerique-sciences-informatiques.fr/coursVonNeumann.php" target="_blank">Source de l'image</a>)</figcaption>
 </figure>
+
+**MBR** (memory buffer register) contient les **données / instructions** à être **stockées / lues**, on l'appelle aussi *MDR* : memory data register.  
+**MAR** (memory adress register) : registre contenant l'adresse de la mémoire où sera stocké la donnée.
 
 ??? tip "Voir une version plus détaillée du modèle de Von Neumann"
     <figure markdown>
@@ -129,8 +132,7 @@ Le **modèle de Von Neumann** a donc joué un rôle crucial dans l'**évolution 
         - L’==**Unité Arithmétique et Logique**== (*ALU* en anglais) qui réalise des **opérations arithmétiques** (*addition*, *multiplication*...), **logiques** (*et*, *ou*...), de **comparaisons** ou de **déplacement de mémoire** (*copie de* ou *vers* la mémoire). L’**ALU** stocke les données dans des **mémoires d’accès très rapide** appelées **registres**. Les **opérations** sont réalisées par des **circuits logiques** constituant le **jeu d’instructions** du processeur.
     - La ==**mémoire**== où sont stockés les **données et les programmes**.  
     Il y a différents **types de mémoires** : la mémoire **volatile** (*RAM* par exemple), la mémoire **permanente** (*disque dur* par exemple).
-    - Des ==**bus**== qui sont des **fils** reliant le **CPU** et la **mémoire** et permettant les **échanges de données et d’adresses**. Les ==**adresses**==, les ==**données**== et les ==**commandes**== circulent par les **bus**. Un **bus** ne peut être utilisé que par deux
-    composants (émetteur/récepteur) à la fois !
+    - Des ==**bus**== qui sont des **fils** reliant le **CPU** et la **mémoire** et permettant les **échanges de données et d’adresses**. Les ==**adresses**==, les ==**données**== et les ==**commandes**== circulent par des **bus d'adresse**, des **bus de données** et le **bus de contrôle**. Un **bus** ne peut être utilisé que par deux composants (émetteur/récepteur) à la fois !
     - Des ==**dispositifs d’entrées/sorties**== permettant d’échanger avec l’extérieur (**lecture** ou **écriture** de **données**).
 
     **Dans le modèle de Von Neumann, le processeur exécute une instruction à la fois, de façon séquentielle.**
@@ -146,6 +148,7 @@ Le **modèle de Von Neumann** a donc joué un rôle crucial dans l'**évolution 
     Le **cycle d'instruction** dans une **architecture de Von Neumann** suit généralement ces étapes :
 
     1. **Fetch** (Chargement) : L'**unité de contrôle** (*Control Unit*) extrait l'instruction depuis la **mémoire principale** (*RAM*) à l'adresse spécifiée par le **compteur de programme** (Program Counter, registre **PC**), puis la stocke dans le **registre d'instruction**.
+    ![Cycle Fetch](images/fetch.png)
     2. **Decode** (Décodage) : L'**unité de contrôle interprète l'instruction** extraite pour comprendre **quelle opération** doit être effectuée et sur **quelles données**.
     3. **Execute** (Exécution) : L'**unité de traitement** (*ALU - Arithmetic Logic Unit*) effectue l'opération demandée, que ce soit une opération **arithmétique**, **logique** ou de **transfert de données**.
     4. **Write Back** (Écriture) : Les **résultats** de l'**opération** peuvent être **stockés** dans un **registre** ou dans la **mémoire**, en fonction de l'**instruction**.
