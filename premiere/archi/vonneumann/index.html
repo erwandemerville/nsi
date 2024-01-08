@@ -3270,10 +3270,12 @@ Les tubes à vide ont été largement remplacés dans les <strong>années 1950</
 <p>L'<strong>architecture de Von Neumann</strong> repose sur le concept de <mark><strong>programme</strong></mark> <strong>stocké</strong>, où les <strong>instructions</strong> et les <strong>données</strong> sont <strong>traitées de la même manière</strong> et sont <strong>toutes deux stockées dans la mémoire de l'ordinateur</strong>. Cela contraste avec les premières machines, où les <strong>programmes</strong> étaient <strong>câblés physiquement</strong>. L'introduction de cette architecture a considérablement simplifié le processus de programmation, permettant aux programmeurs de manipuler les <strong>instructions</strong> comme des <strong>données</strong>.</p>
 <p>Le <strong>modèle de Von Neumann</strong> a donc joué un rôle crucial dans l'<strong>évolution des ordinateurs</strong> en les rendant <strong>plus flexibles</strong>, <strong>programmables</strong> et capables d'exécuter une <strong>variété de tâches</strong> en fonction des <strong>instructions fournies</strong>, contribuant ainsi de manière significative à l'essor de l'informatique moderne.</p>
 <figure>
-<p><img alt="Modèle de Von Neumann" src="../images/Von_Neumann_1.png" width="250" />
+<p><img alt="Modèle de Von Neumann" src="../images/ualVonNeumann.png" />
   </p>
-<figcaption>Modèle de Von Neumann</figcaption>
+<figcaption>Modèle de Von Neumann (<a href="https://www.numerique-sciences-informatiques.fr/coursVonNeumann.php" target="_blank">Source de l'image</a>)</figcaption>
 </figure>
+<p><strong>MBR</strong> (memory buffer register) contient les <strong>données / instructions</strong> à être <strong>stockées / lues</strong>, on l'appelle aussi <em>MDR</em> : memory data register.<br />
+<strong>MAR</strong> (memory adress register) : registre contenant l'adresse de la mémoire où sera stocké la donnée.</p>
 <details class="tip">
 <summary>Voir une version plus détaillée du modèle de Von Neumann</summary>
 <p><figure markdown>
@@ -3299,8 +3301,7 @@ Les tubes à vide ont été largement remplacés dans les <strong>années 1950</
 </li>
 <li>La <mark><strong>mémoire</strong></mark> où sont stockés les <strong>données et les programmes</strong>.<br />
 Il y a différents <strong>types de mémoires</strong> : la mémoire <strong>volatile</strong> (<em>RAM</em> par exemple), la mémoire <strong>permanente</strong> (<em>disque dur</em> par exemple).</li>
-<li>Des <mark><strong>bus</strong></mark> qui sont des <strong>fils</strong> reliant le <strong>CPU</strong> et la <strong>mémoire</strong> et permettant les <strong>échanges de données et d’adresses</strong>. Les <mark><strong>adresses</strong></mark>, les <mark><strong>données</strong></mark> et les <mark><strong>commandes</strong></mark> circulent par les <strong>bus</strong>. Un <strong>bus</strong> ne peut être utilisé que par deux
-composants (émetteur/récepteur) à la fois !</li>
+<li>Des <mark><strong>bus</strong></mark> qui sont des <strong>fils</strong> reliant le <strong>CPU</strong> et la <strong>mémoire</strong> et permettant les <strong>échanges de données et d’adresses</strong>. Les <mark><strong>adresses</strong></mark>, les <mark><strong>données</strong></mark> et les <mark><strong>commandes</strong></mark> circulent par des <strong>bus d'adresse</strong>, des <strong>bus de données</strong> et le <strong>bus de contrôle</strong>. Un <strong>bus</strong> ne peut être utilisé que par deux composants (émetteur/récepteur) à la fois !</li>
 <li>Des <mark><strong>dispositifs d’entrées/sorties</strong></mark> permettant d’échanger avec l’extérieur (<strong>lecture</strong> ou <strong>écriture</strong> de <strong>données</strong>).</li>
 </ul>
 <p><strong>Dans le modèle de Von Neumann, le processeur exécute une instruction à la fois, de façon séquentielle.</strong></p>
@@ -3314,7 +3315,8 @@ composants (émetteur/récepteur) à la fois !</li>
 </figure></p>
 <p>Le <strong>cycle d'instruction</strong> dans une <strong>architecture de Von Neumann</strong> suit généralement ces étapes :</p>
 <ol>
-<li><strong>Fetch</strong> (Chargement) : L'<strong>unité de contrôle</strong> (<em>Control Unit</em>) extrait l'instruction depuis la <strong>mémoire principale</strong> (<em>RAM</em>) à l'adresse spécifiée par le <strong>compteur de programme</strong> (Program Counter, registre <strong>PC</strong>), puis la stocke dans le <strong>registre d'instruction</strong>.</li>
+<li><strong>Fetch</strong> (Chargement) : L'<strong>unité de contrôle</strong> (<em>Control Unit</em>) extrait l'instruction depuis la <strong>mémoire principale</strong> (<em>RAM</em>) à l'adresse spécifiée par le <strong>compteur de programme</strong> (Program Counter, registre <strong>PC</strong>), puis la stocke dans le <strong>registre d'instruction</strong>.
+<img alt="Cycle Fetch" src="../images/fetch.png" /></li>
 <li><strong>Decode</strong> (Décodage) : L'<strong>unité de contrôle interprète l'instruction</strong> extraite pour comprendre <strong>quelle opération</strong> doit être effectuée et sur <strong>quelles données</strong>.</li>
 <li><strong>Execute</strong> (Exécution) : L'<strong>unité de traitement</strong> (<em>ALU - Arithmetic Logic Unit</em>) effectue l'opération demandée, que ce soit une opération <strong>arithmétique</strong>, <strong>logique</strong> ou de <strong>transfert de données</strong>.</li>
 <li><strong>Write Back</strong> (Écriture) : Les <strong>résultats</strong> de l'<strong>opération</strong> peuvent être <strong>stockés</strong> dans un <strong>registre</strong> ou dans la <strong>mémoire</strong>, en fonction de l'<strong>instruction</strong>.</li>
