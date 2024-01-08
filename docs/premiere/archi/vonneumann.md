@@ -260,63 +260,63 @@ Afin de faciliter la circulation des données entre les divers composants d'un o
 ??? tip "QCM d'entraînement"
     Qu'est-ce qui caractérise l'architecture de Von Neumann ?
 
-    a. La présence d'une unité arithmétique et logique (UAL)
-    b. La séparation de la mémoire et du processeur
-    c. L'utilisation exclusive de la mémoire permanente
+    1. La présence d'une unité arithmétique et logique (UAL)
+    2. La séparation de la mémoire et du processeur
+    3. L'utilisation exclusive de la mémoire permanente
 
     Quelle est la fonction principale de l'unité de commande dans l'architecture de Von Neumann ?
 
-    a. Effectuer des opérations arithmétiques
-    b. Contrôler le flux d'instructions
-    c. Stocker des données à long terme
+    1. Effectuer des opérations arithmétiques
+    2. Contrôler le flux d'instructions
+    3. Stocker des données à long terme
 
     Quel composant est responsable de l'exécution des opérations arithmétiques dans un ordinateur de type Von Neumann ?
 
-    a. Unité de commande
-    b. Unité arithmétique et logique (UAL)
-    c. Mémoire vive (RAM)
+    1. Unité de commande
+    2. Unité arithmétique et logique (UAL)
+    3. Mémoire vive (RAM)
 
     Quelle est la caractéristique principale de la mémoire volatile dans l'architecture de Von Neumann ?
 
-    a. Elle conserve son contenu après la mise hors tension.
-    b. Elle est utilisée pour le stockage à long terme.
-    c. Son contenu est perdu lorsqu'elle n'est plus alimentée.
+    1. Elle conserve son contenu après la mise hors tension.
+    2. Elle est utilisée pour le stockage à long terme.
+    3. Son contenu est perdu lorsqu'elle n'est plus alimentée.
 
     Quel est le rôle du bus d'adresse dans un système Von Neumann ?
 
-    a. Faire circuler des adresses vers la mémoire
-    b. Faire circuler des données
-    c. Contrôler le type d'action à effectuer
+    1. Faire circuler des adresses vers la mémoire
+    2. Faire circuler des données
+    3. Contrôler le type d'action à effectuer
 
     Pourquoi utilise-t-on des mémoires caches dans l'architecture de Von Neumann ?
 
-    a. Pour augmenter la capacité de stockage
-    b. Pour accélérer l'accès aux données fréquemment utilisées
-    c. Pour réduire le coût global du système
+    1. Pour augmenter la capacité de stockage
+    2. Pour accélérer l'accès aux données fréquemment utilisées
+    3. Pour réduire le coût global du système
 
     Qu'est-ce qui caractérise la mémoire permanente dans l'architecture de Von Neumann ?
 
-    a. Sa volatilité
-    b. Sa capacité à stocker des données de manière permanente
-    c. Sa vitesse élevée d'accès aux données
+    1. Sa volatilité
+    2. Sa capacité à stocker des données de manière permanente
+    3. Sa vitesse élevée d'accès aux données
 
     Quel est le rôle du registre de processeur dans l'architecture de Von Neumann ?
 
-    a. Stocker des données de manière permanente
-    b. Effectuer des opérations arithmétiques
-    c. Stocker temporairement des données pour un accès rapide
+    1. Stocker des données de manière permanente
+    2. Effectuer des opérations arithmétiques
+    3. Stocker temporairement des données pour un accès rapide
 
     Quelle est la base du langage machine utilisé dans l'architecture de Von Neumann ?
 
-    a. Base 8 (octal)
-    b. Base 10 (décimale)
-    c. Base 2 (binaire)
+    1. Base 8 (octal)
+    2. Base 10 (décimale)
+    3. Base 2 (binaire)
 
     Qui est considéré comme le père de l'architecture de Von Neumann ?
     
-    a. Alan Turing
-    b. John von Neumann
-    c. Charles Babbage
+    1. Alan Turing
+    2. John von Neumann
+    3. Charles Babbage
 
 ## Organisation de la mémoire
 
