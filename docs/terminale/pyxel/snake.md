@@ -13,6 +13,11 @@
 
     N'hésitez pas à consulter [la documentation de Pyxel](https://github.com/kitao/pyxel){ target="_blank" } si vous recherchez une fonctionnalité particulière de **Pyxel** qui n'est pas présentée dans l'énoncé.
 
+??? tip "Corrigé"
+    <center>
+    [:material-cursor-default-click: Télécharger le programme corrigé](src/snake_corr.py){ target="_blank" }
+    </center>
+
 ## Quelques explications utiles
 
 Pour réaliser ce **jeu de snake**, vous utilisez la **POO** (**p**rogrammation **o**rientée **o**bjet).
@@ -97,3 +102,14 @@ if __name__ == "__main__":
 
     - Bien évidemment, vous devez **compléter** ce bout de code en **ajoutant les instructions** pour prendre en compte l'**appui** sur la **touche** ++arrow-up++ et sur la **touche** ++arrow-down++.
     - Vous pouvez, si vous le souhaitez, remplacer les touches de flèches par les touches ++z++, ++q++, ++s++ et ++d++.
+
+## Une version améliorée
+
+Maintenant que vous avez une première version de votre jeu, vous pouvez y apporter des **améliorations**, comme par exemple :
+
+- **agrandir** la **fenêtre de jeu**,
+- faire en sorte qu'en sortant de l'écran d'un côté, le **snake** réapparaisse de l'autre côté,
+- ajouter un écran de **"Game Over"** en cas d'échec,
+- **accélérer la vitesse de déplacement** du ***snake*** toutes les $x$ nourritures mangées,
+- créer un **système de niveaux** de plus en plus durs et en y ajoutant des obstacles,
+- etc.
