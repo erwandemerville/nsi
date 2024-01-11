@@ -50,11 +50,12 @@ Visionnez la petit vidéo suivante sur l'**histoire de l'architecture des ordina
 
     **19e siècle** :
     
-    - **Machine analytique de Babbage** (conçue dans les *années 1830*) : Conception révolutionnaire préfigurant les ordinateurs programmables, même si elle n'a jamais été construite de son vivant.
+    - **Machine analytique de Babbage** (conçue dans les *années 1830*) : Conception révolutionnaire préfigurant les ordinateurs programmables, **même si elle n'a jamais été construite de son vivant**, car trop coûteuse. On estime aujourd'hui que la machine complète aurait constitué un enchevêtrement de roues et d'engrenages mus par la vapeur et occupant la place d'une locomotive.
 
     **Analyse de Charles Babbage et Ada Lovelace** :
 
     - **Ada Lovelace** (*1843*) : Pionnière dans la programmation informatique, Ada Lovelace a créé le premier programme pour la machine analytique, jetant les bases de la programmation.
+    [Voici une petite vidéo](https://www.youtube.com/watch?v=PK-AeOnK16M){ target="_blank" } intéressante sur le sujet.
 
     **20e siècle** :
 
@@ -64,6 +65,7 @@ Visionnez la petit vidéo suivante sur l'**histoire de l'architecture des ordina
 
     - **"First Draft of a Report on the EDVAC"** de Von Neumann (*1945*) : Le document de Von Neumann a introduit le concept d'architecture von Neumann, standard pour la conception des ordinateurs modernes. Il s'est basé sur les travaux d'**Alan Turing** (en 1936), notamment des concepts suivants :
         - **Machine de Turing** : Turing a proposé un **modèle abstrait** de machine, connu sous le nom de machine de Turing, qui fonctionne selon des règles simples et manipule des symboles sur une bande infinie. Cette machine hypothétique possède une tête de lecture/écriture mobile qui peut se déplacer vers la gauche ou la droite et changer l'état de la machine en fonction des symboles lus. Voici une [petite vidéo du CNRS](https://images.cnrs.fr/video/3001){ target="_blank" } sur le sujet, que je vous invite à visionner.
+        Voici également un [simulateur de machine de Turing](https://zanotti.univ-tln.fr/turing/turing.php){ target="_blank" } permettant de mieux comprendre son fonctionnement.
         - **Universalité** : Turing a démontré qu'il était possible de construire une machine de Turing universelle, capable de simuler n'importe quelle autre machine de Turing. Cette idée d'universalité signifie que, en principe, une seule machine pourrait exécuter n'importe quel programme, établissant ainsi le concept de programmabilité et d'instructions stockées.
 
     **Développements clés dans les composants électroniques** :
