@@ -129,6 +129,10 @@ nav:
         - Parcours d'arbres binaires: terminale/arbres/exercices_parcours.md
         - Arbre binaires de recherche: terminale/arbres/exercices_abr.md
         - Implémentations d'arbres binaires et ABR: terminale/arbres/implementations_arbres.md
+    - Protocoles de routage:
+      - terminale/routage/index.md
+      - Cours: terminale/routage/cours.md
+      - TP Filius: https://www.numerique-sciences-informatiques.fr/TP-reseaux.pdf
     - Le module Pyxel:
       - terminale/pyxel/index.md
       - Jeu de snake: terminale/pyxel/snake.md
