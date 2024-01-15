@@ -410,6 +410,35 @@ Cela préserve ainsi la représentation binaire sous-jacente tout en simplifiant
     - les **adresses** des **registres R1 et R2** occupent chacune **4 bits**
     - l'**opérande #125** occupe les **12 bits de poids faible**.
 
+!!! abstract "Instructions de sauts"
+    Le [simulateur de CPU](https://www.peterhigginson.co.uk/AQA/){ target="_blank" } que nous utiliserons prend en charge les **instructions de saut** suivantes :
+
+    Vous pouvez faire un **saut sans condition** avec l'instruction :
+
+    - `B <label>` : pour sauter directement à un **label** indiqué,
+
+    Vous pouvez faire un **saut avec condition**, après avoir exécuté une instruction de **comparaison** `CMP` :
+
+    - `BEQ <label>` : sauter au **label** indiqué si **les deux éléments comparés sont égaux** (*EQ* = *Equal*),
+    - `BNE <label>` : sauter au **label** indiqué si **les deux éléments comparés ne sont pas égaux** (*NE* = *Not Equal*),
+    - `BGT <label>` : sauter au **label** indiqué si **le premier élément est plus grand que le deuxième** (*GT* = *Greater Than*),
+    - `BLT <label>` : sauter au **label** indiqué si **le premier élément est plus petit que le deuxième** (*LT* = *Less Than*).
+
+    Il existe également d'**autres instructions conditionnelles**, comme `BGE` (*Greater or Equal* = *plus grand ou égal*) ou `BLE` (*Less or Equal* = *plus petit ou égal*), mais celles-ci ne sont pas prises en charge dans ce simulateur.
+
+    Voici un **exemple d'utilisation de sauts** pour créer une **boucle** qui itère **tant que** la **valeur** du **registre** `R0` est **inférieure à 5** :
+
+    ```
+        MOV R0, #1
+    encore:
+        CMP R0, #5
+        BEQ fin
+        ADD R0, R0, #1
+        B encore
+    fin:
+        HALT
+    ```
+
 !!! note "TP - Programmer en assembleur"
     Pour s'entraîner à la **programmation en assembleur**, on travaillera avec un [simulateur de CPU basé sur l'architecture de Von Neumann de Peter Higginson](https://www.peterhigginson.co.uk/AQA/){ target="_blank" }.
 
