@@ -2746,9 +2746,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rappels-de-premiere" class="md-nav__link">
+  <a href="#rappels-sur-ladressage-ip" class="md-nav__link">
     <span class="md-ellipsis">
-      Rappels de première
+      Rappels sur l'adressage IP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rappels-quest-ce-quun-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rappels - Qu'est-ce qu'un réseau ?
     </span>
   </a>
   
@@ -3006,9 +3015,18 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#rappels-de-premiere" class="md-nav__link">
+  <a href="#rappels-sur-ladressage-ip" class="md-nav__link">
     <span class="md-ellipsis">
-      Rappels de première
+      Rappels sur l'adressage IP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rappels-quest-ce-quun-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rappels - Qu'est-ce qu'un réseau ?
     </span>
   </a>
   
@@ -3087,6 +3105,7 @@
 <details class="quote">
 <summary>Sources / Liens utiles</summary>
 <ul>
+<li>Balabonski Terminale</li>
 <li><a href="https://www.lyceum.fr/tg/nsi/3-architectures-materielles-systemes-dexploitation-et-reseaux/3-protocoles-de-routage/" target="_blank">https://www.lyceum.fr/tg/nsi/3-architectures-materielles-systemes-dexploitation-et-reseaux/3-protocoles-de-routage/</a></li>
 <li><a href="http://nsi4noobs.fr/IMG/pdf/c3_tnsi_routage.pdf" target="_blank">http://nsi4noobs.fr/IMG/pdf/c3_tnsi_routage.pdf</a></li>
 <li><a href="https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.3_Protocoles_de_routage/cours/" target="_blank">https://glassus.github.io/terminale_nsi/T5_Architecture_materielle/5.3_Protocoles_de_routage/cours/</a></li>
@@ -3095,11 +3114,23 @@
 </ul>
 </details>
 <h1 id="cours-protocoles-de-routage">Cours - Protocoles de routage<a class="headerlink" href="#cours-protocoles-de-routage" title="Permanent link">&para;</a></h1>
-<h2 id="rappels-de-premiere">Rappels de première<a class="headerlink" href="#rappels-de-premiere" title="Permanent link">&para;</a></h2>
+<h2 id="rappels-sur-ladressage-ip">Rappels sur l'adressage IP<a class="headerlink" href="#rappels-sur-ladressage-ip" title="Permanent link">&para;</a></h2>
 <p>Voici une petite activité (sous la forme d'un notebook) de rappel sur l'<strong>adressage IP et les masques de sous-réseau</strong> :</p>
 <p><center>
 <a href="../src/protocoles_routage_activite_introduction.ipynb" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.88.88 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.756.756 0 0 0-.49-.18M15 10V8h5v2h-5m-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41M10 0h2v5h-2V0M3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41m0-11.32 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83M7 10H2V8h5v2"/></svg></span> Télécharger l'activité d'introduction</a>
 </center></p>
+<div class="admonition tip">
+<p class="admonition-title">Adresses <em>broadcast</em> et <em>multicast</em></p>
+<ul>
+<li><strong>Broadcast</strong> : Cette adresse vous permet d'appeler <strong>tous les hôtes</strong> (<em>interfaces</em>) à l'intérieur d'un <strong>sous-réseau</strong>. Une <strong>adresse IP broadcast</strong> est par exemple <code>192.168.100.255</code> et un <strong>broadcast MAC</strong> est <code>FF:FF:FF:FF:FF:FF</code>.</li>
+<li><strong>Multicast</strong> : Ce type d'adresse permet d'appeler un <strong>groupe spécifique d'hôtes</strong> (<em>interfaces</em>) dans un <strong>sous-réseau</strong>.</li>
+</ul>
+</div>
+<h2 id="rappels-quest-ce-quun-reseau">Rappels - Qu'est-ce qu'un réseau ?<a class="headerlink" href="#rappels-quest-ce-quun-reseau" title="Permanent link">&para;</a></h2>
+<p>Vous pouvez dans un premier temps essayer de faire l'<a href="#exercices">exercice 1</a> pour tester vos connaissances sur les composants d'un réseau.</p>
+<p>Voici une petite vidéo résumant la <strong>constitution d'un réseau</strong> (et plus généralement du <strong>réseau mondial</strong>) :</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/JqweQE6TDTc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 <h2 id="rappels-modeles-osi-et-tcpip">Rappels modèles OSI et TCP/IP<a class="headerlink" href="#rappels-modeles-osi-et-tcpip" title="Permanent link">&para;</a></h2>
 <p>Voici un rappel des <strong>modèles en couches</strong> (en <strong>7 couches</strong> avec le modèle <strong>OSI</strong> et en <strong>4 couches</strong> avec le modèle <strong>TCP/IP</strong>,également appelé "modèle internet".)</p>
 <p><center>
@@ -3109,6 +3140,23 @@
 <details class="abstract">
 <summary>Schéma plus détaillé - Encapsulation des données (modèle TCP/IP)</summary>
 <p><img alt="Encapsulation des données" src="../images/osi_exemple.png" /></p>
+</details>
+<details class="abstract">
+<summary>Protocoles IP et TCP</summary>
+<p>Les <strong>deux protocoles</strong> qui nous intéressent particulièrement sont :</p>
+<ul>
+<li>Le <strong>protocole IP</strong> (COUCHE <strong>RÉSEAU</strong>) qui consiste à attribuer à chaque machine une <strong>adresse IP unique</strong> pour l’<strong>identifier sur le réseau</strong>, et ainsi transmettre l'information sous la forme de <strong>paquets</strong> comportant l'indication de l'<strong>adresse IP source</strong> et de l'<strong>adresse IP de destination</strong>.</li>
+<li>Le <strong>protocole TCP</strong> (COUCHE <strong>TRANSPORT</strong>) qui permet d’assurer la communication de l’information en la <strong>découpant en segments</strong>, comportant l'indication du <strong>port source</strong> et du <strong>port de destination</strong>, et en s’assurant que tous les paquets soient bien <strong>reçus</strong> et <strong>conformes</strong> à l’<strong>information envoyée</strong>. (Il existe un protocole plus rapide mais qui, contraiement à <strong>TCP</strong>, n'assure pas que toutes les données soient reçues : le protocole <strong>UDP</strong>.)</li>
+</ul>
+<p>Voici un rappel de la manière dont s'effectue l'<strong>établissement d'une connexion</strong> ainsi que la <strong>transmission des données</strong> avec le protocole <strong>TCP</strong> (<a href="https://openclassrooms.com/fr/courses/2340511-maitrisez-vos-applications-et-reseaux-tcp-ip/5678267-exercez-vous-au-suivi-de-connexion" target="_blank">source de l'image</a>):</p>
+<p><img alt="Transmission des données avec le protocole TCP" src="../images/TCP_transmission.png" /></p>
+<p>Lorsqu'un paquet n'est pas correctement transmis, il est <strong>de nouveau envoyé</strong> (<a href="http://shtroumbiniouf.free.fr/CoursInfo/Reseau2/Cours/TCP/TCP.html" target="_blank">source de l'image</a>):</p>
+<p><center>
+<img alt="Échec de transmission" src="../images/AckPositif.gif" />
+</center></p>
+<p><center>
+<a href="https://laissus.developpez.com/tutoriels/cours-introduction-tcp-ip/?page=page_7" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span> Voir plus d'informations sur le protocole TCP</a>
+</center></p>
 </details>
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 <p>Un <strong>réseau informatique</strong> permet la <strong>connexion entre différentes machines</strong> afin de faciliter la <strong>communication</strong> entre elles. Le modèle de communication généralement utilisé est le modèle <strong>client-serveur</strong>, qui permet aux <strong>clients</strong> d'échanger des <strong>paquets d'informations</strong> avec les <strong>serveurs</strong>. La notion de "client" est large, pouvant désigner aussi bien une application qu'une machine exécutant cette application. De même, le terme "serveur" peut faire référence à l'ordinateur hébergeant un service ou au logiciel fournissant ce service.</p>
@@ -3127,17 +3175,149 @@ Ces machines ont pour rôle de <strong>relayer les paquets</strong> dans le <str
 <h2 id="principe-du-routage">Principe du routage<a class="headerlink" href="#principe-du-routage" title="Permanent link">&para;</a></h2>
 <p>Si l'<strong>hôte de destination</strong> et l'<strong>hôte source</strong> sont <strong>sur le même réseau</strong>, les paquets de données circulent directement entre eux sur le <strong>support local</strong> de <strong>niveau 2</strong> (<em>deuxième couche du modèle OSI</em>) via des <strong>commutateurs</strong> (<em>switchs</em>), sans nécessiter l'intervention d'un <strong>routeur</strong>. Les <strong>commutateurs</strong> construisent une <strong>table d'adresses MAC</strong> des <strong>machines IP</strong> connectées à eux, utilisant ces <strong>adresses</strong> pour <strong>commuter les trames</strong>.</p>
 <p>En revanche, si l'<strong>hôte source</strong> et l'<strong>hôte de destination</strong> ne sont <strong>pas sur le même réseau</strong>, le réseau local dirige le <strong>paquet</strong> de la <strong>source</strong> vers son <strong>routeur de passerelle de niveau 3</strong> (<em>troisième couche du modèle OSI</em>). Le <strong>routeur</strong> analyse la <strong>partie réseau de l'adresse de destination</strong> du <strong>paquet</strong> et le <strong>dirige vers l'interface appropriée</strong>. Si le <strong>réseau de destination</strong> est directement <strong>connecté à ce routeur</strong>, le <strong>paquet</strong> est <strong>transmis directement à l'hôte de destination</strong>. Dans le cas contraire, le <strong>paquet</strong> est <strong>envoyé à un second routeur</strong>, qui agit comme le <strong>routeur de tronçon suivant</strong>. Le transfert du paquet devient alors la responsabilité de ce second routeur. De <strong>multiples routeurs ou sauts</strong> tout au long du chemin peuvent traiter le paquet avant qu'il n'atteigne sa <strong>destination</strong>. Contrairement aux <strong>commutateurs</strong>, les <strong>routeurs</strong> se basent sur les <strong>adresses IP</strong> pour le transfert des données.</p>
-<p>Aucun paquet ne peut être acheminé sans route. Que le paquet provienne d'un hôte ou soit dirigé par un routeur intermédiaire, le routeur a besoin d'une route pour déterminer son itinéraire. Si aucune route n'existe vers le réseau de destination, le paquet ne peut pas être transféré. Les <strong>routeurs</strong> utilisent des <strong>tables de routage</strong>, qui peuvent être établies <strong>manuellement</strong> (<em>routage statique</em>) ou <strong>automatiquement</strong> (<em>routage dynamique</em>) en utilisant des <mark><strong>protocoles</strong> tels que <strong>RIP</strong> (<em>Routing Information Protocol</em>) ou <strong>OSPF</strong> (<em>Open Shortest Path First</em>)</mark>, par exemple.</p>
+<div class="admonition success">
+<p>Aucun paquet ne peut être acheminé sans route. Que le paquet provienne d'un <strong>hôte</strong> ou soit dirigé par un <strong>routeur intermédiaire</strong>, le routeur a besoin d'une <strong>route</strong> pour déterminer son <strong>itinéraire</strong>. Si aucune route n'existe vers le <strong>réseau de destination</strong>, le paquet ne peut pas être transféré.</p>
+<p>Les <strong>routeurs</strong> utilisent des <strong>tables de routage</strong>, qui peuvent être établies de deux manières :</p>
+<ul>
+<li>par un <mark><strong>routage statique</strong></mark> : chaque ligne doit être renseignée "à la main". Cette solution est seulement envisageable pour des très petits réseaux de réseaux.</li>
+<li>par un <mark><strong>routage dynamique</strong></mark> : tout se fait "automatiquement", en utilisant des <strong>protocoles</strong> tels que <strong>RIP</strong> (<em>Routing Information Protocol</em>) ou <strong>OSPF</strong> (<em>Open Shortest Path First</em>)==, qui vont permettre de "découvrir" les <strong>différentes routes automatiquement</strong> afin de pouvoir <strong>remplir la table de routage</strong> tout aussi <strong>automatiquement</strong>.</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Une tableau de routage</p>
+<p>Voici à quoi ressemble une <strong>table de routage</strong> (source : <a href="https://fr.wikipedia.org/wiki/Table_de_routage" target="_blank">Wikipédia</a>) :</p>
+<table>
+<thead>
+<tr>
+<th>Réseau destination (format CIDR)</th>
+<th>Masque</th>
+<th>Passerelle</th>
+<th>Interface</th>
+<th>Métrique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.0.0.0/0</td>
+<td>0.0.0.0</td>
+<td>192.168.0.1</td>
+<td>192.168.0.100</td>
+<td>1</td>
+</tr>
+<tr>
+<td>127.0.0.0/8</td>
+<td>255.0.0.0</td>
+<td>127.0.0.1</td>
+<td>127.0.0.1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>192.168.0.0/24</td>
+<td>255.255.255.0</td>
+<td>192.168.0.100</td>
+<td>192.168.0.100</td>
+<td>1</td>
+</tr>
+<tr>
+<td>192.168.0.100/32</td>
+<td>255.255.255.255</td>
+<td>127.0.0.1</td>
+<td>127.0.0.1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>192.168.0.1/32</td>
+<td>255.255.255.255</td>
+<td>192.168.0.100</td>
+<td>192.168.0.100</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>La <mark><strong>métrique</strong></mark> est une mesure de la « distance » qui <mark>sépare un <strong>routeur</strong> d'un <strong>réseau de destination</strong></mark>. Dans le cadre du <strong>protocole RIP</strong>, on peut l'assimiler au <strong>nombre de sauts IP nécessaires</strong> pour <strong>atteindre le réseau destination</strong> (ce qui n'est pas le cas pour le protocole <strong>OSPF</strong>, où la métrique sera liée au <strong>coût des liaisons</strong>). Ainsi, un réseau <strong>directement lié à un routeur</strong> aura une métrique de <code>0</code>.</p>
+<p>Sur votre ordinateur, vous pouvez <strong>afficher la table de routage</strong> utilisée par <strong>votre système</strong> en utilisant les commandes suivantes :</p>
+<ul>
+<li>Sous <strong>Windows</strong> : <code>route print</code> ou <code>netsh int ipv4/ipv6 sh route</code></li>
+<li>Sous <strong>Unix/OS X</strong> : `netstat -rn</li>
+<li>Sous <strong>Linux</strong> : <code>ip -4/-6 route</code></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exemple de table de routage</p>
+<p>Voici un exemple de réseau (<em>source</em> : <a href="https://pixees.fr/informatiquelycee/n_site/nsi_term_archi_routage.html" target="_blank">pixees</a>)</p>
+<p><figure markdown>
+<img alt="Diagramme d’un réseau" src="../images/table_routage_pixees.png" />
+<figcaption>Diagramme d’un réseau</figcaption>
+</figure></p>
+<p>Voici par exemple ce que donnerait la <strong>table de routage</strong> du <strong>routeur A</strong>, après la mise à jour effectuée avec le <strong>protocole RIP</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Réseau</th>
+<th>Passerelle</th>
+<th>Interface</th>
+<th>Métrique</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>172.168.0.0/16</td>
+<td></td>
+<td>eth0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>192.168.7.2/24</td>
+<td></td>
+<td>eth1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>172.169.0.0/16</td>
+<td></td>
+<td>eth2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10.0.0.0/8</td>
+<td>192.168.7.2/24</td>
+<td></td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p>À votre tour, donnez la <strong>table de routage</strong> du routeur <strong>G</strong>.</p>
+</div>
+</div>
 <h2 id="protocole-a-vecteur-de-distances-rip">Protocole « à vecteur de distances » - RIP<a class="headerlink" href="#protocole-a-vecteur-de-distances-rip" title="Permanent link">&para;</a></h2>
-<p>Le <strong>nombre de routeurs</strong> dans un <strong>réseau</strong> est souvent <strong>trop élevé</strong> pour envisager une <strong>configuration manuelle des tables de routage</strong>. En effet, à chaque fois qu'un élément du réseau tombe en panne ou qu'une modification est apportée à sa <strong>topologie</strong> (comme l'ajout d'une nouvelle liaison ou d'un nouveau routeur), il devient nécessaire de recalculer toutes les routes et de mettre à jour les tables de routage de chaque routeur. Pour réaliser cette tâche, il serait également nécessaire d'envoyer toutes les données relatives à l'état des liaisons et des routeurs vers un opérateur unique, chargé de calculer les nouvelles routes. Outre les inconvénients de centraliser cette tâche, il faut également garantir que les informations sur l'état du réseau peuvent être transmises sans problème à cet opérateur. Malheureusement, les moyens de communication utilisés à cette fin peuvent eux aussi tomber en panne.</p>
-<p>Pour toutes ces raisons, l'approche consiste à automatiser ce processus en permettant aux routeurs de mettre à jour leurs tables de routage sans intervention humaine. Ainsi, en plus de la transmission des paquets, les routeurs échangent des informations sur les routes du réseau en fonction de l'état de leurs voisins et de leurs liens de communication. Les règles régissant ces échanges sont définies par un protocole de routage.</p>
-<p>Initialement, les informations dont dispose un routeur concernent ses voisins immédiats ainsi que les sous-réseaux auxquels il est connecté. En envoyant régulièrement des messages à ses voisins et en mesurant les temps de réponse de ces machines, le routeur peut déterminer si un autre routeur est en panne ou si la liaison entre eux est rompue. Il peut ensuite diffuser ces informations à tous ses voisins, qui peuvent à leur tour les transmettre à leurs voisins, et ainsi de suite. De cette manière, progressivement, tous les routeurs finissent par partager les mêmes connaissances sur la topologie du réseau. Cependant, pour que l'échange de ces informations soit bien coordonné, les routeurs doivent suivre le même protocole. Dans cette section, nous décrivons le <strong>protocole RIP</strong> (<em>Routing Information Protocol</em> en anglais), un exemple de protocole utilisé à cette fin.</p>
+<p>Le <strong>nombre de routeurs</strong> dans un <strong>réseau</strong> est souvent <strong>trop élevé</strong> pour envisager une <strong>configuration manuelle des tables de routage</strong>. En effet, à chaque fois qu'un élément du réseau tombe en panne ou qu'une modification est apportée à sa <strong>topologie</strong> (comme l'ajout d'une nouvelle liaison ou d'un nouveau routeur), il devient nécessaire de <strong>recalculer toutes les routes</strong> et de <strong>mettre à jour les tables de routage de chaque routeur</strong>. Pour réaliser cette tâche, il serait également nécessaire d'envoyer toutes les données relatives à l'<strong>état des liaisons</strong> et des <strong>routeurs</strong> vers un <strong>opérateur unique</strong>, chargé de <strong>calculer les nouvelles routes</strong>. Outre les inconvénients de centraliser cette tâche, il faut également garantir que les informations sur l'état du réseau peuvent être transmises sans problème à cet opérateur. Malheureusement, les moyens de communication utilisés à cette fin peuvent eux aussi <strong>tomber en panne</strong>.</p>
+<p>Pour toutes ces raisons, l'approche consiste à <strong>automatiser ce processus</strong> en permettant aux routeurs de mettre à jour leurs tables de routage sans intervention humaine. Ainsi, en plus de la <strong>transmission des paquets</strong>, les routeurs échangent des informations sur les <strong>routes</strong> du <strong>réseau</strong> en fonction de l'<strong>état de leurs voisins</strong> et de leurs <strong>liens de communication</strong>. Les règles régissant ces échanges sont définies par un <strong>protocole de routage</strong>.</p>
+<p>Initialement, les <strong>informations</strong> dont dispose un <strong>routeur</strong> concernent <strong>ses voisins immédiats</strong> ainsi que les <strong>sous-réseaux auxquels il est connecté</strong>. En <strong>envoyant</strong> régulièrement des <strong>messages</strong> à ses <strong>voisins</strong> et en mesurant les temps de réponse de ces machines, le routeur peut déterminer si un autre routeur <strong>est en panne</strong> ou si la liaison entre eux est <strong>rompue</strong>. Il peut ensuite diffuser ces informations à tous ses voisins, qui peuvent à leur tour les transmettre à leurs voisins, et ainsi de suite. De cette manière, progressivement, tous les routeurs finissent par partager les mêmes connaissances sur la topologie du réseau. Cependant, pour que l'échange de ces informations soit bien coordonné, les routeurs doivent suivre <strong>le même protocole</strong>. Dans cette section, nous décrivons le <mark><strong>protocole RIP</strong></mark> (<em>Routing Information Protocol</em> en anglais), un exemple de protocole utilisé à cette fin.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Principe du protocole RIP</p>
+<p>Le <strong>protocole RIP</strong> s'appuie sur l'<mark><strong>algorithme de Bellman-Ford</strong></mark> (un algorithme utilisant le principe de <strong>programmation dynamique</strong>), permettant de <strong>calculer les plus courts chemins</strong> dans un graphe.</p>
+<p>L'<strong>algorithme</strong> du <strong>protocole RIP</strong> repose sur le partage d'informations entre routeurs pour déterminer les meilleures routes vers différents sous-réseaux. Chaque routeur communique avec ses voisins en échangeant des vecteurs de distance, des couples (adresse, distance), qui représentent la distance en nombre de sauts vers une machine spécifique. Ces échanges permettent aux routeurs de construire et mettre à jour leurs tables de routage.</p>
+<p>Dans la phase d'initialisation, chaque routeur transmet les adresses de ses voisins et les distances associées. Ces informations sont utilisées pour former des vecteurs de distance. À partir de là, le protocole RIP continue par des échanges périodiques de demandes et de réponses entre les routeurs. Lorsqu'un routeur reçoit une réponse de son voisin, plusieurs scénarios peuvent se produire :</p>
+<ol>
+<li>Découverte d'une nouvelle route vers un sous-réseau inconnu : le routeur l'ajoute à sa table.</li>
+<li>Découverte d'une route plus courte vers un sous-réseau connu : le routeur met à jour sa table en remplaçant l'ancienne route par la nouvelle.</li>
+<li>Réception d'une nouvelle route plus longue : le routeur ignore cette information.</li>
+<li>Réception d'une route existante, mais plus longue, vers un routeur passant par le même voisin : le routeur met à jour sa table en tenant compte de cette nouvelle route.</li>
+</ol>
+<p>Les distances associées aux routes sont ajustées en fonction du chemin parcouru, et la distance maximale est limitée à 15 routeurs intermédiaires. Au-delà de cette limite, la route est ignorée ou supprimée des tables de routage.</p>
+<p>En répétant ces échanges et en mettant à jour les tables de routage à intervalle fixe (l'intervalle de mise à jour par défaut pour le RIP est de 30 secondes.), les routeurs convergent vers une vision commune du réseau, déterminant ainsi les meilleures routes pour acheminer les paquets vers leurs destinations.</p>
+</div>
 <h2 id="protocole-a-etat-de-liens-ospf">Protocole « à état de liens » - OSPF<a class="headerlink" href="#protocole-a-etat-de-liens-ospf" title="Permanent link">&para;</a></h2>
 <h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">&para;</a></h2>
 <div class="admonition note">
-<p class="admonition-title">Composants dans un réseau</p>
+<p class="admonition-title">Exercice 1 - Composants dans un réseau</p>
 <p>Identifiez les différents composants du réseau suivant :</p>
 <p><img alt="Composants d'un réseau" src="../images/composants_reseau.png" /></p>
+<p>A = <code>..........</code><br />
+B = <code>..........</code><br />
+C = <code>..........</code><br />
+D = <code>..........</code></p>
 </div>
 
 
