@@ -773,6 +773,8 @@
       
         
       
+        
+      
     
     
     
@@ -957,6 +959,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -3012,21 +3035,21 @@
                   
 
 
-<details class="quote">
+<div><details class="quote">
 <summary>Version PDF de ce cours</summary>
-<p><center>
-<a href="../documents/booleens_suite.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.88.88 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.756.756 0 0 0-.49-.18M15 10V8h5v2h-5m-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41M10 0h2v5h-2V0M3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41m0-11.32 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83M7 10H2V8h5v2"/></svg></span> Télécharger ce cours au format PDF</a>
-</center></p>
+<p></p><center>
+<a href="../documents/booleens_suite.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.88.88 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.756.756 0 0 0-.49-.18M15 10V8h5v2h-5m-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41M10 0h2v5h-2V0M3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41m0-11.32 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83M7 10H2V8h5v2"></path></svg></span> Télécharger ce cours au format PDF</a>
+</center>
 </details>
-<h1 id="fonctions-et-expressions-booleennes">Fonctions et expressions booléennes<a class="headerlink" href="#fonctions-et-expressions-booleennes" title="Permanent link">&para;</a></h1>
-<h2 id="les-fonctions-booleennes">Les fonctions booléennes<a class="headerlink" href="#les-fonctions-booleennes" title="Permanent link">&para;</a></h2>
+<h1 id="fonctions-et-expressions-booleennes">Fonctions et expressions booléennes<a class="headerlink" href="#fonctions-et-expressions-booleennes" title="Permanent link">¶</a></h1>
+<h2 id="les-fonctions-booleennes">Les fonctions booléennes<a class="headerlink" href="#les-fonctions-booleennes" title="Permanent link">¶</a></h2>
 <p>On a vu précédemment que les <strong>circuits électroniques</strong> pouvaient être conceptualisés en termes de <strong>fonctions booléennes</strong>, ce qui signifie qu'ils acceptent <strong>un</strong> ou <strong>plusieurs bits en entrée</strong> et produisent <strong>un seul bit en sortie</strong>.</p>
 <p>Si nous désignons <span class="arithmatex">\(\neg (x)\)</span> comme la fonction associée à la porte <strong>NOT</strong>, <span class="arithmatex">\(\land (x, y)\)</span> comme celle associée à la porte <strong>AND</strong>, et <span class="arithmatex">\(\lor (x, y)\)</span> comme celle de la porte <strong>OR</strong>, ces trois fonctions sont caractérisées par les <strong>tables de vérité</strong> suivantes :</p>
-<p><img alt="Fonctions associées aux portes NOT, AND et OR" src="../images/fonctions_portes.png" width="450" /></p>
+<p><img alt="Fonctions associées aux portes NOT, AND et OR" src="../images/fonctions_portes.png" width="450"></p>
 <p>Les trois <strong>fonctions booléennes élémentaires</strong> <span class="arithmatex">\(\neg (x)\)</span>, <span class="arithmatex">\(\land (x, y)\)</span> et <span class="arithmatex">\(\lor (x, y)\)</span> sont utilisées comme <strong>bases</strong> pour la construction d'<strong>autres fonctions booléennes</strong>, et peuvent être combinées pour en définir de nouvelles.</p>
 <p>Plus généralement, la <strong>table de vérité</strong> d’une fonction avec <span class="arithmatex">\(n\)</span> <strong>bits</strong> en <strong>entrée</strong> aura <span class="arithmatex">\(2^n\)</span> <strong>lignes</strong> correspondant aux <span class="arithmatex">\(2n\)</span> <strong>combinaisons possibles</strong> des <strong>entrées</strong>.
 Par exemple, une fonction booléenne <span class="arithmatex">\(f\)</span> avec trois entrées <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span> et <span class="arithmatex">\(z\)</span> sera définie par une <strong>table de vérité</strong> à <span class="arithmatex">\(2^3 = 8\)</span> <strong>lignes</strong>, de la forme suivante :</p>
-<p><img alt="Fonction avec trois bits en entrée" src="../images/fonctionxyz.png" width="200" /></p>
+<p><img alt="Fonction avec trois bits en entrée" src="../images/fonctionxyz.png" width="200"></p>
 <p>Aussi, pour simplifier la définition des fonctions booléennes, on utilisera plutôt ces fonctions comme des <strong>opérateurs</strong>, et on écrira et dira que :</p>
 <ul>
 <li><span class="arithmatex">\(\neg x\)</span> est la <strong>négation</strong> de x,</li>
@@ -3037,14 +3060,14 @@ Par exemple, une fonction booléenne <span class="arithmatex">\(f\)</span> avec 
 <p>Ces opérateurs sont désignés comme des opérateurs booléens en l'honneur de <strong>Georges Boole</strong>, un mathématicien et philosophe du <em>19e siècle</em> qui a créé ce système de calcul, également connu sous le nom d'<strong>algèbre booléenne</strong>. Ce calcul repose sur l'utilisation d'<strong>opérateurs</strong> et de <strong>chiffres binaires</strong>, appelés également <strong>chiffres booléens</strong>.</p>
 </div>
 <p>Parmi les opérateurs de base que nous n'avons pas encore abordés, il y a l'opérateur <u><strong>ou exclusif</strong></u>, que l'on note <span class="arithmatex">\(x \oplus y\)</span>, qui est défini comme suit (avec sa représentation symbolique américaine et européenne) :</p>
-<p><img alt="Porte OU EXCLUSIF" src="../images/porteouex.png" width="480" /></p>
+<p><img alt="Porte OU EXCLUSIF" src="../images/porteouex.png" width="480"></p>
 <p>La sortie est <span class="arithmatex">\(1\)</span> lorsque l'<strong>une et une seule</strong> de ses <strong>entrées</strong> est égale à <span class="arithmatex">\(1\)</span>, et elle renvoie <span class="arithmatex">\(0\)</span> dans les autres cas.</p>
-<h2 id="expressions-booleennes">Expressions booléennes.<a class="headerlink" href="#expressions-booleennes" title="Permanent link">&para;</a></h2>
+<h2 id="expressions-booleennes">Expressions booléennes.<a class="headerlink" href="#expressions-booleennes" title="Permanent link">¶</a></h2>
 <p>En utilisant ces <strong>opérateurs</strong>, on peut définir <strong>n’importe quelle fonction booléenne</strong> comme une <strong>expression booléenne sur ses entrées</strong>. Par exemple, l’égalité suivante définit une fonction <span class="arithmatex">\(f\)</span> avec <strong>trois paramètres</strong> <span class="arithmatex">\(x\)</span>, <span class="arithmatex">\(y\)</span> et <span class="arithmatex">\(z\)</span> à l’aide d’une expression booléenne sur ses variables :</p>
 <div class="arithmatex">\[f(x,y,z) = (x \land y) \oplus (\lnot y \lor z)\]</div>
 <p>Pour calculer la <strong>table de vérité</strong> associée à la fonction <span class="arithmatex">\(f\)</span>, on calcule les résultats des <strong>sous-expressions</strong>, en commençant par les calculs en profondeur puis en remontant.
 Sur l'exemple précédent, cela revient à calculer les résultats des expressions <span class="arithmatex">\(x \land y\)</span> et <span class="arithmatex">\(\lnot y\)</span>, puis <span class="arithmatex">\(\lnot y \lor z\)</span> et enfin le <strong>résultat final</strong> :</p>
-<p><img alt="Table de vérité de f(x,y,z)" src="../images/table_verite_fonction.png" width="400" /></p>
+<p><img alt="Table de vérité de f(x,y,z)" src="../images/table_verite_fonction.png" width="400"></p>
 <p>Le calcul avec les <strong>opérateurs booléens</strong> obéit à quelques <strong>identités élémentaires</strong>, en voici quelques unes :</p>
 <table>
 <thead>
@@ -3139,7 +3162,7 @@ Sur l'exemple précédent, cela revient à calculer les résultats des expressio
 </tr>
 </tbody>
 </table>
-<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">&para;</a></h2>
+<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Question 1</p>
 <p>Montrer de <strong>deux manières différentes</strong> l’égalité suivante :</p>
@@ -3200,7 +3223,7 @@ Il s'agit ici de la <strong>forme normale disjonctive</strong>, car on a des <st
 <p>On peut également écrire que <span class="arithmatex">\(f(a, b) = \lnot ((\lnot a \land b) \lor (a \land b)) = (a \lor \lnot b) \land (\lnot a \lor \lnot b)\)</span>, qui est la <strong>forme normale conjonctive</strong>.\newline</p>
 <p>En vous basant sur sa <strong>table de vérité</strong>, donnez la <strong>forme normale disjonctive</strong> de l'opérateur <strong>XOR</strong> <span class="arithmatex">\(\oplus\)</span>.\newline</p>
 <p><span class="arithmatex">\(x \oplus y = ...........................................\)</span></p>
-</div>
+</div></div>
 
 
 

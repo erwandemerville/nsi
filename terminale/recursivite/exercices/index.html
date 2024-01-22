@@ -769,6 +769,8 @@
       
         
       
+        
+      
     
     
     
@@ -884,6 +886,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -3012,8 +3035,8 @@
                   
 
 
-<h1 id="exercices-la-recursivite">Exercices - La récursivité<a class="headerlink" href="#exercices-la-recursivite" title="Permanent link">&para;</a></h1>
-<h2 id="notebook">Notebook<a class="headerlink" href="#notebook" title="Permanent link">&para;</a></h2>
+<div><h1 id="exercices-la-recursivite">Exercices - La récursivité<a class="headerlink" href="#exercices-la-recursivite" title="Permanent link">¶</a></h1>
+<h2 id="notebook">Notebook<a class="headerlink" href="#notebook" title="Permanent link">¶</a></h2>
 <div class="admonition success">
 <p class="admonition-title">À télécharger</p>
 <p>Téléchargez l'<strong>archive ZIP</strong> suivante, puis dézippez-la dans votre <code>H:\Travail</code> :</p>
@@ -3022,16 +3045,16 @@
 <li><a href="recursivite_notebook.zip" target="_blank">recursivite_notebook.zip</a> - Archive contenant le notebook <em>Jupyter</em> et fichiers <em>images</em> associés, peut être utilisé sans connexion à internet.</li>
 </ul>
 </div>
-<h2 id="exercice-les-tours-de-hanoi">Exercice : Les tours de Hanoï<a class="headerlink" href="#exercice-les-tours-de-hanoi" title="Permanent link">&para;</a></h2>
+<h2 id="exercice-les-tours-de-hanoi">Exercice : Les tours de Hanoï<a class="headerlink" href="#exercice-les-tours-de-hanoi" title="Permanent link">¶</a></h2>
 <p><em>Source : <a href="https://www.codingame.com/playgrounds/56923/apprendre-les-bases-de-python-pour-reussir-en-n-s-i-/tours-de-hanoi" target="_blank">https://www.codingame.com/playgrounds/56923/apprendre-les-bases-de-python-pour-reussir-en-n-s-i-/tours-de-hanoi</a></em>.</p>
 <p>Les tours de Hanoï est un casse-tête composé de trois tours et une pile de disques rangés du plus grand au plus petit comme sur la photo ci-dessous :</p>
-<p><center>
-<img alt="Tours de Hanoï" src="../images/Tower_of_Hanoi.jpeg" />
-</center></p>
+<p></p><center>
+<img alt="Tours de Hanoï" src="../images/Tower_of_Hanoi.jpeg">
+</center>
 <p>Le but est de déplacer la pile de disques sur la tour de droite en ne déplaçant à chaque fois qu'un seul disque et un disque ne peut pas être posé sur un disque plus petit. Voici une animation de ce qu'il faut faire dans le cas où il y a 4 disques.</p>
-<p><center>
-<img alt="Déplacement disque" src="../images/Tower_of_Hanoi_4.gif" />
-</center></p>
+<p></p><center>
+<img alt="Déplacement disque" src="../images/Tower_of_Hanoi_4.gif">
+</center>
 <p>Vous pouvez consulter <a href="https://fr.wikipedia.org/wiki/Tours_de_Hano%C3%AF" target="_blank">Wikipédia</a> par exemple pour plus d'informations.</p>
 <p>Nous allons voir qu'il est très simple de créer un programme récursif qui nous dit quoi faire pour résoudre le problème. Tout d'abord on appelle les tours <code>A</code>, <code>B</code> et <code>C</code>. On appelle <code>n</code> le <strong>nombre de disque</strong> présents au départ dans la tour <code>A</code>. Pour <strong>déplacer tous les disques</strong> de la tour <code>A</code> vers la tour <code>C</code>, on peut raisonner comme suit :</p>
 <ul>
@@ -3052,17 +3075,17 @@
 </div>
 <details class="tip">
 <summary>Solution</summary>
-<p><div class="py_mk_ide"  data-max="5"  data-exclude="eval,exec" ><div class="wrapper" ><span id="comment_editor_cd11b0bef77dfff00928aee02369208668682390" class="comment">###</span><div class="line" id="editor_cd11b0bef77dfff00928aee02369208668682390"></div><div id="term_editor_cd11b0bef77dfff00928aee02369208668682390"  class="term_editor" ></div></div><button class="tooltip" onclick='play("editor_cd11b0bef77dfff00928aee02369208668682390","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_cd11b0bef77dfff00928aee02369208668682390","scripts/hanoi")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_cd11b0bef77dfff00928aee02369208668682390').click()" >            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_cd11b0bef77dfff00928aee02369208668682390" name="file" enctype="multipart/form-data" class="py_mk_hide"/><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_cd11b0bef77dfff00928aee02369208668682390")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_cd11b0bef77dfff00928aee02369208668682390")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div><span id="content_editor_cd11b0bef77dfff00928aee02369208668682390" class="py_mk_hide">def hanoi(n, A, B, C):bksl-nl    if n &gt; 0:bksl-nl        hanoi(n-1, A, C, B)bksl-nl        print(f"{A} {C}")bksl-nl        hanoi(n-1, B, A, C)bksl-nlbksl-nlhanoi(3, "A", "B", "C")bksl-nl</span><span id="corr_content_editor_cd11b0bef77dfff00928aee02369208668682390" class="py_mk_hide" data-strudel=""></span></p>
+<p></p><div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_cd11b0bef77dfff00928aee02369208668682390" class="comment">###</span><div class="line" id="editor_cd11b0bef77dfff00928aee02369208668682390"></div><div id="term_editor_cd11b0bef77dfff00928aee02369208668682390" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_cd11b0bef77dfff00928aee02369208668682390","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_cd11b0bef77dfff00928aee02369208668682390","scripts/hanoi")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_cd11b0bef77dfff00928aee02369208668682390').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_cd11b0bef77dfff00928aee02369208668682390" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_cd11b0bef77dfff00928aee02369208668682390")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_cd11b0bef77dfff00928aee02369208668682390")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div><span id="content_editor_cd11b0bef77dfff00928aee02369208668682390" class="py_mk_hide">def hanoi(n, A, B, C):bksl-nl    if n &gt; 0:bksl-nl        hanoi(n-1, A, C, B)bksl-nl        print(f"{A} {C}")bksl-nl        hanoi(n-1, B, A, C)bksl-nlbksl-nlhanoi(3, "A", "B", "C")bksl-nl</span><span id="corr_content_editor_cd11b0bef77dfff00928aee02369208668682390" class="py_mk_hide" data-strudel=""></span>
 </details>
 <div class="admonition success">
 <p class="admonition-title">Animation avec Tkinter</p>
 <p>Téléchargez et exécutez <a href="../scripts/hanoi_animation.py" target="_blank">ce script Python</a> pour observer une animation des tours de Hanoï utilisant le module <code>Tkinter</code> de <strong>Python</strong>.</p>
 </div>
-<h2 id="sujets-de-bac">Sujets de bac<a class="headerlink" href="#sujets-de-bac" title="Permanent link">&para;</a></h2>
+<h2 id="sujets-de-bac">Sujets de bac<a class="headerlink" href="#sujets-de-bac" title="Permanent link">¶</a></h2>
 <div class="admonition success">
 <p class="admonition-title">À télécharger</p>
 <p><a href="sujet_02.pdf" target="_blank">Extrait du sujet zéro B - 2023</a></p>
-</div>
+</div></div>
 
 
 

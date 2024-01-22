@@ -769,6 +769,8 @@
       
         
       
+        
+      
     
     
     
@@ -884,6 +886,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -3080,23 +3103,23 @@
                   
 
 
-<div class="admonition info">
+<div><div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Ces exercices sont également disponibles en format <strong>PDF</strong> : <a href="../fiche1_vocabulaire.pdf" target="_blank">fiche1_vocabulaire.pdf</a></p>
 </div>
-<h1 id="exercices-vocabulaire-sur-les-arbres">Exercices - Vocabulaire sur les arbres<a class="headerlink" href="#exercices-vocabulaire-sur-les-arbres" title="Permanent link">&para;</a></h1>
-<h2 id="dessiner-un-arbre">Dessiner un arbre<a class="headerlink" href="#dessiner-un-arbre" title="Permanent link">&para;</a></h2>
-<h3 id="une-arborescence-de-fichiers">Une arborescence de fichiers<a class="headerlink" href="#une-arborescence-de-fichiers" title="Permanent link">&para;</a></h3>
+<h1 id="exercices-vocabulaire-sur-les-arbres">Exercices - Vocabulaire sur les arbres<a class="headerlink" href="#exercices-vocabulaire-sur-les-arbres" title="Permanent link">¶</a></h1>
+<h2 id="dessiner-un-arbre">Dessiner un arbre<a class="headerlink" href="#dessiner-un-arbre" title="Permanent link">¶</a></h2>
+<h3 id="une-arborescence-de-fichiers">Une arborescence de fichiers<a class="headerlink" href="#une-arborescence-de-fichiers" title="Permanent link">¶</a></h3>
 <p>Sur <em>Linux</em>, on peut lister récursivement les répertoires et fichiers du système à l'aide de la commande <code>tree</code>. Voici un exemple d'arborescence obtenue après exécution de cette commande :</p>
 <figure>
-<p><img alt="Une arborescence sur Linux" src="../images/tree.png" width="75%" />
+<p><img alt="Une arborescence sur Linux" src="../images/tree.png" width="75%">
   </p>
 <figcaption>Une arborescence sur Linux</figcaption>
 </figure>
 <div class="admonition note">
 <p class="admonition-title">Exercice 1</p>
 <p>Dessinez un arbre représentant cette arborescence, en partant de l'arbre suivant :</p>
-<p><img alt="Début arbre" src="../images/racine.png" width="25%" /></p>
+<p><img alt="Début arbre" src="../images/racine.png" width="25%"></p>
 <ol>
 <li>Quelle est la <strong>taille</strong> de cet arbre ?</li>
 <li>Combien y a t-il d'<strong>arêtes</strong> dans l'arbre ?</li>
@@ -3109,17 +3132,17 @@
 <li>Cet arbre est-il un <strong>arbre binaire</strong> ? Pourquoi ?</li>
 </ol>
 </div>
-<h3 id="arbre-dune-page-html">Arbre d'une page HTML<a class="headerlink" href="#arbre-dune-page-html" title="Permanent link">&para;</a></h3>
+<h3 id="arbre-dune-page-html">Arbre d'une page HTML<a class="headerlink" href="#arbre-dune-page-html" title="Permanent link">¶</a></h3>
 <p>Voici le code HTML d'une page web :</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ma superbe page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Mon super titre<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Mon super paragraphe<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;mon_image.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;ma superbe image&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"mon_image.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"ma superbe image"</span> <span class="p">/&gt;</span>
 </span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>    <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
 </span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Un pied de page<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
@@ -3128,7 +3151,7 @@
 </span></code></pre></div>
 <p>L'arbre (appelé <em>arbre DOM</em>) représentant ce code HTML est le suivant :</p>
 <figure>
-<p><img alt="Arbre DOM d'une page HTML" src="../images/arbre_html_v2.png" />
+<p><img alt="Arbre DOM d'une page HTML" src="../images/arbre_html_v2.png">
   </p>
 <figcaption>Arbre DOM d'une page HTML</figcaption>
 </figure>
@@ -3137,8 +3160,8 @@
 <p>À votre tour, dessinez l'arbre DOM représentant la page HTML suivante :</p>
 <div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;main.css&quot;</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">href</span><span class="o">=</span><span class="s">"main.css"</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span><span class="p">&gt;</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Pokémons<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
@@ -3164,10 +3187,10 @@
 <li>Si les <strong>nœuds</strong> de l'arbre étaient des instances d'une classe <code>Noeud</code> caractérisés par une <strong>étiquette</strong> (<code>html</code>, <code>body</code>, etc) et des <strong>données</strong>, quelles pourraient être ces données ? (voir la balise <code>meta</code> ou <code>link</code> du code ci-dessus.)</li>
 </ol>
 </div>
-<h3 id="arbre-dune-expression-arithmetique">Arbre d'une expression arithmétique<a class="headerlink" href="#arbre-dune-expression-arithmetique" title="Permanent link">&para;</a></h3>
+<h3 id="arbre-dune-expression-arithmetique">Arbre d'une expression arithmétique<a class="headerlink" href="#arbre-dune-expression-arithmetique" title="Permanent link">¶</a></h3>
 <p>Voici un <strong>arbre binaire</strong> représentant l'expression arithmétique <span class="arithmatex">\((6 + 9) / 3\)</span> :</p>
 <figure>
-<p><img alt="Arbre d'une expression arithmétique" src="../images/arbre_calcul.png" width="80%" />
+<p><img alt="Arbre d'une expression arithmétique" src="../images/arbre_calcul.png" width="80%">
   </p>
 <figcaption>Arbre d'une expression arithmétique</figcaption>
 </figure>
@@ -3179,18 +3202,18 @@
 <li>Quelle est la <strong>taille</strong> de l'arbre obtenu ?</li>
 <li>Quelles sont les <strong>feuilles</strong> de l'arbre ? Quelle remarque pouvez-vous faire ?</li>
 </ol>
-<p><br/>
+<p><br>
 En considérant que la <strong>profondeur</strong> de la <strong>racine</strong> est de <strong>0</strong> :</p>
 <ol>
 <li>Quelle est la <strong>profondeur</strong> des feuilles <strong>les moins éloignées</strong> de la <strong>racine</strong> ?</li>
 <li>Quelle est la <strong>hauteur</strong> de l'arbre ?</li>
 </ol>
 </div>
-<h2 id="encadrement-de-la-hauteur">Encadrement de la hauteur<a class="headerlink" href="#encadrement-de-la-hauteur" title="Permanent link">&para;</a></h2>
+<h2 id="encadrement-de-la-hauteur">Encadrement de la hauteur<a class="headerlink" href="#encadrement-de-la-hauteur" title="Permanent link">¶</a></h2>
 <p>Pour l'exercice suivant, on considérera que la profondeur de la racine d'un arbre est de <strong>1</strong>.
 Voici deux <strong>arbres binaires</strong> :</p>
 <figure>
-<p><img alt="Deux arbres binaires" src="../images/encadrement_arbres.png" width="80%" />
+<p><img alt="Deux arbres binaires" src="../images/encadrement_arbres.png" width="80%">
   </p>
 <figcaption>Deux arbres binaires</figcaption>
 </figure>
@@ -3214,7 +3237,7 @@ Voici deux <strong>arbres binaires</strong> :</p>
 À partir de l'encadrement précédent, déduire un <strong>encadrement de la hauteur</strong> d'un <strong>arbre binaire</strong> en fonction de sa <strong>taille</strong>.</li>
 </ol>
 </div>
-<h2 id="denombrement-darbres-binaires">Dénombrement d'arbres binaires<a class="headerlink" href="#denombrement-darbres-binaires" title="Permanent link">&para;</a></h2>
+<h2 id="denombrement-darbres-binaires">Dénombrement d'arbres binaires<a class="headerlink" href="#denombrement-darbres-binaires" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Exercice 5</p>
 <p>Dessinez et dénombrez tous les <strong>arbres binaires</strong> possibles :</p>
@@ -3236,7 +3259,7 @@ Voici deux <strong>arbres binaires</strong> :</p>
 <li><em>1 noeud racine</em>, <em>1 noeud à gauche</em> et <em>3 noeud à droite</em></li>
 <li><em>1 noeud racine</em>, <em>2 noeuds à gauche</em> et <em>2 noeuds à droite</em></li>
 </ul>
-<p><img alt="Répartition noeuds" src="../images/indice_denombrement.png" /></p>
+<p><img alt="Répartition noeuds" src="../images/indice_denombrement.png"></p>
 <p>En comptant le nombre de possibilités pour ces 5 cas, vous obtiendrez le nombre total d'arbres de taille <span class="arithmatex">\(n = 5\)</span>.</p>
 </details>
 <details class="tip">
@@ -3244,7 +3267,7 @@ Voici deux <strong>arbres binaires</strong> :</p>
 <p>Le nombre d'arbres d'une taille <span class="arithmatex">\(n\)</span> donnée peut être calculé avec le <strong>nombre de Catalan</strong>, voir <a href="https://fr.wikipedia.org/wiki/Nombre_de_Catalan" target="_blank">page Wikipedia</a> pour plus d'informations. (Bien sûr, ce n'est pas au programme.)</p>
 <p>Donc, pour une taille <span class="arithmatex">\(n = 5\)</span> : <span class="arithmatex">\(C_{5} = \frac{(2n)!}{(n+1)!n!} = \frac{10!}{6!*5!} = \frac{5040}{120} = 42\)</span></p>
 <p>Il y a donc <strong>42 arbres de taille 5</strong>.</p>
-</details>
+</details></div>
 
 
 

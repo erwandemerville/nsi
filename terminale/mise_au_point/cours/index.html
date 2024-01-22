@@ -769,6 +769,8 @@
       
         
       
+        
+      
     
     
     
@@ -884,6 +886,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -3336,7 +3359,7 @@
                   
 
 
-<details class="quote">
+<div><details class="quote">
 <summary>Sources</summary>
 <ul>
 <li><a href="https://dautrylimoges.scenari-community.org/TNSI/MiseAuPtPgmes_Bugs_TNSI_web/co/0BO_MiseAuPt_Bugs.html" target="_blank">dautrylimoges.scenari-community.org</a>  </li>
@@ -3346,7 +3369,7 @@
 <li>Livres : <em>Hachette Terminale NSI</em>, <em>Serge Bays - Terminale NSI</em>, <em>Balabonski Terminale</em></li>
 </ul>
 </details>
-<h1 id="cours-mise-au-point-des-programmes">Cours - Mise au point des programmes<a class="headerlink" href="#cours-mise-au-point-des-programmes" title="Permanent link">&para;</a></h1>
+<h1 id="cours-mise-au-point-des-programmes">Cours - Mise au point des programmes<a class="headerlink" href="#cours-mise-au-point-des-programmes" title="Permanent link">¶</a></h1>
 <p>Extrait du programme officiel :</p>
 <table>
 <thead>
@@ -3364,7 +3387,7 @@
 </tr>
 </tbody>
 </table>
-<p>Lorsque l’on exécute un <strong>programme</strong>, il peut ne pas fonctionner comme prévu. Par exemple, il peut boucler indéfiniment, ou bien ne pas produire le résultat escompté. Et même s’il fonctionne comme prévu, rien ne garantit qu'il fournisse toujours un résultat correct quelles que soient les données d’entrée qu’on lui fournit. Un <strong>dysfonctionnement</strong> dans un programme informatique lié à un <strong>défaut de conception</strong> est appelé <strong>"bug"</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 12h-4v-2h4m0 6h-4v-2h4m6-6h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8Z"/></svg></span>.</p>
+<p>Lorsque l’on exécute un <strong>programme</strong>, il peut ne pas fonctionner comme prévu. Par exemple, il peut boucler indéfiniment, ou bien ne pas produire le résultat escompté. Et même s’il fonctionne comme prévu, rien ne garantit qu'il fournisse toujours un résultat correct quelles que soient les données d’entrée qu’on lui fournit. Un <strong>dysfonctionnement</strong> dans un programme informatique lié à un <strong>défaut de conception</strong> est appelé <strong>"bug"</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M14 12h-4v-2h4m0 6h-4v-2h4m6-6h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8Z"></path></svg></span>.</p>
 <p>Les bugs causent chaque année des <strong>millions d’euros de perte</strong> pour les entreprises et les États (on peut parler du fameux <strong>bug</strong> ayant causé l'<a href="https://fr.wikipedia.org/wiki/Vol_501_d%27Ariane_5" target="_blank">explosion de la fusée Ariane 5</a>), voire sont parfois responsables de <strong>morts civiles ou militaires</strong>.</p>
 <p>Par ailleurs, un <strong>bug</strong> peut produire un <strong>résultat erroné</strong>, un <strong>effet de bord non souhaité</strong>, voire fournir un <strong>résultat inattendu mais très intéressant</strong>. On dit qu'un programme est "<strong>correct</strong>" s'il :</p>
 <ul>
@@ -3372,7 +3395,7 @@
 <li>fait ce que l'on attend de lui (adéquation à la <strong>spécification</strong>).</li>
 </ul>
 <p>Autrement dit, pour que le programme soit correct, il ne doit pas y avoir de <strong>bug</strong>.</p>
-<h2 id="bugs"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M14 12h-4v-2h4m0 6h-4v-2h4m6-6h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8Z"/></svg></span> Bugs<a class="headerlink" href="#bugs" title="Permanent link">&para;</a></h2>
+<h2 id="bugs"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M14 12h-4v-2h4m0 6h-4v-2h4m6-6h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a6.002 6.002 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8Z"></path></svg></span> Bugs<a class="headerlink" href="#bugs" title="Permanent link">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Point historique</p>
 <p>Le terme <strong>bug</strong> (<em>insecte</em> en français) est apparu sur un document de 1947, écrit par un groupe travaillant sur le calculateur <em>Mark II</em> à l'université d'Harvard. Ce terme était toutefois déjà employé en électricité depuis des dizaines d'années pour évoquer un problème de fonctionnement ou de connexion d'un appareil électrique. Cela a été confirmé par Grace Hopper, informaticienne américaine ayant travaillé sur le <em>Mark I</em> puis sur le <em>Mark II</em> depuis 1943.</p>
@@ -3384,7 +3407,7 @@
 <li><strong>corriger</strong> le bug.</li>
 </ul>
 <p>C’est ce qu’on appelle la <strong>mise au point</strong>, ou le <strong>déboguage</strong>.</p>
-<h3 id="un-exemple">Un exemple<a class="headerlink" href="#un-exemple" title="Permanent link">&para;</a></h3>
+<h3 id="un-exemple">Un exemple<a class="headerlink" href="#un-exemple" title="Permanent link">¶</a></h3>
 <p>Voici un programme utilisant le module <code>Turtle</code>, un module permettant de faire du dessin vectoriel en déplaçant une tortue sur l'écran :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">turtle</span> <span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
@@ -3427,30 +3450,30 @@
 </span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a><span class="n">speed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a><span class="n">ht</span><span class="p">()</span>
 </span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a><span class="n">width</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="n">color</span><span class="p">(</span><span class="s1">&#39;black&#39;</span><span class="p">)</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a><span class="n">color</span><span class="p">(</span><span class="s1">'black'</span><span class="p">)</span>
 </span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a><span class="n">courbe</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">m1</span><span class="p">)</span>
 </span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a><span class="n">up</span><span class="p">()</span>
 </span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="n">goto</span><span class="p">(</span><span class="o">-</span><span class="mi">300</span><span class="p">,</span> <span class="o">-</span><span class="mi">160</span><span class="p">)</span>
 </span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="n">down</span><span class="p">()</span>
-</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="n">color</span><span class="p">(</span><span class="s1">&#39;red&#39;</span><span class="p">)</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="n">color</span><span class="p">(</span><span class="s1">'red'</span><span class="p">)</span>
 </span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a><span class="n">courbe</span><span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="n">m2</span><span class="p">)</span>
 </span></code></pre></div>
 <p>Les différences entre la fonction <code>m1</code> et <code>m2</code> sont <strong>minimes</strong> : Il y a <strong>une seule instruction</strong> en plus à la fin de la fonction <code>m2</code> : <code>left(60)</code>. Et pourtant, en exécutant le programme, voici <strong>en noir</strong> le tracé utilisant la fonction <code>m1</code>, et <strong>en rouge</strong> le tracé utilisant la fonction <code>m2</code> :</p>
 <figure>
-<p><img alt="Capture d'écran de Turtle" src="../images/turtle_comparaison.png" width="500" />
+<p><img alt="Capture d'écran de Turtle" src="../images/turtle_comparaison.png" width="500">
   </p>
 <figcaption>Capture d'écran de Turtle</figcaption>
 </figure>
 <p>On voit donc qu'un tout petit élément peut avoir un impact énorme sur le fonctionnement d'un programme ! D'où l'importance de prévenir les erreurs, mêmes celles qui peuvent sembler minimes.</p>
-<h3 id="deceler-lorigine-dun-bug">Déceler l'origine d'un bug<a class="headerlink" href="#deceler-lorigine-dun-bug" title="Permanent link">&para;</a></h3>
+<h3 id="deceler-lorigine-dun-bug">Déceler l'origine d'un bug<a class="headerlink" href="#deceler-lorigine-dun-bug" title="Permanent link">¶</a></h3>
 <p>Pour comprendre la cause d’un <strong>bug</strong>, il faut d'abord comprendre comment s’est déroulée l’<strong>exécution du programme</strong> qui a amené au bug. Il est important d'être capable de <strong>simuler à la main</strong> l'exécution du programme.</p>
 <p>Il est également important de connaître, pour chaque fonction, quelles sont les <strong>préconditions</strong>, c'est-à-dire les <strong>conditions sur les paramètres d'entrée</strong>. On peut pour cela définir des <strong>assertions</strong> à l'intérieur de nos fonctions pour vérifier les préconditions, ou <strong>au minimum</strong> définir les préconditions à l'intérieur de la <strong>docstring</strong> de nos fonctions.</p>
 <p>Par exemple, voici une fonction <code>maximum</code> renvoyant le maximum d'une liste de nombres <strong>positifs ou nuls</strong> :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">maximum</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">'''</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="sd">    Fonction renvoyant le maximum d’une liste.</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="sd">    :CU: la liste doit contenir des nombres exclusivement positifs ou nuls</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="sd">    '''</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">valeur_max</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="k">for</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
@@ -3461,10 +3484,10 @@
 <p>Ici, <code>CU</code> signifie "<strong>conditions d'utilisation</strong>" (on y indique les <strong>préconditions</strong> relatives aux <strong>paramètres</strong> d'entrée). Sur la forme de votre docstring, il n'y a pas de règle particulière. On aurait pu écrire <code>assert</code> ou encore <code>préconditions</code> au lieu de <code>CU</code>, par exemple.</p>
 <p>Si l'on ajoute des <strong>assertions</strong> à l'intérieur de notre fonction :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">maximum</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39;</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">'''</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">    Fonction renvoyant le maximum d’une liste.</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">    :CU: la liste doit contenir des nombres exclusivement positifs ou nuls</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">    '''</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
 </span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">el</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">)</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">valeur_max</span> <span class="o">=</span> <span class="mi">0</span>
@@ -3475,18 +3498,18 @@
 </span></code></pre></div>
 <p>Pour effectuer une analyse <strong>pas-à-pas</strong> de votre code, vous pouvez également utiliser un <strong>débuggueur</strong>. De nombreux <strong>IDE</strong> sont dotés d'un <strong>débuggueur</strong>, c'est le cas notamment de <strong>Thonny</strong>. (Pour débugguer un script avec <strong>Thonny</strong>, il faut cliquer sur la petite icône à droite de l'icône d'exécution du script courant.)</p>
 <figure>
-<p><img alt="Débuggueur de Thonny" src="../images/debug.png" width="500" />
+<p><img alt="Débuggueur de Thonny" src="../images/debug.png" width="500">
   </p>
 <figcaption>Débuggueur de Thonny</figcaption>
 </figure>
 <p>Par ailleurs, une autre technique plus primaire mais fort utile consiste à ajouter des <strong>affichages</strong> à l'intérieur de vos fonctions, avec la fonction <code>print</code>, de manière à observer l'évolution du contenu des variables.</p>
-<hr />
+<hr>
 <div class="admonition tip">
 <p class="admonition-title">En savoir plus</p>
 <p>Pour en savoir plus sur la gestion des bugs, je vous recommande de lire <a href="https://eduscol.education.fr/document/7307/download" target="_blank">ce document</a> proposé par Eduscol.</p>
 </div>
-<h2 id="les-types-derreurs-en-python">Les types d'erreurs en Python<a class="headerlink" href="#les-types-derreurs-en-python" title="Permanent link">&para;</a></h2>
-<h3 id="erreurs-de-syntaxe">Erreurs de syntaxe<a class="headerlink" href="#erreurs-de-syntaxe" title="Permanent link">&para;</a></h3>
+<h2 id="les-types-derreurs-en-python">Les types d'erreurs en Python<a class="headerlink" href="#les-types-derreurs-en-python" title="Permanent link">¶</a></h2>
+<h3 id="erreurs-de-syntaxe">Erreurs de syntaxe<a class="headerlink" href="#erreurs-de-syntaxe" title="Permanent link">¶</a></h3>
 <p>Les <strong>erreurs de syntaxe</strong> sont liées à des <strong>instructions malformées</strong>, qui ne respectent pas les règles du langage. Elles sont détectées lors de l’exécution du programme et sont assez faciles à corriger car un message d’erreur explicite indique la nature et la localisation de l'erreur.</p>
 <p>Quelques exemples d'erreurs de syntaxe :</p>
 <ul>
@@ -3495,47 +3518,47 @@
 <li>Utilisation de <code>=</code> au lieu de <code>==</code> pour les tests d'égalité</li>
 <li>...</li>
 </ul>
-<h3 id="erreurs-de-typage">Erreurs de typage<a class="headerlink" href="#erreurs-de-typage" title="Permanent link">&para;</a></h3>
+<h3 id="erreurs-de-typage">Erreurs de typage<a class="headerlink" href="#erreurs-de-typage" title="Permanent link">¶</a></h3>
 <p>Chaque <strong>valeur</strong> manipulée par un programme Python est associée à un <strong>type</strong>.
 On rappelle les principaux types manipulés en Python :</p>
 <figure>
-<p><img alt="Les principaux types en Python" src="../images/types.png" width="400px" />
+<p><img alt="Les principaux types en Python" src="../images/types.png" width="400px">
   </p>
-<figcaption>Les principaux types en Python<br />(extrait du Balabonski terminale)</figcaption>
+<figcaption>Les principaux types en Python<br>(extrait du Balabonski terminale)</figcaption>
 </figure>
 <p>Voici un exemple d'instruction incorrecte :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="s1">&#39;2&#39;</span> <span class="o">+</span> <span class="mi">2</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="s1">'2'</span> <span class="o">+</span> <span class="mi">2</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="n">File</span> <span class="s2">&quot;&lt;pyshell&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="ne">TypeError</span><span class="p">:</span> <span class="n">can</span> <span class="n">only</span> <span class="n">concatenate</span> <span class="nb">str</span> <span class="p">(</span><span class="ow">not</span> <span class="s2">&quot;int&quot;</span><span class="p">)</span> <span class="n">to</span> <span class="nb">str</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>  <span class="n">File</span> <span class="s2">"&lt;pyshell&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="ne">TypeError</span><span class="p">:</span> <span class="n">can</span> <span class="n">only</span> <span class="n">concatenate</span> <span class="nb">str</span> <span class="p">(</span><span class="ow">not</span> <span class="s2">"int"</span><span class="p">)</span> <span class="n">to</span> <span class="nb">str</span>
 </span></code></pre></div>
 <p>En cas d'erreur de type, Python lève une erreur de type <code>TypeError</code>, ici Python indique qu'il n'est possible de concaténer que deux chaînes de caractères.</p>
 <p>D'autres erreurs de <strong>types</strong> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="sd">&#39;&#39;&#39; L : (list) &#39;&#39;&#39;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="sd">''' L : (list) '''</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">[</span><span class="mf">1.5</span><span class="p">])</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="ne">TypeError</span><span class="p">:</span> <span class="nb">list</span> <span class="n">indices</span> <span class="n">must</span> <span class="n">be</span> <span class="n">integers</span> <span class="ow">or</span> <span class="n">slices</span><span class="p">,</span> <span class="ow">not</span> <span class="nb">float</span>
 </span></code></pre></div>
 <p>Parenthèses à la place de crochets (pour un objet qui ne peut pas être appelé) :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="sd">&#39;&#39;&#39; L : (list), i : (int) &#39;&#39;&#39;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="sd">''' L : (list), i : (int) '''</span>
 </span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">L</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="ne">TypeError</span><span class="p">:</span> <span class="err">’</span><span class="nb">list</span><span class="err">’</span> <span class="nb">object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="nb">callable</span>
 </span></code></pre></div>
 <p>Crochets à la place des parenthèses (pour un objet qui ne peut pas être indicé) :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="sd">&#39;&#39;&#39; mystere : (function), i : (int), a : (int) &#39;&#39;&#39;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="sd">''' mystere : (function), i : (int), a : (int) '''</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">mystere</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="ne">TypeError</span><span class="p">:</span> <span class="err">’</span><span class="n">function</span><span class="err">’</span> <span class="nb">object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">subscriptable</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="ne">TypeError</span><span class="p">:</span> <span class="err">’</span><span class="nb">int</span><span class="err">’</span> <span class="nb">object</span> <span class="ow">is</span> <span class="ow">not</span> <span class="n">subscriptable</span>
 </span></code></pre></div>
 <p>Opérations entre deux types non compatibles (ici addition) :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="sd">&#39;&#39;&#39; i : (int) &#39;&#39;&#39;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="sd">''' i : (int) '''</span>
 </span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">i</span> <span class="o">+</span> <span class="err">’</span><span class="n">a</span><span class="err">’</span><span class="p">)</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="ne">TypeError</span><span class="p">:</span> <span class="n">unsupported</span> <span class="n">operand</span> <span class="nb">type</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="o">+</span><span class="p">:</span> <span class="err">’</span><span class="nb">int</span><span class="err">’</span> <span class="ow">and</span> <span class="err">’</span><span class="nb">str</span><span class="err">’</span>
 </span></code></pre></div>
 <p>Opérations entre deux types non compatibles (ici concaténation) :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="sd">&#39;&#39;&#39; i : (int) &#39;&#39;&#39;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="sd">''' i : (int) '''</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="err">’</span><span class="n">a</span><span class="err">’</span> <span class="o">+</span> <span class="n">i</span><span class="p">)</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="ne">TypeError</span><span class="p">:</span> <span class="n">can</span> <span class="n">only</span> <span class="n">concatenate</span> <span class="nb">str</span> <span class="p">(</span><span class="ow">not</span> <span class="s2">&quot;int&quot;</span><span class="p">)</span> <span class="n">to</span> <span class="nb">str</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="ne">TypeError</span><span class="p">:</span> <span class="n">can</span> <span class="n">only</span> <span class="n">concatenate</span> <span class="nb">str</span> <span class="p">(</span><span class="ow">not</span> <span class="s2">"int"</span><span class="p">)</span> <span class="n">to</span> <span class="nb">str</span>
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">À vous de jouer</p>
@@ -3548,12 +3571,12 @@ On rappelle les principaux types manipulés en Python :</p>
 </span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">p</span> 
 </span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    <span class="k">return</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> 
 </span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="k">def</span> <span class="nf">f4</span><span class="p">(</span><span class="n">d</span><span class="p">,</span> <span class="n">s</span><span class="p">):</span> 
-</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="k">if</span> <span class="n">s</span> <span class="o">!=</span> <span class="s2">&quot;toto&quot;</span><span class="p">:</span> 
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    <span class="k">if</span> <span class="n">s</span> <span class="o">!=</span> <span class="s2">"toto"</span><span class="p">:</span> 
 </span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>        <span class="n">d</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">+=</span> <span class="mi">1</span> 
 </span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    <span class="k">return</span> <span class="n">d</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> 
 </span></code></pre></div>
 </div>
-<h3 id="erreurs-liees-aux-effets-de-bord">Erreurs liées aux effets de bord<a class="headerlink" href="#erreurs-liees-aux-effets-de-bord" title="Permanent link">&para;</a></h3>
+<h3 id="erreurs-liees-aux-effets-de-bord">Erreurs liées aux effets de bord<a class="headerlink" href="#erreurs-liees-aux-effets-de-bord" title="Permanent link">¶</a></h3>
 <p>Un <strong>effet de bord</strong> est une <strong>modification d’une variable</strong> qui <strong>affecte l’état du programme</strong> en dehors de la fonction ou de la méthode où elle a lieu. En Python, cela arrive principalement de deux manières : par les variables globales et par l’aliassage.</p>
 <p>On rappelle que pour modifier une variable globale dans une fonction, il est nécessaire d'ajouter l’instruction <code>global &lt;nom de la variable&gt;</code> dans la fonction. Par conséquent, il est rare de créer un effet de bord par erreur.</p>
 <p>L’<strong>aliassage</strong> survient lorsque deux variables référencent <strong>la même donnée</strong>, ce qui peut arriver avec les types structurés <strong>tableau</strong> et <strong>dictionnaire</strong> et avec les objets, notamment lorsqu’on les passe en paramètre.</p>
@@ -3572,9 +3595,9 @@ On rappelle les principaux types manipulés en Python :</p>
 </span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">mystere</span><span class="p">()</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">autre_fonction</span><span class="p">()</span>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>  <span class="n">File</span> <span class="s2">&quot;C:\Users\demer\Desktop</span><span class="se">\t</span><span class="s2">est.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">12</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>  <span class="n">File</span> <span class="s2">"C:\Users\demer\Desktop</span><span class="se">\t</span><span class="s2">est.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">12</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 </span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a>    <span class="n">autre_fonction</span><span class="p">()</span>
-</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>  <span class="n">File</span> <span class="s2">&quot;C:\Users\demer\Desktop</span><span class="se">\t</span><span class="s2">est.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">8</span><span class="p">,</span> <span class="ow">in</span> <span class="n">autre_fonction</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a>  <span class="n">File</span> <span class="s2">"C:\Users\demer\Desktop</span><span class="se">\t</span><span class="s2">est.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">8</span><span class="p">,</span> <span class="ow">in</span> <span class="n">autre_fonction</span>
 </span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="k">assert</span> <span class="n">L</span> <span class="o">==</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">1</span><span class="p">]</span>
 </span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="ne">AssertionError</span>
 </span></code></pre></div>
@@ -3582,58 +3605,58 @@ On rappelle les principaux types manipulés en Python :</p>
 <p class="admonition-title">À vous de jouer</p>
 <p>Pourquoi la fonction <code>autre_fonction</code> a t-elle échouée ?</p>
 </div>
-<h3 id="erreurs-semantiques">Erreurs sémantiques<a class="headerlink" href="#erreurs-semantiques" title="Permanent link">&para;</a></h3>
+<h3 id="erreurs-semantiques">Erreurs sémantiques<a class="headerlink" href="#erreurs-semantiques" title="Permanent link">¶</a></h3>
 <p>L'erreur <strong>sémantique</strong>, également appelée <strong>erreur de logique</strong>, est une erreur qui n'implique pas de message d'erreur : le programme semble s'exécuter parfaitement, <strong>mais le résultat n’est pas le résultat attendu</strong>.</p>
 <p>En fait, le programme fait exactement ce que vous lui avez dit de faire, mais ce que vous lui avez dit de faire ne correspond pas à <strong>ce que vous vouliez qu’il fasse</strong> : la séquence d’instructions du programme ne correspond pas à l’objectif visé. La sémantique (la logique) est donc incorrecte.</p>
 <p>Ces erreurs sont particulièrement difficile à identifier, et nécessite d'être capable de vous replonger dans la logique de votre code pour en déceler les failles.</p>
-<h3 id="erreurs-a-lexecution">Erreurs à l'exécution<a class="headerlink" href="#erreurs-a-lexecution" title="Permanent link">&para;</a></h3>
+<h3 id="erreurs-a-lexecution">Erreurs à l'exécution<a class="headerlink" href="#erreurs-a-lexecution" title="Permanent link">¶</a></h3>
 <p>Il s'agit d'une erreur qui survient <strong>en cours d’exécution</strong> (<em>Runtime error</em>), lorsqu'un programme fonctionne déjà, mais que des circonstances particulières se présentent (par exemple, le programme essaie de lire un fichier qui n’existe plus).</p>
-<h3 id="erreurs-de-valeur">Erreurs de valeur<a class="headerlink" href="#erreurs-de-valeur" title="Permanent link">&para;</a></h3>
+<h3 id="erreurs-de-valeur">Erreurs de valeur<a class="headerlink" href="#erreurs-de-valeur" title="Permanent link">¶</a></h3>
 <p>Un exemple :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randrange</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">)</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="n">File</span> <span class="s2">&quot;&lt;pyshell#92&gt;&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="n">File</span> <span class="s2">"&lt;pyshell#92&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 </span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>        <span class="n">randrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">)</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="n">File</span> <span class="s2">&quot;C:\python3.7.4.amd64\lib</span><span class="se">\r</span><span class="s2">andom.py&quot;</span><span class="p">,</span> <span class="n">line</span> <span class="mi">195</span><span class="p">,</span> <span class="ow">in</span> <span class="n">randrange</span>
-</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;nonintegerstop for randrange()&quot;</span><span class="p">)</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>    <span class="n">File</span> <span class="s2">"C:\python3.7.4.amd64\lib</span><span class="se">\r</span><span class="s2">andom.py"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">195</span><span class="p">,</span> <span class="ow">in</span> <span class="n">randrange</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">"nonintegerstop for randrange()"</span><span class="p">)</span>
 </span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="ne">ValueError</span><span class="p">:</span> <span class="n">nonintegerstop</span> <span class="k">for</span> <span class="n">randrange</span><span class="p">()</span>
 </span></code></pre></div>
-<h3 id="erreurs-lies-au-nommage-des-variables">Erreurs liés au nommage des variables<a class="headerlink" href="#erreurs-lies-au-nommage-des-variables" title="Permanent link">&para;</a></h3>
+<h3 id="erreurs-lies-au-nommage-des-variables">Erreurs liés au nommage des variables<a class="headerlink" href="#erreurs-lies-au-nommage-des-variables" title="Permanent link">¶</a></h3>
 <p>Le <strong>bon nommage des variables</strong> est particulièrement important car il permet d'améliorer la <strong>lisibilité</strong> du programme, et également d'éviter le <strong>masquage de variables</strong>.</p>
 <p>Le <strong>masquage de variables</strong> peut survenir lorsque :</p>
 <ul>
 <li>Vous importez une <strong>bibliothèque</strong> et déclarez une fonction dans votre programme qui a <strong>le même nom</strong> qu'une fonction de votre bibliothèque. Cela peut survenir lorsque vous effectuez des imports de la forme <code>from ma_bibliotheque import *</code>, <strong>il faut vraiment éviter ce type d'imports</strong>. Il vaut mieux effectuer des imports de la forme <code>import ma_bibliotheque</code> ou encore <code>import ma_bibliotheque as mb</code>, cela permet de faire des appels de fonctions de la forme <code>mb.ma_fonction</code>.</li>
 <li>Vous utiliser une <strong>variable globale</strong> à l'intérieur d'une fonction qui porte <strong>le même nom</strong> qu'un des <strong>paramètres</strong> de la fonction. Pour éviter cela, on peut par exemple ajouter <code>g_</code> devant le nom de toutes nos variables globales. Par ailleurs, en général, les variables globales sont utilisées comme des <strong>constantes</strong>, et on met leurs noms en majuscules par convention.</li>
 </ul>
-<h3 id="autres-types-derreurs">Autres types d'erreurs...<a class="headerlink" href="#autres-types-derreurs" title="Permanent link">&para;</a></h3>
+<h3 id="autres-types-derreurs">Autres types d'erreurs...<a class="headerlink" href="#autres-types-derreurs" title="Permanent link">¶</a></h3>
 <ul>
 <li>Erreurs de syntaxe et d'indentation :<ul>
-<li><code>SyntaxError</code> : erreur de parenthèse manquante.<br />
+<li><code>SyntaxError</code> : erreur de parenthèse manquante.<br>
   Exemple : <code>len([1,2,3]</code></li>
 <li><code>IdentationError</code> (hérite de <code>SyntaxError</code>) : Indentation oubliée, trop grande, blocs mal délimités, etc.</li>
 </ul>
 </li>
 <li>Erreurs d'exécution d'opérations de base :<ul>
-<li><code>IndexError</code> : Accès à un index non présent dans une liste, un tuple, un str...<br />
+<li><code>IndexError</code> : Accès à un index non présent dans une liste, un tuple, un str...<br>
   Exemple : <code>[1,2,3][3]</code></li>
 <li><code>KeyError</code> : Erreur de clé avec un dictionnaire.</li>
-<li><code>NameError</code> Nom de fonction ou de variable mal orthographié.<br />
+<li><code>NameError</code> Nom de fonction ou de variable mal orthographié.<br>
   Exemple : <code>prout("Bonsoir")</code></li>
 <li><code>ValueError</code> : Levée lorsqu'une opération ou une fonction reçoit une valeur inappropriée.</li>
-<li><code>TypeError</code> : Opération impossible entre deux types, conversion de type impossible.<br />
+<li><code>TypeError</code> : Opération impossible entre deux types, conversion de type impossible.<br>
   Exemple : <code>"3" * "5"</code></li>
 <li><code>ZeroDivisionError</code> : Levée en cas de division par zéro.</li>
 </ul>
 </li>
 <li>Oubli du <code>return</code> dans une fonction.</li>
 </ul>
-<h3 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">&para;</a></h3>
+<h3 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">À vous de jouer !</p>
 <p><a href="http://www.silanus.fr/nsi/premiere/python/erreur.html#_trouver_les_erreurs" target="_blank">Cliquez-ici</a> pour accéder aux exercices.</p>
 </div>
-<h2 id="specification-et-tests">Spécification et tests<a class="headerlink" href="#specification-et-tests" title="Permanent link">&para;</a></h2>
+<h2 id="specification-et-tests">Spécification et tests<a class="headerlink" href="#specification-et-tests" title="Permanent link">¶</a></h2>
 <p><strong>Tester un programme</strong> (ou une fonction, un module) consiste à vérifier qu’il fonctionne <strong>comme prévu</strong> dans un <strong>maximum de situations</strong> possibles. Un <strong>jeu de tests</strong> est un programme ou un ensemble de programmes qui vise à mettre en défaut la partie testée. Si un test <strong>échoue</strong>, il faut <strong>mettre au point</strong> le code, c’est-à-dire <strong>identifier</strong> puis <strong>corriger</strong> le <strong>problème</strong>, et effectuer à nouveau le <strong>test</strong>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Attention !</p>
@@ -3666,7 +3689,7 @@ On rappelle les principaux types manipulés en Python :</p>
 <p>Elle peut prendre diverses formes, comme un simple titre, un long document, une spécification formelle écrite dans un langage dédié, un ensemble d’exemples d’utilisation, un ensemble de cas de tests, etc.</p>
 <p>En <strong>Python</strong>, on utilise des <strong>docstrings</strong> (chaînes de caractères sous la forme <code>""" [...] """</code> ou <code>''' [...] '''</code>) pour spécifier les <strong>fonctions</strong>, <strong>programmes</strong>, <strong>classes</strong>, etc.</p>
 <p>Les <strong>tests</strong> doivent donc se baser sur cette <strong>spécification</strong> qui indique ce que le programme <strong>est censé faire</strong> et <strong>ne pas faire</strong>.</p>
-<h3 id="plusieurs-types-de-tests">Plusieurs types de tests<a class="headerlink" href="#plusieurs-types-de-tests" title="Permanent link">&para;</a></h3>
+<h3 id="plusieurs-types-de-tests">Plusieurs types de tests<a class="headerlink" href="#plusieurs-types-de-tests" title="Permanent link">¶</a></h3>
 <div class="admonition abstract">
 <p class="admonition-title">Les différents types de tests</p>
 <p>On peut classer les <strong>tests</strong> selon différents critères :</p>
@@ -3691,7 +3714,7 @@ etc.).</li>
 <p>On distingue les <strong>tests « boîte noire »</strong> et les <strong>tests « boîte blanche »</strong> (à noter que ces notions ne sont <strong>pas au programme</strong>) :</p>
 <ul>
 <li>
-<p>Un <strong>test « boîte noire »</strong> est un test qui est conçu à partir des données d’entrées potentielles, indépendamment du code écrit. Un test « boîte noire » peut donc être écrit avant le code, ou s’il est écrit après, il doit être écrit par quelqu’un qui ne connaît pas le code.<br />
+<p>Un <strong>test « boîte noire »</strong> est un test qui est conçu à partir des données d’entrées potentielles, indépendamment du code écrit. Un test « boîte noire » peut donc être écrit avant le code, ou s’il est écrit après, il doit être écrit par quelqu’un qui ne connaît pas le code.<br>
 <u>Exemple</u> : une fonction doit générer l’en-tête d’une lettre. Pour cela, elle prend en paramètre un objet représentant le destinataire de la lettre (prénom, nom, sexe). Sans connaître le code de la fonction, on peut déjà envisager 2 cas de test, un pour un homme et un pour une femme, et vérifier que dans le premier cas l’en-tête commence par « Cher » alors qu’il commence par « Chère » dans le second cas.</p>
 </li>
 <li>
@@ -3713,16 +3736,16 @@ type de test est de tester les différents cas prévus par le programme.</p>
 <p>Pour en savoir plus sur l'écriture de tests, je vous recommande <a href="https://eduscol.education.fr/document/7298/download" target="_blank">ce très bon document</a> proposé par Eduscol.</p>
 <p>Toutefois, gardez en tête que beaucoup de choses qui y sont présentées ne sont pas au programme. Mais cela peut être intéressant pour votre culture personnelle !</p>
 </div>
-<h3 id="tests-avec-des-assertions">Tests avec des assertions<a class="headerlink" href="#tests-avec-des-assertions" title="Permanent link">&para;</a></h3>
-<p>On peut effectuer des tests à l'aide d'<strong>assertions</strong>.<br />
+<h3 id="tests-avec-des-assertions">Tests avec des assertions<a class="headerlink" href="#tests-avec-des-assertions" title="Permanent link">¶</a></h3>
+<p>On peut effectuer des tests à l'aide d'<strong>assertions</strong>.<br>
 Si rien ne se passe, les tests sont validés.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">def</span> <span class="nf">trouver_indice</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Fonction qui renvoie l&#39;indice de l&#39;entier n dans la liste lst.</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="sd">    Si l&#39;élément n est présent plusieurs fois, l&#39;indice du premier est renvoyé.</span>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="sd">    :param lst: (list[int]) Liste d&#39;entiers</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="sd">''' Fonction qui renvoie l'indice de l'entier n dans la liste lst.</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="sd">    Si l'élément n est présent plusieurs fois, l'indice du premier est renvoyé.</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="sd">    :param lst: (list[int]) Liste d'entiers</span>
 </span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="sd">    :param n: (int) Entier à chercher</span>
 </span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="sd">    :return: (int) si élément trouvé, (None) sinon</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="sd">    '''</span>
 </span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
 </span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)):</span>
 </span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        <span class="k">if</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
@@ -3745,7 +3768,7 @@ Si rien ne se passe, les tests sont validés.</p>
 </span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>        <span class="k">assert</span> <span class="n">est_trie</span><span class="p">(</span><span class="n">tri</span><span class="p">(</span><span class="n">l</span><span class="p">))</span>
 </span></code></pre></div>
 <p>On peut également <strong>ajouter un message d'erreur</strong> lorsqu'une <code>AssertionError</code> est levée :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">assert</span> <span class="n">trouver_indice</span><span class="p">([],</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">&quot;Erreur lors d&#39;un test avec une liste vide.&quot;</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="k">assert</span> <span class="n">trouver_indice</span><span class="p">([],</span> <span class="mi">1</span><span class="p">)</span> <span class="o">==</span> <span class="kc">None</span><span class="p">,</span> <span class="s2">"Erreur lors d'un test avec une liste vide."</span>
 </span></code></pre></div>
 <div class="admonition note">
 <p class="admonition-title">À vous de jouer !</p>
@@ -3760,7 +3783,7 @@ Si rien ne se passe, les tests sont validés.</p>
 <li><a href="http://www.silanus.fr/nsi/premiere/python/erreur.html#_travail_faire_que_fait_ce_programme" target="_blank">Exercice - Que fait ce programme ?</a></li>
 </ul>
 </div>
-<h3 id="quelques-modules-de-tests">Quelques modules de tests<a class="headerlink" href="#quelques-modules-de-tests" title="Permanent link">&para;</a></h3>
+<h3 id="quelques-modules-de-tests">Quelques modules de tests<a class="headerlink" href="#quelques-modules-de-tests" title="Permanent link">¶</a></h3>
 <div class="admonition warning">
 <p class="admonition-title">Pas au programme</p>
 <p>Les modules de tests sont présentés ici pour votre culture générale, et parce qu'ils vous seront bien utiles si vous souhaitez continuer à travailler dans l'informatique après le bac.</p>
@@ -3797,7 +3820,7 @@ Si rien ne se passe, les tests sont validés.</p>
 </tbody>
 </table>
 </div>
-<h2 id="aller-plus-loin-la-programmation-defensive">Aller plus loin : La programmation défensive<a class="headerlink" href="#aller-plus-loin-la-programmation-defensive" title="Permanent link">&para;</a></h2>
+<h2 id="aller-plus-loin-la-programmation-defensive">Aller plus loin : La programmation défensive<a class="headerlink" href="#aller-plus-loin-la-programmation-defensive" title="Permanent link">¶</a></h2>
 <ul>
 <li>La <strong>programmation défensive</strong> consiste à écrire son code de façon à <strong>s'attendre au pire</strong>.</li>
 <li>Il s'agit d'anticiper le <strong>comportement de l'utilisateur final</strong> :<ul>
@@ -3809,30 +3832,30 @@ Si rien ne se passe, les tests sont validés.</p>
 <p>Dans le cadre d'une fonction, il s'agit de s'assurer du respect :
 * des <strong>préconditions</strong> : conditions sur les <strong>arguments d'entrée</strong>.
 * des <strong>postconditions</strong> : conditions sur la <strong>valeur de sortie</strong>.</p>
-<h2 id="gerer-les-exceptions">Gérer les exceptions<a class="headerlink" href="#gerer-les-exceptions" title="Permanent link">&para;</a></h2>
+<h2 id="gerer-les-exceptions">Gérer les exceptions<a class="headerlink" href="#gerer-les-exceptions" title="Permanent link">¶</a></h2>
 <p>Un bloc d'instructions <code>try... except...</code> permet d'effectuer des actions lorsque des erreurs spécifiques sont levées.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">try</span><span class="p">:</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;a ? &#39;</span><span class="p">))</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;b ? &#39;</span><span class="p">))</span>
-</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'a ? '</span><span class="p">))</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>    <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'b ? '</span><span class="p">))</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>
 </span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="k">except</span> <span class="ne">ValueError</span><span class="p">:</span>
-</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Erreur de conversion.&#39;</span><span class="p">)</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Erreur de conversion.'</span><span class="p">)</span>
 </span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="k">except</span> <span class="ne">ZeroDivisionError</span><span class="p">:</span>
-</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Division par zéro.&#39;</span><span class="p">)</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Division par zéro.'</span><span class="p">)</span>
 </span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="k">except</span><span class="p">:</span>
-</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Autre erreur.&#39;</span><span class="p">)</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a>    <span class="nb">print</span><span class="p">(</span><span class="s1">'Autre erreur.'</span><span class="p">)</span>
 </span></code></pre></div>
 <p>Toutes les exceptions (<code>valueError</code>, <code>typeError</code>, etc.) natives de Python sont en fait dérivées d'une classe <code>Exception</code>. Ainsi, ce sont des <strong>objets</strong>, que l'on peut récupérer en précisant un nom de variable après <code>except</code> comme dans cet exemple :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">try</span><span class="p">:</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;a ? &#39;</span><span class="p">))</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;b ? &#39;</span><span class="p">))</span>
-</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="n">a</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'a ? '</span><span class="p">))</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>    <span class="n">b</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">'b ? '</span><span class="p">))</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="s1">'/'</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="s1">'='</span><span class="p">,</span> <span class="n">a</span> <span class="o">/</span> <span class="n">b</span><span class="p">)</span>
 </span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="k">except</span> <span class="ne">Exception</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
 </span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a>    <span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
 </span><span id="__span-17-7"><a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </span></code></pre></div>
 <p>Il est également possible de créer ses propres exceptions dérivées de cette classe.</p>
-<p>Plus d'informations <a href="https://python.developpez.com/tutoriels/apprendre-programmation-python/notions-avancees/?page=gestion-d-erreurs#LIV-C-1" target="_blank">sur cette page</a></p>
+<p>Plus d'informations <a href="https://python.developpez.com/tutoriels/apprendre-programmation-python/notions-avancees/?page=gestion-d-erreurs#LIV-C-1" target="_blank">sur cette page</a></p></div>
 
 
 

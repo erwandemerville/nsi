@@ -769,6 +769,8 @@
       
         
       
+        
+      
     
     
     
@@ -884,6 +886,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -2791,6 +2814,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#principe-des-algorithmes-de-routage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principe des algorithmes de routage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#protocole-a-vecteur-de-distances-rip" class="md-nav__link">
     <span class="md-ellipsis">
       Protocole « à vecteur de distances » - RIP
@@ -2803,6 +2835,24 @@
   <a href="#protocole-a-etat-de-liens-ospf" class="md-nav__link">
     <span class="md-ellipsis">
       Protocole « à état de liens » - OSPF
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lalgorithme-de-dijkstra" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'algorithme de Dijkstra
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-champ-ttl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le champ TTL
     </span>
   </a>
   
@@ -3060,6 +3110,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#principe-des-algorithmes-de-routage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principe des algorithmes de routage
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#protocole-a-vecteur-de-distances-rip" class="md-nav__link">
     <span class="md-ellipsis">
       Protocole « à vecteur de distances » - RIP
@@ -3072,6 +3131,24 @@
   <a href="#protocole-a-etat-de-liens-ospf" class="md-nav__link">
     <span class="md-ellipsis">
       Protocole « à état de liens » - OSPF
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lalgorithme-de-dijkstra" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'algorithme de Dijkstra
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-champ-ttl" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le champ TTL
     </span>
   </a>
   
@@ -3102,7 +3179,7 @@
                   
 
 
-<details class="quote">
+<div><details class="quote">
 <summary>Sources / Liens utiles</summary>
 <ul>
 <li>Balabonski Terminale</li>
@@ -3113,12 +3190,12 @@
 <li>TP Filius : <a href="https://nsirennes.fr/os-archi/reseaux/" target="_blank">https://nsirennes.fr/os-archi/reseaux/</a></li>
 </ul>
 </details>
-<h1 id="cours-protocoles-de-routage">Cours - Protocoles de routage<a class="headerlink" href="#cours-protocoles-de-routage" title="Permanent link">&para;</a></h1>
-<h2 id="rappels-sur-ladressage-ip">Rappels sur l'adressage IP<a class="headerlink" href="#rappels-sur-ladressage-ip" title="Permanent link">&para;</a></h2>
+<h1 id="cours-protocoles-de-routage">Cours - Protocoles de routage<a class="headerlink" href="#cours-protocoles-de-routage" title="Permanent link">¶</a></h1>
+<h2 id="rappels-sur-ladressage-ip">Rappels sur l'adressage IP<a class="headerlink" href="#rappels-sur-ladressage-ip" title="Permanent link">¶</a></h2>
 <p>Voici une petite activité (sous la forme d'un notebook) de rappel sur l'<strong>adressage IP et les masques de sous-réseau</strong> :</p>
-<p><center>
-<a href="../src/protocoles_routage_activite_introduction.ipynb" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.88.88 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.756.756 0 0 0-.49-.18M15 10V8h5v2h-5m-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41M10 0h2v5h-2V0M3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41m0-11.32 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83M7 10H2V8h5v2"/></svg></span> Télécharger l'activité d'introduction</a>
-</center></p>
+<p></p><center>
+<a href="../src/protocoles_routage_activite_introduction.ipynb" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.88.88 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.756.756 0 0 0-.49-.18M15 10V8h5v2h-5m-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41M10 0h2v5h-2V0M3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41m0-11.32 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83M7 10H2V8h5v2"></path></svg></span> Télécharger l'activité d'introduction</a>
+</center>
 <div class="admonition tip">
 <p class="admonition-title">Adresses <em>broadcast</em> et <em>multicast</em></p>
 <ul>
@@ -3126,20 +3203,20 @@
 <li><strong>Multicast</strong> : Ce type d'adresse permet d'appeler un <strong>groupe spécifique d'hôtes</strong> (<em>interfaces</em>) dans un <strong>sous-réseau</strong>.</li>
 </ul>
 </div>
-<h2 id="rappels-quest-ce-quun-reseau">Rappels - Qu'est-ce qu'un réseau ?<a class="headerlink" href="#rappels-quest-ce-quun-reseau" title="Permanent link">&para;</a></h2>
+<h2 id="rappels-quest-ce-quun-reseau">Rappels - Qu'est-ce qu'un réseau ?<a class="headerlink" href="#rappels-quest-ce-quun-reseau" title="Permanent link">¶</a></h2>
 <p>Vous pouvez dans un premier temps essayer de faire l'<a href="#exercices">exercice 1</a> pour tester vos connaissances sur les composants d'un réseau.</p>
 <p>Voici une petite vidéo résumant la <strong>constitution d'un réseau</strong> (et plus généralement du <strong>réseau mondial</strong>) :</p>
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/JqweQE6TDTc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<h2 id="rappels-modeles-osi-et-tcpip">Rappels modèles OSI et TCP/IP<a class="headerlink" href="#rappels-modeles-osi-et-tcpip" title="Permanent link">&para;</a></h2>
+<h2 id="rappels-modeles-osi-et-tcpip">Rappels modèles OSI et TCP/IP<a class="headerlink" href="#rappels-modeles-osi-et-tcpip" title="Permanent link">¶</a></h2>
 <p>Voici un rappel des <strong>modèles en couches</strong> (en <strong>7 couches</strong> avec le modèle <strong>OSI</strong> et en <strong>4 couches</strong> avec le modèle <strong>TCP/IP</strong>,également appelé "modèle internet".)</p>
-<p><center>
-<img alt="Modèle OSI vs. TCP/IP" src="../images/osi_tcp_ip.png" />
-</center></p>
-<p><img alt="Schéma d'encapsulation" src="../images/schema_encapsulation.png" /></p>
+<p></p><center>
+<img alt="Modèle OSI vs. TCP/IP" src="../images/osi_tcp_ip.png">
+</center>
+<p><img alt="Schéma d'encapsulation" src="../images/schema_encapsulation.png"></p>
 <details class="abstract">
 <summary>Schéma plus détaillé - Encapsulation des données (modèle TCP/IP)</summary>
-<p><img alt="Encapsulation des données" src="../images/osi_exemple.png" /></p>
+<p><img alt="Encapsulation des données" src="../images/osi_exemple.png"></p>
 </details>
 <details class="abstract">
 <summary>Protocoles IP et TCP</summary>
@@ -3149,22 +3226,26 @@
 <li>Le <strong>protocole TCP</strong> (COUCHE <strong>TRANSPORT</strong>) qui permet d’assurer la communication de l’information en la <strong>découpant en segments</strong>, comportant l'indication du <strong>port source</strong> et du <strong>port de destination</strong>, et en s’assurant que tous les paquets soient bien <strong>reçus</strong> et <strong>conformes</strong> à l’<strong>information envoyée</strong>. (Il existe un protocole plus rapide mais qui, contraiement à <strong>TCP</strong>, n'assure pas que toutes les données soient reçues : le protocole <strong>UDP</strong>.)</li>
 </ul>
 <p>Voici un rappel de la manière dont s'effectue l'<strong>établissement d'une connexion</strong> ainsi que la <strong>transmission des données</strong> avec le protocole <strong>TCP</strong> (<a href="https://openclassrooms.com/fr/courses/2340511-maitrisez-vos-applications-et-reseaux-tcp-ip/5678267-exercez-vous-au-suivi-de-connexion" target="_blank">source de l'image</a>):</p>
-<p><img alt="Transmission des données avec le protocole TCP" src="../images/TCP_transmission.png" /></p>
+<p><img alt="Transmission des données avec le protocole TCP" src="../images/TCP_transmission.png"></p>
 <p>Lorsqu'un paquet n'est pas correctement transmis, il est <strong>de nouveau envoyé</strong> (<a href="http://shtroumbiniouf.free.fr/CoursInfo/Reseau2/Cours/TCP/TCP.html" target="_blank">source de l'image</a>):</p>
-<p><center>
-<img alt="Échec de transmission" src="../images/AckPositif.gif" />
-</center></p>
-<p><center>
-<a href="https://laissus.developpez.com/tutoriels/cours-introduction-tcp-ip/?page=page_7" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"/></svg></span> Voir plus d'informations sur le protocole TCP</a>
-</center></p>
+<p></p><center>
+<img alt="Échec de transmission" src="../images/AckPositif.gif">
+</center>
+<p></p><center>
+<a href="https://laissus.developpez.com/tutoriels/cours-introduction-tcp-ip/?page=page_7" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg></span> Voir plus d'informations sur le protocole TCP</a>
+</center>
 </details>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
 <p>Un <strong>réseau informatique</strong> permet la <strong>connexion entre différentes machines</strong> afin de faciliter la <strong>communication</strong> entre elles. Le modèle de communication généralement utilisé est le modèle <strong>client-serveur</strong>, qui permet aux <strong>clients</strong> d'échanger des <strong>paquets d'informations</strong> avec les <strong>serveurs</strong>. La notion de "client" est large, pouvant désigner aussi bien une application qu'une machine exécutant cette application. De même, le terme "serveur" peut faire référence à l'ordinateur hébergeant un service ou au logiciel fournissant ce service.</p>
 <p>Les <strong>paquets</strong> de <strong>bits</strong> échangés sont les unités de base transitant sur le réseau physique. Ils résultent de la fragmentation des données à transmettre, telles que des pages web, des courriels ou des vidéos. Ces paquets sont envoyés séparément sur le réseau, et l'information initiale est reconstituée une fois qu'ils atteignent leur destination, que ce soit du côté client ou serveur.</p>
-<p>En plus des clients et des serveurs, un réseau informatique est composé de <strong>routeurs</strong>, pouvant être de deux types : des <strong>routeurs d'accès</strong> (en bordure de réseau) ou des <strong>routeurs internes</strong>.<br />
+<p>En plus des clients et des serveurs, un réseau informatique est composé de <strong>routeurs</strong>, pouvant être de deux types : des <strong>routeurs d'accès</strong> (en bordure de réseau) ou des <strong>routeurs internes</strong>.<br>
 Ces machines ont pour rôle de <strong>relayer les paquets</strong> dans le <strong>réseau</strong> pour les acheminer vers leur <strong>destination finale</strong>. Un <strong>routeur</strong> fait le lien entre <strong>deux réseaux</strong>. Les clients et les serveurs sont connectés aux routeurs d'accès via des <strong>réseaux locaux</strong> (en utilisant par exemple le <em>Wi-Fi</em> ou l'<em>Ethernet</em>). Les <strong>routeurs internes</strong> sont reliés entre eux sur de <strong>plus longues distances</strong> à l'aide de <strong>fibres optiques</strong>, de <strong>câbles téléphoniques</strong>, de <strong>liaisons par satellite</strong>, etc. L'interconnexion de ces routeurs via ces liens forme la <strong>topologie du réseau</strong>.</p>
 <p>Par exemple, la <strong>figure ci-dessous</strong> représente la <strong>topologie d'un réseau</strong> avec <strong>six routeurs</strong>.</p>
-<p><img alt="Topologie d'un réseau" src="../images/screen_reseau.png" /></p>
+<figure>
+<p><img alt="Topologie d'un réseau" src="../images/screen_reseau.png">
+  </p>
+<figcaption><b>Figure 1</b> : Topologie d'un réseau</figcaption>
+</figure>
 <div class="admonition success">
 <p>Les <strong>routeurs R1</strong> et <strong>R6</strong> sont des <strong>routeurs d'accès</strong> permettant aux <strong>machines Client</strong> et <strong>Serveur</strong> d'<strong>accéder au réseau</strong>. Les autres routeurs (<strong>R2 à R5</strong>) sont des <strong>routeurs internes</strong>. Les <strong>adresses IP</strong> des machines sont indiquées par une paire <strong>sous-réseau/masque</strong>. Par exemple, les routeurs <strong>R1</strong> et <strong>R3</strong> sont connectés à un <strong>sous-réseau</strong> avec l'adresse <strong>10.1.1.0</strong> et un <strong>masque de 30</strong>, signifiant que seuls les deux bits de poids faible de l'adresse peuvent être utilisés pour associer des adresses IP aux machines.</p>
 </div>
@@ -3172,7 +3253,7 @@ Ces machines ont pour rôle de <strong>relayer les paquets</strong> dans le <str
 <div class="admonition note">
 <p>Par exemple, si un client souhaite envoyer un message au serveur, il le transmet à son <strong>routeur d'accès</strong> (R1), qui le renvoie au routeur R3. R3 choisit ensuite le prochain routeur à utiliser (R2, R4 ou R5) en se basant sur sa <strong>table de routage</strong>. Ce processus se répète à chaque routeur jusqu'à ce que le paquet parvienne au routeur R6, qui le délivre ensuite au <strong>serveur</strong>.</p>
 </div>
-<h2 id="principe-du-routage">Principe du routage<a class="headerlink" href="#principe-du-routage" title="Permanent link">&para;</a></h2>
+<h2 id="principe-du-routage">Principe du routage<a class="headerlink" href="#principe-du-routage" title="Permanent link">¶</a></h2>
 <p>Si l'<strong>hôte de destination</strong> et l'<strong>hôte source</strong> sont <strong>sur le même réseau</strong>, les paquets de données circulent directement entre eux sur le <strong>support local</strong> de <strong>niveau 2</strong> (<em>deuxième couche du modèle OSI</em>) via des <strong>commutateurs</strong> (<em>switchs</em>), sans nécessiter l'intervention d'un <strong>routeur</strong>. Les <strong>commutateurs</strong> construisent une <strong>table d'adresses MAC</strong> des <strong>machines IP</strong> connectées à eux, utilisant ces <strong>adresses</strong> pour <strong>commuter les trames</strong>.</p>
 <p>En revanche, si l'<strong>hôte source</strong> et l'<strong>hôte de destination</strong> ne sont <strong>pas sur le même réseau</strong>, le réseau local dirige le <strong>paquet</strong> de la <strong>source</strong> vers son <strong>routeur de passerelle de niveau 3</strong> (<em>troisième couche du modèle OSI</em>). Le <strong>routeur</strong> analyse la <strong>partie réseau de l'adresse de destination</strong> du <strong>paquet</strong> et le <strong>dirige vers l'interface appropriée</strong>. Si le <strong>réseau de destination</strong> est directement <strong>connecté à ce routeur</strong>, le <strong>paquet</strong> est <strong>transmis directement à l'hôte de destination</strong>. Dans le cas contraire, le <strong>paquet</strong> est <strong>envoyé à un second routeur</strong>, qui agit comme le <strong>routeur de tronçon suivant</strong>. Le transfert du paquet devient alors la responsabilité de ce second routeur. De <strong>multiples routeurs ou sauts</strong> tout au long du chemin peuvent traiter le paquet avant qu'il n'atteigne sa <strong>destination</strong>. Contrairement aux <strong>commutateurs</strong>, les <strong>routeurs</strong> se basent sur les <strong>adresses IP</strong> pour le transfert des données.</p>
 <div class="admonition success">
@@ -3246,8 +3327,8 @@ Ces machines ont pour rôle de <strong>relayer les paquets</strong> dans le <str
 <p class="admonition-title">Exemple de table de routage</p>
 <p>Voici un exemple de réseau (<em>source</em> : <a href="https://pixees.fr/informatiquelycee/n_site/nsi_term_archi_routage.html" target="_blank">pixees</a>)</p>
 <p><figure markdown>
-<img alt="Diagramme d’un réseau" src="../images/table_routage_pixees.png" />
-<figcaption>Diagramme d’un réseau</figcaption>
+<img alt="Diagramme d’un réseau" src="../images/table_routage_pixees.png">
+<figcaption><b>Figure 2</b> : Diagramme d’un réseau</figcaption>
 </figure></p>
 <p>Voici par exemple ce que donnerait la <strong>table de routage</strong> du <strong>routeur A</strong>, après la mise à jour effectuée avec le <strong>protocole RIP</strong> :</p>
 <table>
@@ -3290,35 +3371,579 @@ Ces machines ont pour rôle de <strong>relayer les paquets</strong> dans le <str
 <p>À votre tour, donnez la <strong>table de routage</strong> du routeur <strong>G</strong>.</p>
 </div>
 </div>
-<h2 id="protocole-a-vecteur-de-distances-rip">Protocole « à vecteur de distances » - RIP<a class="headerlink" href="#protocole-a-vecteur-de-distances-rip" title="Permanent link">&para;</a></h2>
+<h2 id="principe-des-algorithmes-de-routage">Principe des algorithmes de routage<a class="headerlink" href="#principe-des-algorithmes-de-routage" title="Permanent link">¶</a></h2>
+<p>Un <strong>ensemble de réseaux interconnectés</strong> par des <strong>routeurs</strong> peut être <strong>représenté</strong> sous forme de <mark><strong>graphe</strong></mark>, où <strong>chaque routeur</strong> est un <mark><strong>nœud</strong></mark> et <strong>chaque connexion entre les routeurs</strong> ou <strong>entre un routeur et un commutateur</strong> constitue une <mark><strong>arête</strong></mark>. Les <strong>algorithmes</strong> employés par les <strong>protocoles de routage</strong> sont ainsi dérivés de la <strong>théorie des graphes</strong>. Une illustration de ce concept est présentée dans le schéma ci-dessous :</p>
+<figure>
+<p><img alt="Exemple de réseau représenté sous la forme de graphe, avec les tables de routage qui correspondent." src="../images/AODV_Decouverte_Route.png">
+  </p>
+<figcaption><b>Figure 3</b> : Exemple de réseau représenté sous la forme de graphe, avec les tables de routage qui correspondent.</figcaption>
+</figure>
+<p>L'objectif d'un <strong>algorithme de routage</strong> est de <strong>déterminer un chemin dans ce graphe</strong>, établissant ainsi une <strong>liaison</strong> entre l'<strong>émetteur et le destinataire</strong>. Bien qu'il existe de nombreux <strong>algorithmes</strong> pour trouver le <strong>chemin le plus court</strong> entre deux points d'un graphe, ces derniers sont rarement utilisés de manière directe par les algorithmes de routage.</p>
+<p>Les <strong>algorithmes de routage</strong> peuvent également prendre en considération les <strong>performances</strong> des divers <strong>chemins</strong> entre deux <strong>routeurs</strong>. La mise à jour des <strong>tables de routage</strong> permet alors d'identifier des <strong>chemins plus courts</strong> ou <strong>plus rapides</strong> pour <strong>acheminer des données</strong> vers une <strong>adresse IP spécifique</strong>. Pour y parvenir, on peut attribuer un <mark><strong>poids</strong></mark> (<em>pondération</em>) à chaque <strong>arête</strong>, représentant le <strong>coût de transmission</strong> entre <strong>deux routeurs</strong>, en fonction du <strong>débit de la liaison</strong> (c'est ce que l'on verra avec le protocole <strong>OSPF</strong>).</p>
+<h2 id="protocole-a-vecteur-de-distances-rip">Protocole « à vecteur de distances » - RIP<a class="headerlink" href="#protocole-a-vecteur-de-distances-rip" title="Permanent link">¶</a></h2>
 <p>Le <strong>nombre de routeurs</strong> dans un <strong>réseau</strong> est souvent <strong>trop élevé</strong> pour envisager une <strong>configuration manuelle des tables de routage</strong>. En effet, à chaque fois qu'un élément du réseau tombe en panne ou qu'une modification est apportée à sa <strong>topologie</strong> (comme l'ajout d'une nouvelle liaison ou d'un nouveau routeur), il devient nécessaire de <strong>recalculer toutes les routes</strong> et de <strong>mettre à jour les tables de routage de chaque routeur</strong>. Pour réaliser cette tâche, il serait également nécessaire d'envoyer toutes les données relatives à l'<strong>état des liaisons</strong> et des <strong>routeurs</strong> vers un <strong>opérateur unique</strong>, chargé de <strong>calculer les nouvelles routes</strong>. Outre les inconvénients de centraliser cette tâche, il faut également garantir que les informations sur l'état du réseau peuvent être transmises sans problème à cet opérateur. Malheureusement, les moyens de communication utilisés à cette fin peuvent eux aussi <strong>tomber en panne</strong>.</p>
 <p>Pour toutes ces raisons, l'approche consiste à <strong>automatiser ce processus</strong> en permettant aux routeurs de mettre à jour leurs tables de routage sans intervention humaine. Ainsi, en plus de la <strong>transmission des paquets</strong>, les routeurs échangent des informations sur les <strong>routes</strong> du <strong>réseau</strong> en fonction de l'<strong>état de leurs voisins</strong> et de leurs <strong>liens de communication</strong>. Les règles régissant ces échanges sont définies par un <strong>protocole de routage</strong>.</p>
 <p>Initialement, les <strong>informations</strong> dont dispose un <strong>routeur</strong> concernent <strong>ses voisins immédiats</strong> ainsi que les <strong>sous-réseaux auxquels il est connecté</strong>. En <strong>envoyant</strong> régulièrement des <strong>messages</strong> à ses <strong>voisins</strong> et en mesurant les temps de réponse de ces machines, le routeur peut déterminer si un autre routeur <strong>est en panne</strong> ou si la liaison entre eux est <strong>rompue</strong>. Il peut ensuite diffuser ces informations à tous ses voisins, qui peuvent à leur tour les transmettre à leurs voisins, et ainsi de suite. De cette manière, progressivement, tous les routeurs finissent par partager les mêmes connaissances sur la topologie du réseau. Cependant, pour que l'échange de ces informations soit bien coordonné, les routeurs doivent suivre <strong>le même protocole</strong>. Dans cette section, nous décrivons le <mark><strong>protocole RIP</strong></mark> (<em>Routing Information Protocol</em> en anglais), un exemple de protocole utilisé à cette fin.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Principe du protocole RIP</p>
 <p>Le <strong>protocole RIP</strong> s'appuie sur l'<mark><strong>algorithme de Bellman-Ford</strong></mark> (un algorithme utilisant le principe de <strong>programmation dynamique</strong>), permettant de <strong>calculer les plus courts chemins</strong> dans un graphe.</p>
-<p>L'<strong>algorithme</strong> du <strong>protocole RIP</strong> repose sur le partage d'informations entre routeurs pour déterminer les meilleures routes vers différents sous-réseaux. Chaque routeur communique avec ses voisins en échangeant des vecteurs de distance, des couples (adresse, distance), qui représentent la distance en nombre de sauts vers une machine spécifique. Ces échanges permettent aux routeurs de construire et mettre à jour leurs tables de routage.</p>
-<p>Dans la phase d'initialisation, chaque routeur transmet les adresses de ses voisins et les distances associées. Ces informations sont utilisées pour former des vecteurs de distance. À partir de là, le protocole RIP continue par des échanges périodiques de demandes et de réponses entre les routeurs. Lorsqu'un routeur reçoit une réponse de son voisin, plusieurs scénarios peuvent se produire :</p>
+<p>L'<strong>algorithme</strong> du <strong>protocole RIP</strong> repose sur le <strong>partage d'informations entre routeurs</strong> pour déterminer les <strong>meilleures routes vers différents sous-réseaux</strong>. Chaque <strong>routeur</strong> communique avec ses <strong>voisins</strong> en échangeant des <mark><strong>vecteurs de distance</strong></mark>, c'est-à-dire des <mark>couples <code>(adresse, distance)</code></mark>, qui représentent la distance en <strong>nombre de sauts</strong> vers une <strong>machine spécifique</strong>. Ces échanges permettent aux routeurs de <strong>construire</strong> et <strong>mettre à jour</strong> leurs tables de routage.</p>
+<p>Dans la phase d'<strong>initialisation</strong>, chaque routeur <strong>transmet les adresses de ses voisins</strong> et les <strong>distances associées</strong>. Ces informations sont utilisées pour former des <strong>vecteurs de distance</strong>. À partir de là, le <strong>protocole RIP</strong> continue par des <strong>échanges périodiques</strong> de <strong>demandes</strong> et de <strong>réponses</strong> entre les <strong>routeurs</strong>. Lorsqu'un <strong>routeur</strong> reçoit une réponse de son <strong>voisin</strong>, plusieurs scénarios peuvent se produire :</p>
 <ol>
 <li>Découverte d'une nouvelle route vers un sous-réseau inconnu : le routeur l'ajoute à sa table.</li>
 <li>Découverte d'une route plus courte vers un sous-réseau connu : le routeur met à jour sa table en remplaçant l'ancienne route par la nouvelle.</li>
 <li>Réception d'une nouvelle route plus longue : le routeur ignore cette information.</li>
 <li>Réception d'une route existante, mais plus longue, vers un routeur passant par le même voisin : le routeur met à jour sa table en tenant compte de cette nouvelle route.</li>
 </ol>
-<p>Les distances associées aux routes sont ajustées en fonction du chemin parcouru, et la distance maximale est limitée à 15 routeurs intermédiaires. Au-delà de cette limite, la route est ignorée ou supprimée des tables de routage.</p>
+<p>Les <strong>distances associées</strong> aux routes sont ajustées en fonction du <strong>chemin</strong> parcouru, et la <strong>distance maximale est limitée à 15 routeurs intermédiaires</strong>. Au-delà de cette <strong>limite</strong>, la route est <strong>ignorée</strong> ou <strong>supprimée des tables de routage</strong>.</p>
 <p>En répétant ces échanges et en mettant à jour les tables de routage à intervalle fixe (l'intervalle de mise à jour par défaut pour le RIP est de 30 secondes.), les routeurs convergent vers une vision commune du réseau, déterminant ainsi les meilleures routes pour acheminer les paquets vers leurs destinations.</p>
 </div>
-<h2 id="protocole-a-etat-de-liens-ospf">Protocole « à état de liens » - OSPF<a class="headerlink" href="#protocole-a-etat-de-liens-ospf" title="Permanent link">&para;</a></h2>
-<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">&para;</a></h2>
+<details class="quote">
+<summary>Un exemple d'application</summary>
+<p>Si l'on reprend la <strong>figure 1</strong> :</p>
+<p><figure markdown>
+<img alt="Topologie d'un réseau" src="../images/screen_reseau.png">
+<figcaption><b>Figure 1</b> : Topologie d'un réseau</figcaption>
+</figure></p>
+<p>Au <strong>début du protocole</strong>, les tables des routeurs <strong>R1</strong> et <strong>R3</strong> sont initialisées avec les <strong>informations</strong> concernant leurs <strong>voisins immédiats</strong>, à savoir les <strong>adresses des sous-réseaux</strong> sur lesquels ils sont <strong>directement connectés</strong> :</p>
+<ul>
+<li>Pour le routeur <strong>R1</strong> :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Réseau</th>
+<th>Passerelle</th>
+<th>Interface</th>
+<th>Distance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.1.1.0/30</td>
+<td></td>
+<td>eth0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>192.168.1.0/24</td>
+<td></td>
+<td>wlan0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Pour le routeur <strong>R3</strong> :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Réseau</th>
+<th>Passerelle</th>
+<th>Interface</th>
+<th>Distance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.1.1.0/30</td>
+<td></td>
+<td>eth1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10.1.2.0/30</td>
+<td></td>
+<td>eth3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10.1.3.0/30</td>
+<td></td>
+<td>eth2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10.1.4.0/30</td>
+<td></td>
+<td>eth0</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<p>Après avoir <strong>échangé</strong> une <strong>demande RIP avec R3</strong>, la table du <strong>routeur R1</strong> contient les <strong>informations suivantes</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>Réseau</th>
+<th>Passerelle</th>
+<th>Interface</th>
+<th>Distance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.1.1.0/30</td>
+<td></td>
+<td>eth0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>192.168.1.0/24</td>
+<td></td>
+<td>wlan0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10.1.2.0/30</td>
+<td>10.1.1.2</td>
+<td>eth0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.1.3.0/30</td>
+<td>10.1.1.2</td>
+<td>eth0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.1.4.0/30</td>
+<td>10.1.1.2</td>
+<td>eth0</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p><strong>À votre tour</strong>, indiquez les <strong>informations</strong> contenues dans la <strong>table du routeur R3</strong> après son <strong>échange</strong> avec <strong>R1</strong>.</p>
+<details class="tip">
+<summary>Solution</summary>
+<table>
+<thead>
+<tr>
+<th>Réseau</th>
+<th>Passerelle</th>
+<th>Interface</th>
+<th>Distance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.1.1.0/30</td>
+<td></td>
+<td>eth1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10.1.2.0/30</td>
+<td></td>
+<td>eth3</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10.1.3.0/30</td>
+<td></td>
+<td>eth2</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10.1.4.0/30</td>
+<td></td>
+<td>eth0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>192.168.1.0/24</td>
+<td>10.1.1.1</td>
+<td>eth2</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+</details>
+<hr>
+<p>Si l'on <strong>répète</strong> ces <strong>demandes RIP</strong> et en <strong>mettant à jour les tables de routages</strong> selon l'algorithme décrit précédemment, les routeurs auront finalement <strong>la même « vision » du réseau</strong> avec les <strong>meilleures routes à suivre</strong> pour <strong>acheminer un paquet</strong>.</p>
+<p>Par exemple, la <strong>table de routage finale</strong> du routeur <strong>R1</strong> sera la suivante :</p>
+<table>
+<thead>
+<tr>
+<th>Réseau</th>
+<th>Passerelle</th>
+<th>Interface</th>
+<th>Distance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.1.1.0/30</td>
+<td></td>
+<td>eth0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>192.168.1.0/24</td>
+<td></td>
+<td>wlan0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>10.1.2.0/30</td>
+<td>10.1.1.2</td>
+<td>eth0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.1.3.0/30</td>
+<td>10.1.1.2</td>
+<td>eth0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.1.4.0/30</td>
+<td>10.1.1.2</td>
+<td>eth0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.1.7.0/30</td>
+<td>10.1.1.2</td>
+<td>eth0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>192.168.6.0/24</td>
+<td>10.1.1.2</td>
+<td>eth0</td>
+<td>3</td>
+</tr>
+</tbody>
+</table>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Détection des pannes</p>
+<p>Le <strong>protocole RIP</strong> doit également inclure un mécanisme permettant de <strong>déterminer si une liaison est défaillante</strong>. À cet effet, un <strong>routeur</strong> considère qu'un <strong>voisin est en panne</strong> s'il ne reçoit <strong>pas de réponse à une requête RIP</strong> dans un <strong>délai spécifique</strong>, par défaut fixé à <strong>trois minutes</strong>. Lorsqu'un routeur détecte qu'un sous-réseau devient inaccessible, il transmet cette information à ses voisins en l'exprimant sous forme d'une <strong>route avec une distance infinie</strong>. Dans le contexte du <strong>RIP</strong>, cette <strong>distance infinie</strong> est représentée par une <mark><strong>valeur de 16</strong></mark>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Délai de convergence</p>
+<p>Étant donné que les distances maximales ne peuvent dépasser <strong>15 sauts</strong> (ou liaisons traversées), les routeurs ne peuvent pas déterminer les chemins les plus courts vers des sous-réseaux nécessitant des routes excessivement longues. Cette restriction limite effectivement l'applicabilité du protocole RIP aux <strong>réseaux de petite taille</strong>. La fixation de cette limite vise à réduire le <strong>délai de convergence</strong> du <strong>protocole</strong>, c'est-à-dire le <strong>temps nécessaire pour que tous les routeurs parviennent à une vision uniforme de la topologie du réseau</strong>. Une limite plus élevée entraînerait un temps de convergence plus long.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Boucles de routage</p>
+<p>Une <strong>boucle de routage</strong> peut se produire lorsque les informations dans les tables de routage entraînent la circulation continue d'un paquet dans le réseau, l'empêchant ainsi d'atteindre sa destination. <strong>Deux solutions</strong> sont envisageables pour prévenir ce phénomène :</p>
+<ol>
+<li>garantir que les <strong>tables de routage</strong> sont toujours <strong>correctement configurées</strong> pour éviter toute possibilité de boucle,</li>
+<li>permettre aux routeurs de détecter quand un paquet <strong>circule en boucle</strong> dans le réseau, notamment grâce au <strong>TTL</strong> (Time-to-Live)).</li>
+</ol>
+<p>Le <strong>protocole RIP</strong> est conçu de manière à prévenir la <strong>création de boucles de routage</strong> lors de la <strong>mise à jour des tables</strong>. La <strong>limitation</strong> imposée sur les <strong>distances des routes</strong> constitue une première technique. Cependant, cette mesure n'est <strong>pas suffisante</strong>, et il est nécessaire d'établir <strong>d'autres règles</strong> pour empêcher ce scénario. Par exemple, la règle du <strong>"split horizon"</strong> stipule qu'<strong>un routeur ne doit pas renvoyer une information à un autre routeur s'il a appris cette information du même routeur</strong>. Une autre règle, appelée le <strong>temporisateur de retenue</strong> (<em>Hold down</em> en anglais), oblige un routeur, qui constate l'indisponibilité d'une route vers un sous-réseau, à ignorer toute information concernant des routes vers ce sous-réseau pendant une certaine période (utilisant un temporisateur à cet effet).</p>
+</div>
+<h2 id="protocole-a-etat-de-liens-ospf">Protocole « à état de liens » - OSPF<a class="headerlink" href="#protocole-a-etat-de-liens-ospf" title="Permanent link">¶</a></h2>
+<p>Dans la section précédente, nous avons examiné le fonctionnement du <strong>protocole RIP</strong>, soulignant sa capacité à <strong>configurer les tables de routage</strong> en privilégiant les <strong>routes les plus courtes</strong> en termes de <strong>nombre de routeurs traversés</strong> (<em>nombre de sauts</em>). Malheureusement, cette approche basée sur la <strong>distance</strong> ne <strong>garantit pas l'optimisation des routes en termes de débit</strong>, car les caractéristiques des liaisons (<em>fibre optique</em>, <em>satellite</em>, <em>sans fil</em>, etc.) ne sont <strong>pas prises en compte</strong> dans les <strong>échanges d'informations</strong> entre les <strong>dispositifs</strong> via ce protocole. De plus, nous avons noté que le <strong>RIP</strong> n'était pas adapté aux <strong>réseaux étendus</strong>, limitant son exploration aux routes de <strong>moins de 15 sauts</strong> pour réduire le <strong>délai de convergence</strong> et éviter les <strong>boucles de routage</strong>.</p>
+<p>C'est pour remédier à ces lacunes que le protocole <mark><strong>OSPF</strong></mark> (<em>Open Shortest Path First</em>) a été développé dans les <strong>années 90</strong> par l'<strong>IETF</strong> (<em>Internet Engineering Task Force</em>), un <strong>organisme de normalisation international</strong>. La spécificité de l'<strong>OSPF</strong> réside dans son utilisation de la <mark><strong>bande passante des liaisons</strong></mark> pour le <strong>calcul des meilleures routes</strong>. La bande passante, mesurée en <strong>bits par seconde</strong> (bit/s) ou avec des préfixes tels que <strong>kilo</strong> (kbit/s) et <strong>Mega</strong> (Mbit/s), devient ainsi un critère essentiel.<br>
+Contrairement au <strong>RIP</strong>, le <strong>nombre de routeurs traversés</strong> n'influe <strong>plus</strong> sur le <strong>choix de la route</strong> dans <strong>OSPF</strong>, où la <strong>distance</strong> est uniquement <strong>liée aux coûts des liaisons nécessaires</strong> pour <strong>relier deux routeurs</strong>.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Coût des liaisons</p>
+<p>Le <strong>coût</strong> est défini ainsi :</p>
+<div class="arithmatex">\[
+coût = \frac{10^8}{d}
+\]</div>
+<p>où <span class="arithmatex">\(d\)</span> représente la <strong>bande passante</strong> en <strong>bit/s</strong> de la <strong>liaison</strong>. La valeur de <span class="arithmatex">\(10^8\)</span> a été délibérément choisie pour attribuer un <strong>coût de 1</strong> à une <strong>liaison FastEthernet</strong> avec un débit de <strong>100 Mbit/s</strong>. Ainsi, une <strong>liaison plus lente par satellite</strong> à <span class="arithmatex">\(50\)</span> <strong>Mbits/s</strong> aura un coût de <strong>5</strong>, tandis qu'un <strong>câble Ethernet</strong> à <span class="arithmatex">\(10\)</span> <strong>Mbit/s</strong> aura un <strong>coût de 10</strong>.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Principe du protocole OSPF</p>
+<p>Le fonctionnement d'<strong>OSPF</strong> se découpe en deux étapes majeures.</p>
+<ol>
+<li>Dans la <strong>première étape</strong>, chaque <strong>routeur</strong>, après <strong>initialisation</strong>, cherche à <strong>identifier ses voisins</strong> pour établir une <strong>relation de voisinage</strong>.<br>
+Le protocole <strong>OSPF</strong> organise les <strong>machines</strong> en <strong>différentes zones</strong> (ensembles de machines), limitant ainsi la <strong>recherche de voisins des routeurs</strong> à leur <strong>zone assignée</strong>. La séquence de cette phase pour un <strong>routeur R</strong> est détaillée comme suit :<ul>
+<li><strong>R</strong> choisit un identificateur unique, tel que sa <strong>plus grande adresse IP</strong> parmi celles de ses sous-réseaux.</li>
+<li>Le <strong>routeur R</strong> envoie des messages de type <mark><strong>HELLO</strong></mark> à travers toutes ses <strong>interfaces réseau</strong>, contenant son <strong>identificateur</strong>, le <strong>numéro de sa zone</strong>, et la <strong>liste des identificateurs</strong> de ses <strong>voisins</strong> avec qui il a établi une <strong>relation de voisinage</strong>.</li>
+<li>Quand un <strong>routeur</strong> de la zone reçoit un paquet <strong>HELLO</strong> de <strong>R</strong>, il vérifie si l'<strong>identificateur</strong> de <strong>R</strong> est <strong>déjà dans sa liste de voisins</strong>.<ul>
+<li>Si oui, il <strong>envoie</strong> un <strong>accusé de réception à R</strong> pour indiquer qu'il est <strong>toujours actif</strong>.</li>
+<li>Sinon, il <strong>répond</strong> en <strong>fournissant des informations</strong> sur la <strong>topologie du réseau</strong>. </li>
+</ul>
+</li>
+<li><strong>R</strong> répond de même. Les <strong>messages</strong> qui contiennent les <strong>états des liens</strong> sont appelés <strong>LSA</strong> (<em>Link State Advertisement</em>). Ces <strong>messages</strong> ne <strong>sortent jamais de la zone</strong>, et <strong>plusieurs échanges sont nécessaires</strong> pour synchroniser les <strong>connaissances des routeurs</strong> dans une <strong>zone</strong>. Le processus de cette étape initiale est une <strong>diffusion</strong> (<em>flooding</em>) de l'<strong>information de voisinage</strong>.</li>
+</ul>
+</li>
+<li>La deuxième étape d'<strong>OSPF</strong> implique l'<strong>exécution d'un algorithme</strong>, au sein de <strong>chaque routeur</strong>, pour calculer les <strong>meilleures routes</strong> vers tout <strong>autre routeur de la zone</strong>. Le <strong>coût</strong> d'une route, utilisé dans cet algorithme, est la <strong>somme des coûts des liaisons entre les routeurs traversés</strong>. La <strong>meilleure route</strong> est celle avec le <strong>coût le plus bas</strong>, et une fois calculée, elle est enregistrée dans la <strong>table de routage du routeur</strong>.</li>
+</ol>
+</div>
+<details class="abstract">
+<summary>Établissement d'une relation de voisinage entre deux routeurs</summary>
+<p>Avant d'établir une relation de voisinage, les <strong>routeurs OSPF</strong> traversent plusieurs étapes de <strong>changement d'état</strong>. Voici quelles sont ces étapes <strong>entre deux routeurs</strong> :</p>
+<ol>
+<li>État <strong>initial</strong> : Un routeur reçoit un <strong>message Hello</strong> de l'autre <strong>routeur OSPF</strong>.</li>
+<li>État <strong>2-way</strong> : Le <strong>voisin</strong> a reçu le <strong>message Hello</strong> et a répondu avec un <strong>message Hello</strong>.</li>
+<li>État <strong>Exstart</strong> : Le début de l'échange de <strong>LSDB</strong> (Base de données d'état de lien) entre les <strong>deux routeurs</strong>. Les <strong>routeurs</strong> commencent à <strong>échanger des informations sur l'état des liens</strong>.</li>
+<li>État <strong>Exchange</strong> : Les paquets <strong>DBD</strong> (Database Descriptor) sont <strong>échangés</strong>. Les <strong>DBD</strong> contiennent des <strong>en-têtes LSA</strong> (Annonces d'<strong>état de lien</strong>). Les <strong>routeurs</strong> utilisent ces <strong>informations</strong> pour déterminer quels <strong>LSA</strong> doivent être échangés.</li>
+<li>État <strong>Loading</strong> : Un voisin envoie des <strong>LSR</strong> (Link State Requests) pour <strong>chaque réseau qu'il ne connaît pas</strong>. L'autre <strong>voisin</strong> répond avec les <strong>LSU</strong> (Link State Updates) contenant des <strong>informations</strong> sur les <strong>réseaux demandés</strong>. Après avoir reçu <strong>toutes les informations demandées</strong>, l'<strong>autre voisin</strong> passe par le même processus.</li>
+<li>État <strong>Full</strong> : Les <strong>deux routeurs</strong> ont une <strong>base de données synchronisée</strong> et sont <strong>complètement adjacents</strong> l'un à l'autre.</li>
+</ol>
+<p>En résumé, <strong>chaque routeur</strong> communique la <strong>liste</strong> des <strong>réseaux</strong> auxquels il est <strong>connecté</strong> au moyen de <strong>messages Link-State Advertisements</strong> (<strong>LSA</strong>) propagés <strong>progressivement</strong> à <strong>tous les routeurs du réseau.</strong><br>
+L'ensemble des <strong>LSA</strong> forme une <strong>base de données d'état des liens</strong> (<em>Link-State Database</em> - <strong>LSDB</strong>) pour <strong>chaque zone</strong> (<em>area</em>), <strong>identique pour tous les routeurs de cette zone</strong>.<br>
+Ensuite, <strong>chaque routeur</strong> utilise l'<mark><strong>algorithme de Dijkstra</strong></mark> (<em>Shortest Path First</em>), pour déterminer la <strong>route la plus rapide</strong> vers <strong>chacun des réseaux répertoriés</strong> dans la <strong>LSDB</strong>.</p>
+</details>
+<div class="admonition abstract">
+<p class="admonition-title">Organisation en zones</p>
+<p>Pour faciliter l'utilisation d'<strong>OSPF</strong> dans de <strong>vastes réseaux</strong>, les routeurs sont organisés de manière logique en <strong>zones</strong>, limitant la recherche de <strong>voisins</strong>, l'<strong>échange d'états de liens</strong>, et la <strong>découverte de la topologie</strong> aux <strong>routeurs d'une même zone</strong>. Cette organisation suit une <strong>structure hiérarchique simple</strong>, chaque zone ayant un <strong>numéro unique</strong>.</p>
+<p><figure markdown>
+<img alt="Topologie d'un réseau de routeurs OSPF répartis dans trois zones et avec des liaisons de communication de 10 ou 100 Mbit/s." src="../images/zones.png">
+<figcaption>Topologie d'un réseau de routeurs OSPF répartis dans trois zones et avec des liaisons de communication de 10 ou 100 Mbit/s (extrait du <i>Balabonski Terminale</i>).</figcaption>
+</figure></p>
+<p>La <strong>zone 0</strong>, appelée <strong><em>Backbone</em></strong>, est <strong>obligatoire</strong> pour <strong>OSPF</strong>, agissant comme une <strong>zone centrale</strong> à laquelle <strong>toutes les autres zones sont connectées</strong>. Les <strong>routeurs ABR</strong> (<em>Area Border Router</em>) sont <strong>spécifiques à cette architecture</strong>, étant les <strong>seuls</strong> à être <strong>rattachés à deux zones</strong> (leur zone et la Backbone). Les <strong>autres routeurs</strong> ne sont rattachés qu'à <strong>une seule zone</strong>, communiquant <strong>exclusivement</strong> avec les <strong>routeurs de cette zone</strong>.</p>
+<p>Cette <strong>structure hiérarchique</strong> entraîne une <strong>conséquence notable</strong> : pour <strong>échanger des paquets</strong> entre <strong>zones</strong> (c'est-à-dire avec des adresses source et destination situées dans des zones différentes), les <strong>routeurs</strong> doivent inévitablement <strong>diriger ces paquets</strong> vers leur <strong>routeur ABR</strong> pour <strong>sortir de leur zone</strong>.<br>
+Cependant, les <strong>messages LSA</strong> étant restreints à <strong>une zone</strong>, les <strong>routeurs</strong> n'ont <strong>pas connaissance de la topologie du reste du réseau</strong>, rendant impossible la détermination de la <strong>meilleure route pour les paquets inter-zone</strong>. Les <strong>routeurs ABR</strong> jouent un <strong>rôle crucial</strong> dans ce contexte, communiquant les <strong>meilleures routes de leur zone</strong> à <strong>toutes les autres zones</strong> via la <strong>Backbone</strong>. Ces informations, transmises à travers la <strong>Backbone</strong>, sont essentielles pour permettre à <strong>chaque routeur</strong> de <strong>calculer les chemins les plus courts</strong> pour <strong>l'ensemble du réseau</strong> sans avoir une connaissance complète de sa <strong>topologie</strong>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Multidiffusion (<em>multicast</em>)</p>
+<p>Pour une <strong>diffusion plus efficace</strong>, un <strong>routeur</strong> envoie ses messages <strong>HELLO</strong> en <strong>multidiffusion</strong> (ou <em>multicast</em>) vers <strong>tous les routeurs de sa zone</strong> toutes les <strong>10 secondes</strong>. En « écoutant » l'adresse <code>224.0.0.5</code> (qui est utilisée par défaut par le protocole <strong>OSPF</strong>), un <strong>routeur</strong> de la <strong>zone</strong> voit passer ces <strong>messages</strong> et peut y <strong>répondre</strong> s'il le souhaite.</p>
+<p>Une <strong>minuterie morte</strong> (<em>dead timer</em>) correspond à <strong>quatre fois la valeur</strong> de l’<strong>intervalle HELLO</strong>. Si un <strong>routeur</strong> sur un réseau <strong>Ethernet</strong> ne reçoit pas au moins <strong>un paquet HELLO</strong> d’un <strong>voisin OSPF</strong> pendant <strong>40 secondes</strong>, il est déclaré “non fonctionnel” (down) par les autres routeurs.</p>
+</div>
+<details class="quote">
+<summary>Un exemple d'application</summary>
+<p>Pour illustrer le fonctionnement du <strong>protocole OSPF</strong>, prenons comme exemple le <strong>réseau suivant</strong> :</p>
+<p><figure markdown>
+<img alt="Topologie d'un réseau de routeurs OSPF répartis dans trois zones et avec des liaisons de communication de 10 ou 100 Mbit/s." src="../images/zones.png">
+<figcaption>Topologie d'un réseau de routeurs OSPF répartis dans trois zones et avec des liaisons de communication de 10 ou 100 Mbit/s (extrait du <i>Balabonski Terminale</i>).</figcaption>
+</figure></p>
+<p>Il est composé de <strong>7 routeurs</strong> (<strong>R1</strong> à <strong>R7</strong>) <strong>connectés</strong> par des <strong>liaisons de communication</strong> ayant des <strong>bandes passantes</strong> de <strong>10</strong> ou <strong>100 Mbit/s</strong>.</p>
+<p>Les <strong>routeurs R1, R2 et R3</strong> sont <strong>regroupés</strong> dans la <strong>zone logique appelée Zone 1</strong>, tandis que les <strong>quatre autres routeurs</strong>, <strong>R4</strong> à <strong>R7</strong>, appartiennent à la <strong>zone</strong> appelée <strong>Zone 2</strong>.</p>
+<p>La <strong>Zone 0</strong>, constituée des <strong>routeurs R3 et R4</strong>, joue respectivement le rôle de <strong>routeur ABR</strong> pour les <strong>zones 1 et 2</strong>.</p>
+<hr>
+<p>Pendant la <strong>phase d'initialisation</strong>, les <strong>routeurs</strong> reçoivent leurs <strong>identificateurs</strong>, choisis comme étant les plus <strong>grandes adresses IP</strong> de leurs <strong>interfaces réseau</strong>. Par exemple, si le routeur <strong>R1</strong> est sur les sous-réseaux <code>10.1.1.0/30</code> et <code>10.1.2.0/30</code>, son <strong>identificateur</strong> serait l'<strong>adresse IP</strong> de son <strong>interface</strong> sur <code>10.1.2.0/30</code> : supposons qu'il s'agit de <code>10.1.2.1</code>.</p>
+<p>Le tableau ci-dessous répertorie les identificateurs associés aux routeurs.</p>
+<table>
+<thead>
+<tr>
+<th>identificateur</th>
+<th>routeur</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R1</td>
+<td>10.1.2.1</td>
+</tr>
+<tr>
+<td>R2</td>
+<td>10.1.3.1</td>
+</tr>
+<tr>
+<td>R3</td>
+<td>10.3.1.1</td>
+</tr>
+<tr>
+<td>R4</td>
+<td>10.2.5.1</td>
+</tr>
+<tr>
+<td>R5</td>
+<td>10.2.5.2</td>
+</tr>
+<tr>
+<td>R6</td>
+<td>10.2.4.2</td>
+</tr>
+<tr>
+<td>R7</td>
+<td>10.2.2.2</td>
+</tr>
+</tbody>
+</table>
+<p>Pour simplifier notre explication, nous utilisons les <strong>noms R1 à R7</strong> des <strong>routeurs</strong> au lieu de leurs <strong>identificateurs</strong>. </p>
+<hr>
+<p>Examinons d'abord comment le <strong>routeur R5</strong> interagit avec ses <strong>voisins</strong> et <strong>construit sa vision de la topologie du réseau</strong>.  </p>
+<ul>
+<li>Au <strong>démarrage du protocole</strong>, <strong>R5</strong> envoie des messages <strong>HELLO</strong> sur <strong>tous les sous-réseaux auxquels il est connecté</strong>. Initiant une <strong>relation de voisinage</strong> dès qu'il <strong>reçoit des réponses à ses messages</strong>, <strong>R5</strong> identifie ainsi ses <strong>voisins R4, R6 et R7</strong>. Ayant des informations sur la <strong>bande passante des liens vers ces trois routeurs</strong>, sa <strong>vision</strong> de la <strong>topologie du réseau</strong> est la suivante :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Lien</th>
+<th>sous-réseau</th>
+<th>coût</th>
+<th>zone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R5-R4</td>
+<td>10.2.5.0/28</td>
+<td>10</td>
+<td>2</td>
+</tr>
+<tr>
+<td>R5-R6</td>
+<td>10.2.3.0/28</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>R5-R7</td>
+<td>10.2.1.0/28</td>
+<td>1</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Après cette <strong>phase d'initialisation</strong>, les <strong>routeurs</strong> échangent des <strong>paquets LSA</strong> contenant les <strong>informations dont ils disposent</strong> sur la <strong>topologie du réseau</strong>.</li>
+<li><strong>R5</strong> reçoit des <strong>informations</strong> de <strong>R4</strong> sur leur <strong>liaison de communication avec R6</strong>. De même, il complète sa <strong>vision</strong> de la <strong>topologie</strong> avec le <strong>lien entre R6 et R7</strong>, dont la <strong>description</strong> est fournie par <strong>les deux routeurs</strong>. Une fois ces <strong>échanges terminés</strong>, la <strong>topologie</strong> du réseau vue par <strong>R5</strong> est <strong>définie ainsi</strong> :</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>Lien</th>
+<th>sous-réseau</th>
+<th>coût</th>
+<th>zone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>R5-R4</td>
+<td>10.2.5.0/28</td>
+<td>10</td>
+<td>2</td>
+</tr>
+<tr>
+<td>R5-R6</td>
+<td>10.2.3.0/28</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>R5-R7</td>
+<td>10.2.1.0/28</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>R4-R6</td>
+<td>10.2.4.0/28</td>
+<td>1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>R6-R7</td>
+<td>10.2.2.0/28</td>
+<td>10</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Possédant maintenant la <strong>topologie complète de sa zone</strong>, <strong>R5</strong> passe à la <strong>troisième étape du protocole</strong>, exécutant l'<mark><strong>algorithme de Dijkstra</strong></mark> pour déterminer les <strong>chemins les plus courts</strong> entre <strong>lui</strong> et <strong>tous les autres routeurs de la zone 2</strong> :</li>
+</ul>
+<p><img alt="Plus courts chemins - Zone 2" src="../images/plus_courts_chemins_zone2.png" width="350"></p>
+<p>On constate qu'il est <strong>plus efficace pour R5</strong> de passer par <strong>R6</strong> pour <strong>atteindre R4</strong> plutôt que d'utiliser le <strong>sous-réseau</strong> <code>10.2.5.0/28</code>. En effet, le <strong>coût du chemin</strong> <strong>R5 - R6 - R4</strong> est seulement de <strong>2</strong> (<strong>coût de 1</strong> pour la liaison <code>10.2.3.0/28</code> entre <strong>R5</strong> et <strong>R6</strong>, auquel s'ajoute un <strong>coût de 1</strong> pour le <strong>sous-réseau</strong> <code>10.2.4.0/28</code> entre <strong>R6</strong> et <strong>R4</strong>), tandis qu'il est de <strong>10</strong> pour la <strong>liaison directe</strong> entre <strong>R5</strong> et <strong>R4</strong>.</p>
+<hr>
+<p>Ces <strong>plus courts chemins</strong> sont <strong>spécifiques à la zone 2</strong>.</p>
+<p>Pour <strong>construire une table de routage pour l'ensemble du réseau</strong>, le <strong>routeur R5</strong> doit d'abord <strong>connaître quel routeur de sa zone</strong> est <strong>chargé</strong> de <strong>communiquer avec les autres zones</strong>. C'est lors de la phase d'<strong>initialisation de voisinage</strong> que <strong>R4 informe tous les routeurs de la zone 2 qu'il jouera le rôle de routeur ABR</strong>.<br>
+Ainsi, <strong>R4</strong> communique à <strong>toutes les autres zones</strong> (via la <strong>zone 0</strong>) les <strong>plus courts chemins</strong> entre <strong>lui</strong> et les <strong>autres routeurs de la zone 2</strong>. Inversement, il reçoit les <strong>plus courts chemins</strong> de la <strong>zone 1</strong>, qu'il communique à <strong>R5</strong>. De cette manière, <strong>R5</strong> apprend, par exemple, qu'il existe une <strong>route</strong> avec un <strong>coût de 3</strong> pour atteindre <strong>R1</strong> en passant par <strong>R4</strong>.</p>
+<p>En intégrant ces informations sur les <strong>meilleures routes de la zone 1</strong> à sa <strong>table de routage</strong>, il obtient la <strong>table suivante</strong> :</p>
+<table>
+<thead>
+<tr>
+<th>destination</th>
+<th>interface</th>
+<th>liaison</th>
+<th>coût</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10.2.1.0/28</td>
+<td></td>
+<td>fasteth1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.2.3.0/28</td>
+<td></td>
+<td>fasteth0</td>
+<td>1</td>
+</tr>
+<tr>
+<td>10.2.4.0/28</td>
+<td>10.2.3.1</td>
+<td>fasteth0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10.2.5.0/28</td>
+<td>10.2.3.1</td>
+<td>fasteth0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>10.3.1.0/30</td>
+<td>10.2.3.1</td>
+<td>fasteth0</td>
+<td>3</td>
+</tr>
+<tr>
+<td>10.1.2.0/30</td>
+<td>10.2.3.1</td>
+<td>fasteth0</td>
+<td>5</td>
+</tr>
+<tr>
+<td>10.1.3.0/30</td>
+<td>10.2.3.1</td>
+<td>fasteth0</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+</details>
+<h2 id="lalgorithme-de-dijkstra">L'algorithme de Dijkstra<a class="headerlink" href="#lalgorithme-de-dijkstra" title="Permanent link">¶</a></h2>
+<p>Voici une petite vidéo expliquant le principe de cet algorithme :</p>
+<p><div class="video-container"><iframe src="../src/animation_Dijkstra.mp4" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
+<details class="quote">
+<summary>Une exemple d'application</summary>
+<p>Prenons comme exemple le <strong>graphe</strong> suivant :</p>
+<p><figure markdown>
+<img alt="Un graphe" src="../images/graphe2.png" width="200">
+<figcaption>Un graphe</figcaption>
+</figure></p>
+<p>On souhaite déterminer <strong>le plus court chemin allant du point A au point E</strong>.</p>
+<p>Tout au long de l’algorithme, on va garder en mémoire le <strong>chemin le plus court</strong> depuis <strong>A</strong> vers <strong>chacun des autres sommets du graphe</strong>.</p>
+<p>Les <strong>distances minimales</strong> entre <strong>A</strong> et <strong>chaque autre sommet</strong> est initialisée à l’<strong>infini</strong>, à l’exception de la <strong>distance entre A et A</strong> qui est initialisée à <strong>0</strong>.</p>
+<p>On répète toujours le <strong>processus suivant</strong> :</p>
+<ol>
+<li>On choisit le <strong>sommet accessible</strong> de <strong>distance minimale</strong> par rapport à <strong>A</strong> comme <strong>sommet à explorer</strong> parmi les <strong>sommets n’ayant pas encore été explorés</strong>.<br>
+<em>Au début, on choisira le sommet A, car la distance minimale entre A est A est la plus petite (0)</em></li>
+<li>À partir de <strong>ce sommet</strong>, on <strong>explore ses sommets voisins</strong> et on <strong>met à jour</strong> les <strong>distances minimales</strong> pour chacun. On ne met à jour la distance <strong>que si elle est inférieure à celle que l’on avait stocké auparavant</strong>.
+<em>Par exemple, à partir de A, on peut se rendre sur les sommets B et C. La distance A-B est de 135, ce qui est inférieur à l’infini. La nouvelle distance minimale entre A et B devient donc 135. La distance A-C est de 4, ce qui est inférieur à l’infini. La nouvelle distance minimale entre A et C devient 4.</em></li>
+<li>On <strong>continue</strong> jusqu’à ce que l’on <strong>arrive au point d’arrivée</strong> ou bien que <strong>tous les sommets aient été explorés</strong>. Puis on <strong>renvoie</strong> enfin la <strong>distance minimale</strong> entre <strong>A et E</strong> qui a été stockée.</li>
+</ol>
+<p>Pour voir le <strong>déroulement complet de l'algorithme de Dijkstra</strong> sur <strong>ce graphe</strong> :</p>
+<p></p><center>
+<a href="../src/deroulement_Dijkstra.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.88.88 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.756.756 0 0 0-.49-.18M15 10V8h5v2h-5m-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41M10 0h2v5h-2V0M3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41m0-11.32 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83M7 10H2V8h5v2"></path></svg></span> Télécharger <code>deroulement_Dijkstra.pdf</code></a>
+</center>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Entrainement</p>
+<p>À votre tour, exécutez l'<strong>algorithme de Dijkstra</strong> pour déterminer la <strong>distance minimale</strong> entre le <em>noeud A</em> et <strong>tous les noeuds du graphe suivant</strong> :</p>
+<p><figure markdown>
+<img alt="Un graphe" src="../images/graphe.png" width="400">
+<figcaption>Un graphe</figcaption>
+</figure></p>
+</div>
+<h2 id="le-champ-ttl">Le champ TTL<a class="headerlink" href="#le-champ-ttl" title="Permanent link">¶</a></h2>
+<p>Étant donné que tous les réseaux ne sont pas administrés par des <strong>protocoles dynamiques</strong> tels que <strong>RIP</strong> ou <strong>OSPF</strong>, il est envisageable que des <strong>boucles de routage</strong> existent. C'est particulièrement le cas dans des réseaux où les tables sont <strong>configurées manuellement</strong> (routage <em>statique</em>). Pour éviter qu'un paquet ne circule indéfiniment dans de tels scénarios, les protocoles de communication comme <strong>IP</strong> ont mis en place un <strong>mécanisme</strong> basé sur un <strong>compteur de durée de vie</strong>.</p>
+<p>Ainsi, chaque paquet contient un octet appelé <mark><strong>TTL</strong></mark> (<em>Time To Live</em> en anglais) qui spécifie le <strong>nombre de routeurs</strong> que le <strong>paquet</strong> peut <strong>encore traverser</strong> (la durée de vie initiale du paquet est fixée par le protocole). À chaque passage par un routeur, ce compteur est <strong>décrémenté</strong>. Lorsqu'un routeur reçoit un paquet avec un <strong>compteur TTL</strong> à <code>0</code>, il le <strong>détruit</strong>. Cette méthode garantit qu'un paquet ne peut pas errer indéfiniment dans le réseau.</p>
+<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Exercice 1 - Composants dans un réseau</p>
 <p>Identifiez les différents composants du réseau suivant :</p>
-<p><img alt="Composants d'un réseau" src="../images/composants_reseau.png" /></p>
-<p>A = <code>..........</code><br />
-B = <code>..........</code><br />
-C = <code>..........</code><br />
+<p><img alt="Composants d'un réseau" src="../images/composants_reseau.png"></p>
+<p>A = <code>..........</code><br>
+B = <code>..........</code><br>
+C = <code>..........</code><br>
 D = <code>..........</code></p>
-</div>
+</div></div>
 
 
 

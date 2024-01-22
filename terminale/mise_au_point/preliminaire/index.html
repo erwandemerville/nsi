@@ -769,6 +769,8 @@
       
         
       
+        
+      
     
     
     
@@ -884,6 +886,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -2994,20 +3017,20 @@
                   
 
 
-<h1 id="activite-preliminaire">Activité préliminaire<a class="headerlink" href="#activite-preliminaire" title="Permanent link">&para;</a></h1>
+<div><h1 id="activite-preliminaire">Activité préliminaire<a class="headerlink" href="#activite-preliminaire" title="Permanent link">¶</a></h1>
 <div class="admonition quote">
 <p class="admonition-title">Source</p>
 <p>Inspiré d'une activité du <em>Hachette NSI Terminale</em>.</p>
 </div>
-<h2 id="ajouter-des-traces">Ajouter des traces<a class="headerlink" href="#ajouter-des-traces" title="Permanent link">&para;</a></h2>
+<h2 id="ajouter-des-traces">Ajouter des traces<a class="headerlink" href="#ajouter-des-traces" title="Permanent link">¶</a></h2>
 <p>La fonction suivante a été écrite par un élève de première suite à une consigne de son professeur pour implémenter l’<strong>algorithme de recherche dichotomique</strong>.</p>
 <p>La <strong>docstring</strong>, présenté dans la fonction, spécifie ce qu'elle est censée faire.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie l&#39;indice de l&#39;élément v dans le tableau t.</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">    Si l&#39;élément n&#39;est pas trouver, renvoie -1.</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">    :param t: (list) un tableau d&#39;entiers</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">    :param v: (int) l&#39;entier à chercher</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">    :return: (int) l&#39;indice de l&#39;élément s&#39;il est trouvé, ou -1 sinon &#39;&#39;&#39;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="sd">''' Renvoie l'indice de l'élément v dans le tableau t.</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">    Si l'élément n'est pas trouver, renvoie -1.</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">    :param t: (list) un tableau d'entiers</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">    :param v: (int) l'entier à chercher</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">    :return: (int) l'indice de l'élément s'il est trouvé, ou -1 sinon '''</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="n">gauche</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="n">droite</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
@@ -3025,14 +3048,14 @@
 <li>Tester la fonction recherche avec le tableau <code>[2, 3, 4, 6, 7]</code> et la valeur <strong>5</strong>.
 Qu’observe-t-on ? La fonction est-elle <strong>correcte</strong> ?</li>
 <li>
-<p>Ajouter des instructions <code>print</code> pour afficher les valeurs des variables au cours de l’exécution. Pour vous aider, vous pouvez également utiliser un <code>assert</code> pour tester l'<strong>invariant</strong>, ainsi qu'un <code>assert</code> pour tester le <strong>variant</strong>.<br />
-On rappelle l'<strong>invariant</strong> de la recherche dichotomique :<br />
-<span style="color:blue">« Si l'élément recherché <code>v</code> est présent dans le tableau, alors <code>v</code> est compris entre l'élément d'indice <code>gauche</code> et l'élément d'indice <code>droite</code> »</span>.<br />
-On peut écrire l'<strong>assertion</strong> vérifiant cet invariant de la manière suivante :<br />
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">assert</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">t</span> <span class="ow">or</span> <span class="p">(</span><span class="n">v</span> <span class="o">&gt;=</span> <span class="n">t</span><span class="p">[</span><span class="n">gauche</span><span class="p">]</span> <span class="ow">and</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">[</span><span class="n">droite</span><span class="p">])</span> <span class="c1">### ajout invariant</span>
+<p>Ajouter des instructions <code>print</code> pour afficher les valeurs des variables au cours de l’exécution. Pour vous aider, vous pouvez également utiliser un <code>assert</code> pour tester l'<strong>invariant</strong>, ainsi qu'un <code>assert</code> pour tester le <strong>variant</strong>.<br>
+On rappelle l'<strong>invariant</strong> de la recherche dichotomique :<br>
+<span style="color:blue">« Si l'élément recherché <code>v</code> est présent dans le tableau, alors <code>v</code> est compris entre l'élément d'indice <code>gauche</code> et l'élément d'indice <code>droite</code> »</span>.<br>
+On peut écrire l'<strong>assertion</strong> vérifiant cet invariant de la manière suivante :<br>
+</p><div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">assert</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">t</span> <span class="ow">or</span> <span class="p">(</span><span class="n">v</span> <span class="o">&gt;=</span> <span class="n">t</span><span class="p">[</span><span class="n">gauche</span><span class="p">]</span> <span class="ow">and</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">[</span><span class="n">droite</span><span class="p">])</span> <span class="c1">### ajout invariant</span>
 </span></code></pre></div>
-Autrement dit, soit <strong><code>v</code> n'est pas dans le tableau</strong>, soit (si <code>v</code> est dans le tableau) <strong><code>v</code> est compris entre les éléments d'indices <code>gauche</code> et <code>droite</code></strong>.<br />
-Pour ce qui est du <strong>variant</strong>, il s'agit de <code>droite - gauche + 1</code> (quantité <strong>positive et strictement décroissante</strong>). Il faut vérifier que cette quantité <strong>diminue à chaque itération de la boucle</strong>.</p>
+Autrement dit, soit <strong><code>v</code> n'est pas dans le tableau</strong>, soit (si <code>v</code> est dans le tableau) <strong><code>v</code> est compris entre les éléments d'indices <code>gauche</code> et <code>droite</code></strong>.<br>
+Pour ce qui est du <strong>variant</strong>, il s'agit de <code>droite - gauche + 1</code> (quantité <strong>positive et strictement décroissante</strong>). Il faut vérifier que cette quantité <strong>diminue à chaque itération de la boucle</strong>.
 </li>
 <li>
 <p>Identifier la ou les erreurs à l’aide de ces traces et les corriger.</p>
@@ -3043,26 +3066,26 @@ Pour ce qui est du <strong>variant</strong>, il s'agit de <code>droite - gauche 
 <summary>Corrigé détaillé exercice 1</summary>
 <ol>
 <li>Lorsque l'on exécute la fonction telle qu'elle est donnée, on se rend compte que l'<strong>exécution ne se termine pas</strong>. On peut donc deviner que la boucle <code>while</code> itère indéfiniment.</li>
-<li>En ajoutant une instruction <code>print</code> pour voir le contenu des variables <code>gauche</code>, <code>milieu</code> et <code>droite</code>, on voit qu'à un certain stade, les valeurs de <code>gauche</code> et de <code>droite</code> ne changent plus, ainsi la <strong>condition d'arrêt</strong> du <code>while</code> n'est jamais rencontrée :<br />
-<img alt="Screen de Thonny" src="../images/exo1_screen_thonny.png" /><br />
-Si l'on teste notre variant <code>droite - gauche + 1</code> avec une <strong>assertion</strong>, en modifiant le code de la manière suivante :<br />
+<li>En ajoutant une instruction <code>print</code> pour voir le contenu des variables <code>gauche</code>, <code>milieu</code> et <code>droite</code>, on voit qu'à un certain stade, les valeurs de <code>gauche</code> et de <code>droite</code> ne changent plus, ainsi la <strong>condition d'arrêt</strong> du <code>while</code> n'est jamais rencontrée :<br>
+<img alt="Screen de Thonny" src="../images/exo1_screen_thonny.png"><br>
+Si l'on teste notre variant <code>droite - gauche + 1</code> avec une <strong>assertion</strong>, en modifiant le code de la manière suivante :<br>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">gauche</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">droite</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
 </span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="n">amplitude</span> <span class="o">=</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># On stocke la valeur initiale du variant</span>
 </span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="k">while</span> <span class="n">gauche</span> <span class="o">&lt;</span> <span class="n">droite</span><span class="p">:</span>
 </span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="n">milieu</span> <span class="o">=</span> <span class="p">(</span><span class="n">gauche</span><span class="o">+</span><span class="n">droite</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;gauche = </span><span class="si">{</span><span class="n">gauche</span><span class="si">}</span><span class="s1"> | milieu = </span><span class="si">{</span><span class="n">milieu</span><span class="si">}</span><span class="s1"> | droite = </span><span class="si">{</span><span class="n">droite</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'gauche = </span><span class="si">{</span><span class="n">gauche</span><span class="si">}</span><span class="s1"> | milieu = </span><span class="si">{</span><span class="n">milieu</span><span class="si">}</span><span class="s1"> | droite = </span><span class="si">{</span><span class="n">droite</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>        <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">:</span>
 </span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>            <span class="n">gauche</span> <span class="o">=</span> <span class="n">milieu</span> 
 </span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="k">else</span><span class="p">:</span>
 </span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            <span class="n">droite</span> <span class="o">=</span> <span class="n">milieu</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="k">assert</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">amplitude</span><span class="p">,</span> <span class="s1">&#39;variant non vérifié&#39;</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="k">assert</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">amplitude</span><span class="p">,</span> <span class="s1">'variant non vérifié'</span>
 </span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="n">amplitude</span> <span class="o">=</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span>
 </span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="k">return</span> <span class="n">droite</span>
 </span></code></pre></div>
-En exécutant le programme, on obtient une <code>assertionError</code> : notre <strong>variant n'est pas vérifié</strong>, ce qui prouve donc que le programme <strong>ne se termine pas</strong>.<br />
-<img alt="Screen de Thonny 2" src="../images/exo1_screen_thonny_2.png" /><br />
+En exécutant le programme, on obtient une <code>assertionError</code> : notre <strong>variant n'est pas vérifié</strong>, ce qui prouve donc que le programme <strong>ne se termine pas</strong>.<br>
+<img alt="Screen de Thonny 2" src="../images/exo1_screen_thonny_2.png"><br>
 Par ailleurs, si on teste l'<strong>invariant</strong>, en rajoutant une <strong>assertion</strong> de la manière suivante :
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">gauche</span> <span class="o">=</span> <span class="mi">0</span>
@@ -3070,18 +3093,18 @@ Par ailleurs, si on teste l'<strong>invariant</strong>, en rajoutant une <strong
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="n">amplitude</span> <span class="o">=</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># On stocke la valeur initiale du variant</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="k">while</span> <span class="n">gauche</span> <span class="o">&lt;</span> <span class="n">droite</span><span class="p">:</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="n">milieu</span> <span class="o">=</span> <span class="p">(</span><span class="n">gauche</span><span class="o">+</span><span class="n">droite</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;gauche = </span><span class="si">{</span><span class="n">gauche</span><span class="si">}</span><span class="s1"> | milieu = </span><span class="si">{</span><span class="n">milieu</span><span class="si">}</span><span class="s1"> | droite = </span><span class="si">{</span><span class="n">droite</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'gauche = </span><span class="si">{</span><span class="n">gauche</span><span class="si">}</span><span class="s1"> | milieu = </span><span class="si">{</span><span class="n">milieu</span><span class="si">}</span><span class="s1"> | droite = </span><span class="si">{</span><span class="n">droite</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>    <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">:</span>
 </span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="n">gauche</span> <span class="o">=</span> <span class="n">milieu</span> 
 </span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>    <span class="k">else</span><span class="p">:</span>
 </span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>        <span class="n">droite</span> <span class="o">=</span> <span class="n">milieu</span>
 </span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>    <span class="k">assert</span> <span class="n">v</span> <span class="o">&gt;=</span> <span class="n">t</span><span class="p">[</span><span class="n">gauche</span><span class="p">]</span> <span class="ow">and</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">[</span><span class="n">droite</span><span class="p">]</span> <span class="c1">### ajout invariant</span>
-</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="k">assert</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">amplitude</span><span class="p">,</span> <span class="s1">&#39;variant non vérifié&#39;</span>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>    <span class="k">assert</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">amplitude</span><span class="p">,</span> <span class="s1">'variant non vérifié'</span>
 </span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>    <span class="n">amplitude</span> <span class="o">=</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span>
 </span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a><span class="k">return</span> <span class="n">droite</span>
 </span></code></pre></div>
-On obtient l'erreur suivante :<br />
-<img alt="Screen de Thonny 3" src="../images/exo1_screen_thonny_3.png" /><br />
+On obtient l'erreur suivante :<br>
+<img alt="Screen de Thonny 3" src="../images/exo1_screen_thonny_3.png"><br>
 La <strong>valeur recherchée</strong> doit toujours être comprise entre l'<strong>élément d'indice</strong> <code>gauche</code> et l'<strong>élément d'indice</strong> <code>droite</code>. Or, l'élément d'indice <code>droite</code> vaut initialement <code>len(t)</code>, alors que sa valeur devrait correspondre à l'indice du <strong>dernier élément du tableau</strong>, soit <code>len(t) - 1</code>, d'où l'erreur obtenue : <code>len(t)</code> ne correspond pas à un indice du tableau.</li>
 <li>Finalement, voici une liste des différentes erreurs que comporte la fonction donnée :<ol>
 <li><code>droite</code> doit être égal à l'<strong>indice du dernier élément</strong> du tableau, soit <code>len(t) - 1</code></li>
@@ -3093,15 +3116,15 @@ La <strong>valeur recherchée</strong> doit toujours être comprise entre l'<str
 </ol>
 </li>
 </ol>
-<p>Finalement, voici <strong>la bonne implémentation</strong> de cette fonction, après avoir corrigé toutes ces <strong>erreurs</strong>, ajouté des <code>print</code> pour afficher une <strong>trace d'exécution</strong>, ajouté une <strong>assertion</strong> pour le <strong>variant</strong> et pour l'<strong>invariant</strong> :<br />
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+<p>Finalement, voici <strong>la bonne implémentation</strong> de cette fonction, après avoir corrigé toutes ces <strong>erreurs</strong>, ajouté des <code>print</code> pour afficher une <strong>trace d'exécution</strong>, ajouté une <strong>assertion</strong> pour le <strong>variant</strong> et pour l'<strong>invariant</strong> :<br>
+</p><div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="c1"># TRACE</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="n">gauche</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>    <span class="n">droite</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
 </span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>    <span class="n">amplitude</span> <span class="o">=</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># On stocke la valeur initiale du variant</span>
 </span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>    <span class="k">while</span> <span class="n">gauche</span> <span class="o">&lt;=</span> <span class="n">droite</span><span class="p">:</span>
 </span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>        <span class="n">milieu</span> <span class="o">=</span> <span class="p">(</span><span class="n">gauche</span><span class="o">+</span><span class="n">droite</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;gauche = </span><span class="si">{</span><span class="n">gauche</span><span class="si">}</span><span class="s1"> | milieu = </span><span class="si">{</span><span class="n">milieu</span><span class="si">}</span><span class="s1"> | droite = </span><span class="si">{</span><span class="n">droite</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'gauche = </span><span class="si">{</span><span class="n">gauche</span><span class="si">}</span><span class="s1"> | milieu = </span><span class="si">{</span><span class="n">milieu</span><span class="si">}</span><span class="s1"> | droite = </span><span class="si">{</span><span class="n">droite</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">==</span> <span class="n">v</span><span class="p">:</span>
 </span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>            <span class="k">return</span> <span class="n">milieu</span>
 </span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>        <span class="k">elif</span> <span class="n">t</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">:</span>
@@ -3109,21 +3132,21 @@ La <strong>valeur recherchée</strong> doit toujours être comprise entre l'<str
 </span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>        <span class="k">else</span><span class="p">:</span>
 </span><span id="__span-4-14"><a id="__codelineno-4-14" name="__codelineno-4-14" href="#__codelineno-4-14"></a>            <span class="n">droite</span> <span class="o">=</span> <span class="n">milieu</span> <span class="o">-</span> <span class="mi">1</span>
 </span><span id="__span-4-15"><a id="__codelineno-4-15" name="__codelineno-4-15" href="#__codelineno-4-15"></a>        <span class="k">assert</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">t</span> <span class="ow">or</span> <span class="p">(</span><span class="n">v</span> <span class="o">&gt;=</span> <span class="n">t</span><span class="p">[</span><span class="n">gauche</span><span class="p">]</span> <span class="ow">and</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">[</span><span class="n">droite</span><span class="p">])</span> <span class="c1">### ajout invariant</span>
-</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;variant = </span><span class="si">{</span><span class="n">droite</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">gauche</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>        <span class="k">assert</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">amplitude</span><span class="p">,</span> <span class="s1">&#39;variant non vérifié&#39;</span>
+</span><span id="__span-4-16"><a id="__codelineno-4-16" name="__codelineno-4-16" href="#__codelineno-4-16"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'variant = </span><span class="si">{</span><span class="n">droite</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">gauche</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</span><span id="__span-4-17"><a id="__codelineno-4-17" name="__codelineno-4-17" href="#__codelineno-4-17"></a>        <span class="k">assert</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">amplitude</span><span class="p">,</span> <span class="s1">'variant non vérifié'</span>
 </span><span id="__span-4-18"><a id="__codelineno-4-18" name="__codelineno-4-18" href="#__codelineno-4-18"></a>        <span class="n">amplitude</span> <span class="o">=</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span>
 </span><span id="__span-4-19"><a id="__codelineno-4-19" name="__codelineno-4-19" href="#__codelineno-4-19"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
-</span></code></pre></div></p>
+</span></code></pre></div>
 </details>
 <details class="tip">
 <summary>Fonction finale uniquement exercice 1</summary>
 <p>Voici <strong>la bonne implémentation</strong> de cette fonction, après avoir corrigé toutes les <strong>erreurs</strong>, ajouté des <code>print</code> pour afficher une <strong>trace d'exécution</strong>, ajouté une <strong>assertion</strong> pour le <strong>variant</strong> et pour l'<strong>invariant</strong> :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">recherche</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie l&#39;indice de l&#39;élément v dans le tableau t.</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="sd">    Si l&#39;élément n&#39;est pas trouver, renvoie -1.</span>
-</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="sd">    :param t: (list) un tableau d&#39;entiers</span>
-</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="sd">    :param v: (int) l&#39;entier à chercher</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="sd">    :return: (int) l&#39;indice de l&#39;élément s&#39;il est trouvé, ou -1 sinon &#39;&#39;&#39;</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="sd">''' Renvoie l'indice de l'élément v dans le tableau t.</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="sd">    Si l'élément n'est pas trouver, renvoie -1.</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="sd">    :param t: (list) un tableau d'entiers</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="sd">    :param v: (int) l'entier à chercher</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="sd">    :return: (int) l'indice de l'élément s'il est trouvé, ou -1 sinon '''</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">v</span><span class="p">)</span> <span class="c1"># TRACE</span>
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>    <span class="n">gauche</span> <span class="o">=</span> <span class="mi">0</span>
@@ -3131,7 +3154,7 @@ La <strong>valeur recherchée</strong> doit toujours être comprise entre l'<str
 </span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>    <span class="n">amplitude</span> <span class="o">=</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># On stocke la valeur initiale du variant</span>
 </span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="k">while</span> <span class="n">gauche</span> <span class="o">&lt;=</span> <span class="n">droite</span><span class="p">:</span>
 </span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>        <span class="n">milieu</span> <span class="o">=</span> <span class="p">(</span><span class="n">gauche</span><span class="o">+</span><span class="n">droite</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
-</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;gauche = </span><span class="si">{</span><span class="n">gauche</span><span class="si">}</span><span class="s1"> | milieu = </span><span class="si">{</span><span class="n">milieu</span><span class="si">}</span><span class="s1"> | droite = </span><span class="si">{</span><span class="n">droite</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'gauche = </span><span class="si">{</span><span class="n">gauche</span><span class="si">}</span><span class="s1"> | milieu = </span><span class="si">{</span><span class="n">milieu</span><span class="si">}</span><span class="s1"> | droite = </span><span class="si">{</span><span class="n">droite</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
 </span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a>        <span class="k">if</span> <span class="n">t</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">==</span> <span class="n">v</span><span class="p">:</span>
 </span><span id="__span-5-16"><a id="__codelineno-5-16" name="__codelineno-5-16" href="#__codelineno-5-16"></a>            <span class="k">return</span> <span class="n">milieu</span>
 </span><span id="__span-5-17"><a id="__codelineno-5-17" name="__codelineno-5-17" href="#__codelineno-5-17"></a>        <span class="k">elif</span> <span class="n">t</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">v</span><span class="p">:</span>
@@ -3139,18 +3162,18 @@ La <strong>valeur recherchée</strong> doit toujours être comprise entre l'<str
 </span><span id="__span-5-19"><a id="__codelineno-5-19" name="__codelineno-5-19" href="#__codelineno-5-19"></a>        <span class="k">else</span><span class="p">:</span>
 </span><span id="__span-5-20"><a id="__codelineno-5-20" name="__codelineno-5-20" href="#__codelineno-5-20"></a>            <span class="n">droite</span> <span class="o">=</span> <span class="n">milieu</span> <span class="o">-</span> <span class="mi">1</span>
 </span><span id="__span-5-21"><a id="__codelineno-5-21" name="__codelineno-5-21" href="#__codelineno-5-21"></a>        <span class="k">assert</span> <span class="n">v</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">t</span> <span class="ow">or</span> <span class="p">(</span><span class="n">v</span> <span class="o">&gt;=</span> <span class="n">t</span><span class="p">[</span><span class="n">gauche</span><span class="p">]</span> <span class="ow">and</span> <span class="n">v</span> <span class="o">&lt;=</span> <span class="n">t</span><span class="p">[</span><span class="n">droite</span><span class="p">])</span> <span class="c1">### ajout invariant</span>
-</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;variant = </span><span class="si">{</span><span class="n">droite</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">gauche</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>        <span class="k">assert</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">amplitude</span><span class="p">,</span> <span class="s1">&#39;variant non vérifié&#39;</span>
+</span><span id="__span-5-22"><a id="__codelineno-5-22" name="__codelineno-5-22" href="#__codelineno-5-22"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'variant = </span><span class="si">{</span><span class="n">droite</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="n">gauche</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="si">}</span><span class="s1">'</span><span class="p">)</span>
+</span><span id="__span-5-23"><a id="__codelineno-5-23" name="__codelineno-5-23" href="#__codelineno-5-23"></a>        <span class="k">assert</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span> <span class="o">+</span> <span class="mi">1</span> <span class="o">&lt;</span> <span class="n">amplitude</span><span class="p">,</span> <span class="s1">'variant non vérifié'</span>
 </span><span id="__span-5-24"><a id="__codelineno-5-24" name="__codelineno-5-24" href="#__codelineno-5-24"></a>        <span class="n">amplitude</span> <span class="o">=</span> <span class="n">droite</span> <span class="o">-</span> <span class="n">gauche</span>
 </span><span id="__span-5-25"><a id="__codelineno-5-25" name="__codelineno-5-25" href="#__codelineno-5-25"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 </span></code></pre></div>
 </details>
-<h2 id="utiliser-un-debogueur">Utiliser un débogueur<a class="headerlink" href="#utiliser-un-debogueur" title="Permanent link">&para;</a></h2>
+<h2 id="utiliser-un-debogueur">Utiliser un débogueur<a class="headerlink" href="#utiliser-un-debogueur" title="Permanent link">¶</a></h2>
 <p>L’implémentation suivante de l’algorithme de <strong>tri par sélection</strong> contient elle aussi des erreurs.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span> <span class="nf">tri</span><span class="p">(</span><span class="n">t</span><span class="p">):</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Effectue un tri par sélection en place du tableau entré.</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="sd">    :param t: (list) Une liste d&#39;éléments à trier</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="sd">    :return: (None) On ne renvoie rien &#39;&#39;&#39;</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="sd">''' Effectue un tri par sélection en place du tableau entré.</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="sd">    :param t: (list) Une liste d'éléments à trier</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="sd">    :return: (None) On ne renvoie rien '''</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">t</span><span class="p">)):</span>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>        <span class="n">jmin</span> <span class="o">=</span> <span class="n">i</span>
@@ -3167,11 +3190,11 @@ La <strong>valeur recherchée</strong> doit toujours être comprise entre l'<str
 <ol>
 <li>Copier le programme ci-dessus dans l’éditeur de texte de <strong>Thonny</strong> et ajouter une instruction qui appelle la fonction tri avec le tableau <code>[4, 2, 6, 7, 1, 8]</code>.</li>
 <li>Exécuter le programme. Qu’observe-t-on ?</li>
-<li>Lancer le programme avec le <strong>débogueur</strong> de <strong>Thonny</strong> (l'icône juste à droite de celle permettant d'exécuter un script). Vous pouvez également mettre des <strong>points d'arrêt</strong> sur des lignes précises pour pouvoir exécuter votre programme normalement et ne l'arrêter qu'à ces points définis en vue du déboguage.<br />
-Un autre outil bien sympathique pour vous aider à déboguer un programme <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> <a href="https://pythontutor.com/" target="_blank">Python Tutor</a>.</li>
+<li>Lancer le programme avec le <strong>débogueur</strong> de <strong>Thonny</strong> (l'icône juste à droite de celle permettant d'exécuter un script). Vous pouvez également mettre des <strong>points d'arrêt</strong> sur des lignes précises pour pouvoir exécuter votre programme normalement et ne l'arrêter qu'à ces points définis en vue du déboguage.<br>
+Un autre outil bien sympathique pour vous aider à déboguer un programme <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <a href="https://pythontutor.com/" target="_blank">Python Tutor</a>.</li>
 <li>Identifier la ou les erreurs à l’aide du débogueur et les corriger.</li>
 </ol>
-</div>
+</div></div>
 
 
 

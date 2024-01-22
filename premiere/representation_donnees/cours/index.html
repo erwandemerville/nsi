@@ -1100,6 +1100,8 @@
       
         
       
+        
+      
     
     
     
@@ -1215,6 +1217,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -3528,22 +3551,22 @@
                   
 
 
-<h1 id="representation-des-donnees-en-machine">Représentation des données en machine<a class="headerlink" href="#representation-des-donnees-en-machine" title="Permanent link">&para;</a></h1>
+<div><h1 id="representation-des-donnees-en-machine">Représentation des données en machine<a class="headerlink" href="#representation-des-donnees-en-machine" title="Permanent link">¶</a></h1>
 <details class="abstract">
 <summary>Extrait du programme</summary>
 <p>Voici un extrait du programme indiquant les notions à maîtriser sur ce thème.</p>
-<p><img alt="Extrait du programme" src="../images/extrait_bo.png" /></p>
+<p><img alt="Extrait du programme" src="../images/extrait_bo.png"></p>
 </details>
 <p>Dans un ordinateur, toutes les <strong>informations</strong> (<strong>données</strong> ou <strong>programmes</strong>) sont représentées à l’aide de<strong> deux chiffres</strong> : le <strong>0</strong> et <strong>1</strong>, appelés chiffres binaires ou Binary Digits (<em>bits</em>) en anglais.</p>
 <p>Dans la mémoire d’un ordinateur (RAM, ROM, registres des microprocesseurs, etc.), ces chiffres binaires sont regroupés par <strong>paquets de 8</strong>, que l'on appelle <strong>octets</strong> (ou <em>bytes</em> en anglais), puis organisés en <strong>mots machine</strong> (ou <em>words</em> en anglais) de 2, 4 ou 8 octets en général. Un ordinateur de <strong>32 bits</strong> par exemple manipule directement des mots de <strong>4 octets</strong> (4 octets × 8 bits = 32 bits) lorsqu’il effectue des opérations en mémoire ou dans ses calculateurs.</p>
 <p>Le <strong>regroupement des bits</strong> en <strong>octets</strong> ou <strong>mots machine</strong> permet de représenter des données telles que des <strong>nombres entiers</strong>, des <strong>nombres réels</strong> (on verra que l'on ne peut représenter que des approximations des nombres réels), ou encore des <strong>caractères</strong> et des <strong>textes</strong> (on introduira la notion d'<em>encodage</em>).</p>
-<h2 id="representation-des-entiers-naturels">Représentation des entiers naturels<a class="headerlink" href="#representation-des-entiers-naturels" title="Permanent link">&para;</a></h2>
+<h2 id="representation-des-entiers-naturels">Représentation des entiers naturels<a class="headerlink" href="#representation-des-entiers-naturels" title="Permanent link">¶</a></h2>
 <p>L'encodage le plus simple est celui des <strong>nombres entiers naturels</strong> (nombres entiers positifs).</p>
-<p>Pour représenter des nombres, les ordinateurs utilisent le <strong>système binaire</strong> :<br />
+<p>Pour représenter des nombres, les ordinateurs utilisent le <strong>système binaire</strong> :<br>
 Le codage binaire d’un <strong>nombre positif</strong> <span class="arithmatex">\(n\)</span> est la suite de <strong>bits</strong> <span class="arithmatex">\(b_k ... b_o\)</span> telle que
-<span class="arithmatex">\(n = b_k × 2^k + b_{k − 1} × 2^{k − 1} + ... + b_1 × 2^1 + b_0 × 2^0\)</span> . Ainsi le nombre <span class="arithmatex">\(42\)</span> en <strong>décimal</strong> est représenté par <span class="arithmatex">\(101010\)</span> en <strong>binaire</strong> :<br />
-<span class="arithmatex">\(42 = \textbf{1} × 2⁵ + \textbf{0} × 2⁴ + \textbf{1} × 2³ + \textbf{0} × 2² + \textbf{0} × 2¹ + \textbf{1} × 2⁰\)</span><br />
-<span class="arithmatex">\(42 = \textbf{1} × 2⁵ + \textbf{1} × 2³ + \textbf{1} × 2⁰\)</span><br />
+<span class="arithmatex">\(n = b_k × 2^k + b_{k − 1} × 2^{k − 1} + ... + b_1 × 2^1 + b_0 × 2^0\)</span> . Ainsi le nombre <span class="arithmatex">\(42\)</span> en <strong>décimal</strong> est représenté par <span class="arithmatex">\(101010\)</span> en <strong>binaire</strong> :<br>
+<span class="arithmatex">\(42 = \textbf{1} × 2⁵ + \textbf{0} × 2⁴ + \textbf{1} × 2³ + \textbf{0} × 2² + \textbf{0} × 2¹ + \textbf{1} × 2⁰\)</span><br>
+<span class="arithmatex">\(42 = \textbf{1} × 2⁵ + \textbf{1} × 2³ + \textbf{1} × 2⁰\)</span><br>
 <span class="arithmatex">\(42 = 32 + 8 + 2\)</span></p>
 <div class="admonition note">
 <p class="admonition-title">À vous de jouer</p>
@@ -3563,9 +3586,9 @@ Le codage binaire d’un <strong>nombre positif</strong> <span class="arithmatex
 <p>Le <strong>codage binaire</strong> d'un nombre décimal consiste à passer de la <strong>base 10</strong> (base <em>décimale</em>) à la <strong>base 2</strong>, mais il existe d'autres bases comme la <strong>base 8</strong> (base <em>octale</em>), ou la <strong>base 16</strong> (base <em>hexadécimale</em>).</p>
 <div class="admonition tip">
 <p class="admonition-title">Chiffres autorisés selon la base X de représentation</p>
-<p><strong>Base 2</strong> : chiffre <span class="arithmatex">\(0\)</span> et <span class="arithmatex">\(1\)</span>.<br />
-<strong>Base 8</strong> : chiffre <span class="arithmatex">\(0, 1, 2, 3, 4, 5, 6, 7\)</span>.<br />
-<strong>Base 10</strong> : chiffre <span class="arithmatex">\(0, 1, 2, 3, 4, 5, 6, 7, 8, 9\)</span><br />
+<p><strong>Base 2</strong> : chiffre <span class="arithmatex">\(0\)</span> et <span class="arithmatex">\(1\)</span>.<br>
+<strong>Base 8</strong> : chiffre <span class="arithmatex">\(0, 1, 2, 3, 4, 5, 6, 7\)</span>.<br>
+<strong>Base 10</strong> : chiffre <span class="arithmatex">\(0, 1, 2, 3, 4, 5, 6, 7, 8, 9\)</span><br>
 <strong>Base 16</strong> : chiffre <span class="arithmatex">\(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F\)</span> avec <span class="arithmatex">\(A = 1010, B = 1110, C = 12 10, D = 13 10, E = 1410, F = 1510\)</span>.</p>
 </div>
 <details class="tip">
@@ -3651,7 +3674,7 @@ Le codage binaire d’un <strong>nombre positif</strong> <span class="arithmatex
 </tbody>
 </table>
 <p>La <strong>valeur</strong> de cette <strong>séquence</strong>, que l'on notera <span class="arithmatex">\(N\)</span>, est calculée comme suit :</p>
-<p><span class="arithmatex">\(N = 0 × 2^7 + 1 × 2^6 + 0 × 2^5 + 0 × 2^4 + 1 × 2^3 + 1 × 2^2 + 0 × 2^1 + 1 × 2^0\)</span><br />
+<p><span class="arithmatex">\(N = 0 × 2^7 + 1 × 2^6 + 0 × 2^5 + 0 × 2^4 + 1 × 2^3 + 1 × 2^2 + 0 × 2^1 + 1 × 2^0\)</span><br>
 <span class="arithmatex">\(N = 77_{10}\)</span></p>
 <p>Plus généralement, une séquence <span class="arithmatex">\(b_{k−1} , b_{k−2} , . . . , b_1, b_0\)</span> de <span class="arithmatex">\(k\)</span> bits <span class="arithmatex">\(b_i\)</span> correspond au nombre <span class="arithmatex">\(N\)</span> suivant :</p>
 <p><span class="arithmatex">\(N = b_{k−1} × 2^{k−1} + b_{k−2} × 2^{k−2} + · · · + b_1 × 2^1 + d_0 × b^0\)</span></p>
@@ -3661,35 +3684,35 @@ Le codage binaire d’un <strong>nombre positif</strong> <span class="arithmatex
 <summary>Rappels - Base 16 (hexadécimale)</summary>
 <p>...</p>
 </details>
-<h3 id="methode-des-divisions-euclidiennes-successives">Méthode des divisions euclidiennes successives<a class="headerlink" href="#methode-des-divisions-euclidiennes-successives" title="Permanent link">&para;</a></h3>
+<h3 id="methode-des-divisions-euclidiennes-successives">Méthode des divisions euclidiennes successives<a class="headerlink" href="#methode-des-divisions-euclidiennes-successives" title="Permanent link">¶</a></h3>
 <p>Si l'on souhaite par exemple représenter <span class="arithmatex">\(235_{10}\)</span> en <strong>base 2</strong> :</p>
 <figure>
-<p><img alt="Exemple divisions successives" src="../images/divisions_successives.png" width="340" />
+<p><img alt="Exemple divisions successives" src="../images/divisions_successives.png" width="340">
   </p>
 <figcaption>Méthode des divisions successives</figcaption>
 </figure>
 <p>L'écriture binaire de <span class="arithmatex">\(235_{10}\)</span> sur <strong>8 bits</strong> est donc <span class="arithmatex">\(1110 1011_2\)</span>.</p>
 <p>Si l'on souhaite convertir un nombre vers la <strong>base 16</strong> (en hexadécimal), le principe est le même, mais on <strong>divisera par 16</strong> au lieu de diviser par 2. On rappelle qu'en <strong>hexadécimal</strong>, les valeurs vont de <span class="arithmatex">\(0\)</span> à <span class="arithmatex">\(F\)</span> : <span class="arithmatex">\(1, 2, ..., 8, 9, A, B, ... E, F\)</span>, les restes supérieurs à <span class="arithmatex">\(9\)</span> devront donc être remplacés par <strong>une lettre</strong>.</p>
-<h3 id="methode-des-soustractions">Méthode des soustractions<a class="headerlink" href="#methode-des-soustractions" title="Permanent link">&para;</a></h3>
+<h3 id="methode-des-soustractions">Méthode des soustractions<a class="headerlink" href="#methode-des-soustractions" title="Permanent link">¶</a></h3>
 <p>Pour convertir un <strong>entier</strong> noté <span class="arithmatex">\(N\)</span> en <strong>base</strong> <span class="arithmatex">\(X\)</span>, on procède comme suit :</p>
 <p>La plus grande puissance de <span class="arithmatex">\(X\)</span> qui est <strong>inférieure ou égale</strong> à <span class="arithmatex">\(N\)</span> est soustraite à <span class="arithmatex">\(N\)</span>. Ce processus de soustraction est <strong>répété</strong> sur le <strong>reste</strong> de la différence, jusqu’à obtenir un résultat <strong>égal à 0</strong>. Le nombre <span class="arithmatex">\(N\)</span> exprimé en base <span class="arithmatex">\(X\)</span> est alors obtenu en notant <strong>le nombre de fois</strong> où une même puissance de <span class="arithmatex">\(X\)</span> a été retirée, et cela pour chaque puissance depuis la plus grande apparaissant, dans l’ordre décroissant des puissances.</p>
 <p>Dans le cas d'une conversion vers la <strong>base 2</strong>, chaque puissance de <span class="arithmatex">\(X\)</span> ne peut être retirée qu'<strong>une seule fois</strong> (car les seules valeurs possibles en binaire sont <strong>0</strong> et <strong>1</strong>.)</p>
 <p><strong><u>Exemples</u></strong> :</p>
-<p>Si l'on souhaite <strong>convertir</strong> <span class="arithmatex">\(125_{10}\)</span> en <strong>base 2</strong> :<br />
-On sait que <span class="arithmatex">\(2⁰ = 1; 2¹ = 2; 2² = 4; 2³ = 8; 2⁴ = 16; 2⁵ = 32; 2⁶ = 64; 2⁷ = 128\)</span>.<br />
+<p>Si l'on souhaite <strong>convertir</strong> <span class="arithmatex">\(125_{10}\)</span> en <strong>base 2</strong> :<br>
+On sait que <span class="arithmatex">\(2⁰ = 1; 2¹ = 2; 2² = 4; 2³ = 8; 2⁴ = 16; 2⁵ = 32; 2⁶ = 64; 2⁷ = 128\)</span>.<br>
 <span class="arithmatex">\(125 - \textbf{64} = 61; 61 - \textbf{32} = 29; 29 - \textbf{16} = 13; 13 - \textbf{8} = 5; 5 - \textbf{4} = 1; 1 - \textbf{1} = 0;\)</span></p>
 <p>Donc <span class="arithmatex">\(125_{10} = 0111~1101\)</span>.</p>
-<p>Si l'on souhaite <strong>convertir</strong> <span class="arithmatex">\(235_{10}\)</span> en <strong>base 8</strong> :<br />
-On sait que <span class="arithmatex">\(8^0 = 1; 8¹ = 1; 8^2 = 64; 8^3 = 512\)</span>.  <br />
-<span class="arithmatex">\(235 – 64 = 171; 171 – 64 = 107; 107 – 64 = 43; 43 – 8 = 35; 35 – 8 = 27; 27 – 8 = 19;\)</span><br />
+<p>Si l'on souhaite <strong>convertir</strong> <span class="arithmatex">\(235_{10}\)</span> en <strong>base 8</strong> :<br>
+On sait que <span class="arithmatex">\(8^0 = 1; 8¹ = 1; 8^2 = 64; 8^3 = 512\)</span>.  <br>
+<span class="arithmatex">\(235 – 64 = 171; 171 – 64 = 107; 107 – 64 = 43; 43 – 8 = 35; 35 – 8 = 27; 27 – 8 = 19;\)</span><br>
 <span class="arithmatex">\(19 – 8 = 11; 11 – 8 = 3; 3 – 1 = 2; 2 – 1 = 1; 1 – 1 = 0\)</span></p>
 <p>Donc <span class="arithmatex">\(23510 = 3 × 64 + 5 × 8 + 3 × 1 = 353_8\)</span>.</p>
-<h3 id="convertir-un-nombre-de-la-base-2-vers-la-base-10">Convertir un nombre de la base 2 vers la base 10<a class="headerlink" href="#convertir-un-nombre-de-la-base-2-vers-la-base-10" title="Permanent link">&para;</a></h3>
+<h3 id="convertir-un-nombre-de-la-base-2-vers-la-base-10">Convertir un nombre de la base 2 vers la base 10<a class="headerlink" href="#convertir-un-nombre-de-la-base-2-vers-la-base-10" title="Permanent link">¶</a></h3>
 <p>Pour convertir un nombre de la <strong>base 2</strong> vers la <strong>base 16</strong>, c'est simple : il suffit de faire des paquets de <strong>4 bits</strong>, et de coder <strong>chaque paquet</strong> avec <strong>une valeur hexadécimale</strong>. Par exemple, si l'on reprend l'écriture binaire précédente : <span class="arithmatex">\(1110~1011_2\)</span>, le premier groupe <span class="arithmatex">\(1110\)</span> se code par <span class="arithmatex">\(14\)</span> en <strong>décimal</strong>, et donc par <span class="arithmatex">\(E\)</span> en <strong>hexadécimal</strong>. Le deuxième groupe <span class="arithmatex">\(1011\)</span> se code par <span class="arithmatex">\(11\)</span> en <strong>décimal</strong>, et donc par <span class="arithmatex">\(B\)</span> en <strong>hexadécimal</strong>. Ainsi, <span class="arithmatex">\(235_{10} = 1110~1011_2 = EB_{16}\)</span>.</p>
 <p>À l'inverse, convertir un nombre exprimé en <strong>base 16</strong> vers la <strong>base 2</strong> s’effectue en remplaçant simplement <strong>chacun</strong> des <strong>chiffres</strong> du nombre en <strong>base 16</strong> par leur <strong>équivalent binaire</strong> sur <strong>4 bits</strong>.</p>
-<p><strong><u>Par exemple</u></strong> :<br />
+<p><strong><u>Par exemple</u></strong> :<br>
 <span class="arithmatex">\(45 A_{16} = 0100~0101~1010_2\)</span> et <span class="arithmatex">\(1100~1111_2 = CF_{16}\)</span></p>
-<h3 id="quelques-exercices">Quelques exercices<a class="headerlink" href="#quelques-exercices" title="Permanent link">&para;</a></h3>
+<h3 id="quelques-exercices">Quelques exercices<a class="headerlink" href="#quelques-exercices" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Exercice 1</p>
 <p>En utilisant la méthode des <strong>divisions euclidiennes successives</strong>, donner l'<strong>écriture binaire</strong> du nombre <strong>147</strong> sur <strong>8 bits</strong>. À partir de l'<strong>écriture binaire</strong> obtenue, donner son <strong>écriture hexadécimale</strong>.</p>
@@ -3704,7 +3727,7 @@ On sait que <span class="arithmatex">\(8^0 = 1; 8¹ = 1; 8^2 = 64; 8^3 = 512\)</
 <p>Vous pourrez vérifier vos réponses avec la fonction <code>bin</code> de <strong>Python</strong>. La fonction <code>bin</code> prend un <strong>nombre entier</strong> en entrée, et renvoie la <strong>représentation binaire</strong> de ce nombre.</p>
 <p>Par exemple :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="s1">&#39;0b101010&#39;</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="s1">'0b101010'</span>
 </span></code></pre></div>
 <p>Ici, on voit que l'écriture binaire de <strong>42</strong> est <span class="arithmatex">\(101010\)</span>. Le <code>0b</code> indique <strong>la base</strong> (<code>b</code> pour <em>binaire</em>, <code>o</code> pour octal, <code>x</code> pour hexadécimal).</p>
 </div>
@@ -3719,7 +3742,7 @@ On sait que <span class="arithmatex">\(8^0 = 1; 8¹ = 1; 8^2 = 64; 8^3 = 512\)</
 <p>Vous pourrez vérifier vos réponses avec la fonction <code>hex</code> de <strong>Python</strong>. La fonction <code>hex</code> prend un <strong>nombre entier</strong> en entrée, et renvoie la <strong>représentation hexadécimale</strong> de ce nombre.</p>
 <p>Par exemple :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s1">&#39;0x2A&#39;</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="s1">'0x2A'</span>
 </span></code></pre></div>
 <p>Ici, on voit que l'écriture hexadécimale de <strong>42</strong> est <span class="arithmatex">\(2A\)</span>. Le <code>0x</code> indique <strong>la base</strong> (<code>b</code> pour <em>binaire</em>, <code>o</code> pour octal, <code>x</code> pour hexadécimal).</p>
 </div>
@@ -3727,10 +3750,10 @@ On sait que <span class="arithmatex">\(8^0 = 1; 8¹ = 1; 8^2 = 64; 8^3 = 512\)</
 <p class="admonition-title">Exercice 5</p>
 <p>Quelle est la valeur en <strong>base 10</strong> de l’entier qui s’écrit <span class="arithmatex">\(BEEF\)</span> en <strong>base 16</strong> ? </p>
 </div>
-<h2 id="representation-des-entiers-relatifs">Représentation des entiers relatifs<a class="headerlink" href="#representation-des-entiers-relatifs" title="Permanent link">&para;</a></h2>
+<h2 id="representation-des-entiers-relatifs">Représentation des entiers relatifs<a class="headerlink" href="#representation-des-entiers-relatifs" title="Permanent link">¶</a></h2>
 <p>La <strong>représentation d’un nombre signé</strong> s’effectue selon une <strong>séquence binaire</strong> d’une <strong>longueur fixée</strong> à <span class="arithmatex">\(n\)</span> bits. Cette longueur peut être de <strong>8 bits</strong>, de <strong>16 bits</strong> ou de <strong>32 bits</strong>.</p>
 <p>Plusieurs <strong>conventions de représentation</strong> existent. Le choix de la convention est effectué par le <strong>constructeur de la machine</strong>, et éventuellement par le <strong>programmeur</strong> en fonction du <strong>type</strong> affecté aux variables déclarées. Dans le langage <strong>C</strong> par exemple, déclarer une variable avec un type <code>int</code>, détermine une <strong>représentation sur 2 octets</strong> selon la <strong>convention du complément à 2</strong>. Par ailleurs, une déclaration avec un type <code>unsigned short</code> détermine une <strong>représentation d’un nombre sur 8 bits</strong>, <strong>non signé</strong>.</p>
-<h3 id="convention-de-la-valeur-signee">Convention de la valeur signée<a class="headerlink" href="#convention-de-la-valeur-signee" title="Permanent link">&para;</a></h3>
+<h3 id="convention-de-la-valeur-signee">Convention de la valeur signée<a class="headerlink" href="#convention-de-la-valeur-signee" title="Permanent link">¶</a></h3>
 <p>Dans cette convention, le <strong>bit de poids fort</strong> (c'est-à-dire celui qui est tout à gauche de l'écriture) correspond au <strong>signe</strong> (<span class="arithmatex">\(0\)</span> pour un entier positif, <span class="arithmatex">\(1\)</span> pour un entier négatif). Tous les autres bits codent la <strong>valeur absolue du nombre</strong>.</p>
 <p><u>Exemple</u> :</p>
 <ul>
@@ -3770,7 +3793,7 @@ On sait que <span class="arithmatex">\(8^0 = 1; 8¹ = 1; 8^2 = 64; 8^3 = 512\)</
 </tr>
 </tbody>
 </table>
-<h3 id="convention-du-complement-a-2">Convention du complément à 2<a class="headerlink" href="#convention-du-complement-a-2" title="Permanent link">&para;</a></h3>
+<h3 id="convention-du-complement-a-2">Convention du complément à 2<a class="headerlink" href="#convention-du-complement-a-2" title="Permanent link">¶</a></h3>
 <p>Le <strong>complément à 2</strong> ou <em>complément vrai</em> d’un nombre binaire <span class="arithmatex">\(N = b_{n–1} ... b_0\)</span> s’obtient en ajoutant la valeur <span class="arithmatex">\(1\)</span> au <strong>complément restreint</strong> ou <strong>complément à 1</strong> de ce nombre.</p>
 <p>Le <strong>complément à 1</strong> ou <em>complément restreint</em> d’un nombre binaire <span class="arithmatex">\(N = b_{n-1} ... b_0\)</span> s’obtient en <strong>inversant</strong> la <strong>valeur</strong> de <strong>chacun des bits</strong> de ce nombre.</p>
 <p><u>Exemple</u> :</p>
@@ -3862,7 +3885,7 @@ On sait que <span class="arithmatex">\(8^0 = 1; 8¹ = 1; 8^2 = 64; 8^3 = 512\)</
 </tr>
 </tbody>
 </table>
-<h4 id="binaire-vers-decimal">Binaire vers décimal<a class="headerlink" href="#binaire-vers-decimal" title="Permanent link">&para;</a></h4>
+<h4 id="binaire-vers-decimal">Binaire vers décimal<a class="headerlink" href="#binaire-vers-decimal" title="Permanent link">¶</a></h4>
 <p>L'<strong>opération inverse</strong>, permettant de <strong>retrouver un entier codé</strong> avec la <strong>convention du complément à 2</strong>, est assez simple à effectuer.</p>
 <p>Le <strong>bit de poids fort</strong> (celui qui est tout à gauche) de la <strong>chaîne binaire</strong> peut être également inter-prété comme <strong>bit de signe</strong>. Ainsi :</p>
 <ul>
@@ -3872,20 +3895,20 @@ On sait que <span class="arithmatex">\(8^0 = 1; 8¹ = 1; 8^2 = 64; 8^3 = 512\)</
 <div class="admonition quote">
 <p class="admonition-title">Conversion binaire (complément à 2) vers décimal</p>
 <p><span class="arithmatex">\(0011~0011_2\)</span> : Le <strong>bit de poids fort est à 0</strong> (nombre <em>positif</em>), donc on <strong>convertit simplement vers la base 10</strong> :</p>
-<p><center>
+<p></p><center>
 <span class="arithmatex">\(0011~0011_2 = 2^0 + 2^1 + 2^4 + 2^5 = 1 + 2 + 16 + 32 = + 51_{10}\)</span>
-</center></p>
+</center>
 <p><span class="arithmatex">\(1011~1100_2\)</span> : Le <strong>bit de poids fort est à 1</strong> (nombre <em>négatif</em>), donc :</p>
 <ul>
 <li>soit on refait le <strong>complément à 2</strong>,</li>
-<li>soit on inverse tous les bits situés <strong>à gauche</strong> du <strong>premier bit à 1</strong> en partant de la droite, ce qui donne ici : <span class="arithmatex">\(\textbf{1011 1}100_2 → \textbf{0100 0}100_2\)</span>.<br />
+<li>soit on inverse tous les bits situés <strong>à gauche</strong> du <strong>premier bit à 1</strong> en partant de la droite, ce qui donne ici : <span class="arithmatex">\(\textbf{1011 1}100_2 → \textbf{0100 0}100_2\)</span>.<br>
 <span class="arithmatex">\(0100~0100_2 = 68_{10}\)</span>, donc il ne reste qu'à ajouter le <strong>signe</strong> <span class="arithmatex">\(-\)</span> </li>
 </ul>
-<p><center>
+<p></p><center>
 <span class="arithmatex">\(1011~1100_2 = - 68_{10}\)</span>
-</center></p>
+</center>
 </div>
-<h4 id="bit-de-carry">Bit de carry<a class="headerlink" href="#bit-de-carry" title="Permanent link">&para;</a></h4>
+<h4 id="bit-de-carry">Bit de carry<a class="headerlink" href="#bit-de-carry" title="Permanent link">¶</a></h4>
 <p>Lors d’une opération arithmétique effectuée sur des nombres de <span class="arithmatex">\(p\)</span> <strong>bits</strong>, un <span class="arithmatex">\(p + 1er\)</span> <strong>bit</strong> peut être généré. Ce bit supplémentaire de <strong>poids fort</strong> est mémorisé comme étant le <strong>bit de carry</strong> par un <strong>indicateur de 1 bit</strong> noté <span class="arithmatex">\(C\)</span> dans un registre du processeur appelé <strong>registre d'état</strong> (<em>PSW</em>).</p>
 <p><em><u>Par exemple</u></em>, l'addition de <span class="arithmatex">\(0111~1111_2\)</span> (<span class="arithmatex">\(+ 127\)</span>) et <span class="arithmatex">\(1111~1110\)</span> (<span class="arithmatex">\(- 2\)</span>) :</p>
 <table>
@@ -3913,7 +3936,7 @@ On sait que <span class="arithmatex">\(8^0 = 1; 8¹ = 1; 8^2 = 64; 8^3 = 512\)</
 </tbody>
 </table>
 <p>Ici, le <strong>9ème bit</strong> est le <strong>bit de carry</strong>.</p>
-<h4 id="overflow">Overflow<a class="headerlink" href="#overflow" title="Permanent link">&para;</a></h4>
+<h4 id="overflow">Overflow<a class="headerlink" href="#overflow" title="Permanent link">¶</a></h4>
 <p>Lorsque l'on effectue une <strong>opération mathématique</strong> impliquant des nombres de même signe et ayant chacun <span class="arithmatex">\(p\)</span> <strong>bits</strong>, il est possible que le résultat <strong>dépasse la capacité de représentation de la machine</strong>. En d'autres termes, ce résultat peut être en dehors de la plage des nombres que la machine peut représenter en utilisant la convention choisie pour ces nombres signés.</p>
 <p>Dans de tels cas, le résultat obtenu est incorrect par rapport à son <strong>interprétation</strong> prévue : on appelle cela un <strong><em>overflow</em></strong> ou un <em>dépassement de capacité</em>. Tout comme le <em>carry</em>, la survenue d'un overflow est enregistrée dans le <strong>registre d'état</strong> (<em>PSW</em>) du processeur à l'aide d'un <strong>indicateur d'un bit</strong>, généralement noté <span class="arithmatex">\(O\)</span>.</p>
 <p><em><u>Par exemple</u></em>, si l'on effectue l'<strong>addition</strong> des nombres <span class="arithmatex">\(+ 127_{10}\)</span> et <span class="arithmatex">\(+ 2_{10}\)</span> représentés selon la convention du <strong>complément à 2</strong> :</p>
@@ -3939,7 +3962,7 @@ On sait que <span class="arithmatex">\(8^0 = 1; 8¹ = 1; 8^2 = 64; 8^3 = 512\)</
 </tbody>
 </table>
 <p>Le <strong>résultat obtenu</strong> est le nombre <span class="arithmatex">\(– 127_{10}\)</span> et non pas la valeur attendue <span class="arithmatex">\(+ 129_{10}\)</span>. Il y a ici un <strong>dépassement de capacité</strong>. En effet, l’intervalle des nombres représentables sur <span class="arithmatex">\(8\)</span> <strong>bits</strong> selon la convention du <strong>complément à 2</strong> est <span class="arithmatex">\([– 127_{10}, + 127_{10}]\)</span>.</p>
-<hr />
+<hr>
 <div class="admonition question">
 <p class="admonition-title">Pourquoi préfère t-on cette convention ?</p>
 <p>La convention du <strong>complément à 2</strong> est généralement préférée à celle de la <strong>valeur signée</strong> pour les raisons suivantes :</p>
@@ -3973,7 +3996,7 @@ On sait que <span class="arithmatex">\(8^0 = 1; 8¹ = 1; 8^2 = 64; 8^3 = 512\)</
 <p class="admonition-title">Plus d'exercices</p>
 <p>Vous pouvez également vous entraîner sur les exercices proposés à la fin de <a href="https://iut-info.univ-reims.fr/users/nourrit/codages/page9.html" target="_blank">cette page</a> (<em>IUT de Reims</em>).</p>
 </div>
-<h3 id="addition-et-soustraction-de-nombres-entiers">Addition et soustraction de nombres entiers<a class="headerlink" href="#addition-et-soustraction-de-nombres-entiers" title="Permanent link">&para;</a></h3>
+<h3 id="addition-et-soustraction-de-nombres-entiers">Addition et soustraction de nombres entiers<a class="headerlink" href="#addition-et-soustraction-de-nombres-entiers" title="Permanent link">¶</a></h3>
 <p>Pour <strong>additionner deux nombres entiers</strong> en <strong>écriture binaire</strong>, on utilise le <strong>même principe</strong> que dans le <strong>système décimal</strong>, en additionnant les chiffres un à un, de droite à gauche. La table d’addition des nombres binaires est la suivante :</p>
 <ul>
 <li>0 + 0 = 0</li>
@@ -4037,7 +4060,7 @@ On sait que <span class="arithmatex">\(8^0 = 1; 8¹ = 1; 8^2 = 64; 8^3 = 512\)</
 </tr>
 </tbody>
 </table>
-<p>Si l'on souhaite faire une <strong>soustraction</strong>, par exemple si l'on souhaite <strong>soustraire</strong> <span class="arithmatex">\(14\)</span> à <span class="arithmatex">\(42\)</span>, le plus simple est de faire une <strong>addition</strong> entre <span class="arithmatex">\(42\)</span> et le <strong>complément à 2</strong> de <span class="arithmatex">\(14\)</span>.<br />
+<p>Si l'on souhaite faire une <strong>soustraction</strong>, par exemple si l'on souhaite <strong>soustraire</strong> <span class="arithmatex">\(14\)</span> à <span class="arithmatex">\(42\)</span>, le plus simple est de faire une <strong>addition</strong> entre <span class="arithmatex">\(42\)</span> et le <strong>complément à 2</strong> de <span class="arithmatex">\(14\)</span>.<br>
 Le <strong>complément à 2</strong> de <span class="arithmatex">\(14_{10} = 00001110_2\)</span> est <span class="arithmatex">\(11110010_2\)</span>, donc :</p>
 <table>
 <thead>
@@ -4096,15 +4119,15 @@ Le <strong>complément à 2</strong> de <span class="arithmatex">\(14_{10} = 000
 <p><strong>Dépassement de capacité</strong> :</p>
 <p>L’addition de deux nombres entiers peut <strong>dépasser</strong> la <strong>capacité de représentation</strong> des mots binaires: en effet, pour représenter un nombre <span class="arithmatex">\(n\)</span> en binaire, il faut <span class="arithmatex">\(\lceil log2(n) \rceil\)</span> <strong>bits</strong>. La somme de deux nombres <span class="arithmatex">\(n\)</span> et <span class="arithmatex">\(m\)</span> est inférieure ou égale à <span class="arithmatex">\(2 × max(n, m)\)</span>, donc le <strong>nombre de bits nécessaires</strong> pour représenter cette somme est, au plus : <span class="arithmatex">\(\lceil log(2 × max (n,m)) \rceil = \lceil log(max(n,m) + 1) \rceil\)</span>, soit <strong>1 bit de plus</strong> que le <strong>nombre de bits significatifs</strong> du <strong>plus grand</strong> des deux nombres.</p>
 <p>Il existe des solutions pour tester l'existence d'un dépassement, par exemple en utilisant un <em>OU EXCLUSIF</em> (<em>xor</em>) pour comparer la retenue entrante et la retenue sortante de l'addition des deux bits de poids fort. Il y a dépassement si ces deux bits sont opposés.</p>
-<h2 id="representation-des-nombres-reels">Représentation des nombres réels<a class="headerlink" href="#representation-des-nombres-reels" title="Permanent link">&para;</a></h2>
+<h2 id="representation-des-nombres-reels">Représentation des nombres réels<a class="headerlink" href="#representation-des-nombres-reels" title="Permanent link">¶</a></h2>
 <p>Nous avons vu que le langage Python était capable de calculer des nombres décimaux particuliers appelés <strong>nombres flottants</strong> (type <code>float</code>). Nous allons voir que ces nombres ont un encodage très compact, ce codage pouvant être sur <strong>32</strong> ou sur <strong>64 bits</strong>, ce qui permet de représenter des nombres très grands ou de très petits nombres, bien au-delà de ce qu’il est possible de représenter avec un codage des entiers sur le même nombre de bits.</p>
-<p>Pour <strong>représenter en binaire</strong> des <strong>nombres réels</strong> (nombres avec une partie fractionnaire), il faut décomposer celle-ci en une <strong>somme de puissances inverses</strong> de <strong>2</strong> : <span class="arithmatex">\(b_1 ... b_k\)</span> est la représentation binaire de <span class="arithmatex">\(d(0 \lt d \lt 1)\)</span> si :<br />
-<span class="arithmatex">\(d = b_1 × 2^{-1} + b_2 × 2^{-2} + b_3 × 2^{-3} + ... + b_k × 2^{-k}\)</span><br />
+<p>Pour <strong>représenter en binaire</strong> des <strong>nombres réels</strong> (nombres avec une partie fractionnaire), il faut décomposer celle-ci en une <strong>somme de puissances inverses</strong> de <strong>2</strong> : <span class="arithmatex">\(b_1 ... b_k\)</span> est la représentation binaire de <span class="arithmatex">\(d(0 \lt d \lt 1)\)</span> si :<br>
+<span class="arithmatex">\(d = b_1 × 2^{-1} + b_2 × 2^{-2} + b_3 × 2^{-3} + ... + b_k × 2^{-k}\)</span><br>
 <span class="arithmatex">\(d = b_1 × \frac{1}{2} + b_2 × \frac{1}{2^2} + b_3 × \frac{1}{2³} + ... + b_k × \frac{1}{2^k}\)</span>.</p>
 <div class="admonition warning">
 <p class="admonition-title">Codage inexact</p>
 <p>Contrairement au codage de la partie entière, le codage de la <strong>partie décimale</strong> peut être <strong>infini</strong>, de la même façon que des nombres fractionnaires peuvent avoir une partie décimales infinie, comme par exemple <span class="arithmatex">\(\frac{1}{3} = 0,3333...\)</span>.</p>
-<p>Il y a donc des nombres décimaux que l'on ne peut pas <strong>représenter de manière exacte</strong> en <strong>machine</strong>. Si l'on prend le nombre <code>0.3</code> par exemple, le nombre de bits nécessaire pour le représenter est infini. Si on le représente sur <strong>un octet</strong> par exemple, son <strong>écriture binaire</strong> serait <code>01001100</code>, soit :<br />
+<p>Il y a donc des nombres décimaux que l'on ne peut pas <strong>représenter de manière exacte</strong> en <strong>machine</strong>. Si l'on prend le nombre <code>0.3</code> par exemple, le nombre de bits nécessaire pour le représenter est infini. Si on le représente sur <strong>un octet</strong> par exemple, son <strong>écriture binaire</strong> serait <code>01001100</code>, soit :<br>
 <span class="arithmatex">\(0 × \frac{1}{2} + 1 × \frac{1}{4} + 0 × \frac{1}{8}+ 0 × \frac{1}{16} + 1 × \frac{1}{32} + 1 × \frac{1}{64} + 0 × \frac{1}{2} + 0 × \frac{1}{256}\)</span>, ce qui vaut <span class="arithmatex">\(0,296875\)</span>.</p>
 <p>Les <strong>nombres réels</strong> représentables avec une <strong>partie décimale finie</strong> en <strong>binaire</strong> sont ceux dont le dénominateur est une <strong>puissance de 2</strong>, comme <span class="arithmatex">\(\frac{1}{2}\)</span>, <span class="arithmatex">\(\frac{1}{4}\)</span>, <span class="arithmatex">\(\frac{1}{8}\)</span>...</p>
 </div>
@@ -4120,20 +4143,20 @@ Le <strong>complément à 2</strong> de <span class="arithmatex">\(14_{10} = 000
 <p class="admonition-title">À vous de jouer 3</p>
 <p>Quelle est la <strong>représentation décimale</strong> du nombre réel dont l'écriture binaire est : <span class="arithmatex">\(0.0101\)</span> ? <span class="arithmatex">\(1011.00001\)</span> ?</p>
 </div>
-<h3 id="codage-en-virgule-fixe">Codage en virgule fixe<a class="headerlink" href="#codage-en-virgule-fixe" title="Permanent link">&para;</a></h3>
+<h3 id="codage-en-virgule-fixe">Codage en virgule fixe<a class="headerlink" href="#codage-en-virgule-fixe" title="Permanent link">¶</a></h3>
 <p>Une approche initiale pour la représentation des nombres réels avec une partie fractionnaire est le codage en <strong>virgule fixe</strong>, où la <strong>partie entière</strong> et la <strong>partie décimale</strong> sont toutes deux représentées sur un <strong>nombre préalablement défini de bits</strong>, par exemple <strong>8 bits</strong> chacune.</p>
 <p>Avec cette approche, pour encoder les <strong>nombres réels négatifs</strong>, on utilise simplement le <strong>complément à 2</strong> après avoir effectué le codage en virgule fixe du nombre positif équivalent.</p>
-<p>Cependant, cette méthode présente des limitations importantes. Tout d'abord, l'intervalle de nombres que l'on peut représenter reste restreint, correspondant à la plage d'entiers sur 8 bits, c'est-à-dire <span class="arithmatex">\([-128, +127]\)</span>. De plus, la représentation de la <strong>partie décimale</strong> est également <strong>limitée</strong>, avec la possibilité de représenter seulement <span class="arithmatex">\(256\)</span> valeurs distinctes. En conséquence il devient impossible de représenter tous les nombres réels, tous les nombres décimaux, et même des nombres "simples" tels que <span class="arithmatex">\(0,1\)</span> de manière exacte.<br />
+<p>Cependant, cette méthode présente des limitations importantes. Tout d'abord, l'intervalle de nombres que l'on peut représenter reste restreint, correspondant à la plage d'entiers sur 8 bits, c'est-à-dire <span class="arithmatex">\([-128, +127]\)</span>. De plus, la représentation de la <strong>partie décimale</strong> est également <strong>limitée</strong>, avec la possibilité de représenter seulement <span class="arithmatex">\(256\)</span> valeurs distinctes. En conséquence il devient impossible de représenter tous les nombres réels, tous les nombres décimaux, et même des nombres "simples" tels que <span class="arithmatex">\(0,1\)</span> de manière exacte.<br>
 Seules quelques valeurs décimales spécifiques peuvent être représentées précisément, tandis que d'autres doivent être approximées. Ces approximations sont la principale source d'erreurs de calcul.</p>
-<p><center>
-<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5m1-8h8.5L11 16.5l1.42 1.42L18.34 12l-5.92-5.92L11 7.5l3.5 3.5H6v2Z"/></svg></span> <a href="https://iut-info.univ-reims.fr/users/nourrit/codages/page11.html" target="_blank">Voir des exemples d'encodage en virgule fixe</a>
-</center></p>
-<h3 id="codage-en-virgule-flottante-norme-ieee-754">Codage en virgule flottante - Norme IEEE 754<a class="headerlink" href="#codage-en-virgule-flottante-norme-ieee-754" title="Permanent link">&para;</a></h3>
+<p></p><center>
+<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5m1-8h8.5L11 16.5l1.42 1.42L18.34 12l-5.92-5.92L11 7.5l3.5 3.5H6v2Z"></path></svg></span> <a href="https://iut-info.univ-reims.fr/users/nourrit/codages/page11.html" target="_blank">Voir des exemples d'encodage en virgule fixe</a>
+</center>
+<h3 id="codage-en-virgule-flottante-norme-ieee-754">Codage en virgule flottante - Norme IEEE 754<a class="headerlink" href="#codage-en-virgule-flottante-norme-ieee-754" title="Permanent link">¶</a></h3>
 <p>La <strong>norme IEEE 754</strong> définit un <strong>format standardisé</strong> qui vise à unifier la représentation des nombres flottants, qui est très diverse selon les constructeurs.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Formats de représentation</p>
 <p>Cette norme propose <strong>deux formats de représentation</strong> : un format <strong>simple précision</strong> sur <strong>32 bits</strong> et un format <strong>double précision</strong> sur <strong>64 bits</strong>.</p>
-<p><img alt="Les formats IEEE 754" src="../images/formats_IEEE754.png" width="600" /></p>
+<p><img alt="Les formats IEEE 754" src="../images/formats_IEEE754.png" width="600"></p>
 </div>
 <p>En <strong>simple précision</strong>, la <strong>chaîne de 32 bits</strong> représentant le nombre est décomposée en :</p>
 <ul>
@@ -4150,9 +4173,9 @@ Seules quelques valeurs décimales spécifiques peuvent être représentées pr�
 <div class="admonition abstract">
 <p class="admonition-title">Représentation d'un nombre flottant</p>
 <p>La <strong>représentation d’un nombre flottant selon la norme IEEE 754</strong> est similaire à l’<strong>écriture scientifique</strong> d’un <strong>nombre décimal</strong>, à savoir une <strong>décomposition en trois parties</strong> : un signe <span class="arithmatex">\(s\)</span>, une mantisse <span class="arithmatex">\(m\)</span> et un exposant <span class="arithmatex">\(n\)</span>. De manière générale, un nombre flottant a la forme suivante :</p>
-<p><center>
+<p></p><center>
 <span style="font-size: 1.4em;"> <span class="arithmatex">\((−1)^sm × 2^{(n−d)}\)</span></span>
-</center></p>
+</center>
 </div>
 <p>La norme <strong>IEEE 754</strong> présente quelques différences avec l’<strong>écriture scientifique</strong> :</p>
 <ul>
@@ -4160,41 +4183,41 @@ Seules quelques valeurs décimales spécifiques peuvent être représentées pr�
 <li>la <strong>mantisse</strong> est maintenant dans l’intervalle <span class="arithmatex">\([1, 2[\)</span>,</li>
 <li>l’<strong>exposant</strong> <span class="arithmatex">\(n\)</span> est <strong>décalé</strong> (ou <strong>biaisé</strong>) d’une valeur <span class="arithmatex">\(d\)</span> qui dépend du <strong>format</strong> choisi (<strong>32</strong> ou <strong>64 bits</strong>).</li>
 </ul>
-<h4 id="bit-de-signe">Bit de signe<a class="headerlink" href="#bit-de-signe" title="Permanent link">&para;</a></h4>
+<h4 id="bit-de-signe">Bit de signe<a class="headerlink" href="#bit-de-signe" title="Permanent link">¶</a></h4>
 <p>Le <strong>signe</strong> <span class="arithmatex">\(s\)</span> est codé sur <strong>un bit</strong> (le <strong>bit de poids fort</strong> de l’entier de <strong>32 bits</strong> ou de <strong>64 bits</strong>) : ce bit vaut <span class="arithmatex">\(0\)</span> si le nombre représenté est <strong>positif</strong>, et <span class="arithmatex">\(1\)</span> s'il est <strong>négatif</strong>.</p>
-<h4 id="exposant">Exposant<a class="headerlink" href="#exposant" title="Permanent link">&para;</a></h4>
+<h4 id="exposant">Exposant<a class="headerlink" href="#exposant" title="Permanent link">¶</a></h4>
 <p>Pour pouvoir représenter à la fois des <strong>exposants positifs</strong> et <strong>négatifs</strong> dans la <strong>norme IEEE 754</strong>, une méthode différente du <strong>complément à 2</strong> est employée. Cette méthode consiste à <strong>stocker l'exposant</strong> sous une <strong>forme décalée</strong>, en tant qu'<strong>entier non signé</strong>. Plus précisément, l'<strong>exposant décalé</strong>, noté <span class="arithmatex">\(n\)</span>, est représenté par un <strong>entier</strong> de <strong>8 bits</strong> pouvant prendre des valeurs entre <span class="arithmatex">\(0\)</span> et <span class="arithmatex">\(255\)</span> :</p>
 <ul>
 <li>dans le format <strong>32 bits</strong>, ce décalage est de <span class="arithmatex">\(d = +127_{10}\)</span>, ce qui permet de représenter des exposants signés dans l'intervalle <span class="arithmatex">\([-127_{10}, + 128_{10}]\)</span>. Toutefois, les valeurs <span class="arithmatex">\(0_{10}\)</span> et <span class="arithmatex">\(255_{10}\)</span> sont <strong>réservées</strong> pour représenter des <strong>cas spéciaux</strong>, donc les exposants signés <strong>réellement utilisables</strong> se situent dans l'intervalle <span class="arithmatex">\([-126_{10}, + 127_{10}]\)</span>,</li>
 <li>dans le format <strong>64 bits</strong>, ce décalage est de <span class="arithmatex">\(d = +1023_{10}\)</span>, ce qui permet de représenter des exposants signés dans l'intervalle <span class="arithmatex">\([-1023_{10}, + 1024_{10}]\)</span>. Toutefois, les valeurs <span class="arithmatex">\(0_{10}\)</span> et <span class="arithmatex">\(2047_{10}\)</span> sont <strong>réservées</strong> pour représenter des <strong>cas spéciaux</strong>, donc les exposants signés <strong>réellement utilisables</strong> se situent dans l'intervalle <span class="arithmatex">\([-1022_{10}, + 1023_{10}]\)</span>,</li>
 <li>de manière <strong>générale</strong>, pour un <strong>exposant</strong> stocké sur un nombre <span class="arithmatex">\(n\)</span> de <strong>bits</strong>, le <strong>décalage</strong> sera de <span class="arithmatex">\(2^{n - 1} - 1\)</span>.</li>
 </ul>
-<h4 id="mantisse">Mantisse<a class="headerlink" href="#mantisse" title="Permanent link">&para;</a></h4>
+<h4 id="mantisse">Mantisse<a class="headerlink" href="#mantisse" title="Permanent link">¶</a></h4>
 <p>La <strong>mantisse</strong> <span class="arithmatex">\(m\)</span> est toujours comprise dans l’intervalle <span class="arithmatex">\([1, 2[\)</span>, et représente un <strong>nombre</strong> de la forme <span class="arithmatex">\(1, xx . . . xx\)</span>, c’est-à-dire un nombre commençant nécessairement par le <strong>chiffre 1</strong>. Par conséquent, pour gagner <strong>1 bit</strong> de précision, les <strong>23 bits</strong> (en <em>simple précision</em>) ou <strong>52 bits</strong> (en <em>double précision</em>) dédiés à la <strong>mantisse</strong> sont uniquement utilisés pour représenter les <strong>chiffres après la virgule</strong>, qu’on appelle la <strong>fraction de la mantisse</strong>.</p>
 <p>Ainsi, si les <strong>23 bits</strong> dédiés à la mantisse sont <span class="arithmatex">\(b_1 b_2 . . . b_{23}\)</span> , alors la mantisse représente le nombre <span class="arithmatex">\(1 + b_1 × 2^{−1} + b_2 × 2^{−2} + · · · + b_{23} × 2^{−23}\)</span>.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Représentation <em>normalisée</em> d'un nombre flottant</p>
 <p>Ainsi, avec la <strong>mantisse</strong> sous sa <strong>forme normalisée</strong>, les <strong>nombres flottants</strong> seront représentés comme suit.</p>
 <p>Sur <strong>32 bits</strong> :</p>
-<p><center>
+<p></p><center>
 <span style="font-size: 1.4em;"><span class="arithmatex">\((−1)^s \times 1, f \times 2^{(e−127)}\)</span></span>
-</center></p>
+</center>
 <p>Sur <strong>64 bits</strong> :</p>
-<p><center>
+<p></p><center>
 <span style="font-size: 1.4em;"><span class="arithmatex">\((−1)^s \times 1, f \times 2^{(e−1023)}\)</span></span>
-</center></p>
+</center>
 <p>où <span class="arithmatex">\(s\)</span> est le <strong>bit de signe</strong>, <span class="arithmatex">\(f\)</span> est la <strong>fraction de la mantisse</strong> et <span class="arithmatex">\(e\)</span> est l'<strong>exposant</strong>.</p>
 </div>
 <div class="admonition quote">
 <p class="admonition-title">Conversion binaire (virgule flottante) → décimal (<em>extrait du Balabonski Première</em>)</p>
 <p>Voici un <strong>mot de 32 bits</strong> et le <strong>nombre décimal</strong> qu'il représente.</p>
-<p><img alt="Mot en décimal" src="../images/exemple_iee754.png" width="450" /></p>
+<p><img alt="Mot en décimal" src="../images/exemple_iee754.png" width="450"></p>
 <p>Pour voir des <strong>exemples supplémentaires</strong> :
-<center>
-<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5m1-8h8.5L11 16.5l1.42 1.42L18.34 12l-5.92-5.92L11 7.5l3.5 3.5H6v2Z"/></svg></span> <a href="https://iut-info.univ-reims.fr/users/nourrit/codages/page13.html" target="_blank">IUT de Reims - Virgule flottante → décimal</a>
-</center></p>
+</p><center>
+<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5m1-8h8.5L11 16.5l1.42 1.42L18.34 12l-5.92-5.92L11 7.5l3.5 3.5H6v2Z"></path></svg></span> <a href="https://iut-info.univ-reims.fr/users/nourrit/codages/page13.html" target="_blank">IUT de Reims - Virgule flottante → décimal</a>
+</center>
 </div>
-<h4 id="recapitulatif-des-encodages">Récapitulatif des encodages<a class="headerlink" href="#recapitulatif-des-encodages" title="Permanent link">&para;</a></h4>
+<h4 id="recapitulatif-des-encodages">Récapitulatif des encodages<a class="headerlink" href="#recapitulatif-des-encodages" title="Permanent link">¶</a></h4>
 <table>
 <thead>
 <tr>
@@ -4226,17 +4249,17 @@ représenter les <strong>nombres décimaux</strong> compris (approximativement) 
 <p class="admonition-title">Conversion décimal → binaire (virgule flottante)</p>
 <p>On cherche à <strong>représenter</strong> le <strong>nombre</strong> <span class="arithmatex">\(– 10,125_{10}\)</span> selon le format <strong>IEEE 754 simple précision</strong>.</p>
 <p><span class="arithmatex">\(10,125_{10} = 1010,001_{2} = 1,010001_{2} × 2^3\)</span>.</p>
-<p>L’exposant <span class="arithmatex">\(e = 3\)</span> est translaté de la valeur <span class="arithmatex">\(+127_{10}\)</span>.<br />
+<p>L’exposant <span class="arithmatex">\(e = 3\)</span> est translaté de la valeur <span class="arithmatex">\(+127_{10}\)</span>.<br>
 <span class="arithmatex">\(e' = e + 127_{10} = 130_{10} = 10000010_2\)</span>.</p>
 <p>Le <strong>signe</strong> de la mantisse est <strong>négatif</strong> et vaut donc <strong>1</strong>.</p>
 <p>Finalement, le codage du nombre <span class="arithmatex">\(- 10,125_{10}\)</span> donne la <strong>chaîne binaire</strong> suivante :
 <span class="arithmatex">\(1~10000010~01000100000000000000000_2 = C1220000_{16}\)</span></p>
 <p>Pour plus de détails sur ce codage et des exemples supplémentaires :
-<center>
-<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5m1-8h8.5L11 16.5l1.42 1.42L18.34 12l-5.92-5.92L11 7.5l3.5 3.5H6v2Z"/></svg></span> <a href="https://iut-info.univ-reims.fr/users/nourrit/codages/page12.html" target="_blank">IUT de Reims - Codage en virgule flottante</a>
-</center></p>
+</p><center>
+<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5m1-8h8.5L11 16.5l1.42 1.42L18.34 12l-5.92-5.92L11 7.5l3.5 3.5H6v2Z"></path></svg></span> <a href="https://iut-info.univ-reims.fr/users/nourrit/codages/page12.html" target="_blank">IUT de Reims - Codage en virgule flottante</a>
+</center>
 </div>
-<h4 id="valeurs-speciales">Valeurs spéciales<a class="headerlink" href="#valeurs-speciales" title="Permanent link">&para;</a></h4>
+<h4 id="valeurs-speciales">Valeurs spéciales<a class="headerlink" href="#valeurs-speciales" title="Permanent link">¶</a></h4>
 <table>
 <thead>
 <tr>
@@ -4279,25 +4302,25 @@ représenter les <strong>nombres décimaux</strong> compris (approximativement) 
 </tr>
 </tbody>
 </table>
-<h4 id="nombres-denormalises">Nombres dénormalisés<a class="headerlink" href="#nombres-denormalises" title="Permanent link">&para;</a></h4>
+<h4 id="nombres-denormalises">Nombres dénormalisés<a class="headerlink" href="#nombres-denormalises" title="Permanent link">¶</a></h4>
 <p>Comme vu précédemment, si l’<strong>exposant</strong> <span class="arithmatex">\(e\)</span> d’un <strong>nombre flottant</strong> (sur <strong>32 bits</strong>) est compris entre <span class="arithmatex">\(1\)</span> et <span class="arithmatex">\(254\)</span>, la valeur représentée par l’encodage est :</p>
-<p><center>
+<p></p><center>
 <span class="arithmatex">\((−1)^s \times 1, f \times 2^{(e−127)}\)</span>
-</center></p>
+</center>
 <p>Les nombres représentés ainsi sont dits <strong>normalisés</strong>. Avec cet encodage, le <strong>plus petit nombre décimal positif représentable</strong> est donc <span class="arithmatex">\(2^{−126}\)</span> (soit <span class="arithmatex">\(∼ 10^{−38}\)</span>).</p>
 <p>Étant donné que la <strong>mantisse</strong> est <strong>implicitement</strong> de la forme <span class="arithmatex">\(1, f\)</span> , il n’y a pas de nombres représentables dans l’intervalle <span class="arithmatex">\([0, 2^{−126} [\)</span>, là où il y en a <span class="arithmatex">\(2^{23}\)</span> dans l’intervalle <span class="arithmatex">\([1 × 2^{−126} , 2 \times 2^{−126}]\)</span> = <span class="arithmatex">\([2^{−126} , 2^{−125}]\)</span>.</p>
 <p>Afin de pouvoir représenter des <strong>très petits nombres</strong>, la norme <strong><em>IEEE 754</em></strong> permet d’encoder des nombres de la forme suivante, avec une <strong>mantisse</strong> commençant <strong>implicitement</strong> par un <span class="arithmatex">\(0\)</span> au lieu d'un <span class="arithmatex">\(1\)</span> :</p>
-<p><center>
+<p></p><center>
 <span class="arithmatex">\((−1)^s \times 0, f \times 2^{−126}\)</span>
-</center></p>
+</center>
 <p>On appelle ces nombres flottants des <strong>nombres dénormalisés</strong>, dont :</p>
 <ul>
 <li>l'<strong>exposant</strong> <span class="arithmatex">\(e\)</span> est à <span class="arithmatex">\(0\)</span>,</li>
 <li>la <strong>fraction</strong> de la <strong>mantisse</strong> est <strong>différente</strong> de <span class="arithmatex">\(0\)</span>. </li>
 </ul>
-<p>La <strong>plus petite valeur représentable</strong> avec des <strong>nombres dénormalisés</strong> est ainsi :<br />
+<p>La <strong>plus petite valeur représentable</strong> avec des <strong>nombres dénormalisés</strong> est ainsi :<br>
 <span class="arithmatex">\(2^{−23} × 2^{−126} = 2^{−149}\)</span> représentée par la <strong>chaîne binaire</strong> <span class="arithmatex">\(0~00000000~00000000000000000000001_2\)</span>.</p>
-<h3 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">&para;</a></h3>
+<h3 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Exercice 8</p>
 <p>Donner la <strong>représentation flottante</strong> en <strong>simple précision</strong> de <span class="arithmatex">\(128\)</span> et <span class="arithmatex">\(−32,75\)</span>.</p>
@@ -4318,12 +4341,12 @@ représenter les <strong>nombres décimaux</strong> compris (approximativement) 
 <li>Virgule flottante → décimal : <a href="https://iut-info.univ-reims.fr/users/nourrit/codages/page13.html" target="_blank">exercices à la fin de cette page</a></li>
 </ul>
 </div>
-<h2 id="representation-des-textes">Représentation des textes<a class="headerlink" href="#representation-des-textes" title="Permanent link">&para;</a></h2>
+<h2 id="representation-des-textes">Représentation des textes<a class="headerlink" href="#representation-des-textes" title="Permanent link">¶</a></h2>
 <p>La <strong>représentation des caractères</strong> dans un ordinateur permet de <strong>stocker</strong> ou d'<strong>échanger des textes</strong>. </p>
 <p>Théoriquement, cela consiste simplement à <strong>associer un numéro unique à chaque caractère</strong>. Toutefois, le choix de la <strong>norme d'encodage utilisée</strong> nécessite de respecter certaines contraintes. Tout d’abord, il faut que tous les ordinateurs utilisent <strong>le même encodage</strong>. Ensuite, on doit pouvoir représenter le plus de caractères possible, des caractères éditables comme des <strong>lettres majuscules et minuscules</strong>, des <strong>signes de ponctuation</strong> et <strong>signes mathématiques</strong>, mais aussi des caractères dits « non imprimables », qui peuvent correspondre à des actions comme celle permettant de <strong>passer à la ligne</strong> ou d'<strong>émettre un beep</strong>, mais aussi à des <strong>commandes</strong> de protocoles de communication comme <em>accuser réception</em>, <em>début de texte</em>, etc. Par ailleurs, le but est également d'être le plus compact possible pour économiser la mémoire ou le volume des échanges réseaux.</p>
-<h3 id="norme-ascii">Norme ASCII<a class="headerlink" href="#norme-ascii" title="Permanent link">&para;</a></h3>
+<h3 id="norme-ascii">Norme ASCII<a class="headerlink" href="#norme-ascii" title="Permanent link">¶</a></h3>
 <figure>
-<p><img alt="Table ASCII standard" src="../images/table_ascii.png" width="400" />
+<p><img alt="Table ASCII standard" src="../images/table_ascii.png" width="400">
   </p>
 <figcaption>Table ASCII standard</figcaption>
 </figure>
@@ -4457,7 +4480,7 @@ représenter les <strong>nombres décimaux</strong> compris (approximativement) 
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">ord</span><span class="p">(</span><span class="err">’</span><span class="n">A</span><span class="err">’</span><span class="p">)</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="mi">65</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">hex</span><span class="p">(</span><span class="nb">ord</span><span class="p">(</span><span class="err">’</span><span class="n">A</span><span class="err">’</span><span class="p">))</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="s1">&#39;0x41&#39;</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="s1">'0x41'</span>
 </span></code></pre></div>
 <p>Inversement, la fonction chr renvoient le caractère correspondant à un entier.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">chr</span><span class="p">(</span><span class="mh">0x26</span><span class="p">)</span>
@@ -4481,16 +4504,16 @@ en utilisant la notation \xhh, où hh est le code hexadécimal du caractère.</p
 <p class="admonition-title">Exercice 11</p>
 <p>Écrire une fonction <code>printASCII(s)</code> qui affiche à l’écran les <strong>codes ASCII au format hexadécimal</strong> d’une chaîne de caractères. Utiliser cette fonction pour vérifier les réponses à l’exercice précédent.</p>
 </div>
-<h4 id="normes-iso-8859">Normes ISO 8859<a class="headerlink" href="#normes-iso-8859" title="Permanent link">&para;</a></h4>
+<h4 id="normes-iso-8859">Normes ISO 8859<a class="headerlink" href="#normes-iso-8859" title="Permanent link">¶</a></h4>
 <p>Les <strong>caractères imprimables</strong> de la table <strong>ASCII</strong> se sont révélés rapidement insuffisants pour représenter efficacement des textes dans des langues autres que l'anglais. Cela est particulièrement évident pour les langues utilisant l'alphabet <strong>latin</strong>, car la table <strong>ASCII</strong> ne prend pas en compte de nombreux éléments tels que les <strong>lettres accentuées</strong> et les <strong>symboles de monnaie</strong>. Pour résoudre cette limitation, l'<strong>ISO</strong> (<em>Organisation Internationale de Normalisation</em>) a introduit la norme <strong>ISO 8859</strong>, une extension de l'<strong>ASCII</strong> qui utilise <strong>huit bits par octet</strong> pour représenter les <strong>caractères</strong>, permettant ainsi un total de <strong>256 caractères encodés</strong>. Malgré cette expansion, cela reste encore <strong>insuffisant</strong> pour englober tous les <strong>caractères</strong> utilisés dans les <strong>langues latines</strong>.</p>
 <p>Afin de maximiser la représentation des caractères, la norme <strong>ISO 8859</strong> propose plusieurs tables de correspondance, également appelées pages et notées <strong>ISO-8859-n</strong>, où <strong>n</strong> représente le numéro de la table. Bien que ces tables soient indépendantes les unes des autres, elles ont été conçues pour être compatibles entre elles. Les <strong>premiers 128 caractères</strong> correspondent à la norme <strong>ASCII</strong>, tandis que les <strong>128 suivants</strong> sont spécifiques à la table <strong>n</strong>. De plus, les caractères identiques ont le même code.</p>
 <p>La <strong>norme 8859</strong> inclut un total de <strong>seize tables</strong>, dont dix sont dédiées aux <strong>langues latines</strong>. Plutôt que de les référencer par leur nomenclature <strong>ISO</strong>, elles sont parfois appelées <strong>latin-1</strong>, <strong>latin-2</strong>, etc.</p>
 <figure>
-<p><img alt="Tables de la norme 8859" src="../images/norme_8859.png" width="420" />
+<p><img alt="Tables de la norme 8859" src="../images/norme_8859.png" width="420">
   </p>
 <figcaption>Tables de la norme 8859</figcaption>
 </figure>
-<h3 id="norme-unicode">Norme Unicode<a class="headerlink" href="#norme-unicode" title="Permanent link">&para;</a></h3>
+<h3 id="norme-unicode">Norme Unicode<a class="headerlink" href="#norme-unicode" title="Permanent link">¶</a></h3>
 <p>Les pages <strong>ISO-8859-n</strong>, bien qu'elles permettent un <strong>encodage étendu</strong>, ne conviennent pas pour les <strong>textes</strong> avec un <strong>mélange de caractères</strong> provenant de <strong>différentes pages</strong>. Pour remédier à cela, l'<strong>ISO</strong> a introduit l'<strong>Universal Character Set</strong> (<em>UCS</em>) sous la norme <strong>ISO-10646</strong>. Cette norme attribue à chaque caractère un <strong>nom unique</strong> et un <strong>numéro</strong> appelé <strong>point de code</strong>. Elle recense plus de <strong>110 000 caractères</strong> et peut contenir ceux de <strong>n'importe quelle langue</strong>, avec une capacité maximale de <strong>4 294 967 295 caractères</strong>.</p>
 <p>Les <strong>256 premiers points de code</strong> de l'<strong>ISO-8859-1</strong> sont inclus par souci de compatibilité. La notation <span class="arithmatex">\(U+xxxx\)</span> représente les <strong>points de code</strong> du <strong>jeu universel de caractères</strong>, où chaque <span class="arithmatex">\(x\)</span> est un chiffre <strong>hexadécimal</strong>. Par exemple, <span class="arithmatex">\(U+006F\)</span> désigne le point de code de la lettre "o".</p>
 <div class="admonition abstract">
@@ -4499,7 +4522,7 @@ en utilisant la notation \xhh, où hh est le code hexadécimal du caractère.</p
 <p>La norme <strong>Unicode</strong> définit <strong>plusieurs techniques d'encodage</strong> pour représenter les <strong>points de code</strong> de manière plus ou moins économique, selon la technique choisie.
 Ces encodages, appelés <strong>formats de transformation universelle</strong> ou <strong>Universal Transformation Format</strong> (<em>UTF</em>) en anglais, portent les noms <em>UTF-n</em>, où <em>n</em> indique <strong>le nombre minimal de bits utilisés</strong> pour représenter un <strong>point de code</strong>.</p>
 </div>
-<h3 id="utf-8">UTF-8<a class="headerlink" href="#utf-8" title="Permanent link">&para;</a></h3>
+<h3 id="utf-8">UTF-8<a class="headerlink" href="#utf-8" title="Permanent link">¶</a></h3>
 <p>C’est le format <strong>le plus utilisé sous Linux</strong>, dans les <strong>protocoles réseaux</strong> et les <strong>sites Web</strong>. Comme son nom l’indique, il faut <strong>seulement 8 bits</strong> pour coder <strong>les principaux caractères</strong>. L’<strong>UTF-8</strong> est entièrement compatible avec le <strong>standard ASCII</strong>, c’est-à-dire que les <strong>127 premiers caractères</strong> sont représentés sur <strong>1 octet</strong>, exactement comme en <em>ASCII</em>. Les programmes fonctionnant sur des textes encodés en <em>ASCII</em> devraient également fonctionner si ces textes sont encodés en <strong>UTF-8</strong>.</p>
 <p>L’<strong>unicode</strong> et en particulier <strong>UTF-8</strong> vise à :</p>
 <ul>
@@ -4520,13 +4543,13 @@ Ces encodages, appelés <strong>formats de transformation universelle</strong> o
 </div>
 <p>Voici un tableau résumant le principe de l’<strong>encodage UTF-8</strong>, avec la <strong>plage des caractères représentables</strong> selon le <strong>nombre d’octets utilisés</strong>.</p>
 <figure>
-<p><img alt="Principe de l'encodage UTF-8" src="../images/principe_utf8.png" width="550" />
+<p><img alt="Principe de l'encodage UTF-8" src="../images/principe_utf8.png" width="550">
   </p>
 <figcaption>Principe de l'encodage UTF-8</figcaption>
 </figure>
 <p>Et voici quelques <em>exemples</em> de <strong>représentations</strong> de <strong>points de code</strong> selon le format <strong>UTF-8</strong> :</p>
 <figure>
-<p><img alt="Exemples de représentations selon UTF-8" src="../images/exemples_utf8.png" width="500" />
+<p><img alt="Exemples de représentations selon UTF-8" src="../images/exemples_utf8.png" width="500">
   </p>
 <figcaption>Exemples de représentations selon UTF-8</figcaption>
 </figure>
@@ -4548,7 +4571,7 @@ Ces encodages, appelés <strong>formats de transformation universelle</strong> o
 <li>caractère <code>è</code> (point de code <span class="arithmatex">\(232\)</span>)</li>
 <li>caractère (étoile) (point de code <span class="arithmatex">\(8902\)</span>)</li>
 </ol>
-</div>
+</div></div>
 
 
 

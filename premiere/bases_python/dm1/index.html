@@ -833,6 +833,8 @@
       
         
       
+        
+      
     
     
     
@@ -948,6 +950,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -2994,18 +3017,18 @@
                   
 
 
-<h1 id="correction-du-dm-1">Correction du DM 1<a class="headerlink" href="#correction-du-dm-1" title="Permanent link">&para;</a></h1>
+<div><h1 id="correction-du-dm-1">Correction du DM 1<a class="headerlink" href="#correction-du-dm-1" title="Permanent link">¶</a></h1>
 <div class="admonition success">
 <p class="admonition-title">Télécharger le DM</p>
 <ul>
 <li><a href="DM1.pdf" target="_blank">DM1.pdf</a> - Énoncé du DM 1.</li>
 </ul>
 </div>
-<h2 id="correction-partie-papier">Correction partie papier<a class="headerlink" href="#correction-partie-papier" title="Permanent link">&para;</a></h2>
+<h2 id="correction-partie-papier">Correction partie papier<a class="headerlink" href="#correction-partie-papier" title="Permanent link">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Exercice 1 - Vrai ou Faux ?</p>
 <ol>
-<li>Après les instructions <code>x = 3</code>, <code>y = 5</code>, <code>x = y</code>, <code>y = x</code>, la valeur de x est 5 et la valeur de y est 3.<br />
+<li>Après les instructions <code>x = 3</code>, <code>y = 5</code>, <code>x = y</code>, <code>y = x</code>, la valeur de x est 5 et la valeur de y est 3.<br>
 <span style="color:green">C'est <strong><em>faux</em></strong>. Pour inverser les valeurs de <code>x</code> et de <code>y</code>, on a besoin d'une <strong>troisième variable temporaire</strong> pour y stocker l'une des deux valeurs. Sinon, la valeur de <code>x</code> est perdue car la variable prend la valeur de <code>y</code>. Une solution :
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">y</span> <span class="o">=</span> <span class="mi">5</span>
@@ -3015,42 +3038,42 @@
 </span></code></pre></div>
 </span></li>
 <li>
-<p>Après les instructions <code>x = 3</code>, <code>y = 5</code>, <code>y == x</code>, <code>x = y</code>, la valeur de <code>x</code> est <code>5</code> et la valeur de <code>y</code> est <code>5</code>.<br />
+<p>Après les instructions <code>x = 3</code>, <code>y = 5</code>, <code>y == x</code>, <code>x = y</code>, la valeur de <code>x</code> est <code>5</code> et la valeur de <code>y</code> est <code>5</code>.<br>
 <span style="color:green">C'est <strong><em>vrai</em></strong>. Ici, la troisième instruction effectue une <strong>comparaison</strong> (il y a deux <code>=</code> et pas un), et non pas une <strong>affectation</strong>. Cette expression booléenne renvoie <code>True</code> ou <code>False</code>, mais la valeur n'est stockée nul part. La variable <code>x</code> prend ensuite la valeur de <code>y</code>, donc <code>5</code>.</span></p>
 </li>
 <li>
-<p>L’instruction <code>print(bonjour)</code> va afficher <code>"bonjour"</code>.<br />
+<p>L’instruction <code>print(bonjour)</code> va afficher <code>"bonjour"</code>.<br>
 <span style="color:green">C'est <strong><em>faux</em></strong>. La fonction <code>print</code> permet d'<strong>afficher</strong> une <strong>chaîne de caractères</strong>. Ici, <code>bonjour</code> n'est pas entouré de <strong>guillemets</strong>, et est donc considéré comme <strong>une variable</strong>. Une erreur indiquant que la variable <code>bonjour</code> n'existe pas sera donc levée.</span></p>
 </li>
 <li>
-<p>La fonction <code>input</code> renvoie une chaîne de caractères.<br />
+<p>La fonction <code>input</code> renvoie une chaîne de caractères.<br>
 <span style="color:green">C'est <strong><em>vrai</em></strong>. La fonction <code>input</code> renvoie une <strong>chaîne de caractères</strong>. Ainsi, si l'on a besoin de transformer la valeur renvoyée par un <code>input</code> en un <strong>nombre entier</strong> par exemple, notamment pour utiliser la valeur dans un <code>range</code> (qui ne prend que des entiers), on peut convertir cette valeur avec la fonction <code>int</code>. Par exemple :
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">nb</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Saisissez un nombre : &quot;</span><span class="p">))</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">nb</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Saisissez un nombre : "</span><span class="p">))</span>
 </span></code></pre></div>
-Ici, la valeur retour de l'<code>input</code> sera convertie en <strong>nombre entier</strong>. ```</p>
+Ici, la valeur retour de l'<code>input</code> sera convertie en <strong>nombre entier</strong>. ```</span></p>
 </li>
 <li>
-<p>L’instruction <code>if ...</code> est une instruction conditionnelle.<br />
+<p>L’instruction <code>if ...</code> est une instruction conditionnelle.<br>
 <span style="color:green">C'est <strong><em>vrai</em></strong>. Les <strong>instructions conditionnelles</strong> permettent d'exécuter des blocs de code seulement <strong>lorsqu'une condition est remplie</strong>. Voir <a href="../cours/#les-instructions-de-branchement" target="_blank">cette partie du cours</a>.</span></p>
 </li>
 <li>
-<p>Avec <code>for i in range(10)</code>, la variable <code>i</code> prend <strong>9 valeurs</strong>, puisque la dernière est <code>9</code>.<br />
+<p>Avec <code>for i in range(10)</code>, la variable <code>i</code> prend <strong>9 valeurs</strong>, puisque la dernière est <code>9</code>.<br>
 <span style="color:green">C'est <strong><em>faux</em></strong>. Une boucle <code>for ... in range(...)</code>, lorsque le <code>range</code> ne prend qu'une seule valeur, commence à l'indice <code>0</code> et se termine à l'indice indiqué dans le <code>range</code> <strong>moins 1</strong>. Ici, il y a donc <strong>10 valeurs</strong>, de <strong>0</strong> à <strong>9</strong>.</span></p>
 </li>
 <li>
-<p>Avec <code>for i in range(9, 0, -3)</code>, les valeurs successives prises par la variable <code>i</code> sont <code>9</code>, <code>6</code>, <code>3</code>, <code>0</code>.<br />
+<p>Avec <code>for i in range(9, 0, -3)</code>, les valeurs successives prises par la variable <code>i</code> sont <code>9</code>, <code>6</code>, <code>3</code>, <code>0</code>.<br>
 <span style="color:green">C'est <strong><em>faux</em></strong>. Ici, le <code>range</code> contient <strong>trois valeurs</strong>, ce qui signifie que l'on commence à la valeur <code>9</code>, jusqu'à la valeur <code>0</code> <strong>EXCLUE</strong>, avec un pas de <code>-3</code>. Le <code>0</code> n'est pas pris, car on s'arrête toujours un cran avant. Ici, <code>i</code> ne prendra que les valeurs <code>9</code>, <code>6</code> et <code>3</code>.</span></p>
 </li>
 <li>
-<p>Si l’on exécuté l’instruction âge = int(input("Veuillez entrer votre âge ! ")), la variable âge créée est de type str (chaîne de caractères).<br />
+<p>Si l’on exécuté l’instruction âge = int(input("Veuillez entrer votre âge ! ")), la variable âge créée est de type str (chaîne de caractères).<br>
 <span style="color:green">C'est <strong><em>vrai</em></strong>. <code>input</code> renvoie une valeur de type <code>str</code>, c'est-à-dire une <strong>chaîne de caractères</strong>.</span></p>
 </li>
 <li>
-<p>Une variable booléenne ne peut prendre que deux valeurs.<br />
+<p>Une variable booléenne ne peut prendre que deux valeurs.<br>
 <span style="color:green">C'est <strong><em>vrai</em></strong>. Une variable booléenne peut prendre soit la valeur <code>True</code>, soit la valeur <code>False</code>.</span></p>
 </li>
 <li>
-<p>Si a = True et b = False, alors le test <code>b or a and b</code> renvoie True.<br />
+<p>Si a = True et b = False, alors le test <code>b or a and b</code> renvoie True.<br>
 <span style="color:green">C'est <strong><em>faux</em></strong>. Lorsque l'on effectue le test <code>b or a and b</code>, on teste d'abord <code>b or a</code>, qui ici vaut <code>True</code>, puisque <code>True or False = True</code>, puis on teste enfin <code>True and b</code>, qui vaut <code>False</code>, puise <code>True and False = False</code> (avec l'opérateur <code>and</code>, les deux variables doivent être à <code>True</code> pour obtenir <code>True</code>).</span></p>
 </li>
 </ol>
@@ -3059,7 +3082,7 @@ Ici, la valeur retour de l'<code>input</code> sera convertie en <strong>nombre e
 <p class="admonition-title">Exercice 2</p>
 <ol>
 <li>
-<p>En <strong>quelle année</strong> le <strong>langage Python</strong> a t-il été créé ?<br />
+<p>En <strong>quelle année</strong> le <strong>langage Python</strong> a t-il été créé ?<br>
 <span style="color:green">Le langage Python a été créé en <strong>1991</strong> par <em>Guido Van Rossum</em>, un informaticien néerlandais.</span></p>
 </li>
 <li>
@@ -3072,29 +3095,29 @@ Ici, la valeur retour de l'<code>input</code> sera convertie en <strong>nombre e
 </ol>
 </li>
 <li>
-<p>On considère les <strong>instructions</strong> suivantes exécutées dans l’ordre : <code>a=8</code>, <code>b=5</code>, <code>a==b+1</code>, <code>b=b +1</code>, <code>a==b+1</code>, <code>b=b+1</code>, <code>print(a==b+1)</code>. Quel est le <strong>résultat</strong> affiché à l’issue de la dernière instruction ?<br />
+<p>On considère les <strong>instructions</strong> suivantes exécutées dans l’ordre : <code>a=8</code>, <code>b=5</code>, <code>a==b+1</code>, <code>b=b +1</code>, <code>a==b+1</code>, <code>b=b+1</code>, <code>print(a==b+1)</code>. Quel est le <strong>résultat</strong> affiché à l’issue de la dernière instruction ?<br>
 <span style="color:green">Le résultat obtenu à l'issue de la dernière instruction est <code>True</code>. <code>a</code> prend la valeur <code>8</code>, <code>b</code> prend la valeur <code>5</code>, ensuite, on fait une comparaison <code>a == b+1</code> qui est évaluée à <code>False</code> (car <code>8 != 6</code>), mais cette valeur <code>False</code> n'est stockée nulle part. Ensuite, on affecte à <code>b</code> la valeur <code>b + 1</code>, c'est-à-dire <code>6</code>. Donc <code>a = 8</code> et <code>b = 6</code>. On fait de nouveau une comparaison <code>a == b+1</code>, qui est évalue à <code>False</code> (car <code>8 != 7</code>). Cette valeur <code>False</code> n'est encore une fois pas stockée. On continue en affectant de nouveau à <code>b</code> la valeur <code>b + 1</code>, c'est-à-dire <code>7</code>. Finalement, on <strong>affiche</strong> (avec la fonction <code>print</code>) la valeur obtenue suite à l'évaluation de la comparaison <code>a == b + 1</code>, qui vaut <code>True</code> car <code>a = 8</code> et <code>b + 1 = 7 + 1 = 8</code>.</span></p>
 </li>
 <li>
-<p>Voici une séquence d’instructions :<br />
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">7</span>
+<p>Voici une séquence d’instructions :<br>
+</p><div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">n</span> <span class="o">=</span> <span class="mi">7</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">2</span> <span class="p">,</span> <span class="n">n</span><span class="p">):</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="nb">print</span> <span class="p">(</span><span class="n">i</span><span class="p">)</span>
 </span></code></pre></div>
-Combien de fois la fonction <code>print</code> à l'intérieur du <code>for</code> est-elle exécutée ?<br />
-<span style="color:green">La fonction <code>print</code> est ici exécutée <strong>5 fois</strong>. En effet, lorsque le <code>range</code> contient <strong>2 valeurs</strong>, on commence à la <strong>première valeur</strong> indiquée, et on s'arrête un cran avant la <strong>deuxième valeur</strong>. Ici, <code>i</code> prend donc les valeurs <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code> et <code>6.</code></span></p>
+Combien de fois la fonction <code>print</code> à l'intérieur du <code>for</code> est-elle exécutée ?<br>
+<span style="color:green">La fonction <code>print</code> est ici exécutée <strong>5 fois</strong>. En effet, lorsque le <code>range</code> contient <strong>2 valeurs</strong>, on commence à la <strong>première valeur</strong> indiquée, et on s'arrête un cran avant la <strong>deuxième valeur</strong>. Ici, <code>i</code> prend donc les valeurs <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code> et <code>6.</code></span>
 </li>
 <li>
-<p>Voici une séquence d’instructions :<br />
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
+<p>Voici une séquence d’instructions :<br>
+</p><div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">x</span> <span class="o">=</span> <span class="mi">4</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">while</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
 </span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">while</span> <span class="n">y</span> <span class="o">&lt;</span> <span class="n">x</span><span class="p">:</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="n">y</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="mi">1</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="mi">1</span>
 </span></code></pre></div>
-Quelles seront les <strong>valeurs finales</strong> de <code>x</code> et de <code>y</code> ?<br />
-<span style="color:green">Après exécution, <code>x = 0</code> et <code>y = 1</code>. Pour voir le déroulement complet de ce programme, vous pouvez dérouler le bloc suivant.</span></p>
+Quelles seront les <strong>valeurs finales</strong> de <code>x</code> et de <code>y</code> ?<br>
+<span style="color:green">Après exécution, <code>x = 0</code> et <code>y = 1</code>. Pour voir le déroulement complet de ce programme, vous pouvez dérouler le bloc suivant.</span>
 </li>
 </ol>
 <details class="quote">
@@ -3142,11 +3165,11 @@ Quelles seront les <strong>valeurs finales</strong> de <code>x</code> et de <cod
 <p class="admonition-title">Exercice 3</p>
 <p>Écrire une fonction <code>plus_grand</code> qui prend en paramètres <strong>trois nombres entiers</strong> et renvoie <strong>le plus grand</strong> des trois nombres.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">plus_grand</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">,</span> <span class="n">c</span><span class="p">):</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie le plus grand des trois entiers.</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="sd">''' Renvoie le plus grand des trois entiers.</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="sd">    :param a: (int) Un entier.</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="sd">    :param b: (int) Un autre entier.</span>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="sd">    :param c: (int) Encore un autre entier.</span>
-</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="sd">    :return (int): La plus grande valeur entre a, b et c. &#39;&#39;&#39;</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="sd">    :return (int): La plus grande valeur entre a, b et c. '''</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="k">if</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">b</span> <span class="ow">and</span> <span class="n">a</span> <span class="o">&gt;</span> <span class="n">c</span><span class="p">:</span>
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="k">return</span> <span class="n">a</span>
@@ -3160,26 +3183,26 @@ Quelles seront les <strong>valeurs finales</strong> de <code>x</code> et de <cod
 <p class="admonition-title">Exercice 4</p>
 <p>Écrire une fonction <code>temps</code> qui prend en paramètres <strong>un nombre entier de secondes</strong> et <strong>affiche le nombre d'heures, de minutes et de secondes</strong> qui correspond.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span> <span class="nf">temps</span><span class="p">(</span><span class="n">nbs</span><span class="p">):</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="sd">&#39;&#39;&#39; Renvoie le temps en heures, minutes et secondes.</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="sd">''' Renvoie le temps en heures, minutes et secondes.</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="sd">:param nbs: (int) Le temps en secondes.</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="sd">:return (None): On ne renvoie rien, on affiche avec print. &#39;&#39;&#39;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="sd">:return (None): On ne renvoie rien, on affiche avec print. '''</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="n">heures</span> <span class="o">=</span> <span class="n">nbs</span> <span class="o">//</span> <span class="mi">3600</span>  <span class="c1"># 3600 secondes dans 1 heure</span>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="n">nbs</span> <span class="o">=</span> <span class="n">nbs</span> <span class="o">%</span> <span class="mi">3600</span>  <span class="c1"># On récupère le nombre de secondes restantes et on le restocke dans nbs</span>
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="n">minutes</span> <span class="o">=</span> <span class="n">nbs</span> <span class="o">//</span> <span class="mi">60</span>  <span class="c1"># 60 secondes dans 1 minutes</span>
 </span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="n">secondes</span> <span class="o">=</span> <span class="n">nbs</span> <span class="o">%</span> <span class="mi">60</span>  <span class="c1"># On récupère le nombre de secodes restantes</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">heures</span><span class="si">}</span><span class="s1">h </span><span class="si">{</span><span class="n">minutes</span><span class="si">}</span><span class="s1">min </span><span class="si">{</span><span class="n">secondes</span><span class="si">}</span><span class="s1">s&#39;</span><span class="p">)</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">'</span><span class="si">{</span><span class="n">heures</span><span class="si">}</span><span class="s1">h </span><span class="si">{</span><span class="n">minutes</span><span class="si">}</span><span class="s1">min </span><span class="si">{</span><span class="n">secondes</span><span class="si">}</span><span class="s1">s'</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Exercice 5</p>
 <p>Écrire une fonction qui prend en arguments <strong>deux mots</strong> (type <code>str</code>) et renvoie <code>True</code> si les deux mots <strong>commencent par la même lettre</strong> et <strong>se terminent par la même lettre</strong> et <code>False</code> sinon.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span> <span class="nf">jeu</span><span class="p">(</span><span class="n">mot1</span><span class="p">,</span> <span class="n">mot2</span><span class="p">):</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="sd">&#39;&#39;&#39; Renvoie True si les deux mots commencent et finissent par la même lettre.</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="sd">''' Renvoie True si les deux mots commencent et finissent par la même lettre.</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="sd">Renvoie False sinon.</span>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="sd">:param mot1: (str) Un mot.</span>
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="sd">:param mot2: (str) Un autre mot.</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="sd">:return (bool): Un booléen, c&#39;est-à-dire soit True, soit False. &#39;&#39;&#39;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="sd">:return (bool): Un booléen, c'est-à-dire soit True, soit False. '''</span>
 </span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="k">return</span> <span class="n">mot1</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">==</span> <span class="n">mot2</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="ow">and</span> <span class="n">mot1</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">mot1</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">==</span> <span class="n">mot2</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">mot2</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>
 </span></code></pre></div>
@@ -3190,9 +3213,9 @@ Quelles seront les <strong>valeurs finales</strong> de <code>x</code> et de <cod
 <p class="admonition-title">Exercice 6</p>
 <p>Écrire une fonction <code>jeu</code> qui prend en paramètre un <strong>nombre entier</strong> <code>n</code> <strong>strictement positif</strong>, simule <strong>n fois</strong> le tirage d’un nombre choisi au hasard parmi les nombres <code>1</code>, <code>2</code>, <code>3</code>, <code>4</code>, <code>5</code>, <code>6</code>, et <strong>renvoie le pourcentage</strong> de <strong>6</strong> obtenus. On utilisera la fonction <code>randint</code> du module <code>random</code>.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="k">def</span> <span class="nf">jeu</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Renvoie le pourcentage du nombre de 6 obtenus sur n tirages aléatoires.</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="w">    </span><span class="sd">''' Renvoie le pourcentage du nombre de 6 obtenus sur n tirages aléatoires.</span>
 </span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="sd">    :param n: (int) Un nombre entier de tirages.</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="sd">    :return (float): Le pourcentage de 6 obtenus. &#39;&#39;&#39;</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="sd">    :return (float): Le pourcentage de 6 obtenus. '''</span>
 </span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>
 </span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    <span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># Compteur pour le nombre de 6 obtenus</span>
 </span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -3203,7 +3226,7 @@ Quelles seront les <strong>valeurs finales</strong> de <code>x</code> et de <cod
 </span></code></pre></div>
 <p>Le pourcentage se calcule avec un simple <strong>produit en croix</strong> : les <code>n</code> tirages correspondent à <strong>100%</strong> des tirages, et on cherche le pourcentage pour le nombre <code>compteur</code> de tirages (<code>compteur</code> contient le nombre de fois où l'on a tiré la valeur <code>6</code>).</p>
 </div>
-<h2 id="correction-partie-ordinateur">Correction partie ordinateur<a class="headerlink" href="#correction-partie-ordinateur" title="Permanent link">&para;</a></h2>
+<h2 id="correction-partie-ordinateur">Correction partie ordinateur<a class="headerlink" href="#correction-partie-ordinateur" title="Permanent link">¶</a></h2>
 <div class="admonition tip">
 <p class="admonition-title">Exercice 1</p>
 <p>Écrire un <strong>programme</strong> qui <strong>trace</strong> la <strong>figure</strong> ci-dessous en utilisant <strong>deux boucles imbriquées</strong>. Vous utiliserez le <strong>module Python</strong> <em>Turtle</em>. Vous pouvez <strong>importer toutes les fonctions</strong> du module en plaçant cette ligne au début de votre programme : <code>from turtle import *</code>.</p>
@@ -3225,9 +3248,9 @@ Quelles seront les <strong>valeurs finales</strong> de <code>x</code> et de <cod
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Exercice 2</p>
-<p>Écrire un <strong>programme</strong> qui <strong>demande à l’utilisateur</strong> de <strong>saisir un entier naturel</strong> <code>n</code> et qui <strong>calcule</strong> la <strong>somme des carrés</strong> des <strong>entiers</strong> de <strong>1</strong> à <code>n</code>.<br />
+<p>Écrire un <strong>programme</strong> qui <strong>demande à l’utilisateur</strong> de <strong>saisir un entier naturel</strong> <code>n</code> et qui <strong>calcule</strong> la <strong>somme des carrés</strong> des <strong>entiers</strong> de <strong>1</strong> à <code>n</code>.<br>
 Afin de vérifier votre programme, voici un exemple : 1² + 2² + 3² + ... + 10² = 385</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez saisir un entier naturel : &quot;</span><span class="p">))</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Veuillez saisir un entier naturel : "</span><span class="p">))</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">somme</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
 </span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    <span class="n">somme</span> <span class="o">=</span> <span class="n">somme</span> <span class="o">+</span> <span class="n">i</span> <span class="o">*</span> <span class="n">i</span>   <span class="c1"># ou somme += i*i</span>
@@ -3236,30 +3259,30 @@ Afin de vérifier votre programme, voici un exemple : 1² + 2² + 3² + ... + 10
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Exercice 3</p>
-<p>Au jeu de <strong><em>Mölkky</em></strong>, chaque joueur marque à son tour de jeu entre <strong>0</strong> et <strong>12 points</strong>, qui viennent s’ajouter à son <strong>score</strong> précédent. Mais gare ! Quiconque <strong>dépasse</strong> le score cible de <strong>51 points</strong> revient immédiatement à <strong>25 points</strong>.<br />
-Écrire un <strong>programme</strong> qui <strong>demande un score</strong> et un <strong>nombre de points marqués</strong>, et qui <strong>affiche</strong> le <strong>nouveau score</strong> ou <strong>signale</strong> une éventuelle <strong>victoire</strong>.<br />
+<p>Au jeu de <strong><em>Mölkky</em></strong>, chaque joueur marque à son tour de jeu entre <strong>0</strong> et <strong>12 points</strong>, qui viennent s’ajouter à son <strong>score</strong> précédent. Mais gare ! Quiconque <strong>dépasse</strong> le score cible de <strong>51 points</strong> revient immédiatement à <strong>25 points</strong>.<br>
+Écrire un <strong>programme</strong> qui <strong>demande un score</strong> et un <strong>nombre de points marqués</strong>, et qui <strong>affiche</strong> le <strong>nouveau score</strong> ou <strong>signale</strong> une éventuelle <strong>victoire</strong>.<br>
 <em>Sources : Numérique et Sciences Informatiques 1ère, Balabonski et al., Ed. Ellipses.</em></p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Quel est votre score ? &quot;</span><span class="p">))</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">nbPoints</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Combien de points avez-vous marqué (entre 0 et 12) ? &quot;</span><span class="p">))</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="n">score</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Quel est votre score ? "</span><span class="p">))</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="n">nbPoints</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Combien de points avez-vous marqué (entre 0 et 12) ? "</span><span class="p">))</span>
 </span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="n">score</span> <span class="o">=</span> <span class="n">score</span> <span class="o">+</span> <span class="n">nbPoints</span>
 </span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="k">if</span> <span class="n">score</span> <span class="o">&gt;</span> <span class="mi">51</span><span class="p">:</span>
 </span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a>    <span class="n">score</span> <span class="o">=</span> <span class="mi">25</span>
-</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Votre nouveau score est&quot;</span><span class="p">,</span><span class="n">score</span><span class="p">)</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Votre nouveau score est"</span><span class="p">,</span><span class="n">score</span><span class="p">)</span>
 </span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="k">if</span> <span class="n">score</span> <span class="o">==</span> <span class="mi">51</span><span class="p">:</span>
-</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Bravo, vous avez gagné!&quot;</span><span class="p">)</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a>    <span class="nb">print</span><span class="p">(</span><span class="s2">"Bravo, vous avez gagné!"</span><span class="p">)</span>
 </span></code></pre></div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Exercice 4</p>
-<p>Écrire un <strong>programme</strong> qui <strong>demande à l’utilisateur</strong> de <strong>saisir</strong> un <strong>entier naturel</strong> <code>n</code> et qui <strong>affiche</strong> tous ses <strong>diviseurs</strong> les uns après les autres. Les <strong>diviseurs</strong> devront être tous <strong>écrits sur une même ligne et séparés par un tiret</strong>.<br />
+<p>Écrire un <strong>programme</strong> qui <strong>demande à l’utilisateur</strong> de <strong>saisir</strong> un <strong>entier naturel</strong> <code>n</code> et qui <strong>affiche</strong> tous ses <strong>diviseurs</strong> les uns après les autres. Les <strong>diviseurs</strong> devront être tous <strong>écrits sur une même ligne et séparés par un tiret</strong>.<br>
 <em>Exemple avec les diviseurs de 15 : 1-3-5-15.</em></p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Veuillez saisir un entier naturel : &quot;</span><span class="p">))</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">"Veuillez saisir un entier naturel : "</span><span class="p">))</span>
 </span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">n</span><span class="p">):</span>
 </span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">%</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">&quot;-&quot;</span><span class="p">)</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="n">end</span><span class="o">=</span><span class="s2">"-"</span><span class="p">)</span>
 </span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="nb">print</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
 </span></code></pre></div>
-</div>
+</div></div>
 
 
 

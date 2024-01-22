@@ -763,6 +763,8 @@
       
         
       
+        
+      
     
     
     
@@ -878,6 +880,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -2915,54 +2938,54 @@
 
   <h1>De cote</h1>
 
-<h2 id="lalgorithme-tri-insertion">L'algorithme (tri insertion)<a class="headerlink" href="#lalgorithme-tri-insertion" title="Permanent link">&para;</a></h2>
+<div><h2 id="lalgorithme-tri-insertion">L'algorithme (tri insertion)<a class="headerlink" href="#lalgorithme-tri-insertion" title="Permanent link">¶</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Algorithme du tri par sélection</p>
-<p><strong>ALGORITHME</strong> : tri_selection<br />
-<strong>ENTRÉES</strong> :<br />
-&nbsp;&nbsp;&nbsp;&nbsp;<code>tableau</code> : un <strong>tableau</strong> d'éléments pouvant être <strong>comparés</strong><br />
+<p><strong>ALGORITHME</strong> : tri_selection<br>
+<strong>ENTRÉES</strong> :<br>
+    <code>tableau</code> : un <strong>tableau</strong> d'éléments pouvant être <strong>comparés</strong><br>
 <strong>SORTIE</strong> : aucune (tri <em>en place</em>)</p>
-<p><strong>DÉBUT</strong><br />
-&emsp;&emsp;n ← longueur(tableau)<br />
-&emsp;&emsp;<strong>POUR</strong> debut <strong>ALLANT DE</strong> 0 <strong>À</strong> n - 2<br />
-&emsp;&emsp;&emsp;&emsp;indice_min ← minimum(tableau, debut)<br />
-&emsp;&emsp;&emsp;&emsp;echanger(tableau, debut, indice_min)<br />
-&emsp;&emsp;<strong>FIN POUR</strong> <br />
-&emsp;&emsp;Renvoyer <strong>∅</strong><br />
+<p><strong>DÉBUT</strong><br>
+  n ← longueur(tableau)<br>
+  <strong>POUR</strong> debut <strong>ALLANT DE</strong> 0 <strong>À</strong> n - 2<br>
+    indice_min ← minimum(tableau, debut)<br>
+    echanger(tableau, debut, indice_min)<br>
+  <strong>FIN POUR</strong> <br>
+  Renvoyer <strong>∅</strong><br>
 <strong>FIN ALGORITHME</strong></p>
 </div>
 <p>Fonction tri_par_insertion(Tableau T)
     Pour i de 1 à taille(T) - 1
         valeur_courante = T[i]
         position = i</p>
-<div class="language-text highlight"><pre><span></span><code>    # Déterminer la position de l&#39;élément à placer (valeur_courante)
+<div class="language-text highlight"><pre><span></span><code>    # Déterminer la position de l'élément à placer (valeur_courante)
     Tant que position &gt; 0 et T[position - 1] &gt; valeur_courante
         T[position] = T[position - 1]
         position = position - 1
 
-    T[position] = valeur_courante  # Placer l&#39;élément au bon endroit
+    T[position] = valeur_courante  # Placer l'élément au bon endroit
 Fin Pour
 </code></pre></div>
 <p>Fin Fonction</p>
 <p>Ce que fait cet algorithme, c'est qu'il itère sur chaque élément du tableau. Pour chaque élément, il trouve sa position correcte parmi les éléments déjà triés à sa gauche en déplaçant tous les éléments vers la droite jusqu'à ce qu'il trouve la bonne position, puis il insère l'élément à cette position. Cela continue jusqu'à ce que tout le tableau soit trié.</p>
-<hr />
-<div class="language-text highlight"><pre><span></span><code>i est l&#39;indice (flèche en vert clair dans l&#39;animation) de la clé-valeur qu&#39;il faut placer
+<hr>
+<div class="language-text highlight"><pre><span></span><code>i est l'indice (flèche en vert clair dans l'animation) de la clé-valeur qu'il faut placer
 
 POUR i variant de 1 à (longueur - 1) inclus
 
     cle ← t[i]
 
-    on mémorise dans cle la valeur-clé car cette case risque d&#39;être écrasée
+    on mémorise dans cle la valeur-clé car cette case risque d'être écrasée
 
     j ← i - 1
 
-    La variable j contient initialement l&#39;indice juste à gauche de la clé (flèche verte dans l&#39;animation)
+    La variable j contient initialement l'indice juste à gauche de la clé (flèche verte dans l'animation)
 
     TANT QUE j ≥ 0 et que t[j] &gt; cle
 
         t[j+1] ← t[j]
 
-        On décale la valeur d&#39;une case à droite
+        On décale la valeur d'une case à droite
 
         j ← j - 1
 
@@ -2977,7 +3000,7 @@ POUR i variant de 1 à (longueur - 1) inclus
 Fin POUR
 
 Renvoyer VIDE (∅)
-</code></pre></div>
+</code></pre></div></div>
 
 
 

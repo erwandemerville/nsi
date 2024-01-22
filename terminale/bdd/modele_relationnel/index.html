@@ -769,6 +769,8 @@
       
         
       
+        
+      
     
     
     
@@ -884,6 +886,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -3030,7 +3053,7 @@
                   
 
 
-<details class="quote">
+<div><details class="quote">
 <summary>Sources</summary>
 <ul>
 <li><a href="https://www.lecluse.fr/nsi/NSI_T/bdd/modrel/" target="_blank">lecluse.fr</a></li>
@@ -3038,7 +3061,7 @@
 <li>"Spécialité Numérique et sciences informatiques : 24 leçons avec exercices corrigés - Terminale" de <em>Thibaut Balabonski</em></li>
 </ul>
 </details>
-<h1 id="le-modele-relationnel">Le modèle relationnel<a class="headerlink" href="#le-modele-relationnel" title="Permanent link">&para;</a></h1>
+<h1 id="le-modele-relationnel">Le modèle relationnel<a class="headerlink" href="#le-modele-relationnel" title="Permanent link">¶</a></h1>
 <p>La <strong>théorie</strong> et la <strong>pratique</strong> des <strong>bases de données relationnelles</strong> est un domaine de recherche <strong>toujours actif</strong>, mais qui s'est fortement développé et complexifié depuis ses débuts dans les années <em>1970</em>.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Modèle de données</p>
@@ -3057,7 +3080,7 @@
 <p>Le modèle indique quelles <strong>caractéristiques</strong> d'une <strong>entité</strong> réelle on souhaite manipuler dans un programme ainsi que les <strong>relations entre les entités</strong>.</p>
 <p>Une <strong>structure de données</strong> indique comment les données vont être <strong>organisées en machine</strong> (dans un langage de programmation). On peut, pour un même modèle de données, choisir <strong>plusieurs structures de données</strong> différentes.</p>
 </div>
-<h2 id="presentation">Présentation<a class="headerlink" href="#presentation" title="Permanent link">&para;</a></h2>
+<h2 id="presentation">Présentation<a class="headerlink" href="#presentation" title="Permanent link">¶</a></h2>
 <div class="admonition abstract">
 <p class="admonition-title">Les principes de base</p>
 <p>Les <strong>principes de base</strong> du <strong>modèle relationnel</strong> sont les suivants :</p>
@@ -3090,10 +3113,10 @@
 <ol>
 <li>déterminer les <em>entités</em> (objets, actions, personnes, etc.) que l'on souhaite <strong>manipuler</strong>;</li>
 <li>modéliser les <em>ensembles d'entités</em> comme des <strong>relations</strong> en donnant leur <strong>schéma</strong>, en s'attachant en particulier à choisir le <strong>bon domaine</strong> pour <strong>chaque attribut</strong>;</li>
-<li>définir les <em>contraintes</em> de la <strong>base de données</strong>, c'est-à-dire l'<strong>ensemble</strong> des <strong>propriétés logiques</strong> que nos <strong>données</strong> doivent <strong>vérifier à tout moment</strong> (voir la partie <a href="#les-contraintes-dintégrité">contraintes d'intégrité</a>.)</li>
+<li>définir les <em>contraintes</em> de la <strong>base de données</strong>, c'est-à-dire l'<strong>ensemble</strong> des <strong>propriétés logiques</strong> que nos <strong>données</strong> doivent <strong>vérifier à tout moment</strong> (voir la partie <a href="#les-contraintes-dint%C3%A9grit%C3%A9">contraintes d'intégrité</a>.)</li>
 </ol>
 </div>
-<h2 id="un-exemple-pratique">Un exemple pratique<a class="headerlink" href="#un-exemple-pratique" title="Permanent link">&para;</a></h2>
+<h2 id="un-exemple-pratique">Un exemple pratique<a class="headerlink" href="#un-exemple-pratique" title="Permanent link">¶</a></h2>
 <p>Voici une <strong>table de données</strong> sur plusieurs <strong>livres</strong> :</p>
 <table>
 <thead>
@@ -3315,10 +3338,10 @@
 </ul>
 </details>
 <div class="admonition warning">
-<p>On peut <strong>modéliser</strong> une <strong>base de données</strong> sous la forme d'un <strong>diagramme</strong> ou d'un <strong>schéma relationnel</strong> (voir le bloc de <em>correction</em> ci-dessus).<br />
+<p>On peut <strong>modéliser</strong> une <strong>base de données</strong> sous la forme d'un <strong>diagramme</strong> ou d'un <strong>schéma relationnel</strong> (voir le bloc de <em>correction</em> ci-dessus).<br>
 Dans le cadre du <em>programme de terminale</em>, vous devez surtout retenir la façon dont on crée un <strong>schéma relationnel</strong>.</p>
 </div>
-<h2 id="les-contraintes-dintegrite">Les contraintes d'intégrité<a class="headerlink" href="#les-contraintes-dintegrite" title="Permanent link">&para;</a></h2>
+<h2 id="les-contraintes-dintegrite">Les contraintes d'intégrité<a class="headerlink" href="#les-contraintes-dintegrite" title="Permanent link">¶</a></h2>
 <p>La <strong>cohérence des données</strong> au sein d'une <strong>base de données</strong> est assurée par des <u><strong>contraintes d'intégrité</strong></u>.</p>
 <p>Ces dernières sont des <strong>invariants</strong>, c'est-à-dire des <strong>propriétés logiques que les données doivent vérifier à tout moment</strong>. </p>
 <div class="admonition abstract">
@@ -3332,7 +3355,7 @@ Dans le cadre du <em>programme de terminale</em>, vous devez surtout retenir la 
 </ul>
 <p>Toutes ces <strong>contraintes</strong> garantissent la <strong>cohérence</strong>, la <strong>fiabilité</strong> et la <strong>validité</strong> des <strong>données stockées dans la base de données</strong>.</p>
 </div>
-<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">&para;</a></h2>
+<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">¶</a></h2>
 <p>Voici quelques <strong>exercices</strong> supplémentaires pour vous entraîner là-dessus :</p>
 <div class="admonition note">
 <p class="admonition-title">Exercice 3</p>
@@ -3352,7 +3375,7 @@ Dans le cadre du <em>programme de terminale</em>, vous devez surtout retenir la 
 <p class="admonition-title">Exercice 5</p>
 <p>Proposer une <strong>modélisation</strong> pour un <strong>réseau de bus</strong>. Cette dernière doit être <strong>suffisamment riche</strong> pour permettre de générer, pour chaque arrêt de bus du réseau, une <strong>fiche horaire</strong> avec <strong>tous</strong> les <strong>horaires de passage</strong> de <strong>toutes les lignes de bus</strong> qui desservent <strong>l'arrêt</strong>.</p>
 <p><u>Indication</u> : ici, plus qu'une simple traduction du français vers le modèle relationnel, on essayera de déterminer dans un premier temps quelles informations sont pertinentes et comment les représenter. On pourra ensuite procéder à la modélisation sous forme de relations. </p>
-</div>
+</div></div>
 
 
 

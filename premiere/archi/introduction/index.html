@@ -773,6 +773,8 @@
       
         
       
+        
+      
     
     
     
@@ -981,6 +983,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -3060,42 +3083,42 @@
                   
 
 
-<details class="quote">
+<div><details class="quote">
 <summary>Version PDF de ce cours</summary>
-<p><center>
-<a href="../documents/booleens.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.88.88 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.756.756 0 0 0-.49-.18M15 10V8h5v2h-5m-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41M10 0h2v5h-2V0M3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41m0-11.32 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83M7 10H2V8h5v2"/></svg></span> Télécharger ce cours au format PDF</a>
-</center></p>
+<p></p><center>
+<a href="../documents/booleens.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.88.88 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.756.756 0 0 0-.49-.18M15 10V8h5v2h-5m-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41M10 0h2v5h-2V0M3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41m0-11.32 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83M7 10H2V8h5v2"></path></svg></span> Télécharger ce cours au format PDF</a>
+</center>
 </details>
-<h1 id="introduction-a-la-logique-booleenne">Introduction à la logique booléenne<a class="headerlink" href="#introduction-a-la-logique-booleenne" title="Permanent link">&para;</a></h1>
-<h2 id="les-portes-logiques-not-and-et-or">Les portes logiques NOT, AND et OR<a class="headerlink" href="#les-portes-logiques-not-and-et-or" title="Permanent link">&para;</a></h2>
+<h1 id="introduction-a-la-logique-booleenne">Introduction à la logique booléenne<a class="headerlink" href="#introduction-a-la-logique-booleenne" title="Permanent link">¶</a></h1>
+<h2 id="les-portes-logiques-not-and-et-or">Les portes logiques NOT, AND et OR<a class="headerlink" href="#les-portes-logiques-not-and-et-or" title="Permanent link">¶</a></h2>
 <p>Les <em>circuits</em> d’un ordinateur (mémoire, microprocesseur, etc.) manipulent uniquement des <strong>chiffres binaires</strong> <code>0</code> et <code>1</code> qui, en interne, sont représentés à l'aide de <strong>tensions électriques</strong>. Ainsi, le bit <code>0</code> est représenté par une tension basse (proche de 0 volt) et le bit <code>1</code> par une tension haute (que l’on notera <span class="arithmatex">\(+V\)</span> volts, car cette tension varie selon les <em>circuits</em>).</p>
 <p>Les <strong>opérateurs</strong> (<strong>logiques</strong> ou <strong>arithmétiques</strong>) sur ces nombres binaires sont construits à partir de <em>circuits électroniques</em> dont les briques élémentaires sont appelées <strong>transistors</strong>. Les <strong>transistors</strong> que l’on trouve dans les circuits des ordinateurs se comportent comme des <strong>interrupteurs</strong> qui laissent ou non passer un courant électrique, selon le mode du tout ou rien, comme représenté graphiquement de la manière suivante.</p>
-<p><img alt="Un transistor" src="../images/01.png" width="250" /></p>
+<p><img alt="Un transistor" src="../images/01.png" width="250"></p>
 <p>Dans ce schéma, la <strong>broche B</strong> est responsable de la <strong>commande</strong> de l'<strong>interrupteur</strong>. Lorsque la broche <strong>B</strong> est alimentée en <strong>tension élevée</strong>, elle permet au courant de circuler entre la broche <strong>E</strong> (également alimentée en <strong>tension élevée</strong>) et la <strong>masse</strong>, indiquée par une petite flèche pour indiquer le sens du courant. Cette action a pour effet de mettre la <strong>broche E</strong> à une <strong>tension basse</strong>, tout en veillant à éviter les courts-circuits grâce à la présence de résistances placées judicieusement.\newline</p>
 <p>À l'inverse, lorsque la <strong>broche B</strong> est alimentée en <strong>tension basse</strong>, la <strong>broche E</strong> reste maintenue à une <strong>tension élevée</strong>. Ce <strong>transistor</strong> simple permet d'accomplir une <strong>opération de base</strong> appelée <strong>porte logique NON</strong> (ou <em>NOT</em> en anglais). Une porte logique est une fonction qui prend un ou plusieurs <strong>bits</strong> en <strong>entrée</strong> et génère un <strong>bit</strong> en <strong>sortie</strong>.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Porte <em>NOT</em></p>
 <p>La porte logique <strong>NOT</strong> réalisée par le transistor ci-dessus est la plus élémentaire de toutes les portes logiques. Elle ne comporte qu'<strong>un seul bit en entrée</strong> (noté <strong>P</strong>) et produit <strong>un bit en sortie</strong> (notée <strong>Q</strong>) égale à <code>0</code> lorsque l'entrée est à <code>1</code>, et inversement, elle génère une sortie à <code>1</code> lorsque l'entrée est à <code>0</code>. Sur le schéma ci-dessous, la porte <strong>NOT</strong> est représentée graphiquement, avec la notation américaine à gauche et la notation européenne à droite :</p>
-<p><img alt="Porte NOT" src="../images/02.png" width="350" /></p>
+<p><img alt="Porte NOT" src="../images/02.png" width="350"></p>
 <p>Pour représenter le calcul réalisé par une <em>porte logique</em>, on utilise une <em>table logique</em> ou <em>table de vérité</em> qui relie les <strong>valeurs</strong> des <strong>entrées</strong> à la <strong>valeur</strong> du <strong>résultat</strong>. La table logique de la porte <strong>NOT</strong> est donnée ci-dessous :</p>
-<p><img alt="Table de vérité de NOT" src="../images/portenon.png" width="170" /></p>
+<p><img alt="Table de vérité de NOT" src="../images/portenon.png" width="170"></p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Porte <em>ET</em></p>
 <p>Une autre <strong>porte logique</strong> très importante est la porte <strong>ET</strong> (<strong>AND</strong> en anglais).
 Elle peut aussi être construite avec plusieurs portes <strong>NOR</strong>. Voici ci-dessous la <strong>table de vérité</strong> de la porte <strong>ET</strong>, ses représentations symboliques <strong>américaine</strong> (<em>en bas</em>) et <strong>européenne</strong> (<em>en haut</em>) :</p>
-<p><img alt="Table de vérité et représentations du AND" src="../images/porteet.png" width="350" /></p>
+<p><img alt="Table de vérité et représentations du AND" src="../images/porteet.png" width="350"></p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Porte <em>OU</em></p>
 <p>Enfin, voici la porte <strong>OU</strong> (<strong>OR</strong> en anglais) qui est également beaucoup utilisée :</p>
-<p><img alt="Table de vérité et représentations du AND" src="../images/porteou.png" width="350" /></p>
+<p><img alt="Table de vérité et représentations du AND" src="../images/porteou.png" width="350"></p>
 </div>
-<h2 id="les-fonctions-booleennes">Les fonctions booléennes<a class="headerlink" href="#les-fonctions-booleennes" title="Permanent link">&para;</a></h2>
+<h2 id="les-fonctions-booleennes">Les fonctions booléennes<a class="headerlink" href="#les-fonctions-booleennes" title="Permanent link">¶</a></h2>
 <p>Certains <strong>circuits électroniques</strong> peuvent être conceptualisés en termes de <strong>fonctions booléennes</strong>, ce qui signifie qu'ils acceptent <strong>un</strong> ou <strong>plusieurs bits en entrée</strong> et produisent <strong>un seul bit en sortie</strong>.
 Les <strong>portes logiques</strong> vues précédemment peuvent ainsi être considérées comme des <strong>fonctions booléennes élémentaires</strong>.</p>
 <p>Ainsi, si nous désignons <span class="arithmatex">\(\neg (x)\)</span> comme la fonction associée à la porte <strong>NOT</strong>, <span class="arithmatex">\(\land (x, y)\)</span> comme celle associée à la porte <strong>AND</strong>, et <span class="arithmatex">\(\lor (x, y)\)</span> comme celle de la porte <strong>OR</strong>, ces trois fonctions sont caractérisées par les <strong>tables de vérité</strong> suivantes :</p>
-<p><img alt="Fonctions associées aux portes NOT, AND et OR" src="../images/fonctions_portes.png" width="450" /></p>
+<p><img alt="Fonctions associées aux portes NOT, AND et OR" src="../images/fonctions_portes.png" width="450"></p>
 <p>Les trois <strong>fonctions booléennes élémentaires</strong> <span class="arithmatex">\(\neg (x)\)</span>, <span class="arithmatex">\(\land (x, y)\)</span> et <span class="arithmatex">\(\lor (x, y)\)</span> sont utilisées comme <strong>bases</strong> pour la construction d'<strong>autres fonctions booléennes</strong>. On peut combiner ces trois fonctions pour en définir de nouvelles.</p>
 <p>Aussi, pour simplifier la définition des fonctions booléennes, on utilisera plutôt ces fonctions comme des <strong>opérateurs</strong>, et on écrira et dira que :</p>
 <ul>
@@ -3103,8 +3126,8 @@ Les <strong>portes logiques</strong> vues précédemment peuvent ainsi être con
 <li><span class="arithmatex">\(x \land y\)</span> est la conjonction de x et y,</li>
 <li><span class="arithmatex">\(x \lor y\)</span> gest la disjonction de x et y.</li>
 </ul>
-<h2 id="en-python">En Python<a class="headerlink" href="#en-python" title="Permanent link">&para;</a></h2>
-<h3 id="operations-bit-a-bit">Opérations bit-à-bit<a class="headerlink" href="#operations-bit-a-bit" title="Permanent link">&para;</a></h3>
+<h2 id="en-python">En Python<a class="headerlink" href="#en-python" title="Permanent link">¶</a></h2>
+<h3 id="operations-bit-a-bit">Opérations bit-à-bit<a class="headerlink" href="#operations-bit-a-bit" title="Permanent link">¶</a></h3>
 <p>Python dispose de nombreux <strong>opérateurs</strong> qui permettent d'effectuer des <strong>opérations logiques</strong> entre des <strong>bits</strong>. On les appelle <strong>opérateurs <em>bit-à-bit</em></strong> (<em>bitwise</em> en anglais).</p>
 <p>L’opérateur <code>&amp;</code> réalise un <strong>et logique</strong> entre les <strong>représentations binaires de deux nombres</strong>.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">&amp;</span> <span class="mi">12</span>
@@ -3114,16 +3137,16 @@ Les <strong>portes logiques</strong> vues précédemment peuvent ainsi être con
 </span></code></pre></div>
 <p><em>Rappel</em> : La fonction <code>bin(x)</code> renvoie l'écriture binaire d'un nombre entier <code>x</code>.</p>
 <p>L'opérateur <code>|</code> permet quant à lui d'effectuer un <strong>OU bit-à-bit</strong>.</p>
-<h3 id="decalages-de-bits">Décalages de bits<a class="headerlink" href="#decalages-de-bits" title="Permanent link">&para;</a></h3>
+<h3 id="decalages-de-bits">Décalages de bits<a class="headerlink" href="#decalages-de-bits" title="Permanent link">¶</a></h3>
 <p>Python propose également des <strong>opérateurs</strong> pour <strong>décaler les bits</strong> d’un <strong>nombre</strong> vers la <strong>droite</strong> ou vers la <strong>gauche</strong>. On note ces opérateurs <code>&lt;&lt;</code> et <code>&gt;&gt;</code>, et ils prennent <strong>deux arguments</strong> : le <strong>nombre</strong> dont il faut <strong>décaler les bits</strong> et le <strong>nombre de position à décaler</strong>.</p>
 <p>Par exemple, pour décaler les bits d’un nombre de <strong>2 positions vers la gauche</strong>, on écrira :</p>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span>
+<p></p><div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="mi">40</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="mb">0b0001010</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">)</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="err">’</span><span class="mb">0b101000</span><span class="err">’</span>
 </span></code></pre></div>
 Si on avait voulu <strong>décaler vers la droite</strong>, on aurait utilisé l'opérateur <code>&gt;&gt;</code>.
-On constate que <strong>décaler d'un cran à gauche</strong> permet de <strong>multiplier un nombre par deux</strong> et que <strong>décaler d'un cran à droite</strong> permet de <strong>diviser un nombre par deux</strong>.</p>
+On constate que <strong>décaler d'un cran à gauche</strong> permet de <strong>multiplier un nombre par deux</strong> et que <strong>décaler d'un cran à droite</strong> permet de <strong>diviser un nombre par deux</strong>.</div>
 
 
 

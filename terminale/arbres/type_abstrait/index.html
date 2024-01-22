@@ -769,6 +769,8 @@
       
         
       
+        
+      
     
     
     
@@ -884,6 +886,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -2920,9 +2943,9 @@
                   
 
 
-<h1 id="type-abstrait-arbre-binaire">Type abstrait Arbre binaire<a class="headerlink" href="#type-abstrait-arbre-binaire" title="Permanent link">&para;</a></h1>
+<div><h1 id="type-abstrait-arbre-binaire">Type abstrait Arbre binaire<a class="headerlink" href="#type-abstrait-arbre-binaire" title="Permanent link">¶</a></h1>
 <p>Nous avons vu ce qu'était un <strong>arbre binaire</strong>, ainsi que le vocabulaire général et les différentes mesures sur les arbres.</p>
-<p>Avant de passer à la partie <a href="../implementation_arbres/">implémentation</a>, proposons une <strong>interface minimale</strong> du <strong>type abstrait</strong> <code>Arbre</code>.<br /></p>
+<p>Avant de passer à la partie <a href="../implementation_arbres/">implémentation</a>, proposons une <strong>interface minimale</strong> du <strong>type abstrait</strong> <code>Arbre</code>.<br></p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Dans toute la suite du cours, on utilisera le type <code>Arbre</code> pour désigner un <strong>arbre binaire</strong>.</p>
@@ -2934,20 +2957,20 @@
 </ul>
 <div class="admonition abstract">
 <p class="admonition-title">Type abstrait <em>Arbre</em></p>
-<p><strong>Utilise :</strong> <em>Noeud</em>, <em>Element</em>, <em>Bool</em><br />
-<strong>Opérations :</strong><br />
-&nbsp;&nbsp;&nbsp;&nbsp; <span class="arithmatex">\(nvABV :~\rightarrow Arbre\)</span><br />
-&nbsp;&nbsp;&nbsp;&nbsp; <span class="arithmatex">\(nvAB :~Noeud \times Arbre \times Arbre \rightarrow  Arbre\)</span><br />
-&nbsp;&nbsp;&nbsp;&nbsp; <span class="arithmatex">\(racine :~Arbre \rightarrow Noeud\)</span><br />
-&nbsp;&nbsp;&nbsp;&nbsp; <span class="arithmatex">\(gauche :~Arbre \rightarrow Arbre\)</span><br />
-&nbsp;&nbsp;&nbsp;&nbsp; <span class="arithmatex">\(droite :~Arbre \rightarrow Arbre\)</span><br />
-&nbsp;&nbsp;&nbsp;&nbsp; <span class="arithmatex">\(contenu :~Noeud \rightarrow Element\)</span><br />
-&nbsp;&nbsp;&nbsp;&nbsp; <span class="arithmatex">\(est\_vide :~Arbre \rightarrow Bool\)</span><br />
-<strong>Préconditions</strong> (<span class="arithmatex">\(a\)</span> : <em>Arbre</em>) :<br />
-&nbsp;&nbsp;&nbsp;&nbsp; <span class="arithmatex">\(racine(a)\)</span> <strong>est défini si et seulement si</strong> <span class="arithmatex">\(\neg est\_vide(a)\)</span><br />
-&nbsp;&nbsp;&nbsp;&nbsp; <span class="arithmatex">\(gauche(a)\)</span> <strong>est défini si et seulement si</strong> <span class="arithmatex">\(\neg est\_vide(a)\)</span><br />
-&nbsp;&nbsp;&nbsp;&nbsp; <span class="arithmatex">\(droite(a)\)</span> <strong>est défini si et seulement si</strong> <span class="arithmatex">\(\neg est\_vide(a)\)</span></p>
-</div>
+<p><strong>Utilise :</strong> <em>Noeud</em>, <em>Element</em>, <em>Bool</em><br>
+<strong>Opérations :</strong><br>
+     <span class="arithmatex">\(nvABV :~\rightarrow Arbre\)</span><br>
+     <span class="arithmatex">\(nvAB :~Noeud \times Arbre \times Arbre \rightarrow  Arbre\)</span><br>
+     <span class="arithmatex">\(racine :~Arbre \rightarrow Noeud\)</span><br>
+     <span class="arithmatex">\(gauche :~Arbre \rightarrow Arbre\)</span><br>
+     <span class="arithmatex">\(droite :~Arbre \rightarrow Arbre\)</span><br>
+     <span class="arithmatex">\(contenu :~Noeud \rightarrow Element\)</span><br>
+     <span class="arithmatex">\(est\_vide :~Arbre \rightarrow Bool\)</span><br>
+<strong>Préconditions</strong> (<span class="arithmatex">\(a\)</span> : <em>Arbre</em>) :<br>
+     <span class="arithmatex">\(racine(a)\)</span> <strong>est défini si et seulement si</strong> <span class="arithmatex">\(\neg est\_vide(a)\)</span><br>
+     <span class="arithmatex">\(gauche(a)\)</span> <strong>est défini si et seulement si</strong> <span class="arithmatex">\(\neg est\_vide(a)\)</span><br>
+     <span class="arithmatex">\(droite(a)\)</span> <strong>est défini si et seulement si</strong> <span class="arithmatex">\(\neg est\_vide(a)\)</span></p>
+</div></div>
 
 
 

@@ -769,6 +769,8 @@
       
         
       
+        
+      
     
     
     
@@ -884,6 +886,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -3146,12 +3169,12 @@
                   
 
 
-<div class="admonition warning">
+<div><div class="admonition warning">
 <p class="admonition-title">Important</p>
 <p>Ce cours est encore en <strong>construction</strong>.</p>
 </div>
-<h1 id="les-arbres-binaires-de-recherche">Les arbres binaires de recherche<a class="headerlink" href="#les-arbres-binaires-de-recherche" title="Permanent link">&para;</a></h1>
-<h2 id="activite-preliminaire">Activité préliminaire<a class="headerlink" href="#activite-preliminaire" title="Permanent link">&para;</a></h2>
+<h1 id="les-arbres-binaires-de-recherche">Les arbres binaires de recherche<a class="headerlink" href="#les-arbres-binaires-de-recherche" title="Permanent link">¶</a></h1>
+<h2 id="activite-preliminaire">Activité préliminaire<a class="headerlink" href="#activite-preliminaire" title="Permanent link">¶</a></h2>
 <p><em>Sources</em> : <a href="https://www.zonensi.fr/NSI/Terminale/C05/ABR/" target="_blank">https://www.zonensi.fr/NSI/Terminale/C05/ABR/</a> et <em>Numérique et Sciences Informatiques, 24 leçons avec exercices corrigés, Balabonski, Conchon, Filliâtre, Nguyen, Editions Ellipses</em>.</p>
 <p>Imaginons une bibliothèque contenant un <strong>très grand nombre de livres</strong>. Cette bibliothèque est organisée de la manière suivante :</p>
 <ul>
@@ -3162,7 +3185,7 @@
 <li>La sortie de droite mène toujours soit à une salle dont les trois lettres sont situées <strong>après dans l'ordre alphabétique</strong>, soit nulle part.</li>
 </ul>
 <p>Une <strong>représentation</strong> de cette <strong>bibliothèque</strong> peut être donnée sous la forme d'un <strong>arbre binaire</strong> comme celui-ci :</p>
-<p><img alt="P2_ABR_1" src="../images/P2_ABR_1.png" /></p>
+<p><img alt="P2_ABR_1" src="../images/P2_ABR_1.png"></p>
 <div class="admonition note">
 <p class="admonition-title">Questions</p>
 <ol>
@@ -3180,7 +3203,7 @@
 </div>
 <p>Cette répartition peut se révéler <strong>incroyablement efficace</strong>.</p>
 <p>Dans le <strong>meilleur des cas</strong>, il ne faudra traverser qu'<strong>au maximum 15 salles</strong> pour trouver n'importe quel livre (si la bibliothèque est correctement organisée, quasiment chaque noeud aura <strong>2 sorties</strong>, d'où une hauteur d'environ <span class="arithmatex">\(log_{2}{(17576)}\)</span>, soit environ <strong>15</strong>).</p>
-<h2 id="definition-dun-arbre-binaire-de-recherche">Définition d'un arbre binaire de recherche<a class="headerlink" href="#definition-dun-arbre-binaire-de-recherche" title="Permanent link">&para;</a></h2>
+<h2 id="definition-dun-arbre-binaire-de-recherche">Définition d'un arbre binaire de recherche<a class="headerlink" href="#definition-dun-arbre-binaire-de-recherche" title="Permanent link">¶</a></h2>
 <p><strong>Définition</strong> : Un <strong>arbre binaire de recherche</strong> est un <strong>arbre binaire</strong> <em>étiqueté</em> tel que :</p>
 <ul>
 <li>les <em>éléments</em> sont munis d'un <strong>ordre total</strong> (on peut les <strong>comparer</strong>),</li>
@@ -3188,18 +3211,18 @@
 <li>les <em>éléments</em> des <strong>noeuds</strong> du <strong>sous-arbre droit</strong> sont tous <span class="arithmatex">\(&gt;\)</span> à l'<em>élément</em> de la <strong>racine</strong>,</li>
 <li>les <strong>sous-arbres gauches</strong> et <strong>droit</strong> sont également des <strong>ABR</strong>.</li>
 </ul>
-<p><img alt="Arbres binaires de recherche" src="../images/arbre_binaires_recherche.png" /></p>
+<p><img alt="Arbres binaires de recherche" src="../images/arbre_binaires_recherche.png"></p>
 <p><em>Note</em> : Un <strong>arbre binaire vide</strong> et <strong>une feuille</strong> sont également des <strong>arbres binaires de recherche</strong>.</p>
-<h2 id="notion-darbre-equilibre">Notion d'arbre équilibré<a class="headerlink" href="#notion-darbre-equilibre" title="Permanent link">&para;</a></h2>
+<h2 id="notion-darbre-equilibre">Notion d'arbre équilibré<a class="headerlink" href="#notion-darbre-equilibre" title="Permanent link">¶</a></h2>
 <p>Une autre notion qui va nous être utile est la notion d'<strong>arbre équilibré</strong>.</p>
 <p><strong>Définition</strong> : Un <strong>arbre équilibré</strong> est un arbre pour lequel, pour tout nœud de l'arbre, la <strong>différence entre les hauteurs de ses deux sous-arbres est au plus de 1</strong>.</p>
-<p><img alt="Arbre équilibré et non équilibré" src="../images/arbres_equilibres.png" /></p>
+<p><img alt="Arbre équilibré et non équilibré" src="../images/arbres_equilibres.png"></p>
 <ul>
 <li>L'arbre <strong>A</strong> est un arbre <strong>complet</strong>, et donc <strong>équilibré</strong> car pour tout nœud de l'arbre, les deux sous-arbres ont <strong>au plus</strong> une différence de hauteur de <strong>1</strong>.</li>
 <li>L'arbre <strong>B</strong> est un arbre <strong>filiforme</strong> et donc <strong>complètement déséquilibré</strong>. Un tel arbre s'apparente à une <strong>liste chaînée</strong>.</li>
 </ul>
-<h2 id="recherche-dans-un-arbre-binaire-de-recherche">Recherche dans un arbre binaire de recherche<a class="headerlink" href="#recherche-dans-un-arbre-binaire-de-recherche" title="Permanent link">&para;</a></h2>
-<h3 id="algorithme-a-connaitre-par-cur">Algorithme (à connaître par cœur !)<a class="headerlink" href="#algorithme-a-connaitre-par-cur" title="Permanent link">&para;</a></h3>
+<h2 id="recherche-dans-un-arbre-binaire-de-recherche">Recherche dans un arbre binaire de recherche<a class="headerlink" href="#recherche-dans-un-arbre-binaire-de-recherche" title="Permanent link">¶</a></h2>
+<h3 id="algorithme-a-connaitre-par-cur">Algorithme (à connaître par cœur !)<a class="headerlink" href="#algorithme-a-connaitre-par-cur" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">À noter dans votre cours</p>
 <p>Voici l'algorithme récursif, en <em>pseudo-code</em>, de la <strong>recherche</strong> dans un <strong>arbre binaire de recherche</strong>.</p>
@@ -3223,10 +3246,10 @@
 </div>
 </div>
 <p>Contrairement à la recherche dans un <strong>arbre binaire</strong> classique, on n'effectue pas la recherche dans les deux sous-arbres. En fonction de l'<strong>élément</strong> recherché, on effectue la recherche <strong>soit</strong> dans le <strong>sous-arbre gauche</strong> (si l'élément est <strong>inférieur ou égal</strong> à la <strong>valeur de la racine</strong>), soit dans le <strong>sous-arbre droit</strong> (si l'élément est <strong>supérieur</strong> à la <strong>valeur de la racine</strong>).</p>
-<h3 id="cout-de-la-recherche">Coût de la recherche<a class="headerlink" href="#cout-de-la-recherche" title="Permanent link">&para;</a></h3>
+<h3 id="cout-de-la-recherche">Coût de la recherche<a class="headerlink" href="#cout-de-la-recherche" title="Permanent link">¶</a></h3>
 <p>Le coût de la recherche dépend du fait que l'arbre soit <strong>équilibré ou non</strong>.
 Si l'on reprend les arbres précédents :</p>
-<p><img alt="Arbre équilibré et non équilibré" src="../images/arbres_equilibres.png" /></p>
+<p><img alt="Arbre équilibré et non équilibré" src="../images/arbres_equilibres.png"></p>
 <ul>
 <li>Dans l'arbre <strong>B</strong>, <strong>tous les noeuds sont du même côté</strong>. Si l'on recherche le nombre <strong>25</strong> dans l'arbre (qui n'est pas présent dedans), on va toujours rechercher <strong>dans le sous-arbre gauche</strong>. Si l'on note <span class="arithmatex">\(n\)</span> le <strong>nombre de nœuds</strong> de l'arbre, Le nombre d'appels récursifs à <code>rechercher</code> sera <strong>de l'ordre de</strong> <span class="arithmatex">\(n\)</span>.</li>
 <li>Dans l'arbre <strong>A</strong>, les <strong>nœuds</strong> sont <strong>répartis</strong> à peu près <strong>équitablement</strong> entre les <strong>sous-arbres gauches et droit</strong>. À chaque nouvel appel récursif, on ne recherche que dans <strong>un des deux sous-arbres</strong>, et on peut donc éliminer à chaque fois environ <strong>la moitié</strong> des <strong>nœuds</strong>. Si l'on note <span class="arithmatex">\(A(n)\)</span> le nombre d'appels à <code>rechercher</code> en fonction de la taille <span class="arithmatex">\(n\)</span> de l'arbre, on peut écrire <span class="arithmatex">\(A(n) = 1 + A(\frac{n}{2}) = 1 + 1 + A(\frac{n}{4}) = [...] \approx log_2(n)\)</span>.</li>
@@ -3243,8 +3266,8 @@ Si l'on reprend les arbres précédents :</p>
 <p class="admonition-title">Pour vous entraîner</p>
 <p>Voir l'<a href="../exercices_abr/">exercice</a> 4 et sa correction pour vous entraîner sur cette notion.</p>
 </div>
-<h2 id="insertion-dans-un-arbre-binaire-de-recherche">Insertion dans un arbre binaire de recherche<a class="headerlink" href="#insertion-dans-un-arbre-binaire-de-recherche" title="Permanent link">&para;</a></h2>
-<h3 id="algorithme-a-connaitre-par-cur_1">Algorithme (à connaître par cœur !)<a class="headerlink" href="#algorithme-a-connaitre-par-cur_1" title="Permanent link">&para;</a></h3>
+<h2 id="insertion-dans-un-arbre-binaire-de-recherche">Insertion dans un arbre binaire de recherche<a class="headerlink" href="#insertion-dans-un-arbre-binaire-de-recherche" title="Permanent link">¶</a></h2>
+<h3 id="algorithme-a-connaitre-par-cur_1">Algorithme (à connaître par cœur !)<a class="headerlink" href="#algorithme-a-connaitre-par-cur_1" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">À noter dans votre cours</p>
 <p>Voici l'algorithme récursif, en <em>pseudo-code</em>, de l'<strong>insertion</strong> dans un <strong>arbre binaire de recherche</strong>.</p>
@@ -3260,7 +3283,7 @@ Si l'on reprend les arbres précédents :</p>
 </span></code></pre></div>
 </div>
 </div>
-<h3 id="cout-de-la-recherche_1">Coût de la recherche<a class="headerlink" href="#cout-de-la-recherche_1" title="Permanent link">&para;</a></h3>
+<h3 id="cout-de-la-recherche_1">Coût de la recherche<a class="headerlink" href="#cout-de-la-recherche_1" title="Permanent link">¶</a></h3>
 <p>Le coût algorithmique de l'<strong>insertion</strong> dans un <strong>arbre binaire de recherche</strong> est <strong>identique</strong> au <strong>coût</strong> de la <strong>recherche</strong>. En effet, le principe est toujours le même :</p>
 <ul>
 <li>Si l'<strong>élément</strong> à insérer est <strong>inférieur ou égal</strong> à la racine, on <strong>insère l'élément dans le sous-arbre gauche</strong>.</li>
@@ -3278,7 +3301,7 @@ Si l'on reprend les arbres précédents :</p>
 <div class="admonition tip">
 <p class="admonition-title">Pour vous entraîner</p>
 <p>Voir l'<a href="../exercices_abr/">exercice</a> 5 et sa correction pour vous entraîner sur cette notion.</p>
-</div>
+</div></div>
 
 
 

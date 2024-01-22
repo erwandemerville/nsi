@@ -769,6 +769,8 @@
       
         
       
+        
+      
     
     
     
@@ -884,6 +886,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -3030,13 +3053,13 @@
                   
 
 
-<h1 id="gestion-de-modules">Gestion de modules<a class="headerlink" href="#gestion-de-modules" title="Permanent link">&para;</a></h1>
+<div><h1 id="gestion-de-modules">Gestion de modules<a class="headerlink" href="#gestion-de-modules" title="Permanent link">¶</a></h1>
 <p>Comme vu dans le chapitre précédent, le travail sur les <strong>API</strong> a été grandement facilité par l'utilisation du module <code>requests</code> de Python, qui a fait une bonne partie du travail pour nous. Sans avoir eu à inspecter le code de ce module, nous avons pu l'utiliser facilement et avons ainsi évité de longues heures de développement pour obtenir le même résultat.</p>
 <p>Lorsque le code d’un programme devient <strong>volumineux</strong>, il devient difficile de le <strong>mettre au point</strong>, c’est-à-dire de corriger ses <strong>bugs</strong> et de le maintenir, de le faire évoluer, notamment pour intégrer de nouvelles fonctionnalités.</p>
 <p>Il est alors indispensable de le découper en plusieurs parties aussi indépendantes que possible les unes des autres. La plupart des programmes sont ainsi découpés en plusieurs <strong>modules</strong>, on parle de <strong>programmation modulaire</strong>.</p>
 <p>On peut alors tester <strong>chaque module indépendamment</strong> (tests unitaires), et tester les modules ensemble (tests d’intégration), nous reviendrons sur les tests plus tard. La modularité facilite également la <strong>réutilisation</strong> : un module bien conçu peut être utilisé par d’autres programmes et mis à disposition de la communauté.</p>
 <p>Les modules Python permettent ainsi d'enrichir le langage de nouvelles <strong>fonctionnalités</strong> et de nouveaux <strong>objets réutilisables facilement</strong>.</p>
-<h2 id="importer-un-module">Importer un module<a class="headerlink" href="#importer-un-module" title="Permanent link">&para;</a></h2>
+<h2 id="importer-un-module">Importer un module<a class="headerlink" href="#importer-un-module" title="Permanent link">¶</a></h2>
 <p>Un module s'<strong>importe</strong> par son <strong>nom</strong>, qui correspond au <strong>nom du fichier Python</strong> privé de l'extension <strong>.py</strong>.</p>
 <p>Par exemple, le module <code>random</code> qui regroupe des fonctions en lien avec l'aléatoire (randint, choice, shuffle, ...) peut être appelé de la manière suivante :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">random</span>
@@ -3045,10 +3068,10 @@
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">alea</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 </span></code></pre></div>
 <p>On peut également utiliser un <strong>espace de noms différent</strong> :</p>
-<p><div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
+<p></p><div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kn">import</span> <span class="nn">random</span> <span class="k">as</span> <span class="nn">rd</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">alea</span> <span class="o">=</span> <span class="n">rd</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 </span></code></pre></div>
-Cela permet de rendre l'appel plus concis et d'éviter que des méthodes qui auraient le même nom se court-circuitent.</p>
+Cela permet de rendre l'appel plus concis et d'éviter que des méthodes qui auraient le même nom se court-circuitent.
 <p>Une autre manière de faire est d'utiliser le symbole <code>*</code> pour <strong>tout importer</strong> depuis un module :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="o">*</span>
 </span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">alea</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
@@ -3062,7 +3085,7 @@ Cela permet de rendre l'appel plus concis et d'éviter que des méthodes qui aur
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="n">alea</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">6</span><span class="p">)</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">alea_lst</span> <span class="o">=</span> <span class="n">choices</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">7</span><span class="p">]</span>
 </span></code></pre></div>
-<h2 id="obtenir-de-laide-sur-une-fonction">Obtenir de l'aide sur une fonction<a class="headerlink" href="#obtenir-de-laide-sur-une-fonction" title="Permanent link">&para;</a></h2>
+<h2 id="obtenir-de-laide-sur-une-fonction">Obtenir de l'aide sur une fonction<a class="headerlink" href="#obtenir-de-laide-sur-une-fonction" title="Permanent link">¶</a></h2>
 <p>Un module s'apparente à une <strong>boîte noire</strong>, on a donc en général pas le code des fonctions sous les yeux, d'où l'intérêt d'une <strong>bonne documentation</strong>.</p>
 <p>La <strong>spécification d'une fonction</strong> permet d'informer les <strong>utilisateurs</strong> des tâches effectuées par cette fonction, des contraintes imposées sur les paramètres, des résultats attendus, (éventuellement) des erreurs affichées en cas de mauvaise utilisation...</p>
 <p>On utilise pour cela une <strong>docstring</strong> (commentaire sur plusieurs lignes) qui :</p>
@@ -3081,7 +3104,7 @@ Cela permet de rendre l'appel plus concis et d'éviter que des méthodes qui aur
 </ul>
 <p>Voici un exemple avec une fonction <code>produit</code> qio calcule le produit de deux entiers <code>a</code> et <code>b</code> :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="k">def</span> <span class="nf">produit</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Fonction qui renvoie le produit de a et b.</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="sd">''' Fonction qui renvoie le produit de a et b.</span>
 </span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="sd">    :CU: type(a) == type(b) == int</span>
 </span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="sd">    :param a: (int) Un entier</span>
 </span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="sd">    :param b: (int) Un autre entier</span>
@@ -3090,7 +3113,7 @@ Cela permet de rendre l'appel plus concis et d'éviter que des méthodes qui aur
 </span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="sd">    :Exemple:</span>
 </span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="sd">    &gt;&gt;&gt; produit(4, 6)</span>
 </span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="sd">    24</span>
-</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="sd">    '''</span>
 </span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>    <span class="k">assert</span> <span class="nb">type</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="o">==</span> <span class="nb">type</span><span class="p">(</span><span class="n">b</span><span class="p">)</span> <span class="o">==</span> <span class="nb">int</span>
 </span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>    <span class="n">res</span> <span class="o">=</span> <span class="mi">0</span>
 </span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">b</span><span class="p">):</span>
@@ -3102,7 +3125,7 @@ Cela permet de rendre l'appel plus concis et d'éviter que des méthodes qui aur
 <summary>Rappels annotations de types</summary>
 <p>On peut également indiquer les <strong>types des paramètres</strong> de fonctions sous la forme d'<strong>annotations de types</strong>, plutôt que de les spécifier dans la docstring. Une fonction <code>produit</code> qui calcule le produit de deux entiers <code>a</code> et <code>b</code> pourrait donc être présentée ainsi :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span> <span class="nf">produit</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Fonction qui renvoie le produit de a et b.</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="sd">''' Fonction qui renvoie le produit de a et b.</span>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="sd">    :param a: (int) Un entier</span>
 </span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="sd">    :param b: (int) Un autre entier</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="sd">    :return: (int) Le produit de a et b</span>
@@ -3110,27 +3133,27 @@ Cela permet de rendre l'appel plus concis et d'éviter que des méthodes qui aur
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="sd">    :Exemple:</span>
 </span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="sd">    &gt;&gt;&gt; produit(4, 6)</span>
 </span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a><span class="sd">    24</span>
-</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-6-10"><a id="__codelineno-6-10" name="__codelineno-6-10" href="#__codelineno-6-10"></a><span class="sd">    '''</span>
 </span><span id="__span-6-11"><a id="__codelineno-6-11" name="__codelineno-6-11" href="#__codelineno-6-11"></a>    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
 </span></code></pre></div>
 <p>ou</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="k">def</span> <span class="nf">produit</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="sd">&#39;&#39;&#39; Fonction qui renvoie le produit de deux entiers a et b.</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="w">    </span><span class="sd">''' Fonction qui renvoie le produit de deux entiers a et b.</span>
 </span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>
 </span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="sd">    :Exemple:</span>
 </span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="sd">    &gt;&gt;&gt; produit(4, 6)</span>
 </span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="sd">    24</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="sd">    &#39;&#39;&#39;</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="sd">    '''</span>
 </span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a>    <span class="p">[</span><span class="o">...</span><span class="p">]</span>
 </span></code></pre></div>
 </details>
-<p>La fonction <code>help</code> de <strong>Python</strong> permet d'obtenir la documentation des modules et fonctions.<br />
+<p>La fonction <code>help</code> de <strong>Python</strong> permet d'obtenir la documentation des modules et fonctions.<br>
 Par exemple, les instructions suivantes permettent d'afficher toute la documentation du module <code>random</code> (<em>classes</em>, <em>méthodes</em>, <em>fonctions</em>...) :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">random</span>
 </span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">help</span><span class="p">(</span><span class="n">random</span><span class="p">)</span>
 </span></code></pre></div>
 <p>De plus, le module <strong>pydoc</strong> permet de <strong>générer de la documentation</strong> à partir de <strong>docstrings</strong>.</p>
-<p><code>pydoc &lt;nom_classe&gt;</code> : Afficher la documentation sur terminal<br />
+<p><code>pydoc &lt;nom_classe&gt;</code> : Afficher la documentation sur terminal<br>
 <code>pydoc -w &lt;nom_classe&gt;</code> : Générer un fichier HTML</p>
 <div class="admonition note">
 <p class="admonition-title">À vous de jouer</p>
@@ -3140,7 +3163,7 @@ Par exemple, les instructions suivantes permettent d'afficher toute la documenta
 <p class="admonition-title">Note</p>
 <p>On parle ici de "fonctions", mais en réalité on devrait plutôt parler de "méthodes", c'est-à-dire de fonctions contenues dans des "classes". Tout cela sera abordé lors du chapitre sur la <strong>programmation orientée objet</strong> (POO).</p>
 </div>
-<h2 id="activite-creer-un-module">Activité - Créer un module<a class="headerlink" href="#activite-creer-un-module" title="Permanent link">&para;</a></h2>
+<h2 id="activite-creer-un-module">Activité - Créer un module<a class="headerlink" href="#activite-creer-un-module" title="Permanent link">¶</a></h2>
 <p>Vous allez créer un module permettant d'effectuer un certain nombre d'opérations sur des <strong>listes d'entiers</strong>.</p>
 <div class="admonition success">
 <p class="admonition-title">À télécharger</p>
@@ -3162,7 +3185,7 @@ Par exemple, les instructions suivantes permettent d'afficher toute la documenta
 <p class="admonition-title">Exercice 3</p>
 <p>Complétez la fonction <code>moyenne</code> permettant de calculer la moyenne des éléments d'une liste, en utilisant la fonction <code>sum_lst</code> de <code>operations</code>.</p>
 </div>
-<h2 id="la-notion-dinterface">La notion d'interface<a class="headerlink" href="#la-notion-dinterface" title="Permanent link">&para;</a></h2>
+<h2 id="la-notion-dinterface">La notion d'interface<a class="headerlink" href="#la-notion-dinterface" title="Permanent link">¶</a></h2>
 <div class="admonition quote">
 <p class="admonition-title">Extrait du <em>Balabonski Terminale</em></p>
 <p>Pour chaque module, on distingue:</p>
@@ -3173,7 +3196,7 @@ Par exemple, les instructions suivantes permettent d'afficher toute la documenta
 <p>L'interface d'un module est liée à sa documentation, et doit notamment expliciter ce qu'un utilisateur a besoin de connaître des fonctions proposées: comment et pour quoi les utiliser. Pour chaque fonction de l'interface, on a ainsi besoin de son nom, de la liste de ses paramètres et de sa spécification, c'est-à-dire les conditions auxquelles la fonction peut être appliquée et les résultats à attendre. Des informations supplémentaires concernant des caractéristiques comme le temps d'exécution ou l'espace mémoire requis peuvent également être utiles.</p>
 <p>L'objectif est que ces fonctions incluses dans l'interface soient suffisantes pour permettre à un utilisateur de faire appel aux fonctionnalités du module, et qu'elles puissent être utilisées sans avoir besoin d'aller consulter le code du module. L'interface peut être décrite comme une abstraction du module: une description de ce qui caractérise le module, mais faite à un niveau assez haut, ignorant les détails concrets de la réalisation. La documentation de l'interface peut être vue comme un contrat entre l'auteur d'un module et ses utilisateurs, qui simplifie l'utilisation du module en limitant le nombre de choses qu'il faille lire, comprendre et mémoriser pour utiliser le module.</p>
 <p>Voici un exemple d'interface :</p>
-<p><img alt="Un exemple d'interface" src="../images/capture_interface.png" /></p>
+<p><img alt="Un exemple d'interface" src="../images/capture_interface.png"></p>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">Notion d'encapsulation</p>
@@ -3210,7 +3233,7 @@ Par exemple, les instructions suivantes permettent d'afficher toute la documenta
 </tbody>
 </table>
 <p><strong>Implémentez un module</strong> <code>dictionnaire</code> qui correspond à cette interface.</p>
-</div>
+</div></div>
 
 
 

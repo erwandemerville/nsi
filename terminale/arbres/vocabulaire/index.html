@@ -769,6 +769,8 @@
       
         
       
+        
+      
     
     
     
@@ -884,6 +886,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -3212,11 +3235,11 @@
                   
 
 
-<h1 id="arbres-definitions-et-vocabulaire">Arbres : définitions et vocabulaire<a class="headerlink" href="#arbres-definitions-et-vocabulaire" title="Permanent link">&para;</a></h1>
-<h2 id="une-structure-hierarchique">Une structure hiérarchique ?<a class="headerlink" href="#une-structure-hierarchique" title="Permanent link">&para;</a></h2>
+<div><h1 id="arbres-definitions-et-vocabulaire">Arbres : définitions et vocabulaire<a class="headerlink" href="#arbres-definitions-et-vocabulaire" title="Permanent link">¶</a></h1>
+<h2 id="une-structure-hierarchique">Une structure hiérarchique ?<a class="headerlink" href="#une-structure-hierarchique" title="Permanent link">¶</a></h2>
 <p><strong>Exemple</strong> : La <strong>hiérarchie</strong> (organigramme) d'une entreprise :</p>
-<p><img alt="images/type-orga1.png" src="../images/type-orga1.png" /></p>
-<h2 id="les-arbres-pour-quoi-faire">Les arbres, pour quoi faire ?<a class="headerlink" href="#les-arbres-pour-quoi-faire" title="Permanent link">&para;</a></h2>
+<p><img alt="images/type-orga1.png" src="../images/type-orga1.png"></p>
+<h2 id="les-arbres-pour-quoi-faire">Les arbres, pour quoi faire ?<a class="headerlink" href="#les-arbres-pour-quoi-faire" title="Permanent link">¶</a></h2>
 <p><strong>Exemple 1</strong> : Lorsque l'interpréteur <strong>Python</strong> lit un programme, il crée d'abord un <strong>arbre syntaxique</strong> utilisant la grammaire du langage. On ne pourrait en effet pas stocker ces données dans une structure linéaire sans y perdre la structuration du programme.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">produit</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">s</span> <span class="o">=</span> <span class="mi">0</span>
@@ -3224,36 +3247,36 @@
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="n">s</span> <span class="o">=</span> <span class="n">s</span> <span class="o">+</span> <span class="n">a</span>
 </span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="k">return</span> <span class="n">s</span>
 </span></code></pre></div>
-<p><img alt="images/arbre_python.png" src="../images/arbre_python.png" /></p>
+<p><img alt="images/arbre_python.png" src="../images/arbre_python.png"></p>
 <p><strong>Exemple 2</strong> : Arbre d'une page HTML</p>
-<p><div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<p></p><div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
 </span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;utf-8&quot;</span><span class="p">&gt;</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
 </span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Ma superbe page<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
 </span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
 </span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
 </span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Mon super titre<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
 </span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Mon super paragraphe<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;mon_image.png&quot;</span> <span class="na">alt</span><span class="o">=</span><span class="s">&quot;ma superbe image&quot;</span> <span class="p">/&gt;</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">"mon_image.png"</span> <span class="na">alt</span><span class="o">=</span><span class="s">"ma superbe image"</span> <span class="p">/&gt;</span>
 </span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
 </span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="p">&lt;</span><span class="nt">footer</span><span class="p">&gt;</span>
 </span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>        <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Un pied de page<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
 </span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="p">&lt;/</span><span class="nt">footer</span><span class="p">&gt;</span>
 </span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
 </span></code></pre></div>
-<img alt="images/arbre_html_v2.png" src="../images/arbre_html_v2.png" /></p>
-<p><strong>Exemple 3</strong> : Arborescence des fichiers sur Linux<br />
+<img alt="images/arbre_html_v2.png" src="../images/arbre_html_v2.png">
+<p><strong>Exemple 3</strong> : Arborescence des fichiers sur Linux<br>
 <em>Source : <a href="https://pixees.fr/informatiquelycee/n_site/nsi_prem_cmd_base_linux.html">pixees</a></em></p>
-<p><img alt="images/arbre_linux.png" src="../images/arbre_linux.png" /></p>
-<h2 id="les-arbres">Les arbres<a class="headerlink" href="#les-arbres" title="Permanent link">&para;</a></h2>
-<h3 id="definition">Définition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h3>
+<p><img alt="images/arbre_linux.png" src="../images/arbre_linux.png"></p>
+<h2 id="les-arbres">Les arbres<a class="headerlink" href="#les-arbres" title="Permanent link">¶</a></h2>
+<h3 id="definition">Définition<a class="headerlink" href="#definition" title="Permanent link">¶</a></h3>
 <p><strong>Arbre</strong> : ensemble de <u>noeuds</u> organisés de façon <strong>hiérarchique</strong> à partir d'un <em>noeud</em> appelé <u>racine</u>.</p>
 <p>Un <strong>arbre</strong> est une structure de données :</p>
 <ul>
 <li><strong>hiérarchique</strong></li>
 <li>naturellement <strong>récursive</strong></li>
 </ul>
-<h3 id="vocabulaire">Vocabulaire<a class="headerlink" href="#vocabulaire" title="Permanent link">&para;</a></h3>
+<h3 id="vocabulaire">Vocabulaire<a class="headerlink" href="#vocabulaire" title="Permanent link">¶</a></h3>
 <ul>
 <li>Un <u><strong>noeud</strong></u> est caractérisé par :<ul>
 <li>une <strong>étiquette</strong> (= <em>valeur</em> ou <em>clé</em> associée au noeud) si l'arbre est <strong>étiqueté</strong>,</li>
@@ -3268,33 +3291,33 @@
 </ul>
 </li>
 </ul>
-<p><img src="../images/arbre_vocabulaire_v2_annote.png" alt="Drawing" style="width: 350px;"/></p>
+<p><img src="../images/arbre_vocabulaire_v2_annote.png" alt="Drawing" style="width: 350px;"></p>
 <ul>
 <li><strong><u>chemin</u></strong> - <strong>deux conventions</strong> :<ul>
-<li>suite de <strong>noeuds consécutifs</strong> de l'arbre, de <u><strong>longueur</strong></u> égale au <strong>nombre de noeuds</strong> du chemin. <em>Sur l'arbre suivant, un chemin allant de A à H serait <code>[A, C, E, H]</code> (longueur du chemin : </em><em>4</em><em>).</em><br />
-<font color="red">OU</font><br /></li>
-<li>suite d'<strong>arêtes consécutives</strong> de l'arbre, de <u><strong>longueur</strong></u> égale au <strong>nombre d'arêtes</strong> du chemin.<br /><em>Sur l'arbre suivant, un chemin allant de A à H serait <code>[A-&gt;C, C-&gt;E, E-&gt;H]</code> (longueur du chemin : </em><em>3</em><em>).</em></li>
+<li>suite de <strong>noeuds consécutifs</strong> de l'arbre, de <u><strong>longueur</strong></u> égale au <strong>nombre de noeuds</strong> du chemin. <em>Sur l'arbre suivant, un chemin allant de A à H serait <code>[A, C, E, H]</code> (longueur du chemin : </em><em>4</em><em>).</em><br>
+<font color="red">OU</font><br></li>
+<li>suite d'<strong>arêtes consécutives</strong> de l'arbre, de <u><strong>longueur</strong></u> égale au <strong>nombre d'arêtes</strong> du chemin.<br><em>Sur l'arbre suivant, un chemin allant de A à H serait <code>[A-&gt;C, C-&gt;E, E-&gt;H]</code> (longueur du chemin : </em><em>3</em><em>).</em></li>
 </ul>
 </li>
 </ul>
-<p><img src="../images/arbre_vocabulaire_v2.png" alt="Drawing" style="width: 300px;"/></p>
-<h3 id="quelques-mesures-sur-les-arbres">Quelques mesures sur les arbres<a class="headerlink" href="#quelques-mesures-sur-les-arbres" title="Permanent link">&para;</a></h3>
+<p><img src="../images/arbre_vocabulaire_v2.png" alt="Drawing" style="width: 300px;"></p>
+<h3 id="quelques-mesures-sur-les-arbres">Quelques mesures sur les arbres<a class="headerlink" href="#quelques-mesures-sur-les-arbres" title="Permanent link">¶</a></h3>
 <ul>
 <li>
-<p><u><strong>taille</strong></u> d'un arbre : nombre de <strong>noeuds</strong> de l’arbre<br /><em>L'arbre ci-dessous a une taille de 8 (car 8 noeuds)</em>.</p>
+<p><u><strong>taille</strong></u> d'un arbre : nombre de <strong>noeuds</strong> de l’arbre<br><em>L'arbre ci-dessous a une taille de 8 (car 8 noeuds)</em>.</p>
 </li>
 <li>
 <p><u><strong>profondeur</strong></u> d’un <strong>noeud</strong> - <strong>deux conventions</strong> :</p>
 <ul>
-<li><font color="blue">nombre de <strong>noeuds</strong> rencontrés pour aller de la <strong>racine</strong> jusqu'à ce <strong>noeud</strong></font><br /><em>Sur l'arbre ci-dessous, la profondeur du noeud H est de </em><em>4</em><em>.</em><br />
+<li><font color="blue">nombre de <strong>noeuds</strong> rencontrés pour aller de la <strong>racine</strong> jusqu'à ce <strong>noeud</strong></font><br><em>Sur l'arbre ci-dessous, la profondeur du noeud H est de </em><em>4</em><em>.</em><br>
 <font color="red">OU</font></li>
-<li><font color="green">nombre d’<strong>arêtes</strong> rencontrées pour aller de la <strong>racine</strong> jusqu'à ce <strong>noeud</strong></font><br /><em>Sur l'arbre ci-dessous, la profondeur du noeud H est de </em><em>3</em><em>.</em></li>
+<li><font color="green">nombre d’<strong>arêtes</strong> rencontrées pour aller de la <strong>racine</strong> jusqu'à ce <strong>noeud</strong></font><br><em>Sur l'arbre ci-dessous, la profondeur du noeud H est de </em><em>3</em><em>.</em></li>
 </ul>
 </li>
 <li>
 <p><u><strong>hauteur</strong></u> d’un <strong>arbre</strong> : <strong>deux conventions</strong> :</p>
 <ul>
-<li><strong>profondeur maximale</strong> des <strong>feuilles</strong> de l’arbre (dépend de la convention choisie pour la profondeur.)<br /><em>Sur l'arbre ci-dessous, la </em><em>hauteur de l'arbre</em><em> est la </em><em>profondeur du noeud H</em><em>, elle est donc de </em><em>4</em><em> ou de </em><em>3</em><em> selon la convention choisie.</em></li>
+<li><strong>profondeur maximale</strong> des <strong>feuilles</strong> de l’arbre (dépend de la convention choisie pour la profondeur.)<br><em>Sur l'arbre ci-dessous, la </em><em>hauteur de l'arbre</em><em> est la </em><em>profondeur du noeud H</em><em>, elle est donc de </em><em>4</em><em> ou de </em><em>3</em><em> selon la convention choisie.</em></li>
 </ul>
 </li>
 <li>
@@ -3304,9 +3327,9 @@
 <p><u><strong>arité/degré</strong></u> d’un arbre : nombre maximal de <strong>fils</strong> des <strong>noeuds</strong> de l’arbre.</p>
 </li>
 </ul>
-<p><img src="../images/arbre_vocabulaire_v3_annote.png" alt="Drawing" style="width: 350px;"/></p>
-<h2 id="les-arbres-binaires">Les arbres binaires<a class="headerlink" href="#les-arbres-binaires" title="Permanent link">&para;</a></h2>
-<h3 id="definition_1">Définition<a class="headerlink" href="#definition_1" title="Permanent link">&para;</a></h3>
+<p><img src="../images/arbre_vocabulaire_v3_annote.png" alt="Drawing" style="width: 350px;"></p>
+<h2 id="les-arbres-binaires">Les arbres binaires<a class="headerlink" href="#les-arbres-binaires" title="Permanent link">¶</a></h2>
+<h3 id="definition_1">Définition<a class="headerlink" href="#definition_1" title="Permanent link">¶</a></h3>
 <p>Un <strong>arbre binaire</strong> est :</p>
 <ul>
 <li>soit un <strong>arbre vide</strong>, qui ne contient <strong>aucun noeud</strong>,</li>
@@ -3320,10 +3343,10 @@
 <li>La racine d'un <strong>arbre binaire</strong> possède <strong>0</strong>, <strong>1</strong> ou <strong>2 noeuds fils</strong>.</li>
 <li>Le placement des éléments à <strong>gauche</strong> ou à <strong>droite</strong> doit suivre une <strong>logique interne</strong> et n'est pas aléatoire.</li>
 </ul>
-<p><img alt="images/arbre_binaire.png" src="../images/arbre_binaire.png" /></p>
-<h3 id="arbres-binaires-particuliers">Arbres binaires particuliers<a class="headerlink" href="#arbres-binaires-particuliers" title="Permanent link">&para;</a></h3>
+<p><img alt="images/arbre_binaire.png" src="../images/arbre_binaire.png"></p>
+<h3 id="arbres-binaires-particuliers">Arbres binaires particuliers<a class="headerlink" href="#arbres-binaires-particuliers" title="Permanent link">¶</a></h3>
 <p><em>Source : <a href="http://pascal.delahaye1.free.fr/cpge/informatique/cours%20projetes/cp08.pdf">http://pascal.delahaye1.free.fr/cpge/informatique/cours%20projetes/cp08.pdf</a></em></p>
-<p><img src="../images/types_arbres_particuliers.png" alt="arbres_particuliers" style="width: 600px;" /></p>
+<p><img src="../images/types_arbres_particuliers.png" alt="arbres_particuliers" style="width: 600px;"></p>
 <ul>
 <li>
 <p>Un <strong>arbre binaire <u>filiforme</u></strong> (ou <em>dégénéré</em>) est un <strong>arbre</strong> dans lequel tous les <strong>noeuds internes</strong> n’ont qu’<strong>un seul fils</strong>. (Un arbre filiforme ne possède donc qu’<strong>une seule feuille</strong>.)</p>
@@ -3344,8 +3367,8 @@
 <p>Un <strong>arbre binaire <u>équilibré</u></strong> est un <strong>arbre binaire</strong> tel que pour chaque <strong>noeud</strong>, le <strong>sous-arbre gauche</strong> et le <strong>sous-arbre droit</strong> ont une hauteur qui ne diffère que de 1 au plus.</p>
 </li>
 </ul>
-<h3 id="relations-entre-taille-n-et-hauteur-h">Relations entre taille n et hauteur h<a class="headerlink" href="#relations-entre-taille-n-et-hauteur-h" title="Permanent link">&para;</a></h3>
-<h4 id="encadrement-avec-une-profondeur-0-pour-la-racine">Encadrement avec une profondeur 0 pour la racine :<a class="headerlink" href="#encadrement-avec-une-profondeur-0-pour-la-racine" title="Permanent link">&para;</a></h4>
+<h3 id="relations-entre-taille-n-et-hauteur-h">Relations entre taille n et hauteur h<a class="headerlink" href="#relations-entre-taille-n-et-hauteur-h" title="Permanent link">¶</a></h3>
+<h4 id="encadrement-avec-une-profondeur-0-pour-la-racine">Encadrement avec une profondeur 0 pour la racine :<a class="headerlink" href="#encadrement-avec-une-profondeur-0-pour-la-racine" title="Permanent link">¶</a></h4>
 <ul>
 <li>Pour une <strong>taille n</strong> donnée : <span class="arithmatex">\(\lfloor log_{2}(n) \rfloor \leq h \leq n-1\)</span><ul>
 <li><strong>h</strong> est <strong>minimale</strong> lorsque <strong>l'arbre est complet (ou parfait)</strong>, <strong>h</strong> est <strong>maximale</strong> lorsque <strong>l'arbre est filiforme</strong></li>
@@ -3358,7 +3381,7 @@
 </ul>
 </li>
 </ul>
-<h4 id="encadrement-avec-une-profondeur-1-pour-la-racine">Encadrement avec une profondeur 1 pour la racine :<a class="headerlink" href="#encadrement-avec-une-profondeur-1-pour-la-racine" title="Permanent link">&para;</a></h4>
+<h4 id="encadrement-avec-une-profondeur-1-pour-la-racine">Encadrement avec une profondeur 1 pour la racine :<a class="headerlink" href="#encadrement-avec-une-profondeur-1-pour-la-racine" title="Permanent link">¶</a></h4>
 <ul>
 <li>Pour une <strong>taille n</strong> donnée : <span class="arithmatex">\(\lceil log_{2}(n+1) \rceil \leq h \leq n\)</span><ul>
 <li><strong>h</strong> est <strong>minimale</strong> lorsque <strong>l'arbre est complet (ou parfait)</strong>, <strong>h</strong> est <strong>maximale</strong> lorsque <strong>l'arbre est filiforme</strong></li>
@@ -3370,7 +3393,7 @@
 <li><em>exemple</em> si <span class="arithmatex">\(h=5\)</span> : <span class="arithmatex">\(5 \leq h \leq 31\)</span></li>
 </ul>
 </li>
-</ul>
+</ul></div>
 
 
 

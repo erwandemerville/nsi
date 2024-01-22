@@ -769,6 +769,8 @@
       
         
       
+        
+      
     
     
     
@@ -884,6 +886,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -2994,9 +3017,9 @@
                   
 
 
-<h1 id="un-jeu-de-snake-avec-pyxel">Un jeu de snake avec Pyxel<a class="headerlink" href="#un-jeu-de-snake-avec-pyxel" title="Permanent link">&para;</a></h1>
+<div><h1 id="un-jeu-de-snake-avec-pyxel">Un jeu de snake avec Pyxel<a class="headerlink" href="#un-jeu-de-snake-avec-pyxel" title="Permanent link">¶</a></h1>
 <figure>
-<p><img alt="Screen du jeu" src="../images/screen_pyxel.png" width="300" />
+<p><img alt="Screen du jeu" src="../images/screen_pyxel.png" width="300">
   </p>
 <figcaption>Screen de la fenêtre de jeu</figcaption>
 </figure>
@@ -3011,11 +3034,11 @@
 </div>
 <details class="tip">
 <summary>Corrigé</summary>
-<p><center>
-<a href="../src/snake_corr.py" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.88.88 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.756.756 0 0 0-.49-.18M15 10V8h5v2h-5m-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41M10 0h2v5h-2V0M3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41m0-11.32 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83M7 10H2V8h5v2"/></svg></span> Télécharger le programme corrigé</a>
-</center></p>
+<p></p><center>
+<a href="../src/snake_corr.py" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.88.88 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.756.756 0 0 0-.49-.18M15 10V8h5v2h-5m-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41M10 0h2v5h-2V0M3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41m0-11.32 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83M7 10H2V8h5v2"></path></svg></span> Télécharger le programme corrigé</a>
+</center>
 </details>
-<h2 id="quelques-explications-utiles">Quelques explications utiles<a class="headerlink" href="#quelques-explications-utiles" title="Permanent link">&para;</a></h2>
+<h2 id="quelques-explications-utiles">Quelques explications utiles<a class="headerlink" href="#quelques-explications-utiles" title="Permanent link">¶</a></h2>
 <p>Pour réaliser ce <strong>jeu de snake</strong>, vous utilisez la <strong>POO</strong> (<strong>p</strong>rogrammation <strong>o</strong>rientée <strong>o</strong>bjet).</p>
 <p>Voici une structure de base pour votre <strong>programme</strong> (vous pouvez <a href="../src/snake_base.py" target="_blank">télécharger le fichier</a> ou copier / coller le code ci-dessous):</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">import</span> <span class="nn">pyxel</span>
@@ -3035,13 +3058,13 @@
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>
 </span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>    <span class="k">def</span> <span class="nf">draw</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
 </span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="c1"># on ajoute une instruction permettant d&#39;effacer l&#39;écran</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>        <span class="c1"># on ajoute une instruction permettant d'effacer l'écran</span>
 </span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>        <span class="c1"># et de le remplir avec la couleur 0 (= couleur noire) :</span>
 </span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>        <span class="n">pyxel</span><span class="o">.</span><span class="n">cls</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 </span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>
 </span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>        <span class="k">pass</span>
 </span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>
-</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">"__main__"</span><span class="p">:</span>
 </span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>    <span class="n">SnakeGame</span><span class="p">()</span>  <span class="c1"># Instanciation de la classe SnakeGame</span>
 </span></code></pre></div>
 <div class="admonition tip">
@@ -3053,10 +3076,10 @@
 <li>la méthode <code>__init__</code> permet :<ul>
 <li>de définir tous les <strong>attributs</strong> dont vous aurez besoin pour travailler (par exemple un attribut pour représenter le <code>snake</code> lui-même, la <code>direction</code> de déplacement du snake, le <code>score</code> du joueur, etc.),</li>
 <li>d'<strong>initialiser la fenêtre de jeu</strong> avec la fonction <code>init</code> du module <code>pyxel</code>,</li>
-<li>d'<strong>exécuter le jeu</strong> avec la fonction <code>run</code> du module <code>pyxel</code>.<br />
-C'est ce que l'on fait avec l'instruction :<br />
-<code>pyxel.run(self.update, self.draw)</code><br />
-Cette fonction <code>run</code> prend comme <strong>entrées</strong> votre méthode <code>update</code> et votre méthode <code>draw</code>.<br />
+<li>d'<strong>exécuter le jeu</strong> avec la fonction <code>run</code> du module <code>pyxel</code>.<br>
+C'est ce que l'on fait avec l'instruction :<br>
+<code>pyxel.run(self.update, self.draw)</code><br>
+Cette fonction <code>run</code> prend comme <strong>entrées</strong> votre méthode <code>update</code> et votre méthode <code>draw</code>.<br>
 Ces deux méthodes seront <strong>exécutées 20 fois par seconde</strong>.</li>
 </ul>
 </li>
@@ -3064,30 +3087,30 @@ Ces deux méthodes seront <strong>exécutées 20 fois par seconde</strong>.</li>
 <li>la méthode <code>update</code> contiendra <em>toutes les instructions</em><em> permettant de </em><em>mettre à jour l'état du jeu</em>*.</li>
 </ul>
 </li>
-<li>Au début de la méthode <code>draw</code>, vous pouvez voir l'instruction suivante :<br />
-<code>pyxel.cls(0)</code><br />
-On a ici appelé la <strong>fonction</strong> <code>cls</code> de <code>pyxel</code>, qui permet d'<strong>effacer l'écran</strong> et de le <strong>remplir avec la couleur noire</strong> (valeur <code>0</code>). Il y a au total <strong>16 couleurs possibles</strong>, de <strong>valeurs</strong> allant de <code>0</code> (pour le <strong>noir</strong>) à <code>15</code> :<br />
-<img alt="Palette de couleurs avec infos" src="../images/05_color_palette.png" /><br />
-<img alt="Palette de couleurs" src="../images/pyxel_palette.png" /><br />
+<li>Au début de la méthode <code>draw</code>, vous pouvez voir l'instruction suivante :<br>
+<code>pyxel.cls(0)</code><br>
+On a ici appelé la <strong>fonction</strong> <code>cls</code> de <code>pyxel</code>, qui permet d'<strong>effacer l'écran</strong> et de le <strong>remplir avec la couleur noire</strong> (valeur <code>0</code>). Il y a au total <strong>16 couleurs possibles</strong>, de <strong>valeurs</strong> allant de <code>0</code> (pour le <strong>noir</strong>) à <code>15</code> :<br>
+<img alt="Palette de couleurs avec infos" src="../images/05_color_palette.png"><br>
+<img alt="Palette de couleurs" src="../images/pyxel_palette.png"><br>
 L'instruction <code>pyxel.cls(0)</code> est nécessaire pour pouvoir modifier notre affichage à chaque appel de <code>draw</code> sans conserver les affichages précédents.</li>
-<li>Enfin, le <strong>bloc d'instructions</strong> <code>if __name__ == "__main__":</code> en <strong>fin de script</strong> permet de définir des <strong>instructions</strong> qui seront <strong>exécutées uniquement si l'on exécute directement ce script</strong>. Elles ne seront donc pas exécutées si le script est importé dans un autre.<br />
+<li>Enfin, le <strong>bloc d'instructions</strong> <code>if __name__ == "__main__":</code> en <strong>fin de script</strong> permet de définir des <strong>instructions</strong> qui seront <strong>exécutées uniquement si l'on exécute directement ce script</strong>. Elles ne seront donc pas exécutées si le script est importé dans un autre.<br>
 Ici, on se contente d'<strong>instancier la classe</strong><code>SnakeGame</code>, ce qui entraîne automatiquement l'<strong>exécution du jeu</strong> (puisque l'instruction <code>pyxel.run</code> est dans le <strong>constructeur de la classe</strong>). Vous remarquerez que l'on ne stocke pas notre nouvel <strong>objet</strong> dans une <strong>variable</strong>, puisqu'on n'a pas besoin de le modifier.</li>
 </ul>
 </div>
 <div class="admonition danger">
 <p class="admonition-title">Erreur sur votre feuille</p>
 <p>Dans la <strong>version papier de l'énoncé</strong> que je vous ai donnée, il y a une petite <strong>erreur</strong> sur la <strong><ins>page 2</ins></strong>, sur l'extrait de code suivant :</p>
-<p><img alt="Screen erreur" src="../images/screen_erreur.png" width="300" /></p>
-<p>En effet, le <code>score</code> doit être un <strong>attribut</strong> défini dans le <strong>constructeur</strong> de la classe, puisque l'on souhaite le <strong>stocker</strong> et pouvoir à tout moment le <strong>modifier</strong> dans notre méthode <code>update</code> (en l'occurence, on augmentera ce score à chaque fois que le snake mangera une nourriture).<br />
+<p><img alt="Screen erreur" src="../images/screen_erreur.png" width="300"></p>
+<p>En effet, le <code>score</code> doit être un <strong>attribut</strong> défini dans le <strong>constructeur</strong> de la classe, puisque l'on souhaite le <strong>stocker</strong> et pouvoir à tout moment le <strong>modifier</strong> dans notre méthode <code>update</code> (en l'occurence, on augmentera ce score à chaque fois que le snake mangera une nourriture).<br>
 <mark>Il faut donc remplacer <code>score</code> par <code>self.score</code></mark> :</p>
-<p><img alt="Screen erreur" src="../images/screen_erreur_rectifiee.png" /></p>
+<p><img alt="Screen erreur" src="../images/screen_erreur_rectifiee.png"></p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Ajouts dans le code de base</p>
 <p>Notez les <strong>deux différences</strong> entre le <strong>code de base</strong> que je vous avais fourni, et celui qui est maintenant proposé :</p>
 <ul>
 <li>on a ajouté l'instruction <code>pyxel.cls(0)</code> au <strong>début</strong> de la méthode <code>draw</code>,</li>
-<li>on a placé l'instruction d'<strong>exécution du jeu</strong> <code>pyxel.run</code> à <strong>la fin</strong> du <strong>constructeur de la classe</strong> plutôt que dans le <strong>bloc en fin de script</strong>.<br />
+<li>on a placé l'instruction d'<strong>exécution du jeu</strong> <code>pyxel.run</code> à <strong>la fin</strong> du <strong>constructeur de la classe</strong> plutôt que dans le <strong>bloc en fin de script</strong>.<br>
 En soi, ça ne change pas grand chose, dans les deux cas notre jeu s'exécutera, mais cette solution là est plus élégante et logique.</li>
 </ul>
 <p><mark>N'oubliez pas de modifier votre code en tenant compte de ces deux éléments.</mark></p>
@@ -3095,13 +3118,13 @@ En soi, ça ne change pas grand chose, dans les deux cas notre jeu s'exécutera,
 <div class="admonition warning">
 <p class="admonition-title">Information - Déplacement du snake</p>
 <p>En bas de la <strong>page 3</strong> de l'<strong>énoncé</strong>, on vous donne une partie du code permettant de <strong>réagir aux touches du clavier</strong> en <strong>modifiant</strong> la <strong>direction de déplacement</strong> du <strong>snake</strong> :</p>
-<p><img alt="Instructions relatives à l'appui sur une touche" src="../images/screen_deplacements.png" /></p>
+<p><img alt="Instructions relatives à l'appui sur une touche" src="../images/screen_deplacements.png"></p>
 <ul>
 <li>Bien évidemment, vous devez <strong>compléter</strong> ce bout de code en <strong>ajoutant les instructions</strong> pour prendre en compte l'<strong>appui</strong> sur la <strong>touche</strong> <span class="keys"><kbd class="key-arrow-up">Up</kbd></span> et sur la <strong>touche</strong> <span class="keys"><kbd class="key-arrow-down">Down</kbd></span>.</li>
 <li>Vous pouvez, si vous le souhaitez, remplacer les touches de flèches par les touches <span class="keys"><kbd class="key-z">Z</kbd></span>, <span class="keys"><kbd class="key-q">Q</kbd></span>, <span class="keys"><kbd class="key-s">S</kbd></span> et <span class="keys"><kbd class="key-d">D</kbd></span>.</li>
 </ul>
 </div>
-<h2 id="une-version-amelioree">Une version améliorée<a class="headerlink" href="#une-version-amelioree" title="Permanent link">&para;</a></h2>
+<h2 id="une-version-amelioree">Une version améliorée<a class="headerlink" href="#une-version-amelioree" title="Permanent link">¶</a></h2>
 <p>Maintenant que vous avez une première version de votre jeu, vous pouvez y apporter des <strong>améliorations</strong>, comme par exemple :</p>
 <ul>
 <li><strong>agrandir</strong> la <strong>fenêtre de jeu</strong>,</li>
@@ -3110,7 +3133,7 @@ En soi, ça ne change pas grand chose, dans les deux cas notre jeu s'exécutera,
 <li><strong>accélérer la vitesse de déplacement</strong> du <strong><em>snake</em></strong> toutes les <span class="arithmatex">\(x\)</span> nourritures mangées,</li>
 <li>créer un <strong>système de niveaux</strong> de plus en plus durs et en y ajoutant des obstacles,</li>
 <li>etc.</li>
-</ul>
+</ul></div>
 
 
 

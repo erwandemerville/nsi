@@ -769,6 +769,8 @@
       
         
       
+        
+      
     
     
     
@@ -884,6 +886,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -3026,29 +3049,29 @@
                   
 
 
-<div class="admonition info">
+<div><div class="admonition info">
 <p class="admonition-title">Info</p>
 <p>Ces exercices sont également disponibles en format <strong>PDF</strong> : <a href="../fiche2_parcours.pdf" target="_blank">fiche2_parcours.pdf</a></p>
 </div>
-<h1 id="exercices-parcours-darbres-binaires">Exercices - Parcours d'arbres binaires<a class="headerlink" href="#exercices-parcours-darbres-binaires" title="Permanent link">&para;</a></h1>
+<h1 id="exercices-parcours-darbres-binaires">Exercices - Parcours d'arbres binaires<a class="headerlink" href="#exercices-parcours-darbres-binaires" title="Permanent link">¶</a></h1>
 <p>Il existe plusieurs façons de <strong>parcourir un arbre binaire</strong> (c'est-à-dire de <strong>visiter les nœuds de l'arbre</strong> dans un <strong>ordre</strong> précis), et notamment deux types de <strong>parcours</strong> :</p>
 <ul>
 <li>le parcours en <strong>largeur</strong> d'abord,</li>
 <li>le parcours en <strong>profondeur</strong> d'abord.</li>
 </ul>
-<h2 id="parcours-en-profondeur">Parcours en profondeur<a class="headerlink" href="#parcours-en-profondeur" title="Permanent link">&para;</a></h2>
+<h2 id="parcours-en-profondeur">Parcours en profondeur<a class="headerlink" href="#parcours-en-profondeur" title="Permanent link">¶</a></h2>
 <p>En l’occurrence, <strong>trois cas particuliers</strong> du <strong>parcours en profondeur</strong> sont à connaître sur les <strong>arbres binaires</strong> : le parcours en <strong>ordre préfixe</strong>, en <strong>ordre infixe</strong> et en <strong>ordre suffixe</strong> (ou <em>postfixe</em>).</p>
 <p>Ces parcours se définissent <strong>de manière récursive</strong>. Ils consistent à <strong>traiter</strong> la <strong>racine</strong> de l'arbre et à <strong>parcourir récursivement</strong> les <strong>sous-arbres gauche</strong> et <strong>droit</strong> de la racine. Les parcours <strong>préfixe</strong>, <strong>infixe</strong> et <strong>suffixe</strong> se distinguent par l'<strong>ordre</strong> dans lequel sont effectués ces traitements.</p>
-<h3 id="parcours-prefixe-infixe-postfixe">Parcours préfixe, infixe, postfixe<a class="headerlink" href="#parcours-prefixe-infixe-postfixe" title="Permanent link">&para;</a></h3>
+<h3 id="parcours-prefixe-infixe-postfixe">Parcours préfixe, infixe, postfixe<a class="headerlink" href="#parcours-prefixe-infixe-postfixe" title="Permanent link">¶</a></h3>
 <p>Voici un <strong>arbre binaire</strong> :</p>
 <figure>
-<p><img alt="Un arbre binaire" src="../images/arbre1.png" width="85%" />
+<p><img alt="Un arbre binaire" src="../images/arbre1.png" width="85%">
   </p>
 <figcaption>Un arbre binaire</figcaption>
 </figure>
 <div class="admonition info">
 <p class="admonition-title">Déroulement <em>parcours préfixe</em></p>
-<p><em>Précondition</em> : L'arbre n'est pas vide<br />
+<p><em>Précondition</em> : L'arbre n'est pas vide<br>
 Le <code>parcours préfixe</code> se déroule comme suit :</p>
 <ol>
 <li>On <code>visite</code> le <strong>nœud racine</strong> de l'arbre.</li>
@@ -3062,7 +3085,7 @@ Le <code>parcours préfixe</code> se déroule comme suit :</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Déroulement <em>parcours suffixe</em></p>
-<p><em>Précondition</em> : L'arbre n'est pas vide<br />
+<p><em>Précondition</em> : L'arbre n'est pas vide<br>
 Le <code>parcours suffixe</code> se déroule comme suit :</p>
 <ol>
 <li>On effectue le <code>parcours suffixe</code> du <strong>sous-arbre gauche</strong> (s'il est NON vide).</li>
@@ -3076,7 +3099,7 @@ Le <code>parcours suffixe</code> se déroule comme suit :</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">Déroulement <em>parcours infixe</em></p>
-<p><em>Précondition</em> : L'arbre n'est pas vide<br />
+<p><em>Précondition</em> : L'arbre n'est pas vide<br>
 Le <code>parcours infixe</code> se déroule comme suit :</p>
 <ol>
 <li>On effectue le <code>parcours infixe</code> du <strong>sous-arbre gauche</strong> (s'il est NON vide).</li>
@@ -3101,7 +3124,7 @@ Le <code>parcours infixe</code> se déroule comme suit :</p>
 </li>
 </ol>
 </div>
-<h2 id="parcours-en-largeur">Parcours en largeur<a class="headerlink" href="#parcours-en-largeur" title="Permanent link">&para;</a></h2>
+<h2 id="parcours-en-largeur">Parcours en largeur<a class="headerlink" href="#parcours-en-largeur" title="Permanent link">¶</a></h2>
 <p>Le <strong>parcours en largeur</strong> consiste à parcourir un arbre <strong>niveau par niveau</strong>. Le <strong>nœud</strong> de <em>profondeur 0</em> (ou <em>1</em> selon la convention choisie) est d'abord parcouru, puis les <strong>nœuds</strong> de <em>profondeur 1</em> (ou <em>2</em>), et ainsi de suite.  À chaque niveau, les <strong>nœuds</strong> sont <strong>parcourus de la gauche vers la droite</strong>.</p>
 <div class="admonition info">
 <p class="admonition-title">Déroulement <em>parcours en largeur</em></p>
@@ -3114,7 +3137,7 @@ Le <code>parcours infixe</code> se déroule comme suit :</p>
 </ul>
 </div>
 <p>Par exemple, si l'on parcourt l'arbre suivant <strong>en largeur</strong>, les <strong>nœuds</strong> seront visités dans cet ordre : <code>[E, B, G, A, D, F, H, C]</code></p>
-<p><img alt="Parcours en largeur" src="../images/arbre_parcours_annotel.png" width="60%" /></p>
+<p><img alt="Parcours en largeur" src="../images/arbre_parcours_annotel.png" width="60%"></p>
 <div class="admonition note">
 <p class="admonition-title">Exercice 5</p>
 <p><strong>Listez</strong> les valeurs des <strong>nœuds</strong> de l'arbre en <em>figure 1</em> visités lors d'un <strong>parcours en largeur</strong>.</p>
@@ -3123,7 +3146,7 @@ Le <code>parcours infixe</code> se déroule comme suit :</p>
 <p class="admonition-title">Exercice 6</p>
 <p>Si l'on implémentait l'algorithme de <strong>parcours en largeur</strong>, on aurait besoin d'une structure de données permettant d'y stocker à chaque fois les prochains <strong>nœuds à visiter</strong> (qui contiendrait initialement la <strong>racine de l'arbre</strong>), de manière à ce que <strong><em>le premier nœud ajouté soit le premier nœud visité</em></strong>.</p>
 <p>À votre avis, quelle <strong>structure de données linéaire</strong> pourrait-on utiliser pour implémenter le <strong>parcours en largeur</strong> ?</p>
-</div>
+</div></div>
 
 
 

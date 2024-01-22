@@ -769,6 +769,8 @@
       
         
       
+        
+      
     
     
     
@@ -884,6 +886,27 @@
   
   <span class="md-ellipsis">
     Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
   </span>
   
 
@@ -3060,12 +3083,12 @@
                   
 
 
-<h1 id="tp-un-jeu-pokemon">TP - Un jeu pokémon<a class="headerlink" href="#tp-un-jeu-pokemon" title="Permanent link">&para;</a></h1>
+<div><h1 id="tp-un-jeu-pokemon">TP - Un jeu pokémon<a class="headerlink" href="#tp-un-jeu-pokemon" title="Permanent link">¶</a></h1>
 <div class="admonition info">
 <p class="admonition-title">Modalités de rendus</p>
-<p>Vous rendrez une <strong>archive ZIP</strong> contenant tous les fichiers de votre travail via la <a href="../../../rendus/" target="_blank">page de rendus des travaux</a>. Votre archive devra se nommer <code>&lt;VOTRE_NOM&gt;_Pokemons.zip</code>. Pour rappel, pour créer une archive, sélectionnez tous vos fichiers, puis faites un <em>clic droit</em> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> <em>envoyer vers</em> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg></span> <em>dossier compressé</em>.</p>
+<p>Vous rendrez une <strong>archive ZIP</strong> contenant tous les fichiers de votre travail via la <a href="../../../rendus/" target="_blank">page de rendus des travaux</a>. Votre archive devra se nommer <code>&lt;VOTRE_NOM&gt;_Pokemons.zip</code>. Pour rappel, pour créer une archive, sélectionnez tous vos fichiers, puis faites un <em>clic droit</em> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <em>envoyer vers</em> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <em>dossier compressé</em>.</p>
 </div>
-<h2 id="objectif-du-tp">Objectif du TP<a class="headerlink" href="#objectif-du-tp" title="Permanent link">&para;</a></h2>
+<h2 id="objectif-du-tp">Objectif du TP<a class="headerlink" href="#objectif-du-tp" title="Permanent link">¶</a></h2>
 <p>L'objectif de ce <strong>TP</strong> est de réaliser, en <strong>Python</strong>, un jeu de <strong>combats de pokémons</strong>.
 En particulier, on s'inspirera du jeu <strong>Pokémon</strong>.</p>
 <div class="admonition success">
@@ -3080,13 +3103,13 @@ En particulier, on s'inspirera du jeu <strong>Pokémon</strong>.</p>
 <ul>
 <li><a href="../exercices/tp_pokemons_correction.zip" target="_blank">tp_pokemons_correction.zip</a> - Fichiers <strong>corrigés</strong> du TP Pokémon.</li>
 </ul>
-<p><u>Défi pour 2 points bonus au DS</u> :<br />
+<p><u>Défi pour 2 points bonus au DS</u> :<br>
 Vous souhaitez obtenir non pas <strong>un point</strong>, mais <strong><span style="font-size:1.2em; color:rgb(200,100,100);">DEUX POINTS BONUS</span></strong> à votre note obtenue au dernier DS sur la POO ?</p>
 <p>Voici comment faire :</p>
 <ul>
 <li>Ajoutez <strong>3 nouveaux pokémons</strong> dans la base de données des pokémons (fichier <code>pokemons.txt</code>).</li>
 <li>Créez <strong>un nouveau type d'attaque</strong>, comme le sommeil par exemple (qui empêche un pokémon d'attaquer pendant un certain nombre de tours), ou encore la confusion (qui fait qu'un pokémon attaquant va subir des dégâts 50% du temps), vous pouvez consulter <a href="https://www.pokepedia.fr/Statut" target="_blank">cette page</a> pour voir la liste des <strong>statuts</strong> possibles.</li>
-<li>Réglez le soucis de la <strong>mort liée à un effet</strong>. En effet, actuellement, lors de l'exécution de la méthode <code>activation_effets</code>, si les <strong>points de vie</strong> d'un pokémon atteignent <code>0</code>, et que le pokémon est donc <strong>K.O.</strong>, le tour actuel se déroule quand même.<br />
+<li>Réglez le soucis de la <strong>mort liée à un effet</strong>. En effet, actuellement, lors de l'exécution de la méthode <code>activation_effets</code>, si les <strong>points de vie</strong> d'un pokémon atteignent <code>0</code>, et que le pokémon est donc <strong>K.O.</strong>, le tour actuel se déroule quand même.<br>
 On peut constater cela dans la méthode <code>jouer</code> (lignes <strong>164 à 181</strong> dans <code>combat.py</code>) :
 <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
 <span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
@@ -3105,18 +3128,18 @@ On peut constater cela dans la méthode <code>jouer</code> (lignes <strong>164 �
 <span class="normal"><a href="#__codelineno-0-15">15</a></span>
 <span class="normal"><a href="#__codelineno-0-16">16</a></span>
 <span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="bp">self</span><span class="o">.</span><span class="n">activation_effets</span><span class="p">()</span>  <span class="c1"># Activation des altérations d&#39;états</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TOUR </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_numero_tour</span><span class="p">()</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>  <span class="c1"># Affichage du numéro du tour</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">if</span> <span class="n">tour</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># C&#39;est au pokémon du joueur de jouer</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_joueur</span><span class="p">()</span><span class="o">.</span><span class="n">get_etat</span><span class="p">()[</span><span class="s2">&quot;nom_etat&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;paralysie&#39;</span><span class="p">:</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;C&#39;est à </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_joueur</span><span class="p">()</span><span class="o">.</span><span class="n">get_nom</span><span class="p">()</span><span class="si">}</span><span class="s2"> de jouer !&quot;</span><span class="p">)</span>
+<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="bp">self</span><span class="o">.</span><span class="n">activation_effets</span><span class="p">()</span>  <span class="c1"># Activation des altérations d'états</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"TOUR </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_numero_tour</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># Affichage du numéro du tour</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">if</span> <span class="n">tour</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># C'est au pokémon du joueur de jouer</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_joueur</span><span class="p">()</span><span class="o">.</span><span class="n">get_etat</span><span class="p">()[</span><span class="s2">"nom_etat"</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'paralysie'</span><span class="p">:</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"C'est à </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_joueur</span><span class="p">()</span><span class="o">.</span><span class="n">get_nom</span><span class="p">()</span><span class="si">}</span><span class="s2"> de jouer !"</span><span class="p">)</span>
 </span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="n">attaque</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_joueur</span><span class="p">()</span><span class="o">.</span><span class="n">choix_attaque</span><span class="p">()</span>
 </span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">attaquer</span><span class="p">(</span><span class="n">attaque</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_joueur</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_ennemi</span><span class="p">())</span>
 </span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Laisser un délai de 3 secondes</span>
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>    <span class="n">tour</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="k">else</span><span class="p">:</span>  <span class="c1"># C&#39;est au pokémon adverse de jouer</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_ennemi</span><span class="p">()</span><span class="o">.</span><span class="n">get_etat</span><span class="p">()[</span><span class="s2">&quot;nom_etat&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;paralysie&#39;</span><span class="p">:</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;C&#39;est à </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_ennemi</span><span class="p">()</span><span class="o">.</span><span class="n">get_nom</span><span class="p">()</span><span class="si">}</span><span class="s2"> de jouer.&quot;</span><span class="p">)</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="k">else</span><span class="p">:</span>  <span class="c1"># C'est au pokémon adverse de jouer</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_ennemi</span><span class="p">()</span><span class="o">.</span><span class="n">get_etat</span><span class="p">()[</span><span class="s2">"nom_etat"</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'paralysie'</span><span class="p">:</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"C'est à </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_ennemi</span><span class="p">()</span><span class="o">.</span><span class="n">get_nom</span><span class="p">()</span><span class="si">}</span><span class="s2"> de jouer."</span><span class="p">)</span>
 </span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 </span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>        <span class="n">attaque</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_ennemi</span><span class="p">()</span><span class="o">.</span><span class="n">choix_attaque_aleatoire</span><span class="p">()</span>
 </span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">attaquer</span><span class="p">(</span><span class="n">attaque</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_ennemi</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_joueur</span><span class="p">())</span>
@@ -3137,16 +3160,16 @@ Il faudrait donc faire en sorte que <strong>si un pokémon meurt</strong> à cau
 </ul>
 <p>Voici une capture de ce que l'on souhaite obtenir :</p>
 <figure>
-<p><img alt="Exécution du jeu" src="../images/console.png" width="500" />
+<p><img alt="Exécution du jeu" src="../images/console.png" width="500">
   </p>
 <figcaption>Exemple d'exécution du jeu</figcaption>
 </figure>
-<h2 id="modelisation">Modélisation<a class="headerlink" href="#modelisation" title="Permanent link">&para;</a></h2>
+<h2 id="modelisation">Modélisation<a class="headerlink" href="#modelisation" title="Permanent link">¶</a></h2>
 <p>Voici une modélisation sous forme de diagramme des différentes classes constituant ce projet :</p>
 <figure>
-<p><img alt="Modélisation des classes du jeu" src="../images/Jeu_Pokemon.drawio.png" />
+<p><img alt="Modélisation des classes du jeu" src="../images/Jeu_Pokemon.drawio.png">
   </p>
-<figcaption>Modélisation des classes du jeu<br /><a href="../images/Jeu_Pokemon.drawio.png" target="_blank">Voir l'image en taille réelle</a></figcaption>
+<figcaption>Modélisation des classes du jeu<br><a href="../images/Jeu_Pokemon.drawio.png" target="_blank">Voir l'image en taille réelle</a></figcaption>
 </figure>
 <p><strong>Notes</strong> :</p>
 <p>Les données sur les pokémons sont stockées dans un fichier <code>pokemons.txt</code>.</p>
@@ -3177,7 +3200,7 @@ La deuxième ligne contient <strong>les attaques du pokémon</strong>.</p>
 <li><code>attaque+e</code>, <code>defense+e</code>, <code>attaque-e</code>, <code>defense-e</code> : augmenter/diminuer l'attaque ou la défense ennemie.</li>
 <li>Rien ne vous empêche de créer de nouveaux effets, si vous vous sentez capable de les rajouter dans le code !</li>
 </ul>
-<p>Après lecture du fichier <code>pokemons.txt</code>, les attaques de chaque <code>Pokemon</code> sont enregistrées dans l'attribut <code>_liste_attaques</code> sous la forme d'une <strong>liste de dictionnaires</strong>.<br />
+<p>Après lecture du fichier <code>pokemons.txt</code>, les attaques de chaque <code>Pokemon</code> sont enregistrées dans l'attribut <code>_liste_attaques</code> sous la forme d'une <strong>liste de dictionnaires</strong>.<br>
 Par exemple, s'il y a <strong>2 attaques</strong> : <code>[{"nom_attaque": "Charge", "degats_attaque": 35}, {"nom_attaque": "Rugissement", "effet_attaque": "attaque-e", "valeur_attaque": 5}]</code></p>
 <ul>
 <li>La première attaque "Charge" a une <strong>puissance de 35</strong>.</li>
@@ -3196,13 +3219,13 @@ Par exemple, s'il y a <strong>2 attaques</strong> : <code>[{"nom_attaque": "Char
 Vous pouvez créer vos propres pokémons ou vous inspirer du <a href="https://www.pokebip.com/pokedex/pokedex_5G_liste_des_pokemon.html" target="_blank">pokédex</a>.</p>
 </li>
 </ul>
-<h2 id="realisation">Réalisation<a class="headerlink" href="#realisation" title="Permanent link">&para;</a></h2>
+<h2 id="realisation">Réalisation<a class="headerlink" href="#realisation" title="Permanent link">¶</a></h2>
 <p>Les fichiers <code>pokemon.py</code>, <code>combat.py</code> et <code>jeu.py</code>, qui définissent les <strong>classes</strong> <code>Pokemon</code>, <code>Combat</code> et <code>Jeu</code> nécessaires au bon fonctionnement du jeu sont pré-remplis, mais vous devez <strong>les compléter</strong>.</p>
 <p>Les zones à compléter sont marquées par des pointillés <code>.........</code>.</p>
 <p>Les <strong>méthodes</strong> (fonctions inclues dans des classes) contiennent la mention "À COMPLÉTER" ou "COMPLÉTER" dans la docstring lorsqu'il y a des zones à compléter, certaines méthodes sont déjà complètement écrites.</p>
 <p>Lisez bien les documentations et les commentaires pour vous assurer de bien comprendre le fonctionnement du programme !</p>
-<hr />
-<h3 id="deroulement-du-jeu">Déroulement du jeu<a class="headerlink" href="#deroulement-du-jeu" title="Permanent link">&para;</a></h3>
+<hr>
+<h3 id="deroulement-du-jeu">Déroulement du jeu<a class="headerlink" href="#deroulement-du-jeu" title="Permanent link">¶</a></h3>
 <p>Le jeu, défini dans la classe <code>Jeu</code>, se déroule <strong>indéfiniment</strong> et ne s'arrête que si :</p>
 <ul>
 <li>le <strong>nombre de victoires</strong> correspond à la valeur de la variable globale <code>NB_VICTOIRES</code>,</li>
@@ -3217,7 +3240,7 @@ Vous pouvez créer vos propres pokémons ou vous inspirer du <a href="https://ww
 <li>à la fin du combat : en cas de victoire, on incrémente la valeur du nombre de victoires, en cas de défaite, on incrémente la valeur du nombre de défaites,</li>
 <li>on recommence le même déroulement tant qu'aucune des 3 conditions définies précédemment n'est remplie.</li>
 </ul>
-<h3 id="deroulement-dun-combat">Déroulement d'un combat<a class="headerlink" href="#deroulement-dun-combat" title="Permanent link">&para;</a></h3>
+<h3 id="deroulement-dun-combat">Déroulement d'un combat<a class="headerlink" href="#deroulement-dun-combat" title="Permanent link">¶</a></h3>
 <p>Pour vous aider à comprendre, voici une explication du déroulement d'un combat (méthode <code>jouer</code> de la classe <code>Combat</code>) :</p>
 <ul>
 <li>on <strong>vérifie</strong> si le pokémon du joueur est <strong>mort</strong>. Si oui, fin du combat, avec un message de défaite.</li>
@@ -3228,7 +3251,7 @@ Vous pouvez créer vos propres pokémons ou vous inspirer du <a href="https://ww
 <li>si c'est au tour du joueur, le joueur choisit une attaque,</li>
 <li>si c'est au tour du joueur adversaire, l'attaque est choisie aléatoirement,</li>
 <li>à la fin, on incrémente le nombre de tours.</li>
-</ul>
+</ul></div>
 
 
 
