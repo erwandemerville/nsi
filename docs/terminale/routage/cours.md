@@ -131,9 +131,9 @@ En revanche, si l'**hôte source** et l'**hôte de destination** ne sont **pas s
     | Réseau           |   Passerelle   | Interface | Métrique |
     |------------------|----------------|-----------|----------|
     | 172.168.0.0/16   |                | eth0      | 0        |
-    | 192.168.7.2/24   |                | eth1      | 0        |
+    | 192.168.7.0/24   |                | eth1      | 0        |
     | 172.169.0.0/16   |                | eth2      | 0        |
-    | 10.0.0.0/8       | 192.168.7.2/24 |           | 1        |
+    | 10.0.0.0/8       | 192.168.7.2/24 | eth1      | 1        |
 
     !!! note ""
         À votre tour, donnez la **table de routage** du routeur **G**.
