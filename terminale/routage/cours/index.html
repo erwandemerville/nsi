@@ -2838,14 +2838,29 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Protocole « à état de liens » - OSPF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Présentation
+    </span>
+  </a>
+  
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#lalgorithme-de-dijkstra" class="md-nav__link">
     <span class="md-ellipsis">
       L'algorithme de Dijkstra
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3134,14 +3149,29 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Protocole « à état de liens » - OSPF">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Présentation
+    </span>
+  </a>
+  
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#lalgorithme-de-dijkstra" class="md-nav__link">
     <span class="md-ellipsis">
       L'algorithme de Dijkstra
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -3638,6 +3668,7 @@ Ces machines ont pour rôle de <strong>relayer les paquets</strong> dans le <str
 <p>Le <strong>protocole RIP</strong> est conçu de manière à prévenir la <strong>création de boucles de routage</strong> lors de la <strong>mise à jour des tables</strong>. La <strong>limitation</strong> imposée sur les <strong>distances des routes</strong> constitue une première technique. Cependant, cette mesure n'est <strong>pas suffisante</strong>, et il est nécessaire d'établir <strong>d'autres règles</strong> pour empêcher ce scénario. Par exemple, la règle du <strong>"split horizon"</strong> stipule qu'<strong>un routeur ne doit pas renvoyer une information à un autre routeur s'il a appris cette information du même routeur</strong>. Une autre règle, appelée le <strong>temporisateur de retenue</strong> (<em>Hold down</em> en anglais), oblige un routeur, qui constate l'indisponibilité d'une route vers un sous-réseau, à ignorer toute information concernant des routes vers ce sous-réseau pendant une certaine période (utilisant un temporisateur à cet effet).</p>
 </div>
 <h2 id="protocole-a-etat-de-liens-ospf">Protocole « à état de liens » - OSPF<a class="headerlink" href="#protocole-a-etat-de-liens-ospf" title="Permanent link">¶</a></h2>
+<h3 id="presentation">Présentation<a class="headerlink" href="#presentation" title="Permanent link">¶</a></h3>
 <p>Dans la section précédente, nous avons examiné le fonctionnement du <strong>protocole RIP</strong>, soulignant sa capacité à <strong>configurer les tables de routage</strong> en privilégiant les <strong>routes les plus courtes</strong> en termes de <strong>nombre de routeurs traversés</strong> (<em>nombre de sauts</em>). Malheureusement, cette approche basée sur la <strong>distance</strong> ne <strong>garantit pas l'optimisation des routes en termes de débit</strong>, car les caractéristiques des liaisons (<em>fibre optique</em>, <em>satellite</em>, <em>sans fil</em>, etc.) ne sont <strong>pas prises en compte</strong> dans les <strong>échanges d'informations</strong> entre les <strong>dispositifs</strong> via ce protocole. De plus, nous avons noté que le <strong>RIP</strong> n'était pas adapté aux <strong>réseaux étendus</strong>, limitant son exploration aux routes de <strong>moins de 15 sauts</strong> pour réduire le <strong>délai de convergence</strong> et éviter les <strong>boucles de routage</strong>.</p>
 <p>C'est pour remédier à ces lacunes que le protocole <mark><strong>OSPF</strong></mark> (<em>Open Shortest Path First</em>) a été développé dans les <strong>années 90</strong> par l'<strong>IETF</strong> (<em>Internet Engineering Task Force</em>), un <strong>organisme de normalisation international</strong>. La spécificité de l'<strong>OSPF</strong> réside dans son utilisation de la <mark><strong>bande passante des liaisons</strong></mark> pour le <strong>calcul des meilleures routes</strong>. La bande passante, mesurée en <strong>bits par seconde</strong> (bit/s) ou avec des préfixes tels que <strong>kilo</strong> (kbit/s) et <strong>Mega</strong> (Mbit/s), devient ainsi un critère essentiel.<br>
 Contrairement au <strong>RIP</strong>, le <strong>nombre de routeurs traversés</strong> n'influe <strong>plus</strong> sur le <strong>choix de la route</strong> dans <strong>OSPF</strong>, où la <strong>distance</strong> est uniquement <strong>liée aux coûts des liaisons nécessaires</strong> pour <strong>relier deux routeurs</strong>.</p>
@@ -3656,7 +3687,8 @@ coût = \frac{10^8}{d}
 <li>Dans la <strong>première étape</strong>, chaque <strong>routeur</strong>, après <strong>initialisation</strong>, cherche à <strong>identifier ses voisins</strong> pour établir une <strong>relation de voisinage</strong>.<br>
 Le protocole <strong>OSPF</strong> organise les <strong>machines</strong> en <strong>différentes zones</strong> (ensembles de machines), limitant ainsi la <strong>recherche de voisins des routeurs</strong> à leur <strong>zone assignée</strong>. La séquence de cette phase pour un <strong>routeur R</strong> est détaillée comme suit :<ul>
 <li><strong>R</strong> choisit un identificateur unique, tel que sa <strong>plus grande adresse IP</strong> parmi celles de ses sous-réseaux.</li>
-<li>Le <strong>routeur R</strong> envoie des messages de type <mark><strong>HELLO</strong></mark> à travers toutes ses <strong>interfaces réseau</strong>, contenant son <strong>identificateur</strong>, le <strong>numéro de sa zone</strong>, et la <strong>liste des identificateurs</strong> de ses <strong>voisins</strong> avec qui il a établi une <strong>relation de voisinage</strong>.</li>
+<li>Le <strong>routeur R</strong> envoie des messages de type <mark><strong>HELLO</strong></mark> à travers toutes ses <strong>interfaces réseau</strong>, contenant son <strong>identificateur</strong>, le <strong>numéro de sa zone</strong>, et la <strong>liste des identificateurs</strong> de ses <strong>voisins</strong> avec qui il a établi une <strong>relation de voisinage</strong>.<br>
+<img alt="En-tête HELLO" src="../images/en-tete-Hello.png" width="300"></li>
 <li>Quand un <strong>routeur</strong> de la zone reçoit un paquet <strong>HELLO</strong> de <strong>R</strong>, il vérifie si l'<strong>identificateur</strong> de <strong>R</strong> est <strong>déjà dans sa liste de voisins</strong>.<ul>
 <li>Si oui, il <strong>envoie</strong> un <strong>accusé de réception à R</strong> pour indiquer qu'il est <strong>toujours actif</strong>.</li>
 <li>Sinon, il <strong>répond</strong> en <strong>fournissant des informations</strong> sur la <strong>topologie du réseau</strong>. </li>
@@ -3683,6 +3715,25 @@ Le protocole <strong>OSPF</strong> organise les <strong>machines</strong> en <st
 L'ensemble des <strong>LSA</strong> forme une <strong>base de données d'état des liens</strong> (<em>Link-State Database</em> - <strong>LSDB</strong>) pour <strong>chaque zone</strong> (<em>area</em>), <strong>identique pour tous les routeurs de cette zone</strong>.<br>
 Ensuite, <strong>chaque routeur</strong> utilise l'<mark><strong>algorithme de Dijkstra</strong></mark> (<em>Shortest Path First</em>), pour déterminer la <strong>route la plus rapide</strong> vers <strong>chacun des réseaux répertoriés</strong> dans la <strong>LSDB</strong>.</p>
 </details>
+<details class="abstract">
+<summary>Messages LSA, LSU et LSR</summary>
+<p>Les <strong>messages LSA</strong> (Link-State Advertisments) sont utilisés par les routeurs <strong>OSPF</strong> pour <strong>échanger des informations topologiques</strong>. Chaque <strong>LSA</strong> contient des <strong>données de routage</strong> et de <strong>topologie</strong>, décrivant ainsi une partie du <strong>réseau OSPF</strong>.</p>
+<ul>
+<li>Lorsqu'il est décidé d'échanger des <strong>routes</strong> entre <strong>deux voisins</strong>, ceux-ci envoient <strong>réciproquement</strong> une <strong>liste de tous les LSA présents dans leur base de données topologique respective</strong>.  </li>
+<li>Chaque <strong>routeur</strong> examine ensuite sa <strong>base de données topologique</strong> et envoie un <strong>message LSR</strong> (Link-State Request) demandant tous les <strong>LSA</strong> qui ne se trouvent <strong>pas</strong> dans sa <strong>table de topologie</strong>.</li>
+<li>L'<strong>autre routeur</strong> répond avec le <strong>LSU</strong> (Link-State Update) contenant <strong>tous les LSA demandés</strong> par son <strong>voisin</strong>.</li>
+</ul>
+<p><figure markdown>
+<img alt="Exemple et en-tête LSA" src="../images/exemple_et_en-tete_LSA.png">
+<figcaption>Source : <a href="http://nsi4noobs.fr/IMG/pdf/c3_tnsi_routage.pdf">nsi4noobs</a></figcaption>
+</figure></p>
+<p>Dans l'<strong>exemple</strong> ci-dessus, après l'<strong>initialisation d'OSPF</strong> sur les <strong>deux routeurs</strong>, ces derniers échangent des <strong>LSA</strong> pour <strong>décrire leur base de données topologique respective</strong> :</p>
+<ul>
+<li>Le <strong>routeur R1</strong> envoie un <strong>en-tête LSA</strong> pour son <strong>réseau directement connecté</strong>, le <code>10.0.1.0/24</code>.</li>
+<li>Le <strong>routeur R2</strong> vérifie sa <strong>base de données topologique</strong> et constate qu'il ne possède <strong>pas d'informations sur ce réseau</strong>. Il envoie alors un <strong>message</strong> de <strong>demande d'état de liaison</strong> (<strong>LSR</strong>) pour obtenir des <strong>détails</strong> supplémentaires sur <strong>ce réseau</strong>.</li>
+<li><strong>Le routeur R1</strong> répond avec une <strong>mise à jour de l'état de liaison</strong> (<strong>LSU</strong>) contenant des informations sur le sous-réseau <code>10.0.1.0/24</code> (adresse du prochain saut, coût, etc.).</li>
+</ul>
+</details>
 <div class="admonition abstract">
 <p class="admonition-title">Organisation en zones</p>
 <p>Pour faciliter l'utilisation d'<strong>OSPF</strong> dans de <strong>vastes réseaux</strong>, les routeurs sont organisés de manière logique en <strong>zones</strong>, limitant la recherche de <strong>voisins</strong>, l'<strong>échange d'états de liens</strong>, et la <strong>découverte de la topologie</strong> aux <strong>routeurs d'une même zone</strong>. Cette organisation suit une <strong>structure hiérarchique simple</strong>, chaque zone ayant un <strong>numéro unique</strong>.</p>
@@ -3690,7 +3741,8 @@ Ensuite, <strong>chaque routeur</strong> utilise l'<mark><strong>algorithme de D
 <img alt="Topologie d'un réseau de routeurs OSPF répartis dans trois zones et avec des liaisons de communication de 10 ou 100 Mbit/s." src="../images/zones.png">
 <figcaption>Topologie d'un réseau de routeurs OSPF répartis dans trois zones et avec des liaisons de communication de 10 ou 100 Mbit/s (extrait du <i>Balabonski Terminale</i>).</figcaption>
 </figure></p>
-<p>La <strong>zone 0</strong>, appelée <strong><em>Backbone</em></strong>, est <strong>obligatoire</strong> pour <strong>OSPF</strong>, agissant comme une <strong>zone centrale</strong> à laquelle <strong>toutes les autres zones sont connectées</strong>. Les <strong>routeurs ABR</strong> (<em>Area Border Router</em>) sont <strong>spécifiques à cette architecture</strong>, étant les <strong>seuls</strong> à être <strong>rattachés à deux zones</strong> (leur zone et la Backbone). Les <strong>autres routeurs</strong> ne sont rattachés qu'à <strong>une seule zone</strong>, communiquant <strong>exclusivement</strong> avec les <strong>routeurs de cette zone</strong>.</p>
+<p>La <strong>zone 0</strong>, appelée <strong><em>Backbone</em></strong>, est <strong>obligatoire</strong> pour <strong>OSPF</strong>, agissant comme une <strong>zone centrale</strong> à laquelle <strong>toutes les autres zones sont connectées</strong>. Les <mark><strong>routeurs ABR</strong></mark> (<em>Area Border Router</em>) sont <strong>spécifiques à cette architecture</strong>, étant les <strong>seuls</strong> à être <strong>rattachés à deux zones</strong> (leur zone et la Backbone). Les <strong>autres routeurs</strong> ne sont rattachés qu'à <strong>une seule zone</strong>, communiquant <strong>exclusivement</strong> avec les <strong>routeurs de cette zone</strong>.<br>
+Il existe également des <strong>routeurs</strong> qui <strong>connectent un réseau OSPF</strong> à d’<strong>autres domaines de routage</strong> (réseau EIGRP par exemple), on les appelle <mark><strong>routeurs ASBR</strong></mark> (Autonomous System Border Routers).</p>
 <p>Cette <strong>structure hiérarchique</strong> entraîne une <strong>conséquence notable</strong> : pour <strong>échanger des paquets</strong> entre <strong>zones</strong> (c'est-à-dire avec des adresses source et destination situées dans des zones différentes), les <strong>routeurs</strong> doivent inévitablement <strong>diriger ces paquets</strong> vers leur <strong>routeur ABR</strong> pour <strong>sortir de leur zone</strong>.<br>
 Cependant, les <strong>messages LSA</strong> étant restreints à <strong>une zone</strong>, les <strong>routeurs</strong> n'ont <strong>pas connaissance de la topologie du reste du réseau</strong>, rendant impossible la détermination de la <strong>meilleure route pour les paquets inter-zone</strong>. Les <strong>routeurs ABR</strong> jouent un <strong>rôle crucial</strong> dans ce contexte, communiquant les <strong>meilleures routes de leur zone</strong> à <strong>toutes les autres zones</strong> via la <strong>Backbone</strong>. Ces informations, transmises à travers la <strong>Backbone</strong>, sont essentielles pour permettre à <strong>chaque routeur</strong> de <strong>calculer les chemins les plus courts</strong> pour <strong>l'ensemble du réseau</strong> sans avoir une connaissance complète de sa <strong>topologie</strong>.</p>
 </div>
@@ -3699,6 +3751,79 @@ Cependant, les <strong>messages LSA</strong> étant restreints à <strong>une zo
 <p>Pour une <strong>diffusion plus efficace</strong>, un <strong>routeur</strong> envoie ses messages <strong>HELLO</strong> en <strong>multidiffusion</strong> (ou <em>multicast</em>) vers <strong>tous les routeurs de sa zone</strong> toutes les <strong>10 secondes</strong>. En « écoutant » l'adresse <code>224.0.0.5</code> (qui est utilisée par défaut par le protocole <strong>OSPF</strong>), un <strong>routeur</strong> de la <strong>zone</strong> voit passer ces <strong>messages</strong> et peut y <strong>répondre</strong> s'il le souhaite.</p>
 <p>Une <strong>minuterie morte</strong> (<em>dead timer</em>) correspond à <strong>quatre fois la valeur</strong> de l’<strong>intervalle HELLO</strong>. Si un <strong>routeur</strong> sur un réseau <strong>Ethernet</strong> ne reçoit pas au moins <strong>un paquet HELLO</strong> d’un <strong>voisin OSPF</strong> pendant <strong>40 secondes</strong>, il est déclaré “non fonctionnel” (down) par les autres routeurs.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Gestion des pannes et des modifications de réseau</p>
+<p>Pour avoir une image fidèle de la <strong>topologie du résea</strong>u, qui peut <strong>évoluer</strong> en fonction des <strong>pannes</strong> ou de l'<strong>ajout de nouveaux routeurs</strong> ou <strong>liens de communications</strong>, les routeurs s'échangent régulièrement des messages <strong>HELLO</strong> et <strong>LSA</strong>. Lorsqu'un routeur n'a <strong>pas de réponse</strong> d'un voisin qu'il connaît déjà <strong>au bout de 4 messages HELLO</strong>, ce voisin est considéré comme étant <strong>en panne</strong>.</p>
+</div>
+<details class="tip">
+<summary>Tableau des bandes passantes</summary>
+<p>Voici un tableau de quelques <strong>bandes passantes</strong> (BP) des <strong>liaisons de communication</strong> les plus courantes. Certaines de ces technologies sont <strong>asymétriques</strong>, cela signifie que leur <strong>bande passante ascendante</strong> (de l'utilisateur vers le fournisseur) est <strong>plus faible</strong> que la <strong>bande passante descendante</strong> (du fournisseur vers l'utilisateur).</p>
+<p><style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-fymr{border-color:inherit;font-weight:bold;text-decoration:underline;text-align:left;vertical-align:top}
+.tg .tg-0pky{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+</style>
+</p><table class="tg">
+<thead>
+<tr>
+    <th class="tg-fymr">Technologie</th>
+    <th class="tg-fymr">BP descendante</th>
+    <th class="tg-fymr">BP montante</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+    <td class="tg-0pky">Modem</td>
+    <td class="tg-c3ow">56 kbit/s</td>
+    <td class="tg-c3ow">48 kbit/s</td>
+</tr>
+<tr>
+    <td class="tg-0pky">Bluetooth</td>
+    <td class="tg-c3ow" colspan="2">3 Mbit/s</td>
+</tr>
+<tr>
+    <td class="tg-0pky">Ethernet</td>
+    <td class="tg-c3ow" colspan="2">10 Mbit/s</td>
+</tr>
+<tr>
+    <td class="tg-0pky">Wi-Fi</td>
+    <td class="tg-c3ow" colspan="2">11 Mbit/s à 10 Gbit/s</td>
+</tr>
+<tr>
+    <td class="tg-0pky">ADSL</td>
+    <td class="tg-c3ow">13 Mbit/s</td>
+    <td class="tg-c3ow">1 Mbit/s</td>
+</tr>
+<tr>
+    <td class="tg-0pky">4G</td>
+    <td class="tg-c3ow">100 Mbit/s</td>
+    <td class="tg-c3ow">50 Mbit/s</td>
+</tr>
+<tr>
+    <td class="tg-0pky">Satellite</td>
+    <td class="tg-c3ow">50 Mbit/s</td>
+    <td class="tg-c3ow">1 Mbit/s</td>
+</tr>
+<tr>
+    <td class="tg-0pky">FastEthernet</td>
+    <td class="tg-c3ow" colspan="2">100 Mbit/s</td>
+</tr>
+<tr>
+    <td class="tg-0pky">FFTH (Fibre)</td>
+    <td class="tg-c3ow" colspan="2">10 Gbit/s</td>
+</tr>
+</tbody>
+</table>
+</details>
+<details class="success">
+<summary>Une petite vidéo résumant OSPF</summary>
+<p><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RbPrYZzs_2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+</details>
 <details class="quote">
 <summary>Un exemple d'application</summary>
 <p>Pour illustrer le fonctionnement du <strong>protocole OSPF</strong>, prenons comme exemple le <strong>réseau suivant</strong> :</p>
@@ -3897,7 +4022,7 @@ Ainsi, <strong>R4</strong> communique à <strong>toutes les autres zones</strong
 </tbody>
 </table>
 </details>
-<h2 id="lalgorithme-de-dijkstra">L'algorithme de Dijkstra<a class="headerlink" href="#lalgorithme-de-dijkstra" title="Permanent link">¶</a></h2>
+<h3 id="lalgorithme-de-dijkstra">L'algorithme de Dijkstra<a class="headerlink" href="#lalgorithme-de-dijkstra" title="Permanent link">¶</a></h3>
 <p>Voici une petite vidéo expliquant le principe de cet algorithme :</p>
 <p><div class="video-container"><iframe src="../src/animation_Dijkstra.mp4" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
 <details class="quote">
@@ -3934,6 +4059,8 @@ Ainsi, <strong>R4</strong> communique à <strong>toutes les autres zones</strong
 <h2 id="le-champ-ttl">Le champ TTL<a class="headerlink" href="#le-champ-ttl" title="Permanent link">¶</a></h2>
 <p>Étant donné que tous les réseaux ne sont pas administrés par des <strong>protocoles dynamiques</strong> tels que <strong>RIP</strong> ou <strong>OSPF</strong>, il est envisageable que des <strong>boucles de routage</strong> existent. C'est particulièrement le cas dans des réseaux où les tables sont <strong>configurées manuellement</strong> (routage <em>statique</em>). Pour éviter qu'un paquet ne circule indéfiniment dans de tels scénarios, les protocoles de communication comme <strong>IP</strong> ont mis en place un <strong>mécanisme</strong> basé sur un <strong>compteur de durée de vie</strong>.</p>
 <p>Ainsi, chaque paquet contient un octet appelé <mark><strong>TTL</strong></mark> (<em>Time To Live</em> en anglais) qui spécifie le <strong>nombre de routeurs</strong> que le <strong>paquet</strong> peut <strong>encore traverser</strong> (la durée de vie initiale du paquet est fixée par le protocole). À chaque passage par un routeur, ce compteur est <strong>décrémenté</strong>. Lorsqu'un routeur reçoit un paquet avec un <strong>compteur TTL</strong> à <code>0</code>, il le <strong>détruit</strong>. Cette méthode garantit qu'un paquet ne peut pas errer indéfiniment dans le réseau.</p>
+<p>Lors de l'exécution d'un <strong>ping</strong>, on peut <strong>spécifier le TTL souhaité</strong> :<br>
+<code>ping -c 1 -t n erwandemerville.fr</code> : envoie <strong>1 paquet</strong> avec un <strong>TTL de <code>n</code></strong>.</p>
 <h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Exercice 1 - Composants dans un réseau</p>
@@ -3943,6 +4070,51 @@ Ainsi, <strong>R4</strong> communique à <strong>toutes les autres zones</strong
 B = <code>..........</code><br>
 C = <code>..........</code><br>
 D = <code>..........</code></p>
+</div>
+<p>Pour les <strong>exercices 2, 3 et 4</strong>, on utilisera la <strong>figure suivante</strong> :</p>
+<figure>
+<p><img alt="Un exemple de réseau" src="../images/reseau_exo2.png"></p>
+<figcaption>Un exemple de réseau (extrait du <b>Balabonski Terminale</b>)</figcaption>
+</figure>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<p>On considère le réseau de la <strong>figure précédente</strong>.</p>
+<p>Dans ce réseau, les <strong>nœuds A à F</strong> sont des <strong>routeurs</strong> dont on veut <strong>calculer les tables de routage</strong>. On suppose que l'on a <strong>exécuté le protocole RIP</strong> sur ce <strong>réseau</strong>.<br>
+Compléter la <strong>table suivante</strong>, qui indique pour <strong>chaque machine</strong> la <strong>portion de la table de routage</strong> pour la <strong>destination G</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 3</p>
+<p>On considère le <strong>réseau</strong> de la <strong>figure précédente</strong> ainsi que le <strong>tableau</strong> trouvé en <strong>solution de l'exercice 2</strong>.</p>
+<p>On suppose maintenant que le <strong>lien B-F tombe en panne</strong>.</p>
+<ol>
+<li>Quel est le <strong>vecteur de distance</strong> envoyé par <strong>B</strong> à ses <strong>voisins</strong> pour <strong>atteindre G</strong>, une fois qu'il détecte la <strong>panne</strong> (on suppose que les autres nœuds n'ont pas modifié leurs tables de routage) ?</li>
+<li>Pour chacun des <strong>événements</strong> suivants, dire lequel des <strong>quatre cas</strong> (évoqués dans le bloc "Principe du protocole RIP") du protocole <strong>RIP</strong> est appliqué. On supposera, pour simplifier, qu'aucun autre événement ne se produit entre-temps et qu'ils sont tous exécutés « en séquence ».<ol>
+<li>Les <strong>routeurs A et C</strong> reçoivent de <strong>B</strong> le <strong>vecteur trouvé à la question 1</strong>.</li>
+<li>Le <strong>routeur C</strong> retransmet ce <strong>même vecteur</strong> à <strong>D</strong>.</li>
+<li>Le <strong>routeur D</strong> transmet le <strong>vecteur <code>(G,3)</code></strong> à <strong>C</strong>.</li>
+</ol>
+</li>
+<li>Après le <strong>dernier cas ci-dessus</strong>, quel <strong>vecteur</strong> est transmis par <strong>C</strong> à <strong>A et B</strong> ?</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 4</p>
+<p>On considère le <strong>réseau</strong> de la <strong>figure précédente</strong>. Pour <strong>chacun</strong> des <strong>liens</strong> du <strong>réseau</strong>, proposer une <strong>technologie réseau</strong> faisant que, pour les <strong>nœuds A,B et C</strong>, la <strong>route pour atteindre G</strong> soit <strong>différente</strong> selon que l'on utilise <strong>OSPF</strong> ou <strong>RIP</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 5</p>
+<p>On considère un réseau ayant les propriétés suivantes :</p>
+<ul>
+<li>la distance entre <strong>deux nœuds</strong> est <strong>toujours inférieure à 15</strong> ;</li>
+<li>pour <strong>chaque paire de nœuds</strong> <code>(A, B)</code>, il n'existe <strong>pas plusieurs chemins</strong> de <strong>même taille</strong> entre <strong>A et B</strong>.</li>
+</ul>
+<p>On considère ce <strong>réseau</strong> comme une <strong>unique zone</strong> <em>backbone</em> <strong>OSPF</strong>.<br>
+Donner une <strong>condition suffisante</strong> pour qu'<strong>OSPF</strong> et <strong>RIP</strong> calculent <strong>les même routes</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 6</p>
+<p>Si l'on essaie d'exécuter plusieurs fois de suite la <strong>commande</strong> <code>traceroute - I &lt;url d'un site&gt;</code>, obtiendra t-on toujours le <strong>même résultat</strong> ? (Vous pouvez faire des tests sur les sites de votre choix.)</p>
+<p>Justifier.</p>
 </div></div>
 
 
