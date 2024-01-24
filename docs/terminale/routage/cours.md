@@ -222,7 +222,7 @@ Initialement, les **informations** dont dispose un **routeur** concernent **ses 
         | 10.1.2.0/30      |                | eth3      | 0        |
         | 10.1.3.0/30      |                | eth2      | 0        |
         | 10.1.4.0/30      |                | eth0      | 0        |
-        | 192.168.1.0/24   |   10.1.1.1     | eth2      | 1        |
+        | 192.168.1.0/24   |   10.1.1.1     | eth1      | 1        |
 
     ---
 
@@ -563,6 +563,16 @@ Pour les **exercices 2, 3 et 4**, on utilisera la **figure suivante** :
 
     Dans ce réseau, les **nœuds A à F** sont des **routeurs** dont on veut **calculer les tables de routage**. On suppose que l'on a **exécuté le protocole RIP** sur ce **réseau**.  
     Compléter la **table suivante**, qui indique pour **chaque machine** la **portion de la table de routage** pour la **destination G**.
+
+    | machine | destination | passerelle | interface | distance |
+    | ------- | ----------- | ---------- | --------- | -------- |
+    | A       | G           |            |           |          |
+    | B       | G           |            |           |          |
+    | C       | G           |            |           |          |
+    | D       | G           |            |           |          |
+    | E       | G           |            |           |          |
+    | F       | G           |            |           |          |
+    | G       | G           |            |           |          |
 
 !!! note "Exercice 3"
     On considère le **réseau** de la **figure précédente** ainsi que le **tableau** trouvé en **solution de l'exercice 2**.
