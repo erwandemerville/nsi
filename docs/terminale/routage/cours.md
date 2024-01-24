@@ -256,6 +256,8 @@ Initialement, les **informations** dont dispose un **routeur** concernent **ses 
 
 ## Protocole « à état de liens » - OSPF
 
+### Présentation
+
 Dans la section précédente, nous avons examiné le fonctionnement du **protocole RIP**, soulignant sa capacité à **configurer les tables de routage** en privilégiant les **routes les plus courtes** en termes de **nombre de routeurs traversés** (*nombre de sauts*). Malheureusement, cette approche basée sur la **distance** ne **garantit pas l'optimisation des routes en termes de débit**, car les caractéristiques des liaisons (*fibre optique*, *satellite*, *sans fil*, etc.) ne sont **pas prises en compte** dans les **échanges d'informations** entre les **dispositifs** via ce protocole. De plus, nous avons noté que le **RIP** n'était pas adapté aux **réseaux étendus**, limitant son exploration aux routes de **moins de 15 sauts** pour réduire le **délai de convergence** et éviter les **boucles de routage**.
 
 C'est pour remédier à ces lacunes que le protocole ==**OSPF**== (*Open Shortest Path First*) a été développé dans les **années 90** par l'**IETF** (*Internet Engineering Task Force*), un **organisme de normalisation international**. La spécificité de l'**OSPF** réside dans son utilisation de la ==**bande passante des liaisons**== pour le **calcul des meilleures routes**. La bande passante, mesurée en **bits par seconde** (bit/s) ou avec des préfixes tels que **kilo** (kbit/s) et **Mega** (Mbit/s), devient ainsi un critère essentiel.  
@@ -276,12 +278,13 @@ Contrairement au **RIP**, le **nombre de routeurs traversés** n'influe **plus**
     1. Dans la **première étape**, chaque **routeur**, après **initialisation**, cherche à **identifier ses voisins** pour établir une **relation de voisinage**.  
     Le protocole **OSPF** organise les **machines** en **différentes zones** (ensembles de machines), limitant ainsi la **recherche de voisins des routeurs** à leur **zone assignée**. La séquence de cette phase pour un **routeur R** est détaillée comme suit :
         - **R** choisit un identificateur unique, tel que sa **plus grande adresse IP** parmi celles de ses sous-réseaux.
-        - Le **routeur R** envoie des messages de type ==**HELLO**== à travers toutes ses **interfaces réseau**, contenant son **identificateur**, le **numéro de sa zone**, et la **liste des identificateurs** de ses **voisins** avec qui il a établi une **relation de voisinage**.
+        - Le **routeur R** envoie des messages de type ==**HELLO**== à travers toutes ses **interfaces réseau**, contenant son **identificateur**, le **numéro de sa zone**, et la **liste des identificateurs** de ses **voisins** avec qui il a établi une **relation de voisinage**.  
+        ![En-tête HELLO](images/en-tete-Hello.png){ width="300" }
         - Quand un **routeur** de la zone reçoit un paquet **HELLO** de **R**, il vérifie si l'**identificateur** de **R** est **déjà dans sa liste de voisins**.
             - Si oui, il **envoie** un **accusé de réception à R** pour indiquer qu'il est **toujours actif**.
             - Sinon, il **répond** en **fournissant des informations** sur la **topologie du réseau**. 
         - **R** répond de même. Les **messages** qui contiennent les **états des liens** sont appelés **LSA** (*Link State Advertisement*). Ces **messages** ne **sortent jamais de la zone**, et **plusieurs échanges sont nécessaires** pour synchroniser les **connaissances des routeurs** dans une **zone**. Le processus de cette étape initiale est une **diffusion** (*flooding*) de l'**information de voisinage**.
-    2. La deuxième étape d'**OSPF** implique l'**exécution d'un algorithme**, au sein de **chaque routeur**, pour calculer les **meilleures routes** vers tout **autre routeur de la zone**. Le **coût** d'une route, utilisé dans cet algorithme, est la **somme des coûts des liaisons entre les routeurs traversés**. La **meilleure route** est celle avec le **coût le plus bas**, et une fois calculée, elle est enregistrée dans la **table de routage du routeur**.
+    1. La deuxième étape d'**OSPF** implique l'**exécution d'un algorithme**, au sein de **chaque routeur**, pour calculer les **meilleures routes** vers tout **autre routeur de la zone**. Le **coût** d'une route, utilisé dans cet algorithme, est la **somme des coûts des liaisons entre les routeurs traversés**. La **meilleure route** est celle avec le **coût le plus bas**, et une fois calculée, elle est enregistrée dans la **table de routage du routeur**.
 
 ??? abstract "Établissement d'une relation de voisinage entre deux routeurs"
     Avant d'établir une relation de voisinage, les **routeurs OSPF** traversent plusieurs étapes de **changement d'état**. Voici quelles sont ces étapes **entre deux routeurs** :
@@ -297,6 +300,24 @@ Contrairement au **RIP**, le **nombre de routeurs traversés** n'influe **plus**
     L'ensemble des **LSA** forme une **base de données d'état des liens** (*Link-State Database* - **LSDB**) pour **chaque zone** (*area*), **identique pour tous les routeurs de cette zone**.  
     Ensuite, **chaque routeur** utilise l'==**algorithme de Dijkstra**== (*Shortest Path First*), pour déterminer la **route la plus rapide** vers **chacun des réseaux répertoriés** dans la **LSDB**.
 
+??? abstract "Messages LSA, LSU et LSR"
+    Les **messages LSA** (Link-State Advertisments) sont utilisés par les routeurs **OSPF** pour **échanger des informations topologiques**. Chaque **LSA** contient des **données de routage** et de **topologie**, décrivant ainsi une partie du **réseau OSPF**.
+    
+    - Lorsqu'il est décidé d'échanger des **routes** entre **deux voisins**, ceux-ci envoient **réciproquement** une **liste de tous les LSA présents dans leur base de données topologique respective**.  
+    - Chaque **routeur** examine ensuite sa **base de données topologique** et envoie un **message LSR** (Link-State Request) demandant tous les **LSA** qui ne se trouvent **pas** dans sa **table de topologie**.
+    - L'**autre routeur** répond avec le **LSU** (Link-State Update) contenant **tous les LSA demandés** par son **voisin**.
+
+    <figure markdown>
+    ![Exemple et en-tête LSA](images/exemple_et_en-tete_LSA.png)
+    <figcaption>Source : <a href="http://nsi4noobs.fr/IMG/pdf/c3_tnsi_routage.pdf">nsi4noobs</a></figcaption>
+    </figure>
+
+    Dans l'**exemple** ci-dessus, après l'**initialisation d'OSPF** sur les **deux routeurs**, ces derniers échangent des **LSA** pour **décrire leur base de données topologique respective** :
+
+    - Le **routeur R1** envoie un **en-tête LSA** pour son **réseau directement connecté**, le `10.0.1.0/24`.
+    - Le **routeur R2** vérifie sa **base de données topologique** et constate qu'il ne possède **pas d'informations sur ce réseau**. Il envoie alors un **message** de **demande d'état de liaison** (**LSR**) pour obtenir des **détails** supplémentaires sur **ce réseau**.
+    - **Le routeur R1** répond avec une **mise à jour de l'état de liaison** (**LSU**) contenant des informations sur le sous-réseau `10.0.1.0/24` (adresse du prochain saut, coût, etc.).
+
 !!! abstract "Organisation en zones"
     Pour faciliter l'utilisation d'**OSPF** dans de **vastes réseaux**, les routeurs sont organisés de manière logique en **zones**, limitant la recherche de **voisins**, l'**échange d'états de liens**, et la **découverte de la topologie** aux **routeurs d'une même zone**. Cette organisation suit une **structure hiérarchique simple**, chaque zone ayant un **numéro unique**.
 
@@ -305,7 +326,8 @@ Contrairement au **RIP**, le **nombre de routeurs traversés** n'influe **plus**
     <figcaption>Topologie d'un réseau de routeurs OSPF répartis dans trois zones et avec des liaisons de communication de 10 ou 100 Mbit/s (extrait du <i>Balabonski Terminale</i>).</figcaption>
     </figure>
 
-    La **zone 0**, appelée ***Backbone***, est **obligatoire** pour **OSPF**, agissant comme une **zone centrale** à laquelle **toutes les autres zones sont connectées**. Les **routeurs ABR** (*Area Border Router*) sont **spécifiques à cette architecture**, étant les **seuls** à être **rattachés à deux zones** (leur zone et la Backbone). Les **autres routeurs** ne sont rattachés qu'à **une seule zone**, communiquant **exclusivement** avec les **routeurs de cette zone**.
+    La **zone 0**, appelée ***Backbone***, est **obligatoire** pour **OSPF**, agissant comme une **zone centrale** à laquelle **toutes les autres zones sont connectées**. Les ==**routeurs ABR**== (*Area Border Router*) sont **spécifiques à cette architecture**, étant les **seuls** à être **rattachés à deux zones** (leur zone et la Backbone). Les **autres routeurs** ne sont rattachés qu'à **une seule zone**, communiquant **exclusivement** avec les **routeurs de cette zone**.  
+    Il existe également des **routeurs** qui **connectent un réseau OSPF** à d’**autres domaines de routage** (réseau EIGRP par exemple), on les appelle ==**routeurs ASBR**== (Autonomous System Border Routers).
 
     Cette **structure hiérarchique** entraîne une **conséquence notable** : pour **échanger des paquets** entre **zones** (c'est-à-dire avec des adresses source et destination situées dans des zones différentes), les **routeurs** doivent inévitablement **diriger ces paquets** vers leur **routeur ABR** pour **sortir de leur zone**.  
     Cependant, les **messages LSA** étant restreints à **une zone**, les **routeurs** n'ont **pas connaissance de la topologie du reste du réseau**, rendant impossible la détermination de la **meilleure route pour les paquets inter-zone**. Les **routeurs ABR** jouent un **rôle crucial** dans ce contexte, communiquant les **meilleures routes de leur zone** à **toutes les autres zones** via la **Backbone**. Ces informations, transmises à travers la **Backbone**, sont essentielles pour permettre à **chaque routeur** de **calculer les chemins les plus courts** pour **l'ensemble du réseau** sans avoir une connaissance complète de sa **topologie**.
@@ -314,6 +336,77 @@ Contrairement au **RIP**, le **nombre de routeurs traversés** n'influe **plus**
     Pour une **diffusion plus efficace**, un **routeur** envoie ses messages **HELLO** en **multidiffusion** (ou *multicast*) vers **tous les routeurs de sa zone** toutes les **10 secondes**. En « écoutant » l'adresse `224.0.0.5` (qui est utilisée par défaut par le protocole **OSPF**), un **routeur** de la **zone** voit passer ces **messages** et peut y **répondre** s'il le souhaite.
 
     Une **minuterie morte** (*dead timer*) correspond à **quatre fois la valeur** de l’**intervalle HELLO**. Si un **routeur** sur un réseau **Ethernet** ne reçoit pas au moins **un paquet HELLO** d’un **voisin OSPF** pendant **40 secondes**, il est déclaré “non fonctionnel” (down) par les autres routeurs.
+
+!!! tip "Gestion des pannes et des modifications de réseau"
+     Pour avoir une image fidèle de la **topologie du résea**u, qui peut **évoluer** en fonction des **pannes** ou de l'**ajout de nouveaux routeurs** ou **liens de communications**, les routeurs s'échangent régulièrement des messages **HELLO** et **LSA**. Lorsqu'un routeur n'a **pas de réponse** d'un voisin qu'il connaît déjà **au bout de 4 messages HELLO**, ce voisin est considéré comme étant **en panne**.
+
+??? tip "Tableau des bandes passantes"
+    Voici un tableau de quelques **bandes passantes** (BP) des **liaisons de communication** les plus courantes. Certaines de ces technologies sont **asymétriques**, cela signifie que leur **bande passante ascendante** (de l'utilisateur vers le fournisseur) est **plus faible** que la **bande passante descendante** (du fournisseur vers l'utilisateur).
+
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+    .tg .tg-fymr{border-color:inherit;font-weight:bold;text-decoration:underline;text-align:left;vertical-align:top}
+    .tg .tg-0pky{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+    </style>
+    <table class="tg">
+    <thead>
+    <tr>
+        <th class="tg-fymr">Technologie</th>
+        <th class="tg-fymr">BP descendante</th>
+        <th class="tg-fymr">BP montante</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td class="tg-0pky">Modem</td>
+        <td class="tg-c3ow">56 kbit/s</td>
+        <td class="tg-c3ow">48 kbit/s</td>
+    </tr>
+    <tr>
+        <td class="tg-0pky">Bluetooth</td>
+        <td class="tg-c3ow" colspan="2">3 Mbit/s</td>
+    </tr>
+    <tr>
+        <td class="tg-0pky">Ethernet</td>
+        <td class="tg-c3ow" colspan="2">10 Mbit/s</td>
+    </tr>
+    <tr>
+        <td class="tg-0pky">Wi-Fi</td>
+        <td class="tg-c3ow" colspan="2">11 Mbit/s à 10 Gbit/s</td>
+    </tr>
+    <tr>
+        <td class="tg-0pky">ADSL</td>
+        <td class="tg-c3ow">13 Mbit/s</td>
+        <td class="tg-c3ow">1 Mbit/s</td>
+    </tr>
+    <tr>
+        <td class="tg-0pky">4G</td>
+        <td class="tg-c3ow">100 Mbit/s</td>
+        <td class="tg-c3ow">50 Mbit/s</td>
+    </tr>
+    <tr>
+        <td class="tg-0pky">Satellite</td>
+        <td class="tg-c3ow">50 Mbit/s</td>
+        <td class="tg-c3ow">1 Mbit/s</td>
+    </tr>
+    <tr>
+        <td class="tg-0pky">FastEthernet</td>
+        <td class="tg-c3ow" colspan="2">100 Mbit/s</td>
+    </tr>
+    <tr>
+        <td class="tg-0pky">FFTH (Fibre)</td>
+        <td class="tg-c3ow" colspan="2">10 Gbit/s</td>
+    </tr>
+    </tbody>
+    </table>
+
+??? success "Une petite vidéo résumant OSPF"
+    <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RbPrYZzs_2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
 ??? quote "Un exemple d'application"
     Pour illustrer le fonctionnement du **protocole OSPF**, prenons comme exemple le **réseau suivant** :
@@ -395,7 +488,7 @@ Contrairement au **RIP**, le **nombre de routeurs traversés** n'influe **plus**
     | 10.1.2.0/30 | 10.2.3.1 | fasteth0 | 5 |
     | 10.1.3.0/30 | 10.2.3.1 | fasteth0 | 4 |
 
-## L'algorithme de Dijkstra
+### L'algorithme de Dijkstra
 
 Voici une petite vidéo expliquant le principe de cet algorithme :
 
@@ -443,6 +536,9 @@ Voici une petite vidéo expliquant le principe de cet algorithme :
 
 Ainsi, chaque paquet contient un octet appelé ==**TTL**== (*Time To Live* en anglais) qui spécifie le **nombre de routeurs** que le **paquet** peut **encore traverser** (la durée de vie initiale du paquet est fixée par le protocole). À chaque passage par un routeur, ce compteur est **décrémenté**. Lorsqu'un routeur reçoit un paquet avec un **compteur TTL** à `0`, il le **détruit**. Cette méthode garantit qu'un paquet ne peut pas errer indéfiniment dans le réseau.
 
+Lors de l'exécution d'un **ping**, on peut **spécifier le TTL souhaité** :  
+`ping -c 1 -t n erwandemerville.fr` : envoie **1 paquet** avec un **TTL de `n`**.
+
 ## Exercices
 
 !!! note "Exercice 1 - Composants dans un réseau"
@@ -454,3 +550,45 @@ Ainsi, chaque paquet contient un octet appelé ==**TTL**== (*Time To Live* en an
     B = `..........`  
     C = `..........`  
     D = `..........`
+
+Pour les **exercices 2, 3 et 4**, on utilisera la **figure suivante** :
+
+<figure markdown>
+![Un exemple de réseau](images/reseau_exo2.png)
+<figcaption>Un exemple de réseau (extrait du <b>Balabonski Terminale</b>)</figcaption>
+</figure>
+
+!!! note "Exercice 2"
+    On considère le réseau de la **figure précédente**.
+
+    Dans ce réseau, les **nœuds A à F** sont des **routeurs** dont on veut **calculer les tables de routage**. On suppose que l'on a **exécuté le protocole RIP** sur ce **réseau**.  
+    Compléter la **table suivante**, qui indique pour **chaque machine** la **portion de la table de routage** pour la **destination G**.
+
+!!! note "Exercice 3"
+    On considère le **réseau** de la **figure précédente** ainsi que le **tableau** trouvé en **solution de l'exercice 2**.
+
+    On suppose maintenant que le **lien B-F tombe en panne**.
+    
+    1. Quel est le **vecteur de distance** envoyé par **B** à ses **voisins** pour **atteindre G**, une fois qu'il détecte la **panne** (on suppose que les autres nœuds n'ont pas modifié leurs tables de routage) ?
+    2. Pour chacun des **événements** suivants, dire lequel des **quatre cas** (évoqués dans le bloc "Principe du protocole RIP") du protocole **RIP** est appliqué. On supposera, pour simplifier, qu'aucun autre événement ne se produit entre-temps et qu'ils sont tous exécutés « en séquence ».
+          1. Les **routeurs A et C** reçoivent de **B** le **vecteur trouvé à la question 1**.
+          2. Le **routeur C** retransmet ce **même vecteur** à **D**.
+          3. Le **routeur D** transmet le **vecteur `(G,3)`** à **C**.
+    3. Après le **dernier cas ci-dessus**, quel **vecteur** est transmis par **C** à **A et B** ?
+
+!!! note "Exercice 4"
+    On considère le **réseau** de la **figure précédente**. Pour **chacun** des **liens** du **réseau**, proposer une **technologie réseau** faisant que, pour les **nœuds A,B et C**, la **route pour atteindre G** soit **différente** selon que l'on utilise **OSPF** ou **RIP**.
+
+!!! note "Exercice 5"
+    On considère un réseau ayant les propriétés suivantes :
+    
+    - la distance entre **deux nœuds** est **toujours inférieure à 15** ;
+    - pour **chaque paire de nœuds** `(A, B)`, il n'existe **pas plusieurs chemins** de **même taille** entre **A et B**.
+
+    On considère ce **réseau** comme une **unique zone** *backbone* **OSPF**.  
+    Donner une **condition suffisante** pour qu'**OSPF** et **RIP** calculent **les même routes**.
+
+!!! note "Exercice 6"
+    Si l'on essaie d'exécuter plusieurs fois de suite la **commande** `traceroute - I <url d'un site>`, obtiendra t-on toujours le **même résultat** ? (Vous pouvez faire des tests sur les sites de votre choix.)
+
+    Justifier.
