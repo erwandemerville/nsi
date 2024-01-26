@@ -4081,6 +4081,8 @@ D = <code>..........</code></p>
 <p>On considère le réseau de la <strong>figure précédente</strong>.</p>
 <p>Dans ce réseau, les <strong>nœuds A à F</strong> sont des <strong>routeurs</strong> dont on veut <strong>calculer les tables de routage</strong>. On suppose que l'on a <strong>exécuté le protocole RIP</strong> sur ce <strong>réseau</strong>.<br>
 Compléter la <strong>table suivante</strong>, qui indique pour <strong>chaque machine</strong> la <strong>portion de la table de routage</strong> pour la <strong>destination G</strong>.</p>
+<p><mark>Attention, ici, pour simplifier, on a pas indiqué les <strong>adresses des réseaux</strong> comme <strong>destinations</strong> (chose que l'on est censé faire normalement), mais les <strong>noms des routeurs</strong> qui sont directement <strong>reliés à ces réseaux</strong>.<br>
+Même chose pour les <strong>passerelles</strong>, on a indiqué les <strong>noms des routeurs</strong> plutôt que les <strong>adresses IP de leurs interfaces</strong>.</mark></p>
 <table>
 <thead>
 <tr>
@@ -4144,6 +4146,71 @@ Compléter la <strong>table suivante</strong>, qui indique pour <strong>chaque m
 </tbody>
 </table>
 </div>
+<details class="tip">
+<summary>Correction exercice 2</summary>
+<table>
+<thead>
+<tr>
+<th>machine</th>
+<th>destination</th>
+<th>passerelle</th>
+<th>interface</th>
+<th>distance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>G</td>
+<td>B</td>
+<td>eth0</td>
+<td>3</td>
+</tr>
+<tr>
+<td>B</td>
+<td>G</td>
+<td>F</td>
+<td>eth0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>C</td>
+<td>G</td>
+<td>B</td>
+<td>eth2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>D</td>
+<td>G</td>
+<td>E</td>
+<td>eth1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>E</td>
+<td>G</td>
+<td>F</td>
+<td>eth1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>F</td>
+<td>G</td>
+<td>G</td>
+<td>eth1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>G</td>
+<td>G</td>
+<td></td>
+<td>(non indiqué)</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</details>
 <div class="admonition note">
 <p class="admonition-title">Exercice 3</p>
 <p>On considère le <strong>réseau</strong> de la <strong>figure précédente</strong> ainsi que le <strong>tableau</strong> trouvé en <strong>solution de l'exercice 2</strong>.</p>
@@ -4159,12 +4226,41 @@ Compléter la <strong>table suivante</strong>, qui indique pour <strong>chaque m
 <li>Après le <strong>dernier cas ci-dessus</strong>, quel <strong>vecteur</strong> est transmis par <strong>C</strong> à <strong>A et B</strong> ?</li>
 </ol>
 </div>
+<details class="tip">
+<summary>Correction exercice 3</summary>
+<p><mark>Ici encore, pour simplifier, on écrira les <strong>vecteurs de distances</strong> avec les <strong>noms des routeurs</strong> plutôt que les <strong>adresses IP des réseaux</strong>.</mark></p>
+<ol>
+<li><strong>B</strong> envoie le vecteur <code>(G, 16)</code>, indiquant ainsi que la route qu'il connaissait pour atteindre <strong>G</strong> est de <strong>taille « infinie »</strong>.</li>
+<li>
+<ol>
+<li><strong>A</strong> et <strong>C</strong> reçoivent de <strong>B</strong> le vecteur <code>(G,16)</code>.<br>
+Ils reçoivent donc une route <strong>plus longue</strong> pour <strong>G</strong> de la part de leur <strong>voisin censé transmettre les paquets vers G</strong> (<strong>B</strong> est la <strong>passerelle</strong> de <strong>A</strong> et <strong>C</strong>).<br>
+Nous sommes dans le <strong>cas 4</strong>. Les <strong>routeurs A et C mettent à jour leur route vers G</strong>, de manière à propager l'<strong>information de la panne</strong> (ils changent donc la <strong>distance</strong> en la remplaçant par <strong>16</strong>).</li>
+<li><strong>C</strong> envoie le vecteur <code>(G,16)</code> à <strong>D</strong>.<br>
+<strong>D</strong> possède une <strong>déjà une route pour G</strong> passant par <strong>E</strong> de <strong>distance 3</strong>. Il <strong>ignore donc cette information</strong> car la <strong>nouvelle route a une plus grande distance</strong>. Il s'agit du <strong>cas 3</strong>.</li>
+<li><strong>C</strong> reçoit le vecteur <code>(G,3)</code> de <strong>D</strong>. Il possède actuellement dans sa table de routage un <strong>chemin vers G</strong> passant par <strong>B</strong> et <strong>de longueur 16</strong> (suite au vecteur <code>(G,16)</code> qu'il avait reçu de <strong>B</strong>). Il remplace donc son <strong>ancien chemin vers G</strong> : la <strong>passerelle</strong> devient <strong>D</strong> (c'est-à-dire le routeur qui lui a transmis l'information) et la <strong>distance</strong> devient <strong>4</strong> (on <strong>incrémente</strong> la <strong>distance reçue</strong>).</li>
+</ol>
+</li>
+<li>Le routeur <strong>C</strong> envoie <code>(G,4)</code> à <strong>A et B</strong>. Ces derniers <strong>mettent à jour leur table</strong> pour inscire la <strong>nouvelle information de routage</strong> : la <strong>route vers G</strong> passe maintenant par <strong>C</strong> et est de <strong>distance 5</strong>.</li>
+</ol>
+</details>
 <div class="admonition note">
 <p class="admonition-title">Exercice 4</p>
-<p>On considère le <strong>réseau</strong> de la <strong>figure précédente</strong>. Pour <strong>chacun</strong> des <strong>liens</strong> du <strong>réseau</strong>, proposer une <strong>technologie réseau</strong> faisant que, pour les <strong>nœuds A,B et C</strong>, la <strong>route pour atteindre G</strong> soit <strong>différente</strong> selon que l'on utilise <strong>OSPF</strong> ou <strong>RIP</strong>.</p>
+<p>On considère les <strong>débits</strong> de <strong>quelques liaisons</strong> :</p>
+<ul>
+<li>Ethernet : <span class="arithmatex">\(10~Mbit/s\)</span></li>
+<li>Bluetooth : <span class="arithmatex">\(3~Mbit/s\)</span></li>
+<li>FastEthernet : <span class="arithmatex">\(100~Mbit/s\)</span></li>
+<li>Fibre : <span class="arithmatex">\(10~Gbit/s\)</span></li>
+</ul>
+<p>Calculez le <strong>coût</strong> correspondant à <strong>chacun de ces débits</strong>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Exercice 5</p>
+<p>On considère le <strong>réseau</strong> de la <strong>figure précédente</strong>. Pour <strong>chacun</strong> des <strong>liens</strong> du <strong>réseau</strong>, proposer une <strong>technologie réseau</strong> faisant que, pour les <strong>nœuds A,B et C</strong>, la <strong>route pour atteindre G</strong> soit <strong>différente</strong> selon que l'on utilise <strong>OSPF</strong> ou <strong>RIP</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 6</p>
 <p>On considère un réseau ayant les propriétés suivantes :</p>
 <ul>
 <li>la distance entre <strong>deux nœuds</strong> est <strong>toujours inférieure à 15</strong> ;</li>
@@ -4174,7 +4270,7 @@ Compléter la <strong>table suivante</strong>, qui indique pour <strong>chaque m
 Donner une <strong>condition suffisante</strong> pour qu'<strong>OSPF</strong> et <strong>RIP</strong> calculent <strong>les même routes</strong>.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Exercice 6</p>
+<p class="admonition-title">Exercice 7</p>
 <p>Si l'on essaie d'exécuter plusieurs fois de suite la <strong>commande</strong> <code>traceroute - I &lt;url d'un site&gt;</code>, obtiendra t-on toujours le <strong>même résultat</strong> ? (Vous pouvez faire des tests sur les sites de votre choix.)</p>
 <p>Justifier.</p>
 </div></div>
