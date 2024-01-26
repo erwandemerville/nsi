@@ -564,6 +564,9 @@ Pour les **exercices 2, 3 et 4**, on utilisera la **figure suivante** :
     Dans ce réseau, les **nœuds A à F** sont des **routeurs** dont on veut **calculer les tables de routage**. On suppose que l'on a **exécuté le protocole RIP** sur ce **réseau**.  
     Compléter la **table suivante**, qui indique pour **chaque machine** la **portion de la table de routage** pour la **destination G**.
 
+    ==Attention, ici, pour simplifier, on a pas indiqué les **adresses des réseaux** comme **destinations** (chose que l'on est censé faire normalement), mais les **noms des routeurs** qui sont directement **reliés à ces réseaux**.  
+    Même chose pour les **passerelles**, on a indiqué les **noms des routeurs** plutôt que les **adresses IP de leurs interfaces**.==
+
     | machine | destination | passerelle | interface | distance |
     | ------- | ----------- | ---------- | --------- | -------- |
     | A       | G           |            |           |          |
@@ -573,6 +576,17 @@ Pour les **exercices 2, 3 et 4**, on utilisera la **figure suivante** :
     | E       | G           |            |           |          |
     | F       | G           |            |           |          |
     | G       | G           |            |           |          |
+
+??? tip "Correction exercice 2"
+    | machine | destination | passerelle | interface | distance |
+    | ------- | ----------- | ---------- | --------- | -------- |
+    | A       | G           | B          | eth0      | 3        |
+    | B       | G           | F          | eth0      | 2        |
+    | C       | G           | B          | eth2      | 3        |
+    | D       | G           | E          | eth1      | 3        |
+    | E       | G           | F          | eth1      | 2        |
+    | F       | G           | G          | eth1      | 1        |
+    | G       | G           |            | (non indiqué)          | 0        |
 
 !!! note "Exercice 3"
     On considère le **réseau** de la **figure précédente** ainsi que le **tableau** trouvé en **solution de l'exercice 2**.
@@ -586,10 +600,33 @@ Pour les **exercices 2, 3 et 4**, on utilisera la **figure suivante** :
           3. Le **routeur D** transmet le **vecteur `(G,3)`** à **C**.
     3. Après le **dernier cas ci-dessus**, quel **vecteur** est transmis par **C** à **A et B** ?
 
+??? tip "Correction exercice 3"
+    ==Ici encore, pour simplifier, on écrira les **vecteurs de distances** avec les **noms des routeurs** plutôt que les **adresses IP des réseaux**.==
+
+    1. **B** envoie le vecteur `(G, 16)`, indiquant ainsi que la route qu'il connaissait pour atteindre **G** est de **taille « infinie »**.
+    2. 
+        1. **A** et **C** reçoivent de **B** le vecteur `(G,16)`.  
+        Ils reçoivent donc une route **plus longue** pour **G** de la part de leur **voisin censé transmettre les paquets vers G** (**B** est la **passerelle** de **A** et **C**).  
+        Nous sommes dans le **cas 4**. Les **routeurs A et C mettent à jour leur route vers G**, de manière à propager l'**information de la panne** (ils changent donc la **distance** en la remplaçant par **16**).
+        2. **C** envoie le vecteur `(G,16)` à **D**.  
+        **D** possède une **déjà une route pour G** passant par **E** de **distance 3**. Il **ignore donc cette information** car la **nouvelle route a une plus grande distance**. Il s'agit du **cas 3**.
+        3. **C** reçoit le vecteur `(G,3)` de **D**. Il possède actuellement dans sa table de routage un **chemin vers G** passant par **B** et **de longueur 16** (suite au vecteur `(G,16)` qu'il avait reçu de **B**). Il remplace donc son **ancien chemin vers G** : la **passerelle** devient **D** (c'est-à-dire le routeur qui lui a transmis l'information) et la **distance** devient **4** (on **incrémente** la **distance reçue**).
+     3. Le routeur **C** envoie `(G,4)` à **A et B**. Ces derniers **mettent à jour leur table** pour inscire la **nouvelle information de routage** : la **route vers G** passe maintenant par **C** et est de **distance 5**.
+
 !!! note "Exercice 4"
-    On considère le **réseau** de la **figure précédente**. Pour **chacun** des **liens** du **réseau**, proposer une **technologie réseau** faisant que, pour les **nœuds A,B et C**, la **route pour atteindre G** soit **différente** selon que l'on utilise **OSPF** ou **RIP**.
+    On considère les **débits** de **quelques liaisons** :
+
+    - Ethernet : $10~Mbit/s$
+    - Bluetooth : $3~Mbit/s$
+    - FastEthernet : $100~Mbit/s$
+    - Fibre : $10~Gbit/s$
+
+    Calculez le **coût** correspondant à **chacun de ces débits**.
 
 !!! note "Exercice 5"
+    On considère le **réseau** de la **figure précédente**. Pour **chacun** des **liens** du **réseau**, proposer une **technologie réseau** faisant que, pour les **nœuds A,B et C**, la **route pour atteindre G** soit **différente** selon que l'on utilise **OSPF** ou **RIP**.
+
+!!! note "Exercice 6"
     On considère un réseau ayant les propriétés suivantes :
     
     - la distance entre **deux nœuds** est **toujours inférieure à 15** ;
@@ -598,7 +635,7 @@ Pour les **exercices 2, 3 et 4**, on utilisera la **figure suivante** :
     On considère ce **réseau** comme une **unique zone** *backbone* **OSPF**.  
     Donner une **condition suffisante** pour qu'**OSPF** et **RIP** calculent **les même routes**.
 
-!!! note "Exercice 6"
+!!! note "Exercice 7"
     Si l'on essaie d'exécuter plusieurs fois de suite la **commande** `traceroute - I <url d'un site>`, obtiendra t-on toujours le **même résultat** ? (Vous pouvez faire des tests sur les sites de votre choix.)
 
     Justifier.
