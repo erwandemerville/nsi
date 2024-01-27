@@ -133,6 +133,7 @@ nav:
     - Protocoles de routage:
       - terminale/routage/index.md
       - Cours: terminale/routage/cours.md
+      - Exercices: terminale/routage/exercices.md
       - TP Filius: https://www.numerique-sciences-informatiques.fr/TP-reseaux.pdf
     - Le module Pyxel:
       - terminale/pyxel/index.md
