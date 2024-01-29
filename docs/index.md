@@ -31,5 +31,6 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Piles et files](terminale/pilesfiles/index.md) | Structures de piles et de files et implémentations. |
 | [Les arbres](terminale/arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |
 | [Protocoles de routage](terminale/routage/index.md) | Protocoles de routage RIP et OSPF. |
+| [Recherche textuelle](terminale/recherche_textuelle/index.md) | Algorithmes de recherche dans un texte. |
 | [Bases de données - représentations et applications](terminale/bdd/index.md) | Modèle relationnel, bases de données, SQL... |
 | [:video_game: Le module Pyxel](terminale/pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |

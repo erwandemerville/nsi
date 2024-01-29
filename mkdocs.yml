@@ -135,6 +135,9 @@ nav:
       - Cours: terminale/routage/cours.md
       - Exercices: terminale/routage/exercices.md
       - TP Filius: https://www.numerique-sciences-informatiques.fr/TP-reseaux.pdf
+    - Recherche textuelle:
+      - terminale/recherche_textuelle/index.md
+      - TP d'introduction: terminale/recherche_textuelle/tp_intro.md
     - Le module Pyxel:
       - terminale/pyxel/index.md
       - Jeu de snake: terminale/pyxel/snake.md

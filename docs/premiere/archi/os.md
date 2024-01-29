@@ -122,4 +122,4 @@ Voici une courte vidéo racontant l'histoire de Linux avec plus de détails :
 
     - [activite_commandes.odt](documents/activite_commandes.odt){ target="_blank" } - L'énoncé de l'activité, à compléter directement dans le fichier.
     - [commandes_linux.pdf](documents/commandes_linux.pdf){ target="_blank" } - Récapitulatif des commandes Linux essentielles.
-    - [v86state.bin](https://www.mediafire.com/file/38sc8rsjy4qa8oc/v86state.bin/file){ target="_blank" } - Une sauvegarde d'état de la machine que vous allez utiliser.
+    - [etat_machine.bin](https://mega.nz/file/GhRw3ZSR#CXElAdjtMAMSTqKaoiXndk9yCwEo7IMIpeTnHOGwpj0){ target="_blank" } - Une sauvegarde d'état de la machine que vous allez utiliser.
