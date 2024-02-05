@@ -76,38 +76,38 @@ On peut, à l'aide de ces **identités élémentaires**, montrer par exemple l�
     Montrer de **deux manières différentes** l’égalité suivante :
 
     - en comparant les deux **tables de vérité**
-    - en utilisant les **identités élémentaires**.\newline
+    - en utilisant les **identités élémentaires**.
 
     $(x ∧ y) ∨ (¬y ∧ z) = (x ∨ ¬y) ∧ (y ∨ z)$
 
 !!! note "Question 2"
-    Définir une fonction booléenne $f$ sur deux variables $x$ et $y$ qui vaut $1$ **si et seulement si les deux variables** ont la **même valeur** (qu’elle soit $0$ ou $1$), en utilisant **uniquement** les opérations **NON**, **ET**, **OU** ou **OU exclusif**.\newline
+    Définir une fonction booléenne $f$ sur deux variables $x$ et $y$ qui vaut $1$ **si et seulement si les deux variables** ont la **même valeur** (qu’elle soit $0$ ou $1$), en utilisant **uniquement** les opérations **NON**, **ET**, **OU** ou **OU exclusif**.
 
     Donner sa **table de vérité**.
 
 !!! note "Question 3"
-    On considère la **fonction booléenne** à **trois variables** suivante :\newline
+    On considère la **fonction booléenne** à **trois variables** suivante :
 
-    $f(x, y, z) = (x ∧ ¬y ∧ ¬z) ∨ (¬x ∧ y ∧ ¬z) ∨ (¬x ∧ ¬y ∧ z)$\newline
+    $f(x, y, z) = (x ∧ ¬y ∧ ¬z) ∨ (¬x ∧ y ∧ ¬z) ∨ (¬x ∧ ¬y ∧ z)$
 
     Donner sa **table de vérité**. Que fait cette fonction ?
     Donner une **expression booléenne plus simple** pour cette fonction.
 
 !!! note "Question 4"
-    Une **fonctions booléenne** peut être représentée par sa **forme normale conjonctive** (*FNC*) ou sa **forme normale disjonctive** (*FND*). Par exemple, voici une fonction $f(a, b)$ dont voici la table de vérité :\newline
+    Une **fonctions booléenne** peut être représentée par sa **forme normale conjonctive** (*FNC*) ou sa **forme normale disjonctive** (*FND*). Par exemple, voici une fonction $f(a, b)$ dont voici la table de vérité :
 
     | a    | b    | f(a, b) |
     | ---- | ---- | ------- |
     | 0    | 0    | 1       |
     | 0    | 1    | 0       |
     | 1    | 0    | 1       |
-    | 1    | 1    | 0       |\newline
+    | 1    | 1    | 0       |
 
     On peut alors écrire que $f(a, b) = (\lnot a \land \lnot b) \lor (a \land \lnot b)$.
-    Il s'agit ici de la **forme normale disjonctive**, car on a des **sous-expressions** contenant des **conjonctions** $\land$ (entre parenthèses), et ces sous-expressions sont séparées par des **disjonctions** $\lor$. \newline
+    Il s'agit ici de la **forme normale disjonctive**, car on a des **sous-expressions** contenant des **conjonctions** $\land$ (entre parenthèses), et ces sous-expressions sont séparées par des **disjonctions** $\lor$.
 
-    On peut également écrire que $f(a, b) = \lnot ((\lnot a \land b) \lor (a \land b)) = (a \lor \lnot b) \land (\lnot a \lor \lnot b)$, qui est la **forme normale conjonctive**.\newline
+    On peut également écrire que $f(a, b) = \lnot ((\lnot a \land b) \lor (a \land b)) = (a \lor \lnot b) \land (\lnot a \lor \lnot b)$, qui est la **forme normale conjonctive**.
 
-    En vous basant sur sa **table de vérité**, donnez la **forme normale disjonctive** de l'opérateur **XOR** $\oplus$.\newline
+    En vous basant sur sa **table de vérité**, donnez la **forme normale disjonctive** de l'opérateur **XOR** $\oplus$.
 
     $x \oplus y = ...........................................$

@@ -138,6 +138,7 @@ nav:
     - Recherche textuelle:
       - terminale/recherche_textuelle/index.md
       - TP d'introduction: terminale/recherche_textuelle/tp_intro.md
+      - Cours: terminale/recherche_textuelle/cours.md
     - Le module Pyxel:
       - terminale/pyxel/index.md
       - Jeu de snake: terminale/pyxel/snake.md
