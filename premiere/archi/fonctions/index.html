@@ -2873,6 +2873,8 @@
       
         
       
+        
+      
     
     
     
@@ -2925,6 +2927,27 @@
   
   <span class="md-ellipsis">
     TP d'introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recherche_textuelle/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
   </span>
   
 
@@ -3277,25 +3300,25 @@ Sur l'exemple précédent, cela revient à calculer les résultats des expressio
 <p>Montrer de <strong>deux manières différentes</strong> l’égalité suivante :</p>
 <ul>
 <li>en comparant les deux <strong>tables de vérité</strong></li>
-<li>en utilisant les <strong>identités élémentaires</strong>.\newline</li>
+<li>en utilisant les <strong>identités élémentaires</strong>.</li>
 </ul>
 <p><span class="arithmatex">\((x ∧ y) ∨ (¬y ∧ z) = (x ∨ ¬y) ∧ (y ∨ z)\)</span></p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 2</p>
-<p>Définir une fonction booléenne <span class="arithmatex">\(f\)</span> sur deux variables <span class="arithmatex">\(x\)</span> et <span class="arithmatex">\(y\)</span> qui vaut <span class="arithmatex">\(1\)</span> <strong>si et seulement si les deux variables</strong> ont la <strong>même valeur</strong> (qu’elle soit <span class="arithmatex">\(0\)</span> ou <span class="arithmatex">\(1\)</span>), en utilisant <strong>uniquement</strong> les opérations <strong>NON</strong>, <strong>ET</strong>, <strong>OU</strong> ou <strong>OU exclusif</strong>.\newline</p>
+<p>Définir une fonction booléenne <span class="arithmatex">\(f\)</span> sur deux variables <span class="arithmatex">\(x\)</span> et <span class="arithmatex">\(y\)</span> qui vaut <span class="arithmatex">\(1\)</span> <strong>si et seulement si les deux variables</strong> ont la <strong>même valeur</strong> (qu’elle soit <span class="arithmatex">\(0\)</span> ou <span class="arithmatex">\(1\)</span>), en utilisant <strong>uniquement</strong> les opérations <strong>NON</strong>, <strong>ET</strong>, <strong>OU</strong> ou <strong>OU exclusif</strong>.</p>
 <p>Donner sa <strong>table de vérité</strong>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 3</p>
-<p>On considère la <strong>fonction booléenne</strong> à <strong>trois variables</strong> suivante :\newline</p>
-<p><span class="arithmatex">\(f(x, y, z) = (x ∧ ¬y ∧ ¬z) ∨ (¬x ∧ y ∧ ¬z) ∨ (¬x ∧ ¬y ∧ z)\)</span>\newline</p>
+<p>On considère la <strong>fonction booléenne</strong> à <strong>trois variables</strong> suivante :</p>
+<p><span class="arithmatex">\(f(x, y, z) = (x ∧ ¬y ∧ ¬z) ∨ (¬x ∧ y ∧ ¬z) ∨ (¬x ∧ ¬y ∧ z)\)</span></p>
 <p>Donner sa <strong>table de vérité</strong>. Que fait cette fonction ?
 Donner une <strong>expression booléenne plus simple</strong> pour cette fonction.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Question 4</p>
-<p>Une <strong>fonctions booléenne</strong> peut être représentée par sa <strong>forme normale conjonctive</strong> (<em>FNC</em>) ou sa <strong>forme normale disjonctive</strong> (<em>FND</em>). Par exemple, voici une fonction <span class="arithmatex">\(f(a, b)\)</span> dont voici la table de vérité :\newline</p>
+<p>Une <strong>fonctions booléenne</strong> peut être représentée par sa <strong>forme normale conjonctive</strong> (<em>FNC</em>) ou sa <strong>forme normale disjonctive</strong> (<em>FND</em>). Par exemple, voici une fonction <span class="arithmatex">\(f(a, b)\)</span> dont voici la table de vérité :</p>
 <table>
 <thead>
 <tr>
@@ -3328,9 +3351,9 @@ Donner une <strong>expression booléenne plus simple</strong> pour cette fonctio
 </tbody>
 </table>
 <p>On peut alors écrire que <span class="arithmatex">\(f(a, b) = (\lnot a \land \lnot b) \lor (a \land \lnot b)\)</span>.
-Il s'agit ici de la <strong>forme normale disjonctive</strong>, car on a des <strong>sous-expressions</strong> contenant des <strong>conjonctions</strong> <span class="arithmatex">\(\land\)</span> (entre parenthèses), et ces sous-expressions sont séparées par des <strong>disjonctions</strong> <span class="arithmatex">\(\lor\)</span>. \newline</p>
-<p>On peut également écrire que <span class="arithmatex">\(f(a, b) = \lnot ((\lnot a \land b) \lor (a \land b)) = (a \lor \lnot b) \land (\lnot a \lor \lnot b)\)</span>, qui est la <strong>forme normale conjonctive</strong>.\newline</p>
-<p>En vous basant sur sa <strong>table de vérité</strong>, donnez la <strong>forme normale disjonctive</strong> de l'opérateur <strong>XOR</strong> <span class="arithmatex">\(\oplus\)</span>.\newline</p>
+Il s'agit ici de la <strong>forme normale disjonctive</strong>, car on a des <strong>sous-expressions</strong> contenant des <strong>conjonctions</strong> <span class="arithmatex">\(\land\)</span> (entre parenthèses), et ces sous-expressions sont séparées par des <strong>disjonctions</strong> <span class="arithmatex">\(\lor\)</span>.</p>
+<p>On peut également écrire que <span class="arithmatex">\(f(a, b) = \lnot ((\lnot a \land b) \lor (a \land b)) = (a \lor \lnot b) \land (\lnot a \lor \lnot b)\)</span>, qui est la <strong>forme normale conjonctive</strong>.</p>
+<p>En vous basant sur sa <strong>table de vérité</strong>, donnez la <strong>forme normale disjonctive</strong> de l'opérateur <strong>XOR</strong> <span class="arithmatex">\(\oplus\)</span>.</p>
 <p><span class="arithmatex">\(x \oplus y = ...........................................\)</span></p>
 </div></div>
 
