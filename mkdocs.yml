@@ -144,7 +144,7 @@ nav:
       - Jeu de snake: terminale/pyxel/snake.md
     - Paradigmes de programmation:
       - terminale/paradigmes/index.md
-      - Notebook d'intro: terminale/paradigmes/notebook.md
+      - Notebook d'intro: terminale/paradigmes/Paradigmes_prog.zip
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Rendu des travaux: rendus.md
 
