@@ -33,4 +33,5 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Protocoles de routage](terminale/routage/index.md) | Protocoles de routage RIP et OSPF. |
 | [Recherche textuelle](terminale/recherche_textuelle/index.md) | Algorithmes de recherche dans un texte. |
 | [Bases de données - représentations et applications](terminale/bdd/index.md) | Modèle relationnel, bases de données, SQL... |
+| [Paradigmes de programmation](terminale/paradigmes/index.md) | Les paradigmes de programmation. |
 | [:video_game: Le module Pyxel](terminale/pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |

@@ -12,4 +12,5 @@
 | [Protocoles de routage](routage/index.md) | Protocoles de routage RIP et OSPF. |
 | [Recherche textuelle](recherche_textuelle/index.md) | Algorithmes de recherche dans un texte. |
 | [Bases de données - représentations et applications](bdd/index.md) | Modèle relationnel, bases de données, SQL... |
+| [Paradigmes de programmation](paradigmes/index.md) | Les paradigmes de programmation. |
 | [:video_game: Le module Pyxel](pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |

@@ -43,3 +43,9 @@ def BMH(texte, motif):
             i = i + len(motif)
     return False
 ```
+
+## Aller plus loin
+
+!!! success "Notebooks"
+    - [Boyer_Moore_BS.ipynb](src/Boyer_Moore_BS.ipynb) - découverte de la règle du **bon suffixe**
+    - [](src/Boyer_Moore_complet.ipynb) - algorithme de **Boyer-Moore** avec la **règle du mauvais caractère** et la **règle du bon suffixe**
