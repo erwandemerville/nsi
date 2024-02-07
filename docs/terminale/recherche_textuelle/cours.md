@@ -47,5 +47,5 @@ def BMH(texte, motif):
 ## Aller plus loin
 
 !!! success "Notebooks"
-    - [Boyer_Moore_BS.ipynb](src/Boyer_Moore_BS.ipynb) - découverte de la règle du **bon suffixe**
-    - [](src/Boyer_Moore_complet.ipynb) - algorithme de **Boyer-Moore** avec la **règle du mauvais caractère** et la **règle du bon suffixe**
+    - [Boyer_Moore_BS.ipynb](src/Boyer_Moore_BS_Eleve.ipynb) - découverte de la règle du **bon suffixe**
+    - [Boyer_Moore_complet.ipynb](src/Boyer_Moore_complet_Eleve.ipynb) - algorithme de **Boyer-Moore** avec la **règle du mauvais caractère** et la **règle du bon suffixe**
