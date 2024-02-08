@@ -54,6 +54,8 @@ def BMH(texte, motif):
 
 ## Aller plus loin
 
+Pour aller plus loin, vous pouvez consulter le notebook `Boyer_Moore_BS_Eleve.ipynb` ci-dessous présentant la **règle du bon suffixe**, ainsi que le notebook `Boyer_Moore_complet.ipynb` implémentant l'**algorithme de Boyer-Moore complet**, utilisant à la fois la **règle du mauvais caractère** et la **règle du bon suffixe**.
+
 !!! success "Notebooks"
     - [Boyer_Moore_BS.ipynb](src/Boyer_Moore_BS_Eleve.ipynb) - découverte de la règle du **bon suffixe**
     - [Boyer_Moore_complet.ipynb](src/Boyer_Moore_complet_Eleve.ipynb) - algorithme de **Boyer-Moore** avec la **règle du mauvais caractère** et la **règle du bon suffixe**
