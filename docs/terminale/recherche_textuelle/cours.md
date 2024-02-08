@@ -12,6 +12,13 @@ Voici une petite **vidéo** récapitulant le **principe** de fonctionnement de l
 
 ![type:video](src/video_BMH.mp4)
 
+## Animation
+
+Voici une animation montrant le fonctionnement de l'algorithme de **Boyer-Moore-Horspool**.
+Vous pouvez changer le *texte*, le *motif* (*pattern*), ainsi que la *vitesse d'animation* (*Animation Speed*).
+
+<embed type="text/html" src="https://cmps-people.ok.ubc.ca/ylucet/DS/BoyerMoore.html" width="700" height="700"> 
+
 ## L'algorithme
 
 La **table des sauts** (ou *table de décalage*) peut être **créée** avec l'**algorithme** suivant, ici écrit en *Python* :
@@ -30,18 +37,19 @@ def decalage(motif):
 def BMH(texte, motif):
     D = decalage(motif)  # création de la table des décalages
     i = len(motif) - 1  # stocker indice du dernier caractère du motif
-    while i < len(texte):
-        b = True
-        for j in range(len(motif) - 1):
-            if texte[i - j] != motif[len(motif) - j - 1]:
-                b = False
-        if b:
-            return True
-        if texte[i] in D.keys():
-            i = i + D[texte[i]]
-        else:
-            i = i + len(motif)
-    return False
+    while i < len(texte):  # parcourir le texte
+        b = True  # initialiser b à True
+        for j in range(len(motif) - 1):  # parcourir le motif
+            if texte[i - j] != motif[len(motif) - j - 1]:  # Comparer un caractère du motif avec un caractère du texte
+                b = False  # si un caractère ne correspond pas, b passe à False
+        if b:  # si b est resté à True, alors on a trouvé le motif
+            return True  # on renvoie True
+        # sinon :
+        if texte[i] in D.keys():  # si le caractère i est dans le motif
+            i = i + D[texte[i]]  # on décale le motif de la valeur (de la table de sauts D) associée au caractère présent à l'indice i du texte
+        else:  # sinon
+            i = i + len(motif)  # on décale le motif de la longueur du texte
+    return False  # motif non trouvé : on renvoie False
 ```
 
 ## Aller plus loin
