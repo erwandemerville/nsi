@@ -145,6 +145,10 @@ nav:
     - Paradigmes de programmation:
       - terminale/paradigmes/index.md
       - Notebook d'intro: terminale/paradigmes/Paradigmes_prog.zip
+      - Cours: terminale/paradigmes/cours.md
+    - Diviser pour régner:
+      - terminale/diviserregner/index.md
+      - Exercices: terminale/diviserregner/exercices.zip
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Rendu des travaux: rendus.md
 
