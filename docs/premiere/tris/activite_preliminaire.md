@@ -33,12 +33,11 @@ La zone de jeu est constituée :
 
     - **comparer** les valeurs **de deux cartes**,
     - **permuter** (échanger) **deux cartes**,
-    - **copier l'indice** ou la **valeur d'une carte** de la suite dans la **zone temporaire** (et inversement),
+    - **déplacer une carte** de la suite dans la **zone temporaire** (et inversement),
     - vous pouvez utiliser des **conditions** (*SI ...*, *SINON*) et des **boucles** (*TANT QUE*, *POUR ... ALLANT DE ... A ...*).
 
     Voici également quelques **règles** à respecter :
-
-    - vous ne pouvez parcourir les cartes que de la **gauche vers la droite** (on ne revient pas en arrière),
+    
     - si une tâche est répétitive, vous pouvez **la nommer** (créer un autre bloc d'instructions qui sera utilisé dans le bloc principal),
     - votre stratégie doit être suffisamment claire, mais vous n'avez pas obligation d'écrire un algorithme formel.
 
