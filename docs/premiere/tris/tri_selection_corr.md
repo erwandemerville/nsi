@@ -153,6 +153,14 @@ Voici enfin une version en **un seul** algorithme :
 
     **Question 3** : Même chose cette fois avec le tableau `['b', 'e', 'c', 'w', 'p', 'q']`. On utilisera l'ordre **lexicographique**.
 
+??? tip "Correction"
+    **Question 1** :
+
+    ![Correction question 1](images/tableau_exo_triselect_correction.png)
+
+    **Question 2 et 3** : Même principe.  
+    Pour la **question 3**, la comparaison se fait par ordre **lexicographique** (a < b < c < d < ... < x < y < z).
+
 ## Implémentation du tri par sélection
 
 On va maintenant implémenter l'algorithme du **tri par sélection** en **Python**.  
@@ -166,6 +174,7 @@ Les **tableaux** seront représentés par des **listes Python** (objets de type 
 
 !!! success "<span id="fichiers_python">Fichiers Python</span>"
     - [tri_selection.py](src/tri_selection.py) : programme **Python** avec les fonctions à compléter.
+    - [tri_selection_corr.py](src/tri_selection_corr.py) : correction de l'implémentation des fonctions.
 
 !!! note "Question 1"
     1. Compléter les fonctions : 
@@ -174,6 +183,46 @@ Les **tableaux** seront représentés par des **listes Python** (objets de type 
     2. Compléter la fonction `tri_selection(tableau)` qui effectue le **tri par sélection** des éléments d'un tableau `tableau` donné, en réutilisant les deux fonctions précédentes.
     3. Est-il nécessaire de mettre un `return None` ? Pourquoi ?
     4. Peut-on dire que la fonction `tri_selection` est une **procédure** ? Pourquoi ?
+
+??? tip "Correction question 1"
+    **1** -
+
+    ```python
+    def minimum(tableau: 'list[int]', debut: int) -> int:
+    ''' Renvoie l'indice de la valeur minimale du tableau dans l'intervalle [debut, len(tableau) - 1].
+    :param tableau: (list[int]) un tableau d'entiers
+    :param debut: (int) l'indice à partir duquel on recherche le minimum
+    :return: (int) l'indice du minimum '''
+
+    indice_min = debut  # Initialiser l'indice du minimum à debut
+    for i in range(debut + 1, len(tableau)):  # Parcourir tous les éléments du tableau à partir de debut + 1
+        if tableau[i] < tableau[indice_min]:  # Si l'élément d'indice i est inférieur à celui d'indice indice_min
+            indice_min = i  # Le nouvel indice du minimum est i
+    return indice_min  # Renvoyer l'indice du minimum
+
+    def echanger(tableau: 'list[int]', i: int, j: int) -> None:
+        ''' Echanger deux éléments d'un tableau
+        :param tableau: (list[int]) un tableau d'entiers
+        :param i: (int) l'indice d'un élément du tableau
+        :param j: (int) l'indice d'un élément du tableau '''
+
+        temp = tableau[i]
+        tableau[i] = tableau[j]
+        tableau[j] = temp
+
+    def tri_selection(tableau: 'list[int]') -> None:
+        ''' Effectue le tri par sélection en place des éléments d'un tableau donné.
+        :param tableau: (list[int]) un tableau d'entiers à trier '''
+
+        n = len(tableau)  # Récupérer la longueur du tableau
+        for debut in range(0, n - 1):  # Parcourir tous les éléments jusqu'à l'avant dernier (*)
+            indice_min = minimum(tableau, debut)  # Récupérer l'indice du minimum
+            echanger(tableau, debut, indice_min)  # Echanger les éléments d'indices debut et indice_min
+    ```
+
+    **2** - Ce n'est pas nécessaire. Lorsqu'on ne met pas de `return`, cela revient à renvoyer `None` (c'est-à-dire *rien*).
+
+    **3** - La fonction `tri_selection` **ne renvoie rien**. Une fonction qui ne renvoie rien (et qui fonctionne donc uniquement par *effets de bord*) peut être appelée **procédure**. Attention toutefois, en *Python*, il n'existe pas de **type 'procédure'**, il n'existe que des **fonctions** (type `function`).
 
 !!! tip "Tester ma fonction"
     Le programme est muni de **tests** (lignes `13` à `22`) exécutés par le module *Doctest*.  
@@ -184,12 +233,55 @@ Les **tableaux** seront représentés par des **listes Python** (objets de type 
 !!! note "Question 2"
     Compléter la fonction `tri_selection_tout_en_un(tableau)` en ré-écrivant le **tri par sélection** sans appeler d'autres fonctions (les **recherches du minimum** et les **échanges** sont effectués **directement dans cette fonction**).
 
+??? tip "Réponse question 2"
+
+    ```python
+    def tri_selection_tout_en_un(tableau: 'list[int]') -> None:
+    ''' Effectue le tri par sélection en place des éléments d'un tableau donné.
+    
+    :param tableau: (list[int]) un tableau d'entiers à trier '''
+
+    n = len(tableau)  # Récupérer la longueur du tableau
+    for debut in range(0, n - 1):  # Parcourir tous les éléments jusqu'à l'avant dernier (*)
+        indice_min = debut  # Initialiser l'indice du minimum à debut
+        for i in range(debut + 1, len(tableau)):  # Parcourir tous les éléments du tableau à partir de debut + 1
+            if tableau[i] < tableau[indice_min]:  # Si l'élément d'indice i est inférieur à celui d'indice indice_min
+                indice_min = i  # Le nouvel indice du minimum est i
+        # On effectue une permutation
+        temp = tableau[debut]
+        tableau[debut] = tableau[indice_min]
+        tableau[indice_min] = temp
+    ```
+
 !!! note "Question 3"
     Écrire la fonction `tri_selection_decroissant(tableau)` qui effectue le **tri par sélection** des éléments d'un tableau dans l'**ordre décroissant**.
+
+??? tip "Réponse question 3"
+
+    ```python
+    def tri_selection_decroissant(tableau: 'list[int]') -> None:
+    ''' Effectue le tri par sélection dans l'ordre décroissant des éléments d'un tableau donné.
+    :param tableau: (list[int]) un tableau d'entiers à trier '''
+
+    n = len(tableau)  # Récupérer la longueur du tableau
+    for debut in range(0, n - 1):  # Parcourir tous les éléments jusqu'à l'avant dernier (*)
+        indice_max = debut  # Initialiser l'indice du maximum à debut
+        for i in range(debut + 1, len(tableau)):  # Parcourir tous les éléments du tableau à partir de debut + 1
+            if tableau[i] > tableau[indice_max]:  # Si l'élément d'indice i est inférieur à celui d'indice indice_max
+                indice_max = i  # Le nouvel indice du minimum est i
+        # On effectue une permutation
+        temp = tableau[debut]
+        tableau[debut] = tableau[indice_max]
+        tableau[indice_max] = temp
+    ```
 
 !!! note "Question 4"
     Dans les **tests**, à la ligne `19`, on trouve l'instruction `l = [randint(0, 100) for _ in range(20)]`.  
     Que fait cette instruction ? Quel est le nom de la **méthode** de **création de liste** utilisée ?
+
+??? tip "Réponse question 4"
+    Cette instruction crée une **liste Python** contenant **20 entiers aléatoires** compris entre **0** et **100**.  
+    La création est effectuée **par compréhension**.
 
 ## Coût du tri par sélection
 
@@ -278,6 +370,9 @@ On rappelle l'algorithme du **tri par sélection** et de **recherche du minimum*
 !!! note "Question 2"
     Si l'on change les éléments du tableau de la question précédente, le **nombre de comparaisons** change t-il ? Pourquoi ?
 
+??? tip "Réponse question 2"
+    **Non**, le tri par sélection effectue **toujours** une comparaison avec tous les éléments de la **partie non-triée** du tableau lors de la **recherche du minimum**. Le nombre de comparaisons effectué ne dépend que de la **longueur** du tableau, et non pas des éléments en eux-même.
+
 !!! note "Question 3"
     Calculer le **nombre de comparaisons**, noté $C(n)$, pour un tableau de taille $n$.  
     Finalement, quelle est la **complexité** du **tri par sélection** ? (Voir l'aide ci-dessous si nécessaire.)
@@ -306,6 +401,18 @@ On rappelle l'algorithme du **tri par sélection** et de **recherche du minimum*
     $$
     S = \sum_{x=0}^{n}x = \frac{n(n+1)}{2}
     $$
+
+??? tip "Réponse question 3"
+    $$
+    C(n) = 1 + 2 + [...] + (n - 2) + (n - 1) = \frac{(n - 1)n}{2}
+    $$
+
+    $$
+    C(n) = \sum_{x=1}^{n-1}x = \frac{(n - 1)n}{2}
+    $$
+
+    La complexité est donc **quadratique** (si l'on double la taille du tableau en entrée, le temps d'exécution sera multiplié par 4.)  
+    Étant donné que la complexité est la même quels que soient les éléments du tableau fourni en entrée, on peut utiliser la notation **grand-theta**. On peut écrire que la complexité de l'algorithme du **tri par sélection** est en $\Theta(n^2)$.
 
 !!! tip "Rappel sur les complexités"
     Voici un rappel sur les différentes complexités :
@@ -416,6 +523,41 @@ On rappelle l'algorithme du **tri par sélection** et de **recherche du minimum*
     - Écrire la condition du **TANT QUE** en partant de l'inégalité de départ et de l'expression de $i_n$, et tenter d'obtenir une nouvelle inégalité de la forme $v_n > 0$, où $v_n$ est une **suite d'entiers strictement décroissante**.
     - On a trouvé un **variant** $v_n$ : La boucle se termine !
 
+???+ tip "Réponse question 1"
+    Pour montrer la **terminaison** de cet algorithme, il faut **prouver la terminaison de la boucle POUR**.
+
+    On réécrit la boucle **POUR** sous la forme d'une boucle **WHILE** :
+
+    ---
+    i = debut + 1  
+    **TANT QUE** i < longueur(tableau):  
+    &emsp;&emsp;(instructions qui ne modifient pas la valeur de i)  
+    &emsp;&emsp;i = i + 1
+    ---
+
+    Exprimons $i$ sous la forme d'une **suite arithmétique** en fonction de $n$, $n$ étant **le nombre de tours de boucles effectué**. Avant de rentrer dans la boucle, $n$ vaut $0$.
+
+    $i_n = i_0 + rn$ avec $r$ la **raison de la suite arithmétique**, qui correspond au **pas** de la boucle. Après chaque itération, on **incrémente** $i$ de **1**, donc $r = 1$.    
+    Donc $i_n = debut + 1 + 1*n$,  
+    $i_n = debut + 1 + n$.
+
+    Donc, si l'on réécrit le **TANT QUE** :
+
+    ---
+    **TANT QUE** i<sub>n</sub> < longueur(tableau)  
+    **TANT QUE** debut + 1 + n < longueur(tableau)  
+    En réécrivant sous la forme **TANT QUE** <span style="color:blue">VARIANT</span> > 0 :  
+    **TANT QUE** 0 < longueur(tableau) - debut - 1 - n  
+    **TANT QUE** longueur(tableau) - debut - 1 - n > 0
+    ---
+
+    On obtient une **nouvelle suite arithmétique**, qu'on notera $v_n$, telle que :  
+    $v_n = v_0 + rn$ avec $v_0$ = $longueur(tableau) - debut - 1$ et $r = -1$.
+
+    $v_0$ étant un **entier positif** (car $longueur(tableau) - debut - 1$ vaut toujours au minimum **1**), et la **raison** étant **négative** (ce qui indique que la **suite est strictement décroissante**), on peut donc dire que $v_n$ est bien un **variant de la boucle** et que notre boucle **se termine**.
+
+    On a prouvé la terminaison de la seule boucle de l'algorithme, on peut donc en conclure que `minimum` **se termine**.
+
 !!! note "Question 2"
     Montrer enfin la terminaison de l'algorithme du **tri par sélection**.
 
@@ -438,6 +580,42 @@ On rappelle l'algorithme du **tri par sélection** et de **recherche du minimum*
     - On a montré que `minimum`se termine,
     - la fonction `echanger` se termine (car il s'agit simplement de trois affectations),
     - il ne reste plus qu'à montrer que la **boucle principale** se termine, avec la même démarche que précédemment.
+
+???+ tip "Réponse question 2"
+    On a précédemment montré que `minimum` se terminait, et l'algorithme `echanger` se termine également (car il s'agit simplement de **trois affectations**), il reste donc à démontrer que la **boucle POUR principale** de `tri_selection` se termine. Le principe est le même que précédemment.
+
+    On réécrit la boucle **POUR** sous la forme d'une boucle **WHILE**.  
+    **ATTENTION** : Il y a une variable nommée `n` dans l'algorithme qui correspond à **la longueur du tableau**. Pour ne pas mélanger la longueur du tableau avec **le nombre de tours de boucle** effectué (que l'on note également $n$), on remplacera le `n` de l'algorithme par `longueur(tableau)`.
+
+    ---
+    debut = 0  
+    **TANT QUE** debut < longueur(tableau) - 1:  
+    &emsp;&emsp;(instructions qui ne modifient pas la valeur de debut)  
+    &emsp;&emsp;debut = debut + 1
+    ---
+
+    Exprimons $debut$ sous la forme d'une **suite arithmétique** en fonction de $n$, $n$ étant **le nombre de tours de boucles effectué**. Avant de rentrer dans la boucle, $n$ vaut $0$.
+
+    $debut_n = debut_0 + rn$ avec $r$ la **raison de la suite arithmétique**, qui correspond au **pas** de la boucle. Après chaque itération, on **incrémente** $debut$ de **1**, donc $r = 1$.    
+    Donc $debut_n = 0 + 1*n$,  
+    $debut_n = n$.
+
+    Donc, si l'on réécrit le **TANT QUE** :
+
+    ---
+    **TANT QUE** debut<sub>n</sub> < longueur(tableau) - 1  
+    **TANT QUE** n < longueur(tableau) - 1  
+    En réécrivant sous la forme **TANT QUE** <span style="color:blue">VARIANT</span> > 0 :  
+    **TANT QUE** longueur(tableau) - 1 - n > 0
+    ---
+
+    On obtient une **nouvelle suite arithmétique**, qu'on notera $v_n$, telle que :  
+    $v_n = v_0 + rn$ avec $v_0$ = $longueur(tableau) - 1$ et $r = -1$.
+
+    $v_0$ étant un **entier positif** (car on ne rentre dans la boucle que si $longueur(tableau) - 1$ vaut au moins **1**), et la **raison** étant **négative** (ce qui indique que la **suite est strictement décroissante**), on peut donc dire que $v_n$ est bien un **variant de la boucle** et que notre boucle **se termine**.
+
+    On a prouvé la terminaison de notre boucle, on peut donc en déduire que `tri_selection` **se termine**.
+
 
 ## Preuve de correction du tri par sélection
 
@@ -511,6 +689,12 @@ Initialement (avant d'entrer la première fois dans la boucle), le **sous-tablea
     - Après **0 tour de boucle**, c'est-à-dire avant d'entrer une première fois dans la boucle, combien y a t-il d'éléments dans le **sous-tableau trié** ?
     - La proposition $P_0$ est-elle vérifiée ?
 
+??? tip "Réponse 1"
+    Avant d'entrer une première fois dans la boucle, le sous-tableau trié ne contient aucun élément.  
+    La proposition $P_0$ peut se lire : « après $0$ tour de boucle, $0$ **élément est trié dans le sous-tableau** $[]$ **de gauche**. »
+
+    Un tableau **vide** est bien **trié**, l'invariant est donc vérifié pour $P_0$.
+
 On a vu que l'invariant **était bien vérifié** pour $P_0$, c'est-à-dire avant d'entrer une première fois dans la boucle.
 
 !!! note "Question 2"
@@ -519,6 +703,21 @@ On a vu que l'invariant **était bien vérifié** pour $P_0$, c'est-à-dire avan
     Quelle valeur va prendre `debut` lors de la **seconde itération** de la boucle principale ? Combien d'éléments $k$ seront ainsi triés après cette itération ?
 
     Établir une relation entre le nombre de tours de boucle $k$ et `debut`.
+
+??? tip "Réponse 2"
+    Après exécution de la première itération $k = 1$ de la boucle principale, `debut` vaut **0** et on a échangé l'élément minimal du tableau avec le premier élément (indice 0). `tableau[0]` contient donc à présent le plus petit élément du tableau.  
+    Après exécution de la seconde itération $k = 2$, on échange l'élément minimal du **sous-tableau non-trié** avec le second élément du tableau. Le nombre d'éléments triés augmente donc de 1.
+
+    | k    | `debut` | nombre d'éléments triés (= k) |
+    | ---- | ------- | ----------------------------- |
+    | 0    |         | 0                             |
+    | 1    | 0       | 1                             |
+    | 2    | 1       | 2                             |
+    | 3    | 2       | 3                             |
+
+    etc.
+
+    La relation entre $k$ et $debut$ peut donc être facilement définie : $k = debut + 1$.
 
 On fait maintenant l'hypotèse que $P_k$ est vraie pour un $k \ge 0$ fixé.  
 Après $k$ tours de boucle, le **sous-tableau trié** contient $k$ éléments et le tableau se compose :
@@ -537,6 +736,32 @@ Démontrons maintenant la **conservation**.
     - Définir l'**état du système** à la **fin de l'itération** $k$ de la **boucle principal**, notamment **le nombre d'éléments triés** (et l'intervalle correspondant) et le **contenu de la variable** `debut`.
     - Supposer que la proposition $P_k$ est vraie. Détailler ce qu'il se passe lorsque l'on refait un **tour de boucle**.
     - En déduire l'**état du système** à l'issue de l'itération $k + 1$ de la **boucle principale**.
+
+??? tip "Réponse 3"
+    Définissons l'état du système à la fin de l'itération $k$ de la **boucle principale**.
+
+    À la fin de l'itération $k$, nous avons :
+
+    - $k$ éléments triés dans l'intervalle $[0, k-1]$
+    - une variable `debut` contenant $k-1$ puisque, comme déterminé dans la question précédente, $k = debut + 1$.
+
+    On suppose que $P_k$ est **vraie**, c'est-à-dire que le sous-tableau $[0, k-1]$ est **trié**.
+
+    Si l'on refait un tour de boucle, on incrémente `debut` (car boucle **POUR**).  
+    $debut = k - 1 + 1$  
+    Donc :  
+    $debut = k$
+
+    On cherche donc dans le **sous-tableau non-trié** $[k, longueur(tableau) - 1]$ l'**élément minimal** (à l'aide de la fonction `minimum`) à placer à l'indice $k$.
+
+    **FINALEMENT**, à l'issue de l'itération $k + 1$ de la boucle :
+
+    - Les éléments de $[0, k-1]$ sont **toujours triés** (on n'a pas effectué de changement).
+    - L'élément d'indice $k$ est **plus grand ou égal** aux éléments sur $[0, k - 1]$, autrement, il aurait déjà été dans le sous-tableau trié.
+
+    **Donc, après $k + 1$ itérations, les $k + 1$ éléments du sous-tableau $[0, k]$ sont triés.**
+
+    La **conservation de l'invariant** après chaque tour de boucle est ainsi démontré, et l'implication $P_k \implies P_{k+1}$ est vérifiée.
 
 Rappelons notre invariant $P_k$ : « après $k$ tours de boucle, $k$ **éléments sont triés dans le sous-tableau** $[0, k-1]$ **de gauche** » et que :
 
@@ -585,6 +810,21 @@ def est_trie(tableau: list[int], fin: int = None) -> bool:
 !!! note "Question 1"
     Modifier la fonction `tri_selection` en ajoutant une **assertion** (avec le mot-clé `assert`) vérifiant, en faisant appel à `est_trie`, qu'après chaque itération de la boucle, la propriété de l'**invariant** est respectée.
 
+??? tip "Réponse 1"
+    ```python
+    def tri_selection(tableau: list[int]) -> None:
+        ''' Effectue le tri par sélection en place des éléments d'un tableau donné.
+        :param tableau: (list[int]) un tableau d'entiers à trier '''
+
+        n = len(tableau)
+        for debut in range(0, n - 1):
+            indice_min = minimum(tableau, debut)
+            echanger(tableau, debut, indice_min)
+            assert est_trie(tableau, debut)
+    ```
+
+    À la fin de chaque itération, on vérifie avec la fonction `est_trie` que le sous-tableau `[0, debut]` **est trié**.
+
 Dans l'**interpréteur** de *Thonny*, exécuter la commande suivante :  
 ```python
 >>> tri_selection([[63, 25, 81, 76, 75, 87, 66, 18, 43, 68, 48, 98, 57, 41, 97, 59, 57, 74, 28, 28]])
@@ -592,3 +832,6 @@ Dans l'**interpréteur** de *Thonny*, exécuter la commande suivante :
 
 !!! note "Question 2"
     Que se passe t-il ? Pourquoi ?
+
+??? tip "Réponse 2"
+    S'il ne se passe rien, c'est normal ! Cela signifie que l'expression spécifiée dans l'assertion est évaluée à `True` à chaque fois, et donc que l'**invariant** est bien vérifié après chaque tour de boucle.
