@@ -149,8 +149,10 @@ nav:
       - Cours: terminale/paradigmes/cours.md
     - Diviser pour régner:
       - terminale/diviserregner/index.md
+      - Cours: terminale/diviserregner/index.md
       - Exercices: terminale/diviserregner/exercices.zip
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
+  - Sujets pratiques: https://fabricenativel.github.io/Terminale/Annales/2023/EP/
   - Rendu des travaux: rendus.md
 
 markdown_extensions:
