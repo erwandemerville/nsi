@@ -7,3 +7,12 @@
   --md-primary-fg-color--light: #6741a8;
   --md-primary-fg-color--dark:  #6741a8;
 }
+
+@font-face {
+  font-family: "MultiTypePixel";
+  src: url("fonts/MultiTypePixel\ Narrow.otf") format("opentype");
+}
+
+.multitypepixel {
+  font-family: "MultiTypePixel", serif;
+}

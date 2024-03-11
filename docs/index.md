@@ -35,4 +35,5 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Bases de données - représentations et applications](terminale/bdd/index.md) | Modèle relationnel, bases de données, SQL... |
 | [Paradigmes de programmation](terminale/paradigmes/index.md) | Les paradigmes de programmation. |
 | [Diviser pour régner](terminale/diviserregner/index.md) | La méthode "Diviser pour régner" |
+| [Processus et ordonnancement](terminale/processus/index.md) | Gestion des processus sur un OS et ordonnancement |
 | [:video_game: Le module Pyxel](terminale/pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |

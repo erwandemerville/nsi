@@ -143,6 +143,7 @@ nav:
     - Le module Pyxel:
       - terminale/pyxel/index.md
       - Jeu de snake: terminale/pyxel/snake.md
+      - Réalisations: terminale/pyxel/realisations.md
     - Paradigmes de programmation:
       - terminale/paradigmes/index.md
       - Notebook d'intro: terminale/paradigmes/Paradigmes_prog.zip
@@ -151,6 +152,9 @@ nav:
       - terminale/diviserregner/index.md
       - Cours: terminale/diviserregner/index.md
       - Exercices: terminale/diviserregner/exercices.zip
+    - Processus et ordonnancement:
+      - terminale/processus/index.md
+      - TD/TP découverte: terminale/processus/TDTP.md
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Sujets pratiques: https://fabricenativel.github.io/Terminale/Annales/2023/EP/
   - Rendu des travaux: rendus.md
@@ -193,13 +197,9 @@ plugins:
 
 extra_css:
   - stylesheets/extra.css
-  - premiere/tris/stylesheets/style_animation_tri_selection.css
-  - premiere/tris/stylesheets/style_animation_tri_insertion.css
 
 extra_javascript:
   - javascripts/mathjax.js
-  - premiere/tris/javascripts/animation_tri_selection.js
-  - premiere/tris/javascripts/animation_tri_insertion.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 

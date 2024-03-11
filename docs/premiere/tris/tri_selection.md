@@ -46,6 +46,8 @@ Le but est de trier les barres de la **plus petite** à **la plus grande**.
         <button id="speed-down-button" class="md-button">Ralentir</button>
     </div>
     <div id="bars-container"></div>
+    <link rel="stylesheet" href="../stylesheets/style_animation_tri_selection.css">
+    <script src="../javascripts/animation_tri_selection.js"></script>
 
 ## L'algorithme
 

@@ -14,4 +14,5 @@
 | [Bases de données - représentations et applications](bdd/index.md) | Modèle relationnel, bases de données, SQL... |
 | [Paradigmes de programmation](paradigmes/index.md) | Les paradigmes de programmation. |
 | [Diviser pour régner](diviserregner/index.md) | La méthode "Diviser pour régner" |
+| [Processus et ordonnancement](processus/index.md) | Gestion des processus sur un OS et ordonnancement |
 | [:video_game: Le module Pyxel](pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |

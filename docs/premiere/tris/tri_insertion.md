@@ -235,6 +235,8 @@ On insère donc à la **n<sup>ième</sup> itération** le **n<sup>ième</sup> é
             <button id="step-sort" class="md-button">Pas à pas</button>
         </div>        
     </div>
+    <link rel="stylesheet" href="../stylesheets/style_animation_tri_insertion.css">
+    <script src="../javascripts/animation_tri_insertion.js"></script>
 
 ## Implémentation en Python
 

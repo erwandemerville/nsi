@@ -48,7 +48,17 @@ Nous allons explorer l'un de ces algorithmes qui applique le principe 'Diviser p
 
     Le **tri fusion** s’appuie sur le fait que **fusionner deux tableaux triés** en **un tableau trié** se fait en un **temps linéaire** $O(n)$.
 
-!!! quote "Un exemple"
+??? tip "Animation du tri fusion (*cliquer ici pour afficher*)"
+    <div id="controls">
+        <button id="run-mergeSort" class="md-button">Lancer la visualisation</button>
+        <button id="run-mergeSort-step" class="md-button">Pas à pas</button>
+        <button id="reset-mergeSort" class="md-button">Réinitialiser</button>
+    </div>
+    <h2 class="title1" style = "background: green; color: white; font: italic;">Le tableau n'est pas trié </h2>
+    <canvas id="Canvas"></canvas>
+    <script src="../javascripts/mergeSort.js"></script>
+
+!!! quote "Un exemple de **fusion**"
     <figure markdown="span">
     ![Fusion de tableaux](images/fusion-2-tab-tries.png)
     <figcaption>Fusion de deux tableaux à 3 et 4 éléments *(source : [lyceum](https://www.lyceum.fr/tg/nsi/5-algorithmique/2-diviser-pour-regner/){ target="_blank" })*</figcaption>
