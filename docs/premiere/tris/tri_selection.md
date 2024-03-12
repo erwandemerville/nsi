@@ -168,6 +168,7 @@ Les **tableaux** seront représentés par des **listes Python** (objets de type 
 
 !!! success "<span id="fichiers_python">Fichiers Python</span>"
     - [tri_selection.py](src/tri_selection.py) : programme **Python** avec les fonctions à compléter.
+    - [tri_selection_corr.py](src/tri_selection_corr.py) : correction de l'implémentation des fonctions.
 
 !!! note "Question 1"
     1. Compléter les fonctions : 
@@ -176,6 +177,46 @@ Les **tableaux** seront représentés par des **listes Python** (objets de type 
     2. Compléter la fonction `tri_selection(tableau)` qui effectue le **tri par sélection** des éléments d'un tableau `tableau` donné, en réutilisant les deux fonctions précédentes.
     3. Est-il nécessaire de mettre un `return None` ? Pourquoi ?
     4. Peut-on dire que la fonction `tri_selection` est une **procédure** ? Pourquoi ?
+
+??? tip "Correction question 1"
+    **1** -
+
+    ```python
+    def minimum(tableau: 'list[int]', debut: int) -> int:
+    ''' Renvoie l'indice de la valeur minimale du tableau dans l'intervalle [debut, len(tableau) - 1].
+    :param tableau: (list[int]) un tableau d'entiers
+    :param debut: (int) l'indice à partir duquel on recherche le minimum
+    :return: (int) l'indice du minimum '''
+
+    indice_min = debut  # Initialiser l'indice du minimum à debut
+    for i in range(debut + 1, len(tableau)):  # Parcourir tous les éléments du tableau à partir de debut + 1
+        if tableau[i] < tableau[indice_min]:  # Si l'élément d'indice i est inférieur à celui d'indice indice_min
+            indice_min = i  # Le nouvel indice du minimum est i
+    return indice_min  # Renvoyer l'indice du minimum
+
+    def echanger(tableau: 'list[int]', i: int, j: int) -> None:
+        ''' Echanger deux éléments d'un tableau
+        :param tableau: (list[int]) un tableau d'entiers
+        :param i: (int) l'indice d'un élément du tableau
+        :param j: (int) l'indice d'un élément du tableau '''
+
+        temp = tableau[i]
+        tableau[i] = tableau[j]
+        tableau[j] = temp
+
+    def tri_selection(tableau: 'list[int]') -> None:
+        ''' Effectue le tri par sélection en place des éléments d'un tableau donné.
+        :param tableau: (list[int]) un tableau d'entiers à trier '''
+
+        n = len(tableau)  # Récupérer la longueur du tableau
+        for debut in range(0, n - 1):  # Parcourir tous les éléments jusqu'à l'avant dernier (*)
+            indice_min = minimum(tableau, debut)  # Récupérer l'indice du minimum
+            echanger(tableau, debut, indice_min)  # Echanger les éléments d'indices debut et indice_min
+    ```
+
+    **2** - Ce n'est pas nécessaire. Lorsqu'on ne met pas de `return`, cela revient à renvoyer `None` (c'est-à-dire *rien*).
+
+    **3** - La fonction `tri_selection` **ne renvoie rien**. Une fonction qui ne renvoie rien (et qui fonctionne donc uniquement par *effets de bord*) peut être appelée **procédure**. Attention toutefois, en *Python*, il n'existe pas de **type 'procédure'**, il n'existe que des **fonctions** (type `function`).
 
 !!! tip "Tester ma fonction"
     Le programme est muni de **tests** (lignes `13` à `22`) exécutés par le module *Doctest*.  
@@ -186,12 +227,55 @@ Les **tableaux** seront représentés par des **listes Python** (objets de type 
 !!! note "Question 2"
     Compléter la fonction `tri_selection_tout_en_un(tableau)` en ré-écrivant le **tri par sélection** sans appeler d'autres fonctions (les **recherches du minimum** et les **échanges** sont effectués **directement dans cette fonction**).
 
+??? tip "Réponse question 2"
+
+    ```python
+    def tri_selection_tout_en_un(tableau: 'list[int]') -> None:
+    ''' Effectue le tri par sélection en place des éléments d'un tableau donné.
+    
+    :param tableau: (list[int]) un tableau d'entiers à trier '''
+
+    n = len(tableau)  # Récupérer la longueur du tableau
+    for debut in range(0, n - 1):  # Parcourir tous les éléments jusqu'à l'avant dernier (*)
+        indice_min = debut  # Initialiser l'indice du minimum à debut
+        for i in range(debut + 1, len(tableau)):  # Parcourir tous les éléments du tableau à partir de debut + 1
+            if tableau[i] < tableau[indice_min]:  # Si l'élément d'indice i est inférieur à celui d'indice indice_min
+                indice_min = i  # Le nouvel indice du minimum est i
+        # On effectue une permutation
+        temp = tableau[debut]
+        tableau[debut] = tableau[indice_min]
+        tableau[indice_min] = temp
+    ```
+
 !!! note "Question 3"
     Écrire la fonction `tri_selection_decroissant(tableau)` qui effectue le **tri par sélection** des éléments d'un tableau dans l'**ordre décroissant**.
+
+??? tip "Réponse question 3"
+
+    ```python
+    def tri_selection_decroissant(tableau: 'list[int]') -> None:
+    ''' Effectue le tri par sélection dans l'ordre décroissant des éléments d'un tableau donné.
+    :param tableau: (list[int]) un tableau d'entiers à trier '''
+
+    n = len(tableau)  # Récupérer la longueur du tableau
+    for debut in range(0, n - 1):  # Parcourir tous les éléments jusqu'à l'avant dernier (*)
+        indice_max = debut  # Initialiser l'indice du maximum à debut
+        for i in range(debut + 1, len(tableau)):  # Parcourir tous les éléments du tableau à partir de debut + 1
+            if tableau[i] > tableau[indice_max]:  # Si l'élément d'indice i est inférieur à celui d'indice indice_max
+                indice_max = i  # Le nouvel indice du minimum est i
+        # On effectue une permutation
+        temp = tableau[debut]
+        tableau[debut] = tableau[indice_max]
+        tableau[indice_max] = temp
+    ```
 
 !!! note "Question 4"
     Dans les **tests**, à la ligne `19`, on trouve l'instruction `l = [randint(0, 100) for _ in range(20)]`.  
     Que fait cette instruction ? Quel est le nom de la **méthode** de **création de liste** utilisée ?
+
+??? tip "Réponse question 4"
+    Cette instruction crée une **liste Python** contenant **20 entiers aléatoires** compris entre **0** et **100**.  
+    La création est effectuée **par compréhension**.
 
 ## Coût du tri par sélection
 
@@ -280,9 +364,24 @@ On rappelle l'algorithme du **tri par sélection** et de **recherche du minimum*
 !!! note "Question 2"
     Si l'on change les éléments du tableau de la question précédente, le **nombre de comparaisons** change t-il ? Pourquoi ?
 
+??? tip "Réponse question 2"
+    **Non**, le tri par sélection effectue **toujours** une comparaison avec tous les éléments de la **partie non-triée** du tableau lors de la **recherche du minimum**. Le nombre de comparaisons effectué ne dépend que de la **longueur** du tableau, et non pas des éléments en eux-même.
+
 !!! note "Question 3"
     Calculer le **nombre de comparaisons**, noté $C(n)$, pour un tableau de taille $n$.  
     Finalement, quelle est la **complexité** du **tri par sélection** ? (Voir l'aide ci-dessous si nécessaire.)
+
+??? tip "Réponse question 3"
+    $$
+    C(n) = 1 + 2 + [...] + (n - 2) + (n - 1) = \frac{(n - 1)n}{2}
+    $$
+
+    $$
+    C(n) = \sum_{x=1}^{n-1}x = \frac{(n - 1)n}{2}
+    $$
+
+    La complexité est donc **quadratique** (si l'on double la taille du tableau en entrée, le temps d'exécution sera multiplié par 4.)  
+    Étant donné que la complexité est la même quels que soient les éléments du tableau fourni en entrée, on peut utiliser la notation **grand-theta**. On peut écrire que la complexité de l'algorithme du **tri par sélection** est en $\Theta(n^2)$.
 
 !!! tip "Calcul de la somme des termes d'une suite arithmétique"
     On rappelle la formule permettant de calculer la somme des $n + 1$ premiers termes d'une **suite arithmétique** :
@@ -331,6 +430,21 @@ On rappelle l'algorithme du **tri par sélection** et de **recherche du minimum*
     Ce fichier permet de **compter le nombre de comparaisons** effectué par le **tri par sélection**, en utilisant une **variable globale** `CNT` incrémentée à chaque comparaison de deux éléments effectuée.
 
     Vous pouvez modifier l'instruction à la ligne `38` en changeant le tableau pour lequel vous souhaitez compter le nombre de comparaisons.
+
+!!! note "<span id="q4cout">Question 4</span>"
+    Compléter ce tableau en indiquant le **nombre de comparaisons** entre éléments nécessaire pour trier un **tableau** de différentes **tailles** $n$ **données** avec l'algorithme de **tri par sélection**.
+
+    | taille n= | nombre de comparaisons |
+    | --------- | ---------------------- |
+    |     1     |                        |
+    |     2     |                        |
+    |     4     |                        |
+    |     8     |                        |
+    |     16    |                        |
+    |     32    |                        |
+
+    Lorsque l'on **double la taille du tableau**, comment évolue le **nombre de comparaisons** ?
+    Est-ce que cela confirme bien que la complexité est **quadratique** (voir le *Rappel sur les complexités* précédent si besoin) ?
 
 ## Terminaison du tri par sélection
 
