@@ -156,7 +156,7 @@ nav:
       - terminale/processus/index.md
       - TD/TP découverte: terminale/processus/TDTP.md
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
-  - Sujets pratiques: https://fabricenativel.github.io/Terminale/Annales/2023/EP/
+  - Sujets pratiques: https://cyclades.education.gouv.fr/delos/public/listPublicECE
   - Rendu des travaux: rendus.md
 
 markdown_extensions:
