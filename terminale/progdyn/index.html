@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://nsi.erwandemerville.fr/terminale/poo/pokemon/">
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/terminale/progdyn/">
       
       
-        <link rel="prev" href="../cours/">
+        <link rel="prev" href="../processus/TDTP/">
       
       
-        <link rel="next" href="../exercices/">
+        <link rel="next" href="exercices/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1">
     
     
       
-        <title>TP - Un jeu Pokémon - Numérique et sciences informatiques</title>
+        <title>Programmation dynamique - Numérique et sciences informatiques</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.45e1311d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.45e1311d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,8 +50,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
-<script src="../../../pyodide-mkdocs/utils.js"></script> 
-<script src="../../../pyodide-mkdocs/interpreter.js"></script> 
+<script src="../../pyodide-mkdocs/utils.js"></script> 
+<script src="../../pyodide-mkdocs/interpreter.js"></script> 
 
     
       
@@ -63,9 +63,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,7 +73,7 @@
     
     
 
-<link rel="stylesheet" href="../../../pyodide-mkdocs/pyoditeur.css">
+<link rel="stylesheet" href="../../pyodide-mkdocs/pyoditeur.css">
 
 
 <input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tp-un-jeu-pokemon" class="md-skip">
+        <a href="#programmation-dynamique" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -132,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TP - Un jeu Pokémon
+              Programmation dynamique
             
           </span>
         </div>
@@ -236,7 +236,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -256,7 +256,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../premiere/" class="md-tabs__link">
+        <a href="../../premiere/" class="md-tabs__link">
           
   
     
@@ -278,7 +278,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -330,7 +330,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../rendus/" class="md-tabs__link">
+      <a href="../../rendus/" class="md-tabs__link">
         
   
     
@@ -364,7 +364,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -405,7 +405,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -475,7 +475,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/" class="md-nav__link ">
+            <a href="../../premiere/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -536,7 +536,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/bases_python/" class="md-nav__link ">
+            <a href="../../premiere/bases_python/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -569,7 +569,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/bases_python/cours/" class="md-nav__link">
+      <a href="../../premiere/bases_python/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -590,7 +590,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/bases_python/dm1/" class="md-nav__link">
+      <a href="../../premiere/bases_python/dm1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -611,7 +611,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/bases_python/thonny/" class="md-nav__link">
+      <a href="../../premiere/bases_python/thonny/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -632,7 +632,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/bases_python/notebooks/" class="md-nav__link">
+      <a href="../../premiere/bases_python/notebooks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -685,7 +685,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/representation_donnees/" class="md-nav__link ">
+            <a href="../../premiere/representation_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -718,7 +718,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/representation_donnees/cours/" class="md-nav__link">
+      <a href="../../premiere/representation_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -739,7 +739,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/representation_donnees/exercices/" class="md-nav__link">
+      <a href="../../premiere/representation_donnees/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -798,7 +798,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/archi/" class="md-nav__link ">
+            <a href="../../premiere/archi/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -831,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/archi/introduction/" class="md-nav__link">
+      <a href="../../premiere/archi/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -852,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/archi/fonctions/" class="md-nav__link">
+      <a href="../../premiere/archi/fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -873,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/archi/circuits/" class="md-nav__link">
+      <a href="../../premiere/archi/circuits/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -894,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/archi/vonneumann/" class="md-nav__link">
+      <a href="../../premiere/archi/vonneumann/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -915,7 +915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/archi/os/" class="md-nav__link">
+      <a href="../../premiere/archi/os/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -972,7 +972,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/traitement_donnees/" class="md-nav__link ">
+            <a href="../../premiere/traitement_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1005,7 +1005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/traitement_donnees/n_uplets_dicos/" class="md-nav__link">
+      <a href="../../premiere/traitement_donnees/n_uplets_dicos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1026,7 +1026,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/traitement_donnees/cours/" class="md-nav__link">
+      <a href="../../premiere/traitement_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1047,7 +1047,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/traitement_donnees/pandas/" class="md-nav__link">
+      <a href="../../premiere/traitement_donnees/pandas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1068,7 +1068,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/traitement_donnees/dm2/" class="md-nav__link">
+      <a href="../../premiere/traitement_donnees/dm2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1121,7 +1121,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/pyxel/" class="md-nav__link ">
+            <a href="../../premiere/pyxel/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1154,7 +1154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/pyxel/snake/" class="md-nav__link">
+      <a href="../../premiere/pyxel/snake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1175,7 +1175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/pyxel/projetjv/" class="md-nav__link">
+      <a href="../../premiere/pyxel/projetjv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1230,7 +1230,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/tris/" class="md-nav__link ">
+            <a href="../../premiere/tris/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1263,7 +1263,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/tris/activite_preliminaire/" class="md-nav__link">
+      <a href="../../premiere/tris/activite_preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1284,7 +1284,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/tris/tri_selection/" class="md-nav__link">
+      <a href="../../premiere/tris/tri_selection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1305,7 +1305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/tris/tri_insertion/" class="md-nav__link">
+      <a href="../../premiere/tris/tri_insertion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1396,7 +1396,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1453,7 +1453,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../modularite/" class="md-nav__link ">
+            <a href="../modularite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1486,7 +1486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modularite/api/" class="md-nav__link">
+      <a href="../modularite/api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1507,7 +1507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modularite/modules/" class="md-nav__link">
+      <a href="../modularite/modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1562,7 +1562,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../mise_au_point/" class="md-nav__link ">
+            <a href="../mise_au_point/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1595,7 +1595,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mise_au_point/preliminaire/" class="md-nav__link">
+      <a href="../mise_au_point/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1616,7 +1616,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mise_au_point/cours/" class="md-nav__link">
+      <a href="../mise_au_point/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1637,7 +1637,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mise_au_point/activite_finale/" class="md-nav__link">
+      <a href="../mise_au_point/activite_finale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1663,8 +1663,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1686,17 +1684,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../poo/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1713,7 +1711,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_4">
             <span class="md-nav__icon md-icon"></span>
             Programmation orientée objet
@@ -1729,7 +1727,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../preliminaire/" class="md-nav__link">
+      <a href="../poo/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1750,7 +1748,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../cours/" class="md-nav__link">
+      <a href="../poo/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1768,30 +1766,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    TP - Un jeu Pokémon
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../poo/pokemon/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1800,79 +1778,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Sur cette page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#objectif-du-tp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objectif du TP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modelisation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modélisation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#realisation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Réalisation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Réalisation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deroulement-du-jeu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Déroulement du jeu
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deroulement-dun-combat" class="md-nav__link">
-    <span class="md-ellipsis">
-      Déroulement d'un combat
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -1885,7 +1790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercices/" class="md-nav__link">
+      <a href="../poo/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1938,7 +1843,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../recursivite/" class="md-nav__link ">
+            <a href="../recursivite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1971,7 +1876,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recursivite/cours/" class="md-nav__link">
+      <a href="../recursivite/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1992,7 +1897,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recursivite/exercices/" class="md-nav__link">
+      <a href="../recursivite/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2045,7 +1950,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../listes/" class="md-nav__link ">
+            <a href="../listes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2078,7 +1983,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../listes/cours/" class="md-nav__link">
+      <a href="../listes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2099,7 +2004,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../listes/exercices/" class="md-nav__link">
+      <a href="../listes/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2150,7 +2055,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../pilesfiles/" class="md-nav__link ">
+            <a href="../pilesfiles/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2183,7 +2088,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pilesfiles/cours/" class="md-nav__link">
+      <a href="../pilesfiles/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2240,7 +2145,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../bdd/" class="md-nav__link ">
+            <a href="../bdd/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2273,7 +2178,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bdd/introduction/" class="md-nav__link">
+      <a href="../bdd/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2294,7 +2199,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bdd/modele_relationnel/" class="md-nav__link">
+      <a href="../bdd/modele_relationnel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2315,7 +2220,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bdd/sql/" class="md-nav__link">
+      <a href="../bdd/sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2336,7 +2241,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bdd/src/activite_movies.zip" class="md-nav__link">
+      <a href="../bdd/src/activite_movies.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2391,7 +2296,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../arbres/" class="md-nav__link ">
+            <a href="../arbres/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2471,7 +2376,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arbres/vocabulaire/" class="md-nav__link">
+      <a href="../arbres/vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2492,7 +2397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arbres/parcours/" class="md-nav__link">
+      <a href="../arbres/parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2513,7 +2418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arbres/type_abstrait/" class="md-nav__link">
+      <a href="../arbres/type_abstrait/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2534,7 +2439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arbres/abr/" class="md-nav__link">
+      <a href="../arbres/abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2606,7 +2511,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arbres/implementation_arbres/" class="md-nav__link">
+      <a href="../arbres/implementation_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2627,7 +2532,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arbres/implementation_abr/" class="md-nav__link">
+      <a href="../arbres/implementation_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2703,7 +2608,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arbres/exercices_vocabulaire/" class="md-nav__link">
+      <a href="../arbres/exercices_vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2724,7 +2629,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arbres/exercices_parcours/" class="md-nav__link">
+      <a href="../arbres/exercices_parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2745,7 +2650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arbres/exercices_abr/" class="md-nav__link">
+      <a href="../arbres/exercices_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2766,7 +2671,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../arbres/implementations_arbres/" class="md-nav__link">
+      <a href="../arbres/implementations_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2829,7 +2734,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../routage/" class="md-nav__link ">
+            <a href="../routage/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2862,7 +2767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../routage/cours/" class="md-nav__link">
+      <a href="../routage/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2883,7 +2788,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../routage/exercices/" class="md-nav__link">
+      <a href="../routage/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2957,7 +2862,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../recherche_textuelle/" class="md-nav__link ">
+            <a href="../recherche_textuelle/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2990,7 +2895,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recherche_textuelle/tp_intro/" class="md-nav__link">
+      <a href="../recherche_textuelle/tp_intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3011,7 +2916,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recherche_textuelle/cours/" class="md-nav__link">
+      <a href="../recherche_textuelle/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3064,7 +2969,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../pyxel/" class="md-nav__link ">
+            <a href="../pyxel/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3097,7 +3002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pyxel/snake/" class="md-nav__link">
+      <a href="../pyxel/snake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3118,7 +3023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pyxel/realisations/" class="md-nav__link">
+      <a href="../pyxel/realisations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3171,7 +3076,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../paradigmes/" class="md-nav__link ">
+            <a href="../paradigmes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3204,7 +3109,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../paradigmes/Paradigmes_prog.zip" class="md-nav__link">
+      <a href="../paradigmes/Paradigmes_prog.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3225,7 +3130,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../paradigmes/cours/" class="md-nav__link">
+      <a href="../paradigmes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3280,7 +3185,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../diviserregner/" class="md-nav__link ">
+            <a href="../diviserregner/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3313,7 +3218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../diviserregner/" class="md-nav__link">
+      <a href="../diviserregner/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3334,7 +3239,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../diviserregner/exercices.zip" class="md-nav__link">
+      <a href="../diviserregner/exercices.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3385,7 +3290,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../processus/" class="md-nav__link ">
+            <a href="../processus/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3418,7 +3323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../processus/TDTP/" class="md-nav__link">
+      <a href="../processus/TDTP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3444,6 +3349,8 @@
                 
   
   
+    
+  
   
   
     
@@ -3459,17 +3366,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_16" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_16" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../progdyn/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -3480,13 +3387,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_16" id="__nav_3_16_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_16" id="__nav_3_16_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_16_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_16_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_16">
             <span class="md-nav__icon md-icon"></span>
             Programmation dynamique
@@ -3502,7 +3409,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../progdyn/exercices/" class="md-nav__link">
+      <a href="exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3578,7 +3485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rendus/" class="md-nav__link">
+      <a href="../../rendus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3613,65 +3520,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Sur cette page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#objectif-du-tp" class="md-nav__link">
-    <span class="md-ellipsis">
-      Objectif du TP
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modelisation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Modélisation
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#realisation" class="md-nav__link">
-    <span class="md-ellipsis">
-      Réalisation
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Réalisation">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deroulement-du-jeu" class="md-nav__link">
-    <span class="md-ellipsis">
-      Déroulement du jeu
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#deroulement-dun-combat" class="md-nav__link">
-    <span class="md-ellipsis">
-      Déroulement d'un combat
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -3686,175 +3534,21 @@
                   
 
 
-<div><h1 id="tp-un-jeu-pokemon">TP - Un jeu pokémon<a class="headerlink" href="#tp-un-jeu-pokemon" title="Permanent link">¶</a></h1>
-<div class="admonition info">
-<p class="admonition-title">Modalités de rendus</p>
-<p>Vous rendrez une <strong>archive ZIP</strong> contenant tous les fichiers de votre travail via la <a href="../../../rendus/" target="_blank">page de rendus des travaux</a>. Votre archive devra se nommer <code>&lt;VOTRE_NOM&gt;_Pokemons.zip</code>. Pour rappel, pour créer une archive, sélectionnez tous vos fichiers, puis faites un <em>clic droit</em> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <em>envoyer vers</em> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg></span> <em>dossier compressé</em>.</p>
-</div>
-<h2 id="objectif-du-tp">Objectif du TP<a class="headerlink" href="#objectif-du-tp" title="Permanent link">¶</a></h2>
-<p>L'objectif de ce <strong>TP</strong> est de réaliser, en <strong>Python</strong>, un jeu de <strong>combats de pokémons</strong>.
-En particulier, on s'inspirera du jeu <strong>Pokémon</strong>.</p>
-<div class="admonition success">
-<p class="admonition-title">À télécharger</p>
-<ul>
-<li><a href="../exercices/tp_pokemons.zip" target="_blank">tp_pokemons.zip</a> - Fichiers <strong>Python</strong> à compléter.</li>
-</ul>
-<p>Si vous souhaitez <strong>tester le jeu</strong>, vous pouvez <a href="https://replit.com/@erwandemerville/TP-Classes-Pokemon" target="_blank">cliquer ici</a>.</p>
-</div>
-<div class="admonition tip">
-<p class="admonition-title">Correction + Un petit défi</p>
-<ul>
-<li><a href="../exercices/tp_pokemons_correction.zip" target="_blank">tp_pokemons_correction.zip</a> - Fichiers <strong>corrigés</strong> du TP Pokémon.</li>
-</ul>
-<p><u>Défi pour 2 points bonus au DS</u> :<br>
-Vous souhaitez obtenir non pas <strong>un point</strong>, mais <strong><span style="font-size:1.2em; color:rgb(200,100,100);">DEUX POINTS BONUS</span></strong> à votre note obtenue au dernier DS sur la POO ?</p>
-<p>Voici comment faire :</p>
-<ul>
-<li>Ajoutez <strong>3 nouveaux pokémons</strong> dans la base de données des pokémons (fichier <code>pokemons.txt</code>).</li>
-<li>Créez <strong>un nouveau type d'attaque</strong>, comme le sommeil par exemple (qui empêche un pokémon d'attaquer pendant un certain nombre de tours), ou encore la confusion (qui fait qu'un pokémon attaquant va subir des dégâts 50% du temps), vous pouvez consulter <a href="https://www.pokepedia.fr/Statut" target="_blank">cette page</a> pour voir la liste des <strong>statuts</strong> possibles.</li>
-<li>Réglez le soucis de la <strong>mort liée à un effet</strong>. En effet, actuellement, lors de l'exécution de la méthode <code>activation_effets</code>, si les <strong>points de vie</strong> d'un pokémon atteignent <code>0</code>, et que le pokémon est donc <strong>K.O.</strong>, le tour actuel se déroule quand même.<br>
-On peut constater cela dans la méthode <code>jouer</code> (lignes <strong>164 à 181</strong> dans <code>combat.py</code>) :
-<div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-0-1"> 1</a></span>
-<span class="normal"><a href="#__codelineno-0-2"> 2</a></span>
-<span class="normal"><a href="#__codelineno-0-3"> 3</a></span>
-<span class="normal"><a href="#__codelineno-0-4"> 4</a></span>
-<span class="normal"><a href="#__codelineno-0-5"> 5</a></span>
-<span class="normal"><a href="#__codelineno-0-6"> 6</a></span>
-<span class="normal"><a href="#__codelineno-0-7"> 7</a></span>
-<span class="normal"><a href="#__codelineno-0-8"> 8</a></span>
-<span class="normal"><a href="#__codelineno-0-9"> 9</a></span>
-<span class="normal"><a href="#__codelineno-0-10">10</a></span>
-<span class="normal"><a href="#__codelineno-0-11">11</a></span>
-<span class="normal"><a href="#__codelineno-0-12">12</a></span>
-<span class="normal"><a href="#__codelineno-0-13">13</a></span>
-<span class="normal"><a href="#__codelineno-0-14">14</a></span>
-<span class="normal"><a href="#__codelineno-0-15">15</a></span>
-<span class="normal"><a href="#__codelineno-0-16">16</a></span>
-<span class="normal"><a href="#__codelineno-0-17">17</a></span>
-<span class="normal"><a href="#__codelineno-0-18">18</a></span></pre></div></td><td class="code"><div><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1"></a><span class="bp">self</span><span class="o">.</span><span class="n">activation_effets</span><span class="p">()</span>  <span class="c1"># Activation des altérations d'états</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"TOUR </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_numero_tour</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>  <span class="c1"># Affichage du numéro du tour</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3"></a><span class="k">if</span> <span class="n">tour</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># C'est au pokémon du joueur de jouer</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_joueur</span><span class="p">()</span><span class="o">.</span><span class="n">get_etat</span><span class="p">()[</span><span class="s2">"nom_etat"</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'paralysie'</span><span class="p">:</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"C'est à </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_joueur</span><span class="p">()</span><span class="o">.</span><span class="n">get_nom</span><span class="p">()</span><span class="si">}</span><span class="s2"> de jouer !"</span><span class="p">)</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6"></a>        <span class="n">attaque</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_joueur</span><span class="p">()</span><span class="o">.</span><span class="n">choix_attaque</span><span class="p">()</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">attaquer</span><span class="p">(</span><span class="n">attaque</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_joueur</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_ennemi</span><span class="p">())</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8"></a>        <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># Laisser un délai de 3 secondes</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9"></a>    <span class="n">tour</span> <span class="o">=</span> <span class="mi">1</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10"></a><span class="k">else</span><span class="p">:</span>  <span class="c1"># C'est au pokémon adverse de jouer</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11"></a>    <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_ennemi</span><span class="p">()</span><span class="o">.</span><span class="n">get_etat</span><span class="p">()[</span><span class="s2">"nom_etat"</span><span class="p">]</span> <span class="o">==</span> <span class="s1">'paralysie'</span><span class="p">:</span>
-</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"C'est à </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_ennemi</span><span class="p">()</span><span class="o">.</span><span class="n">get_nom</span><span class="p">()</span><span class="si">}</span><span class="s2"> de jouer."</span><span class="p">)</span>
-</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13"></a>        <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14"></a>        <span class="n">attaque</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_ennemi</span><span class="p">()</span><span class="o">.</span><span class="n">choix_attaque_aleatoire</span><span class="p">()</span>
-</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">attaquer</span><span class="p">(</span><span class="n">attaque</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_ennemi</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_pokemon_joueur</span><span class="p">())</span>
-</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16"></a>        <span class="n">sleep</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17"></a>    <span class="n">tour</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18"></a><span class="bp">self</span><span class="o">.</span><span class="n">augmenter_tour</span><span class="p">()</span>  <span class="c1"># Incrémenter le nombre de tours</span>
-</span></code></pre></div></td></tr></table></div>
-Il faudrait donc faire en sorte que <strong>si un pokémon meurt</strong> à cause d'un <strong>effet</strong> (comme le <em>poison</em> ou le <em>drainage</em>), le combat <strong>prenne immédiatement fin</strong>. Il faudrait donc ne pas exécuter les <strong>lignes 2 à 18</strong> dans ce cas là.</li>
-</ul>
-</div>
-<p>Ce projet est constitué des fichiers suivants :</p>
-<ul>
-<li><code>main.py</code> - Programme principal permettant l'exécution du jeu</li>
-<li><code>jeu.py</code> - Classe qui gère l'ensemble du jeu et réutilise les autres classes</li>
-<li><code>combat.py</code> - Classe permettant de représenter un combat du jeu</li>
-<li><code>pokemon.py</code> - Classe permettant de représenter les Pokémons</li>
-<li><code>pokemons.txt</code> - Fichier texte contenant la <strong>base de données</strong> des <strong>pokémons</strong> du jeu (contenant leurs noms, caractéristiques et attaques.)</li>
-</ul>
-<p>Voici une capture de ce que l'on souhaite obtenir :</p>
-<figure>
-<p><img alt="Exécution du jeu" src="../images/console.png" width="500">
-  </p>
-<figcaption>Exemple d'exécution du jeu</figcaption>
-</figure>
-<h2 id="modelisation">Modélisation<a class="headerlink" href="#modelisation" title="Permanent link">¶</a></h2>
-<p>Voici une modélisation sous forme de diagramme des différentes classes constituant ce projet :</p>
-<figure>
-<p><img alt="Modélisation des classes du jeu" src="../images/Jeu_Pokemon.drawio.png">
-  </p>
-<figcaption>Modélisation des classes du jeu<br><a href="../images/Jeu_Pokemon.drawio.png" target="_blank">Voir l'image en taille réelle</a></figcaption>
-</figure>
-<p><strong>Notes</strong> :</p>
-<p>Les données sur les pokémons sont stockées dans un fichier <code>pokemons.txt</code>.</p>
-<p>L'inscription d'un pokémon se fait de la manière suivante :</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Bulbizarre  Plante,Poison   45  49  49
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Charge,50   Rugissement,attaque-e,5 Vampigraine,drainage,3
-</span></code></pre></div>
-<p><strong>Chaque donnée est séparée par une tabulation</strong>.
-La première ligne renseigne les données principales sur le Pokémon : Son <strong>nom</strong>, ses <strong>types</strong>, son <strong>nombre de vies</strong>, son <strong>attaque</strong> et enfin sa <strong>défense</strong>.
-La deuxième ligne contient <strong>les attaques du pokémon</strong>.</p>
-<ul>
-<li>S'il s'agit d'une attaque qui inflige simplement des dégâts, on l'écrit sous la forme : <code>Nom_de_lattaque,puissance</code> (donc seulement deux éléments).</li>
-<li>S'il s'agit d'une attaque qui n'inflige pas de dégâts mais effectue une autre action, ou inflige une altération d'état, on l'écrira sous la forme suivante (3 éléments) :<ul>
-<li><code>Nom_attaque,poison,3</code> : <strong>empoisonnement</strong> pendant <strong>3 tours</strong>,</li>
-<li><code>Nom_attaque,attaque+,10</code> : <strong>augmenter</strong> de <strong>10</strong> points l'<strong>attaque</strong> du pokémon <strong>allié</strong>,</li>
-<li><code>Nom_attaque,defense+,10</code> : <strong>augmenter</strong> de <strong>10</strong> points la <strong>défense</strong> du pokémon <strong>allié</strong>,</li>
-<li><code>Nom_attaque,attaque-e,10</code> : <strong>diminuer</strong> de <strong>10</strong> points l'<strong>attaque</strong> du pokémon <strong>ennemi</strong>,</li>
-<li><code>Nom_attaque,defense-e,10</code> : <strong>diminuer</strong> de <strong>10</strong> points la <strong>défense</strong> du pokémon <strong>ennemi</strong>.</li>
-</ul>
-</li>
-</ul>
-<p>Pour l'instant, il existe :</p>
-<ul>
-<li><code>poison</code> : empoisonner l'ennemi,</li>
-<li><code>paralysie</code> : paralyser l'ennemi,</li>
-<li><code>drainage</code> : drainer la vie de l'ennemi (vole des PV au pokémon adverse),</li>
-<li><code>attaque+</code>, <code>attaque-</code>, <code>defense+</code>, <code>defense-</code> : augmenter/diminuer l'attaque ou la défense alliée,</li>
-<li><code>attaque+e</code>, <code>defense+e</code>, <code>attaque-e</code>, <code>defense-e</code> : augmenter/diminuer l'attaque ou la défense ennemie.</li>
-<li>Rien ne vous empêche de créer de nouveaux effets, si vous vous sentez capable de les rajouter dans le code !</li>
-</ul>
-<p>Après lecture du fichier <code>pokemons.txt</code>, les attaques de chaque <code>Pokemon</code> sont enregistrées dans l'attribut <code>_liste_attaques</code> sous la forme d'une <strong>liste de dictionnaires</strong>.<br>
-Par exemple, s'il y a <strong>2 attaques</strong> : <code>[{"nom_attaque": "Charge", "degats_attaque": 35}, {"nom_attaque": "Rugissement", "effet_attaque": "attaque-e", "valeur_attaque": 5}]</code></p>
-<ul>
-<li>La première attaque "Charge" a une <strong>puissance de 35</strong>.</li>
-<li>
-<p>La seconde attaque <strong>diminue l'attaque de l'ennemi de 5 points</strong>.</p>
-</li>
-<li>
-<p>L'état du pokémon est stockée sous la forme d'un <strong>dictionnaire</strong> :</p>
-<ul>
-<li>Initialement, l'attribut <code>_etat</code> est égal à <code>{"nom_etat": "normal", "duree_etat": -1}</code> =&gt; Cela indique que le pokémon est dans son <strong>état normal</strong> (le <code>-1</code> indique que l'état est permanent).</li>
-<li>S'il est empoisonné par exemple, <code>_etat</code> devient égal à <code>{"nom_etat": "poison", "duree_etat": 3}</code> =&gt; Empoisonnement <strong>pendant encore 3 tours</strong>. (Même principe pour la <strong>paralysie</strong>, ou le <strong>drainage</strong>).</li>
-</ul>
-</li>
-<li>
-<p>Vous pouvez <strong>ajouter de nouveaux pokémons</strong> dans le fichier <code>pokemons.txt</code>, en respectant bien le format.
-Vous pouvez créer vos propres pokémons ou vous inspirer du <a href="https://www.pokebip.com/pokedex/pokedex_5G_liste_des_pokemon.html" target="_blank">pokédex</a>.</p>
-</li>
-</ul>
-<h2 id="realisation">Réalisation<a class="headerlink" href="#realisation" title="Permanent link">¶</a></h2>
-<p>Les fichiers <code>pokemon.py</code>, <code>combat.py</code> et <code>jeu.py</code>, qui définissent les <strong>classes</strong> <code>Pokemon</code>, <code>Combat</code> et <code>Jeu</code> nécessaires au bon fonctionnement du jeu sont pré-remplis, mais vous devez <strong>les compléter</strong>.</p>
-<p>Les zones à compléter sont marquées par des pointillés <code>.........</code>.</p>
-<p>Les <strong>méthodes</strong> (fonctions inclues dans des classes) contiennent la mention "À COMPLÉTER" ou "COMPLÉTER" dans la docstring lorsqu'il y a des zones à compléter, certaines méthodes sont déjà complètement écrites.</p>
-<p>Lisez bien les documentations et les commentaires pour vous assurer de bien comprendre le fonctionnement du programme !</p>
-<hr>
-<h3 id="deroulement-du-jeu">Déroulement du jeu<a class="headerlink" href="#deroulement-du-jeu" title="Permanent link">¶</a></h3>
-<p>Le jeu, défini dans la classe <code>Jeu</code>, se déroule <strong>indéfiniment</strong> et ne s'arrête que si :</p>
-<ul>
-<li>le <strong>nombre de victoires</strong> correspond à la valeur de la variable globale <code>NB_VICTOIRES</code>,</li>
-<li>le <strong>nombre de défaites</strong> correspond à la valeur de la variable globale <code>NB_DEFAITES</code>,</li>
-<li>il reste <strong>moins de 2 pokémons</strong> en jeu.</li>
-</ul>
-<p>Si aucune de ces conditions n'est remplie :</p>
-<ul>
-<li>on demande au joueur de choisir un pokémon parmi les pokémons encore vivants du jeu,</li>
-<li>l'adversaire choisit un pokémon de manière aléatoire,</li>
-<li>on <strong>lance un combat</strong>,</li>
-<li>à la fin du combat : en cas de victoire, on incrémente la valeur du nombre de victoires, en cas de défaite, on incrémente la valeur du nombre de défaites,</li>
-<li>on recommence le même déroulement tant qu'aucune des 3 conditions définies précédemment n'est remplie.</li>
-</ul>
-<h3 id="deroulement-dun-combat">Déroulement d'un combat<a class="headerlink" href="#deroulement-dun-combat" title="Permanent link">¶</a></h3>
-<p>Pour vous aider à comprendre, voici une explication du déroulement d'un combat (méthode <code>jouer</code> de la classe <code>Combat</code>) :</p>
-<ul>
-<li>on <strong>vérifie</strong> si le pokémon du joueur est <strong>mort</strong>. Si oui, fin du combat, avec un message de défaite.</li>
-<li>sinon, on <strong>vérifie</strong> si le pokémon de l'ennemi est <strong>mort</strong>. Si oui, <strong>fin du combat, avec message de victoire</strong>.</li>
-<li>si aucun pokémon n'est mort :</li>
-<li>on affiche les infos sur les pokémons du combat (points de vies, état, attaque, défense...),</li>
-<li>on active les effets relatifs aux altérations d'état,</li>
-<li>si c'est au tour du joueur, le joueur choisit une attaque,</li>
-<li>si c'est au tour du joueur adversaire, l'attaque est choisie aléatoirement,</li>
-<li>à la fin, on incrémente le nombre de tours.</li>
-</ul></div>
+<div><h1 id="programmation-dynamique">Programmation dynamique<a class="headerlink" href="#programmation-dynamique" title="Permanent link">¶</a></h1>
+<table>
+<thead>
+<tr>
+<th>Liste des contenus</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="exercices/">Exercices</a></td>
+<td>Quelques exercices sur la programmation dynamique.</td>
+</tr>
+</tbody>
+</table></div>
 
 
 
@@ -3868,7 +3562,7 @@ Vous pouvez créer vos propres pokémons ou vous inspirer du <a href="https://ww
 
 
                 
-<script src="../../../pyodide-mkdocs/ide.js"></script> 
+<script src="../../pyodide-mkdocs/ide.js"></script> 
 
               </article>
             </div>
@@ -3907,12 +3601,12 @@ Vous pouvez créer vos propres pokémons ou vous inspirer du <a href="https://ww
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
