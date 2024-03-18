@@ -15,4 +15,5 @@
 | [Paradigmes de programmation](paradigmes/index.md) | Les paradigmes de programmation. |
 | [Diviser pour régner](diviserregner/index.md) | La méthode "Diviser pour régner" |
 | [Processus et ordonnancement](processus/index.md) | Gestion des processus sur un OS et ordonnancement |
+| [Programmation dynamique](progdyn/index.md) | La programmation dynamique |
 | [:video_game: Le module Pyxel](pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |

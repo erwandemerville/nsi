@@ -155,6 +155,9 @@ nav:
     - Processus et ordonnancement:
       - terminale/processus/index.md
       - TD/TP découverte: terminale/processus/TDTP.md
+    - Programmation dynamique:
+      - terminale/progdyn/index.md
+      - Exercices: terminale/progdyn/exercices.md
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Sujets pratiques: https://cyclades.education.gouv.fr/delos/public/listPublicECE
   - Rendu des travaux: rendus.md
