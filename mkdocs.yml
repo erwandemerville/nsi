@@ -157,6 +157,7 @@ nav:
       - TD/TP découverte: terminale/processus/TDTP.md
     - Programmation dynamique:
       - terminale/progdyn/index.md
+      - Cours: terminale/progdyn/cours.md
       - Exercices: terminale/progdyn/exercices.md
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Sujets pratiques: https://cyclades.education.gouv.fr/delos/public/listPublicECE
@@ -197,6 +198,7 @@ plugins:
     - search
     - macros
     - mkdocs-video
+    - open-in-new-tab
 
 extra_css:
   - stylesheets/extra.css
