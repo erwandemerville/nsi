@@ -155,6 +155,7 @@ nav:
     - Processus et ordonnancement:
       - terminale/processus/index.md
       - TD/TP découverte: terminale/processus/TDTP.md
+      - Sujet de bac: terminale/processus/sujet_bac.md
     - Programmation dynamique:
       - terminale/progdyn/index.md
       - Cours: terminale/progdyn/cours.md
