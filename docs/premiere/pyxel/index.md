@@ -9,3 +9,4 @@
 | -------------------------------------------- | ----------------------------------- |
 | [:material-snake: Un jeu de Snake](snake.md) | Réalisation d'un petit jeu de Snake pour introduire le module Pyxel. |
 | [:material-gamepad-variant-outline: Projet - Réaliser un petit jeu vidéo](projetjv.md) | Projet en groupes de création d'un jeu vidéo 2D avec Pyxel. |
+| [:material-gamepad-square: Réalisations des élèves](realisations.md) | Jeux réalisés par les élèves. |

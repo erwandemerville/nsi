@@ -8,3 +8,4 @@
 | [Traitement des données en tables](traitement_donnees/index.md) | Traitement des données en tables. |
 | [:video_game: Le module Pyxel](pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |
 | [Algorithmes de tri](tris/index.md) | Tri par sélection et par insertion. |
+| [Interactions Homme-Machine sur le web](ihm/index.md) | Interactions Homme-Machine sur le web |

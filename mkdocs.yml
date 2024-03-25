@@ -82,6 +82,11 @@ nav:
       - Activité préliminaire: premiere/tris/activite_preliminaire.md
       - Tri par sélection: premiere/tris/tri_selection.md
       - Tri par insertion: premiere/tris/tri_insertion.md
+    - IHM:
+      - premiere/ihm/index.md
+      - Rappels HTML et CSS: https://pgdg.frama.io/1nsi/ihm/html_css/
+      - Le JavaScript: premiere/ihm/js.md
+      - Notebooks et exercices: premiere/ihm/exercices.md
   - Terminale:
     - terminale/index.md
     - Modularité:
