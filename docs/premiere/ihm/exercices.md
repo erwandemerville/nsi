@@ -3,7 +3,8 @@
 ## Entraînement sur le HTML et CSS
 
 !!! note ""
-    Rendez-vous sur le site [jsbin.com](https://jsbin.com/), puis tentez de **reproduire la page web suivante** :
+    Rendez-vous sur le site [jsbin.com](https://jsbin.com/), puis tentez de **reproduire la page web suivante**.  
+    N'hésitez pas à consulter [les cours](htmlcss.md){ target="_blank" } pour vous aider si besoin.
 
     <center>
     ![Capture page manchots](images/exo_manchots.png){ width="500" }
