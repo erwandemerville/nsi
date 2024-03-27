@@ -84,7 +84,7 @@ nav:
       - Tri par insertion: premiere/tris/tri_insertion.md
     - IHM:
       - premiere/ihm/index.md
-      - Rappels HTML et CSS: https://pgdg.frama.io/1nsi/ihm/html_css/
+      - Cours HTML et CSS: premiere/ihm/htmlcss.md
       - Le JavaScript: premiere/ihm/js.md
       - Notebooks et exercices: premiere/ihm/exercices.md
   - Terminale:

@@ -1,6 +1,17 @@
 # Exercices et notebooks sur l'IHM
 
-!!! success "Notebooks Jupyter"
+## Entraînement sur le HTML et CSS
+
+!!! note ""
+    Rendez-vous sur le site [jsbin.com](https://jsbin.com/), puis tentez de **reproduire la page web suivante** :
+
+    <center>
+    ![Capture page manchots](images/exo_manchots.png){ width="500" }
+    </center>
+
+## Notebooks Jupyter
+
+!!! success ""
     **HTML et CSS** :
 
     - [Notebook - Les bases du HTML et du CSS](src/06a_basesHTML_CSS.ipynb){ target="_blank" }

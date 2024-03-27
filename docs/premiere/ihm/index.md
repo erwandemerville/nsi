@@ -6,6 +6,6 @@ La relation **client-serveur** déjà abordé en classe de *seconde* sera ici ap
 
 | Liste des contenus                           | Description                         |
 | -------------------------------------------- | ----------------------------------- |
-| [:octicons-link-external-16: Rappels - Les langages HTML et CSS](https://pgdg.frama.io/1nsi/ihm/html_css/) | Rappels sur les langages **HTML** et **CSS**. |
+| [Cours - Les langages HTML et CSS](htmlcss.md) | Rappels sur les langages **HTML** et **CSS**. |
 | [Cours - Le JavaScript (JS)](js.md) | Cours sur le **Javascript** (*JS*). |
 | [Notebooks et exercices](exercices.md) | Notebooks et exercices sur l'IHM.  |
