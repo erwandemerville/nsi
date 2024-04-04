@@ -8,26 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://nsi.erwandemerville.fr/rendus/">
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/ihm/clientserveur/">
       
       
-        <link rel="prev" href="../terminale/progdyn/exercices/">
+        <link rel="prev" href="../js/">
       
       
+        <link rel="next" href="../exercices/">
       
-      <link rel="icon" href="../assets/images/favicon.png">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1">
     
     
       
-        <title>Rendu des travaux - Numérique et sciences informatiques</title>
+        <title>Le modèle client/serveur - Numérique et sciences informatiques</title>
       
     
     
-      <link rel="stylesheet" href="../assets/stylesheets/main.45e1311d.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.45e1311d.min.css">
       
         
-        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -48,8 +50,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
-<script src="../pyodide-mkdocs/utils.js"></script> 
-<script src="../pyodide-mkdocs/interpreter.js"></script> 
+<script src="../../../pyodide-mkdocs/utils.js"></script> 
+<script src="../../../pyodide-mkdocs/interpreter.js"></script> 
 
     
       
@@ -61,9 +63,9 @@
       
     
     
-      <link rel="stylesheet" href="../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -71,7 +73,7 @@
     
     
 
-<link rel="stylesheet" href="../pyodide-mkdocs/pyoditeur.css">
+<link rel="stylesheet" href="../../../pyodide-mkdocs/pyoditeur.css">
 
 
 <input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
@@ -96,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#rendu-des-travaux" class="md-skip">
+        <a href="#le-modele-clientserveur" class="md-skip">
           Skip to content
         </a>
       
@@ -110,7 +112,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href=".." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -130,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Rendu des travaux
+              Le modèle client/serveur
             
           </span>
         </div>
@@ -234,7 +236,7 @@
     
     
       <li class="md-tabs__item">
-        <a href=".." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
     
@@ -250,11 +252,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../premiere/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -274,7 +278,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../terminale/" class="md-tabs__link">
+        <a href="../../../terminale/" class="md-tabs__link">
           
   
     
@@ -324,11 +328,9 @@
         
   
   
-    
   
-  
-    <li class="md-tabs__item md-tabs__item--active">
-      <a href="./" class="md-tabs__link">
+    <li class="md-tabs__item">
+      <a href="../../../rendus/" class="md-tabs__link">
         
   
     
@@ -362,7 +364,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href=".." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -403,7 +405,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href=".." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -435,6 +437,8 @@
       
   
   
+    
+  
   
   
     
@@ -465,17 +469,17 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../premiere/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -492,7 +496,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Première
@@ -536,7 +540,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../premiere/bases_python/" class="md-nav__link ">
+            <a href="../../bases_python/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -569,7 +573,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/bases_python/cours/" class="md-nav__link">
+      <a href="../../bases_python/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -590,7 +594,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/bases_python/dm1/" class="md-nav__link">
+      <a href="../../bases_python/dm1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -611,7 +615,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/bases_python/thonny/" class="md-nav__link">
+      <a href="../../bases_python/thonny/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -632,7 +636,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/bases_python/notebooks/" class="md-nav__link">
+      <a href="../../bases_python/notebooks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -685,7 +689,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../premiere/representation_donnees/" class="md-nav__link ">
+            <a href="../../representation_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -718,7 +722,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/representation_donnees/cours/" class="md-nav__link">
+      <a href="../../representation_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -739,7 +743,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/representation_donnees/exercices/" class="md-nav__link">
+      <a href="../../representation_donnees/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -798,7 +802,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../premiere/archi/" class="md-nav__link ">
+            <a href="../../archi/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -831,7 +835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/archi/introduction/" class="md-nav__link">
+      <a href="../../archi/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -852,7 +856,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/archi/fonctions/" class="md-nav__link">
+      <a href="../../archi/fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -873,7 +877,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/archi/circuits/" class="md-nav__link">
+      <a href="../../archi/circuits/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -894,7 +898,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/archi/vonneumann/" class="md-nav__link">
+      <a href="../../archi/vonneumann/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -915,7 +919,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/archi/os/" class="md-nav__link">
+      <a href="../../archi/os/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -972,7 +976,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../premiere/traitement_donnees/" class="md-nav__link ">
+            <a href="../../traitement_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1005,7 +1009,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/traitement_donnees/n_uplets_dicos/" class="md-nav__link">
+      <a href="../../traitement_donnees/n_uplets_dicos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1026,7 +1030,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/traitement_donnees/cours/" class="md-nav__link">
+      <a href="../../traitement_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1047,7 +1051,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/traitement_donnees/pandas/" class="md-nav__link">
+      <a href="../../traitement_donnees/pandas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1068,7 +1072,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/traitement_donnees/dm2/" class="md-nav__link">
+      <a href="../../traitement_donnees/dm2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1121,7 +1125,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../premiere/pyxel/" class="md-nav__link ">
+            <a href="../../pyxel/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1154,7 +1158,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/pyxel/snake/" class="md-nav__link">
+      <a href="../../pyxel/snake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1175,7 +1179,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/pyxel/projetjv/" class="md-nav__link">
+      <a href="../../pyxel/projetjv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1230,7 +1234,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../premiere/tris/" class="md-nav__link ">
+            <a href="../../tris/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1263,7 +1267,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/tris/activite_preliminaire/" class="md-nav__link">
+      <a href="../../tris/activite_preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1284,7 +1288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/tris/tri_selection/" class="md-nav__link">
+      <a href="../../tris/tri_selection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1305,7 +1309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/tris/tri_insertion/" class="md-nav__link">
+      <a href="../../tris/tri_insertion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1331,6 +1335,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1352,17 +1358,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../premiere/ihm/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1379,7 +1385,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_8">
             <span class="md-nav__icon md-icon"></span>
             IHM
@@ -1395,7 +1401,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/ihm/htmlcss/" class="md-nav__link">
+      <a href="../htmlcss/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1416,7 +1422,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/ihm/js/" class="md-nav__link">
+      <a href="../js/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1434,10 +1440,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../premiere/ihm/clientserveur/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Le modèle client/serveur
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -1446,6 +1472,46 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#le-modele-clientserveur_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le modèle client/serveur
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-datacenters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les datacenters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -1458,7 +1524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../premiere/ihm/exercices/" class="md-nav__link">
+      <a href="../exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1547,7 +1613,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/" class="md-nav__link ">
+            <a href="../../../terminale/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1604,7 +1670,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/modularite/" class="md-nav__link ">
+            <a href="../../../terminale/modularite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1637,7 +1703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/modularite/api/" class="md-nav__link">
+      <a href="../../../terminale/modularite/api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1658,7 +1724,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/modularite/modules/" class="md-nav__link">
+      <a href="../../../terminale/modularite/modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1713,7 +1779,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/mise_au_point/" class="md-nav__link ">
+            <a href="../../../terminale/mise_au_point/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1746,7 +1812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/mise_au_point/preliminaire/" class="md-nav__link">
+      <a href="../../../terminale/mise_au_point/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1767,7 +1833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/mise_au_point/cours/" class="md-nav__link">
+      <a href="../../../terminale/mise_au_point/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1788,7 +1854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/mise_au_point/activite_finale/" class="md-nav__link">
+      <a href="../../../terminale/mise_au_point/activite_finale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1845,7 +1911,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/poo/" class="md-nav__link ">
+            <a href="../../../terminale/poo/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1878,7 +1944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/poo/preliminaire/" class="md-nav__link">
+      <a href="../../../terminale/poo/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1899,7 +1965,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/poo/cours/" class="md-nav__link">
+      <a href="../../../terminale/poo/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1920,7 +1986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/poo/pokemon/" class="md-nav__link">
+      <a href="../../../terminale/poo/pokemon/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1941,7 +2007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/poo/exercices/" class="md-nav__link">
+      <a href="../../../terminale/poo/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1994,7 +2060,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/recursivite/" class="md-nav__link ">
+            <a href="../../../terminale/recursivite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2027,7 +2093,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/recursivite/cours/" class="md-nav__link">
+      <a href="../../../terminale/recursivite/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2048,7 +2114,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/recursivite/exercices/" class="md-nav__link">
+      <a href="../../../terminale/recursivite/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2101,7 +2167,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/listes/" class="md-nav__link ">
+            <a href="../../../terminale/listes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2134,7 +2200,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/listes/cours/" class="md-nav__link">
+      <a href="../../../terminale/listes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2155,7 +2221,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/listes/exercices/" class="md-nav__link">
+      <a href="../../../terminale/listes/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2206,7 +2272,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/pilesfiles/" class="md-nav__link ">
+            <a href="../../../terminale/pilesfiles/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2239,7 +2305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/pilesfiles/cours/" class="md-nav__link">
+      <a href="../../../terminale/pilesfiles/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2296,7 +2362,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/bdd/" class="md-nav__link ">
+            <a href="../../../terminale/bdd/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2329,7 +2395,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/bdd/introduction/" class="md-nav__link">
+      <a href="../../../terminale/bdd/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2350,7 +2416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/bdd/modele_relationnel/" class="md-nav__link">
+      <a href="../../../terminale/bdd/modele_relationnel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2371,7 +2437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/bdd/sql/" class="md-nav__link">
+      <a href="../../../terminale/bdd/sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2392,7 +2458,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/bdd/src/activite_movies.zip" class="md-nav__link">
+      <a href="../../../terminale/bdd/src/activite_movies.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2447,7 +2513,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/arbres/" class="md-nav__link ">
+            <a href="../../../terminale/arbres/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2527,7 +2593,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/arbres/vocabulaire/" class="md-nav__link">
+      <a href="../../../terminale/arbres/vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2548,7 +2614,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/arbres/parcours/" class="md-nav__link">
+      <a href="../../../terminale/arbres/parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2569,7 +2635,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/arbres/type_abstrait/" class="md-nav__link">
+      <a href="../../../terminale/arbres/type_abstrait/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2590,7 +2656,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/arbres/abr/" class="md-nav__link">
+      <a href="../../../terminale/arbres/abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2662,7 +2728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/arbres/implementation_arbres/" class="md-nav__link">
+      <a href="../../../terminale/arbres/implementation_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2683,7 +2749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/arbres/implementation_abr/" class="md-nav__link">
+      <a href="../../../terminale/arbres/implementation_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2759,7 +2825,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/arbres/exercices_vocabulaire/" class="md-nav__link">
+      <a href="../../../terminale/arbres/exercices_vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2780,7 +2846,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/arbres/exercices_parcours/" class="md-nav__link">
+      <a href="../../../terminale/arbres/exercices_parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2801,7 +2867,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/arbres/exercices_abr/" class="md-nav__link">
+      <a href="../../../terminale/arbres/exercices_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2822,7 +2888,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/arbres/implementations_arbres/" class="md-nav__link">
+      <a href="../../../terminale/arbres/implementations_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2885,7 +2951,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/routage/" class="md-nav__link ">
+            <a href="../../../terminale/routage/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2918,7 +2984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/routage/cours/" class="md-nav__link">
+      <a href="../../../terminale/routage/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2939,7 +3005,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/routage/exercices/" class="md-nav__link">
+      <a href="../../../terminale/routage/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3013,7 +3079,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/recherche_textuelle/" class="md-nav__link ">
+            <a href="../../../terminale/recherche_textuelle/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3046,7 +3112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/recherche_textuelle/tp_intro/" class="md-nav__link">
+      <a href="../../../terminale/recherche_textuelle/tp_intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3067,7 +3133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/recherche_textuelle/cours/" class="md-nav__link">
+      <a href="../../../terminale/recherche_textuelle/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3120,7 +3186,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/pyxel/" class="md-nav__link ">
+            <a href="../../../terminale/pyxel/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3153,7 +3219,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/pyxel/snake/" class="md-nav__link">
+      <a href="../../../terminale/pyxel/snake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3174,7 +3240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/pyxel/realisations/" class="md-nav__link">
+      <a href="../../../terminale/pyxel/realisations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3227,7 +3293,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/paradigmes/" class="md-nav__link ">
+            <a href="../../../terminale/paradigmes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3260,7 +3326,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/paradigmes/Paradigmes_prog.zip" class="md-nav__link">
+      <a href="../../../terminale/paradigmes/Paradigmes_prog.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3281,7 +3347,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/paradigmes/cours/" class="md-nav__link">
+      <a href="../../../terminale/paradigmes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3336,7 +3402,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/diviserregner/" class="md-nav__link ">
+            <a href="../../../terminale/diviserregner/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3369,7 +3435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/diviserregner/" class="md-nav__link">
+      <a href="../../../terminale/diviserregner/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3390,7 +3456,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/diviserregner/exercices.zip" class="md-nav__link">
+      <a href="../../../terminale/diviserregner/exercices.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3443,7 +3509,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/processus/" class="md-nav__link ">
+            <a href="../../../terminale/processus/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3476,7 +3542,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/processus/TDTP/" class="md-nav__link">
+      <a href="../../../terminale/processus/TDTP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3497,7 +3563,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/processus/sujet_bac/" class="md-nav__link">
+      <a href="../../../terminale/processus/sujet_bac/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3550,7 +3616,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../terminale/progdyn/" class="md-nav__link ">
+            <a href="../../../terminale/progdyn/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3583,7 +3649,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/progdyn/cours/" class="md-nav__link">
+      <a href="../../../terminale/progdyn/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3604,7 +3670,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../terminale/progdyn/exercices/" class="md-nav__link">
+      <a href="../../../terminale/progdyn/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3677,19 +3743,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../rendus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3698,7 +3755,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -3725,6 +3781,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#le-modele-clientserveur_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le modèle client/serveur
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-datacenters" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les datacenters
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3739,19 +3821,67 @@
                   
 
 
-<div><h1 id="rendu-des-travaux"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M11 20H6.5q-2.28 0-3.89-1.57Q1 16.85 1 14.58q0-1.95 1.17-3.48 1.18-1.53 3.08-1.95.63-2.3 2.5-3.72Q9.63 4 12 4q2.93 0 4.96 2.04Q19 8.07 19 11q1.73.2 2.86 1.5 1.14 1.28 1.14 3 0 1.88-1.31 3.19T18.5 20H13v-7.15l1.6 1.55L16 13l-4-4-4 4 1.4 1.4 1.6-1.55Z"></path></svg></span> Rendu des travaux<a class="headerlink" href="#rendu-des-travaux" title="Permanent link">¶</a></h1>
-<p>Vous pouvez ici rendre tous les travaux demandés (<em>fichiers Python</em>, <em>documents Word</em>, <em>notebooks Jupyter complétés</em>, etc.) de manière simple et rapide.</p>
-<details class="warning">
-<summary>Nommage des fichiers</summary>
+<div><details class="quote">
+<summary>Sources</summary>
 <ul>
-<li>Assurez-vous de <strong>renommer vos fichiers</strong> en y ajoutant <strong>votre nom</strong>. Par exemple, si vous souhaitez rendre un <em>script Python</em> nommé <code>programme.py</code>, renommez-le en <code>&lt;VOTRE_NOM&gt;_programme.py</code>.</li>
-<li>Si votre travail contient <strong>plusieurs fichiers</strong>, créez une <strong>archive ZIP</strong> contenant tous vos fichiers et dont le nom sera de la forme <code>&lt;VOTRE_NOM&gt;_&lt;NOM_ARCHIVE&gt;.zip</code>. Pour créer une archive ZIP sur <em>Windows</em> : sélectionnez les fichiers à archiver, puis faites un <strong>clic droit</strong> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z"></path></svg></span> <code>Envoyer vers</code> <span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M8.22 2.97a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l2.97-2.97H3.75a.75.75 0 0 1 0-1.5h7.44L8.22 4.03a.75.75 0 0 1 0-1.06Z"></path></svg></span> <code>Dossier compressé</code>.</li>
+<li><em>Balabonski Première</em></li>
+<li><a href="https://www.nsi-a-feuillade.fr/document/premiere/06d_modele_client_serveur_protocole_HTTP60770327.pdf">nsi-a-feuillade.fr</a></li>
+<li><a href="https://www.geonov.fr/architecture-client-serveur/">geonov.fr</a></li>
 </ul>
 </details>
-<p>Cliquez sur le <strong>bouton</strong> correspondant à <strong>votre classe</strong> pour accéder à la page de téléversement :</p>
-<noscript style="color:red">Vous devez activer <strong>JavaScript</strong> pour que cette page fonctionne correctement !</noscript>
-
-<p><a class="md-button" href="#" onclick="window.open('https://mega.nz/filerequest/8Q7OXW75Z1Y', '_blank', 'scrollbars=yes,resizable=yes,width=750,height=740')">Première</a> <a class="md-button" href="#" onclick="window.open('https://mega.nz/filerequest/zletW966VwE', '_blank', 'scrollbars=yes,resizable=yes,width=750,height=740')">Terminale</a></p></div>
+<h1 id="le-modele-clientserveur">Le modèle client/serveur<a class="headerlink" href="#le-modele-clientserveur" title="Permanent link">¶</a></h1>
+<p>Le <strong>Web</strong> était initialement une <strong>collection de documents hypertextes</strong> accessibles sur Internet. Toutefois, les sites Web ont évolué pour devenir de véritables <strong>applications</strong>, avec une <strong>interface graphique</strong> (décrite en <em>HTML</em> et <em>CSS</em>), du <strong>code client</strong> de <strong>gestion d’éléments interactifs</strong> (<em>JavaScript</em>) s’exécutant dans le <strong>navigateur</strong> et des <strong>traitements de données</strong> complexes effectués sur le <strong>serveur Web</strong> (avec des langages comme <em>PHP</em>) hébergeant le site.</p>
+<p>Dans cette partie, nous verrons les éléments communs à la <strong>conception d’une application Web interactive</strong> : le <strong>modèle client/serveur</strong>, le <strong>protocole HTTP</strong> ainsi que la notion de <strong>formulaire Web</strong>.</p>
+<h2 id="le-modele-clientserveur_1">Le modèle client/serveur<a class="headerlink" href="#le-modele-clientserveur_1" title="Permanent link">¶</a></h2>
+<div class="admonition question">
+<p>Lorsqu'un <strong>ordinateur A</strong> veut <strong>échanger des données</strong> avec un <strong>ordinateur B</strong>, l'<strong>ordinateur A</strong> va <strong>demander des fichiers</strong> (<em>texte</em>, <em>photos</em>, <em>vidéos</em>…) à l'<strong>ordinateur B</strong>.</p>
+<p>Dans ce cas l'<strong>ordinateur A</strong> est le <mark><strong>client</strong></mark> (il demande des ressources), l'<strong>ordinateur B</strong> (qui fournit les ressources) est <mark><strong>le serveur</strong></mark>.</p>
+<p></p><center>
+<img alt="Modèle client/serveur" src="../images/client-server.png" width="350">
+</center>
+<p>L'exemple classique est lorsque l'on effectue une <strong>navigation sur internet</strong>.
+Notre <strong>navigateur web</strong> (donc nous sommes <strong>client</strong>) <strong>demande</strong> (on dit qu'il effectue une "requête") le <strong>contenu d'une page web</strong> stockée sur un <strong>serveur web</strong> (donc <strong>serveur</strong>). Ce dernier lui envoie le <strong>résultat</strong> (on parle de "réponse").</p>
+<p>Dans le cas d'une <strong>consultation de page web</strong>, le <strong>serveur</strong> enverra l'<strong>ensemble des données</strong> qui accompagne le lecture correcte de la <strong>page</strong>: fichiers <em>css</em>, <em>images</em>, fichiers <em>javascript</em>…</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Les types d'architecture client/serveur</p>
+<p>Si toutes les ressources nécessaires sont présentes sur <strong>un seul serveur</strong>, on parle d’<strong>architecture à deux niveaux</strong> ou <strong>2 tiers</strong>. Ici par exemple, les deux tiers sont le <strong>client</strong> et le <strong>serveur</strong> :</p>
+<p></p><center>
+<img alt="Client/serveur 2 tiers" src="../images/client-server-2-tiers.png" width="350">
+</center>
+<p>Si certaines ressources sont présentes sur un <strong>deuxième serveur</strong> (par exemple des bases de données), on parle d’<strong>architecture à trois niveaux</strong> ou <strong>3 tiers</strong> (1 client interroge le premier serveur qui lui-même interroge le deuxième serveur)</p>
+<p></p><center>
+<img alt="Client/serveur 3 tiers" src="../images/client-server-3-tiers.png" width="350">
+</center>
+<p>Au-delà, on parle d'architecture <span class="arithmatex">\(n\)</span>-tiers.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Le <em>peer-to-peer</em></p>
+<p>Dans certains cas, l'<strong>ordinateur</strong> peut à la fois jouer le rôle de <strong>client</strong> et de <strong>serveur</strong>, (c'est le cas par exemple avec le <em>peer-to-peer</em>).</p>
+<p></p><center>
+<img alt="p2p" src="../images/p2p_exemple.png" width="350">
+</center>
+</div>
+<h2 id="les-datacenters">Les datacenters<a class="headerlink" href="#les-datacenters" title="Permanent link">¶</a></h2>
+<p>Afin d'assurer une <strong>continuité de service</strong>, dans les sociétés, plusieurs serveurs assurent exactement le <strong>même rôle</strong> (on parle de <em>redondance</em>).<br>
+Il est en effet peu envisageable d'utiliser un seul serveur dès lors qu'un site génère un trafic important, et donc implique un nombre conséquent de <strong>requêtes</strong>.</p>
+<p>Les très gros sites web comme <em>Google</em>, <em>Amazon</em> ou encore <em>Facebook</em>, possèdent un <strong>très grand nombre de serveurs</strong> afin de pouvoir satisfaire les demandes des utilisateurs en permanence.</p>
+<div class="admonition abstract">
+<p>Pour répondre à ce <strong>nombre de requêtes important</strong>, les serveurs sont concentrés dans un <mark><strong>datacenter</strong></mark> (qui sont des bâtiments très sécurisés).</p>
+<p></p><center>
+<img alt="Datacenter" src="../images/datacenter.png" width="300"> <img alt="Baies datacenter" src="../images/baies_datacenter.png" width="200">
+</center>
+<p>Chaque armoire sur l'image ci-contre (qu'on appelle une baie) contient des centaines de serveur entassés les uns sur les autres.</p>
+<p>Ces serveurs sont des <strong>machines plates</strong>, ce qui facilite leur <strong>entassement</strong>. Il n'y a pas de moniteur, car on ne les utilise pas directement. Ils se contentent de <strong>transmettre des données</strong> sur le réseau.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Des serveurs spécialisés</p>
+<p>Parfois, les sites web utilisent des <strong>serveurs spécialisés dans certaines tâches</strong>.<br>
+Par exemple, les <strong>serveurs</strong> qui envoient aux <strong>clients</strong> des <strong>pages HTML</strong> sont appelés <em>serveurs web</em>.</p>
+<p>Il existe des serveurs pour <strong>gérer des fichiers</strong> (<em>serveurs de fichier</em>), des <strong>serveurs</strong> pour permettre l'<strong>impression de document</strong> (<em>serveurs d'impression</em>), pour <strong>gérer les emails</strong> (<em>serveurs de messagerie</em>)...</p>
+<p>Les <strong>serveurs</strong> peuvent <strong>générer du code HTML</strong>. Ainsi le <strong>code HTML</strong> envoyé aux clients dépendra des <strong>actions du client</strong> lui-même. On parle de <mark><strong>page web dynamique</strong></mark>.<br>
+Pour gérer le <strong>traitement des requêtes</strong> et l'<strong>interaction avec les bases de données</strong>, il existe des <strong>langages de programmation</strong> mais qui s'exécute "coté serveur". Le plus utilisé se nomme <strong>PHP</strong>, mais on peut aussi utiliser du <strong>JavaScript</strong> (avec <em>node.js</em>), du <strong>python</strong>, du <strong>ruby</strong>...</p>
+</div></div>
 
 
 
@@ -3765,7 +3895,7 @@
 
 
                 
-<script src="../pyodide-mkdocs/ide.js"></script> 
+<script src="../../../pyodide-mkdocs/ide.js"></script> 
 
               </article>
             </div>
@@ -3804,18 +3934,18 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../js/open_in_new_tab.js"></script>
+        <script src="../../../js/open_in_new_tab.js"></script>
       
     
   </body>
