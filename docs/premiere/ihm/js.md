@@ -50,10 +50,10 @@ On va exécuter de façon **interactive** une **séquence d'instructions Javascr
     ```
 
     Indiquez les **bonnes réponses** dans la phrase suivante :  
-    **Javascript** est à **typage** (fort | faible) et (dynamique | statique) et une **variable égale à 5** se déclare avec (let a = 5 | a = 5).
+    **Javascript** est à **typage** (fort | faible) et (dynamique | statique) et une **variable égale à 5** se déclare avec (`let a = 5` | `a = 5`).
 
 !!! note "À faire 2"
-    Examinons un exemple avec une **fonction**, une **structure conditionnelle** et une **boucle**. Dans la console, passer en mode **éditeur multiligne** en appuyant sur ++Ctrl+B++ et saisissez le **code** ci-dessous :
+    Examinons un exemple avec une **fonction**, une **structure conditionnelle** et une **boucle**. Dans la console, passer en mode **éditeur multiligne** en appuyant sur ++ctrl+b++ et saisissez le **code** ci-dessous :
 
     ```javascript
     function valabs(x){
@@ -77,7 +77,7 @@ On va exécuter de façon **interactive** une **séquence d'instructions Javascr
 
     Indiquez les **bonnes réponses** dans les deux phrases suivantes :
     
-    1. en **JavaScript**, les blocs d'instructions sont **délimités** par (l'indentation | des accolades), les **fonctions** sont **déclarées** avec le mot clef (def | function) et une **boucle bornée** sur les **entiers** entre **1** et **10** commence par l'instruction ( for k in range(1, 11) | for (let k = 1; k < 11; k = k + 1) )
+    1. en **JavaScript**, les blocs d'instructions sont **délimités** par (l'indentation | des accolades), les **fonctions** sont **déclarées** avec le mot clef (def | function) et une **boucle bornée** sur les **entiers** entre **1** et **10** commence par l'instruction ( `for k in range(1, 11)` | `for (let k = 1; k < 11; k = k + 1)` )
     2. la **fonction** `alert` affiche son paramètre dans (une fenêtre pop-up | la console) tandis que la **fonction** `console.log` affiche son paramètre dans (une fenêtre pop-up | la console).
 
 ## Cours

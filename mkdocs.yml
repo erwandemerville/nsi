@@ -86,6 +86,7 @@ nav:
       - premiere/ihm/index.md
       - Cours HTML et CSS: premiere/ihm/htmlcss.md
       - Le JavaScript: premiere/ihm/js.md
+      - Le modèle client/serveur: premiere/ihm/clientserveur.md
       - Notebooks et exercices: premiere/ihm/exercices.md
   - Terminale:
     - terminale/index.md
