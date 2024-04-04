@@ -17,7 +17,7 @@ Dans cette partie, nous verrons les éléments communs à la **conception d’un
     Dans ce cas l'**ordinateur A** est le ==**client**== (il demande des ressources), l'**ordinateur B** (qui fournit les ressources) est ==**le serveur**==.
 
     <center>
-    ![Modèle client/serveur](images/client-server.png){ width="250" }
+    ![Modèle client/serveur](images/client-server.png){ width="350" }
     </center>
 
     L'exemple classique est lorsque l'on effectue une **navigation sur internet**.
@@ -29,13 +29,13 @@ Dans cette partie, nous verrons les éléments communs à la **conception d’un
     Si toutes les ressources nécessaires sont présentes sur **un seul serveur**, on parle d’**architecture à deux niveaux** ou **2 tiers**. Ici par exemple, les deux tiers sont le **client** et le **serveur** :
 
     <center>
-    ![Client/serveur 2 tiers](images/client-server-2-tiers.png){ width="250" }
+    ![Client/serveur 2 tiers](images/client-server-2-tiers.png){ width="350" }
     </center>
 
     Si certaines ressources sont présentes sur un **deuxième serveur** (par exemple des bases de données), on parle d’**architecture à trois niveaux** ou **3 tiers** (1 client interroge le premier serveur qui lui-même interroge le deuxième serveur)
 
     <center>
-    ![Client/serveur 3 tiers](images/client-server-3-tiers.png){ width="250" }
+    ![Client/serveur 3 tiers](images/client-server-3-tiers.png){ width="350" }
     </center>
 
     Au-delà, on parle d'architecture $n$-tiers.
@@ -44,7 +44,7 @@ Dans cette partie, nous verrons les éléments communs à la **conception d’un
     Dans certains cas, l'**ordinateur** peut à la fois jouer le rôle de **client** et de **serveur**, (c'est le cas par exemple avec le *peer-to-peer*).
 
     <center>
-    ![p2p](images/p2p_exemple.png){ width="250" }
+    ![p2p](images/p2p_exemple.png){ width="350" }
     </center>
 
 ## Les datacenters
