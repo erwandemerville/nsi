@@ -38,4 +38,5 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Diviser pour régner](terminale/diviserregner/index.md) | La méthode "Diviser pour régner" |
 | [Processus et ordonnancement](terminale/processus/index.md) | Gestion des processus sur un OS et ordonnancement |
 | [Programmation dynamique](terminale/progdyn/index.md) | La programmation dynamique |
+| [Graphes](terminale/graphes/index.md) | Les graphes |
 | [:video_game: Le module Pyxel](terminale/pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |
