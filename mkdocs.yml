@@ -166,6 +166,9 @@ nav:
       - terminale/progdyn/index.md
       - Cours: terminale/progdyn/cours.md
       - Exercices: terminale/progdyn/exercices.md
+    - Graphes:
+      - terminale/graphes/index.md
+      - Introduction aux graphes: terminale/graphes/cours.md
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Sujets pratiques: https://cyclades.education.gouv.fr/delos/public/listPublicECE
   - Rendu des travaux: rendus.md
