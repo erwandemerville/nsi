@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://nsi.erwandemerville.fr/terminale/arbres/parcours/">
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/terminale/graphes/">
       
       
-        <link rel="prev" href="../vocabulaire/">
+        <link rel="prev" href="../progdyn/exercices/">
       
       
-        <link rel="next" href="../type_abstrait/">
+        <link rel="next" href="cours/">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.1">
     
     
       
-        <title>Parcours d'arbres binaires - Numérique et sciences informatiques</title>
+        <title>Les graphes - Numérique et sciences informatiques</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.45e1311d.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.45e1311d.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,8 +50,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
-<script src="../../../pyodide-mkdocs/utils.js"></script> 
-<script src="../../../pyodide-mkdocs/interpreter.js"></script> 
+<script src="../../pyodide-mkdocs/utils.js"></script> 
+<script src="../../pyodide-mkdocs/interpreter.js"></script> 
 
     
       
@@ -63,9 +63,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,7 +73,7 @@
     
     
 
-<link rel="stylesheet" href="../../../pyodide-mkdocs/pyoditeur.css">
+<link rel="stylesheet" href="../../pyodide-mkdocs/pyoditeur.css">
 
 
 <input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#parcours-darbres" class="md-skip">
+        <a href="#les-graphes" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -132,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Parcours d'arbres binaires
+              Les graphes
             
           </span>
         </div>
@@ -236,7 +236,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -256,7 +256,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../../premiere/" class="md-tabs__link">
+        <a href="../../premiere/" class="md-tabs__link">
           
   
     
@@ -278,7 +278,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../" class="md-tabs__link">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -330,7 +330,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../rendus/" class="md-tabs__link">
+      <a href="../../rendus/" class="md-tabs__link">
         
   
     
@@ -364,7 +364,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -405,7 +405,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -477,7 +477,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/" class="md-nav__link ">
+            <a href="../../premiere/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -538,7 +538,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/bases_python/" class="md-nav__link ">
+            <a href="../../premiere/bases_python/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -571,7 +571,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/bases_python/cours/" class="md-nav__link">
+      <a href="../../premiere/bases_python/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -592,7 +592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/bases_python/dm1/" class="md-nav__link">
+      <a href="../../premiere/bases_python/dm1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -613,7 +613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/bases_python/thonny/" class="md-nav__link">
+      <a href="../../premiere/bases_python/thonny/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -634,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/bases_python/notebooks/" class="md-nav__link">
+      <a href="../../premiere/bases_python/notebooks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -687,7 +687,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/representation_donnees/" class="md-nav__link ">
+            <a href="../../premiere/representation_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -720,7 +720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/representation_donnees/cours/" class="md-nav__link">
+      <a href="../../premiere/representation_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -741,7 +741,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/representation_donnees/exercices/" class="md-nav__link">
+      <a href="../../premiere/representation_donnees/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -800,7 +800,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/archi/" class="md-nav__link ">
+            <a href="../../premiere/archi/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -833,7 +833,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/archi/introduction/" class="md-nav__link">
+      <a href="../../premiere/archi/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -854,7 +854,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/archi/fonctions/" class="md-nav__link">
+      <a href="../../premiere/archi/fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -875,7 +875,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/archi/circuits/" class="md-nav__link">
+      <a href="../../premiere/archi/circuits/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -896,7 +896,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/archi/vonneumann/" class="md-nav__link">
+      <a href="../../premiere/archi/vonneumann/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -917,7 +917,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/archi/os/" class="md-nav__link">
+      <a href="../../premiere/archi/os/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -974,7 +974,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/traitement_donnees/" class="md-nav__link ">
+            <a href="../../premiere/traitement_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1007,7 +1007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/traitement_donnees/n_uplets_dicos/" class="md-nav__link">
+      <a href="../../premiere/traitement_donnees/n_uplets_dicos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1028,7 +1028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/traitement_donnees/cours/" class="md-nav__link">
+      <a href="../../premiere/traitement_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1049,7 +1049,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/traitement_donnees/pandas/" class="md-nav__link">
+      <a href="../../premiere/traitement_donnees/pandas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1070,7 +1070,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/traitement_donnees/dm2/" class="md-nav__link">
+      <a href="../../premiere/traitement_donnees/dm2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1123,7 +1123,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/pyxel/" class="md-nav__link ">
+            <a href="../../premiere/pyxel/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1156,7 +1156,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/pyxel/snake/" class="md-nav__link">
+      <a href="../../premiere/pyxel/snake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1177,7 +1177,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/pyxel/projetjv/" class="md-nav__link">
+      <a href="../../premiere/pyxel/projetjv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1232,7 +1232,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/tris/" class="md-nav__link ">
+            <a href="../../premiere/tris/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1265,7 +1265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/tris/activite_preliminaire/" class="md-nav__link">
+      <a href="../../premiere/tris/activite_preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1286,7 +1286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/tris/tri_selection/" class="md-nav__link">
+      <a href="../../premiere/tris/tri_selection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1307,7 +1307,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/tris/tri_insertion/" class="md-nav__link">
+      <a href="../../premiere/tris/tri_insertion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1364,7 +1364,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../premiere/ihm/" class="md-nav__link ">
+            <a href="../../premiere/ihm/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1397,7 +1397,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/ihm/htmlcss/" class="md-nav__link">
+      <a href="../../premiere/ihm/htmlcss/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1418,7 +1418,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/ihm/js/" class="md-nav__link">
+      <a href="../../premiere/ihm/js/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1439,7 +1439,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/ihm/clientserveur/" class="md-nav__link">
+      <a href="../../premiere/ihm/clientserveur/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1460,7 +1460,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../premiere/ihm/exercices/" class="md-nav__link">
+      <a href="../../premiere/ihm/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1553,7 +1553,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1610,7 +1610,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../modularite/" class="md-nav__link ">
+            <a href="../modularite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1643,7 +1643,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modularite/api/" class="md-nav__link">
+      <a href="../modularite/api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1664,7 +1664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../modularite/modules/" class="md-nav__link">
+      <a href="../modularite/modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1719,7 +1719,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../mise_au_point/" class="md-nav__link ">
+            <a href="../mise_au_point/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1752,7 +1752,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mise_au_point/preliminaire/" class="md-nav__link">
+      <a href="../mise_au_point/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1773,7 +1773,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mise_au_point/cours/" class="md-nav__link">
+      <a href="../mise_au_point/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1794,7 +1794,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../mise_au_point/activite_finale/" class="md-nav__link">
+      <a href="../mise_au_point/activite_finale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1851,7 +1851,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../poo/" class="md-nav__link ">
+            <a href="../poo/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1884,7 +1884,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../poo/preliminaire/" class="md-nav__link">
+      <a href="../poo/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1905,7 +1905,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../poo/cours/" class="md-nav__link">
+      <a href="../poo/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1926,7 +1926,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../poo/pokemon/" class="md-nav__link">
+      <a href="../poo/pokemon/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1947,7 +1947,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../poo/exercices/" class="md-nav__link">
+      <a href="../poo/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2000,7 +2000,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../recursivite/" class="md-nav__link ">
+            <a href="../recursivite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2033,7 +2033,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recursivite/cours/" class="md-nav__link">
+      <a href="../recursivite/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2054,7 +2054,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recursivite/exercices/" class="md-nav__link">
+      <a href="../recursivite/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2107,7 +2107,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../listes/" class="md-nav__link ">
+            <a href="../listes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2140,7 +2140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../listes/cours/" class="md-nav__link">
+      <a href="../listes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2161,7 +2161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../listes/exercices/" class="md-nav__link">
+      <a href="../listes/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2212,7 +2212,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../pilesfiles/" class="md-nav__link ">
+            <a href="../pilesfiles/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2245,7 +2245,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pilesfiles/cours/" class="md-nav__link">
+      <a href="../pilesfiles/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2302,7 +2302,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../bdd/" class="md-nav__link ">
+            <a href="../bdd/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2335,7 +2335,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bdd/introduction/" class="md-nav__link">
+      <a href="../bdd/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2356,7 +2356,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bdd/modele_relationnel/" class="md-nav__link">
+      <a href="../bdd/modele_relationnel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2377,7 +2377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bdd/sql/" class="md-nav__link">
+      <a href="../bdd/sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2398,7 +2398,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bdd/src/activite_movies.zip" class="md-nav__link">
+      <a href="../bdd/src/activite_movies.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2424,8 +2424,6 @@
                 
   
   
-    
-  
   
   
     
@@ -2445,17 +2443,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../arbres/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2472,7 +2470,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_9">
             <span class="md-nav__icon md-icon"></span>
             Arbres
@@ -2485,10 +2483,8 @@
                 
   
   
-    
   
   
-  
     
     
       
@@ -2504,12 +2500,12 @@
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_2" >
         
           
           <label class="md-nav__link" for="__nav_3_9_2" id="__nav_3_9_2_label" tabindex="0">
@@ -2523,7 +2519,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_9_2">
             <span class="md-nav__icon md-icon"></span>
             Cours
@@ -2537,7 +2533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../vocabulaire/" class="md-nav__link">
+      <a href="../arbres/vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2555,30 +2551,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Parcours d'arbres binaires
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../arbres/parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2587,103 +2563,6 @@
   
 
       </a>
-      
-        
-
-  
-
-<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Sur cette page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#le-parcours-en-largeur-dabord" class="md-nav__link">
-    <span class="md-ellipsis">
-      Le parcours en largeur d'abord
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Le parcours en largeur d'abord">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deroulement-du-parcours-en-largeur" class="md-nav__link">
-    <span class="md-ellipsis">
-      Déroulement du parcours en largeur
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#le-parcours-en-profondeur-dabord" class="md-nav__link">
-    <span class="md-ellipsis">
-      Le parcours en profondeur d'abord
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Le parcours en profondeur d'abord">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parcours-prefixe-racine-gauche-droite" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parcours préfixe - (Racine-Gauche-Droite)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parcours-suffixe-ou-postfixe-gauche-droite-racine" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parcours suffixe ou postfixe - (Gauche-Droite-Racine)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parcours-infixe-gauche-racine-droite" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parcours infixe - (Gauche-Racine-Droite)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autre-methode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Autre méthode
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -2696,7 +2575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../type_abstrait/" class="md-nav__link">
+      <a href="../arbres/type_abstrait/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2717,7 +2596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../abr/" class="md-nav__link">
+      <a href="../arbres/abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2789,7 +2668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../implementation_arbres/" class="md-nav__link">
+      <a href="../arbres/implementation_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2810,7 +2689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../implementation_abr/" class="md-nav__link">
+      <a href="../arbres/implementation_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2886,7 +2765,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercices_vocabulaire/" class="md-nav__link">
+      <a href="../arbres/exercices_vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2907,7 +2786,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercices_parcours/" class="md-nav__link">
+      <a href="../arbres/exercices_parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2928,7 +2807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercices_abr/" class="md-nav__link">
+      <a href="../arbres/exercices_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2949,7 +2828,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../implementations_arbres/" class="md-nav__link">
+      <a href="../arbres/implementations_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3012,7 +2891,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../routage/" class="md-nav__link ">
+            <a href="../routage/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3045,7 +2924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../routage/cours/" class="md-nav__link">
+      <a href="../routage/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3066,7 +2945,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../routage/exercices/" class="md-nav__link">
+      <a href="../routage/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3140,7 +3019,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../recherche_textuelle/" class="md-nav__link ">
+            <a href="../recherche_textuelle/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3173,7 +3052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recherche_textuelle/tp_intro/" class="md-nav__link">
+      <a href="../recherche_textuelle/tp_intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3194,7 +3073,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../recherche_textuelle/cours/" class="md-nav__link">
+      <a href="../recherche_textuelle/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3247,7 +3126,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../pyxel/" class="md-nav__link ">
+            <a href="../pyxel/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3280,7 +3159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pyxel/snake/" class="md-nav__link">
+      <a href="../pyxel/snake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3301,7 +3180,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pyxel/realisations/" class="md-nav__link">
+      <a href="../pyxel/realisations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3354,7 +3233,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../paradigmes/" class="md-nav__link ">
+            <a href="../paradigmes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3387,7 +3266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../paradigmes/Paradigmes_prog.zip" class="md-nav__link">
+      <a href="../paradigmes/Paradigmes_prog.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3408,7 +3287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../paradigmes/cours/" class="md-nav__link">
+      <a href="../paradigmes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3463,7 +3342,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../diviserregner/" class="md-nav__link ">
+            <a href="../diviserregner/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3496,7 +3375,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../diviserregner/" class="md-nav__link">
+      <a href="../diviserregner/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3517,7 +3396,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../diviserregner/exercices.zip" class="md-nav__link">
+      <a href="../diviserregner/exercices.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3570,7 +3449,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../processus/" class="md-nav__link ">
+            <a href="../processus/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3603,7 +3482,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../processus/TDTP/" class="md-nav__link">
+      <a href="../processus/TDTP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3624,7 +3503,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../processus/sujet_bac/" class="md-nav__link">
+      <a href="../processus/sujet_bac/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3677,7 +3556,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../progdyn/" class="md-nav__link ">
+            <a href="../progdyn/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3710,7 +3589,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../progdyn/cours/" class="md-nav__link">
+      <a href="../progdyn/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3731,7 +3610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../progdyn/exercices/" class="md-nav__link">
+      <a href="../progdyn/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3757,6 +3636,8 @@
                 
   
   
+    
+  
   
   
     
@@ -3772,17 +3653,17 @@
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_17" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_17" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../graphes/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -3793,13 +3674,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_17" id="__nav_3_17_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_17" id="__nav_3_17_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_17_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_17_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_17">
             <span class="md-nav__icon md-icon"></span>
             Graphes
@@ -3815,7 +3696,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../graphes/cours/" class="md-nav__link">
+      <a href="cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3891,7 +3772,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rendus/" class="md-nav__link">
+      <a href="../../rendus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3926,89 +3807,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Sur cette page
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#le-parcours-en-largeur-dabord" class="md-nav__link">
-    <span class="md-ellipsis">
-      Le parcours en largeur d'abord
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Le parcours en largeur d'abord">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#deroulement-du-parcours-en-largeur" class="md-nav__link">
-    <span class="md-ellipsis">
-      Déroulement du parcours en largeur
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#le-parcours-en-profondeur-dabord" class="md-nav__link">
-    <span class="md-ellipsis">
-      Le parcours en profondeur d'abord
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Le parcours en profondeur d'abord">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parcours-prefixe-racine-gauche-droite" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parcours préfixe - (Racine-Gauche-Droite)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parcours-suffixe-ou-postfixe-gauche-droite-racine" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parcours suffixe ou postfixe - (Gauche-Droite-Racine)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#parcours-infixe-gauche-racine-droite" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parcours infixe - (Gauche-Racine-Droite)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#autre-methode" class="md-nav__link">
-    <span class="md-ellipsis">
-      Autre méthode
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -4023,114 +3821,21 @@
                   
 
 
-<div><h1 id="parcours-darbres">Parcours d'arbres<a class="headerlink" href="#parcours-darbres" title="Permanent link">¶</a></h1>
-<p><strong>Définition</strong> : Un <strong>parcours d'arbre</strong> est un type d'<strong>algorithme</strong> consistant à <strong>visiter les noeuds</strong> d'un arbre en suivant un certain <strong>ordre</strong>.</p>
-<p>Pourquoi parcourir ?</p>
-<ul>
-<li>Rechercher si un arbre contient une valeur particulière.</li>
-<li>Compter les noeuds qui contiennent une valeur donnée.</li>
-<li>etc.</li>
-</ul>
-<p>Il existe deux façons de parcourir un arbre :</p>
-<ul>
-<li>le <strong>parcours en profondeur</strong></li>
-<li>le <strong>parcours en largeur</strong></li>
-</ul>
-<p>Voici un <strong>arbre binaire</strong> que l'on souhaite <strong>parcourir</strong> :</p>
-<p><img alt="images/arbre_parcours_v2.png" src="../images/arbre_parcours_v2.png" width="55%"></p>
-<h2 id="le-parcours-en-largeur-dabord">Le parcours en largeur d'abord<a class="headerlink" href="#le-parcours-en-largeur-dabord" title="Permanent link">¶</a></h2>
-<p>Le <strong>parcours en largeur</strong> consiste à <strong>parcourir l'arbre niveau par niveau</strong>. Le <strong>noeud</strong> de <strong>niveau</strong> (ou <em>profondeur</em>) <strong>0</strong> (ou <strong>1</strong> selon la convention choisie pour la <em>profondeur</em>), c'est-à-dire le <strong>noeud racine</strong>, est d'abord parcouru, puis les <strong>noeuds</strong> de <strong>niveau 1</strong> (ou <strong>2</strong>), et ainsi de suite.<br>
-À <strong>chaque niveau</strong>, les <strong>noeuds sont parcourus de gauche à droite</strong>.</p>
-<p><em>Note : On peut parler de parcours en largeur "d'abord", car même si le parcours est d'abord effectué en largeur, l'arbre est bien sûr ensuite visité en profondeur (on visite les noeuds d'un niveau de l'arbre, puis on passe au niveau suivant, etc.)</em></p>
-<p>Sur l'arbre ci-dessous : <code>[E, B, G, A, D, F, H, C]</code></p>
-<p><img alt="images/arbre_parcours_v2.png" src="../images/arbre_parcours_annotel.png" width="55%"></p>
-<h3 id="deroulement-du-parcours-en-largeur">Déroulement du parcours en largeur<a class="headerlink" href="#deroulement-du-parcours-en-largeur" title="Permanent link">¶</a></h3>
-<p><img alt="images/arbre_parcours_v2.png" src="../images/arbre_parcours_v2.png" width="55%"></p>
-<p>Initialement, on a deux listes :<br>
-<code>à visiter = [E]</code><br>
-<code>visités = []</code></p>
-<p>On visite <strong>E</strong> (on le retire de la liste des <strong>noeuds à visiter</strong> et on l'ajoute dans celle des <strong>noeuds visités</strong>), puis on ajoute ses <strong>noeuds fils</strong> (d'abord <strong>gauche</strong>, puis <strong>droit</strong>) à la fin des <strong>noeuds à visiter</strong>.<br>
-<code>à visiter = [B, G]</code><br>
-<code>visités = [E]</code></p>
-<p>On visite le premier noeud <strong>B</strong> de la liste <code>à visiter</code> (on l'ajoute à la fin de la liste des <strong>noeuds visités</strong>), puis on ajoute ses <strong>noeuds fils</strong> à la fin de la liste des <strong>noeuds à visiter</strong> :<br>
-<code>à visiter = [G, A, D]</code><br>
-<code>visités = [E, B]</code></p>
-<p>On continue avec le noeud <strong>G</strong> :<br>
-<code>à visiter = [A, D, F, H]</code><br>
-<code>visités = [E, B, G]</code></p>
-<p>On continue avec le noeud <strong>A</strong> (qui n'a pas de fils, donc on ajoute rien dans les noeuds à visiter) :<br>
-<code>à visiter = [D, F, H]</code><br>
-<code>visités = [E, B, G, A]</code></p>
-<p>Et ainsi de suite...<br>
-<code>à visiter = [F, H, C]</code><br>
-<code>visités = [E, B, G, A, D]</code></p>
-<p><code>à visiter = [H, C]</code><br>
-<code>visités = [E, B, G, A, D, F]</code></p>
-<p><code>à visiter = [C]</code><br>
-<code>visités = [E, B, G, A, D, F, H]</code></p>
-<p><code>à visiter = []</code><br>
-<code>visités = [E, B, G, A, D, F, H, C]</code></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Les <strong>premiers noeuds ajoutés</strong> dans <code>à visiter</code> sont les <strong>premiers noeuds visités</strong>. Si l'on implémentait cet algorithme, on pourrait donc utiliser une <strong>structure de <u>file</u></strong>, car on ajoute les noeuds à la fin, et on les retire au début.</p>
-</div>
-<h2 id="le-parcours-en-profondeur-dabord">Le parcours en profondeur d'abord<a class="headerlink" href="#le-parcours-en-profondeur-dabord" title="Permanent link">¶</a></h2>
-<p>Le <strong>parcours en profondeur</strong> d'un <strong>arbre</strong> est un type de parcours d'arbres qui consiste à traiter <strong>la racine</strong> de l'arbre, et à parcourir récursivement les <strong>sous-arbres gauche</strong> et <strong>droit</strong> de la racine.</p>
-<p>Les parcours <strong>préfixe</strong>, <strong>infixe</strong> et <strong>suffixe</strong> (également appelé <em>postfixe</em>) se distinguent par l'ordre dans lequel sont effectués ces traitements.</p>
-<h3 id="parcours-prefixe-racine-gauche-droite">Parcours préfixe - (<strong>Racine</strong>-Gauche-Droite)<a class="headerlink" href="#parcours-prefixe-racine-gauche-droite" title="Permanent link">¶</a></h3>
-<p>Dans le parcours <strong>préfixe</strong>, la <strong>racine</strong> est traitée <strong>avant</strong> les appels récursifs sur le <strong>sous-arbre gauche</strong>, puis sur le <strong>sous-arbre droit</strong>.</p>
-<div class="admonition note">
-<p class="admonition-title">Déroulement du parcours préfixe</p>
-<p><strong>Précondition</strong> : L’arbre n’est pas vide<br>
-Le parcours préfixe se déroule comme suit :</p>
-<ol>
-<li>On <code>visite</code> le <strong>noeud racine</strong> de l’arbre.</li>
-<li>On effectue le <code>parcours préfixe</code> du <strong>sous-arbre gauche</strong> (s’il est NON vide).</li>
-<li>On effectue le <code>parcours préfixe</code> du <strong>sous-arbre droit</strong> (s’il est NON vide).</li>
-</ol>
-</div>
-<p>(La fonction <code>visite</code> reste à définir, cela pourrait être un simple affichage.)</p>
-<p><em>Une technique visuelle : En se "baladant" autour de l'arbre (ordre de visite des noeuds en pointillés), on liste chaque noeud la <strong>première fois</strong> qu’on le rencontre dans la balade.</em></p>
-<p>Sur l'arbre ci-dessous : <code>[E, B, A, D, C, G, F, H]</code></p>
-<p><img alt="images/arbre_parcours_v2.png" src="../images/arbre_parcours_annote.png" width="55%"></p>
-<h3 id="parcours-suffixe-ou-postfixe-gauche-droite-racine">Parcours suffixe ou postfixe - (Gauche-Droite-<strong>Racine</strong>)<a class="headerlink" href="#parcours-suffixe-ou-postfixe-gauche-droite-racine" title="Permanent link">¶</a></h3>
-<p>Dans le parcours <strong>suffixe</strong> (ou postfixe), la <strong>racine</strong> est traitée <strong>après</strong> les appels récursifs sur le <strong>sous-arbre gauche</strong> puis sur le <strong>sous-arbre droit</strong>.</p>
-<div class="admonition note">
-<p class="admonition-title">Déroulement du parcours suffixe</p>
-<p><strong>Précondition</strong> : L’arbre n’est pas vide<br>
-Le parcours suffixe se déroule comme suit :</p>
-<ol>
-<li>On effectue le <code>parcours suffixe</code> du <strong>sous-arbre gauche</strong> (s’il est NON vide).</li>
-<li>On effectue le <code>parcours suffixe</code> du <strong>sous-arbre droit</strong> (s’il est NON vide).</li>
-<li>On <code>visite</code> le <strong>noeud racine</strong> de l’arbre.</li>
-</ol>
-</div>
-<p><em>Une technique visuelle : En se "baladant" autour de l'arbre, on liste chaque noeud la <strong>dernière fois</strong> qu’on le rencontre dans la balade.</em></p>
-<p>Sur l'arbre ci-dessous : <code>[A, C, D, B, F, H, G, E]</code></p>
-<p><img alt="images/arbre_parcours_v2.png" src="../images/arbre_parcours_annote.png" width="55%"></p>
-<h3 id="parcours-infixe-gauche-racine-droite">Parcours infixe - (Gauche-<strong>Racine</strong>-Droite)<a class="headerlink" href="#parcours-infixe-gauche-racine-droite" title="Permanent link">¶</a></h3>
-<p>Dans le parcours <strong>infixe</strong>, le traitement de la <strong>racine</strong> est effectué <strong>entre les appels</strong> sur les <strong>sous-arbres gauche</strong> et <strong>droit</strong>.</p>
-<div class="admonition note">
-<p class="admonition-title">Déroulement du parcours infixe</p>
-<p><strong>Précondition</strong> : L’arbre n’est pas vide<br>
-Le parcours infixe se déroule comme suit :</p>
-<ol>
-<li>On effectue le <code>parcours infixe</code> du <strong>sous-arbre gauche</strong> (s’il est NON vide).</li>
-<li>On <code>visite</code> le <strong>noeud racine</strong> de l’arbre.</li>
-<li>On effectue le <code>parcours infixe</code> du <strong>sous-arbre droit</strong> (s’il est NON vide).</li>
-</ol>
-</div>
-<p><em>Une technique visuelle : En se "baladant" autour de l'arbre, on liste chaque noeud ayant un fils gauche la <strong>seconde fois</strong> qu’on le voit et chaque noeud sans fils gauche la <strong>première fois</strong> qu’on le voit.</em></p>
-<p>Sur l'arbre ci-dessous : <code>[A, B, C, D, E, F, G, H]</code></p>
-<p><img alt="images/arbre_parcours_v2.png" src="../images/arbre_parcours_annote.png" width="55%"></p>
-<h3 id="autre-methode">Autre méthode<a class="headerlink" href="#autre-methode" title="Permanent link">¶</a></h3>
-<p>On peut également retrouver visuellement les trois parcours <strong>préfixe</strong>, <strong>infixe</strong> et <strong>postfixe</strong> en ajoutant les sous-arbres vides (et arêtes associées) au dessin d'un arbre binaire. Si on trace à présent le contour de l'arbre :</p>
-<ul>
-<li>l'ordre <strong>préfixe</strong> est obtenu en listant les <strong>noeuds</strong> lorsque l'on passe à leur <em>gauche</em>,</li>
-<li>l'ordre <strong>suffixe</strong> est obtenu en listant les <strong>noeuds</strong> lorsque l'on passe à leur <em>droite</em>,</li>
-<li>l'ordre <strong>infixe</strong> est obtenu en listant les <strong>noeuds</strong> lorsque l'on passe en <em>dessous</em>.</li>
-</ul>
-<p>Pour vous entraîner : voir <a href="../fiche2_parcours.pdf">cette fiche d'exercices</a>.</p></div>
+<div><h1 id="les-graphes">Les graphes<a class="headerlink" href="#les-graphes" title="Permanent link">¶</a></h1>
+<table>
+<thead>
+<tr>
+<th>Liste des contenus</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="cours/">Cours/TD - Introduction aux graphes</a></td>
+<td>TD/TP d'introduction aux <strong>graphes</strong>.</td>
+</tr>
+</tbody>
+</table></div>
 
 
 
@@ -4144,7 +3849,7 @@ Le parcours infixe se déroule comme suit :</p>
 
 
                 
-<script src="../../../pyodide-mkdocs/ide.js"></script> 
+<script src="../../pyodide-mkdocs/ide.js"></script> 
 
               </article>
             </div>
@@ -4183,18 +3888,18 @@ Le parcours infixe se déroule comme suit :</p>
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.d7c377c4.min.js"></script>
+      <script src="../../assets/javascripts/bundle.d7c377c4.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../js/open_in_new_tab.js"></script>
+        <script src="../../js/open_in_new_tab.js"></script>
       
     
   </body>
