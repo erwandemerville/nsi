@@ -8,5 +8,5 @@ La relation **client-serveur** déjà abordé en classe de *seconde* sera ici ap
 | -------------------------------------------- | ----------------------------------- |
 | [Cours - Les langages HTML et CSS](htmlcss.md) | Rappels sur les langages **HTML** et **CSS**. |
 | [Cours - Le JavaScript (JS)](js.md) | Cours sur le **Javascript** (*JS*). |
-| [Cours - Le modèle client/serveur](clientserveur.md) | Cours sur le **modèle client/serveur**, le **protocole HTTP** et les **formulaires**. |
+| [Cours - Modèle client/serveur et protocole HTTP](clientserveur.md) | Cours sur le **modèle client/serveur**, le **protocole HTTP** et les **formulaires**. |
 | [Notebooks et exercices](exercices.md) | Notebooks et exercices sur l'IHM.  |
