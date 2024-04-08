@@ -22,7 +22,7 @@
     
     
       
-        <title>Le modèle client/serveur - Numérique et sciences informatiques</title>
+        <title>Modèle client/serveur et HTTP - Numérique et sciences informatiques</title>
       
     
     
@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#le-modele-clientserveur" class="md-skip">
+        <a href="#modele-clientserveur-et-protocole-http" class="md-skip">
           Skip to content
         </a>
       
@@ -132,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Le modèle client/serveur
+              Modèle client/serveur et HTTP
             
           </span>
         </div>
@@ -1456,7 +1456,7 @@
           
   
   <span class="md-ellipsis">
-    Le modèle client/serveur
+    Modèle client/serveur et HTTP
   </span>
   
 
@@ -1467,7 +1467,7 @@
         
   
   <span class="md-ellipsis">
-    Le modèle client/serveur
+    Modèle client/serveur et HTTP
   </span>
   
 
@@ -1491,7 +1491,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#le-modele-clientserveur_1" class="md-nav__link">
+  <a href="#le-modele-clientserveur" class="md-nav__link">
     <span class="md-ellipsis">
       Le modèle client/serveur
     </span>
@@ -1503,6 +1503,48 @@
   <a href="#les-datacenters" class="md-nav__link">
     <span class="md-ellipsis">
       Les datacenters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-protocole-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le protocole HTTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le protocole HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principe-et-fonctionnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principe et fonctionnement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-commande-curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      La commande curl
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices-activites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercices - Activités
     </span>
   </a>
   
@@ -3874,7 +3916,7 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#le-modele-clientserveur_1" class="md-nav__link">
+  <a href="#le-modele-clientserveur" class="md-nav__link">
     <span class="md-ellipsis">
       Le modèle client/serveur
     </span>
@@ -3886,6 +3928,48 @@
   <a href="#les-datacenters" class="md-nav__link">
     <span class="md-ellipsis">
       Les datacenters
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-protocole-http" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le protocole HTTP
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le protocole HTTP">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principe-et-fonctionnement" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principe et fonctionnement
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-commande-curl" class="md-nav__link">
+    <span class="md-ellipsis">
+      La commande curl
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices-activites" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercices - Activités
     </span>
   </a>
   
@@ -3915,10 +3999,10 @@
 <li><a href="https://www.geonov.fr/architecture-client-serveur/">geonov.fr</a></li>
 </ul>
 </details>
-<h1 id="le-modele-clientserveur">Le modèle client/serveur<a class="headerlink" href="#le-modele-clientserveur" title="Permanent link">¶</a></h1>
-<p>Le <strong>Web</strong> était initialement une <strong>collection de documents hypertextes</strong> accessibles sur Internet. Toutefois, les sites Web ont évolué pour devenir de véritables <strong>applications</strong>, avec une <strong>interface graphique</strong> (décrite en <em>HTML</em> et <em>CSS</em>), du <strong>code client</strong> de <strong>gestion d’éléments interactifs</strong> (<em>JavaScript</em>) s’exécutant dans le <strong>navigateur</strong> et des <strong>traitements de données</strong> complexes effectués sur le <strong>serveur Web</strong> (avec des langages comme <em>PHP</em>) hébergeant le site.</p>
+<h1 id="modele-clientserveur-et-protocole-http">Modèle client/serveur et protocole HTTP<a class="headerlink" href="#modele-clientserveur-et-protocole-http" title="Permanent link">¶</a></h1>
+<p>Le <strong>Web</strong> était initialement une <strong>collection de documents hypertextes</strong> accessibles sur Internet. Toutefois, les sites Web ont évolué pour devenir de véritables <strong>applications</strong>, avec une <strong>interface graphique</strong> (décrite en <em>HTML</em> et <em>CSS</em>), du <strong>code client</strong> de <strong>gestion d’éléments interactifs</strong> (<em>JavaScript</em>) s’exécutant dans le <strong>navigateur</strong> et des <strong>traitements de données</strong> complexes effectués sur le <strong>serveur web</strong> (avec des langages comme <em>PHP</em>) hébergeant le site.</p>
 <p>Dans cette partie, nous verrons les éléments communs à la <strong>conception d’une application Web interactive</strong> : le <strong>modèle client/serveur</strong>, le <strong>protocole HTTP</strong> ainsi que la notion de <strong>formulaire Web</strong>.</p>
-<h2 id="le-modele-clientserveur_1">Le modèle client/serveur<a class="headerlink" href="#le-modele-clientserveur_1" title="Permanent link">¶</a></h2>
+<h2 id="le-modele-clientserveur">Le modèle client/serveur<a class="headerlink" href="#le-modele-clientserveur" title="Permanent link">¶</a></h2>
 <div class="admonition question">
 <p>Lorsqu'un <strong>ordinateur A</strong> veut <strong>échanger des données</strong> avec un <strong>ordinateur B</strong>, l'<strong>ordinateur A</strong> va <strong>demander des fichiers</strong> (<em>texte</em>, <em>photos</em>, <em>vidéos</em>…) à l'<strong>ordinateur B</strong>.</p>
 <p>Dans ce cas l'<strong>ordinateur A</strong> est le <mark><strong>client</strong></mark> (il demande des ressources), l'<strong>ordinateur B</strong> (qui fournit les ressources) est <mark><strong>le serveur</strong></mark>.</p>
@@ -3966,8 +4050,100 @@ Il est en effet peu envisageable d'utiliser un seul serveur dès lors qu'un site
 Par exemple, les <strong>serveurs</strong> qui envoient aux <strong>clients</strong> des <strong>pages HTML</strong> sont appelés <em>serveurs web</em>.</p>
 <p>Il existe des serveurs pour <strong>gérer des fichiers</strong> (<em>serveurs de fichier</em>), des <strong>serveurs</strong> pour permettre l'<strong>impression de document</strong> (<em>serveurs d'impression</em>), pour <strong>gérer les emails</strong> (<em>serveurs de messagerie</em>)...</p>
 <p>Les <strong>serveurs</strong> peuvent <strong>générer du code HTML</strong>. Ainsi le <strong>code HTML</strong> envoyé aux clients dépendra des <strong>actions du client</strong> lui-même. On parle de <mark><strong>page web dynamique</strong></mark>.<br>
-Pour gérer le <strong>traitement des requêtes</strong> et l'<strong>interaction avec les bases de données</strong>, il existe des <strong>langages de programmation</strong> mais qui s'exécute "coté serveur". Le plus utilisé se nomme <strong>PHP</strong>, mais on peut aussi utiliser du <strong>JavaScript</strong> (avec <em>node.js</em>), du <strong>python</strong>, du <strong>ruby</strong>...</p>
-</div></div>
+Pour gérer le <strong>traitement des requêtes</strong> et l'<strong>interaction avec les bases de données</strong>, il existe des <strong>langages de programmation</strong> mais qui s'exécute <mark>"coté serveur"</mark>. Le plus utilisé se nomme <strong>PHP</strong>, mais on peut aussi utiliser du <strong>JavaScript</strong> (avec <em>node.js</em>), du <strong>python</strong>, du <strong>ruby</strong>...</p>
+</div>
+<h2 id="le-protocole-http">Le protocole HTTP<a class="headerlink" href="#le-protocole-http" title="Permanent link">¶</a></h2>
+<h3 id="principe-et-fonctionnement">Principe et fonctionnement<a class="headerlink" href="#principe-et-fonctionnement" title="Permanent link">¶</a></h3>
+<div class="admonition abstract">
+<p>Le <mark>protocole <strong>HTTP</strong></mark> (acronyme de <em>Hypertext Transfer Protocol</em>) est le <strong>protocole réseau</strong> utilisé par les <strong>navigateurs Web</strong> (Firefox, Internet Explorer...) et les <strong>serveurs Web</strong> (Apache, Nginx, Microsoft IIS...) pour communiquer entre eux.</p>
+<p>C'est ce <strong>protocole</strong> qui est utilisé lorsque vous <strong>accédez à une page web</strong>. Il permet ainsi d'<strong>obtenir</strong> les <em>fichiers HTML</em>, <em>CSS</em>, <em>JavaScript</em>, les <em>images</em>, les <em>vidéos</em>, bref, toutes les ressources dont votre navigateur a besoin pour <strong>afficher votre page web</strong>.</p>
+<p>Le <strong>protocole HTTP</strong> permet également de <strong>transmettre des données au serveur</strong>, par l'intermédiaire de <strong>formulaires</strong> Internet.</p>
+<p>Techniquement, il s'agit d'un protocole texte (donc lisible en clair) s'appuyant les protocoles plus bas-niveau <strong>TCP</strong> et <strong>IP</strong> (voir le modèle <em>Internet</em> ci-dessous).</p>
+<p>Les <strong>robots</strong> des <strong>moteurs de recherche</strong> (comme <em>Googlebot</em>) qui <strong>explorent</strong> les sites internet utilisent également le protocole <strong>HTTP</strong> pour communiquer avec les <strong>serveurs web</strong>.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Fonctionnement du protocole <em>HTTP</em></p>
+<p>Prenons comme exemple l'<em>URL</em> suivante : <code>http://nsi.erwandemerville.fr/premiere/ihm</code>.</p>
+<p>Lorsque l'on essaie d'accéder à cette <em>URL</em> avec un <strong>navigateur</strong>, voici ce qu'il se passe :</p>
+<ul>
+<li>le <code>http</code> au début de l'<em>URL</em> indique que l'on utilise le <strong>procole HTTP</strong>,</li>
+<li>le <strong>navigateur</strong> extrait le <strong>nom de domaine</strong> 'nsi.erwandemerville.fr' (ici, l'adresse est plus précisément composée d'un <strong>sous-domaine</strong> <code>nsi</code> et d'un <strong>domaine</strong> <code>erwandemerville.fr</code>) et à partir de cette information, il trouve le <strong>serveur web distant</strong> en faisant appel à un <strong>serveur DNS</strong> qui fait le lien entre le <strong>nom de domaine</strong> et l'<strong>adresse IP</strong>,</li>
+<li>à partir de là, une <strong>connexion</strong> (basée sur les protocoles <em>TCP/IP</em>) est <strong>établie</strong> entre le <strong>navigateur</strong> et le <strong>serveur web distant</strong>,</li>
+<li>une <strong>requête HTTP</strong> demandant la <strong>ressource</strong> '/premiere/ihm' est alors <strong>transmise par le navigateur</strong>,</li>
+<li>le <strong>serveur web</strong> trouve la <strong>ressource</strong> correspondante et en <strong>renvoie le contenu</strong> dans une <strong>réponse HTTP</strong>,</li>
+<li>le <strong>navigateur</strong> est désormais capable d'<strong>afficher le fichier HTML</strong> à l'internaute.</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Une en-tête de requête envoyée par le navigateur</p>
+<p>Une <strong>en-tête</strong> de <strong>requête</strong> envoyée par le <strong>navigateur</strong> à un <strong>serveur web</strong> ressemble à ceci :</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>GET<span class="w"> </span>/fichier.html<span class="w"> </span>HTTP/1.1<span class="o">[</span>CRLF<span class="o">]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Host:<span class="w"> </span>www.monsite.com<span class="o">[</span>CRLF<span class="o">]</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>User-Agent:<span class="w"> </span>Mozilla/5.0<span class="w"> </span>Safari/531.9<span class="o">[</span>CRLF<span class="o">][</span>CRLF<span class="o">]</span>
+</span></code></pre></div>
+<p>La <strong>première ligne</strong> contient toujours :
+- le <strong>type de requête</strong> (ici <code>GET</code>), la partie <strong>chemin de l'URL</strong> de la <strong>ressource cible</strong> et enfin la <strong>version du protocole</strong> (1.0 ou 1.1 généralement, ici <code>1.1</code>).
+- Les <strong>2 types de requête</strong> les plus courantes sont :
+  - <mark><strong>GET</strong></mark> : permet d'<mark>obtenir</mark> une <strong>ressource</strong>. Il s'agit de la requête la plus utilisée sur Internet, c'est celle qui est utilisée lorsque vous accédez à un site web dans votre navigateur.
+  - <mark><strong>POST</strong></mark> : permet d'<strong>envoyer</strong> le <strong>contenu d'un formulaire</strong> à un <strong>serveur</strong>, afin que ces données soient <strong>traitées</strong> (par exemple, un formulaire de connexion à un site web utilise la méthode <code>POST</code>).</p>
+<p>Les <code>[CRLF]</code> symbolisent une <strong>séquence ASCII</strong>, appelée <code>[Carriage Return - Line feed]</code>. C'est en fait le <strong>délimiteur</strong> utilisé par le <strong>protocole HTTP</strong> pour séparer les <strong>lignes</strong> de l'<strong>en-tête</strong>. En <strong>ASCII</strong>, c'est le caractère <em>13</em> suivi du caractère <em>10</em>.</p>
+<p>Les <strong>lignes suivantes</strong> sont des <strong>champs HTTP</strong>, toujours formatées de cette manière <code>"NomChamps: Valeur"</code>.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Une en-tête de réponse envoyée par le serveur</p>
+<p>Une <strong>en-tête</strong> de <strong>réponse</strong> à une requête du navigateur ressemble à ceci :</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>HTTP/1.1<span class="w"> </span><span class="m">200</span><span class="w"> </span>OK<span class="o">[</span>CRLF<span class="o">]</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Date:<span class="w"> </span>Thu,<span class="w"> </span><span class="m">24</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">2009</span><span class="w"> </span><span class="m">19</span>:37:34<span class="w"> </span>GMT<span class="o">[</span>CRLF<span class="o">]</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Server:<span class="w"> </span>Apache/2.2.3<span class="o">[</span>CRLF<span class="o">]</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>Content-Length:<span class="w"> </span><span class="m">7234</span><span class="o">[</span>CRLF<span class="o">]</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Content-Type:<span class="w"> </span>text/html<span class="p">;</span><span class="w"> </span><span class="nv">charset</span><span class="o">=</span>UTF-8<span class="o">[</span>CRLF<span class="o">][</span>CRLF<span class="o">]</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="o">[</span>ici<span class="w"> </span>se<span class="w"> </span>trouve<span class="w"> </span>le<span class="w"> </span>corps<span class="w"> </span>de<span class="w"> </span>la<span class="w"> </span>réponse<span class="w"> </span>:<span class="w"> </span>la<span class="w"> </span>page<span class="w"> </span>HTML<span class="o">]</span>
+</span></code></pre></div>
+<p>La <strong>première ligne</strong> de la <strong>réponse</strong> contient toujours un <strong>code HTTP</strong> indiquant si la requête a <strong>réussi ou pas</strong> (ici, le code est <code>200</code>, indiquant une <strong>réussite</strong>).</p>
+<p>Ensuite, comme pour la <strong>réponse</strong>, on trouve les <strong>lignes</strong> des <strong>champs HTTP</strong>.
+- La ligne <strong>Server</strong> indique le <strong>type de serveur</strong> qui a fourni la réponse (le plus</p>
+</div>
+<p>souvent Apache..(installé sur près de la moitié des serveurs mondiaux)
+Ensuite se trouve le corps de la réponse, qui dans le cas d'un GET d'un fichier
+HTML contient par exemple le code HTML de la page visée.</p>
+<h3 id="la-commande-curl">La commande <code>curl</code><a class="headerlink" href="#la-commande-curl" title="Permanent link">¶</a></h3>
+<p>La commande <code>curl</code> permet d'effectuer une <strong>requête</strong> vers un <strong>serveur web</strong>.</p>
+<p>Par exemple : <code>curl https://nsi.erwandemerville.fr --head</code>.<br>
+Le <code>--head</code> permet de ne récupérer <strong>que l'en-tête de la réponse</strong>, sans le code HTML.</p>
+<details class="question">
+<summary>Les informations obtenues</summary>
+<ul>
+<li><strong>HTTP/2 200</strong>: C'est le code de statut HTTP qui indique que la requête a réussi (200 OK). HTTP/2 est la version du protocole HTTP utilisée pour cette réponse.</li>
+<li><strong>server</strong>: GitHub.com: Cela indique le serveur qui a répondu à la requête. Dans ce cas, la réponse provient du serveur GitHub.com.</li>
+<li><strong>content-type</strong>: text/html; charset=utf-8: Cela spécifie le type de contenu de la réponse, dans ce cas, c'est du texte au format HTML avec un encodage de caractères UTF-8.</li>
+<li><strong>last-modified</strong>: Fri, 05 Apr 2024 06:18:40 GMT: C'est la date et l'heure de la dernière modification du contenu de la ressource sur le serveur. Cela peut être utile pour les caches et les clients qui veulent savoir si la version qu'ils ont est à jour.</li>
+<li><strong>access-control-allow-origin</strong> : Cet en-tête indique quelles origines sont autorisées à accéder à la ressource en réponse à une requête d'origine croisée. Ici, l'astérisque () indique que toutes les origines sont autorisées.</li>
+<li><strong>etag</strong>: "660f97c0-12b67": C'est une chaîne de caractères qui représente la version spécifique de la ressource. Il est utilisé pour la mise en cache et la vérification de la version.</li>
+<li><strong>expires</strong>: Sun, 07 Apr 2024 23:43:03 GMT: C'est la date et l'heure à laquelle la réponse ne sera plus considérée comme valide sans effectuer une nouvelle requête au serveur. Cela aide les navigateurs à décider s'ils doivent utiliser une copie en cache ou demander une nouvelle version.</li>
+<li><strong>cache-control:</strong> max-age=600: Cela indique les directives de mise en cache pour les clients et les caches intermédiaires. Dans ce cas, il spécifie que la réponse peut être mise en cache pendant 600 secondes (10 minutes).</li>
+<li><strong>x-proxy-cache</strong>: MISS: Cet en-tête indique si la réponse a été récupérée à partir d'un cache proxy. Dans ce cas, il indique qu'elle n'a pas été trouvée dans le cache (MISS).</li>
+<li><strong>x-github-request-id</strong>: C'est un identifiant unique généré par GitHub pour cette requête spécifique. Il peut être utilisé pour le débogage et le suivi des requêtes.</li>
+<li><strong>accept-ranges</strong>: bytes: Cela indique au client que le serveur prend en charge les demandes de plage de ressources. Cela signifie que le client peut demander des parties spécifiques de la ressource plutôt que de la télécharger en entier.</li>
+<li><strong>age</strong>: 0: C'est l'âge de la réponse en secondes, indiquant depuis combien de temps la réponse est en cache sur un serveur intermédiaire.</li>
+<li><strong>date</strong>: Sun, 07 Apr 2024 23:33:03 GMT: C'est la date et l'heure actuelle selon le serveur.</li>
+<li><strong>via</strong>: 1.1 varnish: Cela indique que la réponse est passée par un serveur de mise en cache (Varnish) sur le chemin de retour au client.</li>
+<li><strong>x-served-by</strong>: cache-par-lfpg1960049-PAR: Cet en-tête indique le serveur qui a servi la réponse, dans ce cas, un serveur de cache avec une certaine identification.</li>
+<li><strong>x-cache</strong>: MISS: Cet en-tête fournit des informations sur l'état de mise en cache de la réponse. Dans ce cas, il indique que la réponse n'était pas dans le cache (MISS).</li>
+<li><strong>x-cache-hits</strong>: 0: Cet en-tête indique le nombre de fois que cette réponse a été trouvée dans le cache. Dans ce cas, elle n'a pas été trouvée dans le cache précédemment.</li>
+<li><strong>x-timer</strong>: S1712532784.540291,VS0,VE113: Cet en-tête fournit des informations sur le temps qu'il a fallu pour traiter la requête du serveur. Il comprend différents marqueurs de temps liés au traitement de la requête.</li>
+<li><strong>vary</strong>: Accept-Encoding: Cela indique que la réponse peut varier en fonction de l'en-tête Accept-Encoding envoyé par le client, ce qui signifie que le serveur peut répondre avec différentes versions en fonction des capacités de compression du client.</li>
+<li><strong>x-fastly-request-id</strong>: c83fb09b8200e484b8cabe6906aee527a217a6cf: C'est un identifiant unique généré par le service de mise en cache Fastly pour cette requête spécifique. Il peut être utilisé pour le suivi et le débogage.</li>
+<li><strong>content-length</strong>: 76647: C'est la longueur du contenu de la réponse en octets.</li>
+</ul>
+<p>Ces en-têtes fournissent diverses informations sur la réponse HTTP qui peuvent être utilisées par le client pour interpréter et traiter la réponse de manière appropriée.</p>
+</details>
+<h2 id="exercices-activites">Exercices - Activités<a class="headerlink" href="#exercices-activites" title="Permanent link">¶</a></h2>
+<p></p><center>
+<a href="../src/serveurpythonflasktp.pdf" style="font-size:1.5em" target="_blank">Quelques exemples avec Flask</a>
+</center>
+<p></p><center>
+<a href="https://pgdg.frama.io/1nsi/ihm/TP_flask/" style="font-size:1.5em" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.88.88 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.756.756 0 0 0-.49-.18M15 10V8h5v2h-5m-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41M10 0h2v5h-2V0M3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41m0-11.32 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83M7 10H2V8h5v2"></path></svg></span> Un TP avec Flask</a>
+</center></div>
 
 
 
