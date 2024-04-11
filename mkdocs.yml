@@ -88,6 +88,8 @@ nav:
       - Le JavaScript: premiere/ihm/js.md
       - Modèle client/serveur et HTTP: premiere/ihm/clientserveur.md
       - Notebooks et exercices: premiere/ihm/exercices.md
+    - Recherche dichotomique:
+      - premiere/dicho/index.md
   - Terminale:
     - terminale/index.md
     - Modularité:

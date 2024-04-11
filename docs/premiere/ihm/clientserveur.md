@@ -179,5 +179,5 @@ Le `--head` permet de ne récupérer **que l'en-tête de la réponse**, sans le 
 </center>
 
 <center>
-[:material-cursor-default-click: Un TP avec Flask](https://pgdg.frama.io/1nsi/ihm/TP_flask/){ style="font-size:1.5em" target="_blank" }
+[:material-cursor-default-click: Un TP avec Flask](https://capytale2.ac-paris.fr/web/c/cd79-3407657){ style="font-size:1.5em" target="_blank" }
 </center>
