@@ -22,6 +22,36 @@
 
     - [Notebook - Modifier les éléments du DOM avec JavaScript](src/06c_DOM_javascript.ipynb){ target="_blank" }
 
+!!! tip "Correction Exercice final - TP Javascript"
+    Voici le fichier `script.js` final permettant :
+    - de remplacer la **photo** par une autre au **survol**,
+    - de **changer la couleur** et le **texte du titre** lors d'un clic sur celui-ci.
+
+    Ici, on a utilisé deux images nommées `stephane.jpg` (l'image d'origine) et une autre image nommée `philippe.jpg`.
+
+    ```javascript
+    function changerImage() {
+    document.getElementById("photo").src = "philippe.jpg";
+    }
+
+    function resetImage() {
+        document.getElementById("photo").src = "stephane.jpg";
+    }
+
+    function changerTexteEtCouleur() {
+        titre.style.color = "blue";
+        titre.innerHTML = "Philippe Etchebest";
+    }
+
+    // Changer l'image lors du survol
+    document.getElementById("photo").addEventListener("mouseover", changerImage);
+    document.getElementById("photo").addEventListener("mouseout", resetImage);
+
+    // Changer texte et sa couleur lors du click
+    let titre = document.getElementsByTagName("p")[0];
+    titre.onclick = changerTexteEtCouleur;
+    ```
+
 ## Autres exercices
 
 Voici d'autres **exercices** pour vous permettre d'aller plus loin dans votre apprentissage du **JavaScript** :
