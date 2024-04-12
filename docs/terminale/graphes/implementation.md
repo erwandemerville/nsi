@@ -39,7 +39,7 @@ Avant d'implémenter notre **structure de graphe** en Python, définissons tout 
     **Téléchargez** le **fichier Python** ci-dessous :
 
     <center>
-    [:material-cursor-default-click: Télécharger `graphe.py`](src/imple_graphe.py){ style="font-size:1.2em" target="_blank" }
+    [:material-cursor-default-click: Télécharger `graphe.py`](src/graphe.py){ style="font-size:1.2em" target="_blank" }
     </center>
 
     Complétez chaque **méthode** de la classe `Graphe` (à l'exception de la méthode `affiche` qui vous est donnée.)
