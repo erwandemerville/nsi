@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/dicho/cours/">
       
       
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../../../terminale/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -18,7 +22,7 @@
     
     
       
-        <title>Cours - La recherche dichotomique - Numérique et sciences informatiques</title>
+        <title>Cours - Numérique et sciences informatiques</title>
       
     
     
@@ -128,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Cours - La recherche dichotomique
+              Cours
             
           </span>
         </div>
@@ -248,10 +252,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../" class="md-tabs__link">
           
   
@@ -431,6 +437,8 @@
       
   
   
+    
+  
   
   
     
@@ -463,12 +471,12 @@
       
       
     
-    <li class="md-nav__item md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
@@ -490,7 +498,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Première
@@ -1505,6 +1513,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1514,16 +1524,18 @@
           
         
       
+        
+      
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" checked>
         
           
           
@@ -1538,15 +1550,92 @@
 
             </a>
             
+              
+              <label class="md-nav__link " for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_9">
             <span class="md-nav__icon md-icon"></span>
             Recherche dichotomique
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lalgorithme" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'algorithme
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
               
             
           </ul>
@@ -3922,6 +4011,23 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lalgorithme" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'algorithme
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -3936,7 +4042,46 @@
                   
 
 
-<h1 id="cours-la-recherche-dichotomique">Cours - La recherche dichotomique<a class="headerlink" href="#cours-la-recherche-dichotomique" title="Permanent link">¶</a></h1>
+<div><h1 id="cours-la-recherche-dichotomique">Cours - La recherche dichotomique<a class="headerlink" href="#cours-la-recherche-dichotomique" title="Permanent link">¶</a></h1>
+<p>La <strong>méthode de recherche dichotomique</strong> est <strong>une approche puissante et efficace</strong> utilisée en informatique et dans d'autres domaines pour <strong>trouver</strong> rapidement des <strong>éléments</strong> dans des <strong>ensembles</strong> de données <strong>ordonnées</strong>.</p>
+<p>Aussi connue sous le nom de <em>recherche binaire</em>, cette méthode repose sur un <strong>principe simple</strong> mais efficace, consistant à <strong>diviser à chaque étape l'intervalle de recherche par deux</strong>, réduisant ainsi considérablement le <strong>nombre d'itérations nécessaires</strong> pour trouver la <strong>valeur cible</strong>.</p>
+<p>Dans ce cours, nous explorerons en détail les principes fondamentaux de la <mark><strong>recherche dichotomique</strong></mark>, ses avantages et ses limitations, ainsi que des <strong>exemples</strong> concrets pour illustrer son fonctionnement.</p>
+<div class="admonition question">
+<p>Vous avez probablement déjà joué au <strong>jeu</strong> consistant à "trouver un nombre entre <code>1</code> et <code>100</code>", et proposé la réponse <code>50</code>.<br>
+Si la réponse est "perdu, c'est plus", vous proposez alors <code>75</code> et si l'on vous répond "perdu c'est moins" vous proposez finalement <code>62</code>... C'est un exemple de recherche dichotomique !</p>
+<p>Faire une recherche dichotomique, c'est <strong>chercher</strong> une <strong>valeur</strong> dans un <strong>tableau</strong> en prenant le <strong>milieu</strong> de l'<strong>ensemble des solutions possibles</strong> (qui sont donc <strong>rangées</strong>) pour éliminer <strong>la moitié des possibilités</strong> à chaque <strong>étape</strong>.</p>
+</div>
+<h2 id="lalgorithme">L'algorithme<a class="headerlink" href="#lalgorithme" title="Permanent link">¶</a></h2>
+<p>L'algorithme en <strong>pseudo-code</strong> peut s'écrire de la manière suivante :</p>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithme de recherche dichotomique</p>
+<p></p><div style="font-size:1.1em">
+<strong>ALGORITHME</strong> : recherche_dicho<br>
+<strong>ENTRÉE</strong> :<br>
+  <code>tableau</code> : un <strong>tableau</strong> d'éléments<br>
+  <code>element</code> : un <strong>élément à chercher</strong> dans le tableau<br>
+<strong>SORTIE</strong> : VRAI si l'élément est trouvé, FAUX sinon
+<p><strong>DÉBUT</strong><br>
+  debut ← 0<br>
+  fin ← longueur(tableau) - 1<br>
+  trouve ← FAUX<br>
+  <strong>TANT QUE</strong> PAS trouve <strong>ET QUE</strong> debut ⩽ fin :<br>
+    milieu ← partie_entière((debut + fin) / 2)<br>
+    <strong>SI</strong> tableau[milieu] <strong>EST ÉGAL À</strong> élément :<br>
+      trouve ← VRAI<br>
+    <strong>SINON</strong> :<br>
+      <strong>SI</strong> element <strong>EST SUPÉRIEUR À</strong> tableau[milieu] :<br>
+        debut ← milieu + 1<br>
+      <strong>SINON</strong> :<br>
+        fin ← milieu - 1<br>
+      <strong>FIN SI</strong><br>
+    <strong>FIN SI</strong><br>
+  <strong>FIN TANT QUE</strong><br>
+  <strong>RENVOYER</strong> trouve<br>
+<strong>FIN ALGORITHME</strong>
+</p></div>
+</div>
+<p>Vous pouvez <a href="https://www.infoforall.fr/art/algo/animation-de-la-recherche-dichotomique/#partie_1">cliquer ici pour voir une petite animation</a> du fonctionnement de cet algorithme.</p></div>
 
 
 
