@@ -35,7 +35,7 @@ Avant d'implémenter notre **structure de graphe** en Python, définissons tout 
 
 ### Implémentation avec un dictionnaire
 
-!!! note "À faire"
+!!! note "À faire 1"
     **Téléchargez** le **fichier Python** ci-dessous :
 
     <center>
@@ -61,3 +61,48 @@ Avant d'implémenter notre **structure de graphe** en Python, définissons tout 
     Si votre programme est correct, vous devriez obtenir la visualisation suivante en exécutant votre programme :
 
     ![Test Graphe](images/graphe_test.png){ width="450" }
+
+### Parcours de graphes
+
+!!! note "À faire 2"
+    Dans votre fichier `graphe.py`, ajoutez une fonction `parcours_largeur(self, s: str) -> list` qui prend un **sommet** en entrée et renvoie la **liste des sommets** parcourus avec un **parcours en largeur**.  
+    Vous écrirez cette fonction de manière **itérative**.
+
+!!! note "À faire 3"
+    Ajoutez une fonction `parcours_profondeur(self, s: str) -> list` qui prend un **sommet** en entrée et renvoie la **liste des sommets** parcourus avec un **parcours en profondeur**.  
+    Vous écrirez cette fonction de manière **itérative**.
+
+!!! note "À faire 4"
+    Écrivez maintenant une fonction `parcours_profondeur_rec(self, s: str) -> list` qui effectue le même **parcours en profondeur**, mais de manière **récursive**.
+
+### Connexité, cycles et arbre
+
+On souhaite ajouter une **méthode** à notre classe `Graphe` permettant de déterminer si un **graphe** est un **arbre**.
+
+On rappelle qu'il faut pour cela vérifier :
+
+- que le graphe soit **connexe**,
+- que le graphe ne contienne **aucun cycle**.
+
+!!! note "À faire 5"
+    Écrivez une fonction `est_connexe(self) -> bool` qui renvoie **True** si le graphe est **connexe**, et **False** sinon.
+
+Pour la **détection des cycles**, on utilisera l'algorithme suivant, basé sur le **parcours en profondeur** :
+
+![Détection cycles](images/detection_cycles.png)
+
+On adaptera cet algorithme pour qu'il puisse fonctionner avec des **sommets** autres que des *entiers* de `0` à `n`, en utilisant non pas une liste de prédecesseurs mais un **dictionnaire**.
+
+!!! note "À faire 6"
+    Recopiez et complétez la fonction `detection_cycle` suivante :
+
+    ```python
+    def detection_cycle(self, s: str) -> bool:
+        ''' Renvoie true si un cycle atteignable par s est détecté, False sinon. '''
+
+        pile = [s]  # création d'une pile contenant uniquement le sommet s
+        pred = {s: s}  # création du dictionnaire des prédecesseurs
+        # À compléter
+        pass
+    ```
+    

@@ -91,6 +91,7 @@ nav:
       - Notebooks et exercices: premiere/ihm/exercices.md
     - Recherche dichotomique:
       - premiere/dicho/index.md
+      - Cours: premiere/dicho/cours.md
   - Terminale:
     - terminale/index.md
     - Modularité:
