@@ -1629,6 +1629,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#simulation-de-la-recherche-dichotomique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation de la recherche dichotomique
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implémentation en Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implémentation en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recherche-sequentielle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recherche séquentielle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recherche-dichotomique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recherche dichotomique
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cout-de-la-recherche-dichotomique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coût de la recherche dichotomique
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4026,6 +4077,57 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#simulation-de-la-recherche-dichotomique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation de la recherche dichotomique
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implémentation en Python
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Implémentation en Python">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#recherche-sequentielle" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recherche séquentielle
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#recherche-dichotomique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Recherche dichotomique
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cout-de-la-recherche-dichotomique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coût de la recherche dichotomique
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4081,7 +4183,53 @@ Si la réponse est "perdu, c'est plus", vous proposez alors <code>75</code> et s
 <strong>FIN ALGORITHME</strong>
 </p></div>
 </div>
-<p>Vous pouvez <a href="https://www.infoforall.fr/art/algo/animation-de-la-recherche-dichotomique/#partie_1">cliquer ici pour voir une petite animation</a> du fonctionnement de cet algorithme.</p></div>
+<h2 id="simulation-de-la-recherche-dichotomique">Simulation de la recherche dichotomique<a class="headerlink" href="#simulation-de-la-recherche-dichotomique" title="Permanent link">¶</a></h2>
+<p>Voici un <strong>simulateur</strong> vous permettant de tester l'<strong>algorithme</strong> de <strong>recherche dichotomique</strong>.<br>
+(<em>Source</em> : <a href="https://www.infoforall.fr/art/algo/animation-de-la-recherche-dichotomique/#partie_1">Infoforall</a>)</p>
+<h2 id="implementation-en-python">Implémentation en Python<a class="headerlink" href="#implementation-en-python" title="Permanent link">¶</a></h2>
+<h3 id="recherche-sequentielle">Recherche séquentielle<a class="headerlink" href="#recherche-sequentielle" title="Permanent link">¶</a></h3>
+<p>On a tout d'abord implémenté l'algorithme de <strong>recherche séquentielle</strong> que nous avons déjà vu auparavant. Cela nous permettra de comparer cet ancien algorithme avec le nouvel algorithme de <strong>recherche dichotomique</strong>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">recherche_sequentielle</span><span class="p">(</span><span class="n">tableau</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="sd">''' Renvoie True si element est trouvé, False sinon.</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">    :param tableau: (list[int]) une liste d'éléments</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">    :param element: (int) l'élément à rechercher</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">    :return (bool): True ou False '''</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">tableau</span><span class="p">:</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>        <span class="k">if</span> <span class="n">element</span> <span class="o">==</span> <span class="n">el</span><span class="p">:</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>            <span class="k">return</span> <span class="kc">True</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="k">return</span> <span class="kc">False</span>
+</span></code></pre></div>
+<p>Voici une <strong>autre version</strong> de cette fonction utilisant un <strong>parcours par indice</strong> plutôt que par élément :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">recherche_sequentielle_v2</span><span class="p">(</span><span class="n">tableau</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">tableau</span><span class="p">)):</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>        <span class="k">if</span> <span class="n">element</span> <span class="o">==</span> <span class="n">tableau</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            <span class="k">return</span> <span class="kc">True</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">return</span> <span class="kc">False</span>
+</span></code></pre></div>
+<h3 id="recherche-dichotomique">Recherche dichotomique<a class="headerlink" href="#recherche-dichotomique" title="Permanent link">¶</a></h3>
+<p>La <strong>recherche dichotomique</strong> peut s'implémenter en <em>Python</em> de la manière suivante :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">recherche_dicho</span><span class="p">(</span><span class="n">tableau</span><span class="p">,</span> <span class="n">element</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">''' Effectue une recherche dichotomique dans un tableau.</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">    Renvoie True si element est trouvé, False sinon. '''</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="n">debut</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="n">fin</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tableau</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">trouve</span> <span class="o">=</span> <span class="kc">False</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">while</span> <span class="ow">not</span> <span class="n">trouve</span> <span class="ow">and</span> <span class="n">debut</span> <span class="o">&lt;=</span> <span class="n">fin</span><span class="p">:</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="n">milieu</span> <span class="o">=</span> <span class="p">(</span><span class="n">debut</span> <span class="o">+</span> <span class="n">fin</span><span class="p">)</span> <span class="o">//</span> <span class="mi">2</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="k">if</span> <span class="n">tableau</span><span class="p">[</span><span class="n">milieu</span><span class="p">]</span> <span class="o">==</span> <span class="n">element</span><span class="p">:</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            <span class="n">trouve</span> <span class="o">=</span> <span class="kc">True</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>            <span class="k">if</span> <span class="n">element</span> <span class="o">&gt;</span> <span class="n">tableau</span><span class="p">[</span><span class="n">milieu</span><span class="p">]:</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>                <span class="n">debut</span> <span class="o">=</span> <span class="n">milieu</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>            <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>                <span class="n">fin</span> <span class="o">=</span> <span class="n">milieu</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>    <span class="k">return</span> <span class="n">trouve</span>
+</span></code></pre></div>
+<p>On rappelle que l'opérateur <code>//</code> permet d'obtenir le <strong>quotient d'une division euclidienne</strong> entre deux nombres.<br>
+Ainsi, l'instruction <code>milieu = (debut + fin) // 2</code> de la <strong>ligne 9</strong> permet d'obtenir un <strong>nombre entier</strong>.</p>
+<h2 id="cout-de-la-recherche-dichotomique">Coût de la recherche dichotomique<a class="headerlink" href="#cout-de-la-recherche-dichotomique" title="Permanent link">¶</a></h2></div>
 
 
 

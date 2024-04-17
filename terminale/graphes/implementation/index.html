@@ -3947,6 +3947,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#graphe-oriente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphe orienté
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphe orienté">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-abstrait_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type abstrait
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-avec-une-matrice-dadjacence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implémentation avec une matrice d'adjacence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4110,6 +4143,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#graphe-oriente" class="md-nav__link">
+    <span class="md-ellipsis">
+      Graphe orienté
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Graphe orienté">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#type-abstrait_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Type abstrait
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#implementation-avec-une-matrice-dadjacence" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implémentation avec une matrice d'adjacence
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4177,6 +4243,97 @@
 <p>Si votre programme est correct, vous devriez obtenir la visualisation suivante en exécutant votre programme :</p>
 <p><img alt="Test Graphe" src="../images/graphe_test.png" width="450"></p>
 </div>
+<details class="tip">
+<summary>Solution - À faire 1</summary>
+<p>Voici l'implémentation des <strong>opérations</strong> définies dans le <em>type abstrait Graphe</em> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">import</span> <span class="nn">networkx</span> <span class="k">as</span> <span class="nn">nx</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="k">class</span> <span class="nc">Graphe</span><span class="p">:</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="c1"># Opérations de base</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">        </span><span class="sd">''' Constructeur de la classe Graphe. '''</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="o">=</span><span class="p">{}</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="k">def</span> <span class="nf">ajouter_sommet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w">        </span><span class="sd">''' Ajoute un sommet dans le graphe.</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="sd">        On vérifiera si le sommet n'existe pas déjà. '''</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>        <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">:</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">s</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a>    <span class="k">def</span> <span class="nf">ajouter_arete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s1</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">s2</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a><span class="w">        </span><span class="sd">''' Ajoute une arête entre les sommets s1 et s2 du graphe.</span>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a><span class="sd">        Si les sommets n'existent pas, on les crée. '''</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ajouter_sommet</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">ajouter_sommet</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">s1</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">s2</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a>    <span class="k">def</span> <span class="nf">supprimer_sommet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="w">        </span><span class="sd">''' Supprime le sommet s du graphe, ainsi que les arêtes associées. '''</span>
+</span><span id="__span-1-29"><a id="__codelineno-1-29" name="__codelineno-1-29" href="#__codelineno-1-29"></a>
+</span><span id="__span-1-30"><a id="__codelineno-1-30" name="__codelineno-1-30" href="#__codelineno-1-30"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_sommet</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+</span><span id="__span-1-31"><a id="__codelineno-1-31" name="__codelineno-1-31" href="#__codelineno-1-31"></a>            <span class="k">for</span> <span class="n">voisin</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">s</span><span class="p">]:</span>
+</span><span id="__span-1-32"><a id="__codelineno-1-32" name="__codelineno-1-32" href="#__codelineno-1-32"></a>                <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">voisin</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+</span><span id="__span-1-33"><a id="__codelineno-1-33" name="__codelineno-1-33" href="#__codelineno-1-33"></a>            <span class="k">del</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-1-34"><a id="__codelineno-1-34" name="__codelineno-1-34" href="#__codelineno-1-34"></a>
+</span><span id="__span-1-35"><a id="__codelineno-1-35" name="__codelineno-1-35" href="#__codelineno-1-35"></a>    <span class="k">def</span> <span class="nf">supprimer_arete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s1</span><span class="p">:</span><span class="nb">str</span><span class="p">,</span> <span class="n">s2</span><span class="p">:</span><span class="nb">str</span><span class="p">):</span>
+</span><span id="__span-1-36"><a id="__codelineno-1-36" name="__codelineno-1-36" href="#__codelineno-1-36"></a><span class="w">        </span><span class="sd">''' Supprime l'arête du graphe entre les sommets s1 et s2. '''</span>
+</span><span id="__span-1-37"><a id="__codelineno-1-37" name="__codelineno-1-37" href="#__codelineno-1-37"></a>
+</span><span id="__span-1-38"><a id="__codelineno-1-38" name="__codelineno-1-38" href="#__codelineno-1-38"></a>        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">est_arete</span><span class="p">(</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">):</span>
+</span><span id="__span-1-39"><a id="__codelineno-1-39" name="__codelineno-1-39" href="#__codelineno-1-39"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">s1</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+</span><span id="__span-1-40"><a id="__codelineno-1-40" name="__codelineno-1-40" href="#__codelineno-1-40"></a>            <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">s2</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">s1</span><span class="p">)</span>
+</span><span id="__span-1-41"><a id="__codelineno-1-41" name="__codelineno-1-41" href="#__codelineno-1-41"></a>
+</span><span id="__span-1-42"><a id="__codelineno-1-42" name="__codelineno-1-42" href="#__codelineno-1-42"></a>    <span class="c1"># Autres opérations</span>
+</span><span id="__span-1-43"><a id="__codelineno-1-43" name="__codelineno-1-43" href="#__codelineno-1-43"></a>
+</span><span id="__span-1-44"><a id="__codelineno-1-44" name="__codelineno-1-44" href="#__codelineno-1-44"></a>    <span class="k">def</span> <span class="nf">est_arete</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">s1</span><span class="p">,</span><span class="n">s2</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-1-45"><a id="__codelineno-1-45" name="__codelineno-1-45" href="#__codelineno-1-45"></a><span class="w">        </span><span class="sd">''' Renvoie True si une arête existe entre s1 et s2, False sinon. '''</span>
+</span><span id="__span-1-46"><a id="__codelineno-1-46" name="__codelineno-1-46" href="#__codelineno-1-46"></a>
+</span><span id="__span-1-47"><a id="__codelineno-1-47" name="__codelineno-1-47" href="#__codelineno-1-47"></a>        <span class="k">return</span> <span class="n">s1</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">s2</span><span class="p">]</span> <span class="ow">and</span> <span class="n">s2</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">s1</span><span class="p">]</span>
+</span><span id="__span-1-48"><a id="__codelineno-1-48" name="__codelineno-1-48" href="#__codelineno-1-48"></a>
+</span><span id="__span-1-49"><a id="__codelineno-1-49" name="__codelineno-1-49" href="#__codelineno-1-49"></a>    <span class="k">def</span> <span class="nf">est_sommet</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">s</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-1-50"><a id="__codelineno-1-50" name="__codelineno-1-50" href="#__codelineno-1-50"></a><span class="w">        </span><span class="sd">''' Renvoie True si s est un sommet du graphe, False sinon. '''</span>
+</span><span id="__span-1-51"><a id="__codelineno-1-51" name="__codelineno-1-51" href="#__codelineno-1-51"></a>
+</span><span id="__span-1-52"><a id="__codelineno-1-52" name="__codelineno-1-52" href="#__codelineno-1-52"></a>        <span class="k">return</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj</span>
+</span><span id="__span-1-53"><a id="__codelineno-1-53" name="__codelineno-1-53" href="#__codelineno-1-53"></a>
+</span><span id="__span-1-54"><a id="__codelineno-1-54" name="__codelineno-1-54" href="#__codelineno-1-54"></a>    <span class="k">def</span> <span class="nf">ordre</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="__span-1-55"><a id="__codelineno-1-55" name="__codelineno-1-55" href="#__codelineno-1-55"></a><span class="w">        </span><span class="sd">''' Renvoie l'ordre du graphe. '''</span>
+</span><span id="__span-1-56"><a id="__codelineno-1-56" name="__codelineno-1-56" href="#__codelineno-1-56"></a>
+</span><span id="__span-1-57"><a id="__codelineno-1-57" name="__codelineno-1-57" href="#__codelineno-1-57"></a>        <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">)</span>
+</span><span id="__span-1-58"><a id="__codelineno-1-58" name="__codelineno-1-58" href="#__codelineno-1-58"></a>
+</span><span id="__span-1-59"><a id="__codelineno-1-59" name="__codelineno-1-59" href="#__codelineno-1-59"></a>    <span class="k">def</span> <span class="nf">degre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="__span-1-60"><a id="__codelineno-1-60" name="__codelineno-1-60" href="#__codelineno-1-60"></a><span class="w">        </span><span class="sd">''' Renvoie le degré d'un sommet s donné du graphe.</span>
+</span><span id="__span-1-61"><a id="__codelineno-1-61" name="__codelineno-1-61" href="#__codelineno-1-61"></a><span class="sd">        On vérifiera si le sommet existe.</span>
+</span><span id="__span-1-62"><a id="__codelineno-1-62" name="__codelineno-1-62" href="#__codelineno-1-62"></a><span class="sd">        Si le sommet n'existe pas, on renvoie -1. '''</span>
+</span><span id="__span-1-63"><a id="__codelineno-1-63" name="__codelineno-1-63" href="#__codelineno-1-63"></a>
+</span><span id="__span-1-64"><a id="__codelineno-1-64" name="__codelineno-1-64" href="#__codelineno-1-64"></a>        <span class="k">if</span> <span class="n">est_sommet</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+</span><span id="__span-1-65"><a id="__codelineno-1-65" name="__codelineno-1-65" href="#__codelineno-1-65"></a>            <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">s</span><span class="p">])</span>
+</span><span id="__span-1-66"><a id="__codelineno-1-66" name="__codelineno-1-66" href="#__codelineno-1-66"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-67"><a id="__codelineno-1-67" name="__codelineno-1-67" href="#__codelineno-1-67"></a>            <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-1-68"><a id="__codelineno-1-68" name="__codelineno-1-68" href="#__codelineno-1-68"></a>
+</span><span id="__span-1-69"><a id="__codelineno-1-69" name="__codelineno-1-69" href="#__codelineno-1-69"></a>    <span class="k">def</span> <span class="nf">voisins</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+</span><span id="__span-1-70"><a id="__codelineno-1-70" name="__codelineno-1-70" href="#__codelineno-1-70"></a><span class="w">        </span><span class="sd">''' Renvoie une liste des voisins du sommet donné.</span>
+</span><span id="__span-1-71"><a id="__codelineno-1-71" name="__codelineno-1-71" href="#__codelineno-1-71"></a><span class="sd">        On vérifiera si le sommet existe. '''</span>
+</span><span id="__span-1-72"><a id="__codelineno-1-72" name="__codelineno-1-72" href="#__codelineno-1-72"></a>
+</span><span id="__span-1-73"><a id="__codelineno-1-73" name="__codelineno-1-73" href="#__codelineno-1-73"></a>        <span class="k">if</span> <span class="n">est_sommet</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+</span><span id="__span-1-74"><a id="__codelineno-1-74" name="__codelineno-1-74" href="#__codelineno-1-74"></a>            <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="p">[</span><span class="n">s</span><span class="p">]</span>
+</span><span id="__span-1-75"><a id="__codelineno-1-75" name="__codelineno-1-75" href="#__codelineno-1-75"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-1-76"><a id="__codelineno-1-76" name="__codelineno-1-76" href="#__codelineno-1-76"></a>            <span class="k">return</span> <span class="p">[]</span>
+</span><span id="__span-1-77"><a id="__codelineno-1-77" name="__codelineno-1-77" href="#__codelineno-1-77"></a>
+</span><span id="__span-1-78"><a id="__codelineno-1-78" name="__codelineno-1-78" href="#__codelineno-1-78"></a>    <span class="k">def</span> <span class="nf">affiche</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-1-79"><a id="__codelineno-1-79" name="__codelineno-1-79" href="#__codelineno-1-79"></a><span class="w">        </span><span class="sd">''' Affiche une représentation visuelle du graphe. '''</span>
+</span><span id="__span-1-80"><a id="__codelineno-1-80" name="__codelineno-1-80" href="#__codelineno-1-80"></a>
+</span><span id="__span-1-81"><a id="__codelineno-1-81" name="__codelineno-1-81" href="#__codelineno-1-81"></a>        <span class="n">G</span> <span class="o">=</span> <span class="n">nx</span><span class="o">.</span><span class="n">Graph</span><span class="p">()</span>
+</span><span id="__span-1-82"><a id="__codelineno-1-82" name="__codelineno-1-82" href="#__codelineno-1-82"></a>        <span class="k">for</span> <span class="n">sommet</span><span class="p">,</span> <span class="n">voisins</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">adj</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+</span><span id="__span-1-83"><a id="__codelineno-1-83" name="__codelineno-1-83" href="#__codelineno-1-83"></a>            <span class="k">for</span> <span class="n">voisin</span> <span class="ow">in</span> <span class="n">voisins</span><span class="p">:</span>
+</span><span id="__span-1-84"><a id="__codelineno-1-84" name="__codelineno-1-84" href="#__codelineno-1-84"></a>                <span class="n">G</span><span class="o">.</span><span class="n">add_edge</span><span class="p">(</span><span class="n">sommet</span><span class="p">,</span> <span class="n">voisin</span><span class="p">)</span>
+</span><span id="__span-1-85"><a id="__codelineno-1-85" name="__codelineno-1-85" href="#__codelineno-1-85"></a>        <span class="n">nx</span><span class="o">.</span><span class="n">draw</span><span class="p">(</span><span class="n">G</span><span class="p">,</span> <span class="n">with_labels</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">node_color</span><span class="o">=</span><span class="s1">'skyblue'</span><span class="p">,</span> <span class="n">node_size</span><span class="o">=</span><span class="mi">800</span><span class="p">,</span> <span class="n">font_size</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span> <span class="n">font_weight</span><span class="o">=</span><span class="s1">'bold'</span><span class="p">)</span>
+</span><span id="__span-1-86"><a id="__codelineno-1-86" name="__codelineno-1-86" href="#__codelineno-1-86"></a>        <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</span></code></pre></div>
+</details>
 <h3 id="parcours-de-graphes">Parcours de graphes<a class="headerlink" href="#parcours-de-graphes" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">À faire 2</p>
@@ -4192,6 +4349,39 @@ Vous écrirez cette fonction de manière <strong>itérative</strong>.</p>
 <p class="admonition-title">À faire 4</p>
 <p>Écrivez maintenant une fonction <code>parcours_profondeur_rec(self, s: str) -&gt; list</code> qui effectue le même <strong>parcours en profondeur</strong>, mais de manière <strong>récursive</strong>.</p>
 </div>
+<div class="admonition tip">
+<p class="admonition-title">Aide - À faire 4</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>    <span class="k">def</span> <span class="nf">parcours_profondeur_rec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">visites</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">        </span><span class="sd">''' Effectue un parcours en profondeur de manière récursive. '''</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="k">if</span> <span class="n">visites</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># si c'est le premier appel de la fonction,</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            <span class="n">visites</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># on initialise la liste des sommets visités</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="o">...</span>  <span class="c1"># ajouter le sommet s aux sommets visités</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>        <span class="k">for</span> <span class="o">...</span> <span class="ow">in</span> <span class="o">...</span><span class="p">:</span>  <span class="c1"># pour chaque sommet voisin du sommet s</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>            <span class="k">if</span> <span class="o">...</span> <span class="ow">not</span> <span class="ow">in</span> <span class="o">...</span><span class="p">:</span>  <span class="c1"># si le voisin courant n'a pas déjà été visité</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>                <span class="o">...</span>  <span class="c1"># on parcourt récursivement ce sommet</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="k">return</span> <span class="o">...</span>  <span class="c1"># on renvoie la liste des sommets visités</span>
+</span></code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">À faire 5</p>
+<p>Écrire une fonction <code>distances(self, s: str) -&gt; dict</code> qui renvoie le <strong>dictionnaire des distances</strong> entre un sommet <code>s</code> donné et chaque autre sommet du graphe, après avoir effectué un <strong>parcours en largeur</strong>.</p>
+<p>On procédera de la manière suivante :</p>
+<ol>
+<li>initialiser le <strong>dictionnaire des distances</strong>, contenant initialement le sommet <code>s</code>, auquel on associera la <strong>distance</strong> <code>0</code>,</li>
+<li>initialiser une <strong>file</strong> contenant initialement le sommet <code>s</code>,</li>
+<li>tant que la <strong>file</strong> n'est pas <strong>vide</strong> :<ol>
+<li>on <strong>défile</strong> la file pour récupérer un <strong>sommet</strong>,</li>
+<li>on récupère la <strong>distance</strong> associée à ce sommet,</li>
+<li>pour chaque <strong>sommet voisin</strong> du sommet défilé :<ol>
+<li>si le sommet n'a <strong>pas déjà été visité</strong>, on l'<strong>ajoute au dictionnaire</strong> en lui associant la <strong>distance</strong> appropriée, et on l'<strong>enfile</strong> dans la <strong>file</strong>.</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>on <strong>renvoie</strong> le <strong>dictionnaire des distances</strong>.</li>
+</ol>
+</div>
 <h3 id="connexite-cycles-et-arbre">Connexité, cycles et arbre<a class="headerlink" href="#connexite-cycles-et-arbre" title="Permanent link">¶</a></h3>
 <p>On souhaite ajouter une <strong>méthode</strong> à notre classe <code>Graphe</code> permettant de déterminer si un <strong>graphe</strong> est un <strong>arbre</strong>.</p>
 <p>On rappelle qu'il faut pour cela vérifier :</p>
@@ -4200,23 +4390,52 @@ Vous écrirez cette fonction de manière <strong>itérative</strong>.</p>
 <li>que le graphe ne contienne <strong>aucun cycle</strong>.</li>
 </ul>
 <div class="admonition note">
-<p class="admonition-title">À faire 5</p>
+<p class="admonition-title">À faire 6</p>
 <p>Écrivez une fonction <code>est_connexe(self) -&gt; bool</code> qui renvoie <strong>True</strong> si le graphe est <strong>connexe</strong>, et <strong>False</strong> sinon.</p>
 </div>
 <p>Pour la <strong>détection des cycles</strong>, on utilisera l'algorithme suivant, basé sur le <strong>parcours en profondeur</strong> :</p>
 <p><img alt="Détection cycles" src="../images/detection_cycles.png"></p>
-<p>On adaptera cet algorithme pour qu'il puisse fonctionner avec des <strong>sommets</strong> autres que des <em>entiers</em> de <code>0</code> à <code>n</code>, en utilisant non pas une liste de prédecesseurs mais un <strong>dictionnaire</strong>.</p>
+<p>On adaptera cet algorithme pour qu'il puisse fonctionner avec des <strong>sommets</strong> autres que des <em>entiers</em> de <code>0</code> à <code>n</code>, en utilisant non pas une liste de prédecesseurs mais un <strong>dictionnaire des prédecesseurs</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">À faire 6</p>
 <p>Recopiez et complétez la fonction <code>detection_cycle</code> suivante :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">detection_cycle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">''' Renvoie true si un cycle atteignable par s est détecté, False sinon. '''</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="n">pile</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>  <span class="c1"># création d'une pile contenant uniquement le sommet s</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="n">pred</span> <span class="o">=</span> <span class="p">{</span><span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="p">}</span>  <span class="c1"># création du dictionnaire des prédecesseurs</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="c1"># À compléter</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">pass</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span> <span class="nf">detection_cycle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">''' Renvoie true si un cycle atteignable par s est détecté, False sinon. '''</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="n">pile</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span><span class="p">]</span>  <span class="c1"># création d'une pile contenant uniquement le sommet s</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="n">pred</span> <span class="o">=</span> <span class="p">{</span><span class="n">s</span><span class="p">:</span> <span class="n">s</span><span class="p">}</span>  <span class="c1"># création du dictionnaire des prédecesseurs</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="c1"># À compléter</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>    <span class="k">pass</span>
 </span></code></pre></div>
+<p>Puisque l'on utilise un <strong>dictionnaire</strong> au lieu d'un <strong>tableau</strong>, l'instruction <code>Si Pred[v] = -1</code> dans le pseudo-code, qui permet de vérifier si le sommet <code>v</code> n'a pas déjà été visité, sera remplacé par <code>Si v EST DANS pred</code>.</p>
+</div>
+<h2 id="graphe-oriente">Graphe orienté<a class="headerlink" href="#graphe-oriente" title="Permanent link">¶</a></h2>
+<h3 id="type-abstrait_1">Type abstrait<a class="headerlink" href="#type-abstrait_1" title="Permanent link">¶</a></h3>
+<p>Nous allons définir cette fois un <strong>type abstrait <code>GrapheO</code></strong>, représentant un <strong>graphe orienté</strong>, ainsi que les <strong>opérations</strong> qui y seront associées.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Type abstrait <em>Graphe</em></p>
+<p><strong>Utilise :</strong> <em>Sommet</em>, <em>Entier</em>, <em>Booléen</em>, <em>Liste</em><br>
+<strong>Opérations de base :</strong><br>
+     <span class="arithmatex">\(nouveau\_graphe :~\rightarrow Graphe\)</span><br>
+     <span class="arithmatex">\(ajouter\_sommet :~Graphe \times Sommet \rightarrow Graphe\)</span><br>
+     <span class="arithmatex">\(ajouter\_arc :~Graphe \times Sommet \times Sommet \rightarrow Graphe\)</span><br>
+     <span class="arithmatex">\(supprimer\_sommet :~Graphe \times Sommet \rightarrow Graphe\)</span><br>
+     <span class="arithmatex">\(supprimer\_arc :~Graphe \times Sommet \times Sommet \rightarrow Graphe\)</span><br>
+<strong>Autres opérations :</strong><br>
+     <span class="arithmatex">\(est\_sommet :~Graphe \times Sommet \rightarrow Booléen\)</span><br>
+     <span class="arithmatex">\(est\_arc :~Graphe \times Sommet \times Sommet \rightarrow Booléen\)</span><br>
+     <span class="arithmatex">\(ordre :~Graphe \rightarrow Entier\)</span><br>
+     <span class="arithmatex">\(degre :~Graphe \times Sommet \rightarrow Entier\)</span><br>
+     <span class="arithmatex">\(voisins :~Graphe \times Sommet \rightarrow Liste\)</span><br></p>
+</div>
+<h3 id="implementation-avec-une-matrice-dadjacence">Implémentation avec une matrice d'adjacence<a class="headerlink" href="#implementation-avec-une-matrice-dadjacence" title="Permanent link">¶</a></h3>
+<div class="admonition note">
+<p class="admonition-title">À faire 1</p>
+<p><strong>Téléchargez</strong> le <strong>fichier Python</strong> ci-dessous :</p>
+<p></p><center>
+<a href="../src/grapheo.py" style="font-size:1.2em" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.88.88 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.756.756 0 0 0-.49-.18M15 10V8h5v2h-5m-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41M10 0h2v5h-2V0M3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41m0-11.32 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83M7 10H2V8h5v2"></path></svg></span> Télécharger <code>grapheo.py</code></a>
+</center>
+<p>Complétez chaque <strong>méthode</strong> de la classe <code>Graphe</code> (à l'exception de la méthode <code>affiche</code> qui vous est donnée.)</p>
 </div></div>
 
 
