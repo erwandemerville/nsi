@@ -44,4 +44,67 @@ L'algorithme en **pseudo-code** peut s'écrire de la manière suivante :
     **FIN ALGORITHME**
     </div>
 
-Vous pouvez [cliquer ici pour voir une petite animation](https://www.infoforall.fr/art/algo/animation-de-la-recherche-dichotomique/#partie_1) du fonctionnement de cet algorithme.
+## Simulation de la recherche dichotomique
+
+Voici un **simulateur** vous permettant de tester l'**algorithme** de **recherche dichotomique**.  
+(*Source* : [Infoforall](https://www.infoforall.fr/art/algo/animation-de-la-recherche-dichotomique/#partie_1))
+
+
+## Implémentation en Python
+
+### Recherche séquentielle
+
+On a tout d'abord implémenté l'algorithme de **recherche séquentielle** que nous avons déjà vu auparavant. Cela nous permettra de comparer cet ancien algorithme avec le nouvel algorithme de **recherche dichotomique**.
+
+```python
+def recherche_sequentielle(tableau, element):
+    ''' Renvoie True si element est trouvé, False sinon.
+    :param tableau: (list[int]) une liste d'éléments
+    :param element: (int) l'élément à rechercher
+    :return (bool): True ou False '''
+
+    for el in tableau:
+        if element == el:
+            return True
+    return False
+```
+
+Voici une **autre version** de cette fonction utilisant un **parcours par indice** plutôt que par élément :
+
+```python
+def recherche_sequentielle_v2(tableau, element):
+    for i in range(len(tableau)):
+        if element == tableau[i]:
+            return True
+    return False
+```
+
+### Recherche dichotomique
+
+La **recherche dichotomique** peut s'implémenter en *Python* de la manière suivante :
+
+```python
+def recherche_dicho(tableau, element):
+    ''' Effectue une recherche dichotomique dans un tableau.
+    Renvoie True si element est trouvé, False sinon. '''
+    
+    debut = 0
+    fin = len(tableau) - 1
+    trouve = False
+    while not trouve and debut <= fin:
+        milieu = (debut + fin) // 2
+        if tableau[milieu] == element:
+            trouve = True
+        else:
+            if element > tableau[milieu]:
+                debut = milieu + 1
+            else:
+                fin = milieu - 1
+    return trouve
+```
+
+On rappelle que l'opérateur `//` permet d'obtenir le **quotient d'une division euclidienne** entre deux nombres.  
+Ainsi, l'instruction `milieu = (debut + fin) // 2` de la **ligne 9** permet d'obtenir un **nombre entier**.
+
+## Coût de la recherche dichotomique
+
