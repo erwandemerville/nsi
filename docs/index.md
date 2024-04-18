@@ -20,6 +20,7 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Algorithmes de tri](premiere/tris/index.md) | Tri par sélection et par insertion. |
 | [Interactions Homme-Machine sur le web](premiere/ihm/index.md) | Interactions Homme-Machine sur le web |
 | [La recherche dichotomique](premiere/dicho/index.md) | La **recherche dichotomique** dans une liste triée. |
+| [Les algorithmes gloutons](premiere/gloutons/index.md) | Cours et exercices sur les **algorithmes gloutons**. |
 
 ## NSI terminale
 

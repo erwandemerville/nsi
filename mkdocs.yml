@@ -92,6 +92,9 @@ nav:
     - Recherche dichotomique:
       - premiere/dicho/index.md
       - Cours: premiere/dicho/cours.md
+    - Algorithmes gloutons:
+      - premiere/gloutons/index.md
+      - Cours: premiere/gloutons/cours.md
   - Terminale:
     - terminale/index.md
     - Modularité:

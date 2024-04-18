@@ -10,3 +10,4 @@
 | [Algorithmes de tri](tris/index.md) | Tri par sélection et par insertion. |
 | [Interactions Homme-Machine sur le web](ihm/index.md) | Interactions Homme-Machine sur le web |
 | [La recherche dichotomique](dicho/index.md) | La **recherche dichotomique** dans une liste triée. |
+| [Les algorithmes gloutons](gloutons/index.md) | Cours et exercices sur les **algorithmes gloutons**. |
