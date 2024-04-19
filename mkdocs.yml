@@ -178,6 +178,7 @@ nav:
       - terminale/graphes/index.md
       - Introduction aux graphes: terminale/graphes/cours.md
       - Implémentation en Python: terminale/graphes/implementation.md
+      - Exercices: terminale/graphes/exercices.md
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Sujets pratiques: https://cyclades.education.gouv.fr/delos/public/listPublicECE
   - Rendu des travaux: rendus.md
