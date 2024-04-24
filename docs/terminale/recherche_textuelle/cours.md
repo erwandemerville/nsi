@@ -5,7 +5,52 @@
 
     La **règle du bon suffixe** sera évoquée pour votre culture, mais n'est pas au programme.
 
-## Vidéo récapitulative
+## Rappel - Recherche textuelle naïve
+
+Avant de voir l'algorithme de **Boyer-Moore**, rappelons la méthode de **recherche textuelle** "naïve", qui consiste à rechercher un *motif* dans un *texte* en **parcourant tout le texte** et en comparant le *motif* à chaque nouveau caractère rencontré.
+
+!!! abstract "Algorithme de recherche d'un motif dans un texte"
+    <div style="font-size:1.1em">
+    **ALGORITHME** : recherche  
+    **ENTRÉES** :  
+    &emsp;&emsp;`texte` : texte dans lequel rechercher - **chaîne de caractères**  
+    &emsp;&emsp;`motif` : motif à rechercher dans le texte - **chaîne de caractères**  
+    **SORTIE** : liste des **positions** (indices) de `motif` dans `texte`
+
+    **DÉBUT ALGORITHME**  
+    &emsp;&emsp;res ← *LISTE VIDE*  
+    &emsp;&emsp;**POUR** i **ALLANT DE** 0 **À** longueur(texte) $-$ longueur(motif) :  
+    &emsp;&emsp;&emsp;&emsp;j ← 0  
+    &emsp;&emsp;&emsp;&emsp;**TANT QUE** j $<$ longueur(motif) **ET QUE** texte[i $+$ j] $=$ motif[j] :    
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;j ← j $+$ 1  
+    &emsp;&emsp;&emsp;&emsp;**FIN TANT QUE**  
+    &emsp;&emsp;&emsp;&emsp;**SI** j $=$ longueur(motif), **ALORS** :  
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Ajouter** i **à** res  
+    &emsp;&emsp;&emsp;&emsp;**FIN SI**  
+    &emsp;&emsp;**FIN POUR**  
+    &emsp;&emsp;**Renvoyer** res  
+    **FIN ALGORITHME**
+    </div>
+
+*Note* : On s'arrête à `longueur(tableau) - longueur(motif)` de manière à éviter de dépasser la **taille du texte** lors des comparaisons.
+
+En langage *Python*, cet algorithme pourrait s'écrire ainsi :
+
+```python
+def recherche(texte: str, motif: str) -> 'list[int]':
+    ''' Renvoie une liste des positions d'un motif dans un texte. '''
+    
+    res = []
+    for i in range(len(texte) - len(motif) + 1):
+        j = 0
+        while j < len(motif) and texte[i + j] == motif[j]:
+            j += 1
+        if j == len(motif):
+            res.append(i)
+    return res
+```
+
+## Boyer-Moore-Horspool - Vidéo explicative
 
 Voici une petite **vidéo** récapitulant le **principe** de fonctionnement de l'**algorithme de Boyer-Moore-Horspool** (version **simplifiée** de l'**algorithme de Boyer-Moore**).  
 *Source de la vidéo : [https://www.youtube.com/watch?v=9OYJ8L9R1F0](https://www.youtube.com/watch?v=9OYJ8L9R1F0){ target="_blank" }*.
