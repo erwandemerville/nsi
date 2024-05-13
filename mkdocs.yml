@@ -180,7 +180,7 @@ nav:
       - Implémentation en Python: terminale/graphes/implementation.md
       - Exercices: terminale/graphes/exercices.md
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
-  - Sujets pratiques: https://cyclades.education.gouv.fr/delos/public/listPublicECE
+  - Entraînement sujets pratiques: https://monlyceenumerique.fr/nsi_terminale/sujets/epreuve_pratique_22.php
   - Rendu des travaux: rendus.md
 
 markdown_extensions:
