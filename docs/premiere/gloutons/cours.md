@@ -151,3 +151,176 @@ Cela donne **d = 367 + 637 + 554 + 225 + 708 + 872 km**, soit au total **d = 336
 
 - **Désavantage** : c'est moins bien que la **solution optimale de 3000 km**.
 - **Avantage** : avec plus de villes que sur notre exemple, le programme en **force brute** tournerait encore très longtemps...
+
+## Problème du rendu de monnaie
+
+### Présentation
+
+Un autre cas classique où la **stratégie gloutonne** peut être appliquée est le ==**problème de rendu de monnaie**==.
+
+Considérons une somme de **5,50 euros** à rendre.  
+Nous disposons de **billets** de **5 euros**, de **pièces** de **2 euros**, de **pièces** de **1 euro**, de **pièces** de **50 cents**, de **pièces** de **20 cents**, de **pièces** de **10 cents** et de **pièces** de **5 cents**.
+
+!!! question "Problème d'optimisation"
+    Pour le formuler comme un problème d'**optimisation**, nous devons définir un **critère** pour évaluer la **qualité des solutions** :  
+    nous souhaitons **trouver une solution** qui ==**minimise** le **nombre de pièces ou de billets rendus**==.
+
+Pour un être humain, trouver la solution n'est pas difficile : un *billet de 5 euros* et une *pièce de 50 cents* suffisent. Cependant, il est important de noter la complexité pour une machine de **comparer toutes les possibilités** envisageables...
+
+!!! abstract "Stratégie gloutonne"
+    Nous allons donc appliquer une **stratégie gloutonne** en choisissant comme **choix local optimal** : toujours compléter la **somme à rendre** avec le **billet** ou la **pièce** la **plus grande utilisable**.
+
+!!! note "Q.1"
+    En appliquant ce principe, que doit-on donner si on doit rendre 29 euros à l'aide de billets de 20 euros, 10 euros et 5 euros et de pièces de 2 euros et 1 euro ?
+
+!!! note "Q.2"
+    Fournir la réponse de notre stratégie gloutonne si on doit rendre 10 euros en choisissant dans l'ensemble `{ 5, 2, 1 }`. Est-ce la solution optimale pour notre ensemble de pièces disponibles ?
+
+!!! note "Q.3"
+    Fournir la réponse de notre stratégie gloutonne si on doit rendre 10 euros avec l'ensemble `{ 8, 5, 1 }`. Proposer une meilleure solution en utilisant votre cerveau et pas la stratégie gloutonne.
+
+On constate donc que la **stratégie gloutonne** ne donne pas toujours la **solution optimale**.
+
+### Avec Python
+
+On commencera par créer un tableau `les_pieces`, trié en **ordre décroissant** et regroupant les **pièces/billets** que l'on peut **rendre** et une fonction `rendu_monnaie()` qui possède deux paramètres :
+
+- le paramètre `a_rendre` pour récupérer la somme qu'il faudra rendre,
+- le paramètre `pieces` pour récupérer le **tableau trié** des **choix de billets ou pièces disponibles**, du plus grand au plus petit.
+
+La **fonction** `rendu_monnaie()` devra **renvoyer** un **tableau** contenant les **éléments à rendre**.  
+Par exemple `[100, 10, 5, 2, 2]` pour rendre `119` **euros**.
+
+!!! abstract
+    Voici le prototype de cette **fonction** : `rendu_monnaie(a_rendre: int, pieces: 'list[int]') -> 'list[int]`
+
+    Voici les instructions incomplètes correspondantes :
+
+    ```python
+    les_pieces = [100, 50, 20, 10, 5, 2, 1]
+    
+    def rendu_monnaie(a_rendre, pieces = les_pieces):
+        res = []
+        # À COMPLÉTER
+        return res
+    ```
+
+    On remarquera que le **deuxième paramètre** de la fonction, `pieces`, possède une **valeur par défaut** : il prend initialement la valeur de la **variable globale** `les_pieces`. On est donc pas obligé de lui fournir un **tableau de pièces/billets** lors de l'**appel**.
+
+    On pourra donc activer l'appel de notre fonction simplement de cette façon pour rendre **12 euros** :
+
+    ```python
+    rendu_monnaie(12)
+    ```
+
+    Mais on pourra également **fournir une valeur** pour le paramètre `pieces` :
+
+    ```python
+    rendu_monnaie(12, [50, 20, 10, 1])
+    ```
+
+Voici l'**algorithme** en **pseudo-code** que vous écrirez en *Python*.
+
+!!! abstract "Algorithme de rendu de monnaie" 
+    <div style="font-size:1.1em">
+    **ALGORITHME** : rendu_monnaie  
+    **ENTRÉE** :  
+    &emsp;&emsp;`a_rendre` : un **entier**  
+    &emsp;&emsp;`pieces` : le **tableau** des **pièces/billets** (triés dans l'ordre **décroissant**) utilisés  
+    **SORTIE** : Une **liste** des **pièces/billets** à rendre
+
+    **DÉBUT**  
+    &emsp;&emsp;res ← [ ]  
+    &emsp;&emsp;reste ← a_rendre  
+    &emsp;&emsp;i ← 0  
+    &emsp;&emsp;**TANT QUE** reste **STRICTEMENT SUPÉRIEURE À** 0 :  
+    &emsp;&emsp;&emsp;&emsp;**SI** reste **SUPÉRIEUR OU ÉGAL À** pieces[i] :  
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;reste ← reste $-$ pieces[i]  
+    &emsp;&emsp;&emsp;&emsp;**SINON** :  
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;i ← i $+$ 1  
+    &emsp;&emsp;&emsp;&emsp;**FIN SI**  
+    &emsp;&emsp;**FIN TANT QUE**  
+    &emsp;&emsp;**RENVOYER** res  
+    **FIN ALGORITHME**
+    </div>
+
+!!! note "Q.4"
+    Ouvrez **Thonny** et **écrivez la fonction** `rendu_monnaie` en vous aidant de l'**algorithme** en **pseudo-code**.
+
+Est-ce que cet algorithme **se termine dans tous les cas** ?
+
+!!! note "Q.5"
+    Pour vérifier cela, répondez aux **questions suivantes** :
+
+    - **<u>Question 1</u>** : Le programme pourrait-il fonctionner avec des **euros entiers** si nous avions le tableau suivant (dans lequel il manque juste la pièce d'un euro) : `les_pieces = [100, 50, 20, 10, 5, 2]` ? Faire le test avec `rendu_monnaie(13)` et `rendu_monnaie(12)` pour tenter de voir s'il peut tourner en boucle.
+
+    - **<u>Question 2</u>** : Que va-t-il se passer si on demande `rendu_monnaie(17.5)` ? Que pourrait-on faire pour permettre au système de gérer les **centimes** ?
+
+    - **<u>Question 3</u>** : Le programme pourrait-il **fonctionner avec des centimes** (en rajoutant les centimes dans le tableau bien entendu : `les_pieces = [100, 50, 20, 10, 5, 2, 1, 0.50, 0.20, 0.10, 0.05, 0.02, 0.01]` ? Faire le test avec `rendu_monnaie(17.50)` et `rendu_monnaie(17.15)` pour tenter de voir s'il peut tourner à chaque fois.
+
+!!! warning "Stockage des flottants"
+    Comme on l'a déjà vu, le **stockage des flottants** en machine n'est **pas précis**. Cela amène donc à des problèmes lors de **tests d'égalité** ou de **calculs** avec des flottants.
+
+    Essayez par exemple de saisir les instructions :
+
+    ```python
+    >>> 0.3 == (3*0.1)
+    ```
+
+    ou encore :
+
+    ```python
+    >>> 0.1 + 0.2
+    ```
+
+    et observez le résultat.
+
+Comment faire alors pour **traiter les centimes** ? Le plus "simple" est d'**arrondir les calculs** à chaque fois.  
+On peut, pour cela, utiliser la fonction native `round()` qui permet d'**arrondir au plus proche** et en **précisant le nombre de chiffres après la virgule** à gérer. Dans notre cas, on arrondira à **2 chiffres après la virgule**. Ainsi, `14.009999` **euros** par exemple deviendra `14.01` et nous éviterons le problème précédent.
+
+!!! note "Q.6"
+    Utilisez la fonction `round` pour arrondir le `reste` à **deux chiffres après la virgule**, sur ses deux affectations, puis refaites les tests de la question *Q.5*.
+
+!!! tip ""
+    Une **autre méthode plus propre** consisterait plutôt à ne faire travailler la fonction qu'**avec des centimes**. Comme ça, les calculs sont faits avec des **entiers**. Il n'y aura ainsi plus de problème de résultats approximatifs à cause de l'**encodage des flottants**.
+
+    Ainsi :
+
+    - `0.1` euro sera transformé en `10` cents.
+    - `5` euros sera transformé en `500` cents...
+
+!!! note "Q.7"
+    Utiliser le programme puis répondre aux questions :
+
+    ```python
+    les_pieces = [100, 50, 20, 10, 5, 2, 1, 0.50, 0.20, 0.10, 0.05, 0.01]
+ 
+    def rendre(a_rendre, pieces = les_pieces):
+        pieces_en_cents = [round(valeur*100) for valeur in choix]
+        res = []
+        reste = round(a_rendre*100)
+        i = 0
+        while reste > 0:
+            if reste >= pieces_en_cents[i]:
+                reste = reste - pieces_en_cents[i]
+                res.append(choix[i])
+            else:
+                i = i + 1
+        return res
+    ```
+
+    **Question 1** : donner le contenu du tableau choix_en_cents après exécution de la ligne 4. Tenir compte du tableau fourni en ligne 1.
+
+    **Question 2** : comment se nomme cette manière de créer un tableau : par *compréhension*, par *extension et ajouts successifs*, par *omission*, par *dissimulation* ?
+
+    **Question 3** : les calculs des lignes *9* et *10* sont donc faits en *cents*. En regardant la ligne *10*, dire si le résultat transmis par la fonction va lui être donné en **euros** ou en **centimes**.
+
+!!! note "Q.8"
+    Pour terminer, écrivez la **documentation** (*docstring*) de la fonction, contenant :
+
+    - une **petite phrase d'explication**,
+    - les **préconditions** (sur les paramètres d'entrée),
+    - la ou les post-**conditions** (sur la réponse)
+    - au moins **un exemple** permettant de comprendre son fonctionnement et de l'utiliser éventuellement pour un *doctest*.
+
+    On peut également ajouter une **assertion** pour provoquer une **exception/erreur** lorsqu'on demande de rembourser une **somme négative**. Pensez à en tenir compte lors de la rédaction de la documentation que la fonction **n'accepte pas de valeurs négatives à rembourser**.
