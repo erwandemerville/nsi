@@ -1766,6 +1766,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#probleme-du-rendu-de-monnaie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problème du rendu de monnaie
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problème du rendu de monnaie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presentation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Présentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avec-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec Python
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4237,6 +4270,39 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#probleme-du-rendu-de-monnaie" class="md-nav__link">
+    <span class="md-ellipsis">
+      Problème du rendu de monnaie
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Problème du rendu de monnaie">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presentation_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Présentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#avec-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec Python
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4574,7 +4640,164 @@ Avec <strong>12 villes</strong>, on passe à <strong>20 millions de possibilité
 <ul>
 <li><strong>Désavantage</strong> : c'est moins bien que la <strong>solution optimale de 3000 km</strong>.</li>
 <li><strong>Avantage</strong> : avec plus de villes que sur notre exemple, le programme en <strong>force brute</strong> tournerait encore très longtemps...</li>
-</ul></div>
+</ul>
+<h2 id="probleme-du-rendu-de-monnaie">Problème du rendu de monnaie<a class="headerlink" href="#probleme-du-rendu-de-monnaie" title="Permanent link">¶</a></h2>
+<h3 id="presentation_1">Présentation<a class="headerlink" href="#presentation_1" title="Permanent link">¶</a></h3>
+<p>Un autre cas classique où la <strong>stratégie gloutonne</strong> peut être appliquée est le <mark><strong>problème de rendu de monnaie</strong></mark>.</p>
+<p>Considérons une somme de <strong>5,50 euros</strong> à rendre.<br>
+Nous disposons de <strong>billets</strong> de <strong>5 euros</strong>, de <strong>pièces</strong> de <strong>2 euros</strong>, de <strong>pièces</strong> de <strong>1 euro</strong>, de <strong>pièces</strong> de <strong>50 cents</strong>, de <strong>pièces</strong> de <strong>20 cents</strong>, de <strong>pièces</strong> de <strong>10 cents</strong> et de <strong>pièces</strong> de <strong>5 cents</strong>.</p>
+<div class="admonition question">
+<p class="admonition-title">Problème d'optimisation</p>
+<p>Pour le formuler comme un problème d'<strong>optimisation</strong>, nous devons définir un <strong>critère</strong> pour évaluer la <strong>qualité des solutions</strong> :<br>
+nous souhaitons <strong>trouver une solution</strong> qui <mark><strong>minimise</strong> le <strong>nombre de pièces ou de billets rendus</strong></mark>.</p>
+</div>
+<p>Pour un être humain, trouver la solution n'est pas difficile : un <em>billet de 5 euros</em> et une <em>pièce de 50 cents</em> suffisent. Cependant, il est important de noter la complexité pour une machine de <strong>comparer toutes les possibilités</strong> envisageables...</p>
+<div class="admonition abstract">
+<p class="admonition-title">Stratégie gloutonne</p>
+<p>Nous allons donc appliquer une <strong>stratégie gloutonne</strong> en choisissant comme <strong>choix local optimal</strong> : toujours compléter la <strong>somme à rendre</strong> avec le <strong>billet</strong> ou la <strong>pièce</strong> la <strong>plus grande utilisable</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Q.1</p>
+<p>En appliquant ce principe, que doit-on donner si on doit rendre 29 euros à l'aide de billets de 20 euros, 10 euros et 5 euros et de pièces de 2 euros et 1 euro ?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Q.2</p>
+<p>Fournir la réponse de notre stratégie gloutonne si on doit rendre 10 euros en choisissant dans l'ensemble <code>{ 5, 2, 1 }</code>. Est-ce la solution optimale pour notre ensemble de pièces disponibles ?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Q.3</p>
+<p>Fournir la réponse de notre stratégie gloutonne si on doit rendre 10 euros avec l'ensemble <code>{ 8, 5, 1 }</code>. Proposer une meilleure solution en utilisant votre cerveau et pas la stratégie gloutonne.</p>
+</div>
+<p>On constate donc que la <strong>stratégie gloutonne</strong> ne donne pas toujours la <strong>solution optimale</strong>.</p>
+<h3 id="avec-python">Avec Python<a class="headerlink" href="#avec-python" title="Permanent link">¶</a></h3>
+<p>On commencera par créer un tableau <code>les_pieces</code>, trié en <strong>ordre décroissant</strong> et regroupant les <strong>pièces/billets</strong> que l'on peut <strong>rendre</strong> et une fonction <code>rendu_monnaie()</code> qui possède deux paramètres :</p>
+<ul>
+<li>le paramètre <code>a_rendre</code> pour récupérer la somme qu'il faudra rendre,</li>
+<li>le paramètre <code>pieces</code> pour récupérer le <strong>tableau trié</strong> des <strong>choix de billets ou pièces disponibles</strong>, du plus grand au plus petit.</li>
+</ul>
+<p>La <strong>fonction</strong> <code>rendu_monnaie()</code> devra <strong>renvoyer</strong> un <strong>tableau</strong> contenant les <strong>éléments à rendre</strong>.<br>
+Par exemple <code>[100, 10, 5, 2, 2]</code> pour rendre <code>119</code> <strong>euros</strong>.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Abstract</p>
+<p>Voici le prototype de cette <strong>fonction</strong> : <code>rendu_monnaie(a_rendre: int, pieces: 'list[int]') -&gt; 'list[int]</code></p>
+<p>Voici les instructions incomplètes correspondantes :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">les_pieces</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">]</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="k">def</span> <span class="nf">rendu_monnaie</span><span class="p">(</span><span class="n">a_rendre</span><span class="p">,</span> <span class="n">pieces</span> <span class="o">=</span> <span class="n">les_pieces</span><span class="p">):</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="c1"># À COMPLÉTER</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="k">return</span> <span class="n">res</span>
+</span></code></pre></div>
+<p>On remarquera que le <strong>deuxième paramètre</strong> de la fonction, <code>pieces</code>, possède une <strong>valeur par défaut</strong> : il prend initialement la valeur de la <strong>variable globale</strong> <code>les_pieces</code>. On est donc pas obligé de lui fournir un <strong>tableau de pièces/billets</strong> lors de l'<strong>appel</strong>.</p>
+<p>On pourra donc activer l'appel de notre fonction simplement de cette façon pour rendre <strong>12 euros</strong> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">rendu_monnaie</span><span class="p">(</span><span class="mi">12</span><span class="p">)</span>
+</span></code></pre></div>
+<p>Mais on pourra également <strong>fournir une valeur</strong> pour le paramètre <code>pieces</code> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">rendu_monnaie</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="p">[</span><span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>
+</span></code></pre></div>
+</div>
+<p>Voici l'<strong>algorithme</strong> en <strong>pseudo-code</strong> que vous écrirez en <em>Python</em>.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithme de rendu de monnaie</p>
+<p></p><div style="font-size:1.1em">
+<strong>ALGORITHME</strong> : rendu_monnaie<br>
+<strong>ENTRÉE</strong> :<br>
+  <code>a_rendre</code> : un <strong>entier</strong><br>
+  <code>pieces</code> : le <strong>tableau</strong> des <strong>pièces/billets</strong> (triés dans l'ordre <strong>décroissant</strong>) utilisés<br>
+<strong>SORTIE</strong> : Une <strong>liste</strong> des <strong>pièces/billets</strong> à rendre
+<p><strong>DÉBUT</strong><br>
+  res ← [ ]<br>
+  reste ← a_rendre<br>
+  i ← 0<br>
+  <strong>TANT QUE</strong> reste <strong>STRICTEMENT SUPÉRIEURE À</strong> 0 :<br>
+    <strong>SI</strong> reste <strong>SUPÉRIEUR OU ÉGAL À</strong> pieces[i] :<br>
+      reste ← reste <span class="arithmatex">\(-\)</span> pieces[i]<br>
+    <strong>SINON</strong> :<br>
+      i ← i <span class="arithmatex">\(+\)</span> 1<br>
+    <strong>FIN SI</strong><br>
+  <strong>FIN TANT QUE</strong><br>
+  <strong>RENVOYER</strong> res<br>
+<strong>FIN ALGORITHME</strong>
+</p></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Q.4</p>
+<p>Ouvrez <strong>Thonny</strong> et <strong>écrivez la fonction</strong> <code>rendu_monnaie</code> en vous aidant de l'<strong>algorithme</strong> en <strong>pseudo-code</strong>.</p>
+</div>
+<p>Est-ce que cet algorithme <strong>se termine dans tous les cas</strong> ?</p>
+<div class="admonition note">
+<p class="admonition-title">Q.5</p>
+<p>Pour vérifier cela, répondez aux <strong>questions suivantes</strong> :</p>
+<ul>
+<li>
+<p><strong><u>Question 1</u></strong> : Le programme pourrait-il fonctionner avec des <strong>euros entiers</strong> si nous avions le tableau suivant (dans lequel il manque juste la pièce d'un euro) : <code>les_pieces = [100, 50, 20, 10, 5, 2]</code> ? Faire le test avec <code>rendu_monnaie(13)</code> et <code>rendu_monnaie(12)</code> pour tenter de voir s'il peut tourner en boucle.</p>
+</li>
+<li>
+<p><strong><u>Question 2</u></strong> : Que va-t-il se passer si on demande <code>rendu_monnaie(17.5)</code> ? Que pourrait-on faire pour permettre au système de gérer les <strong>centimes</strong> ?</p>
+</li>
+<li>
+<p><strong><u>Question 3</u></strong> : Le programme pourrait-il <strong>fonctionner avec des centimes</strong> (en rajoutant les centimes dans le tableau bien entendu : <code>les_pieces = [100, 50, 20, 10, 5, 2, 1, 0.50, 0.20, 0.10, 0.05, 0.02, 0.01]</code> ? Faire le test avec <code>rendu_monnaie(17.50)</code> et <code>rendu_monnaie(17.15)</code> pour tenter de voir s'il peut tourner à chaque fois.</p>
+</li>
+</ul>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Stockage des flottants</p>
+<p>Comme on l'a déjà vu, le <strong>stockage des flottants</strong> en machine n'est <strong>pas précis</strong>. Cela amène donc à des problèmes lors de <strong>tests d'égalité</strong> ou de <strong>calculs</strong> avec des flottants.</p>
+<p>Essayez par exemple de saisir les instructions :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="mf">0.3</span> <span class="o">==</span> <span class="p">(</span><span class="mi">3</span><span class="o">*</span><span class="mf">0.1</span><span class="p">)</span>
+</span></code></pre></div>
+<p>ou encore :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span>
+</span></code></pre></div>
+<p>et observez le résultat.</p>
+</div>
+<p>Comment faire alors pour <strong>traiter les centimes</strong> ? Le plus "simple" est d'<strong>arrondir les calculs</strong> à chaque fois.<br>
+On peut, pour cela, utiliser la fonction native <code>round()</code> qui permet d'<strong>arrondir au plus proche</strong> et en <strong>précisant le nombre de chiffres après la virgule</strong> à gérer. Dans notre cas, on arrondira à <strong>2 chiffres après la virgule</strong>. Ainsi, <code>14.009999</code> <strong>euros</strong> par exemple deviendra <code>14.01</code> et nous éviterons le problème précédent.</p>
+<div class="admonition note">
+<p class="admonition-title">Q.6</p>
+<p>Utilisez la fonction <code>round</code> pour arrondir le <code>reste</code> à <strong>deux chiffres après la virgule</strong>, sur ses deux affectations, puis refaites les tests de la question <em>Q.5</em>.</p>
+</div>
+<div class="admonition tip">
+<p>Une <strong>autre méthode plus propre</strong> consisterait plutôt à ne faire travailler la fonction qu'<strong>avec des centimes</strong>. Comme ça, les calculs sont faits avec des <strong>entiers</strong>. Il n'y aura ainsi plus de problème de résultats approximatifs à cause de l'<strong>encodage des flottants</strong>.</p>
+<p>Ainsi :</p>
+<ul>
+<li><code>0.1</code> euro sera transformé en <code>10</code> cents.</li>
+<li><code>5</code> euros sera transformé en <code>500</code> cents...</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Q.7</p>
+<p>Utiliser le programme puis répondre aux questions :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="n">les_pieces</span> <span class="o">=</span> <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">50</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.50</span><span class="p">,</span> <span class="mf">0.20</span><span class="p">,</span> <span class="mf">0.10</span><span class="p">,</span> <span class="mf">0.05</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="k">def</span> <span class="nf">rendre</span><span class="p">(</span><span class="n">a_rendre</span><span class="p">,</span> <span class="n">pieces</span> <span class="o">=</span> <span class="n">les_pieces</span><span class="p">):</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    <span class="n">pieces_en_cents</span> <span class="o">=</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">valeur</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span> <span class="k">for</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">choix</span><span class="p">]</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>    <span class="n">res</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a>    <span class="n">reste</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">a_rendre</span><span class="o">*</span><span class="mi">100</span><span class="p">)</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a>    <span class="k">while</span> <span class="n">reste</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a>        <span class="k">if</span> <span class="n">reste</span> <span class="o">&gt;=</span> <span class="n">pieces_en_cents</span><span class="p">[</span><span class="n">i</span><span class="p">]:</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>            <span class="n">reste</span> <span class="o">=</span> <span class="n">reste</span> <span class="o">-</span> <span class="n">pieces_en_cents</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>            <span class="n">res</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">choix</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="k">return</span> <span class="n">res</span>
+</span></code></pre></div>
+<p><strong>Question 1</strong> : donner le contenu du tableau choix_en_cents après exécution de la ligne 4. Tenir compte du tableau fourni en ligne 1.</p>
+<p><strong>Question 2</strong> : comment se nomme cette manière de créer un tableau : par <em>compréhension</em>, par <em>extension et ajouts successifs</em>, par <em>omission</em>, par <em>dissimulation</em> ?</p>
+<p><strong>Question 3</strong> : les calculs des lignes <em>9</em> et <em>10</em> sont donc faits en <em>cents</em>. En regardant la ligne <em>10</em>, dire si le résultat transmis par la fonction va lui être donné en <strong>euros</strong> ou en <strong>centimes</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Q.8</p>
+<p>Pour terminer, écrivez la <strong>documentation</strong> (<em>docstring</em>) de la fonction, contenant :</p>
+<ul>
+<li>une <strong>petite phrase d'explication</strong>,</li>
+<li>les <strong>préconditions</strong> (sur les paramètres d'entrée),</li>
+<li>la ou les post-<strong>conditions</strong> (sur la réponse)</li>
+<li>au moins <strong>un exemple</strong> permettant de comprendre son fonctionnement et de l'utiliser éventuellement pour un <em>doctest</em>.</li>
+</ul>
+<p>On peut également ajouter une <strong>assertion</strong> pour provoquer une <strong>exception/erreur</strong> lorsqu'on demande de rembourser une <strong>somme négative</strong>. Pensez à en tenir compte lors de la rédaction de la documentation que la fonction <strong>n'accepte pas de valeurs négatives à rembourser</strong>.</p>
+</div></div>
 
 
 
