@@ -41,4 +41,5 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Processus et ordonnancement](terminale/processus/index.md) | Gestion des processus sur un OS et ordonnancement |
 | [Programmation dynamique](terminale/progdyn/index.md) | La programmation dynamique |
 | [Graphes](terminale/graphes/index.md) | Les graphes |
+| [Composants intégrés d'un SoC](terminale/soc/index.md) | Composants intégrés d’un système sur puce |
 | [:video_game: Le module Pyxel](terminale/pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |

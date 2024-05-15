@@ -17,4 +17,5 @@
 | [Processus et ordonnancement](processus/index.md) | Gestion des processus sur un OS et ordonnancement |
 | [Programmation dynamique](progdyn/index.md) | La programmation dynamique |
 | [Graphes](graphes/index.md) | Les graphes |
+| [Composants intégrés d'un SoC](soc/index.md) | Composants intégrés d’un système sur puce |
 | [:video_game: Le module Pyxel](pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |

@@ -179,6 +179,9 @@ nav:
       - Introduction aux graphes: terminale/graphes/cours.md
       - Implémentation en Python: terminale/graphes/implementation.md
       - Exercices: terminale/graphes/exercices.md
+    - SoC:
+      - terminale/soc/index.md
+      - Cours: terminale/soc/cours.md
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Entraînement sujets pratiques: https://monlyceenumerique.fr/nsi_terminale/sujets/epreuve_pratique_22.php
   - Rendu des travaux: rendus.md
