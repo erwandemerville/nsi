@@ -54,3 +54,7 @@ Ainsi que l'avait prédit **Moore**, c'est la **progression du nombre de transis
 <center>
 [:material-notebook: Capytale - Notebook d'exercices](https://capytale2.ac-paris.fr/web/c/79ee-3573238){ style="font-size:1.5em" target="_blank" }
 </center>
+
+<center>
+[:material-file-pdf-box: Exercices autour de quelques SoC](src/td_soc.pdf){ style="font-size:1.5em" target="_blank" }
+</center>
