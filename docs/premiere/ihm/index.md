@@ -1,12 +1,10 @@
-# Interactions Homme-Machine sur le web
+# Interface Homme-Machine (IHM)
 
-Lors de la **navigation sur le Web**, les internautes **interagissent** avec la **machine** à l'aide de **pages Web**.
-L’**Interface Homme-Machine** (*IHM*) repose sur la **gestion d’évènements**, évènements associés à des **éléments** d'une page web, et déclenchant à des **algorithmes**.  
-La relation **client-serveur** déjà abordé en classe de *seconde* sera ici approfondie, en s'intéressant aux **requêtes du client**, aux **calculs effctués** puis aux **réponses du serveur**.
+<figure markdown="span">
+  ![Extrait du programme](images/extrait_bo.png)
+  <figcaption>Extrait du programme</figcaption>
+</figure>
 
 | Liste des contenus                           | Description                         |
 | -------------------------------------------- | ----------------------------------- |
-| [Cours - Les langages HTML et CSS](htmlcss.md) | Rappels sur les langages **HTML** et **CSS**. |
-| [Cours - Le JavaScript (JS)](js.md) | Cours sur le **Javascript** (*JS*). |
-| [Cours - Modèle client/serveur et protocole HTTP](clientserveur.md) | Cours sur le **modèle client/serveur**, le **protocole HTTP** et les **formulaires**. |
-| [Notebooks et exercices](exercices.md) | Notebooks et exercices sur l'IHM.  |
+| [Cours - Interface Homme-Machine](cours.md) | Périphériques d’entrée et de sortie et IHM. |

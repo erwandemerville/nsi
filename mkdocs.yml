@@ -83,18 +83,21 @@ nav:
       - Activité préliminaire: premiere/tris/activite_preliminaire.md
       - Tri par sélection: premiere/tris/tri_selection.md
       - Tri par insertion: premiere/tris/tri_insertion.md
-    - IHM:
-      - premiere/ihm/index.md
-      - Cours HTML et CSS: premiere/ihm/htmlcss.md
-      - Le JavaScript: premiere/ihm/js.md
-      - Modèle client/serveur et HTTP: premiere/ihm/clientserveur.md
-      - Notebooks et exercices: premiere/ihm/exercices.md
+    - Interactions Homme-Machine:
+      - premiere/interactions/index.md
+      - Cours HTML et CSS: premiere/interactions/htmlcss.md
+      - Le JavaScript: premiere/interactions/js.md
+      - Modèle client/serveur et HTTP: premiere/interactions/clientserveur.md
+      - Notebooks et exercices: premiere/interactions/exercices.md
     - Recherche dichotomique:
       - premiere/dicho/index.md
       - Cours: premiere/dicho/cours.md
     - Algorithmes gloutons:
       - premiere/gloutons/index.md
       - Cours: premiere/gloutons/cours.md
+    - Interface Homme-Machine:
+      - premiere/ihm/index.md
+      - Cours: premiere/ihm/cours.md
   - Terminale:
     - terminale/index.md
     - Modularité:

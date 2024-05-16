@@ -236,6 +236,7 @@ Voici l'**algorithme** en **pseudo-code** que vous écrirez en *Python*.
     &emsp;&emsp;**TANT QUE** reste **STRICTEMENT SUPÉRIEURE À** 0 :  
     &emsp;&emsp;&emsp;&emsp;**SI** reste **SUPÉRIEUR OU ÉGAL À** pieces[i] :  
     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;reste ← reste $-$ pieces[i]  
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Ajouter** pieces[i] **à** res  
     &emsp;&emsp;&emsp;&emsp;**SINON** :  
     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;i ← i $+$ 1  
     &emsp;&emsp;&emsp;&emsp;**FIN SI**  
