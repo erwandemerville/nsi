@@ -1,7 +1,7 @@
 # Cours - Réseaux
 
 ??? quote "Sources / Liens utiles"
-    - Protocole du bit alterné : [https://www.nsi-a-feuillade.fr/document/premiere/04c-Part3-Protocole_bit_alterne218512101.pdf](nsi-a-feuillade.fr)
+    - [Protocole du bit alterné](https://www.nsi-a-feuillade.fr/document/premiere/04c-Part3-Protocole_bit_alterne218512101.pdf)
     - [frederic-junier.gitlab.io/](https://frederic-junier.gitlab.io/parc-nsi/chapitre25/reseau-cours-git/)
     - [glassus.github.io](https://glassus.github.io/premiere_nsi/T3_Architecture_materielle/3.4_Protocoles_de_communication/cours/)
     - Activité : [https://www.nsi-a-feuillade.fr/document/premiere/04c-TP_reseauPython853717355.pdf](https://www.nsi-a-feuillade.fr/document/premiere/04c-TP_reseauPython853717355.pdf)
