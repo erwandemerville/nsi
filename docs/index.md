@@ -22,6 +22,7 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [La recherche dichotomique](premiere/dicho/index.md) | La **recherche dichotomique** dans une liste triée. |
 | [Les algorithmes gloutons](premiere/gloutons/index.md) | Cours et exercices sur les **algorithmes gloutons**. |
 | [Interface Homme-Machine](premiere/ihm/index.md) | Cours et exercices sur les interfaces Homme-Machine (**IHM**). |
+| [Réseaux](premiere/reseau/index.md) | Cours et exercices sur les réseaux. |
 
 ## NSI terminale
 

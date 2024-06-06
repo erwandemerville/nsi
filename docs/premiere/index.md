@@ -12,3 +12,4 @@
 | [La recherche dichotomique](dicho/index.md) | La **recherche dichotomique** dans une liste triée. |
 | [Les algorithmes gloutons](gloutons/index.md) | Cours et exercices sur les **algorithmes gloutons**. |
 | [Interface Homme-Machine](ihm/index.md) | Cours et exercices sur les interfaces Homme-Machine (**IHM**). |
+| [Réseaux](reseau/index.md) | Cours et exercices sur les réseaux. |
