@@ -1,0 +1,4514 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/reseau/cours/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
+    
+    
+      
+        <title>Cours - Réseaux - Numérique et sciences informatiques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+
+      
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
+<!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.asm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-md5"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script src="../../../pyodide-mkdocs/utils.js"></script> 
+<script src="../../../pyodide-mkdocs/interpreter.js"></script> 
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+<link rel="stylesheet" href="../../../pyodide-mkdocs/pyoditeur.css">
+
+
+<input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
+
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="my_theme" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#cours-reseaux" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numérique et sciences informatiques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cours - Réseaux
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="my_theme" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer en mode nuit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode nuit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3 3.19.09m3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95 2.06.05m-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31Z"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Passer en mode jour"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode jour" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5c-.84 0-1.65.15-2.39.42L12 2M3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29L3.34 7m.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14L3.36 17M20.65 7l-1.77 3.79a7.023 7.023 0 0 0-2.38-4.15l4.15.36m-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29L20.64 17M12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44L12 22Z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Accueil
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Première
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../terminale/" class="md-tabs__link">
+          
+  
+    
+  
+  Terminale
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/" class="md-tabs__link">
+        
+  
+    
+  
+  Ressources Pyxel
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://monlyceenumerique.fr/nsi_terminale/sujets/epreuve_pratique_22.php" class="md-tabs__link">
+        
+  
+    
+  
+  Entraînement sujets pratiques
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../rendus/" class="md-tabs__link">
+        
+  
+    
+  
+  Rendu des travaux
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Numérique et sciences informatiques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Accueil
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Première
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Première
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../bases_python/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Les bases de Python
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Les bases de Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction au Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/dm1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Correction DM 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/thonny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Découverte de l'IDE Thonny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/notebooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notebooks et exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../representation_donnees/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Représentation des données
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Représentation des données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../representation_donnees/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../representation_donnees/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices et notebooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../archi/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Architecture matérielle
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture matérielle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archi/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à la logique booléenne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archi/fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonctions et expressions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archi/circuits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les circuits logiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archi/vonneumann/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modèle de Von Neumann
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archi/os/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Systèmes d'exploitation
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../traitement_donnees/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Traitement des données en tables
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Traitement des données en tables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../traitement_donnees/n_uplets_dicos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    n-uplets et dictionnaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../traitement_donnees/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../traitement_donnees/pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le module Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../traitement_donnees/dm2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DM n°2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../pyxel/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Le module Pyxel
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Le module Pyxel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pyxel/snake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jeu de snake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pyxel/projetjv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet - Réaliser un jeu vidéo
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pyxel/realisations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Réalisations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../tris/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Tris
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Tris
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tris/activite_preliminaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité préliminaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tris/tri_selection/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tri par sélection
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../tris/tri_insertion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tri par insertion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../interactions/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Interactions Homme-Machine
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Interactions Homme-Machine
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interactions/htmlcss/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours HTML et CSS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interactions/js/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le JavaScript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interactions/clientserveur/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modèle client/serveur et HTTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interactions/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notebooks et exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../dicho/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Recherche dichotomique
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Recherche dichotomique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../dicho/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gloutons/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Algorithmes gloutons
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithmes gloutons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gloutons/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_11" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ihm/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Interface Homme-Machine
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_11" id="__nav_2_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_11">
+            <span class="md-nav__icon md-icon"></span>
+            Interface Homme-Machine
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ihm/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Terminale
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Terminale
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/modularite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Modularité
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Modularité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/modularite/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité - Utilisation d'une API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/modularite/modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion de modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/mise_au_point/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Mise au point de programmes
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mise au point de programmes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/preliminaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité préliminaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours et exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/activite_finale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité finale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/poo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Programmation orientée objet
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Programmation orientée objet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/preliminaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité d'introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/pokemon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP - Un jeu Pokémon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/recursivite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Récursivité
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Récursivité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recursivite/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recursivite/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/listes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Listes chaînées
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Listes chaînées
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/listes/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/listes/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/pilesfiles/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Piles et files
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Piles et files
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/pilesfiles/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/bdd/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Bases de données
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            Bases de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/bdd/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction aux bdd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/bdd/modele_relationnel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/bdd/sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/bdd/src/activite_movies.zip" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité - Une base de films
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/arbres/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Arbres
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            Arbres
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9_2" id="__nav_3_9_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/vocabulaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Définitions et vocabulaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/parcours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parcours d'arbres binaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/type_abstrait/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Type abstrait "Arbre binaire"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/abr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arbres binaires de recherche
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9_3" id="__nav_3_9_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Activités Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9_3">
+            <span class="md-nav__icon md-icon"></span>
+            Activités Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/implementation_arbres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implémentation d'un arbre binaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/implementation_abr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implémentation d'un arbre binaire de recherche
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_9_4" id="__nav_3_9_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_9_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9_4">
+            <span class="md-nav__icon md-icon"></span>
+            Exercices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/exercices_vocabulaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vocabulaire sur les arbres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/exercices_parcours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parcours d'arbres binaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/exercices_abr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arbre binaires de recherche
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/implementations_arbres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implémentations d'arbres binaires et ABR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/routage/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Protocoles de routage
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            Protocoles de routage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/routage/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/routage/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://www.numerique-sciences-informatiques.fr/TP-reseaux.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP Filius
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/recherche_textuelle/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Recherche textuelle
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            Recherche textuelle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recherche_textuelle/tp_intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP d'introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recherche_textuelle/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/pyxel/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Le module Pyxel
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            Le module Pyxel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/pyxel/snake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jeu de snake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/pyxel/projetjv/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Projet de jeu
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/pyxel/realisations/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Réalisations
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/paradigmes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Paradigmes de programmation
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_13">
+            <span class="md-nav__icon md-icon"></span>
+            Paradigmes de programmation
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/paradigmes/Paradigmes_prog.zip" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notebook d'intro
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/paradigmes/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/diviserregner/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Diviser pour régner
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_14">
+            <span class="md-nav__icon md-icon"></span>
+            Diviser pour régner
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/diviserregner/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/diviserregner/exercices.zip" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_15" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/processus/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Processus et ordonnancement
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_15" id="__nav_3_15_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_15">
+            <span class="md-nav__icon md-icon"></span>
+            Processus et ordonnancement
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/processus/TDTP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TD/TP découverte
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/processus/sujet_bac/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sujet de bac
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_16" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/progdyn/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Programmation dynamique
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_16" id="__nav_3_16_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_16">
+            <span class="md-nav__icon md-icon"></span>
+            Programmation dynamique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/progdyn/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/progdyn/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_17" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/graphes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Graphes
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_17" id="__nav_3_17_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_17">
+            <span class="md-nav__icon md-icon"></span>
+            Graphes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/graphes/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction aux graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/graphes/implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implémentation en Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/graphes/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_18" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/soc/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    SoC
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_18" id="__nav_3_18_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_18">
+            <span class="md-nav__icon md-icon"></span>
+            SoC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/soc/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ressources Pyxel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://monlyceenumerique.fr/nsi_terminale/sujets/epreuve_pratique_22.php" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entraînement sujets pratiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rendus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendu des travaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#rappels-sur-ladressage-ip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Rappels sur l'adressage IP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-quest-ce-quun-reseau" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vidéo - Qu'est-ce qu'un réseau ?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#video-le-fonctionnement-dinternet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vidéo - Le fonctionnement d'internet
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-modele-osi-et-tcpip" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le modèle OSI et TCP/IP
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#modele-client-serveur-et-routeurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Modèle client-serveur et routeurs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-exemple-de-reseau-avec-filius" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un exemple de réseau avec Filius
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#processus-du-bit-alterne" class="md-nav__link">
+    <span class="md-ellipsis">
+      Processus du bit alterné
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercices
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+
+<div><h1 id="cours-reseaux">Cours - Réseaux<a class="headerlink" href="#cours-reseaux" title="Permanent link">¶</a></h1>
+<details class="quote">
+<summary>Sources / Liens utiles</summary>
+<ul>
+<li><a href="https://www.nsi-a-feuillade.fr/document/premiere/04c-Part3-Protocole_bit_alterne218512101.pdf">Protocole du bit alterné</a></li>
+<li><a href="https://frederic-junier.gitlab.io/parc-nsi/chapitre25/reseau-cours-git/">frederic-junier.gitlab.io/</a></li>
+<li><a href="https://glassus.github.io/premiere_nsi/T3_Architecture_materielle/3.4_Protocoles_de_communication/cours/">glassus.github.io</a></li>
+<li>Activité : <a href="https://www.nsi-a-feuillade.fr/document/premiere/04c-TP_reseauPython853717355.pdf">https://www.nsi-a-feuillade.fr/document/premiere/04c-TP_reseauPython853717355.pdf</a></li>
+</ul>
+</details>
+<h2 id="rappels-sur-ladressage-ip">Rappels sur l'adressage IP<a class="headerlink" href="#rappels-sur-ladressage-ip" title="Permanent link">¶</a></h2>
+<p>Voici une petite activité (sous la forme d'un notebook) autour de l'<strong>adressage IP et des masques de sous-réseau</strong> :</p>
+<p></p><center>
+<a href="../src/protocoles_routage_activite_introduction.ipynb" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.88.88 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.756.756 0 0 0-.49-.18M15 10V8h5v2h-5m-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41M10 0h2v5h-2V0M3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83-1.41-1.41m0-11.32 1.41-1.41 2.83 2.83-1.41 1.41-2.83-2.83M7 10H2V8h5v2"></path></svg></span> Télécharger l'activité d'introduction</a>
+</center>
+<div class="admonition tip">
+<p class="admonition-title">Adresses <em>broadcast</em> et <em>multicast</em></p>
+<ul>
+<li><strong>Broadcast</strong> : Cette adresse vous permet d'appeler <strong>tous les hôtes</strong> (<em>interfaces</em>) à l'intérieur d'un <strong>sous-réseau</strong>. Une <strong>adresse IP broadcast</strong> est par exemple <code>192.168.100.255</code> et un <strong>broadcast MAC</strong> est <code>FF:FF:FF:FF:FF:FF</code>.</li>
+<li><strong>Multicast</strong> : Ce type d'adresse permet d'appeler un <strong>groupe spécifique d'hôtes</strong> (<em>interfaces</em>) dans un <strong>sous-réseau</strong>.</li>
+</ul>
+</div>
+<h2 id="video-quest-ce-quun-reseau">Vidéo - Qu'est-ce qu'un réseau ?<a class="headerlink" href="#video-quest-ce-quun-reseau" title="Permanent link">¶</a></h2>
+<p>Vous pouvez dans un premier temps essayer de faire l'<a href="#exercices">exercice 1</a> pour tester vos connaissances sur les composants d'un réseau.</p>
+<p>Voici une petite vidéo résumant la <strong>constitution d'un réseau</strong> (et plus généralement du <strong>réseau mondial</strong>) :</p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/JqweQE6TDTc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h2 id="video-le-fonctionnement-dinternet">Vidéo - Le fonctionnement d'internet<a class="headerlink" href="#video-le-fonctionnement-dinternet" title="Permanent link">¶</a></h2>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dCknqcjcItU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h2 id="le-modele-osi-et-tcpip">Le modèle OSI et TCP/IP<a class="headerlink" href="#le-modele-osi-et-tcpip" title="Permanent link">¶</a></h2>
+<p>La transmission des données repose sur un <strong>modèle en couches</strong> (en <strong>7 couches</strong> avec le modèle <strong>OSI</strong> et en <strong>4 couches</strong> avec le modèle <strong>TCP/IP</strong>,également appelé "modèle internet".)</p>
+<p></p><center>
+<img alt="Modèle OSI vs. TCP/IP" src="../images/osi_tcp_ip.png">
+</center>
+<p><img alt="Schéma d'encapsulation" src="../images/schema_encapsulation.png"></p>
+<div class="admonition abstract">
+<p class="admonition-title">Schéma plus détaillé - Encapsulation des données (modèle TCP/IP)</p>
+<p><img alt="Encapsulation des données" src="../images/osi_exemple.png"></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Protocoles IP et TCP</p>
+<p>Les <strong>deux protocoles</strong> qui nous intéressent particulièrement sont :</p>
+<ul>
+<li>Le <strong>protocole IP</strong> (COUCHE <strong>RÉSEAU</strong>) qui consiste à attribuer à chaque machine une <strong>adresse IP unique</strong> pour l’<strong>identifier sur le réseau</strong>, et ainsi transmettre l'information sous la forme de <strong>paquets</strong> comportant l'indication de l'<strong>adresse IP source</strong> et de l'<strong>adresse IP de destination</strong>.</li>
+<li>Le <strong>protocole TCP</strong> (COUCHE <strong>TRANSPORT</strong>) qui permet d’assurer la communication de l’information en la <strong>découpant en segments</strong>, comportant l'indication du <strong>port source</strong> et du <strong>port de destination</strong>, et en s’assurant que tous les paquets soient bien <strong>reçus</strong> et <strong>conformes</strong> à l’<strong>information envoyée</strong>. (Il existe un protocole plus rapide mais qui, contraiement à <strong>TCP</strong>, n'assure pas que toutes les données soient reçues : le protocole <strong>UDP</strong>.)</li>
+</ul>
+<p>Voici un rappel de la manière dont s'effectue l'<strong>établissement d'une connexion</strong> ainsi que la <strong>transmission des données</strong> avec le protocole <strong>TCP</strong> (<a href="https://openclassrooms.com/fr/courses/2340511-maitrisez-vos-applications-et-reseaux-tcp-ip/5678267-exercez-vous-au-suivi-de-connexion" target="_blank">source de l'image</a>):</p>
+<p><img alt="Transmission des données avec le protocole TCP" src="../images/TCP_transmission.png"></p>
+<p>Lorsqu'un paquet n'est pas correctement transmis, il est <strong>de nouveau envoyé</strong> (<a href="http://shtroumbiniouf.free.fr/CoursInfo/Reseau2/Cours/TCP/TCP.html" target="_blank">source de l'image</a>):</p>
+<p></p><center>
+<img alt="Échec de transmission" src="../images/AckPositif.gif">
+</center>
+<p></p><center>
+<a href="https://laissus.developpez.com/tutoriels/cours-introduction-tcp-ip/?page=page_7" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2Zm6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1Z"></path></svg></span> Voir plus d'informations sur le protocole TCP</a>
+</center>
+</div>
+<h2 id="modele-client-serveur-et-routeurs">Modèle client-serveur et routeurs<a class="headerlink" href="#modele-client-serveur-et-routeurs" title="Permanent link">¶</a></h2>
+<p>Un <strong>réseau informatique</strong> permet la <strong>connexion entre différentes machines</strong> afin de faciliter la <strong>communication</strong> entre elles. Le modèle de communication généralement utilisé est le <mark><strong>modèle client-serveur</strong></mark>, qui permet aux <mark><strong>clients</strong></mark> d'échanger des <strong>paquets d'informations</strong> avec les <mark><strong>serveurs</strong></mark>.<br>
+La notion de "client" est large, pouvant désigner aussi bien une application qu'une machine exécutant cette application. De même, le terme "serveur" peut faire référence à l'ordinateur hébergeant un <strong>service</strong> ou au <strong>logiciel</strong> fournissant ce service.</p>
+<p>Les <strong>paquets</strong> de <strong>bits</strong> échangés sont les unités de base transitant sur le réseau physique. Ils résultent de la <strong>fragmentation des données</strong> à transmettre, telles que des <em>pages web</em>, des <em>courriels</em> ou des <em>vidéos</em>. Ces paquets sont envoyés séparément sur le réseau, et l'information initiale est <strong>reconstituée</strong> une fois qu'ils atteignent leur destination, que ce soit du côté <strong>client</strong> ou <strong>serveur</strong>.</p>
+<p>En plus des <strong>clients</strong> et des <strong>serveurs</strong>, un réseau informatique est composé de <mark><strong>routeurs</strong></mark>, pouvant être de deux types : des <strong>routeurs d'accès</strong> (en bordure de réseau) ou des <strong>routeurs internes</strong>.<br>
+Ces machines ont pour rôle de <strong>relayer les paquets</strong> dans le <strong>réseau</strong> pour les acheminer vers leur <strong>destination finale</strong>. Un <strong>routeur</strong> fait le lien entre <strong>deux réseaux</strong>. Les <strong>clients</strong> et les <strong>serveurs</strong> sont connectés aux routeurs d'accès via des <strong>réseaux locaux</strong> (en utilisant par exemple le <em>Wi-Fi</em> ou l'<em>Ethernet</em>). Les <strong>routeurs internes</strong> sont reliés entre eux sur de <strong>plus longues distances</strong> à l'aide de <strong>fibres optiques</strong>, de <strong>câbles téléphoniques</strong>, de <strong>liaisons par satellite</strong>, etc. L'interconnexion de ces routeurs via ces liens forme la <strong>topologie du réseau</strong>.</p>
+<p>Par exemple, la <strong>figure ci-dessous</strong> représente la <strong>topologie d'un réseau</strong> avec <strong>six routeurs</strong>.</p>
+<figure>
+<p><img alt="Topologie d'un réseau" src="../images/screen_reseau.png">
+  </p>
+<figcaption><b>Figure 1</b> : Topologie d'un réseau</figcaption>
+</figure>
+<div class="admonition success">
+<p>Les <strong>routeurs R1</strong> et <strong>R6</strong> sont des <strong>routeurs d'accès</strong> permettant aux <strong>machines Client</strong> et <strong>Serveur</strong> d'<strong>accéder au réseau</strong>. Les autres routeurs (<strong>R2 à R5</strong>) sont des <strong>routeurs internes</strong>. Les <strong>adresses IP</strong> des machines sont indiquées par une paire <strong>sous-réseau/masque</strong>. Par exemple, les routeurs <strong>R1</strong> et <strong>R3</strong> sont connectés à un <strong>sous-réseau</strong> avec l'adresse <strong>10.1.1.0</strong> et un <strong>masque de 30</strong>, signifiant que seuls les deux bits de poids faible de l'adresse peuvent être utilisés pour associer des adresses IP aux machines.</p>
+</div>
+<p>Lorsqu'un routeur reçoit un paquet, il analyse l'<strong>adresse de destination</strong> et choisit vers <strong>quel routeur voisin</strong> transmettre le paquet pour le faire progresser vers sa destination. Cette décision est prise en se basant sur la <strong>table de routage du routeur</strong>, qui associe les <strong>adresses de destination</strong> à des <strong>adresses de routeurs voisins</strong>. Ainsi, le paquet progresse de routeur en routeur jusqu'à atteindre le client ou le serveur auquel il est destiné. </p>
+<div class="admonition note">
+<p>Par exemple, si un client souhaite envoyer un message au serveur, il le transmet à son <strong>routeur d'accès</strong> (R1), qui le renvoie au routeur R3. R3 choisit ensuite le prochain routeur à utiliser (R2, R4 ou R5) en se basant sur sa <strong>table de routage</strong>. Ce processus se répète à chaque routeur jusqu'à ce que le paquet parvienne au routeur R6, qui le délivre ensuite au <strong>serveur</strong>.</p>
+</div>
+<h2 id="un-exemple-de-reseau-avec-filius">Un exemple de réseau avec Filius<a class="headerlink" href="#un-exemple-de-reseau-avec-filius" title="Permanent link">¶</a></h2>
+<p>Voici ci-dessous un exemple de réseau réalisé sur <strong>Filius</strong>, composé d'<em>ordinateurs</em>, de <em>commutateurs</em> (switchs), de <em>routeurs</em> et d'un <em>serveur DNS</em>. À noté que ce que l'on appelle <em>"serveur DNS"</em> fait à la fois référence à la <strong>machine</strong> nommée <code>Serveur DNS</code>, au au <strong>logiciel</strong> exécuté sur cette machine.</p>
+<p></p><center>
+<a href="../src/reseau_avec_DNS.fls" style="font-size:1.5em" target="_blank">Télécharger le fichier Filius <code>.fls</code></a>
+</center>
+<p>Vous pouvez <strong>télécharger</strong> le fichier ci-dessus et l'<strong>ouvrir dans le logiciel <em>Filius</em></strong>. Vous devriez obtenir le réseau suivant :</p>
+<p><img alt="Réseau Filius" src="../images/reseau_Filius.png"></p>
+<h2 id="processus-du-bit-alterne">Processus du bit alterné<a class="headerlink" href="#processus-du-bit-alterne" title="Permanent link">¶</a></h2>
+<p>En construction. En attendant, vous pouvez <a href="https://www.nsi-a-feuillade.fr/document/premiere/04c-Part3-Protocole_bit_alterne218512101.pdf">consulter ce diaporama</a> expliquant très bien le <strong>protocole du bit alterné</strong>.</p>
+<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Exercice 1 - Composants dans un réseau</p>
+<p>Identifiez les différents composants du réseau suivant :</p>
+<p><img alt="Composants d'un réseau" src="../images/composants_reseau.png"></p>
+<p>A = <code>..........</code><br>
+B = <code>..........</code><br>
+C = <code>..........</code><br>
+D = <code>..........</code></p>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+<script src="../../../pyodide-mkdocs/ide.js"></script> 
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - Erwan Demerville
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../js/open_in_new_tab.js"></script>
+      
+    
+  </body>
+</html>
