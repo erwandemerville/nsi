@@ -98,6 +98,9 @@ nav:
     - Interface Homme-Machine:
       - premiere/ihm/index.md
       - Cours: premiere/ihm/cours.md
+    - Réseau:
+      - premiere/reseau/index.md
+      - Cours: premiere/reseau/cours.md
   - Terminale:
     - terminale/index.md
     - Modularité:
@@ -185,6 +188,9 @@ nav:
     - SoC:
       - terminale/soc/index.md
       - Cours: terminale/soc/cours.md
+    - Chiffrement:
+      - terminale/chiffrement/index.md
+      - Cours: terminale/chiffrement/cours.md
   - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
   - Entraînement sujets pratiques: https://monlyceenumerique.fr/nsi_terminale/sujets/epreuve_pratique_22.php
   - Rendu des travaux: rendus.md

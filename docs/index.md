@@ -44,4 +44,5 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Programmation dynamique](terminale/progdyn/index.md) | La programmation dynamique |
 | [Graphes](terminale/graphes/index.md) | Les graphes |
 | [Composants intégrés d'un SoC](terminale/soc/index.md) | Composants intégrés d’un système sur puce |
+| [Chiffrement](terminale/chiffrement/index.md) | Les méthodes de chiffrement et le protocole HTTPS |
 | [:video_game: Le module Pyxel](terminale/pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |

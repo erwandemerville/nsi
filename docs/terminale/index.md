@@ -18,4 +18,5 @@
 | [Programmation dynamique](progdyn/index.md) | La programmation dynamique |
 | [Graphes](graphes/index.md) | Les graphes |
 | [Composants intégrés d'un SoC](soc/index.md) | Composants intégrés d’un système sur puce |
+| [Chiffrement](chiffrement/index.md) | Les méthodes de chiffrement et le protocole HTTPS |
 | [:video_game: Le module Pyxel](pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |
