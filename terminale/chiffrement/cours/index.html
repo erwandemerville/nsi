@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/reseau/">
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/terminale/chiffrement/cours/">
       
       
-        <link rel="prev" href="../ihm/cours/">
+        <link rel="prev" href="../">
       
       
-        <link rel="next" href="cours/">
+        <link rel="next" href="../../../rendus/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.25">
     
     
       
-        <title>Réseau - Transmission données, protocoles et architecture - Numérique et sciences informatiques</title>
+        <title>Cours - Numérique et sciences informatiques</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6543a935.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.6543a935.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,8 +50,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
-<script src="../../pyodide-mkdocs/utils.js"></script> 
-<script src="../../pyodide-mkdocs/interpreter.js"></script> 
+<script src="../../../pyodide-mkdocs/utils.js"></script> 
+<script src="../../../pyodide-mkdocs/interpreter.js"></script> 
 
     
       
@@ -63,9 +63,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,7 +73,7 @@
     
     
 
-<link rel="stylesheet" href="../../pyodide-mkdocs/pyoditeur.css">
+<link rel="stylesheet" href="../../../pyodide-mkdocs/pyoditeur.css">
 
 
 <input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#reseau-transmission-donnees-protocoles-et-architecture" class="md-skip">
+        <a href="#cours-chiffrement-et-protocole-https" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -132,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Réseau - Transmission données, protocoles et architecture
+              Cours
             
           </span>
         </div>
@@ -236,12 +236,32 @@
     
     
       <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
     
   
   Accueil
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../premiere/" class="md-tabs__link">
+          
+  
+    
+  
+  Première
 
         </a>
       </li>
@@ -258,27 +278,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
-          
-  
-    
-  
-  Première
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../terminale/" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
           
   
     
@@ -330,7 +330,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../rendus/" class="md-tabs__link">
+      <a href="../../../rendus/" class="md-tabs__link">
         
   
     
@@ -364,7 +364,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -403,7 +403,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -435,8 +435,6 @@
       
   
   
-    
-  
   
   
     
@@ -471,22 +469,19 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../premiere/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -497,13 +492,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Première
@@ -548,7 +543,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../bases_python/" class="md-nav__link ">
+            <a href="../../../premiere/bases_python/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -581,7 +576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bases_python/cours/" class="md-nav__link">
+      <a href="../../../premiere/bases_python/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -602,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bases_python/dm1/" class="md-nav__link">
+      <a href="../../../premiere/bases_python/dm1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -623,7 +618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bases_python/thonny/" class="md-nav__link">
+      <a href="../../../premiere/bases_python/thonny/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -644,7 +639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bases_python/notebooks/" class="md-nav__link">
+      <a href="../../../premiere/bases_python/notebooks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -698,7 +693,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../representation_donnees/" class="md-nav__link ">
+            <a href="../../../premiere/representation_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -731,7 +726,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../representation_donnees/cours/" class="md-nav__link">
+      <a href="../../../premiere/representation_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -752,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../representation_donnees/exercices/" class="md-nav__link">
+      <a href="../../../premiere/representation_donnees/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -812,7 +807,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../archi/" class="md-nav__link ">
+            <a href="../../../premiere/archi/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -845,7 +840,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archi/introduction/" class="md-nav__link">
+      <a href="../../../premiere/archi/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -866,7 +861,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archi/fonctions/" class="md-nav__link">
+      <a href="../../../premiere/archi/fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -887,7 +882,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archi/circuits/" class="md-nav__link">
+      <a href="../../../premiere/archi/circuits/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -908,7 +903,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archi/vonneumann/" class="md-nav__link">
+      <a href="../../../premiere/archi/vonneumann/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -929,7 +924,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../archi/os/" class="md-nav__link">
+      <a href="../../../premiere/archi/os/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -987,7 +982,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../traitement_donnees/" class="md-nav__link ">
+            <a href="../../../premiere/traitement_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1020,7 +1015,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../traitement_donnees/n_uplets_dicos/" class="md-nav__link">
+      <a href="../../../premiere/traitement_donnees/n_uplets_dicos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1041,7 +1036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../traitement_donnees/cours/" class="md-nav__link">
+      <a href="../../../premiere/traitement_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1062,7 +1057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../traitement_donnees/pandas/" class="md-nav__link">
+      <a href="../../../premiere/traitement_donnees/pandas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1083,7 +1078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../traitement_donnees/dm2/" class="md-nav__link">
+      <a href="../../../premiere/traitement_donnees/dm2/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1139,7 +1134,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../pyxel/" class="md-nav__link ">
+            <a href="../../../premiere/pyxel/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1172,7 +1167,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyxel/snake/" class="md-nav__link">
+      <a href="../../../premiere/pyxel/snake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1193,7 +1188,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyxel/projetjv/" class="md-nav__link">
+      <a href="../../../premiere/pyxel/projetjv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1214,7 +1209,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyxel/realisations/" class="md-nav__link">
+      <a href="../../../premiere/pyxel/realisations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1270,7 +1265,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../tris/" class="md-nav__link ">
+            <a href="../../../premiere/tris/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1303,7 +1298,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tris/activite_preliminaire/" class="md-nav__link">
+      <a href="../../../premiere/tris/activite_preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1324,7 +1319,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tris/tri_selection/" class="md-nav__link">
+      <a href="../../../premiere/tris/tri_selection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1345,7 +1340,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../tris/tri_insertion/" class="md-nav__link">
+      <a href="../../../premiere/tris/tri_insertion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1403,7 +1398,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../interactions/" class="md-nav__link ">
+            <a href="../../../premiere/interactions/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1436,7 +1431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactions/htmlcss/" class="md-nav__link">
+      <a href="../../../premiere/interactions/htmlcss/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1457,7 +1452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactions/js/" class="md-nav__link">
+      <a href="../../../premiere/interactions/js/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1478,7 +1473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactions/clientserveur/" class="md-nav__link">
+      <a href="../../../premiere/interactions/clientserveur/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1499,7 +1494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../interactions/exercices/" class="md-nav__link">
+      <a href="../../../premiere/interactions/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1551,7 +1546,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../dicho/" class="md-nav__link ">
+            <a href="../../../premiere/dicho/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1584,7 +1579,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../dicho/cours/" class="md-nav__link">
+      <a href="../../../premiere/dicho/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1636,7 +1631,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../gloutons/" class="md-nav__link ">
+            <a href="../../../premiere/gloutons/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1669,7 +1664,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../gloutons/cours/" class="md-nav__link">
+      <a href="../../../premiere/gloutons/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1721,7 +1716,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../ihm/" class="md-nav__link ">
+            <a href="../../../premiere/ihm/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1754,7 +1749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../ihm/cours/" class="md-nav__link">
+      <a href="../../../premiere/ihm/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1780,8 +1775,6 @@
                 
   
   
-    
-  
   
   
     
@@ -1799,16 +1792,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_12" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../../premiere/reseau/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1819,13 +1812,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2_12" id="__nav_2_12_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_12_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_12">
             <span class="md-nav__icon md-icon"></span>
             Réseau
@@ -1841,7 +1834,7 @@
   
   
     <li class="md-nav__item">
-      <a href="cours/" class="md-nav__link">
+      <a href="../../../premiere/reseau/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1874,6 +1867,8 @@
       
   
   
+    
+  
   
   
     
@@ -1922,19 +1917,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1945,13 +1943,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Terminale
@@ -1992,7 +1990,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/modularite/" class="md-nav__link ">
+            <a href="../../modularite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2025,7 +2023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/modularite/api/" class="md-nav__link">
+      <a href="../../modularite/api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2046,7 +2044,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/modularite/modules/" class="md-nav__link">
+      <a href="../../modularite/modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2102,7 +2100,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/mise_au_point/" class="md-nav__link ">
+            <a href="../../mise_au_point/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2135,7 +2133,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/mise_au_point/preliminaire/" class="md-nav__link">
+      <a href="../../mise_au_point/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2156,7 +2154,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/mise_au_point/cours/" class="md-nav__link">
+      <a href="../../mise_au_point/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2177,7 +2175,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/mise_au_point/activite_finale/" class="md-nav__link">
+      <a href="../../mise_au_point/activite_finale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2235,7 +2233,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/poo/" class="md-nav__link ">
+            <a href="../../poo/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2268,7 +2266,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/poo/preliminaire/" class="md-nav__link">
+      <a href="../../poo/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2289,7 +2287,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/poo/cours/" class="md-nav__link">
+      <a href="../../poo/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2310,7 +2308,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/poo/pokemon/" class="md-nav__link">
+      <a href="../../poo/pokemon/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2331,7 +2329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/poo/exercices/" class="md-nav__link">
+      <a href="../../poo/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2385,7 +2383,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/recursivite/" class="md-nav__link ">
+            <a href="../../recursivite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2418,7 +2416,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/recursivite/cours/" class="md-nav__link">
+      <a href="../../recursivite/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2439,7 +2437,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/recursivite/exercices/" class="md-nav__link">
+      <a href="../../recursivite/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2493,7 +2491,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/listes/" class="md-nav__link ">
+            <a href="../../listes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2526,7 +2524,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/listes/cours/" class="md-nav__link">
+      <a href="../../listes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2547,7 +2545,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/listes/exercices/" class="md-nav__link">
+      <a href="../../listes/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2599,7 +2597,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/pilesfiles/" class="md-nav__link ">
+            <a href="../../pilesfiles/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2632,7 +2630,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/pilesfiles/cours/" class="md-nav__link">
+      <a href="../../pilesfiles/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2690,7 +2688,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/bdd/" class="md-nav__link ">
+            <a href="../../bdd/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2723,7 +2721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/bdd/introduction/" class="md-nav__link">
+      <a href="../../bdd/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2744,7 +2742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/bdd/modele_relationnel/" class="md-nav__link">
+      <a href="../../bdd/modele_relationnel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2765,7 +2763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/bdd/sql/" class="md-nav__link">
+      <a href="../../bdd/sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2786,7 +2784,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/bdd/src/activite_movies.zip" class="md-nav__link">
+      <a href="../../bdd/src/activite_movies.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2842,7 +2840,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/arbres/" class="md-nav__link ">
+            <a href="../../arbres/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2923,7 +2921,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/arbres/vocabulaire/" class="md-nav__link">
+      <a href="../../arbres/vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2944,7 +2942,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/arbres/parcours/" class="md-nav__link">
+      <a href="../../arbres/parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2965,7 +2963,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/arbres/type_abstrait/" class="md-nav__link">
+      <a href="../../arbres/type_abstrait/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2986,7 +2984,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/arbres/abr/" class="md-nav__link">
+      <a href="../../arbres/abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3059,7 +3057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/arbres/implementation_arbres/" class="md-nav__link">
+      <a href="../../arbres/implementation_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3080,7 +3078,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/arbres/implementation_abr/" class="md-nav__link">
+      <a href="../../arbres/implementation_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3157,7 +3155,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/arbres/exercices_vocabulaire/" class="md-nav__link">
+      <a href="../../arbres/exercices_vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3178,7 +3176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/arbres/exercices_parcours/" class="md-nav__link">
+      <a href="../../arbres/exercices_parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3199,7 +3197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/arbres/exercices_abr/" class="md-nav__link">
+      <a href="../../arbres/exercices_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3220,7 +3218,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/arbres/implementations_arbres/" class="md-nav__link">
+      <a href="../../arbres/implementations_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3284,7 +3282,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/routage/" class="md-nav__link ">
+            <a href="../../routage/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3317,7 +3315,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/routage/cours/" class="md-nav__link">
+      <a href="../../routage/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3338,7 +3336,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/routage/exercices/" class="md-nav__link">
+      <a href="../../routage/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3413,7 +3411,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/recherche_textuelle/" class="md-nav__link ">
+            <a href="../../recherche_textuelle/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3446,7 +3444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/recherche_textuelle/tp_intro/" class="md-nav__link">
+      <a href="../../recherche_textuelle/tp_intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3467,7 +3465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/recherche_textuelle/cours/" class="md-nav__link">
+      <a href="../../recherche_textuelle/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3523,7 +3521,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/pyxel/" class="md-nav__link ">
+            <a href="../../pyxel/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3556,7 +3554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/pyxel/snake/" class="md-nav__link">
+      <a href="../../pyxel/snake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3577,7 +3575,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/pyxel/projetjv/" class="md-nav__link">
+      <a href="../../pyxel/projetjv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3598,7 +3596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/pyxel/realisations/" class="md-nav__link">
+      <a href="../../pyxel/realisations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3652,7 +3650,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/paradigmes/" class="md-nav__link ">
+            <a href="../../paradigmes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3685,7 +3683,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/paradigmes/Paradigmes_prog.zip" class="md-nav__link">
+      <a href="../../paradigmes/Paradigmes_prog.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3706,7 +3704,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/paradigmes/cours/" class="md-nav__link">
+      <a href="../../paradigmes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3760,7 +3758,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/diviserregner/" class="md-nav__link ">
+            <a href="../../diviserregner/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3793,7 +3791,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/diviserregner/cours/" class="md-nav__link">
+      <a href="../../diviserregner/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3814,7 +3812,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/diviserregner/exercices.zip" class="md-nav__link">
+      <a href="../../diviserregner/exercices.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3868,7 +3866,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/processus/" class="md-nav__link ">
+            <a href="../../processus/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3901,7 +3899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/processus/TDTP/" class="md-nav__link">
+      <a href="../../processus/TDTP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3922,7 +3920,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/processus/sujet_bac/" class="md-nav__link">
+      <a href="../../processus/sujet_bac/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3976,7 +3974,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/progdyn/" class="md-nav__link ">
+            <a href="../../progdyn/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4009,7 +4007,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/progdyn/cours/" class="md-nav__link">
+      <a href="../../progdyn/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4030,7 +4028,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/progdyn/exercices/" class="md-nav__link">
+      <a href="../../progdyn/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4086,7 +4084,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/graphes/" class="md-nav__link ">
+            <a href="../../graphes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4119,7 +4117,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/graphes/cours/" class="md-nav__link">
+      <a href="../../graphes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4140,7 +4138,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/graphes/implementation/" class="md-nav__link">
+      <a href="../../graphes/implementation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4161,7 +4159,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/graphes/exercices/" class="md-nav__link">
+      <a href="../../graphes/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4213,7 +4211,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/soc/" class="md-nav__link ">
+            <a href="../../soc/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4246,7 +4244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../terminale/soc/cours/" class="md-nav__link">
+      <a href="../../soc/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4272,6 +4270,8 @@
                 
   
   
+    
+  
   
   
     
@@ -4289,16 +4289,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_19" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_19" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../terminale/chiffrement/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4315,7 +4315,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_19_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_19_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_19">
             <span class="md-nav__icon md-icon"></span>
             Chiffrement
@@ -4328,10 +4328,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../terminale/chiffrement/cours/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -4340,6 +4360,88 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chiffrement-symetrique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chiffrement symétrique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chiffrement symétrique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-exemple-le-codage-de-cesar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un exemple : le codage de César
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autre-exemple-chiffrement-de-vernam" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autre exemple : chiffrement de Vernam
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autres-chiffrements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autres chiffrements...
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -4407,7 +4509,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rendus/" class="md-nav__link">
+      <a href="../../../rendus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4442,6 +4544,74 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chiffrement-symetrique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chiffrement symétrique
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Chiffrement symétrique">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#principe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principe
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-exemple-le-codage-de-cesar" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un exemple : le codage de César
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autre-exemple-chiffrement-de-vernam" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autre exemple : chiffrement de Vernam
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#autres-chiffrements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Autres chiffrements...
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4456,21 +4626,148 @@
                   
 
 
-<div><h1 id="reseau-transmission-donnees-protocoles-et-architecture">Réseau - Transmission données, protocoles et architecture<a class="headerlink" href="#reseau-transmission-donnees-protocoles-et-architecture" title="Permanent link">¶</a></h1>
-<table>
-<thead>
-<tr>
-<th>Liste des contenus</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="cours/">Cours</a></td>
-<td>Cours sur le réseau.</td>
-</tr>
-</tbody>
-</table></div>
+<div><h1 id="cours-chiffrement-et-protocole-https">Cours - Chiffrement et protocole HTTPS<a class="headerlink" href="#cours-chiffrement-et-protocole-https" title="Permanent link">¶</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>En <strong>première</strong>, vous avez étudié les notions suivantes :</p>
+<ul>
+<li><a href="../../../premiere/reseau/cours/">Le principe des communications réseau et le modèle OSI</a></li>
+<li><a href="../../../premiere/interactions/clientserveur/">Les interactions client-serveur et les requêtes HTTP</a></li>
+<li><a href="../../../premiere/interactions/clientserveur/">L'envoi de requêtes POST et GET avec des formulaires</a></li>
+</ul>
+<p>On sait que les données sont découpées en segments <strong>TCP</strong>, encapsulés dans des paquets <strong>IP</strong>.
+Ces données sont transmises de <strong>routeurs en routeurs</strong> jusqu'à la destination.</p>
+<div class="admonition warning">
+<p class="admonition-title">Danger</p>
+<p>Mais il y a un problème : Les données peuvent être interceptées entre l'<strong>émetteur</strong> et le <strong>récepteur</strong>. On appelle cela une "Attaque par Homme du milieu".<br>
+Cela représente un <strong>risque pour les données sensibles</strong> (données bancaires, messages privés, etc.)</p>
+</div>
+<div class="admonition question">
+<p>Ainsi, comment peut-on, avec des <strong>communications TCP/IP</strong> :</p>
+<ul>
+<li>Chiffrer le contenu des communications ?</li>
+<li>Garantir l'intégrité du serveur auquel on souhaite se connecter ?</li>
+</ul>
+</div>
+<h2 id="chiffrement-symetrique">Chiffrement symétrique<a class="headerlink" href="#chiffrement-symetrique" title="Permanent link">¶</a></h2>
+<h3 id="principe">Principe<a class="headerlink" href="#principe" title="Permanent link">¶</a></h3>
+<p>Le <strong>chiffrement symétrique</strong> consiste en deux fonctions :</p>
+<ul>
+<li><span class="arithmatex">\(c(m,k)\)</span> : fonction de <em>chiffrement</em>.<br>
+<span class="arithmatex">\(m\)</span> un message en clair et <span class="arithmatex">\(k\)</span> une clé de chiffrement.</li>
+<li><span class="arithmatex">\(d(s,k)\)</span> : fonction de <em>déchiffrement</em>.<br>
+<span class="arithmatex">\(s\)</span> un message chiffré et <span class="arithmatex">\(k\)</span> une clé de déchiffrement.</li>
+</ul>
+<p>La <strong>même clé</strong> est utilisée pour <strong>chiffrer</strong> et <strong>déchiffrer</strong>. C'est là la particularité du <strong>chiffrement symétrique</strong>.</p>
+<p>On a ainsi la relation suivante : <span class="arithmatex">\(d(c(m,k),k)=m\)</span></p>
+<h3 id="un-exemple-le-codage-de-cesar">Un exemple : le codage de César<a class="headerlink" href="#un-exemple-le-codage-de-cesar" title="Permanent link">¶</a></h3>
+<p>Le <strong>chiffrement de César</strong> ou <strong>Code César</strong> est une méthode de <strong>chiffrement symétrique</strong> par <strong>substitution</strong>.<br>
+La <strong>clé</strong> de <strong>chiffrement/déchiffrement</strong> est ici un <strong>nombre de décalages</strong> tel que :</p>
+<ul>
+<li>On <strong>décale vers la droite</strong> pour <em>chiffrer</em>,</li>
+<li>On <strong>décale vers la gauche</strong> pour <em>déchiffrer</em>.</li>
+</ul>
+<p>Voici une <strong>implémentation Python</strong> de ce chiffrement :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">ALPHABET</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">,</span><span class="s1">'C'</span><span class="p">,</span><span class="s1">'D'</span><span class="p">,</span><span class="s1">'E'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'G'</span><span class="p">,</span><span class="s1">'H'</span><span class="p">,</span><span class="s1">'I'</span><span class="p">,</span><span class="s1">'J'</span><span class="p">,</span><span class="s1">'K'</span><span class="p">,</span><span class="s1">'L'</span><span class="p">,</span><span class="s1">'M'</span><span class="p">,</span><span class="s1">'N'</span> \
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>            <span class="p">,</span><span class="s1">'O'</span><span class="p">,</span><span class="s1">'P'</span><span class="p">,</span><span class="s1">'Q'</span><span class="p">,</span><span class="s1">'R'</span><span class="p">,</span><span class="s1">'S'</span><span class="p">,</span><span class="s1">'T'</span><span class="p">,</span><span class="s1">'U'</span><span class="p">,</span><span class="s1">'V'</span><span class="p">,</span><span class="s1">'W'</span><span class="p">,</span><span class="s1">'X'</span><span class="p">,</span><span class="s1">'Y'</span><span class="p">,</span><span class="s1">'Z'</span><span class="p">]</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="k">def</span> <span class="nf">obtenir_indice</span><span class="p">(</span><span class="n">lettre</span><span class="p">):</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">    </span><span class="sd">''' Prend une lettre de l'alphabet, et renvoie son indice.</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">    :param lettre: (str) une lettre de l'alphabet</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="sd">    :return: (int) l'indice de la lettre dans ALPHABET '''</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">ALPHABET</span><span class="p">)):</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="k">if</span> <span class="n">ALPHABET</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">lettre</span><span class="p">:</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>            <span class="k">return</span> <span class="n">i</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="k">def</span> <span class="nf">chiffrer_message</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w">    </span><span class="sd">"""Chiffre un message en utilisant le chiffrement de César.</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="sd">    :param m: (str) Le message à chiffrer.</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="sd">    :param d: (int) Le nombre de décalages à effectuer.</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="sd">    :return: (str) Le message chiffré</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="sd">    :CU: all([c in ALPHABET + [' '] for c in m])"""</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="n">resultat</span> <span class="o">=</span> <span class="s1">''</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>    <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">m</span><span class="p">:</span>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>        <span class="k">if</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">ALPHABET</span><span class="p">:</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>            <span class="n">resultat</span> <span class="o">+=</span> <span class="n">ALPHABET</span><span class="p">[(</span><span class="n">obtenir_indice</span><span class="p">(</span><span class="n">el</span><span class="p">)</span> <span class="o">+</span> <span class="n">d</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span><span class="p">]</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>            <span class="n">resultat</span> <span class="o">+=</span> <span class="s1">' '</span>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="k">return</span> <span class="n">resultat</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="k">def</span> <span class="nf">dechiffrer_message</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">d</span><span class="p">):</span>
+</span><span id="__span-0-31"><a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="w">    </span><span class="sd">"""Chiffre un message en utilisant le chiffrement de César.</span>
+</span><span id="__span-0-32"><a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a><span class="sd">    :param m: (str) Le message à chiffrer.</span>
+</span><span id="__span-0-33"><a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="sd">    :param d: (int) Le nombre de décalages à effectuer.</span>
+</span><span id="__span-0-34"><a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="sd">    :return: (str) Le message chiffré</span>
+</span><span id="__span-0-35"><a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="sd">    :CU: all([c in ALPHABET + [' '] for c in m])"""</span>
+</span><span id="__span-0-36"><a id="__codelineno-0-36" name="__codelineno-0-36" href="#__codelineno-0-36"></a>
+</span><span id="__span-0-37"><a id="__codelineno-0-37" name="__codelineno-0-37" href="#__codelineno-0-37"></a>    <span class="n">resultat</span> <span class="o">=</span> <span class="s1">''</span>
+</span><span id="__span-0-38"><a id="__codelineno-0-38" name="__codelineno-0-38" href="#__codelineno-0-38"></a>    <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">m</span><span class="p">:</span>
+</span><span id="__span-0-39"><a id="__codelineno-0-39" name="__codelineno-0-39" href="#__codelineno-0-39"></a>        <span class="k">if</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">ALPHABET</span><span class="p">:</span>
+</span><span id="__span-0-40"><a id="__codelineno-0-40" name="__codelineno-0-40" href="#__codelineno-0-40"></a>            <span class="n">resultat</span> <span class="o">+=</span> <span class="n">ALPHABET</span><span class="p">[(</span><span class="n">obtenir_indice</span><span class="p">(</span><span class="n">el</span><span class="p">)</span> <span class="o">-</span> <span class="n">d</span><span class="p">)</span> <span class="o">%</span> <span class="mi">26</span><span class="p">]</span>
+</span><span id="__span-0-41"><a id="__codelineno-0-41" name="__codelineno-0-41" href="#__codelineno-0-41"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-0-42"><a id="__codelineno-0-42" name="__codelineno-0-42" href="#__codelineno-0-42"></a>            <span class="n">resultat</span> <span class="o">+=</span> <span class="s1">' '</span>
+</span><span id="__span-0-43"><a id="__codelineno-0-43" name="__codelineno-0-43" href="#__codelineno-0-43"></a>    <span class="k">return</span> <span class="n">resultat</span>
+</span><span id="__span-0-44"><a id="__codelineno-0-44" name="__codelineno-0-44" href="#__codelineno-0-44"></a>
+</span><span id="__span-0-45"><a id="__codelineno-0-45" name="__codelineno-0-45" href="#__codelineno-0-45"></a><span class="k">def</span> <span class="nf">bruteforce</span><span class="p">(</span><span class="n">message</span><span class="p">):</span>
+</span><span id="__span-0-46"><a id="__codelineno-0-46" name="__codelineno-0-46" href="#__codelineno-0-46"></a><span class="w">    </span><span class="sd">''' Déchiffre le message sans connaître sa clé de chiffrement</span>
+</span><span id="__span-0-47"><a id="__codelineno-0-47" name="__codelineno-0-47" href="#__codelineno-0-47"></a><span class="sd">    avec un test de force brute. '''</span>
+</span><span id="__span-0-48"><a id="__codelineno-0-48" name="__codelineno-0-48" href="#__codelineno-0-48"></a>
+</span><span id="__span-0-49"><a id="__codelineno-0-49" name="__codelineno-0-49" href="#__codelineno-0-49"></a>    <span class="k">for</span> <span class="n">cle</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">26</span><span class="p">):</span>
+</span><span id="__span-0-50"><a id="__codelineno-0-50" name="__codelineno-0-50" href="#__codelineno-0-50"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">dechiffrer_message</span><span class="p">(</span><span class="n">message</span><span class="p">,</span> <span class="n">cle</span><span class="p">))</span>
+</span></code></pre></div>
+<h3 id="autre-exemple-chiffrement-de-vernam">Autre exemple : chiffrement de Vernam<a class="headerlink" href="#autre-exemple-chiffrement-de-vernam" title="Permanent link">¶</a></h3>
+<p>Le <strong>chiffrement de Vernam</strong> repose sur l'utilisation de l'opérateur binaire <strong>ou exclusif</strong> (<strong>XOR</strong>).</p>
+<div class="admonition abstract">
+<p class="admonition-title">Règles de Shannon</p>
+<p>Shannon a démontré <strong>3 règles</strong> permettant rendre le système <strong>inviolable</strong> :</p>
+<ol>
+<li>La <strong>clé</strong> doit être une <strong>chaîne de même longueur</strong> que le <strong>message à chiffrer</strong>.</li>
+<li>Les <strong>caractères</strong> composant la <strong>clé</strong> doivent être choisis de manière <strong>aléatoire</strong>.</li>
+<li>Chaque <strong>clé</strong> (ou "masque") ne doit être utilisée qu'<strong>une seule fois</strong>.</li>
+</ol>
+</div>
+<p>Un avantage de l'opérateur <strong>XOR</strong> est qu'il est <strong>réversible</strong>.</p>
+<p>Ainsi, si on note <span class="arithmatex">\(M\)</span> un <strong>message</strong> et <span class="arithmatex">\(S\)</span> la <strong>clé de chiffrement</strong>, on a : <span class="arithmatex">\((M⊕S)⊕S=M\)</span></p>
+<p>En Python :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">choice</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">alphabet</span> <span class="o">=</span> <span class="p">[</span><span class="s1">'A'</span><span class="p">,</span><span class="s1">'B'</span><span class="p">,</span><span class="s1">'C'</span><span class="p">,</span><span class="s1">'D'</span><span class="p">,</span><span class="s1">'E'</span><span class="p">,</span><span class="s1">'F'</span><span class="p">,</span><span class="s1">'G'</span><span class="p">,</span><span class="s1">'H'</span><span class="p">,</span><span class="s1">'I'</span><span class="p">,</span><span class="s1">'J'</span><span class="p">,</span><span class="s1">'K'</span><span class="p">,</span><span class="s1">'L'</span><span class="p">,</span><span class="s1">'M'</span><span class="p">,</span><span class="s1">'N'</span> \
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>            <span class="p">,</span><span class="s1">'O'</span><span class="p">,</span><span class="s1">'P'</span><span class="p">,</span><span class="s1">'Q'</span><span class="p">,</span><span class="s1">'R'</span><span class="p">,</span><span class="s1">'S'</span><span class="p">,</span><span class="s1">'T'</span><span class="p">,</span><span class="s1">'U'</span><span class="p">,</span><span class="s1">'V'</span><span class="p">,</span><span class="s1">'W'</span><span class="p">,</span><span class="s1">'X'</span><span class="p">,</span><span class="s1">'Y'</span><span class="p">,</span><span class="s1">'Z'</span><span class="p">,</span><span class="s1">'$'</span><span class="p">,</span><span class="s1">'%'</span> \
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>            <span class="p">,</span><span class="s1">'?'</span><span class="p">,</span><span class="s1">'!'</span><span class="p">,</span><span class="s1">'*'</span><span class="p">,</span><span class="s1">' '</span><span class="p">]</span>  <span class="c1"># 32 lettres = 5 bits</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="k">def</span> <span class="nf">lettre</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">return</span> <span class="n">alphabet</span><span class="p">[</span><span class="n">n</span><span class="p">]</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="k">def</span> <span class="nf">code</span><span class="p">(</span><span class="n">l</span><span class="p">):</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="k">return</span> <span class="n">alphabet</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="k">def</span> <span class="nf">cle_aleatoire</span><span class="p">(</span><span class="n">taille</span><span class="p">):</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="k">return</span> <span class="s1">''</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">choice</span><span class="p">(</span><span class="n">alphabet</span><span class="p">)</span> <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">taille</span><span class="p">)])</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="k">def</span> <span class="nf">chiffrer_dechiffrer_vernam</span><span class="p">(</span><span class="n">m</span><span class="p">,</span> <span class="n">cle</span><span class="p">):</span>
+</span><span id="__span-1-16"><a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="w">    </span><span class="sd">"""Chiffre/déchiffre un message avec le chiffrement de Vernam.</span>
+</span><span id="__span-1-17"><a id="__codelineno-1-17" name="__codelineno-1-17" href="#__codelineno-1-17"></a><span class="sd">    :param m: (str) Le message à chiffrer.</span>
+</span><span id="__span-1-18"><a id="__codelineno-1-18" name="__codelineno-1-18" href="#__codelineno-1-18"></a><span class="sd">    :param s: (str) La clé de chiffrement/déchiffrement."""</span>
+</span><span id="__span-1-19"><a id="__codelineno-1-19" name="__codelineno-1-19" href="#__codelineno-1-19"></a>
+</span><span id="__span-1-20"><a id="__codelineno-1-20" name="__codelineno-1-20" href="#__codelineno-1-20"></a>    <span class="n">res</span> <span class="o">=</span> <span class="s1">''</span>
+</span><span id="__span-1-21"><a id="__codelineno-1-21" name="__codelineno-1-21" href="#__codelineno-1-21"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">m</span><span class="p">)):</span>
+</span><span id="__span-1-22"><a id="__codelineno-1-22" name="__codelineno-1-22" href="#__codelineno-1-22"></a>        <span class="n">res</span> <span class="o">+=</span> <span class="n">lettre</span><span class="p">((</span><span class="n">code</span><span class="p">(</span><span class="n">m</span><span class="p">[</span><span class="n">i</span><span class="p">])</span> <span class="o">^</span> <span class="n">code</span><span class="p">(</span><span class="n">cle</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span> <span class="o">%</span> <span class="nb">len</span><span class="p">(</span><span class="n">alphabet</span><span class="p">))</span>
+</span><span id="__span-1-23"><a id="__codelineno-1-23" name="__codelineno-1-23" href="#__codelineno-1-23"></a>    <span class="k">return</span> <span class="n">res</span>
+</span><span id="__span-1-24"><a id="__codelineno-1-24" name="__codelineno-1-24" href="#__codelineno-1-24"></a>
+</span><span id="__span-1-25"><a id="__codelineno-1-25" name="__codelineno-1-25" href="#__codelineno-1-25"></a><span class="n">message_clair</span> <span class="o">=</span> <span class="s2">"BONJOUR A TOUS"</span>
+</span><span id="__span-1-26"><a id="__codelineno-1-26" name="__codelineno-1-26" href="#__codelineno-1-26"></a><span class="n">cle</span> <span class="o">=</span> <span class="n">cle_aleatoire</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">message_clair</span><span class="p">))</span>
+</span><span id="__span-1-27"><a id="__codelineno-1-27" name="__codelineno-1-27" href="#__codelineno-1-27"></a><span class="n">message_chiffre</span> <span class="o">=</span> <span class="n">chiffrer_dechiffrer_vernam</span><span class="p">(</span><span class="n">message_clair</span><span class="p">,</span> <span class="n">cle</span><span class="p">)</span>
+</span><span id="__span-1-28"><a id="__codelineno-1-28" name="__codelineno-1-28" href="#__codelineno-1-28"></a><span class="s1">'Message : '</span> <span class="o">+</span> <span class="n">message_chiffre</span> <span class="o">+</span> <span class="s1">' - Clé : '</span> <span class="o">+</span> <span class="n">cle</span>
+</span></code></pre></div>
+<h3 id="autres-chiffrements">Autres chiffrements...<a class="headerlink" href="#autres-chiffrements" title="Permanent link">¶</a></h3>
+<p>D'autres <strong>méthodes de chiffrement symétrique</strong> très complexes, utilisés dans la vraie vie, existent :</p>
+<ul>
+<li><a href="https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard">AES</a> : Advanced Encryption Standard (standard de chiffrement avancé)</li>
+<li><strong>ChaCha20</strong></li>
+</ul>
+<p>Ils reposent toutefois également sur un chiffrement <strong>XOR</strong>.</p></div>
 
 
 
@@ -4484,7 +4781,7 @@
 
 
                 
-<script src="../../pyodide-mkdocs/ide.js"></script> 
+<script src="../../../pyodide-mkdocs/ide.js"></script> 
 
               </article>
             </div>
@@ -4523,18 +4820,18 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.081f42fc.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.081f42fc.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../js/open_in_new_tab.js"></script>
+        <script src="../../../js/open_in_new_tab.js"></script>
       
     
   </body>
