@@ -50,7 +50,7 @@ Dans ce **modèle**, un **objet modélisé** (on parle d'**entité**) est repré
     
     1. déterminer les *entités* (objets, actions, personnes, etc.) que l'on souhaite **manipuler**;
     2. modéliser les *ensembles d'entités* comme des **relations** en donnant leur **schéma**, en s'attachant en particulier à choisir le **bon domaine** pour **chaque attribut**;
-    3. définir les *contraintes* de la **base de données**, c'est-à-dire l'**ensemble** des **propriétés logiques** que nos **données** doivent **vérifier à tout moment** (voir la partie [contraintes d'intégrité](#les-contraintes-dintégrité).)
+    3. définir les *contraintes* de la **base de données**, c'est-à-dire l'**ensemble** des **propriétés logiques** que nos **données** doivent **vérifier à tout moment** (voir la partie [contraintes d'intégrité](#les-contraintes-dintegrite).)
 
 ## Un exemple pratique
 

@@ -13,3 +13,5 @@
 | [Les algorithmes gloutons](gloutons/index.md) | Cours et exercices sur les **algorithmes gloutons**. |
 | [Interface Homme-Machine](ihm/index.md) | Cours et exercices sur les interfaces Homme-Machine (**IHM**). |
 | [Réseaux](reseau/index.md) | Cours et exercices sur les réseaux. |
+| [Algorithme knn](knn/index.md) | Cours et exercices sur l'**algorithme** des **$k$ plus proches voisins**. |
+| [:octicons-pencil-16: Sujets e3c](https://kxs.fr/sujets/premiere-ecrit) | Banque d'**épreuves d'E3C** pour vous entraîner. |

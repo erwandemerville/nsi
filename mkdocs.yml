@@ -101,6 +101,9 @@ nav:
     - Réseau:
       - premiere/reseau/index.md
       - Cours: premiere/reseau/cours.md
+    - Algorithme knn:
+      - premiere/knn/index.md
+      - Cours: premiere/knn/cours.md
   - Terminale:
     - terminale/index.md
     - Modularité:
