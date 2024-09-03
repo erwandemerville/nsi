@@ -1,6 +1,3 @@
-??? quote "Ressources"
-    - [Les différents types d'API](https://www.free-work.com/fr/tech-it/blog/actualites-informatiques/types-dapi-quelles-sont-leurs-differences)
-
 # Les API
 
 Une **API** (Application Programming Interface) permet aux développeurs d'**intégrer** une application à une autre. Cela peut permettre par exemple de récupérer des données structurées depuis un site web pour les exploiter de manière automatisée dans un programme.
@@ -104,6 +101,24 @@ Le module `requests` de Python permet d'effectuer des **appels d'API** à l'aide
 !!! note "Exercice 1"
     Complétez la fonction `temperature_ressentie` permettant d'**afficher** la température ressentie (*feels_like*) dans une ville donnée en entrée.
 
+??? tip "Corrigé exercice 1"
+    Il faut simplement récupérer les données sur la ville passée en argument à la fonction, en rappelant la fonction `get_weather`, puis afficher avec `print` la valeur associée à la clé `feels_like` du dictionnaire lui-même associé à la clé `main` du dictionnaire principal :
+
+    ```python
+    def temperature_ressentie(ville: str) -> None:
+        ''' Affiche la température ressentie (en degrés) dans la ville spécifiée. '''
+        
+        donnees = get_weather(ville)
+        print(f"Température ressentie à {ville} : {donnees['main']['feels_like']} °C.")
+    ```
+
+    Un petit test dans la console de Thonny donnera quelque chose comme ceci :
+
+    ```python
+    >>> temperature_ressentie('Paris')
+    Température ressentie à Paris : 33.02 °C.
+    ```
+
 !!! tip "Rappel"
     En bas du script, vous pouvez voir le bloc de code suivant :
     ```python
@@ -124,6 +139,20 @@ Le module `requests` de Python permet d'effectuer des **appels d'API** à l'aide
     Par défaut, les températures obtenues sont en **degrés Kelvin**. Si vous souhaitez obtenir les températures en **degrés Celsius**, il faut indiquer dans la requête HTTP que l'on souhaite utiliser le **système métrique**.
 
     Pour cela, il faut ajouter le paramètre `units` avec la valeur `metric` à votre requête. Autrement dit, à la fin de votre **URL**, vous devez ajouter `&units=metric` (le `&` permet de faire la séparation avec le paramètre précédent).
+
+??? tip "Corrigé exercice 2"
+    On s'inspire du code des fonctions `get_weather` et `temperature_ressentie` :
+
+    ```python
+    def get_temp_from_lat_long(lat: float, long: float) -> None:
+        ''' Affiche la température (en degrés) d'une ville dont on fournit la latitude et la longitude. '''
+        
+        url = f"https://api.openweathermap.org/data/2.5/weather?lat={lat}&lon={long}&appid={API_KEY}&units=metric"
+        r = requests.get(url)
+        donnees = r.json()
+
+        print(f"Température : {donnees['main']['temp']} °C.")
+    ```
 
 ---
 

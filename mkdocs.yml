@@ -194,7 +194,7 @@ nav:
     - Chiffrement:
       - terminale/chiffrement/index.md
       - Cours: terminale/chiffrement/cours.md
-  - Ressources Pyxel: https://nuitducode.github.io/DOCUMENTATION/PYTHON/01-presentation/
+  - Ressources Pyxel: https://nuit-du-code.forge.apps.education.fr/DOCUMENTATION/PYTHON/01-presentation/
   - Entraînement sujets pratiques: https://monlyceenumerique.fr/nsi_terminale/sujets/epreuve_pratique_22.php
   - Rendu des travaux: rendus.md
 
