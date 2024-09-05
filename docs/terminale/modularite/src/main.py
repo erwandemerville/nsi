@@ -12,7 +12,7 @@ def to_bin(ent: int) -> list:
     
     lst = []
     while ent != 0:
-        # ...A COMPLETER...
+        # ...À COMPLÉTER...
     return lst
 
 def moyenne(lst: list) -> float:
@@ -23,7 +23,7 @@ def moyenne(lst: list) -> float:
     14.25
     '''
     
-    # ...A COMPLETER...
+    # ...À COMPLÉTER...
     
 if __name__ == '__main__':
 

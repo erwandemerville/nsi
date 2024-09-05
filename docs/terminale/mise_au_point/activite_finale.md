@@ -1,7 +1,7 @@
 # Activité finale
 
 !!! info "Modalités de rendu"
-    Vous réaliserez ce travail dans un fichier nommé `<VOTRE_NOM>_activite_sousmax.py`, que vous téléverserez depuis la [page de rendu des travaux](../../rendus.md){ target="_blank" }.
+    Vous réaliserez ce travail dans un fichier nommé `activite_sousmax.py`, que vous rendrez depuis la plateforme **Éléa**.
 
 On veut définir une **fonction** qui **renvoie** le **deuxième plus grand élément** d’un **tableau** de **nombres entiers**. Par exemple dans le tableau `[4, 2, 7, 5, 9, 1, 5, 3]`, la valeur cherchée est `7`. On veut s’assurer que la fonction est codée correctement en **créant un jeu de tests**.
 

@@ -20,3 +20,4 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | --------------------------------------- | -------------------------------------------------------- |
 | [Modularité](terminale/modularite/index.md) | Création et utilisation de modules et d'API. |
 | [Mise au point des programmes](terminale/mise_au_point/index.md) | Types de données, annotations, tests... |
+| [:material-language-python: Révisions / Entraînement Python](terminale/entrainement_python/index.md) | Quelques exercices pour vous exercer au langage Python. |

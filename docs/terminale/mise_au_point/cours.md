@@ -143,11 +143,11 @@ def maximum(liste):
 ```
 
 
-Pour effectuer une analyse **pas-à-pas** de votre code, vous pouvez également utiliser un **débuggueur**. De nombreux **IDE** sont dotés d'un **débuggueur**, c'est le cas notamment de **Thonny**. (Pour débugguer un script avec **Thonny**, il faut cliquer sur la petite icône à droite de l'icône d'exécution du script courant.)
+Pour effectuer une analyse **pas-à-pas** de votre code, vous pouvez également utiliser un **débogueur**. De nombreux **IDE** sont dotés d'un **débogueur**, c'est le cas notamment de **Thonny**. (Pour débugguer un script avec **Thonny**, il faut cliquer sur la petite icône à droite de l'icône d'exécution du script courant.)
 
 <figure markdown>
-  ![Débuggueur de Thonny](images/debug.png){ width="500" }
-  <figcaption>Débuggueur de Thonny</figcaption>
+  ![débogueur de Thonny](images/debug.png){ width="500" }
+  <figcaption>débogueur de Thonny</figcaption>
 </figure>
 
 Par ailleurs, une autre technique plus primaire mais fort utile consiste à ajouter des **affichages** à l'intérieur de vos fonctions, avec la fonction `print`, de manière à observer l'évolution du contenu des variables.
@@ -233,7 +233,7 @@ Opérations entre deux types non compatibles (ici concaténation) :
 TypeError: can only concatenate str (not "int") to str
 ```
 
-!!! note "À vous de jouer"
+!!! note ":writing_hand_tone2: À vous de jouer 1"
     Pour chacune des fonctions suivantes, proposez un type pour chacun de ses arguments et un type pour les résultats. Il peut parfois y avoir plusieurs solutions !
 
     ```python
@@ -286,7 +286,7 @@ Traceback (most recent call last):
 AssertionError
 ```
 
-!!! note "À vous de jouer"
+!!! note ":writing_hand_tone2: À vous de jouer 2"
     Pourquoi la fonction `autre_fonction` a t-elle échouée ?
 
 ### Erreurs sémantiques
@@ -345,7 +345,7 @@ Le **masquage de variables** peut survenir lorsque :
 
 ### Exercices
 
-!!! note "À vous de jouer !"
+!!! note ":material-language-python: À vous de jouer 3"
     [Cliquez-ici](http://www.silanus.fr/nsi/premiere/python/erreur.html#_trouver_les_erreurs){ target="_blank" } pour accéder aux exercices.
 
 ## Spécification et tests
@@ -470,7 +470,7 @@ On peut également **ajouter un message d'erreur** lorsqu'une `AssertionError` e
 assert trouver_indice([], 1) == None, "Erreur lors d'un test avec une liste vide."
 ```
 
-!!! note "À vous de jouer !"
+!!! note ":material-language-python: À vous de jouer 4"
     Écrivez une fonction `est_pair` qui renvoie `True`si un nombre `n` donné est pair, `False` sinon, puis créez un ensemble de tests de votre fonction à l'aide d'**assertions**.
 
     Documentez-bien votre fonction à l'aide d'une **docstring** et éventuellement d'**annotations de types**.
@@ -509,6 +509,7 @@ Il existe principalement **3 modules Python** pour écrire et exécuter des test
     * Si ce n'est pas le cas, **interrompre le programme**, éventuellement afficher un message d'erreur...
 
 Dans le cadre d'une fonction, il s'agit de s'assurer du respect :
+
 * des **préconditions** : conditions sur les **arguments d'entrée**.
 * des **postconditions** : conditions sur la **valeur de sortie**.
 

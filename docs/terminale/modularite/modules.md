@@ -154,7 +154,7 @@ Vous allez créer un module permettant d'effectuer un certain nombre d'opératio
     Complétez le corps des fonctions `sum_lst`, `min_lst` et `max_lst` permettant de renvoyer respectivement la somme des éléments, l'élément minimal et l'élément maximal d'une liste d'entiers passée en argument. Complétez également le corps de la fonction `ajouter_debut` permettant d'ajouter un élément au début d'une liste.
 
 !!! note "Exercice 2"
-    Ouvrez le script nommé `main.py`, et y importer le module `operations`.
+    Ouvrez le script nommé `main.py`, et **y importer** le **module** `operations`.
 
     Compléter la fonction `to_bin` permettant de transformer un entier en nombre binaire stocké sous la forme d'une liste de **0** et de **1**. Vous utiliserez pour cela la fonction `ajouter_debut` définie dans le module `operations`.
 
@@ -192,4 +192,4 @@ Vous allez créer un module permettant d'effectuer un certain nombre d'opératio
     | `lit(d, k)`      | renvoie la valeur associée à la clé `k` dans le dictionnaire `d`, et `None` si la clé `k` n'apparait pas. |
     | `ecrit(d, k, v)` | ajoute au dictionnaire `d` l'association entre la clé `k` et la valeur `v`, en remplaçant une éventuelle association déjà présente pour `k`. |
 
-    **Implémentez un module** `dictionnaire` qui correspond à cette interface.
+    **Implémentez un module** `dictionnaire`, dans un fichier nommé `dictionnaire.py`, qui correspond à cette interface.

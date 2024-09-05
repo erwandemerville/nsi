@@ -102,7 +102,8 @@ Le module `requests` de Python permet d'effectuer des **appels d'API** à l'aide
     On peut voir qu'elle doit renvoyer un objet de type `None` : autrement dit, elle ne **doit rien renvoyer**. (Effectivement, il s'agit d'une fonction qui doit simplement **afficher** quelque chose. Les fonctions qui ne renvoient rien peuvent également être appelées **procédures**.)
 
 !!! note "Exercice 1"
-    Complétez la fonction `temperature_ressentie` permettant d'**afficher** la température ressentie (*feels_like*) dans une ville donnée en entrée.
+    Complétez la fonction `temperature_ressentie`, réutilisant la fonction `get_weather`, permettant d'**afficher** la **température ressentie** (*feels_like*) dans une **ville** donnée en **entrée**.  
+    Le **message affiché** doit être de la forme `Température ressentie à Paris : 15.72 °C.` si l'on donne en entrée `"Paris"` à la fonction.
 
 !!! tip "Rappel"
     En bas du script, vous pouvez voir le bloc de code suivant :
@@ -120,6 +121,8 @@ Le module `requests` de Python permet d'effectuer des **appels d'API** à l'aide
 
     Faites le test avec `lat = 49.23588940429046, long = 2.135797340968115` (localisation de Méru).
 
+    Dans votre **url** utilisée pour l'**appel**, vous utiliserez la **clé d'API** contenue dans la **variable globale** `API_KEY`.
+
 ???+ tip "Température en degrés celsius"
     Par défaut, les températures obtenues sont en **degrés Kelvin**. Si vous souhaitez obtenir les températures en **degrés Celsius**, il faut indiquer dans la requête HTTP que l'on souhaite utiliser le **système métrique**.
 
@@ -130,7 +133,7 @@ Le module `requests` de Python permet d'effectuer des **appels d'API** à l'aide
 On souhaite maintenant obtenir les **prévisions météo** d'une ville de manière à **afficher une courbe d'évolution** de la **température** (*temp*) prévue.  
 L'API permet d'obtenir les prévisions des **5 prochains jours**, à raison **d'une mesure toutes les 3 heures**. La page documentant les **appels d'API** permettant d'obtenir ces prévisions est la suivante : [https://openweathermap.org/forecast5](https://openweathermap.org/forecast5){ target="_blank" }.
 
-Ainsi, on obtiendra une liste **40 mesures**, la première mesure correspondant aux données sur la météo à l'heure actuelle, la deuxième mesure correspondant à la météo prévue **dans 3 heures**, la troisième à celle prévue **dans 6 heures**, et ainsi de suite...
+Ainsi, on obtiendra une liste de **40 mesures**, la première mesure correspondant aux données sur la météo à l'heure actuelle, la deuxième mesure correspondant à la météo prévue **dans 3 heures**, la troisième à celle prévue **dans 6 heures**, et ainsi de suite...
 
 Si l'on regarde un exemple de réponse de l'API :
 
