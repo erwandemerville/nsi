@@ -54,6 +54,7 @@ nav:
       - premiere/bases_python/index.md
       - Introduction au Python: premiere/bases_python/cours.md
       - Découverte de l'IDE Thonny: premiere/bases_python/thonny.md
+      - Notebooks: premiere/bases_python/notebooks.md
   - Terminale:
     - terminale/index.md
     - Modularité:
@@ -67,8 +68,6 @@ nav:
       - Activité finale: terminale/mise_au_point/activite_finale.md
     - Entraînement Python:
       - terminale/entrainement_python/index.md
-  - Ressources Pyxel: https://nuit-du-code.forge.apps.education.fr/DOCUMENTATION/PYTHON/01-presentation/
-  - Entraînement sujets pratiques: https://monlyceenumerique.fr/nsi_terminale/sujets/epreuve_pratique_22.php
   - Rendu des travaux: rendus.md
 
 markdown_extensions:
