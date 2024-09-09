@@ -11,6 +11,7 @@ Si vous n'avez pas d'erreur, rien ne doit s'afficher lorsque vous exécutez le p
 
 !!! success "À télécharger"
     - [programme1.py](src/programme1.py){ target="_blank" } : programme 1 à compléter
+    - [programme1_corr.py](src/corr/programme1_corr.py){ target="_blank" } : corrigé du programme 1
 
 Ouvrez le fichier `programme1.py` dans **Thonny** (ou votre *IDE* préféré).
 
@@ -29,6 +30,7 @@ Ouvrez le fichier `programme1.py` dans **Thonny** (ou votre *IDE* préféré).
 
 !!! success "À télécharger"
     - [programme2.py](src/programme2.py){ target="_blank" } : programme 2 à compléter
+    - [programme2_corr.py](src/corr/programme2_corr.py){ target="_blank" } : corrigé du programme 2
 
 !!! note "Question 4"
     Complétez la fonction `minimum(liste)` qui renvoie **le plus petit élément d'une liste**.
@@ -46,6 +48,7 @@ Ouvrez le fichier `programme1.py` dans **Thonny** (ou votre *IDE* préféré).
 
 !!! success "À télécharger"
     - [programme3.py](src/programme3.py){ target="_blank" } : programme 3 à compléter
+    - [programme3_corr.py](src/corr/programme3_corr.py){ target="_blank" } : corrigé du programme 3
 
 !!! note "Question 8"
     Écrivez la fonction `concatener(liste)` qui renvoie la **concaténation de deux listes**.
@@ -69,6 +72,7 @@ Ouvrez le fichier `programme1.py` dans **Thonny** (ou votre *IDE* préféré).
 
 !!! success "À télécharger"
     - [programme4.py](src/programme4.py){ target="_blank" } : programme 4 à compléter
+    - [programme4_corr.py](src/corr/programme4_corr.py){ target="_blank" } : corrigé du programme 4
 
 !!! note "Question 12"
     Écrivez une fonction `trouver(liste, element)` qui renvoie **True** si l'élément `element` est dans la liste `liste`, **False** s'il n'y est pas.
@@ -80,6 +84,7 @@ Ouvrez le fichier `programme1.py` dans **Thonny** (ou votre *IDE* préféré).
 
 !!! success "À télécharger"
     - [programme5.py](src/programme5.py){ target="_blank" } : programme 5 à compléter
+    - [programme5_corr.py](src/corr/programme5_corr.py){ target="_blank" } : corrigé du programme 5
 
 !!! note "Question 14"
     Écrivez une fonction `compter(mot, lettre)` qui **compte** le nombre de fois qu'une **lettre** apparaît dans un **mot**.
