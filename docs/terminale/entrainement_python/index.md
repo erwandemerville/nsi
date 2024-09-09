@@ -93,7 +93,7 @@ Ouvrez le fichier `programme1.py` dans **Thonny** (ou votre *IDE* préféré).
     Écrivez une fonction `supprimer(mot, lettre)` qui renvoie le **mot initial** sans la **lettre spécifiée**.
 
 !!! note "Question 16"
-    Écrivez une fonction `rercherche(chaine, sequence)` qui recherche une **séquence** (une suite de caractères) dans une **chaîne de caractères** et renvoie **True** si elle est trouvée, **False** sinon.
+    Écrivez une fonction `recherche(chaine, sequence)` qui recherche une **séquence** (une suite de caractères) dans une **chaîne de caractères** et renvoie **True** si elle est trouvée, **False** sinon.
 
 # Programme 6
 
