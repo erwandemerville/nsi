@@ -109,78 +109,78 @@
 ## Thème D : Interactions entre l'homme et la machine sur le Web.
 
 !!! tip "Question D1"
-    Réponse D.
+    Réponse **D**.
 
-    Justification : La méthode POST du protocole HTTP est utilisée pour envoyer des données, comme celles d'un formulaire HTML, vers un serveur.
+    **Justification** : La méthode **POST** du protocole **HTTP** est utilisée pour envoyer des données, comme celles d'un formulaire **HTML**, vers un serveur.
 
 !!! tip "Question D2"
-    Réponse B.
+    Réponse **B**.
 
-    Justification : La balise <title> est utilisée dans l'en-tête d'un document HTML pour définir le titre de la page.
+    **Justification** : La balise `<title>` est utilisée dans l'**en-tête** d'un document **HTML** pour définir le **titre** de la page.
 
 !!! tip "Question D3"
-    Réponse D.
+    Réponse **D**.
 
-    Justification : L'attribut onmouseover en HTML est utilisé pour exécuter un script lorsqu'un utilisateur passe la souris sur un élément spécifique.
+    **Justification** : L'attribut `onmouseover` en **HTML** est utilisé pour exécuter un **script** lorsqu'un utilisateur **passe la souris** sur un **élément** spécifique.
 
 !!! tip "Question D4"
-    Réponse C.
+    Réponse **C**.
 
-    Justification : La balise <input type="checkbox"> est utilisée pour créer des cases à cocher dans un formulaire HTML.
+    **Justification** : La balise `<input type="checkbox">` est utilisée pour créer des cases à cocher dans un formulaire **HTML**.
 
 !!! tip "Question D5"
-    Réponse C.
+    Réponse **C**.
 
-    Justification : La propriété onclick d'une balise <button /> en HTML est utilisée pour définir un script JavaScript à exécuter lors du clic sur le bouton.
+    **Justification** : La propriété `onclick` d'une balise `<button />` en **HTML** est utilisée pour définir un **script JavaScript** à **exécuter** lors du **clic sur le bouton**.
 
 !!! tip "Question D6"
-    Réponse C.
+    Réponse **C**.
 
-    Justification : Le sélecteur CSS #tab-nav a cible les liens (<a>) à l'intérieur de l'élément avec l'ID tab-nav, ce qui correspond à la structure donnée pour la barre de navigation.
+    **Justification** : Le sélecteur **CSS** `#tab-nav` a cible les liens (`<a>`) à l'intérieur de l'élément avec l'**ID** `tab-nav`, ce qui correspond à la structure donnée pour la barre de navigation.
 
 ## Thème E : Architectures Matérielles et Systèmes d'Exploitation Question E1.
 
 !!! tip "Question E1"
-    Réponse C.
+    Réponse **C**.
 
-    Justification : La commande chmod a+x jeu sous Linux donne les droits d'exécution à tous les utilisateurs pour le fichier jeu.
+    **Justification** : La commande `chmod a+x jeu` sous **Linux** donne les **droits d'exécution** à **tous les utilisateurs** pour le fichier `jeu`.
 
 !!! tip "Question E2"
-    Réponse C.
+    Réponse **C**.
 
-    Justification : La commande cp /users/luc/interro.txt ./ sous Linux copie le fichier interro.txt vers le répertoire courant.
+    **Justification** : La commande `cp /users/luc/interro.txt ./` sous **Linux** copie le fichier `interro.txt` vers le **répertoire courant**.
 
 !!! tip "Question E3"
-    Réponse C.
+    Réponse **C**.
 
-    Justification : Après les commandes, les fichiers help.txt et tutorial.txt seront dans le répertoire Documents du répertoire de l'utilisateur.
+    **Justification** : Après les commandes, les fichiers `help.txt` et `tutorial.txt` seront dans le répertoire `Documents` du répertoire de l'utilisateur.
 
 !!! tip "Question E4"
-    Réponse C.
+    Réponse **C**.
 
-    Justification : La commande cat readme.txt sous Linux est utilisée pour afficher le contenu du fichier readme.txt.
+    **Justification** : La commande `cat readme.txt` sous **Linux** est utilisée pour afficher le **contenu** du fichier `readme.txt`.
 
 !!! tip "Question E5"
-    Réponse C.
+    Réponse **C**.
 
-    Justification : Dans l'architecture de Von Neumann, l'unité arithmétique et logique (UAL) a pour rôle d'effectuer les opérations de base.
+    **Justification** : Dans l'**architecture de Von Neumann**, l'**unité arithmétique et logique** (**UAL**) a pour rôle d'**effectuer les opérations de base**.
 
 !!! tip "Question E6"
-    Réponse D.
+    Réponse **D**.
 
-    Justification : L'affirmation selon laquelle un système d'exploitation propriétaire est plus sécurisé est subjective et ne peut être établie comme universellement vraie.
+    **Justification** : L'affirmation selon laquelle un **système d'exploitation propriétaire** est plus **sécurisé** est **subjective** et ne peut être établie comme universellement vraie.
 
 ## Thème F : Langages et Programmation Question F1.
 
 !!! tip "Question F1"
-    Réponse D.
+    Réponse **D**.
 
-    Justification : L'instruction (random.randint(0, 4) - 2) * 2 génère un entier aléatoire entre 0 et 4, soustrait 2, puis multiplie le résultat par 2, couvrant l'ensemble {-4, -2, 0, 2, 4}.
+    **Justification** : L'instruction `(random.randint(0, 4) - 2) * 2` génère un **entier aléatoire** entre `0` et `4`, soustrait `2`, puis **multiplie le résultat** par `2`, couvrant l'ensemble `{-4, -2, 0, 2, 4}`.
 
 !!! tip "Question F2"
-    Réponse B 
+    Réponse **B** 
 
-    Justification : Le test ranger(3, 4, 1) échoue à trier correctement car il permute le 4 et le 1 mais laisse le 3 devant
+    **Justification** : Le test `ranger(3, 4, 1)` **échoue** à **trier correctement** car il **permute** le `4` et le `1` mais laisse le `3` devant.
 
 !!! tip "Question F3"
     Réponse D.
@@ -193,43 +193,43 @@
     Justification : Les conditions a <= b < longueur(T) garantissent que les indices sont dans les limites correctes du tableau sans chevauchement.
 
 !!! tip "Question F5"
-    Réponse B.
+    Réponse **B**.
 
-    Justification : Remplacer les pointillés par L[i] > m garantit que m sera mis à jour avec le plus grand élément rencontré dans la liste. Question F6.
+    **Justification** : Remplacer les **pointillés** par `L[i] > m` garantit que `m` sera **mis à jour** avec le **plus grand élément** rencontré dans la liste.
 
 !!! tip "Question F6"
-    Réponse C.
+    Réponse **C**.
 
-    Justification : Il est déconseillé d'utiliser des flottants avec cette fonction car la précision des opérations flottantes peut entraîner des erreurs inattendues dans la comparaison.
+    **Justification** : Il est **déconseillé** d'utiliser des **flottants** avec cette fonction car la **précision des opérations flottantes** peut entraîner des **erreurs inattendues** dans la comparaison.
 
 ## Thème G : Algorithmique Question G1.
 
 !!! tip "Question G1"
-    Réponse A.
+    Réponse **A**.
 
-    Justification : Pour la recherche dichotomique, la liste doit être triée pour permettre la division de la liste et la comparaison des éléments de manière efficace.
+    **Justification** : Pour la **recherche dichotomique**, la **liste** doit être **triée** pour permettre la **division de la liste** et la **comparaison des éléments** de manière **efficace**.
 
 !!! tip "Question G2"
-    Réponse D.
+    Réponse **D**.
 
-    Justification : Dans le pire des cas, un algorithme de recherche dichotomique sur une liste de taille 2 nécessite 2 + 1 = 3 comparaisons.
+    **Justification** : Dans le **pire des cas**, un **algorithme** de **recherche dichotomique** sur une **liste** de taille **2** nécessite $2 + 1 = 3$ comparaisons.
 
 !!! tip "Question G3"
-    Réponse D.
+    Réponse **D**.
 
-    Justification : La fonction retourne le maximum de la liste donnée.
+    **Justification** : La fonction renvoie le **maximum de la liste donnée**.
 
 !!! tip "Question G4"
-    Réponse B.
+    Réponse **B**.
 
-    Justification : La fonction compte le nombre d'occurrences de la lettre 'e' dans "Vive l’informatique", qui apparaît 2 fois.
+    **Justification** : La fonction **compte le nombre d'occurrences** de la lettre `'e'` dans `"Vive l’informatique"`, qui apparaît **2 fois**.
 
 !!! tip "Question G5"
-    Réponse C.
+    Réponse **C**.
 
-    Justification : Cette fonction implémente la recherche dichotomique, un algorithme de recherche qui divise successivement la liste pour trouver un élément.
+    **Justification** : Cette fonction implémente la **recherche dichotomique**, un **algorithme** de **recherche** qui **divise successivement la liste** pour trouver un **élément**.
 
 !!! tip "Question G6"
-    Réponse B.
+    Réponse **B**.
 
-    Justification : Le script B boucle indéfiniment car i commence plus petit que K et diminue à chaque fois, mais la condition de la boucle est que i soit plus petit que K ce qui est toujours vrai.
+    **Justification** : Le **script B** boucle **indéfiniment** car `i` commence **plus petit** que `K` et **diminue** à chaque fois, mais la **condition** de la **boucle** est que `i` soit **plus petit** que `K`, ce qui est **toujours vrai**.

@@ -248,9 +248,14 @@ Si l'on souhaite inclure **la valeur d'une variable** dans un **texte affiché**
 
 {{ IDE('scripts/06.py') }}
 
-La fonction `print` effectue par défaut un **retour à la ligne** après avoir affiché les valeurs que vous lui avez donné. Pour changer ce comportement, on peut ajouter le paramètre `end` :
+La fonction `print` effectue par défaut un **retour à la ligne** après avoir affiché les valeurs que vous lui avez donné. Pour changer ce comportement, on peut ajouter le **paramètre** `end` :
 
 {{ IDE('scripts/09.py') }}
+
+Un autre **paramètre** que l'on peut utiliser avec la fonction `print` est le paramètre `sep`.  
+Ce **paramètre** permet d'indiquer un **autre caractère** pour **séparer** plusieurs valeurs données à la fonction `print`, par exemple :
+
+{{ IDE('scripts/09b.py') }}
 
 ## Interaction avec l'utilisateur, lire sur l'entrée standard
 
@@ -261,7 +266,16 @@ Pour demander à l'utilisateur de **saisir une valeur**, de manière à pouvoir 
 !!! warning "Attention au type"
     La valeur renvoyée par la fonction `input` est de type `str` (chaîne de caractères). Si vous voulez utiliser cette valeur dans une **opération arithmétique** par exemple, il faut donc la convertir en `int` (nombre entier), d'où l'utilisation de la fonction `int` ci-dessus.
 
-L'instruction `input` ne s'arrête que **lorsque l'utilisateur a appuyé sur la touche `Entrée`**.
+Un **programme** contenant un appel à `input` ne s'arrête que **lorsque l'utilisateur a saisi une valeur et appuyé sur la touche `Entrée`**. En attendant, le programme reste en *stand-by*.
+
+!!! danger "Notebook bloqué"
+    Lorsque vous travaillez sur un **notebook** (sur *Capytale* par exemple), faites attention lorsque vous **exécutez une cellule de code** contenant un `input` : tant que vous ne saisissez pas de valeur attendue par la fonction `input`, l'exécution de la cellule **ne s'arrêtera pas**, et vous ne pourrez exécuter **aucune autre cellule de code** pendant ce temps (si vous le faites, vous obtiendrez un message d'erreur).
+
+On peut également indiquer dans un `input` un **message à afficher**, voici une exemple :
+
+{{ IDEv('scripts/08b.py') }}
+
+Cela permet d'indiquer à l'utilisateur la nature de la valeur attendue.
 
 ## Les boucles bornées `for`
 

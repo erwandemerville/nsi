@@ -66,6 +66,13 @@ nav:
       - Activité préliminaire: terminale/mise_au_point/preliminaire.md
       - Cours et exercices: terminale/mise_au_point/cours.md
       - Activité finale: terminale/mise_au_point/activite_finale.md
+    - Programmation orientée objet:
+      - terminale/poo/index.md
+      - Activité d'introduction: terminale/poo/preliminaire.md
+      - Cours: terminale/poo/cours.md
+      - Exercices: terminale/poo/exercices.md
+    - Sujet e3c:
+      - terminale/e3c/index.md
     - Entraînement Python:
       - terminale/entrainement_python/index.md
   - Rendu des travaux: rendus.md
