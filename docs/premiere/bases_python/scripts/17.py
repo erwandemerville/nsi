@@ -1,4 +1,4 @@
-nb = input("Saisissez votre âge : ")
+nb = int(input("Saisissez votre âge : "))
 if nb < 5:
     print("Vous êtes un bébé.")
 elif nb < 12:

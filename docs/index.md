@@ -13,6 +13,7 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | Liste des contenus                           | Description                         |
 | -------------------------------------------- | ----------------------------------- |
 | [Les bases du langage Python](premiere/bases_python/index.md) | Les bases du langage Python. |
+| [Représentation des données en machine](premiere/representation_donnees/index.md) | Représentation des entiers, réels, encodage du texte... |
 
 ## NSI terminale
 

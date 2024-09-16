@@ -55,6 +55,10 @@ nav:
       - Introduction au Python: premiere/bases_python/cours.md
       - Découverte de l'IDE Thonny: premiere/bases_python/thonny.md
       - Notebooks: premiere/bases_python/notebooks.md
+    - Représentation des données:
+      - premiere/representation_donnees/index.md
+      - Cours: premiere/representation_donnees/cours.md
+      - Exercices et notebooks : premiere/representation_donnees/exercices.md
   - Terminale:
     - terminale/index.md
     - Modularité:
