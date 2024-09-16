@@ -224,7 +224,7 @@ Le **mode programme** de **Python** consiste à écrire une **suite d’instruct
 
 ### Affichage sur la sortie standard
 
-Contrairement au **mode interactif**, en **mode programme**, les résultats des expressions calculées ne sont plus affichés à l’écran. Il faut utiliser pour ceci une instruction explicite d’affi- chage. En Python, elle s’appelle `print`. Par exemple :
+Contrairement au **mode interactif**, en **mode programme**, les résultats des expressions calculées ne sont plus affichés à l’écran. Il faut utiliser pour ceci une instruction explicite d’affichage. En Python, elle s’appelle `print`. Par exemple :
 
 {{ IDEv('scripts/03.py') }}
 
@@ -354,6 +354,152 @@ Voici les symboles permettant d'effectuer des **comparaisons** :
     File "<stdin>", line 1, in <module>
     TypeError: '<' not supported between instances of 'int' and 'str'
     ```
+
+!!! info "Le type `bool`"
+    Lorsque vous effectuez une **expression conditionnelle** (qu'on appelera parfois **test**), cette expression est **évaluée** par **Python** soit à la valeur `True`, soit à la valeur `False`. Voici un exemple (exécuter le programme pour voir le résultat) :
+
+    {{ IDEv('scripts/13b.py') }}
+
+    Les valeurs `True` et `False` sont des valeurs **booléennes** (de type `bool`), ce sont d'ailleurs les **deux seules valeurs** que peut prendre une variable de ce type.
+
+    Lorsque vous utilisez une **instruction de branchement**, comme `if <condition>`, la **condition** est une **expression** qui est **évaluée** à `True` ou `False`. Les instructions du **bloc** `if` ne sont exécutées que si la **condition** est évaluée à `True`.
+
+    Par exemple :
+
+    ```python
+    age = 30
+    majeur = age >= 18
+    if majeur:
+        print("Vous êtes majeur")
+    ```
+
+    Ici, l'expression `age >= 18` est évaluée à `True`, et la valeur `True` est stockée dans la variable `majeur`. Ainsi, on rentre bien dans le bloc `if`.
+    
+    Cela revient au même résultat que d'écrire :
+
+    ```python
+    age = 30
+    if age >= 18:
+        print("Vous êtes majeur")
+    ```
+    
+### Les opérateurs logiques
+
+En *Python*, des **opérateurs logiques** permettent de combiner plusieurs **conditions** et ainsi réduire le nombre d'instructions de branchement nécessaires.
+
+#### L'opérateur `and`
+
+Si l'on souhaite par exemple vérifier **deux conditions** à la fois et afficher le message `"OK"` lorsque les deux conditions sont **vérifiées**, on peut procéder ainsi :
+
+```python
+if <condition 1>:
+    if <condition 2>:
+        print("OK !")
+```
+
+Plutôt que d'utiliser deux instructions `if`, on peut obtenir le même comportement en utilisant l'**opérateur logique** `and` de la manière suivante :
+
+```python
+if <condition 1> and <condition 2>:
+    print("OK")
+```
+
+En effet, ici, on entre dans le bloc `if` seulement si le **test** `<condition 1> and <condition 2>` est évalué à `True`, c'est-à-dire si la **condition 1 ET la condition 2** sont toutes les deux **vraies** (évaluées au booléen `True`).
+
+On peut bien sûr utiliser autant de fois l'opérateur `and` que l'on souhaite à l'intérieur d'un **test**, voici un exemple :
+
+{{ IDE('scripts/13c.py') }}
+
+Ici, le message `"Vous pouvez entrer"` est affiché **uniquement** si les **4 conditions** `taille > 170`, `taille < 180`, `poids > 60`, `poids < 80` sont **vérifiées**.
+
+#### L'opérateur `or`
+
+Autre situation : on souhaite maintenant tester **deux conditions**, et vérifier si seulement **l'une** ou **l'autre** est **vraie**, ou si **les deux** sont **vraies** à la fois.
+
+En utilisant des instructions de branchement, on pourrait écrire :
+
+```python
+if <condition 1>:
+    print("OK !")
+elif <condition 2>:
+    print("OK !")
+else:
+    print("Pas ok.")
+```
+
+Ici encore, on peut réduire le nombre d'instructions de branchement en introduisant l'**opérateur logique** `or` :
+
+```python
+if <condition 1> or <condition 2>:
+    print("OK !")
+else:
+    print("Pas ok.")
+```
+
+!!! tip "Un opérateur paresseux"
+    L'opérateur `or` possède une caractéristique intéressante. En effet, si vous utilisez un `or` entre **deux conditions**, **Python** n'évaluera pas la **deuxième condition** si la **première** est évaluée à `True`. Par exemple :
+
+    ```python
+    x = 35
+    y = 15
+    if x >= 30 or y <= 20:
+        print("OK")
+    ```
+
+    Ici, l'expression `y <= 20` ne sera **pas évaluée** car la première expression `x >= 30` est évaluée à `True`. Étant donné que seule l'une ou l'autre des conditions doit être vraie pour que le test `x >= 30 or y <= 20` soit vérifié, on a pas besoin de tester la deuxième condition.
+
+    Voici un autre exemple en utilisant deux opérateurs `or` :
+
+    ```python
+    x = 35
+    y = 15
+    z = 'hello'
+    if x >= 50 or y <= 20 or z == 'hello':
+        print("OK")
+    ```
+
+    Ici, on évaluera le **première** et la **deuxième** condition, mais pas la **troisième**, car la **deuxième** condition `y <= 20` est évaluée à `True`.
+
+Tout comme pour le `and`, on peut accumuler autant de fois l'opérateur `or` qu'on le souhaite dans un **test**, on peut également combiner des `and` et des `or`, par exemple :
+
+{{ IDE('scripts/13d.py') }}
+
+**Python** effectue les opérations de **gauche à droite** et en tenant compte des **parenthèses**.
+
+Dans le programme ci-dessus (n'hésitez pas à le modifier pour faire vos propres tests), Python effectuera d'abord le test `age >= 18 and age < 70`, qui sera évalué à `False`, puis il effectuera ensuite le test `False or accompagne`, soit (puisque `accompagne` vaut `True`) `False or True`, qui sera donc évalué à `True`.
+
+#### L'opérateur `not`
+
+L'**opérateur logique** `not` utilisée sur une expression booléenne renvoie `True` si l'expression est évaluée à `False`, et `False` si l'expression est évaluée `True`.
+
+Voici un exemple :
+
+{{ IDE('scripts/13d.py') }}
+
+#### Tables de vérité
+
+Les **opérateurs logiques** `and`, `or` et `not` permettent de combiner des **expressions booléennes** pour créer des **conditions plus complexes**. Voici les **tables de vérité** qui montrent comment ces opérateurs fonctionnent.
+
+| `A`   | `B`   | `A and B` |
+|-------|-------|-----------|
+| True  | True  | True      |
+| True  | False | False     |
+| False | True  | False     |
+| False | False | False     |
+
+| `A`   | `B`   | `A or B` |
+|-------|-------|----------|
+| True  | True  | True     |
+| True  | False | True     |
+| False | True  | True     |
+| False | False | False    |
+
+| `A`   | `not A` |
+|-------|---------|
+| True  | False   |
+| False | True    |
+
+Ces tables montrent que l'opérateur `and` ne renvoie `True` que si **les deux opérandes** sont **vraies**, tandis que l'opérateur `or` renvoie `True` si **au moins une** des opérandes est **vraie**. L'opérateur `not`, quant à lui, inverse la valeur booléenne.
 
 ## Les fonctions
 
