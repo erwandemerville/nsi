@@ -1,8 +1,12 @@
-from turtle import *
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-g = 9.81
+from random import randint
+from turtle import penup, pendown, goto
 
-class Projectile:  # déclarer une classe
+g = 9.81  # intensité de pesanteur terrestre
+
+class Projectile:  # déclarer une classe Projectile
     pass
 
 balle = Projectile()  # créer un objet

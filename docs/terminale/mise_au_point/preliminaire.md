@@ -45,6 +45,112 @@ def recherche(t, v):
 
     3. Identifier la ou les erreurs à l’aide de ces traces et les corriger.
 
+??? tip "Corrigé détaillé exercice 1"
+    1. Lorsque l'on exécute la fonction telle qu'elle est donnée, on se rend compte que l'**exécution ne se termine pas**. On peut donc deviner que la boucle `while` itère indéfiniment.
+    2. En ajoutant une instruction `print` pour voir le contenu des variables `gauche`, `milieu` et `droite`, on voit qu'à un certain stade, les valeurs de `gauche` et de `droite` ne changent plus, ainsi la **condition d'arrêt** du `while` n'est jamais rencontrée :  
+    ![Screen de Thonny](images/exo1_screen_thonny.png)  
+    Si l'on teste notre variant `droite - gauche + 1` avec une **assertion**, en modifiant le code de la manière suivante :  
+    ```python
+    def recherche(t, v):
+        gauche = 0
+        droite = len(t)
+        amplitude = droite - gauche + 1  # On stocke la valeur initiale du variant
+        while gauche < droite:
+            milieu = (gauche+droite) // 2
+            print(f'gauche = {gauche} | milieu = {milieu} | droite = {droite}')
+            if t[milieu] < v:
+                gauche = milieu 
+            else:
+                droite = milieu
+            assert droite - gauche + 1 < amplitude, 'variant non vérifié'
+            amplitude = droite - gauche
+        return droite
+    ```
+    En exécutant le programme, on obtient une `assertionError` : notre **variant n'est pas vérifié**, ce qui prouve donc que le programme **ne se termine pas**.  
+    ![Screen de Thonny 2](images/exo1_screen_thonny_2.png)  
+    Par ailleurs, si on teste l'**invariant**, en rajoutant une **assertion** de la manière suivante :
+    ```python
+    def recherche(t, v):
+    gauche = 0
+    droite = len(t)
+    amplitude = droite - gauche + 1  # On stocke la valeur initiale du variant
+    while gauche < droite:
+        milieu = (gauche+droite) // 2
+        print(f'gauche = {gauche} | milieu = {milieu} | droite = {droite}')
+        if t[milieu] < v:
+            gauche = milieu 
+        else:
+            droite = milieu
+        assert v >= t[gauche] and v <= t[droite] ### ajout invariant
+        assert droite - gauche + 1 < amplitude, 'variant non vérifié'
+        amplitude = droite - gauche
+    return droite
+    ```  
+    On obtient l'erreur suivante :  
+    ![Screen de Thonny 3](images/exo1_screen_thonny_3.png)  
+    La **valeur recherchée** doit toujours être comprise entre l'**élément d'indice** `gauche` et l'**élément d'indice** `droite`. Or, l'élément d'indice `droite` vaut initialement `len(t)`, alors que sa valeur devrait correspondre à l'indice du **dernier élément du tableau**, soit `len(t) - 1`, d'où l'erreur obtenue : `len(t)` ne correspond pas à un indice du tableau.
+    3. Finalement, voici une liste des différentes erreurs que comporte la fonction donnée :
+          1. `droite` doit être égal à l'**indice du dernier élément** du tableau, soit `len(t) - 1`
+          2. Lorsque `t[milieu] < v` (l'élément recherché est **plus grand** que l'élément du milieu), on sait que l'on doit ré-effectuer la recherche dans la partie du tableau **à droite de l'élément du milieu**. Or, dans la fonction donnée, `gauche` prend la valeur de l'indice stocké dans `milieu`, alors que l'on sait que l'élément associé à l'indice `milieu` ne peut pas être l'élément recherché. `gauche` doit donc prendre la valeur de l'indice **juste à droite** de `milieu`, soit `milieu + 1`.
+          3. Lorsque `t[milieu] > v` (l'élément recherché est **plus petit** que l'élément du milieu), on sait que l'on soit ré-effectuer la recherche dans la partie du tableau **à gauche de l'élément du milieu**. Donc, `droite` doit prendre la valeur de l'indice **juste à gauche** de `milieu`, soit `milieu - 1.`
+          4. Actuellement, la boucle continue tant que `gauche < droite`. Or, on oublie le cas où `gauche = droite`, auquel cas on doit rester dans la boucle. On ne doit sortir de la boucle que lorsque `gauche > droite`. Ainsi, la condition du `while` doit devenir : `gauche <= droite`.
+          5. On oublie de **traiter un cas** à l'intérieur du `while` : celui où l'élément `t[milieu]` correspond à l'élement `v` recherché : dans ce cas, selon la **docstring**, on doit **renvoyer l'indice de l'élément trouvé**, c'est à dire `milieu`.
+          6. Enfin, lorsque l'on sort de la boucle `while`, c'est-à-dire lorsque l'élément recherche n'a **pas été trouvé**, la **docstring** indique que l'on doit renvoyer `-1`, et non pas l'indice stocké dans `droite`. Il faut en effet toujours faire en sorte que notre fonction respecte la spécification, c'est-à-dire qu'elle fait bien ce qui est attendu.
+
+    Finalement, voici **la bonne implémentation** de cette fonction, après avoir corrigé toutes ces **erreurs**, ajouté des `print` pour afficher une **trace d'exécution**, ajouté une **assertion** pour le **variant** et pour l'**invariant** :  
+    ```python
+    def recherche(t, v):
+        print(t, v) # TRACE
+        gauche = 0
+        droite = len(t) - 1
+        amplitude = droite - gauche + 1  # On stocke la valeur initiale du variant
+        while gauche <= droite:
+            milieu = (gauche+droite) // 2
+            print(f'gauche = {gauche} | milieu = {milieu} | droite = {droite}')
+            if t[milieu] == v:
+                return milieu
+            elif t[milieu] < v:
+                gauche = milieu + 1
+            else:
+                droite = milieu - 1
+            assert v not in t or (v >= t[gauche] and v <= t[droite]) ### ajout invariant
+            print(f'variant = {droite - gauche + 1}')
+            assert droite - gauche + 1 < amplitude, 'variant non vérifié'
+            amplitude = droite - gauche
+        return -1
+    ```
+
+??? tip "Fonction finale uniquement exercice 1"
+    Voici **la bonne implémentation** de cette fonction, après avoir corrigé toutes les **erreurs**, ajouté des `print` pour afficher une **trace d'exécution**, ajouté une **assertion** pour le **variant** et pour l'**invariant** :
+
+    ```python
+    def recherche(t, v):
+        ''' Renvoie l'indice de l'élément v dans le tableau t.
+        Si l'élément n'est pas trouver, renvoie -1.
+        :param t: (list) un tableau d'entiers
+        :param v: (int) l'entier à chercher
+        :return: (int) l'indice de l'élément s'il est trouvé, ou -1 sinon '''
+
+        print(t, v) # TRACE
+        gauche = 0
+        droite = len(t) - 1
+        amplitude = droite - gauche + 1  # On stocke la valeur initiale du variant
+        while gauche <= droite:
+            milieu = (gauche+droite) // 2
+            print(f'gauche = {gauche} | milieu = {milieu} | droite = {droite}')
+            if t[milieu] == v:
+                return milieu
+            elif t[milieu] < v:
+                gauche = milieu + 1
+            else:
+                droite = milieu - 1
+            assert v not in t or (v >= t[gauche] and v <= t[droite]) ### ajout invariant
+            print(f'variant = {droite - gauche + 1}')
+            assert droite - gauche + 1 < amplitude, 'variant non vérifié'
+            amplitude = droite - gauche
+        return -1
+    ```
+
 ## Utiliser un débogueur
 
 L’implémentation suivante de l’algorithme de **tri par sélection** contient elle aussi des erreurs.

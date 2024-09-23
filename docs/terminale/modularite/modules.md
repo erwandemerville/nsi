@@ -150,16 +150,118 @@ Vous allez créer un module permettant d'effectuer un certain nombre d'opératio
     - [operations.py](src/operations.py){ target="_blank" } - Module permettant d'effectuer des opérations sur des listes.
     - [main.py](src/main.py){ target="_blank" } - Programme principal
 
+!!! tip "Correction"
+    - [operations_corr.py](src/operations_corr.py){ target="_blank" } - Module **corrigé** permettant d'effectuer des opérations sur des listes.
+    - [main_corr.py](src/main_corr.py){ target="_blank" } - Programme principal **corrigé**
+
 !!! note "Exercice 1"
     Complétez le corps des fonctions `sum_lst`, `min_lst` et `max_lst` permettant de renvoyer respectivement la somme des éléments, l'élément minimal et l'élément maximal d'une liste d'entiers passée en argument. Complétez également le corps de la fonction `ajouter_debut` permettant d'ajouter un élément au début d'une liste.
+
+??? tip "Corrigé exercice 1"
+
+    ```python
+    def sum_lst(lst: list) -> int:
+        ''' Renvoie le résultat de la somme des éléments d'une liste.
+
+        :Exemples:
+        >>> sum_lst([2,4,6,8])
+        20
+        '''
+        
+        res = 0
+        for el in lst:
+            res += el
+        return res
+
+    def min_lst(lst: list) -> int:
+        ''' Renvoie la valeur minimale d'une liste.
+
+        :Exemples:
+        >>> min_lst([8,1,9,2,7])
+        1
+        '''
+        
+        min = lst[0]
+        for i in range(1, len(lst)):
+            if lst[i] < min:
+                min = lst[i]
+        return min
+
+    def max_lst(lst: list) -> int:
+        ''' Renvoie la valeur maximale d'une liste.
+
+        :Exemples:
+        >>> max_lst([8,1,9,2,7])
+        9
+        '''
+        
+        max = lst[0]
+        for i in range(1, len(lst)):
+            if lst[i] > max:
+                max = lst[i]
+        return max
+
+    def ajouter_debut(lst: list, el: int) -> list:
+        ''' Renvoie une nouvelle liste contenant les éléments de lst incluant l'élément el en première position.
+
+        :Exemples:
+        >>> ajouter_debut([2,9,4,5], 8)
+        [8, 2, 9, 4, 5]
+        '''
+        
+        return [el] + lst
+    ```
 
 !!! note "Exercice 2"
     Ouvrez le script nommé `main.py`, et **y importer** le **module** `operations`.
 
     Compléter la fonction `to_bin` permettant de transformer un entier en nombre binaire stocké sous la forme d'une liste de **0** et de **1**. Vous utiliserez pour cela la fonction `ajouter_debut` définie dans le module `operations`.
 
+??? tip "Corrigé exercice 2"
+    Il ne faut pas oublier d'importer la fonction `ajouter_debut` du **module** `operations` au début de votre script :  
+    ```python
+    from operations import ajouter_debut
+    ```
+
+    Pour réaliser la fonction `to_bin`, on utilise la méthode des **divisions successives** :
+
+    ```python
+    def to_bin(ent: int) -> list:
+        ''' Renvoie la représentation binaire de l'entier spécifié, sous la forme d'une liste.
+        On utilise la méthode des divisions euclidiennes successives.
+
+        :Exemples:
+        >>> to_bin(10)
+        [1, 0, 1, 0]
+        '''
+        
+        lst = []
+        while ent != 0:
+            lst = ajouter_debut(lst, ent%2)
+            ent //= 2
+        return lst
+    ```
+
 !!! note "Exercice 3"
     Complétez la fonction `moyenne` permettant de calculer la moyenne des éléments d'une liste, en utilisant la fonction `sum_lst` de `operations`.
+
+??? tip "Corrigé exercice 3"
+    Il ne faut pas oublier d'importer la fonction `sum_lst` du **module** `operations` au début de votre script. Pour importer à la fois `ajouter_debut` et `sum_lst` :  
+    ```python
+    from operations import ajouter_debut, sum_lst
+    ```
+
+    ```python
+    def moyenne(lst: list) -> float:
+        ''' Renvoie la moyenne des éléments d'une liste.
+
+        :Exemples:
+        >>> moyenne([12,15,10,20])
+        14.25
+        '''
+        
+        return sum_lst(lst) / len(lst)
+    ```
 
 ## La notion d'interface
 
@@ -193,3 +295,8 @@ Vous allez créer un module permettant d'effectuer un certain nombre d'opératio
     | `ecrit(d, k, v)` | ajoute au dictionnaire `d` l'association entre la clé `k` et la valeur `v`, en remplaçant une éventuelle association déjà présente pour `k`. |
 
     **Implémentez un module** `dictionnaire`, dans un fichier nommé `dictionnaire.py`, qui correspond à cette interface.
+
+??? tip "Corrigé - À vous de jouer !"
+    <center style="font-size:1.3em">
+    [Télécharger le fichier Python corrigé](src/dictionnaire_corr.py)
+    </center>

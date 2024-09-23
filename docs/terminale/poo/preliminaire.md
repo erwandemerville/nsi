@@ -38,23 +38,24 @@ balle.vy = 20  # et son attribut vy
     - [projectile.py](exercices/projectile.py) : script *Python* à compléter (en suivant les exercices suivants)
 
 !!! note "Exercice 1"
-    Écrire la **fonction** `pas(balle, dt)` qui prend une balle en paramètre et modifie son état après l’intervalle de temps `dt` (vous devez donc redéfinir les **attributs** `x`, `y` et `vy`).
+    Écrire la **fonction** `pas(balle, dt)` (en dehors de la classe) qui prend une **balle** en paramètre et modifie son état après l’intervalle de temps `dt` (vous devez donc redéfinir les **attributs** `x`, `y` et `vy`).
 
 !!! note "Exercice 2"
-    Écrire un **programme** qui **crée une balle** et **appelle 50 fois la fonction** `pas` avec le paramète `dt = 0.1` en **affichant** à chaque fois la **position de la balle**.
+    Écrire un **programme** qui **crée une balle** et **appelle 50 fois la fonction** `pas` avec le paramètre `dt = 0.1` en **affichant** à chaque fois la **position de la balle**.
 
 !!! note "Exercice 3"
     **Modifier** la **fonction** `pas` pour qu’elle **affiche la trajectoire de la balle** en **dessinant un trait** depuis sa dernière position.  
     On utilisera la bibliothèque `turtle` et notamment la fonction `goto(x,y)` qui déplace la tortue à la position `x`, `y` en **traçant un trait**.
 
 La fonction `pas` n’a de sens que si on lui passe un projectile comme premier paramètre.  
-Pour rendre cela explicite, on peut la définir *à l’intérieur* de la classe `Projectile`. On dit que l’on définit la **méthode** `pas` de la **classe** `Projectile`.  
-Au lieu d’appeler la fonction `pas(balle, dt)`, on utilise la **notation pointée** pour appeler cette méthode : `balle.pas(dt)`.
+Pour rendre cela explicite, on peut la définir *à l’intérieur* de la classe `Projectile`. On dit que l’on définit la **méthode** `pas` de la **classe** `Projectile`.
+
+Au lieu d’appeler la fonction `pas(balle, dt)`, on utilisera alors la **notation pointée** pour appeler cette **méthode**, comme ceci : `balle.pas(dt)`.
 
 ```python
 class Projectile:
     def pas(self , dt):  # définir la méthode `pas` dans la classe `Projectile`
-        ...              # `self` est l'objet pour lequel on a appelé la méthod
+        ...              # `self` est l'objet sur lequel on a appelé la méthode
 ...
 balle.pas(dt)            # appeler la méthode `pas` pour l'objet `balle`
 ```
@@ -70,4 +71,4 @@ balle.pas(dt)            # appeler la méthode `pas` pour l'objet `balle`
 !!! note "Exercice 6"
     Modifier le **programme** pour créer **plusieurs balles** avec des **positions** et des **vitesses initiales différentes**, et lancer une simulation en appelant répétitivement la **méthode** `pas` de **chaque balle** à tour de rôle.
 
-    On pourra utiliser les fonctions `penup` et `pendown` du module `Turtle` pour **relever** et **rabaisser** le crayon pour passer d'une balle à une autre.
+    On pourra utiliser les fonctions `penup()` et `pendown()` du module `Turtle` pour **relever** et **rabaisser** le crayon pour passer d'une balle à une autre.
