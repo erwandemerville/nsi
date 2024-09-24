@@ -4,15 +4,15 @@ Voici quelques notebooks contenant des exercices relatifs au cours sur la repré
 
 ## Exercices d'entraînement
 
-Voici quelques exercices basiques sur les conversions de base, la représentation des entiers naturels (non-signés) et des entiers relatifs (signés).
+Voici quelques exercices basiques sur les **conversions de base**, la **représentation** des **entiers naturels** (non-signés) et des **entiers relatifs** (signés).
 
-!!! success "À télécharger"
-    *D'après un notebook de Romain PLANCHAIS.*
+!!! success "Accéder aux notebooks sur *Capytale*"
+    Cliquez sur les liens ci-dessous pour accéder aux **notebooks d'exercices** sur **Capytale**.
 
-    - [representation_binaire.zip](notebooks/representation_binaire.zip){ target="_blank" }
-    
-    Téléchargez et dézippez cette archive dans votre `H:\Travail`. Vous devriez avoir, dans le même dossier, **deux notebooks** et **six images**.  
-    Faites dans l'ordre le notebook numéroté `01` et celui numéroté `02`.
+    - [Représentation binaire d'un entier positif](https://capytale2.ac-paris.fr/web/c/c54b-4023758)
+    - [Représentation binaire d'un entier relatif](https://capytale2.ac-paris.fr/web/c/f0da-4024397)
+
+    *D'après des notebooks proposés par Romain PLANCHAIS.*
 
 ## Exercices de programmation
 
