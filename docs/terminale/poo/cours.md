@@ -304,14 +304,16 @@ Voici quelques caractéristiques supplémentaires sur les classes :
 !!! note "À vous de jouer"
     Écrire une nouvelle classe `Segment` qui **réutilise la classe** `Point` et qui contient :
 
-    - Un **constructeur** qui **initialiser deux attributs**, `p1` et `p2`, deux objets de type `Point` fournis en arguments lors de la création de l'objet,
-    - Une méthode `deplacer` qui prend deux paramètres `dx` et `dy` (ne pas oublier également `self`) et qui **déplace le segment** (c'est-à-dire les deux points du segments),
+    - Un **constructeur** qui **initialise deux attributs**, `p1` et `p2`, deux objets de type `Point` fournis en arguments lors de la création de l'objet,
+    - Une méthode `deplacer` qui prend deux paramètres `dx` et `dy` (ne pas oublier également `self`) et qui **déplace le segment** (en ajoutant `dx` à la position en `x` et `dy` à la position en `y` des deux points),
     - une méthode `milieu` qui ne prend pas de paramètres (en dehors de `self` bien sûr) et qui renvoie un **nouveau point** situé **au milieu du segment**.
     - une méthode spéciale `__len__` qui renvoie **la longueur du segment**, on rappelle la formule : si l'on a deux points $P1(X1, Y1)$ et $P2(X2, Y2)$, la longueur est $\sqrt{(X2-X1)² + (Y2-Y1)²}$
 
-    En dessous de la définition des classes, des instructions qui permettent de **créer un nouveau segment** (c'est-à-dire une **instance** de la classe `Segment`) sont présentes. Après avoir exécuté le programme, vous pouvez faire des tests de manipulation de votre **objet** stocké dans `s` dans l'interpréteur Python. Pour appeler une **méthode** de la **classe** `Segment` sur votre objet dont la référence est stockée dans `s`, vous devrez donc saisir `s.nom_de_la_methode(ARGUMENTS ÉVENTUELS)`.
+    En dessous de la définition des classes, des instructions qui permettent de **créer un nouveau segment** (c'est-à-dire une **instance** de la classe `Segment`) sont présentes. Après avoir exécuté le programme, vous pouvez faire des tests de manipulation de votre **objet** stocké dans `s` dans l'interpréteur Python.  
+    
+    Pour appeler une **méthode** de la **classe** `Segment` sur votre objet dont la référence est stockée dans `s`, vous devrez donc saisir `s.nom_de_la_methode(ARGUMENTS ÉVENTUELS)`.
 
-    Vous pouvez réaliser cet exercice directement ci-dessous, ou bien sur l'**IDE** de votre choix.
+    Vous pouvez réaliser cet exercice directement ci-dessous (et télécharger le fichier lorsque terminé), ou bien sur **Thonny** (auquel cas, vous pouvez copier le code ci-dessous et le coller sur Thonny pour avoir une base pour votre script).
 
     {{ IDE('scripts/03.py') }}
 
