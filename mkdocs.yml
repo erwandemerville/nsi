@@ -74,6 +74,7 @@ nav:
       - terminale/poo/index.md
       - Activité d'introduction: terminale/poo/preliminaire.md
       - Cours: terminale/poo/cours.md
+      - TP - Un jeu Pokémon: terminale/poo/pokemon.md
       - Exercices: terminale/poo/exercices.md
     - Sujet e3c:
       - terminale/e3c/index.md
