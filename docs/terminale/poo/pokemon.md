@@ -72,7 +72,7 @@ Voici une modélisation sous forme de diagramme des différentes classes constit
 
 !!! abstract "Attaques"
     Après lecture du fichier `pokemons.txt`, les attaques de chaque `Pokemon` sont enregistrées dans l'==**attribut**== `_liste_attaques` sous la forme d'une **liste de dictionnaires**.  
-    Par exemple, s'il y a **2 attaques** : `[{"nom_attaque": "Charge", "degats_attaque": 35}, {"nom_attaque": "Rugissement", "effet_attaque": "attaque-e", "valeur_attaque": 5}]`
+    Par exemple, s'il y a **2 attaques** : `[{"nom_attaque": "Charge", "degats_attaque": 35}, {"nom_attaque": "Rugissement", "nom_effet": "attaque-e", "valeur_effet": 5}]`
 
     - La première attaque "Charge" a une **puissance de 35**.
     - La seconde attaque **diminue l'attaque de l'ennemi de 5 points**.

@@ -54,6 +54,7 @@ nav:
       - premiere/bases_python/index.md
       - Introduction au Python: premiere/bases_python/cours.md
       - Découverte de l'IDE Thonny: premiere/bases_python/thonny.md
+      - Jeu - Chasse au trésor: premiere/bases_python/chassetresor.md
       - Notebooks: premiere/bases_python/notebooks.md
     - Représentation des données:
       - premiere/representation_donnees/index.md
