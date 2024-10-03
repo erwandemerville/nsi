@@ -66,7 +66,7 @@ def verifier_case(x, y):
             message_label.config(text="Première tentative !")
 
         # Mise à jour de l'apparence du bouton cliqué
-        boutons[x][y].config(bg="blue", text=f"{tentatives}")
+        boutons[x][y].config(bg="cyan", text=f"{tentatives}")
 
         # Mise à jour des coordonnées de la dernière tentative
         derniere_pos_x, derniere_pos_y = x, y
