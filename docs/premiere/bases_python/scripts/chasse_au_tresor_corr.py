@@ -7,9 +7,11 @@ from random import randint  # Importer la fonction randint du module random
 
 N = 5  # Constante définissant la taille de la grille
 
-# Coordonnées du trésor (choisies au hasard au début du jeu)
-TRESOR_X = randint(0, N-1)
-TRESOR_Y = randint(0, N-1)
+# Coordonnées du trésor (choisies au hasard au début du jeu) en fonction de la taille N
+# Note : En Python, les indices des cases d'un tableau commencent à partir de 0, et non pas de 1.
+# Pour un tableau de taille 5x5, les coordonnées en x et en y seront donc comprises entre 0 et 4.
+TRESOR_X = randint(0, N-1)  # On génère une coordonnée aléatoire entre 0 et N-1
+TRESOR_Y = randint(0, N-1)  # On génère une coordonnée aléatoire entre 0 et N-1
 
 # Variables pour stocker la position de la dernière case cliquée par le joueur (initialement None)
 derniere_pos_x = None
@@ -27,7 +29,7 @@ root = tk.Tk()  # Créer la fenêtre de jeu initiale
 root.title("Chasse au trésor")  # Ajouter un titre à la fenêtre de jeu
 
 # Création de la grille de boutons dans la fenêtre de jeu
-boutons = []  # Liste de listes permettant de stocker tous les boutons
+boutons = []  # Liste de listes (tableau) permettant de stocker tous les boutons
 for i in range(N):  # On itère N fois pour créer les N lignes de la grille de boutons
     ligne = []  # Liste permettant de stocker les boutons d'une ligne
     for j in range(N):  # On itère N fois pour créer les N colonnes de la grille de boutons
@@ -36,7 +38,7 @@ for i in range(N):  # On itère N fois pour créer les N lignes de la grille de 
         # Positionner le bouton aux coordonnées (i, j) :
         btn.grid(row=i, column=j)
         # Ajouter le bouton btn dans la liste ligne :
-        ligne.append(btn)
+        ligne.append(btn)  # append permet d'ajouter le bouton btn à la liste ligne
     boutons.append(ligne)  # Ajouter enfin la ligne de boutons à la liste de listes boutons
 
 # Création du message initial à afficher en bas de la fenêtre de jeu
@@ -66,7 +68,7 @@ def verifier_case(x, y):
 
     if distance_actuelle == 0: # Si la distance est 0, le joueur a trouvé le trésor
         # On crée un message de victoire
-        texte_victoire = f"Bravo ! Vous avez trouvé le trésor en {...} tentatives !"
+        texte_victoire = f"Bravo ! Vous avez trouvé le trésor en {tentatives} tentatives !"
 
         # Afficher le message avec tkinter et changer la couleur de fond du bouton
         message_label.config(text=texte_victoire)
@@ -82,10 +84,10 @@ def verifier_case(x, y):
             
             #  Si la distance actuelle est plus petite que la distance précédente
             if distance_actuelle < distance_precedente:
-                message = "Plus proche !"  # Créer le message "Plus proche !"
+                message = f"Plus proche !"  # Créer le message "Plus proche !"
                 message_label.config(text=message)  # Afficher le message créé
             else:
-                message = "Plus loin !"  # Créer le message "Plus loin !"
+                message = f"Plus loin !"  # Créer le message "Plus loin !"
                 message_label.config(text=message)  # Afficher le message créé
         else:
             message = "Première tentative !"  # Créer le message "Première tentative !"
@@ -98,6 +100,9 @@ def verifier_case(x, y):
         # on les remplace par les coordonnées de la case cliquée
         derniere_pos_x = x
         derniere_pos_y = y
+
+        # Désactiver tous les boutons sur lesquels le joueur a cliqué :
+        desactiver_boutons_cliques()
 
 def calculer_distance(x1, y1, x2, y2):
     ''' Fonction qui renvoie la distance de Manhattan entre deux points (x1, y1) et (x2, y2).
@@ -117,6 +122,15 @@ def desactiver_boutons():
     for ligne in boutons:  # Pour chaque ligne de la grille de boutons
         for btn in ligne:  # Pour chaque bouton de la ligne
             btn.config(state=tk.DISABLED)  # Désactiver le bouton (le rendre non cliquable)
+
+def desactiver_boutons_cliques():
+    ''' Désactiver tous les boutons sur lesquels le joueur a cliqué. 
+    :return: (None) cette fonction ne renvoie rien '''
+
+    for ligne in boutons:
+        for btn in ligne:
+            if btn.cget('text') != "":
+                btn.config(state=tk.DISABLED)
 
 # ============================================================
 # ===================> BOUCLE PRINCIPALE <====================

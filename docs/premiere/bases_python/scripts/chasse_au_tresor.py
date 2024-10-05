@@ -38,7 +38,7 @@ for i in range(...):  # On itère N fois pour créer les N lignes de la grille d
         # Positionner le bouton aux coordonnées (i, j) :
         btn.grid(row=i, column=j)
         # Ajouter le bouton btn dans la liste ligne :
-        ligne.append(btn)
+        ligne.append(btn)  # append permet d'ajouter le bouton btn à la liste ligne
     boutons.append(ligne)  # Ajouter enfin la ligne de boutons à la liste de listes boutons
 
 # Création du message initial à afficher en bas de la fenêtre de jeu
@@ -102,6 +102,9 @@ def verifier_case(x, y):
         derniere_pos_x = ...
         derniere_pos_y = ...
 
+        # Désactiver tous les boutons sur lesquels le joueur a cliqué :
+        desactiver_boutons_cliques()
+
 def calculer_distance(x1, y1, x2, y2):
     ''' Fonction qui renvoie la distance de Manhattan entre deux points (x1, y1) et (x2, y2).
     La distance de Manhattan est la somme des distances absolues des coordonnées.
@@ -122,6 +125,15 @@ def desactiver_boutons():
     for ligne in boutons:  # Pour chaque ligne de la grille de boutons
         for btn in ligne:  # Pour chaque bouton de la ligne
             btn.config(state=tk.DISABLED)  # Désactiver le bouton (le rendre non cliquable)
+
+def desactiver_boutons_cliques():
+    ''' Désactiver tous les boutons sur lesquels le joueur a cliqué. 
+    :return: (None) cette fonction ne renvoie rien '''
+
+    for ligne in boutons:
+        for btn in ligne:
+            if btn.cget('text') != "":
+                btn.config(state=tk.DISABLED)
 
 # ============================================================
 # ===================> BOUCLE PRINCIPALE <====================
