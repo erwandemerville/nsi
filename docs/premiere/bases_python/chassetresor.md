@@ -120,7 +120,7 @@
     global tentatives, derniere_pos_x, derniere_pos_y
     ```
 
-## Exercice
+## Travail à réaliser
 
 !!! note "À faire"
     Vous devez **compléter le programme** `chasse_au_tresor.py`, en remplaçant les pointillés `...` par le **code approprié**. Les parties du programme à compléter sont indiquées par le commentaire `"À COMPLÉTER"`.
