@@ -319,12 +319,132 @@ Voici quelques caractéristiques supplémentaires sur les classes :
 
 ## Attributs et méthodes de classes
 
-(en construction...)
+En **programmation orientée objet**, les **attributs de classe**, les **méthodes de classe** ou encore les **méthodes statiques** jouent un rôle important en offrant différentes façons de gérer le comportement et les données d’une classe.
 
 ### Attributs de classes
 
-(en construction...)
+!!! abstract ""
+    Un **==attribut de classe==** est une **variable** qui **appartient à la classe elle-même**, et non aux **instances de cette classe**.
+
+Il est **partagé** entre **toutes les instances**, ce qui signifie que si l’on **modifie** cet **attribut** à partir d’une **instance**, la modification **affecte toutes les autres instances**.
+
+Voici un exemple :
+
+```python
+class A:
+    nb = 0  # création d'un attribut de classe nb
+
+    def __init__(self, x):
+        ''' Constructeur de la classe A. Création d'un objet de type A. '''
+
+        self.x = x  # création d'un attribut d'instance x
+        A.nb = A.nb + 1  # incrémenter l'attribut de classe nb
+
+print("A : nb = ", A.nb)  # afficher l'attribut de classe
+
+a = A(3)  # création d'une nouvelle instance de A
+print("A : nb = ", A.nb)  # afficher l'attribut de classe
+print("a : x = ", a.x, " nb = ", a.nb)  # afficher les attributs de a
+
+b = A(6)  # création d'une nouvelle instance de A
+print("A : nb = ", A.nb)  # afficher l'attribut de classe
+print("a : x = ", a.x, " nb = ", a.nb)  # afficher les attributs de a
+print("b : x = ", b.x, " nb = ", b.nb)  # afficher les attributs de b
+
+c = A(8)  # création d'une nouvelle instance de A
+print("A : nb = ", A.nb)  # afficher l'attribut de classe
+print("a : x = ", a.x, " nb = ", a.nb)  # afficher les attributs de a
+print("b : x = ", b.x, " nb = ", b.nb)  # afficher les attributs de b
+print("c : x = ", c.x, " nb = ", c.nb)  # afficher les attributs de c
+```
+
+??? success "Tester ce programme"
+    {{ IDE('scripts/attribut_classe.py') }}
+
+Comme on le voit, on peut accéder ou modifier un **attribut de classe** :
+
+- directement à partir de la référence de **la classe** : `<CLASSE>.<ATTRIBUT_CLASSE>`
+- depuis la référence d'une **instance de la classe** : `<INSTANCE>.<ATTRIBUT_CLASSE>`.
 
 ### Méthodes de classes
 
-(en construction...)
+!!! abstract ""
+    Une **==méthode de classe==** est une **méthode** qui **appartient à la classe** plutôt qu’aux **instances**.
+    
+    Elle est définie à l’aide du **décorateur** `@classmethod` et prend **la référence de la classe** comme **premier paramètre**, généralement appelé `cls`. Cela permet de **manipuler** ou **interagir** avec les **attributs de la classe**.
+    
+Par exemple :
+
+```python
+class A:
+    nb = 0  # création d'un attribut de classe nb
+
+    def __init__(self, x):
+        ''' Constructeur de la classe A. Création d'un objet de type A. '''
+        
+        A.nb = A.nb + 1  # incrémenter l'attribut de classe nb
+        self.x = x  # création d'un attribut d'instance x
+
+    @classmethod
+    def get_nb(cls):
+        ''' Méthode de classe qui renvoie l'attribut de classe nb. '''
+
+        return A.nb
+
+    @classmethod
+    def nouveau(cls):
+        ''' Méthode de classe qui renvoie l'attribut de classe nb. '''
+        
+        return cls(10)
+
+print(f"objets = {A.get_nb()}")
+
+a = A(8)
+print(f"a.x = {a.x} - objets = {A.get_nb()}")
+
+b = A.nouveau()
+print(f"b.x = {b.x} - objets = {A.get_nb()}")
+```
+
+??? success "Tester ce programme"
+    {{ IDE('scripts/methode_classe.py') }}
+
+### Méthodes statiques
+
+!!! abstract ""
+    Une **==méthode statique==** est une **méthode** qui n’a **pas accès à l’instance** ni **à la classe elle-même**. Elle est définie à l’aide du **décorateur** `@staticmethod`.
+    
+    On l’utilise souvent lorsque la **méthode** ne dépend ni des **attributs d’instance** ni des **attributs de classe**, mais est tout de même **liée logiquement à la classe**.
+    
+Voici un exemple :
+
+```python
+import math
+
+class Cercle:
+    ''' Définition d'une classe Cercle. '''
+
+    def __init__(self, rayon):
+        ''' Constructeur de la classe. '''
+        
+        self.rayon = rayon  # attribut contenant le rayon du cercle
+
+    @staticmethod
+    def aire(rayon):
+        ''' Méthode statique pour calculer l'aire d'un cercle à partir du rayon. '''
+
+        return math.pi * rayon ** 2
+
+mon_cercle = Cercle(5)  # création d'une instance de la classe Cercle
+
+# Utilisation de la méthode statique pour calculer l'aire,
+# elle peut être appelée directement via la classe ou via l'instance.
+aire_du_cercle = Cercle.aire(5)  # ou mon_cercle.aire(5)
+
+print(f"L'aire d'un cercle avec un rayon de 5 est {aire_du_cercle}")
+```
+
+??? success "Tester ce programme"
+    {{ IDE('scripts/methode_statique.py') }}
+
+La **méthode statique** est idéale dans cet exemple car elle ne dépend d’aucune donnée spécifique à l’**instance** ou à la **classe**, seulement du **paramètre** qu’on lui passe.

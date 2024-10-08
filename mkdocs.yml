@@ -72,12 +72,17 @@ nav:
       - Activité préliminaire: terminale/mise_au_point/preliminaire.md
       - Cours et exercices: terminale/mise_au_point/cours.md
       - Activité finale: terminale/mise_au_point/activite_finale.md
+      - Corrigé DS n°1: terminale/mise_au_point/ds1.md
     - Programmation orientée objet:
       - terminale/poo/index.md
       - Activité d'introduction: terminale/poo/preliminaire.md
       - Cours: terminale/poo/cours.md
       - TP - Un jeu Pokémon: terminale/poo/pokemon.md
       - Exercices: terminale/poo/exercices.md
+    - Récursivité:
+      - terminale/recursivite/index.md
+      - Cours: terminale/recursivite/cours.md
+      - Exercices: terminale/recursivite/exercices.md
     - Sujet e3c:
       - terminale/e3c/index.md
     - Entraînement Python:

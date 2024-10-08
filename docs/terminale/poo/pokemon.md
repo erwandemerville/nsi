@@ -12,6 +12,28 @@ En particulier, on s'inspirera du jeu **Pokémon**.
 !!! success "À télécharger"
     - [tp_pokemons.zip](exercices/tp_pokemons.zip){ target="_blank" } - Fichiers **Python** à compléter.
 
+!!! tip "Correction + Un petit défi"
+    Voici la **correction** de ce TP :
+
+    - [tp_pokemons_correction.zip](exercices/tp_pokemons_correction.zip){ target="_blank" } - Fichiers **corrigés** du TP Pokémon.
+
+    <u>Défi pour 3 points bonus</u> :  
+    Vous souhaitez obtenir **<span style="font-size:1.2em; color:rgb(200,100,100);">JUSQU'À TROIS POINTS BONUS</span>** à votre note obtenue sur le TP Pokémon ?
+
+    Voici comment faire :
+
+    - Ajoutez **3 nouveaux pokémons** dans la base de données des pokémons (fichier `pokemons.txt`), en utilisant les données du [pokédex](https://www.pokebip.com/pokedex/pokedex_5G_liste_des_pokemon.html).
+    - Créez **un nouveau type d'attaque**, comme le *sommeil* par exemple (qui empêche un pokémon d'attaquer pendant un certain nombre de tours), ou encore la *confusion* (qui fait qu'un pokémon attaquant va subir des dégâts 50% du temps), vous pouvez consulter [cette page](https://www.pokepedia.fr/Statut){ target="_blank" } pour voir la liste des **statuts** possibles.
+    - Ajouter la **prise en compte des types** des Pokémons, en vous aidant de la [table des types](https://www.pokekalos.fr/jeux/gba/emeraude/articles-table-des-types-2907.html). Vous devrez faire en sorte que la **puissance d'attaque** soit **adaptée** selon les **types du Pokémon attaquant** et les **types du Pokémon cibles**. Chaque Pokémon peut avoir **deux types**, il faut donc bien tenir compte **des deux types** dans le **calcul** de la **puissance des attaques**.
+
+    Autre **amélioration** :
+
+    - Vous pouvez **ajuster le calcul des points de dégâts infligés** par une attaque. Actuellement, le calcul des **points de dégâts** en fonction de la *puissance d'une attaque*, de l'*attaque du Pokémon attaquant* et de la *défense du Pokémon cible* est imparfait.  
+    Pour mettre à jour ce calcul, cela se passe dans la méthode `attaquer` de la classe `Combat`, plus précisément sur la ligne :  
+    ```python
+    degats_infliges = (puissance_attaque * attaquant.get_attaque()) / (cible.get_defense() * 2.4 + 1)
+    ```
+
 Ce projet est constitué des fichiers suivants :
 
 * `main.py` - Programme principal permettant l'exécution du jeu
