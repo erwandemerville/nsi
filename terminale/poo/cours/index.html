@@ -1,0 +1,2248 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/terminale/poo/cours/">
+      
+      
+        <link rel="prev" href="../preliminaire/">
+      
+      
+        <link rel="next" href="../pokemon/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Cours - Numérique et sciences informatiques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+
+      
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
+<!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.asm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-md5"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script src="../../../pyodide-mkdocs/utils.js"></script> 
+<script src="../../../pyodide-mkdocs/interpreter.js"></script> 
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+<link rel="stylesheet" href="../../../pyodide-mkdocs/pyoditeur.css">
+
+
+<input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
+
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="my_theme" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#programmation-orientee-objet" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numérique et sciences informatiques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Cours
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="my_theme" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer en mode nuit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode nuit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Passer en mode jour"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode jour" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Accueil
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../premiere/" class="md-tabs__link">
+          
+  
+    
+  
+  Première
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Terminale
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../rendus/" class="md-tabs__link">
+        
+  
+    
+  
+  Rendu des travaux
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Numérique et sciences informatiques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Accueil
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../premiere/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Première
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Première
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../premiere/bases_python/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Les bases de Python
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Les bases de Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/bases_python/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction au Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/bases_python/thonny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Découverte de l'IDE Thonny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/bases_python/chassetresor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jeu - Chasse au trésor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/bases_python/exercices_fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices sur les fonctions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/bases_python/notebooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notebooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../premiere/representation_donnees/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Représentation des données
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Représentation des données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/representation_donnees/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/representation_donnees/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices et notebooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Terminale
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Terminale
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../modularite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Modularité
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Modularité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modularite/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité - Utilisation d'une API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../modularite/modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion de modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../mise_au_point/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Mise au point de programmes
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mise au point de programmes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mise_au_point/preliminaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité préliminaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mise_au_point/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours et exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mise_au_point/activite_finale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité finale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mise_au_point/ds1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Corrigé DS n°1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Programmation orientée objet
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Programmation orientée objet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../preliminaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité d'introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creer-une-classe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Créer une classe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Créer une classe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#affectation-a-une-variable-de-la-reference-a-un-objet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Affectation à une variable de la référence à un objet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definir-les-attributs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définir les attributs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definir-les-methodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définir les méthodes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Définir les méthodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-constructeur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le constructeur
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accesseurs-et-mutateurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accesseurs et mutateurs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulation-des-objets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manipulation des objets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributs-et-methodes-de-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributs et méthodes de classes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributs et méthodes de classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributs-de-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributs de classes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methodes-de-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes de classes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methodes-statiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes statiques
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pokemon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP - Un jeu Pokémon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../recursivite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Récursivité
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Récursivité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursivite/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../recursivite/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../e3c/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Sujet e3c
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Sujet e3c
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../entrainement_python/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Entraînement Python
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Entraînement Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rendus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendu des travaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#creer-une-classe" class="md-nav__link">
+    <span class="md-ellipsis">
+      Créer une classe
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Créer une classe">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#affectation-a-une-variable-de-la-reference-a-un-objet" class="md-nav__link">
+    <span class="md-ellipsis">
+      Affectation à une variable de la référence à un objet
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definir-les-attributs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définir les attributs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#definir-les-methodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Définir les méthodes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Définir les méthodes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-constructeur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le constructeur
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#accesseurs-et-mutateurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Accesseurs et mutateurs
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#manipulation-des-objets" class="md-nav__link">
+    <span class="md-ellipsis">
+      Manipulation des objets
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attributs-et-methodes-de-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributs et méthodes de classes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Attributs et méthodes de classes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#attributs-de-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attributs de classes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methodes-de-classes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes de classes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methodes-statiques" class="md-nav__link">
+    <span class="md-ellipsis">
+      Méthodes statiques
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+
+<div><details class="quote">
+<summary>Sources</summary>
+<ul>
+<li><a href="https://courspython.com/classes-et-objets.html" target="_blank">courspython</a></li>
+</ul>
+</details>
+<h1 id="programmation-orientee-objet">Programmation orientée objet<a class="headerlink" href="#programmation-orientee-objet" title="Permanent link">¶</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>Vous avez vu en première différentes manières du <strong>structurer des données</strong> : avec des <strong>listes</strong>, des <strong>tuples</strong>, des <strong>dictionnaires</strong>... Tous ces <strong>types de données de base</strong> sont des <strong>types natifs</strong> de <em>Python</em>. Il s'agit de <strong><u>classes</u></strong> (<code>int</code>, <code>float</code>, <code>str</code>, <code>NoneType</code>...) déjà définies dans la <strong>bibliothèque standard</strong> distribuée avec <strong>Python</strong>.</p>
+<p>Lorsque vous définissez par un exemple un <strong>entier</strong> <code>42</code> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">nombre</span> <span class="o">=</span> <span class="mi">42</span>
+</span></code></pre></div>
+<p>Vous créez ici ce que l'on appelle une <strong><u>instance</u></strong> de la <strong>classe</strong> <code>int</code>, que l'on appelle également un <strong><u>objet</u></strong>. <strong>Un objet est une instance d'une classe</strong>.</p>
+<p>De même, lorsque vous définissez une <strong>liste</strong> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">5</span><span class="p">]</span>
+</span></code></pre></div>
+<p>Vous créez ici une <strong>instance</strong> de la <strong>classe</strong> <code>list</code> de <strong>Python</strong>.</p>
+<p>La <strong>programmation orientée objet</strong> (ou <em>POO</em>) est le <strong>paradigme de programmation</strong> le <strong>plus utilisé</strong> du monde moderne. Des <strong>smartphones</strong> aux <strong>superordinateurs</strong>, des applications <strong>de toutes tailles</strong> utilisent ce <strong>paradigme de programmation</strong>. À l'issu de ce cours, vous serez capable d'aller beaucoup plus loin dans la conception de vos programmes !</p>
+<h2 id="creer-une-classe">Créer une classe<a class="headerlink" href="#creer-une-classe" title="Permanent link">¶</a></h2>
+<p>Imaginons que l'on souhaite créer une <strong>application numérique</strong> demandant l’utilisation de <strong>points repérés</strong> par des <strong>coordonnées dans un repère géométrique</strong> à deux dimensions. Nous avons pour cela besoin d'au minimum <strong>2 informations</strong> : les coordonnées <code>x</code> et <code>y</code> de ce <strong>point</strong>.</p>
+<p>En utilisant les <strong>types de base</strong> inclus avec le langage Python, on pourrait <strong>représenter</strong> ce point par un <strong>tuple</strong> <code>(x, y)</code>, une <strong>liste</strong> <code>[x, y]</code>, ou enocre un <strong>dictionnaire</strong> <code>{'x': x , 'y': y}</code>.'</p>
+<p>Grâce à la <strong>programmation orientée objet</strong> (<em>POO</em>), nous allons <strong>créer</strong> une <strong>nouvelle structure de données</strong> à l'aide d'une <strong>nouvelle classe</strong> que l'on appellera <code>Point</code> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">''' Définition d'un point géométrique. '''</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">pass</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Convention en Python</p>
+<p>Par convention, le <strong>nom</strong> identifiant une classe (qu’on appelle aussi son <strong>identifiant</strong>) débute par une <strong>majuscule</strong>. Ici <code>Point</code> débute par un <strong>P</strong> majuscule.</p>
+</div>
+<p>Une <strong>classe</strong> définit des <u><strong>attributs</strong></u> et des <u><strong>méthodes</strong></u> :</p>
+<ul>
+<li>Les <strong>attributs</strong> sont les <strong>propriétés</strong> qui caractériseront nos objets de type <code>Point</code>. Ici par exemple, on pourra créer <strong>deux attributs</strong> :</li>
+<li>Un attribut <code>x</code> : La coordonnée en <strong>abscisse</strong> du point.</li>
+<li>Un attribut <code>y</code> : La coordonnée en <strong>ordonnée</strong> du point.</li>
+<li>Les <strong>méthodes</strong> sont des <strong>fonctions</strong> définies à l'intérieur de notre classe et qui permettront d'effectuer des <strong>actions</strong> sur nos <strong>objets</strong> de type <code>Point</code>.</li>
+</ul>
+<h3 id="affectation-a-une-variable-de-la-reference-a-un-objet">Affectation à une variable de la référence à un objet<a class="headerlink" href="#affectation-a-une-variable-de-la-reference-a-un-objet" title="Permanent link">¶</a></h3>
+<p>Nous avons défini notre classe <code>Point</code>. Pour créer une <strong>instance</strong> de cette <strong>classe</strong>, c'est-à-dire un <strong>objet</strong> de type <code>Point</code>, il suffit de saisir :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">Point</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Nous pouvons dès maintenant utiliser la classe <code>Point</code> pour <strong>créer des objets</strong> de ce <strong>type</strong>, par <strong>instanciation</strong>. Pour <strong>créer</strong> un <strong>nouvel objet</strong> et <strong>stocker la référence à cet objet</strong> dans la variable <code>p</code> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">()</span>
+</span></code></pre></div>
+<p>On peut vérifier à <strong>quelle adresse mémoire</strong> est stocké notre objet :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="p">)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Point</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7ff9c2f838d0</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<p>Le message renvoyé par Python indique que <code>p</code> contient une <strong>référence</strong> à <strong>une instance de la classe</strong> <code>Point</code>, qui est définie elle-même au <strong>niveau principal</strong> du programme. Elle est située dans un emplacement bien défini de la mémoire vive, dont l’adresse apparaît ici en <strong>notation hexadécimale</strong>.</p>
+<p>On peut créer <strong>plusieurs points</strong> (c'est-à-dire plusieurs <strong>instances</strong> de la classe <code>Point</code>) :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">()</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Nous avons ici <strong>2 instances</strong> de la classe <code>Point</code> (soit <strong>2 objets</strong>) :</p>
+<ul>
+<li>la première à laquelle on fait référence au moyen de la variable <code>p1</code>,</li>
+<li>la seconde à laquelle on fait référence au moyen de la variable <code>p2</code>.</li>
+</ul>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Point</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7ff9c2f83950</span><span class="o">&gt;</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="o">&lt;</span><span class="n">__main__</span><span class="o">.</span><span class="n">Point</span> <span class="nb">object</span> <span class="n">at</span> <span class="mh">0x7ff9c2f839d0</span><span class="o">&gt;</span>
+</span></code></pre></div>
+<p>Par ailleurs, un <strong>attribut prédéfini</strong> <code>__doc__</code> permet de récupérer la <strong>documentation</strong> associée à notre classe :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="n">p</span><span class="o">.</span><span class="vm">__doc__</span><span class="p">)</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="n">Definition</span> <span class="n">d</span><span class="s1">'un point geometrique</span>
+</span></code></pre></div>
+<h3 id="definir-les-attributs">Définir les attributs<a class="headerlink" href="#definir-les-attributs" title="Permanent link">¶</a></h3>
+<p>On peut définir nos attributs de la manière suivante :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>    <span class="s2">"Definition d'un point geometrique"</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>    <span class="k">pass</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">()</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="n">p</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="n">p</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+</span></code></pre></div>
+<p>On peut afficher les valeurs de ces attributs :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">print</span><span class="p">(</span><span class="s2">"p : x ="</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">"y ="</span><span class="p">,</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="n">p</span> <span class="p">:</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+</span></code></pre></div>
+<p>Il faut bien faire la distinction entre <strong>variable</strong> et <strong>objet</strong> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>    <span class="s2">"Definition d'un point geometrique"</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="n">a</span> <span class="o">=</span> <span class="n">Point</span><span class="p">()</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="n">a</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="n">a</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="n">b</span> <span class="o">=</span> <span class="n">a</span>
+</span><span id="__span-11-8"><a id="__codelineno-11-8" name="__codelineno-11-8" href="#__codelineno-11-8"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"a : x ="</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">"y ="</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-11-9"><a id="__codelineno-11-9" name="__codelineno-11-9" href="#__codelineno-11-9"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"b : x ="</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">"y ="</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-11-10"><a id="__codelineno-11-10" name="__codelineno-11-10" href="#__codelineno-11-10"></a><span class="n">a</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span>
+</span><span id="__span-11-11"><a id="__codelineno-11-11" name="__codelineno-11-11" href="#__codelineno-11-11"></a><span class="n">a</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">4</span>
+</span><span id="__span-11-12"><a id="__codelineno-11-12" name="__codelineno-11-12" href="#__codelineno-11-12"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"a : x ="</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">"y ="</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-11-13"><a id="__codelineno-11-13" name="__codelineno-11-13" href="#__codelineno-11-13"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"b : x ="</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">"y ="</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span></code></pre></div>
+<p><a class="md-button" href="https://pythontutor.com/visualize.html#code=class%20Point%3A%0A%20%20%20%20%22Definition%20d'un%20point%20geometrique%22%0A%0Aa%20%3D%20Point%28%29%0Aa.x%20%3D%201%0Aa.y%20%3D%202%0Ab%20%3D%20a%0Aprint%28%22a%20%3A%20x%20%3D%22,%20a.x,%20%22y%20%3D%22,%20a.y%29%0Aprint%28%22b%20%3A%20x%20%3D%22,%20b.x,%20%22y%20%3D%22,%20b.y%29%0Aa.x%20%3D%203%0Aa.y%20%3D%204%0Aprint%28%22a%20%3A%20x%20%3D%22,%20a.x,%20%22y%20%3D%22,%20a.y%29%0Aprint%28%22b%20%3A%20x%20%3D%22,%20b.x,%20%22y%20%3D%22,%20b.y%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=false&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank">Visualiser sur Python Tutor</a></p>
+<p>Les variables <code>a</code> et <code>b</code> font ici référence <strong>au même objet</strong>. En effet, lors de l’affectation <code>b = a</code>, on met dans la variable <code>b</code> <strong>la référence</strong> contenue dans la variable <code>a</code>. Donc, toute modification des <strong>valeurs</strong> des <strong>attributs</strong> de l’<strong>objet</strong> dont la référence est contenue dans <code>a</code> provoque une modification pour <code>b</code>.</p>
+<h2 id="definir-les-methodes">Définir les méthodes<a class="headerlink" href="#definir-les-methodes" title="Permanent link">¶</a></h2>
+<p>Une <strong>méthode</strong> est une <strong>fonction définie à l'intérieur d'une classe</strong>.</p>
+<p>Par exemple, si l'on reprend notre classe <code>Point</code>, on peut par exemple créer une <strong>méthode</strong> permettant de <strong>modifier</strong> les <strong>attributs</strong> <code>x</code> et <code>y</code> en y <strong>ajoutant</strong> respectivement une valeur <code>dx</code> et <code>dy</code> données.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="s2">"Definition d'un point geometrique"</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="k">def</span> <span class="nf">deplacer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">):</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">dx</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">dy</span>
+</span></code></pre></div>
+<p>Si l'on veut <strong>appeler</strong> cette <strong>méthode</strong>, on procédera comme suit :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="n">a</span> <span class="o">=</span> <span class="n">Point</span><span class="p">()</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">a</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>  <span class="c1"># initialiser l'attribut x à 1</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="n">a</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>  <span class="c1"># initialiser l'attribut y à 2</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"a : x ="</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">"y ="</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="n">a</span><span class="o">.</span><span class="n">deplacer</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># Appel de la méthode deplacer de la classe Point</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"a : x ="</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">"y ="</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+</span></code></pre></div>
+<p><a class="md-button" href="https://pythontutor.com/render.html#code=class%20Point%3A%0A%20%20%20%20%22Definition%20d'un%20point%20geometrique%22%0A%20%20%20%20%0A%20%20%20%20def%20deplacer%28self,%20dx,%20dy%29%3A%0A%20%20%20%20%20%20%20%20self.x%20%3D%20self.x%20%2B%20dx%0A%20%20%20%20%20%20%20%20self.y%20%3D%20self.y%20%2B%20dy%0A%0Aa%20%3D%20Point%28%29%0Aa.x%20%3D%201%20%20%23%20initialiser%20l'attribut%20x%20%C3%A0%201%0Aa.y%20%3D%202%20%20%23%20initialiser%20l'attribut%20y%20%C3%A0%202%0Aa.deplacer%284,%206%29%20%20%23%20Appel%20de%20la%20m%C3%A9thode%20deplacer%20de%20la%20classe%20Point&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank">Visualiser sur Python Tutor</a></p>
+<p>Pour définir une méthode, il faut :</p>
+<ul>
+<li>indiquer son nom (ici <code>deplace()</code>).</li>
+<li>indiquer les <strong>arguments</strong> entre des <strong>parenthèses</strong>. Le premier argument d’une <strong>méthode</strong> doit être <code>self</code>.</li>
+</ul>
+<p>Pour accéder aux méthodes d’un objet, on indique :</p>
+<ul>
+<li>le <strong>nom de la variable</strong> qui fait <strong>référence à cet objet</strong></li>
+<li>un <strong>point</strong></li>
+<li>le <strong>nom de la méthode</strong></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Le paramètre <code>self</code></p>
+<p>Lors d'un appel à une <strong>méthode</strong>, on ne passe pas d'<strong>argument</strong> pour le paramètre <code>self</code>, car la valeur qu'il prend est <strong>la référence à l’objet</strong>. Lors de l'appel, il y a donc toujours un paramètre de moins que lors de la définition de la méthode.</p>
+</div>
+<h3 id="le-constructeur">Le constructeur<a class="headerlink" href="#le-constructeur" title="Permanent link">¶</a></h3>
+<p>Jusqu'ici, nous avons défini <strong>manuellement</strong> les <strong>attributs</strong> des <strong>instances</strong> de notre classe <code>Point</code>. Si l'on crée plusieurs <strong>objets</strong>, nous sommes contraints de définir ces attributs pour chaque objet, ce qui peut être un petit peu rébarbatif.</p>
+<p>Il existe une solution bien plus pratique pour automatiquement <strong>définir des attributs</strong> à chaque <strong>création</strong> d'un <strong>nouvel objet</strong> : Le <strong><u>constructeur</u></strong>.</p>
+<p>Il s'agit d'une <strong>méthode spéciale</strong>, nommée <code>__init__</code>, <strong>appelée à chaque création d'un objet</strong>.</p>
+<div class="admonition info">
+<p class="admonition-title">Les méthodes spéciales</p>
+<p>Les <strong>méthodes spéciales</strong>, ou <strong>méthodes magiques</strong>, comme <code>__init__</code>, possèdent toutes un nom <strong>commençant par deux underscores</strong> et <strong>finissant par deux underscores</strong>. Comme autres méthodes spéciales, on peut citer :</p>
+<ul>
+<li><code>__len__</code> : La valeur renvoyée par cette méthode peut être obtenue en appelant <code>len(objet)</code>, où <code>objet</code> est une instance d'une classe contenant la méthode <code>__len__</code>. Généralement, <code>len</code> fait référence à <strong>une longueur</strong> (si l'on a une classe <code>Liste</code> par exemple, cela pourrait permettre d'obtenir la longueur d'une liste.)</li>
+<li><code>__str__</code> : La valeur renvoyée par cette méthode, généralement une <strong>chaîne de caractères</strong>, sera <strong>affichée</strong> lors d'un appel à <code>print(objet)</code>, où <code>objet</code> est une instance d'une classe contenant la méthode <code>__str__</code>. C'est une méthode permettant de gérer un <strong>affichage textuel</strong> d'un objet.</li>
+<li><code>__eq__</code> : Cette méthode spéciale est appelée lorsque l'on <strong>compare deux objets</strong> avec un opérateur de comparaison <code>==</code>. Il existe également <code>__ne__</code> pour l'opérateur <code>!=</code>, <code>__le__</code> pour <code>&lt;=</code>, <code>__ge__</code> pour <code>&gt;=</code>, etc.</li>
+<li>Il existe énormément d'autres méthodes spéciales, comme <code>__hash__</code>, <code>__bool__</code>, <code>__contains__</code>...</li>
+</ul>
+</div>
+<p>Voici une nouvelle définition de notre classe <code>Point</code> avec notre <strong>constructeur</strong> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># initialiser la position en x à 0</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># initialiser la position en y à 0</span>
+</span></code></pre></div>
+<p>Ici, le <strong>constructeur</strong> ne prend aucun paramètre en dehors du paramètre <code>self</code> (qui est obligatoire pour toutes les méthodes). Lors de la création d'un objet, deux attributs <code>x</code> et <code>y</code> sont initialisés :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span> <span class="o">=</span> <span class="n">Point</span><span class="p">()</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">x</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="mi">0</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">p</span><span class="o">.</span><span class="n">y</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="mi">0</span>
+</span></code></pre></div>
+<p>On peut <strong>ajouter d'autres paramètres</strong> à notre <strong>constructeur</strong> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>  <span class="c1"># initialiser la position en x à 0</span>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>  <span class="c1"># initialiser la position en y à 0</span>
+</span></code></pre></div>
+<p>On peut sans problème avoir des paramètres qui portent les mêmes noms que les attributs, car les deux ne sont pas dans le même <strong>espace de nom</strong>. Les paramètres sont des variables locales à la fonction, tandis que les attributs de l'objet appartiennent à l'espace de nom de l'instance.</p>
+<p>Il est également possible de faire en sorte que des paramètres soient <strong>optionnels</strong>, en leur attribuant une <strong>valeur par défaut</strong> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>  <span class="c1"># initialiser la position en x à 0</span>
+</span><span id="__span-17-4"><a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>  <span class="c1"># initialiser la position en y à 0</span>
+</span></code></pre></div>
+<div class="admonition warning">
+<p class="admonition-title">Paramètres optionnels</p>
+<p>Les paramètres optionnels d'une fonction ou d'une méthode doivent toujours être placés en dernier. Par ailleurs, lors de l'appel d'une fonction, on peut nommer les paramètres pour lesquels on souhaite entrer une valeur.</p>
+<p>Par exemple :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="k">def</span> <span class="nf">generer_liste</span><span class="p">(</span><span class="nb">max</span><span class="p">,</span> <span class="nb">min</span> <span class="o">=</span> <span class="mi">0</span><span class="p">,</span> <span class="n">pas</span> <span class="o">=</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="nb">min</span><span class="p">,</span> <span class="nb">max</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">pas</span><span class="p">))</span>
+</span></code></pre></div>
+<p>On pourrait appeler cette fonction de plusieurs manières, par exemple :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">generer_liste</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">generer_liste</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">generer_liste</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">pas</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">generer_liste</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="n">pas</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="nb">min</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<p>Voici une nouvelle version de notre classe <code>Point</code> incluant le <strong>constructeur</strong> et la <strong>méthode</strong> <code>deplacer</code>, n'hésitez pas à exécuter ce code et à le modifier à votre guise :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_6bf658d034cb1b76b7c7cd911dece428e858a0f4" class="comment">###</span><div class="line" id="editor_6bf658d034cb1b76b7c7cd911dece428e858a0f4"></div><div id="term_editor_6bf658d034cb1b76b7c7cd911dece428e858a0f4" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_6bf658d034cb1b76b7c7cd911dece428e858a0f4","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_6bf658d034cb1b76b7c7cd911dece428e858a0f4","scripts/01")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_6bf658d034cb1b76b7c7cd911dece428e858a0f4').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_6bf658d034cb1b76b7c7cd911dece428e858a0f4" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_6bf658d034cb1b76b7c7cd911dece428e858a0f4")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_6bf658d034cb1b76b7c7cd911dece428e858a0f4")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_6bf658d034cb1b76b7c7cd911dece428e858a0f4" class="py_mk_hide">class Point:bksl-nl    def py-undpy-undinitpy-undpy-und(self, x = 0, y = 0):bksl-nl        self.x = x  # initialiser la position en x à 0bksl-nl        self.y = y  # initialiser la position en y à 0bksl-nlbksl-nl    def deplacer(self, dx, dy):bksl-nl        self.x = self.x + dxbksl-nl        self.y = self.y + dybksl-nlbksl-nlp1 = Point(5, 3)  # création d'une instance de la classe avec argumentsbksl-nlp2 = Point()  # création d'une autre instance sans argumentsbksl-nlprint(f'p1.x = {p1.x} - p1.y = {p1.y}')bksl-nlprint(f'p2.x = {p2.x} - p1.y = {p2.y}')bksl-nlp2.deplacer(3, 2)bksl-nlprint('Après déplacement :')bksl-nlprint(f'p1.x = {p1.x} - p1.y = {p1.y}')bksl-nlprint(f'p2.x = {p2.x} - p1.y = {p2.y}')bksl-nl</span><span id="corr_content_editor_6bf658d034cb1b76b7c7cd911dece428e858a0f4" class="py_mk_hide" data-strudel=""></span></p>
+<p>Il faut bien faire la distinction entre la <strong>définition d'une classe</strong>, et les <strong>instances de cette classe</strong>. Lors de la <strong>création d'un objet</strong> (c'est-à-dire d'une <strong>instance d'une classe</strong>), on passe des <strong>arguments</strong> (un peu comme lorsque l'on appelle une fonction), qui sont automatiquement passés en <strong>entrées</strong> du <strong>constructeur de la classe</strong>. Le constructeur va ensuite <strong>définir les attributs</strong> en utilisant ces valeurs.</p>
+<h3 id="accesseurs-et-mutateurs">Accesseurs et mutateurs<a class="headerlink" href="#accesseurs-et-mutateurs" title="Permanent link">¶</a></h3>
+<ul>
+<li>les <strong>accesseurs</strong> (ou <em>getters</em>) fournissent des informations relatives à l’état d’un objet, c’est-à-dire aux valeurs de certains de ses attributs sans les modifier ;</li>
+<li>les <strong>mutateurs</strong> (ou <em>setters</em>) modifient l’état d’un objet, donc les valeurs de certains de ses attributs.</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">La notion d'<em>encapsulation</em></p>
+<p>L'<strong>encapsulation</strong> consiste à <strong>masquer des données</strong> de l'état interne pour <strong>protéger l'intégrité</strong> de l'<strong>objet</strong>.</p>
+<p>L'idée est de faire en sorte qu'un objet laisse les autres objets lire ses données, mais qu'il soit le seul à pouvoir les modifier.</p>
+<p>Concrètement, on fait utilise des <strong>accesseurs</strong> et des <strong>mutateurs</strong> pour <strong>manipuler les attributs</strong>, plutôt que de les modifier directement.</p>
+</div>
+<p>En reprenant notre classe <code>Point</code> et en lui ajoutant des <strong>accesseurs</strong> permettant d'<strong>accéder aux attributs</strong> <code>x</code> et <code>y</code> et des <strong>mutateurs</strong> permettant de <strong>modifier</strong> les attributs <code>x</code> et <code>y</code>, cela pourrait donner :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_2725ac93ebdda36a7e25841182968f50d4643340" class="comment">###</span><div class="line" id="editor_2725ac93ebdda36a7e25841182968f50d4643340"></div><div id="term_editor_2725ac93ebdda36a7e25841182968f50d4643340" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_2725ac93ebdda36a7e25841182968f50d4643340","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_2725ac93ebdda36a7e25841182968f50d4643340","scripts/02")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_2725ac93ebdda36a7e25841182968f50d4643340').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_2725ac93ebdda36a7e25841182968f50d4643340" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_2725ac93ebdda36a7e25841182968f50d4643340")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_2725ac93ebdda36a7e25841182968f50d4643340")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_2725ac93ebdda36a7e25841182968f50d4643340" class="py_mk_hide">class Point:bksl-nl    def py-undpy-undinitpy-undpy-und(self, x = 0, y = 0):bksl-nl        self.x = x  # initialiser la position en x à 0bksl-nl        self.y = y  # initialiser la position en y à 0bksl-nlbksl-nl    # Accesseursbksl-nl    def getpy-undx(self):bksl-nl        return self.xbksl-nl    bksl-nl    def getpy-undy(self):bksl-nl        return self.ybksl-nl    bksl-nl    # Mutateursbksl-nl    def setpy-undx(self, nx):bksl-nl        self.x = nxbksl-nlbksl-nl    def setpy-undy(self, ny):bksl-nl        self.y = nybksl-nlbksl-nl    def deplacer(self, dx, dy):bksl-nl        self.setpy-undx(self.getpy-undx() + dx)bksl-nl        self.setpy-undy(self.getpy-undy() + dy)bksl-nlbksl-nlp = Point()bksl-nlp.deplacer(5,7)bksl-nlprint(f'p.x = {p.getpy-undx()} - p.y = {p.getpy-undy()}')bksl-nl</span><span id="corr_content_editor_2725ac93ebdda36a7e25841182968f50d4643340" class="py_mk_hide" data-strudel=""></span></p>
+<p>Dans notre <code>print</code>, nous n'accédons plus directement aux attributs de notre objet, mais l'on appelle cette fois les <strong>accesseurs</strong> qui se chargent de renvoyer la valeur de ces attributs.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Membres <em>publiques</em>, <em>protégés</em> et <em>privés</em></p>
+<p>En <strong>Python</strong>, contrairement à d'autres langages comme le <strong>Java</strong> ou le <strong>C++</strong>, il n'est pas possible de <strong>restreindre techniquement</strong> l'<strong>accès</strong> à des <strong>méthodes</strong> ou des <strong>attributs</strong> d'une classe.</p>
+<p>Toutefois, il existe des <strong>conventions</strong> qui permettent d'indiquer des attributs ou des méthodes comme étant <strong>publiques</strong> (<em>public</em>), <strong>protégés</strong> (<em>protected</em>) ou <strong>privés</strong> (<em>private</em>).</p>
+<p><strong>Public</strong> : Les attributs et méthodes <strong>publiques</strong> sont accessibles même <strong>en dehors de la classe</strong>.</p>
+<p><strong>Protected</strong> : Les attributs et méthodes <strong>protégés</strong> commencent par <strong>un underscore</strong> et sont accessibles par une <strong>classe</strong> et ses <strong>sous-classes</strong> (les classes-filles, qui héritent de celle-ci).</p>
+<p><strong>Private</strong> : Les attributs et méthodes <strong>privés</strong> commencent par <strong>deux underscores</strong> et sont <strong>uniquement accessibles dans la classe où ils sont définis</strong>. Si l'on essaie d'<strong>accéder</strong> à un attribut privé ou une méthode privée, une <code>AttributeError</code> sera levée. Mais il est facile de contourner cela, raison pour laquelle il ne s'agit pas d'une véritable restriction comme c'est le cas dans d'autres langages.</p>
+</div>
+<h2 id="manipulation-des-objets">Manipulation des objets<a class="headerlink" href="#manipulation-des-objets" title="Permanent link">¶</a></h2>
+<p>Voici quelques caractéristiques supplémentaires sur les classes :</p>
+<ul>
+<li>les <strong>noms des classes</strong> et des <strong>attributs</strong> permettent de <strong>mieux décrire la nature des objets</strong>, d'où l'intérêt de leur utilisation : <code>p = Point()</code> est plus explicite que <code>p = [0,0]</code> ou <code>p = (0,0)</code> par exemple, et <code>p.y</code> est plus clair que <code>p[1]</code> ;</li>
+<li>les <strong>attributs</strong> des objets peuvent être <strong>d’autres objets</strong>, ce qui permet de créer des <strong>structures complexes</strong> ;</li>
+<li>des <strong>opérations similaires</strong> peuvent être implémentées par des méthodes <strong>de même nom</strong> dans plusieurs classes.</li>
+<li>les <strong>méthodes</strong> étant liées à la <strong>classe de l’objet lui-même</strong> (contrairement à une fonction), cela permert une meilleure lisibilité du programme et évite ainsi certaubes erreurs de programmation.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">À vous de jouer</p>
+<p>Écrire une nouvelle classe <code>Segment</code> qui <strong>réutilise la classe</strong> <code>Point</code> et qui contient :</p>
+<ul>
+<li>Un <strong>constructeur</strong> qui <strong>initialise deux attributs</strong>, <code>p1</code> et <code>p2</code>, deux objets de type <code>Point</code> fournis en arguments lors de la création de l'objet,</li>
+<li>Une méthode <code>deplacer</code> qui prend deux paramètres <code>dx</code> et <code>dy</code> (ne pas oublier également <code>self</code>) et qui <strong>déplace le segment</strong> (en ajoutant <code>dx</code> à la position en <code>x</code> et <code>dy</code> à la position en <code>y</code> des deux points),</li>
+<li>une méthode <code>milieu</code> qui ne prend pas de paramètres (en dehors de <code>self</code> bien sûr) et qui renvoie un <strong>nouveau point</strong> situé <strong>au milieu du segment</strong>.</li>
+<li>une méthode spéciale <code>__len__</code> qui renvoie <strong>la longueur du segment</strong>, on rappelle la formule : si l'on a deux points <span class="arithmatex">\(P1(X1, Y1)\)</span> et <span class="arithmatex">\(P2(X2, Y2)\)</span>, la longueur est <span class="arithmatex">\(\sqrt{(X2-X1)² + (Y2-Y1)²}\)</span></li>
+</ul>
+<p>En dessous de la définition des classes, des instructions qui permettent de <strong>créer un nouveau segment</strong> (c'est-à-dire une <strong>instance</strong> de la classe <code>Segment</code>) doivent être présentes. Après avoir exécuté le programme, vous pouvez faire des tests de manipulation de votre <strong>objet</strong> stocké dans <code>s</code> dans l'interpréteur Python.<br>
+Par exemple, pour appeler une <strong>méthode</strong> de la <strong>classe</strong> <code>Segment</code> sur votre objet dont la référence est stockée dans une variable <code>s</code>, vous devrez donc saisir <code>s.nom_de_la_methode(ARGUMENTS ÉVENTUELS)</code>.</p>
+<p>Vous pouvez, au choix :</p>
+<ul>
+<li><a href="../scripts/point.py">cliquer ici</a> pour télécharger un fichier <code>point.py</code> (contenant la classe <code>Point</code> ainsi qu'une base pour réaliser votre classe <code>Segment</code>) et l'ouvrir sur <strong>Thonny</strong>,</li>
+<li>reprendre la classe <code>Point</code> que nous avons réalisée ensemble en classe.</li>
+</ul>
+</div>
+<h2 id="attributs-et-methodes-de-classes">Attributs et méthodes de classes<a class="headerlink" href="#attributs-et-methodes-de-classes" title="Permanent link">¶</a></h2>
+<p>En <strong>programmation orientée objet</strong>, les <strong>attributs de classe</strong>, les <strong>méthodes de classe</strong> ou encore les <strong>méthodes statiques</strong> jouent un rôle important en offrant différentes façons de gérer le comportement et les données d’une classe.</p>
+<h3 id="attributs-de-classes">Attributs de classes<a class="headerlink" href="#attributs-de-classes" title="Permanent link">¶</a></h3>
+<div class="admonition abstract">
+<p>Un <strong><mark>attribut de classe</mark></strong> est une <strong>variable</strong> qui <strong>appartient à la classe elle-même</strong>, et non aux <strong>instances de cette classe</strong>.</p>
+</div>
+<p>Il est <strong>partagé</strong> entre <strong>toutes les instances</strong>, ce qui signifie que si l’on <strong>modifie</strong> cet <strong>attribut</strong> à partir d’une <strong>instance</strong>, la modification <strong>affecte toutes les autres instances</strong>.</p>
+<p>Voici un exemple :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+</span><span id="__span-20-2"><a id="__codelineno-20-2" name="__codelineno-20-2" href="#__codelineno-20-2"></a>    <span class="n">nb</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># création d'un attribut de classe nb</span>
+</span><span id="__span-20-3"><a id="__codelineno-20-3" name="__codelineno-20-3" href="#__codelineno-20-3"></a>
+</span><span id="__span-20-4"><a id="__codelineno-20-4" name="__codelineno-20-4" href="#__codelineno-20-4"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+</span><span id="__span-20-5"><a id="__codelineno-20-5" name="__codelineno-20-5" href="#__codelineno-20-5"></a><span class="w">        </span><span class="sd">''' Constructeur de la classe A. Création d'un objet de type A. '''</span>
+</span><span id="__span-20-6"><a id="__codelineno-20-6" name="__codelineno-20-6" href="#__codelineno-20-6"></a>
+</span><span id="__span-20-7"><a id="__codelineno-20-7" name="__codelineno-20-7" href="#__codelineno-20-7"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>  <span class="c1"># création d'un attribut d'instance x</span>
+</span><span id="__span-20-8"><a id="__codelineno-20-8" name="__codelineno-20-8" href="#__codelineno-20-8"></a>        <span class="n">A</span><span class="o">.</span><span class="n">nb</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">nb</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># incrémenter l'attribut de classe nb</span>
+</span><span id="__span-20-9"><a id="__codelineno-20-9" name="__codelineno-20-9" href="#__codelineno-20-9"></a>
+</span><span id="__span-20-10"><a id="__codelineno-20-10" name="__codelineno-20-10" href="#__codelineno-20-10"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"A : nb = "</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">nb</span><span class="p">)</span>  <span class="c1"># afficher l'attribut de classe</span>
+</span><span id="__span-20-11"><a id="__codelineno-20-11" name="__codelineno-20-11" href="#__codelineno-20-11"></a>
+</span><span id="__span-20-12"><a id="__codelineno-20-12" name="__codelineno-20-12" href="#__codelineno-20-12"></a><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># création d'une nouvelle instance de A</span>
+</span><span id="__span-20-13"><a id="__codelineno-20-13" name="__codelineno-20-13" href="#__codelineno-20-13"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"A : nb = "</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">nb</span><span class="p">)</span>  <span class="c1"># afficher l'attribut de classe</span>
+</span><span id="__span-20-14"><a id="__codelineno-20-14" name="__codelineno-20-14" href="#__codelineno-20-14"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"a : x = "</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">" nb = "</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">nb</span><span class="p">)</span>  <span class="c1"># afficher les attributs de a</span>
+</span><span id="__span-20-15"><a id="__codelineno-20-15" name="__codelineno-20-15" href="#__codelineno-20-15"></a>
+</span><span id="__span-20-16"><a id="__codelineno-20-16" name="__codelineno-20-16" href="#__codelineno-20-16"></a><span class="n">b</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>  <span class="c1"># création d'une nouvelle instance de A</span>
+</span><span id="__span-20-17"><a id="__codelineno-20-17" name="__codelineno-20-17" href="#__codelineno-20-17"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"A : nb = "</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">nb</span><span class="p">)</span>  <span class="c1"># afficher l'attribut de classe</span>
+</span><span id="__span-20-18"><a id="__codelineno-20-18" name="__codelineno-20-18" href="#__codelineno-20-18"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"a : x = "</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">" nb = "</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">nb</span><span class="p">)</span>  <span class="c1"># afficher les attributs de a</span>
+</span><span id="__span-20-19"><a id="__codelineno-20-19" name="__codelineno-20-19" href="#__codelineno-20-19"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"b : x = "</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">" nb = "</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">nb</span><span class="p">)</span>  <span class="c1"># afficher les attributs de b</span>
+</span><span id="__span-20-20"><a id="__codelineno-20-20" name="__codelineno-20-20" href="#__codelineno-20-20"></a>
+</span><span id="__span-20-21"><a id="__codelineno-20-21" name="__codelineno-20-21" href="#__codelineno-20-21"></a><span class="n">c</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>  <span class="c1"># création d'une nouvelle instance de A</span>
+</span><span id="__span-20-22"><a id="__codelineno-20-22" name="__codelineno-20-22" href="#__codelineno-20-22"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"A : nb = "</span><span class="p">,</span> <span class="n">A</span><span class="o">.</span><span class="n">nb</span><span class="p">)</span>  <span class="c1"># afficher l'attribut de classe</span>
+</span><span id="__span-20-23"><a id="__codelineno-20-23" name="__codelineno-20-23" href="#__codelineno-20-23"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"a : x = "</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">" nb = "</span><span class="p">,</span> <span class="n">a</span><span class="o">.</span><span class="n">nb</span><span class="p">)</span>  <span class="c1"># afficher les attributs de a</span>
+</span><span id="__span-20-24"><a id="__codelineno-20-24" name="__codelineno-20-24" href="#__codelineno-20-24"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"b : x = "</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">" nb = "</span><span class="p">,</span> <span class="n">b</span><span class="o">.</span><span class="n">nb</span><span class="p">)</span>  <span class="c1"># afficher les attributs de b</span>
+</span><span id="__span-20-25"><a id="__codelineno-20-25" name="__codelineno-20-25" href="#__codelineno-20-25"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"c : x = "</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="s2">" nb = "</span><span class="p">,</span> <span class="n">c</span><span class="o">.</span><span class="n">nb</span><span class="p">)</span>  <span class="c1"># afficher les attributs de c</span>
+</span></code></pre></div>
+<details class="success">
+<summary>Tester ce programme</summary>
+<p></p><div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_5e01b557a0625f1177165d856ae8b0bcdeb69639" class="comment">###</span><div class="line" id="editor_5e01b557a0625f1177165d856ae8b0bcdeb69639"></div><div id="term_editor_5e01b557a0625f1177165d856ae8b0bcdeb69639" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_5e01b557a0625f1177165d856ae8b0bcdeb69639","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_5e01b557a0625f1177165d856ae8b0bcdeb69639","scripts/attribut_classe")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_5e01b557a0625f1177165d856ae8b0bcdeb69639').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_5e01b557a0625f1177165d856ae8b0bcdeb69639" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_5e01b557a0625f1177165d856ae8b0bcdeb69639")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_5e01b557a0625f1177165d856ae8b0bcdeb69639")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div><span id="content_editor_5e01b557a0625f1177165d856ae8b0bcdeb69639" class="py_mk_hide">class A:bksl-nl    nb = 0  # création d'un attribut de classe nbbksl-nlbksl-nl    def py-undpy-undinitpy-undpy-und(self, x):bksl-nl        ''' Constructeur de la classe A. Création d'un objet de type A. '''bksl-nlbksl-nl        self.x = x  # création d'un attribut d'instance xbksl-nl        A.nb = A.nb + 1  # incrémenter l'attribut de classe nbbksl-nlbksl-nlprint("A : nb = ", A.nb)  # afficher l'attribut de classebksl-nlbksl-nla = A(3)  # création d'une nouvelle instance de Abksl-nlprint("A : nb = ", A.nb)  # afficher l'attribut de classebksl-nlprint("a : x = ", a.x, " nb = ", a.nb)  # afficher les attributs de abksl-nlbksl-nlb = A(6)  # création d'une nouvelle instance de Abksl-nlprint("A : nb = ", A.nb)  # afficher l'attribut de classebksl-nlprint("a : x = ", a.x, " nb = ", a.nb)  # afficher les attributs de abksl-nlprint("b : x = ", b.x, " nb = ", b.nb)  # afficher les attributs de bbksl-nlbksl-nlc = A(8)  # création d'une nouvelle instance de Abksl-nlprint("A : nb = ", A.nb)  # afficher l'attribut de classebksl-nlprint("a : x = ", a.x, " nb = ", a.nb)  # afficher les attributs de abksl-nlprint("b : x = ", b.x, " nb = ", b.nb)  # afficher les attributs de bbksl-nlprint("c : x = ", c.x, " nb = ", c.nb)  # afficher les attributs de cbksl-nl</span><span id="corr_content_editor_5e01b557a0625f1177165d856ae8b0bcdeb69639" class="py_mk_hide" data-strudel=""></span>
+</details>
+<p>Comme on le voit, on peut accéder ou modifier un <strong>attribut de classe</strong> :</p>
+<ul>
+<li>directement à partir de la référence de <strong>la classe</strong> : <code>&lt;CLASSE&gt;.&lt;ATTRIBUT_CLASSE&gt;</code></li>
+<li>depuis la référence d'une <strong>instance de la classe</strong> : <code>&lt;INSTANCE&gt;.&lt;ATTRIBUT_CLASSE&gt;</code>.</li>
+</ul>
+<h3 id="methodes-de-classes">Méthodes de classes<a class="headerlink" href="#methodes-de-classes" title="Permanent link">¶</a></h3>
+<div class="admonition abstract">
+<p>Une <strong><mark>méthode de classe</mark></strong> est une <strong>méthode</strong> qui <strong>appartient à la classe</strong> plutôt qu’aux <strong>instances</strong>.</p>
+<p>Elle est définie à l’aide du <strong>décorateur</strong> <code>@classmethod</code> et prend <strong>la référence de la classe</strong> comme <strong>premier paramètre</strong>, généralement appelé <code>cls</code>. Cela permet de <strong>manipuler</strong> ou <strong>interagir</strong> avec les <strong>attributs de la classe</strong>.</p>
+</div>
+<p>Par exemple :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">class</span> <span class="nc">A</span><span class="p">:</span>
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>    <span class="n">nb</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># création d'un attribut de classe nb</span>
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a><span class="w">        </span><span class="sd">''' Constructeur de la classe A. Création d'un objet de type A. '''</span>
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>
+</span><span id="__span-21-7"><a id="__codelineno-21-7" name="__codelineno-21-7" href="#__codelineno-21-7"></a>        <span class="n">A</span><span class="o">.</span><span class="n">nb</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">nb</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># incrémenter l'attribut de classe nb</span>
+</span><span id="__span-21-8"><a id="__codelineno-21-8" name="__codelineno-21-8" href="#__codelineno-21-8"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>  <span class="c1"># création d'un attribut d'instance x</span>
+</span><span id="__span-21-9"><a id="__codelineno-21-9" name="__codelineno-21-9" href="#__codelineno-21-9"></a>
+</span><span id="__span-21-10"><a id="__codelineno-21-10" name="__codelineno-21-10" href="#__codelineno-21-10"></a>    <span class="nd">@classmethod</span>
+</span><span id="__span-21-11"><a id="__codelineno-21-11" name="__codelineno-21-11" href="#__codelineno-21-11"></a>    <span class="k">def</span> <span class="nf">get_nb</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+</span><span id="__span-21-12"><a id="__codelineno-21-12" name="__codelineno-21-12" href="#__codelineno-21-12"></a><span class="w">        </span><span class="sd">''' Méthode de classe qui renvoie l'attribut de classe nb. '''</span>
+</span><span id="__span-21-13"><a id="__codelineno-21-13" name="__codelineno-21-13" href="#__codelineno-21-13"></a>
+</span><span id="__span-21-14"><a id="__codelineno-21-14" name="__codelineno-21-14" href="#__codelineno-21-14"></a>        <span class="k">return</span> <span class="n">A</span><span class="o">.</span><span class="n">nb</span>
+</span><span id="__span-21-15"><a id="__codelineno-21-15" name="__codelineno-21-15" href="#__codelineno-21-15"></a>
+</span><span id="__span-21-16"><a id="__codelineno-21-16" name="__codelineno-21-16" href="#__codelineno-21-16"></a>    <span class="nd">@classmethod</span>
+</span><span id="__span-21-17"><a id="__codelineno-21-17" name="__codelineno-21-17" href="#__codelineno-21-17"></a>    <span class="k">def</span> <span class="nf">nouveau</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
+</span><span id="__span-21-18"><a id="__codelineno-21-18" name="__codelineno-21-18" href="#__codelineno-21-18"></a><span class="w">        </span><span class="sd">''' Méthode de classe qui renvoie l'attribut de classe nb. '''</span>
+</span><span id="__span-21-19"><a id="__codelineno-21-19" name="__codelineno-21-19" href="#__codelineno-21-19"></a>
+</span><span id="__span-21-20"><a id="__codelineno-21-20" name="__codelineno-21-20" href="#__codelineno-21-20"></a>        <span class="k">return</span> <span class="bp">cls</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span id="__span-21-21"><a id="__codelineno-21-21" name="__codelineno-21-21" href="#__codelineno-21-21"></a>
+</span><span id="__span-21-22"><a id="__codelineno-21-22" name="__codelineno-21-22" href="#__codelineno-21-22"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"objets = </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">get_nb</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-21-23"><a id="__codelineno-21-23" name="__codelineno-21-23" href="#__codelineno-21-23"></a>
+</span><span id="__span-21-24"><a id="__codelineno-21-24" name="__codelineno-21-24" href="#__codelineno-21-24"></a><span class="n">a</span> <span class="o">=</span> <span class="n">A</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</span><span id="__span-21-25"><a id="__codelineno-21-25" name="__codelineno-21-25" href="#__codelineno-21-25"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"a.x = </span><span class="si">{</span><span class="n">a</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2"> - objets = </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">get_nb</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span><span id="__span-21-26"><a id="__codelineno-21-26" name="__codelineno-21-26" href="#__codelineno-21-26"></a>
+</span><span id="__span-21-27"><a id="__codelineno-21-27" name="__codelineno-21-27" href="#__codelineno-21-27"></a><span class="n">b</span> <span class="o">=</span> <span class="n">A</span><span class="o">.</span><span class="n">nouveau</span><span class="p">()</span>
+</span><span id="__span-21-28"><a id="__codelineno-21-28" name="__codelineno-21-28" href="#__codelineno-21-28"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"b.x = </span><span class="si">{</span><span class="n">b</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s2"> - objets = </span><span class="si">{</span><span class="n">A</span><span class="o">.</span><span class="n">get_nb</span><span class="p">()</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div>
+<details class="success">
+<summary>Tester ce programme</summary>
+<p></p><div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_d243719748c731a9a9e3f47f75b0164825eec3ac" class="comment">###</span><div class="line" id="editor_d243719748c731a9a9e3f47f75b0164825eec3ac"></div><div id="term_editor_d243719748c731a9a9e3f47f75b0164825eec3ac" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_d243719748c731a9a9e3f47f75b0164825eec3ac","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_d243719748c731a9a9e3f47f75b0164825eec3ac","scripts/methode_classe")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_d243719748c731a9a9e3f47f75b0164825eec3ac').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_d243719748c731a9a9e3f47f75b0164825eec3ac" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_d243719748c731a9a9e3f47f75b0164825eec3ac")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_d243719748c731a9a9e3f47f75b0164825eec3ac")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div><span id="content_editor_d243719748c731a9a9e3f47f75b0164825eec3ac" class="py_mk_hide">class A:bksl-nl    nb = 0  # création d'un attribut de classe nbbksl-nlbksl-nl    def py-undpy-undinitpy-undpy-und(self, x):bksl-nl        ''' Constructeur de la classe A. Création d'un objet de type A. '''bksl-nl        bksl-nl        A.nb = A.nb + 1  # incrémenter l'attribut de classe nbbksl-nl        self.x = x  # création d'un attribut d'instance xbksl-nlbksl-nl    @classmethodbksl-nl    def getpy-undnb(cls):bksl-nl        ''' Méthode de classe qui renvoie l'attribut de classe nb. '''bksl-nlbksl-nl        return A.nbbksl-nlbksl-nl    @classmethodbksl-nl    def nouveau(cls):bksl-nl        ''' Méthode de classe qui renvoie l'attribut de classe nb. '''bksl-nl        bksl-nl        return cls(10)bksl-nlbksl-nlprint(f"objets = {A.getpy-undnb()}")bksl-nlbksl-nla = A(8)bksl-nlprint(f"a.x = {a.x} - objets = {A.getpy-undnb()}")bksl-nlbksl-nlb = A.nouveau()bksl-nlprint(f"b.x = {b.x} - objets = {A.getpy-undnb()}")bksl-nl</span><span id="corr_content_editor_d243719748c731a9a9e3f47f75b0164825eec3ac" class="py_mk_hide" data-strudel=""></span>
+</details>
+<h3 id="methodes-statiques">Méthodes statiques<a class="headerlink" href="#methodes-statiques" title="Permanent link">¶</a></h3>
+<div class="admonition abstract">
+<p>Une <strong><mark>méthode statique</mark></strong> est une <strong>méthode</strong> qui n’a <strong>pas accès à l’instance</strong> ni <strong>à la classe elle-même</strong>. Elle est définie à l’aide du <strong>décorateur</strong> <code>@staticmethod</code>.</p>
+<p>On l’utilise souvent lorsque la <strong>méthode</strong> ne dépend ni des <strong>attributs d’instance</strong> ni des <strong>attributs de classe</strong>, mais est tout de même <strong>liée logiquement à la classe</strong>.</p>
+</div>
+<p>Voici un exemple :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-22-1"><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a><span class="kn">import</span> <span class="nn">math</span>
+</span><span id="__span-22-2"><a id="__codelineno-22-2" name="__codelineno-22-2" href="#__codelineno-22-2"></a>
+</span><span id="__span-22-3"><a id="__codelineno-22-3" name="__codelineno-22-3" href="#__codelineno-22-3"></a><span class="k">class</span> <span class="nc">Cercle</span><span class="p">:</span>
+</span><span id="__span-22-4"><a id="__codelineno-22-4" name="__codelineno-22-4" href="#__codelineno-22-4"></a><span class="w">    </span><span class="sd">''' Définition d'une classe Cercle. '''</span>
+</span><span id="__span-22-5"><a id="__codelineno-22-5" name="__codelineno-22-5" href="#__codelineno-22-5"></a>
+</span><span id="__span-22-6"><a id="__codelineno-22-6" name="__codelineno-22-6" href="#__codelineno-22-6"></a>    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">rayon</span><span class="p">):</span>
+</span><span id="__span-22-7"><a id="__codelineno-22-7" name="__codelineno-22-7" href="#__codelineno-22-7"></a><span class="w">        </span><span class="sd">''' Constructeur de la classe. '''</span>
+</span><span id="__span-22-8"><a id="__codelineno-22-8" name="__codelineno-22-8" href="#__codelineno-22-8"></a>
+</span><span id="__span-22-9"><a id="__codelineno-22-9" name="__codelineno-22-9" href="#__codelineno-22-9"></a>        <span class="bp">self</span><span class="o">.</span><span class="n">rayon</span> <span class="o">=</span> <span class="n">rayon</span>  <span class="c1"># attribut contenant le rayon du cercle</span>
+</span><span id="__span-22-10"><a id="__codelineno-22-10" name="__codelineno-22-10" href="#__codelineno-22-10"></a>
+</span><span id="__span-22-11"><a id="__codelineno-22-11" name="__codelineno-22-11" href="#__codelineno-22-11"></a>    <span class="nd">@staticmethod</span>
+</span><span id="__span-22-12"><a id="__codelineno-22-12" name="__codelineno-22-12" href="#__codelineno-22-12"></a>    <span class="k">def</span> <span class="nf">aire</span><span class="p">(</span><span class="n">rayon</span><span class="p">):</span>
+</span><span id="__span-22-13"><a id="__codelineno-22-13" name="__codelineno-22-13" href="#__codelineno-22-13"></a><span class="w">        </span><span class="sd">''' Méthode statique pour calculer l'aire d'un cercle à partir du rayon. '''</span>
+</span><span id="__span-22-14"><a id="__codelineno-22-14" name="__codelineno-22-14" href="#__codelineno-22-14"></a>
+</span><span id="__span-22-15"><a id="__codelineno-22-15" name="__codelineno-22-15" href="#__codelineno-22-15"></a>        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="n">rayon</span> <span class="o">**</span> <span class="mi">2</span>
+</span><span id="__span-22-16"><a id="__codelineno-22-16" name="__codelineno-22-16" href="#__codelineno-22-16"></a>
+</span><span id="__span-22-17"><a id="__codelineno-22-17" name="__codelineno-22-17" href="#__codelineno-22-17"></a><span class="n">mon_cercle</span> <span class="o">=</span> <span class="n">Cercle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># création d'une instance de la classe Cercle</span>
+</span><span id="__span-22-18"><a id="__codelineno-22-18" name="__codelineno-22-18" href="#__codelineno-22-18"></a>
+</span><span id="__span-22-19"><a id="__codelineno-22-19" name="__codelineno-22-19" href="#__codelineno-22-19"></a><span class="c1"># Utilisation de la méthode statique pour calculer l'aire,</span>
+</span><span id="__span-22-20"><a id="__codelineno-22-20" name="__codelineno-22-20" href="#__codelineno-22-20"></a><span class="c1"># elle peut être appelée directement via la classe ou via l'instance.</span>
+</span><span id="__span-22-21"><a id="__codelineno-22-21" name="__codelineno-22-21" href="#__codelineno-22-21"></a><span class="n">aire_du_cercle</span> <span class="o">=</span> <span class="n">Cercle</span><span class="o">.</span><span class="n">aire</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>  <span class="c1"># ou mon_cercle.aire(5)</span>
+</span><span id="__span-22-22"><a id="__codelineno-22-22" name="__codelineno-22-22" href="#__codelineno-22-22"></a>
+</span><span id="__span-22-23"><a id="__codelineno-22-23" name="__codelineno-22-23" href="#__codelineno-22-23"></a><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"L'aire d'un cercle avec un rayon de 5 est </span><span class="si">{</span><span class="n">aire_du_cercle</span><span class="si">}</span><span class="s2">"</span><span class="p">)</span>
+</span></code></pre></div>
+<details class="success">
+<summary>Tester ce programme</summary>
+<p></p><div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_8f9907b8a5ce9394303466be4d7eaa9884bb4197" class="comment">###</span><div class="line" id="editor_8f9907b8a5ce9394303466be4d7eaa9884bb4197"></div><div id="term_editor_8f9907b8a5ce9394303466be4d7eaa9884bb4197" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_8f9907b8a5ce9394303466be4d7eaa9884bb4197","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_8f9907b8a5ce9394303466be4d7eaa9884bb4197","scripts/methode_statique")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_8f9907b8a5ce9394303466be4d7eaa9884bb4197').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_8f9907b8a5ce9394303466be4d7eaa9884bb4197" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_8f9907b8a5ce9394303466be4d7eaa9884bb4197")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_8f9907b8a5ce9394303466be4d7eaa9884bb4197")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div><span id="content_editor_8f9907b8a5ce9394303466be4d7eaa9884bb4197" class="py_mk_hide">import mathbksl-nlbksl-nlclass Cercle:bksl-nl    ''' Définition d'une classe Cercle. '''bksl-nlbksl-nl    def py-undpy-undinitpy-undpy-und(self, rayon):bksl-nl        ''' Constructeur de la classe. '''bksl-nl        bksl-nl        self.rayon = rayon  # attribut contenant le rayon du cerclebksl-nlbksl-nl    @staticmethodbksl-nl    def aire(rayon):bksl-nl        ''' Méthode statique pour calculer l'aire d'un cercle à partir du rayon. '''bksl-nlbksl-nl        return math.pi py-str rayon py-strpy-str 2bksl-nlbksl-nlmonpy-undcercle = Cercle(5)  # création d'une instance de la classe Cerclebksl-nlbksl-nl# Utilisation de la méthode statique pour calculer l'aire,bksl-nl# elle peut être appelée directement via la classe ou via l'instance.bksl-nlairepy-unddupy-undcercle = Cercle.aire(5)  # ou monpy-undcercle.aire(5)bksl-nlbksl-nlprint(f"L'aire d'un cercle avec un rayon de 5 est {airepy-unddupy-undcercle}")bksl-nl</span><span id="corr_content_editor_8f9907b8a5ce9394303466be4d7eaa9884bb4197" class="py_mk_hide" data-strudel=""></span>
+</details>
+<p>La <strong>méthode statique</strong> est idéale dans cet exemple car elle ne dépend d’aucune donnée spécifique à l’<strong>instance</strong> ou à la <strong>classe</strong>, seulement du <strong>paramètre</strong> qu’on lui passe.</p></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+<script src="../../../pyodide-mkdocs/ide.js"></script> 
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - Erwan Demerville
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../js/open_in_new_tab.js"></script>
+      
+    
+  </body>
+</html>
