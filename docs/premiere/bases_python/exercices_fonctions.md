@@ -41,3 +41,15 @@ Voici quelques exercices portant sur les **fonctions** en *Python*.
         - ce que fait la fonction,
         - les paramètres d'entrée et leur type,
         - la valeur de retour et son type.
+
+!!! note "Exercice 2"
+    Dans un nouveau **script Python**, écrire une fonction `compter_voyelles` qui reçoit une **chaîne de caractères** `mot` en entrée et **renvoie** le **nombre de voyelles** ("a", "e", "i", "o", "u", "y") présentes dans ce mot.
+
+    Exemple :
+
+    ```python
+    print(compter_voyelles("python"))  # 1
+    print(compter_voyelles("ananas"))  # 3
+    ```
+
+    Ensuite, **en-dessous de la fonction**, écrire un **programme** qui demande à l'utilisateur de saisir un **mot**, puis afficher le **nombre de voyelles** de ce mot en faisant appel à `compter_voyelles`.
