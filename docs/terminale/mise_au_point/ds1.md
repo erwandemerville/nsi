@@ -9,6 +9,8 @@
 
 ---
 
+## Un module `adn`
+
 Les **molécules d'ADN** présentes dans les cellules vivantes contiennent l'**information génétique** et permettent le développement, le fonctionnement et la reproduction des êtres vivants. L'**ADN** est formé de **deux brins** qui sont une succession de **nucléotides** portant chacun une **base azotée**.
 
 Les quatre **bases azotées** sont l'*adénine (A)*, la *thymine (T)*, la *cytosine (C)* et la *guanine (G)*.  
@@ -121,3 +123,6 @@ Elles s'associent deux par deux : *A* avec *T* d'une part, *C* avec *G* d'autre 
             sequence_max = sequence
     print(f'séquence : {sequence_max} - proportion : {proportion_max}')
     ```
+
+## Mise au point et tests
+

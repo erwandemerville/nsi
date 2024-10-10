@@ -6,6 +6,7 @@ Les liens suivants redirigent vers la plateforme **Capytale**.
 | Notebooks                              | Contenu                             |
 | -------------------------------------------- | ----------------------------------- |
 | [TD1 sur la POO](https://capytale2.ac-paris.fr/web/c/d983-3872028) | Premier TD sur la POO (exercices faciles). |
+| [Correction TD1 sur la POO](https://capytale2.ac-paris.fr/web/c/685e-4063464) | Correction du premier TD sur la POO. |
 | [TD2 sur la POO](https://capytale2.ac-paris.fr/web/c/925e-3872057) | Second TD sur la POO (exercices plus difficiles). |
 
 ## Sujets pratiques du bac
