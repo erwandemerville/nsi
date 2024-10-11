@@ -53,3 +53,15 @@ Voici quelques exercices portant sur les **fonctions** en *Python*.
     ```
 
     Ensuite, **en-dessous de la fonction**, écrire un **programme** qui demande à l'utilisateur de saisir un **mot**, puis afficher le **nombre de voyelles** de ce mot en faisant appel à `compter_voyelles`.
+
+!!! note "Exercice 3"
+    Écrire une fonction `factorielle` qui reçoit **un nombre entier** `nombre` en **entrée** et **renvoie** la **factorielle** de ce nombre.
+
+    Exemple :
+
+    ```python
+    print(calculer_prix_ttc(100, 20))  # Affiche 120
+    print(calculer_prix_ttc(50, 5.5))  # Affiche 52.75
+    ```
+
+    Ensuite, **en-dessous de la fonction**, écrire un **programme** qui demande à l'utilisateur de saisir un **nombre entier**, puis qui affiche la **factorielle** de ce nombre en appelant `factorielle`.
