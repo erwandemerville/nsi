@@ -91,13 +91,6 @@ Nous avons ici **2 instances** de la classe `Point` (soit **2 objets**) :
 <__main__.Point object at 0x7ff9c2f839d0>
 ```
 
-Par ailleurs, un **attribut prédéfini** `__doc__` permet de récupérer la **documentation** associée à notre classe :
-
-```python
->>> print(p.__doc__)
-Definition d'un point geometrique
-```
-
 ### Définir les attributs
 
 On peut définir nos attributs de la manière suivante :
@@ -140,6 +133,15 @@ print("b : x =", b.x, "y =", b.y)
 [Visualiser sur Python Tutor](https://pythontutor.com/visualize.html#code=class%20Point%3A%0A%20%20%20%20%22Definition%20d'un%20point%20geometrique%22%0A%0Aa%20%3D%20Point%28%29%0Aa.x%20%3D%201%0Aa.y%20%3D%202%0Ab%20%3D%20a%0Aprint%28%22a%20%3A%20x%20%3D%22,%20a.x,%20%22y%20%3D%22,%20a.y%29%0Aprint%28%22b%20%3A%20x%20%3D%22,%20b.x,%20%22y%20%3D%22,%20b.y%29%0Aa.x%20%3D%203%0Aa.y%20%3D%204%0Aprint%28%22a%20%3A%20x%20%3D%22,%20a.x,%20%22y%20%3D%22,%20a.y%29%0Aprint%28%22b%20%3A%20x%20%3D%22,%20b.x,%20%22y%20%3D%22,%20b.y%29&cumulative=false&curInstr=0&heapPrimitives=false&mode=display&origin=opt-frontend.js&py=3&rawInputLstJSON=%5B%5D&textReferences=false){ .md-button target="_blank" }
 
 Les variables `a` et `b` font ici référence **au même objet**. En effet, lors de l’affectation `b = a`, on met dans la variable `b` **la référence** contenue dans la variable `a`. Donc, toute modification des **valeurs** des **attributs** de l’**objet** dont la référence est contenue dans `a` provoque une modification pour `b`.
+
+!!! tip "Attributs spéciaux"
+    Il existe des **attributs spéciaux** qui sont **prédéfinis**, on les reconnaît car ils sont précédés et suivis par **deux underscores** `__`.
+    un **attribut prédéfini** `__doc__` permet de récupérer la **documentation** associée à notre classe :
+
+    ```python
+    >>> print(p.__doc__)
+    Definition d'un point geometrique
+    ```
 
 ## Définir les méthodes
 

@@ -48,7 +48,7 @@ Voici quelques exercices portant sur les **fonctions** en *Python*.
     Exemple :
 
     ```python
-    print(compter_voyelles("python"))  # 1
+    print(compter_voyelles("python"))  # 2
     print(compter_voyelles("ananas"))  # 3
     ```
 
