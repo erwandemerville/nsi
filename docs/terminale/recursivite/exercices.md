@@ -1,12 +1,13 @@
 # Exercices - La récursivité
 
-## Notebook
+## Notebook d'exercices
 
-!!! success "À télécharger"
-    Téléchargez l'**archive ZIP** suivante, puis dézippez-la dans votre `H:\Travail` :
+!!! success "Notebook sur *Capytale*"
+    Cliquez sur le lien ci-dessous pour accéder au **notebook** d'exercices sur *Capytale* :
 
-    - [Notebook_Recursivite.ipynb](exercices/Notebook_Recursivite.ipynb){ target="_blank" } - Notebook *Jupyter*, nécessite une connexion à internet pour le chargement des images. 
-    - [recursivite_notebook.zip](exercices/recursivite_notebook.zip){ target="_blank" } - Archive contenant le notebook *Jupyter* et fichiers *images* associés, peut être utilisé sans connexion à internet.
+    <center style="font-size:1.3em">
+    [Accéder au notebook d'exercices](https://capytale2.ac-paris.fr/web/c/4bce-4291104)
+    </center>
 
 ## Exercice : Les tours de Hanoï
 
