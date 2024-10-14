@@ -26,4 +26,5 @@ Voici quelques sujets pratiques issus d'épreuves de bac de ces dernières anné
     - [cesar.py](exercices/bac_sujet_06_2021/cesar.py){ target="_blank" } - Fichier *Python* à utiliser pour l'activité.
 
 !!! success "Exercice - *Antennes relais et maisons*"
-    - [exercice1_NSIJ1JA1_2024.pdf](exercices/exercice1_sujet_NSIJ1JA1_2024/exercice1_NSIJ1JA1_2024.pdf){ target="_blank" } - Exercice 1 sur la **POO** du sujet de bac *NSI - Centres étrangers Groupe 2 - Journée 1 - Juin 2024*.
+    - [exercice1_NSIJ1JA1_2024.pdf](exercices/exercice1_sujet_NSIJ1JA1_2024/exercice1_NSIJ1JA1_2024.pdf) - Exercice 1 sur la **POO** du sujet de bac *NSI - Centres étrangers Groupe 2 - Journée 1 - Juin 2024*.
+    - [exercice1_NSIJ1JA1_2024_corr.pdf](exercices/exercice1_sujet_NSIJ1JA1_2024/exercice1_NSIJ1JA1_2024_corr.pdf) - Corrigé de l'exercice 1 sur la **POO** du sujet de bac *NSI - Centres étrangers Groupe 2 - Journée 1 - Juin 2024*.

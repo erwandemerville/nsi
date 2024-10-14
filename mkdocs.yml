@@ -81,6 +81,7 @@ nav:
       - Exercices: terminale/poo/exercices.md
     - Récursivité:
       - terminale/recursivite/index.md
+      - Introduction: terminale/recursivite/introduction.md
       - Cours: terminale/recursivite/cours.md
       - Exercices: terminale/recursivite/exercices.md
     - Sujet e3c:
