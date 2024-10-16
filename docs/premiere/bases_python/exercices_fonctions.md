@@ -151,6 +151,28 @@ Voici quelques exercices portant sur les **fonctions** en *Python*.
 
     Ensuite, **en-dessous de la fonction**, écrire un **programme** qui demande à l'utilisateur de saisir un **nombre entier**, puis qui affiche la **factorielle** de ce nombre en appelant `factorielle`.
 
+??? tip "Correction - Exercice 3"
+    On peut écrire la **fonction** `factorielle` de la manière suivante :
+
+    ```python
+    def factorielle(n):
+        ''' Renvoie la factorielle d'un nombre n donné en entrée.
+        :param n: (int) un entier positif ou nul
+        :return: (int) la factorielle du nombre n '''
+
+        res = 1  # initialiser la variable qui contiendra le résultat
+        for i in range(1, n+1):  # i prendra chaque valeur de 1 jusqu'à n
+            res = res * i  # ou res *= i, multiplier res par la valeur de i courante
+        return res  # renvoyer le résultat
+    ```
+
+    Enfin, on écrit un **programme** qui demande à l'utilisateur de saisir un **nombre entier**, et **appelle** `factorielle` pour **calculer la factorielle** de ce nombre.
+
+    ```python
+    nb = int(input("Saisissez un nombre entier positif : "))  # demander de saisir un entier positif
+    print(factorielle(nb))  # appeler factorielle avec l'argument nb, et afficher la valeur renvoyée
+    ```
+
 !!! note "Exercice 4"
     Écrire une fonction `trouver_le_nombre`, qui prend un **entier** `nombre` entre `1` et `100` en **entrée**, et qui :
 
