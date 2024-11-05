@@ -23,5 +23,6 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Mise au point des programmes](terminale/mise_au_point/index.md) | Types de données, annotations, tests... |
 | [Programmation orientée objet](terminale/poo/index.md) | Découverte des classes en Python. |
 | [Récursivité](terminale/recursivite/index.md) | Utilisation de la récursivité en langage Python. |
+| [Les listes chaînées](terminale/listes/index.md) | Structure de liste chaînée et implémentation. |
 | [:material-pencil: Sujet e3c de rentrée corrigé](terminale/e3c/index.md) | Le sujet d'e3c de rentrée avec correction détaillée. |
 | [:material-language-python: Révisions / Entraînement Python](terminale/entrainement_python/index.md) | Quelques exercices pour vous exercer au langage Python. |

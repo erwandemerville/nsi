@@ -397,32 +397,19 @@ La **norme IEEE 754** définit un **format standardisé** qui vise à unifier la
 !!! abstract "Formats de représentation"
     Cette norme propose **deux formats de représentation** : un format **simple précision** sur **32 bits** et un format **double précision** sur **64 bits**.
 
-    ![Les formats IEEE 754](images/formats_IEEE754.png){ width="600" }
+    ![Les formats IEEE 754](images/formats_IEEE754_r.png){ width="600" }
 
 En **simple précision**, la **chaîne de 32 bits** représentant le nombre est décomposée en :
 
-- **1 bit de signe** indiquant le signe de la mantisse, 
-- **8 bits** pour l’**exposant**,
-- **23 bits** pour le **codage de la mantisse**.
+- **1 bit de signe** (noté $s$) indiquant le signe de la mantisse, 
+- **8 bits** pour l’**exposant** (noté $e$),
+- **23 bits** pour le **codage de la fraction de la mantisse** (notée $f$).
 
 En **double précision**, la **chaîne de 64 bits** représentant le nombre est décomposée en :
 
 - **1 bit de signe** indiquant le signe de la mantisse, 
 - **11 bits** pour l’**exposant**,
-- **52 bits** pour le **codage de la mantisse**.
-
-!!! abstract "Représentation d'un nombre flottant"
-    La **représentation d’un nombre flottant selon la norme IEEE 754** est similaire à l’**écriture scientifique** d’un **nombre décimal**, à savoir une **décomposition en trois parties** : un signe $s$, une mantisse $m$ et un exposant $n$. De manière générale, un nombre flottant a la forme suivante :
-
-    <center>
-    <span style="font-size: 1.4em;"> $(−1)^sm × 2^{(n−d)}$</span>
-    </center>
-
-La norme **IEEE 754** présente quelques différences avec l’**écriture scientifique** :
-
-- la **base** choisie est maintenant la **base 2**,
-- la **mantisse** est maintenant dans l’intervalle $[1, 2[$,
-- l’**exposant** $n$ est **décalé** (ou **biaisé**) d’une valeur $d$ qui dépend du **format** choisi (**32** ou **64 bits**).
+- **52 bits** pour le **codage de la fraction de la mantisse**.
 
 #### Bit de signe
 
@@ -438,7 +425,7 @@ Pour pouvoir représenter à la fois des **exposants positifs** et **négatifs**
 
 #### Mantisse
 
-La **mantisse** $m$ est toujours comprise dans l’intervalle $[1, 2[$, et représente un **nombre** de la forme $1, xx . . . xx$, c’est-à-dire un nombre commençant nécessairement par le **chiffre 1**. Par conséquent, pour gagner **1 bit** de précision, les **23 bits** (en *simple précision*) ou **52 bits** (en *double précision*) dédiés à la **mantisse** sont uniquement utilisés pour représenter les **chiffres après la virgule**, qu’on appelle la **fraction de la mantisse**.
+La **mantisse** $m$ est toujours comprise dans l’intervalle $[1, 2[$, et représente un **nombre** de la forme $1, xx . . . xx$, c’est-à-dire un nombre commençant nécessairement par le **chiffre 1**. Par conséquent, pour gagner **1 bit** de précision, les **23 bits** (en *simple précision*) ou **52 bits** (en *double précision*) dédiés à la **mantisse** sont uniquement utilisés pour représenter les **chiffres après la virgule**, qu’on appelle la **fraction de la mantisse** (qu'on notera $f$).
 
 Ainsi, si les **23 bits** dédiés à la mantisse sont $b_1 b_2 . . . b_{23}$ , alors la mantisse représente le nombre $1 + b_1 × 2^{−1} + b_2 × 2^{−2} + · · · + b_{23} × 2^{−23}$.
 
@@ -543,7 +530,7 @@ $2^{−23} × 2^{−126} = 2^{−149}$ représentée par la **chaîne binaire** 
 !!! note "Exercice 9"
     Donner la **valeur décimale** des **nombres flottants** suivants codés en **simple précision** :
 
-    - $1~01111110~11110000000000000000000$,
+    - $1~10000011~00110101000000000000000$
     - $0~10000011~11100000000000000000000$.
 
 !!! note "Plus d'exercices"
@@ -661,7 +648,7 @@ La **norme 8859** inclut un total de **seize tables**, dont dix sont dédiées a
 
 ### Norme Unicode
 
-Les pages **ISO-8859-n**, bien qu'elles permettent un **encodage étendu**, ne conviennent pas pour les **textes** avec un **mélange de caractères** provenant de **différentes pages**. Pour remédier à cela, l'**ISO** a introduit l'**Universal Character Set** (*UCS*) sous la norme **ISO-10646**. Cette norme attribue à chaque caractère un **nom unique** et un **numéro** appelé **point de code**. Elle recense plus de **110 000 caractères** et peut contenir ceux de **n'importe quelle langue**, avec une capacité maximale de **4 294 967 295 caractères**.
+Les pages **ISO-8859-n**, bien qu'elles permettent un **encodage étendu**, ne conviennent pas pour les **textes** avec un **mélange de caractères** provenant de **différentes pages ISO 8859**. Pour remédier à cela, l'**ISO** a introduit l'**Universal Character Set** (*UCS*) sous la norme **ISO-10646**. Cette norme attribue à chaque caractère un **nom unique** et un **numéro** appelé **point de code**. Elle recense plus de **110 000 caractères** et peut contenir ceux de **n'importe quelle langue**, avec une capacité maximale de **4 294 967 295 caractères**.
 
 Les **256 premiers points de code** de l'**ISO-8859-1** sont inclus par souci de compatibilité. La notation $U+xxxx$ représente les **points de code** du **jeu universel de caractères**, où chaque $x$ est un chiffre **hexadécimal**. Par exemple, $U+006F$ désigne le point de code de la lettre "o".
 
@@ -713,7 +700,7 @@ Et voici quelques *exemples* de **représentations** de **points de code** selon
     Voici comment procéder :
 
     - Chercher le **point de code** de **chaque lettre** en **hexadécimal** et en **binaire**.
-    - En vous aidant de la table *Principe de l'encodage UTF-8* ci-dessus, retrouver l'**encodage** en **UTG-8** de **chaque symbole** en choisissant **le bon nombre d'octets**. On rappelle que les **symboles** présents dans la table *ASCII* (comme les lettres de `a` à `z`) sont codés sur **un seul octet**, donc avec *7 bits codants*.
+    - En vous aidant de la table *Principe de l'encodage UTF-8* ci-dessus, retrouver l'**encodage** en **UTF-8** de **chaque symbole** en choisissant **le bon nombre d'octets**. On rappelle que les **symboles** présents dans la table *ASCII* (comme les lettres de `a` à `z`) sont codés sur **un seul octet**, donc avec *7 bits codants*.
     - Enfin, écrire les **octets en binaire** correspondant à l'encodage du mot complet.
 
 !!! note "Exercice 13"

@@ -393,32 +393,19 @@ La **norme IEEE 754** définit un **format standardisé** qui vise à unifier la
 !!! abstract "Formats de représentation"
     Cette norme propose **deux formats de représentation** : un format **simple précision** sur **32 bits** et un format **double précision** sur **64 bits**.
 
-    ![Les formats IEEE 754](images/formats_IEEE754.png){ width="600" }
+    ![Les formats IEEE 754](images/formats_IEEE754_r.png){ width="600" }
 
 En **simple précision**, la **chaîne de 32 bits** représentant le nombre est décomposée en :
 
-- **1 bit de signe** indiquant le signe de la mantisse, 
-- **8 bits** pour l’**exposant**,
-- **23 bits** pour le **codage de la mantisse**.
+- **1 bit de signe** (noté $s$) indiquant le signe de la mantisse, 
+- **8 bits** pour l’**exposant** (noté $e$),
+- **23 bits** pour le **codage de la fraction de la mantisse** (notée $f$).
 
 En **double précision**, la **chaîne de 64 bits** représentant le nombre est décomposée en :
 
 - **1 bit de signe** indiquant le signe de la mantisse, 
 - **11 bits** pour l’**exposant**,
-- **52 bits** pour le **codage de la mantisse**.
-
-!!! abstract "Représentation d'un nombre flottant"
-    La **représentation d’un nombre flottant selon la norme IEEE 754** est similaire à l’**écriture scientifique** d’un **nombre décimal**, à savoir une **décomposition en trois parties** : un signe $s$, une mantisse $m$ et un exposant $n$. De manière générale, un nombre flottant a la forme suivante :
-
-    <center>
-    <span style="font-size: 1.4em;"> $(−1)^sm × 2^{(n−d)}$</span>
-    </center>
-
-La norme **IEEE 754** présente quelques différences avec l’**écriture scientifique** :
-
-- la **base** choisie est maintenant la **base 2**,
-- la **mantisse** est maintenant dans l’intervalle $[1, 2[$,
-- l’**exposant** $n$ est **décalé** (ou **biaisé**) d’une valeur $d$ qui dépend du **format** choisi (**32** ou **64 bits**).
+- **52 bits** pour le **codage de la fraction de la mantisse**.
 
 #### Bit de signe
 
@@ -434,7 +421,7 @@ Pour pouvoir représenter à la fois des **exposants positifs** et **négatifs**
 
 #### Mantisse
 
-La **mantisse** $m$ est toujours comprise dans l’intervalle $[1, 2[$, et représente un **nombre** de la forme $1, xx . . . xx$, c’est-à-dire un nombre commençant nécessairement par le **chiffre 1**. Par conséquent, pour gagner **1 bit** de précision, les **23 bits** (en *simple précision*) ou **52 bits** (en *double précision*) dédiés à la **mantisse** sont uniquement utilisés pour représenter les **chiffres après la virgule**, qu’on appelle la **fraction de la mantisse**.
+La **mantisse** $m$ est toujours comprise dans l’intervalle $[1, 2[$, et représente un **nombre** de la forme $1, xx . . . xx$, c’est-à-dire un nombre commençant nécessairement par le **chiffre 1**. Par conséquent, pour gagner **1 bit** de précision, les **23 bits** (en *simple précision*) ou **52 bits** (en *double précision*) dédiés à la **mantisse** sont uniquement utilisés pour représenter les **chiffres après la virgule**, qu’on appelle la **fraction de la mantisse** (qu'on notera $f$).
 
 Ainsi, si les **23 bits** dédiés à la mantisse sont $b_1 b_2 . . . b_{23}$ , alors la mantisse représente le nombre $1 + b_1 × 2^{−1} + b_2 × 2^{−2} + · · · + b_{23} × 2^{−23}$.
 
@@ -539,8 +526,20 @@ $2^{−23} × 2^{−126} = 2^{−149}$ représentée par la **chaîne binaire** 
 !!! note "Exercice 9"
     Donner la **valeur décimale** des **nombres flottants** suivants codés en **simple précision** :
 
-    - $1~01111110~11110000000000000000000$,
+    - $1~10000011~00110101000000000000000$
     - $0~10000011~11100000000000000000000$.
+
+    Voici un *exemple* pour vous aider, trouvons la valeur décimale qui correspond à ce nombre binaire :
+    
+    $$1~01111110~11110000000000000000000$$
+
+    Ici :
+
+    - le **bit de signe** est $s = 1$ : le signe est donc **négatif**,
+    - l'**exposant** est $e = 01111110_2 = $126_{10}$, il faut donc **soustraire 127** à cette valeur pour retrouver la puissance de $2*. $126 - 127 = -1$.
+    - La **fraction de la mantisse** est $f = 1111_2$.
+
+    Donc il faut faire le calcul : $(-1)^s \times 
 
 !!! note "Plus d'exercices"
     Vous pouvez également vous entraîner sur les exercices proposés par l'*IUT de Reims* :

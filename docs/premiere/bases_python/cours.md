@@ -297,7 +297,7 @@ Si l'on affiche ce que contient notre **variable** `i` à chaque fois :
 
 {{ IDEv('scripts/11.py') }}
 
-On peut utiliser le `range` de plusieurs manière différentes :
+On peut utiliser le `range` de plusieurs manières différentes :
 
 - `range(valeur)` : avec **une seule valeur** entière, la boucle va itérer de `0` à `valeur - 1`,
 - `range(min, max)` : avec **deux valeurs** entières, la boucle va itérer de `min` à `max - 1`,
@@ -464,9 +464,32 @@ Tout comme pour le `and`, on peut accumuler autant de fois l'opérateur `or` qu'
 
 {{ IDE('scripts/13d.py') }}
 
-**Python** effectue les opérations de **gauche à droite** et en tenant compte des **parenthèses**.
+==**Priorité des opérations**== : 
 
-Dans le programme ci-dessus (n'hésitez pas à le modifier pour faire vos propres tests), Python effectuera d'abord le test `age >= 18 and age < 70`, qui sera évalué à `False`, puis il effectuera ensuite le test `False or accompagne`, soit (puisque `accompagne` vaut `True`) `False or True`, qui sera donc évalué à `True`.
+En *Python*, la **priorité des opérateurs logiques** est la suivante :
+
+- `not` – **plus haute** priorité
+- `and` – priorité **intermédiaire**
+- `or` – **plus basse** priorité
+
+Cela signifie que dans une expression contenant **plusieurs opérateurs**, les termes de l'expression utilisant le `not` sont évalués **en premier**, puis viennent ensuite les termes de l'expression utilisant le `and`, et enfin les termes de l'expression utilisant le `or`.  
+Après avoir appliqué les priorités, l'évaluation s'effectue de **gauche à droite**.
+
+On peut toutefois obtenir des différences dans le résultat booléen obtenu en ajoutant des **parenthèses** pour **forcer** un **ordre d’évaluation** différent, par *exemple* :
+
+```python
+>>> x = 5
+>>> y = 10
+>>> z = 15
+>>> x > 0 or y > 10 and z > 20  # True or False and False => True or False => True
+True
+>>> (x > 0 or y > 10) and z > 20  # (True or False) and False => True and False => False
+False
+>>> x > 0 or y < 0 and not z == 15  # True or False and not True => True or False and False => True or False => True
+True
+>>> (x > 0 or y < 0) and not z == 15  # (True or False) and not True => True and False => False
+False
+```
 
 #### L'opérateur `not`
 

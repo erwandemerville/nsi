@@ -84,6 +84,9 @@ nav:
       - Introduction: terminale/recursivite/introduction.md
       - Cours: terminale/recursivite/cours.md
       - Exercices: terminale/recursivite/exercices.md
+    - Listes chaînées:
+      - terminale/listes/index.md
+      - Cours: terminale/listes/cours.md
     - Sujet e3c:
       - terminale/e3c/index.md
     - Entraînement Python:
