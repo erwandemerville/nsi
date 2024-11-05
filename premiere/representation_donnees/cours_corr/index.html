@@ -766,6 +766,8 @@
       
         
       
+        
+      
     
     
       
@@ -1367,6 +1369,8 @@
           
         
       
+        
+      
     
     
       
@@ -1382,25 +1386,51 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/e3c/" class="md-nav__link ">
+            <a href="../../../terminale/listes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
-    Sujet e3c
+    Listes chaînées
   </span>
   
 
             </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
             
           </div>
         
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_6">
             <span class="md-nav__icon md-icon"></span>
-            Sujet e3c
+            Listes chaînées
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/listes/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
               
             
           </ul>
@@ -1439,6 +1469,63 @@
           
           
           <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/e3c/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Sujet e3c
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Sujet e3c
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
             <a href="../../../terminale/entrainement_python/" class="md-nav__link ">
               
   
@@ -1451,8 +1538,8 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
-          <label class="md-nav__title" for="__nav_3_7">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
             <span class="md-nav__icon md-icon"></span>
             Entraînement Python
           </label>
@@ -2422,32 +2509,19 @@ Seules quelques valeurs décimales spécifiques peuvent être représentées pr�
 <div class="admonition abstract">
 <p class="admonition-title">Formats de représentation</p>
 <p>Cette norme propose <strong>deux formats de représentation</strong> : un format <strong>simple précision</strong> sur <strong>32 bits</strong> et un format <strong>double précision</strong> sur <strong>64 bits</strong>.</p>
-<p><img alt="Les formats IEEE 754" src="../images/formats_IEEE754.png" width="600"></p>
+<p><img alt="Les formats IEEE 754" src="../images/formats_IEEE754_r.png" width="600"></p>
 </div>
 <p>En <strong>simple précision</strong>, la <strong>chaîne de 32 bits</strong> représentant le nombre est décomposée en :</p>
 <ul>
-<li><strong>1 bit de signe</strong> indiquant le signe de la mantisse, </li>
-<li><strong>8 bits</strong> pour l’<strong>exposant</strong>,</li>
-<li><strong>23 bits</strong> pour le <strong>codage de la mantisse</strong>.</li>
+<li><strong>1 bit de signe</strong> (noté <span class="arithmatex">\(s\)</span>) indiquant le signe de la mantisse, </li>
+<li><strong>8 bits</strong> pour l’<strong>exposant</strong> (noté <span class="arithmatex">\(e\)</span>),</li>
+<li><strong>23 bits</strong> pour le <strong>codage de la fraction de la mantisse</strong> (notée <span class="arithmatex">\(f\)</span>).</li>
 </ul>
 <p>En <strong>double précision</strong>, la <strong>chaîne de 64 bits</strong> représentant le nombre est décomposée en :</p>
 <ul>
 <li><strong>1 bit de signe</strong> indiquant le signe de la mantisse, </li>
 <li><strong>11 bits</strong> pour l’<strong>exposant</strong>,</li>
-<li><strong>52 bits</strong> pour le <strong>codage de la mantisse</strong>.</li>
-</ul>
-<div class="admonition abstract">
-<p class="admonition-title">Représentation d'un nombre flottant</p>
-<p>La <strong>représentation d’un nombre flottant selon la norme IEEE 754</strong> est similaire à l’<strong>écriture scientifique</strong> d’un <strong>nombre décimal</strong>, à savoir une <strong>décomposition en trois parties</strong> : un signe <span class="arithmatex">\(s\)</span>, une mantisse <span class="arithmatex">\(m\)</span> et un exposant <span class="arithmatex">\(n\)</span>. De manière générale, un nombre flottant a la forme suivante :</p>
-<p></p><center>
-<span style="font-size: 1.4em;"> <span class="arithmatex">\((−1)^sm × 2^{(n−d)}\)</span></span>
-</center>
-</div>
-<p>La norme <strong>IEEE 754</strong> présente quelques différences avec l’<strong>écriture scientifique</strong> :</p>
-<ul>
-<li>la <strong>base</strong> choisie est maintenant la <strong>base 2</strong>,</li>
-<li>la <strong>mantisse</strong> est maintenant dans l’intervalle <span class="arithmatex">\([1, 2[\)</span>,</li>
-<li>l’<strong>exposant</strong> <span class="arithmatex">\(n\)</span> est <strong>décalé</strong> (ou <strong>biaisé</strong>) d’une valeur <span class="arithmatex">\(d\)</span> qui dépend du <strong>format</strong> choisi (<strong>32</strong> ou <strong>64 bits</strong>).</li>
+<li><strong>52 bits</strong> pour le <strong>codage de la fraction de la mantisse</strong>.</li>
 </ul>
 <h4 id="bit-de-signe">Bit de signe<a class="headerlink" href="#bit-de-signe" title="Permanent link">¶</a></h4>
 <p>Le <strong>signe</strong> <span class="arithmatex">\(s\)</span> est codé sur <strong>un bit</strong> (le <strong>bit de poids fort</strong> de l’entier de <strong>32 bits</strong> ou de <strong>64 bits</strong>) : ce bit vaut <span class="arithmatex">\(0\)</span> si le nombre représenté est <strong>positif</strong>, et <span class="arithmatex">\(1\)</span> s'il est <strong>négatif</strong>.</p>
@@ -2459,7 +2533,7 @@ Seules quelques valeurs décimales spécifiques peuvent être représentées pr�
 <li>de manière <strong>générale</strong>, pour un <strong>exposant</strong> stocké sur un nombre <span class="arithmatex">\(n\)</span> de <strong>bits</strong>, le <strong>décalage</strong> sera de <span class="arithmatex">\(2^{n - 1} - 1\)</span>.</li>
 </ul>
 <h4 id="mantisse">Mantisse<a class="headerlink" href="#mantisse" title="Permanent link">¶</a></h4>
-<p>La <strong>mantisse</strong> <span class="arithmatex">\(m\)</span> est toujours comprise dans l’intervalle <span class="arithmatex">\([1, 2[\)</span>, et représente un <strong>nombre</strong> de la forme <span class="arithmatex">\(1, xx . . . xx\)</span>, c’est-à-dire un nombre commençant nécessairement par le <strong>chiffre 1</strong>. Par conséquent, pour gagner <strong>1 bit</strong> de précision, les <strong>23 bits</strong> (en <em>simple précision</em>) ou <strong>52 bits</strong> (en <em>double précision</em>) dédiés à la <strong>mantisse</strong> sont uniquement utilisés pour représenter les <strong>chiffres après la virgule</strong>, qu’on appelle la <strong>fraction de la mantisse</strong>.</p>
+<p>La <strong>mantisse</strong> <span class="arithmatex">\(m\)</span> est toujours comprise dans l’intervalle <span class="arithmatex">\([1, 2[\)</span>, et représente un <strong>nombre</strong> de la forme <span class="arithmatex">\(1, xx . . . xx\)</span>, c’est-à-dire un nombre commençant nécessairement par le <strong>chiffre 1</strong>. Par conséquent, pour gagner <strong>1 bit</strong> de précision, les <strong>23 bits</strong> (en <em>simple précision</em>) ou <strong>52 bits</strong> (en <em>double précision</em>) dédiés à la <strong>mantisse</strong> sont uniquement utilisés pour représenter les <strong>chiffres après la virgule</strong>, qu’on appelle la <strong>fraction de la mantisse</strong> (qu'on notera <span class="arithmatex">\(f\)</span>).</p>
 <p>Ainsi, si les <strong>23 bits</strong> dédiés à la mantisse sont <span class="arithmatex">\(b_1 b_2 . . . b_{23}\)</span> , alors la mantisse représente le nombre <span class="arithmatex">\(1 + b_1 × 2^{−1} + b_2 × 2^{−2} + · · · + b_{23} × 2^{−23}\)</span>.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Représentation <em>normalisée</em> d'un nombre flottant</p>
@@ -2595,9 +2669,18 @@ représenter les <strong>nombres décimaux</strong> compris (approximativement) 
 <p class="admonition-title">Exercice 9</p>
 <p>Donner la <strong>valeur décimale</strong> des <strong>nombres flottants</strong> suivants codés en <strong>simple précision</strong> :</p>
 <ul>
-<li><span class="arithmatex">\(1~01111110~11110000000000000000000\)</span>,</li>
+<li><span class="arithmatex">\(1~10000011~00110101000000000000000\)</span></li>
 <li><span class="arithmatex">\(0~10000011~11100000000000000000000\)</span>.</li>
 </ul>
+<p>Voici un <em>exemple</em> pour vous aider, trouvons la valeur décimale qui correspond à ce nombre binaire :</p>
+<div class="arithmatex">\[1~01111110~11110000000000000000000\]</div>
+<p>Ici :</p>
+<ul>
+<li>le <strong>bit de signe</strong> est <span class="arithmatex">\(s = 1\)</span> : le signe est donc <strong>négatif</strong>,</li>
+<li>l'<strong>exposant</strong> est $e = 01111110_2 = <span class="arithmatex">\(126_{10}\)</span>, il faut donc <strong>soustraire 127</strong> à cette valeur pour retrouver la puissance de $2*. <span class="arithmatex">\(126 - 127 = -1\)</span>.</li>
+<li>La <strong>fraction de la mantisse</strong> est <span class="arithmatex">\(f = 1111_2\)</span>.</li>
+</ul>
+<p>Donc il faut faire le calcul : $(-1)^s \times </p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Plus d'exercices</p>
