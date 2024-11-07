@@ -56,6 +56,7 @@ nav:
       - Découverte de l'IDE Thonny: premiere/bases_python/thonny.md
       - Jeu - Chasse au trésor: premiere/bases_python/chassetresor.md
       - Exercices sur les fonctions: premiere/bases_python/exercices_fonctions.md
+      - Exercices sur les boucles while: premiere/bases_python/exercices_while.md
       - Notebooks: premiere/bases_python/notebooks.md
     - Représentation des données:
       - premiere/representation_donnees/index.md
