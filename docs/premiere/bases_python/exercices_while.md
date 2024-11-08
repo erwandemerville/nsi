@@ -6,7 +6,7 @@
 
     Mais attention ! S'il faut **trois doubles de suite**, il doit aller en **prison**.
 
-    Le programme à concevoir doit :
+    Le **programme** à concevoir doit :
 
     - **Simuler le lancer** aléatoire de deux dés à 6 faces (vous utiliserez la fonction `randint` du module `random`.);
     - **Afficher la valeur** de chaque face ainsi que le nombre de cases à parcourir ;
@@ -23,3 +23,12 @@
     Les faces sont 6 et 6 : Avancez de 12 cases.
     Oups ! Encore un double, allez en prison !
     ```
+
+!!! note "Exercice 2"
+    On souhaite écrire un programme permettant de restreindre l'accès à une plateforme aux visiteurs adultes.
+
+    Écrivez un **programme** qui :
+
+    - demande à l'utilisateur son **âge**,
+    - **tant que** l'**âge** est **inférieur** à **18**, on redemande l'âge.
+    - Si l'âge est d'au moins **18**, on affiche "Vous pouvez entrer".

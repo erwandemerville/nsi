@@ -84,6 +84,10 @@ On crée une classe `Cellule` permettant de représenter une **cellule** (ou un 
 
 {{ IDE('scripts/03.py') }}
 
+<center style="font-size:1.3em">
+[Télécharger le fichier `liste.py`](scripts/liste.py)
+</center>
+
 <figure markdown>
   ![Visualisation des cellules](images/classe_cellule.png)
   <figcaption>Visualisation des cellules</figcaption>
