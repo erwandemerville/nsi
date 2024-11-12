@@ -30,5 +30,5 @@
     Écrivez un **programme** qui :
 
     - demande à l'utilisateur son **âge**,
-    - **tant que** l'**âge** est **inférieur** à **18**, on redemande l'âge.
-    - Si l'âge est d'au moins **18**, on affiche "Vous pouvez entrer".
+    - **tant que** l'**âge** est **inférieur** à **18** ans, on redemande l'âge.
+    - Si l'âge est d'au moins **18** ans, on affiche "Vous pouvez entrer".
