@@ -62,6 +62,11 @@ nav:
       - premiere/representation_donnees/index.md
       - Cours: premiere/representation_donnees/cours.md
       - Exercices et notebooks : premiere/representation_donnees/exercices.md
+    - Architecture matérielle:
+      - premiere/archi/index.md
+      - Introduction à la logique booléenne: premiere/archi/introduction.md
+      - Fonctions et expressions: premiere/archi/fonctions.md
+      - Les circuits logiques: premiere/archi/circuits.md
   - Terminale:
     - terminale/index.md
     - Modularité:
@@ -88,6 +93,7 @@ nav:
     - Listes chaînées:
       - terminale/listes/index.md
       - Cours: terminale/listes/cours.md
+      - Exercices: terminale/listes/exercices.md
     - Sujet e3c:
       - terminale/e3c/index.md
     - Entraînement Python:

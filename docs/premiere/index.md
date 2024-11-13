@@ -4,3 +4,4 @@
 | -------------------------------------------- | ----------------------------------- |
 | [Les bases du langage Python](bases_python/index.md) | Les bases du langage Python. |
 | [Représentation des données en machine](representation_donnees/index.md) | Représentation des entiers, réels, encodage du texte... |
+| [Architecture matérielle](archi/index.md) | Circuits logiques, algèbre de Boole, modèle de Von Neumann... |
