@@ -1,0 +1,2467 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/archi/vonneumann/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Modèle d'architecture de Von Neumann - Numérique et sciences informatiques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+
+      
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
+<!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.asm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-md5"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script src="../../../pyodide-mkdocs/utils.js"></script> 
+<script src="../../../pyodide-mkdocs/interpreter.js"></script> 
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+<link rel="stylesheet" href="../../../pyodide-mkdocs/pyoditeur.css">
+
+
+<input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
+
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="my_theme" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#modele-darchitecture-de-von-neumann" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numérique et sciences informatiques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Modèle d'architecture de Von Neumann
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="my_theme" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer en mode nuit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode nuit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Passer en mode jour"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode jour" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Accueil
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Première
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../terminale/" class="md-tabs__link">
+          
+  
+    
+  
+  Terminale
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../rendus/" class="md-tabs__link">
+        
+  
+    
+  
+  Rendu des travaux
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Numérique et sciences informatiques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Accueil
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Première
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Première
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../bases_python/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Les bases de Python
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Les bases de Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction au Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/thonny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Découverte de l'IDE Thonny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/chassetresor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jeu - Chasse au trésor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/exercices_fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices sur les fonctions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/exercices_while/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices sur les boucles while
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/notebooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notebooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../representation_donnees/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Représentation des données
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Représentation des données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../representation_donnees/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../representation_donnees/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices et notebooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Architecture matérielle
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture matérielle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à la logique booléenne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonctions et expressions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../circuits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les circuits logiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Terminale
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Terminale
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/modularite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Modularité
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Modularité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/modularite/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité - Utilisation d'une API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/modularite/modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion de modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/mise_au_point/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Mise au point de programmes
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mise au point de programmes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/preliminaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité préliminaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours et exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/activite_finale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité finale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/ds1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Corrigé DS n°1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/poo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Programmation orientée objet
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Programmation orientée objet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/preliminaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité d'introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/pokemon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP - Un jeu Pokémon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/recursivite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Récursivité
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Récursivité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recursivite/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recursivite/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recursivite/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/listes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Listes chaînées
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Listes chaînées
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/listes/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/listes/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/e3c/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Sujet e3c
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Sujet e3c
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/entrainement_python/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Entraînement Python
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            Entraînement Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rendus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendu des travaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction-histoire-des-ordinateurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction : Histoire des ordinateurs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#le-modele-de-von-neumann" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le modèle de Von Neumann
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Le modèle de Von Neumann">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#presentation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Présentation
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-memoire" class="md-nav__link">
+    <span class="md-ellipsis">
+      La mémoire
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="La mémoire">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#une-memoire-de-masse-ou-memoire-de-stockage" class="md-nav__link">
+    <span class="md-ellipsis">
+      Une mémoire de masse ou mémoire de stockage
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#la-memoire-vive-ou-ram" class="md-nav__link">
+    <span class="md-ellipsis">
+      La mémoire vive, ou RAM
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#une-memoire-cache" class="md-nav__link">
+    <span class="md-ellipsis">
+      Une mémoire cache
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-registre-de-processeur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le registre de processeur
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#les-bus" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les bus
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#un-petit-qcm" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un petit QCM
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#organisation-de-la-memoire" class="md-nav__link">
+    <span class="md-ellipsis">
+      Organisation de la mémoire
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instructions-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Instructions machine
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Instructions machine">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#le-transistor" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le transistor
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#le-langage-machine" class="md-nav__link">
+    <span class="md-ellipsis">
+      Le langage machine
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assembleur" class="md-nav__link">
+    <span class="md-ellipsis">
+      Assembleur
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+
+<div><h1 id="modele-darchitecture-de-von-neumann">Modèle d'architecture de Von Neumann<a class="headerlink" href="#modele-darchitecture-de-von-neumann" title="Permanent link">¶</a></h1>
+<p>Les <strong>ordinateurs</strong> tels que nous les connaissons aujourd'hui sont parfaitement intégrés à notre quotidien, si bien qu'il peut être difficile d'imaginer tout le cheminement qu'il a été nécessaire de faire pour en arriver là.</p>
+<p>Les premiers "vrais" <strong>ordinateurs</strong> apparaissent aux États-Unis et en Angleterre, juste après la guerre. Il s'agit de <strong>machines</strong> capables d’exécuter des <strong>programmes</strong>. Mais qu'est-ce qu'un <strong>programme</strong>, d'abord ?</p>
+<p>Un <mark><strong>programme</strong></mark>, c'est un <mark><strong>algorithme</strong></mark> <strong>ET</strong> des <mark><strong>données</strong></mark>. Les deux sont intimement liés, et doivent être stockés dans une <strong>mémoire</strong>.</p>
+<h2 id="introduction-histoire-des-ordinateurs">Introduction : Histoire des ordinateurs<a class="headerlink" href="#introduction-histoire-des-ordinateurs" title="Permanent link">¶</a></h2>
+<p>Avant d'en arriver à nos <strong>ordinateurs modernes</strong>, de nombreuses <strong>machines</strong> ont été réalisées depuis l'<strong>Antiquité</strong> pour effectuer des <strong>calculs</strong>.</p>
+<p>Visionnez la petit vidéo suivante sur l'<strong>histoire de l'architecture des ordinateurs</strong> :</p>
+<p></p><center>
+<a href="https://www.lumni.fr/video/une-histoire-de-l-architecture-des-ordinateurs" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559"></path></svg></span> Visionner la vidéo sur <em>Lumni</em></a>
+</center>
+<div class="admonition note">
+<p class="admonition-title">Exercice 1</p>
+<p>En vous basant sur la partie de la vidéo ci-dessus, répondez aux <strong>questions</strong> suivantes :</p>
+<ol>
+<li>Comment étaient transmis les programmes avec l’<strong>ENIAC</strong> ?</li>
+<li>Reproduire le schéma de l’<strong>architecture de Von Neumann</strong> présenté dans la video.</li>
+<li>Quel était le <strong>composant fondamental</strong> des premiers ordinateurs (<strong>ENIAC</strong>, <strong>EDVAC</strong>) ? Quels étaient ses <strong>inconvénients</strong> ? Quel <strong>composant</strong> l’a remplacé dans les <strong>années 1950</strong> et est encore utilisé dans les <strong>ordinateurs modernes</strong> ?</li>
+<li>Commenter le <strong>tableau</strong> ci-dessous.<br>
+<img alt="Évolution nombre de transistors et surface" src="../images/screen_transistors.png" width="450"></li>
+<li>Qu’appelle-t-on <strong>System On a Chip</strong> ?</li>
+</ol>
+</div>
+<details class="tip">
+<summary>Correction exercice 1</summary>
+<ol>
+<li>L'<strong>ENIAC</strong> (<em>Electronic Numerical Integrator and Computer</em>), l'un des premiers ordinateurs électroniques, a été programmé en utilisant des <strong>panneaux de connexion</strong> et des <strong>interrupteurs</strong>. Les <strong>instructions</strong> et les <strong>données</strong> étaient <strong>saisies manuellement par les opérateurs</strong> en <strong>connectant des câbles</strong> et en <strong>positionnant les interrupteurs</strong>, ce qui était un processus laborieux et propice aux erreurs.</li>
+<li>Voir la suite de ce cours.</li>
+<li>Le composant fondamental des premiers ordinateurs tels que l'<strong>ENIAC</strong> et l'<strong>EDVAC</strong> était le <strong>tube à vide</strong>, également appelé <strong>tube électronique</strong> ou <strong>lampe à vide</strong>. Les <strong>tubes à vide</strong> étaient utilisés comme <strong>éléments de commutation et de stockage d'informations binaires</strong>. Cependant, ils présentaient des <strong>inconvénients</strong> tels que leur <strong>taille</strong>, leur <strong>consommation d'énergie élevée</strong>, leur <strong>production de chaleur importante</strong> et leur <strong>propension à défaillir</strong>.<br>
+Les tubes à vide ont été largement remplacés dans les <strong>années 1950</strong> par les <strong>transistors</strong>, qui sont <strong>beaucoup plus compacts</strong>, plus <strong>fiables</strong>, plus <strong>robustes</strong> et <strong>consomment moins d'énergie</strong>. Cette transition a marqué le début de l'ère des <strong>ordinateurs à transistors</strong>. Les <strong>transistors</strong> sont toujours utilisés dans les <strong>ordinateurs modernes</strong>, mais ils sont <strong>intégrés à une échelle beaucoup plus petite</strong> grâce à la <strong>miniaturisation des composants électroniques</strong>.</li>
+<li>On constate qu'au fil du temps, le <strong>nombre de transistor</strong> a considérablement <strong>augmenté</strong>, et que la <strong>surface</strong> nécessaire par <strong>transistor</strong> a <strong>fortement diminuée</strong>.</li>
+<li>Le terme "System On a Chip" (SoC) désigne un concept où <strong>tous les composants nécessaires</strong> pour exécuter un <strong>système complet</strong> sont <strong>intégrés sur une seule puce</strong>. Cela inclut le <strong>processeur</strong> central (<strong>CPU</strong>), la <strong>mémoire</strong>, les <strong>interfaces d'entrée/sortie</strong>, et parfois même des <strong>composants spécialisés</strong>. Les <strong>SoC</strong> sont largement utilisés dans les <strong>dispositifs électroniques modernes</strong> tels que les <strong>smartphones</strong>, les <strong>tablettes</strong>, et d'autres appareils intégrés comme les <strong>Raspberry</strong>, offrant une solution compacte et économe en énergie.</li>
+</ol>
+</details>
+<div class="admonition abstract">
+<p class="admonition-title">Résumé historique</p>
+<p></p><center>
+<a href="../documents/NSI-archi.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559"></path></svg></span> Télécharger la présentation (pour voir les inventions en images)</a>
+</center>
+<p><strong>Machines de l'Antiquité</strong> :</p>
+<ul>
+<li><strong>Anticythère</strong> (<em>150-100 av. J.-C.</em>) : Un ancien mécanisme qui a servi à effectuer des calculs astronomiques, représentant une première utilisation de la mécanique pour le traitement de l'information.</li>
+<li><strong>Odomètre</strong> de Héron d'Alexandrie (10-70 apr. J.-C.) : Un dispositif antique pour mesurer les distances, montrant une application précoce de la technologie à des besoins pratiques.</li>
+</ul>
+<p><strong>17e siècle</strong> :</p>
+<ul>
+<li><strong>Pascaline</strong> (<em>1642</em>) : Inventée par Blaise Pascal, la Pascaline est une calculatrice mécanique précoce, symbolisant les premiers efforts pour automatiser les calculs.</li>
+</ul>
+<p><strong>19e siècle</strong> :</p>
+<ul>
+<li><strong>Machine analytique de Babbage</strong> (conçue dans les <em>années 1830</em>) : Conception révolutionnaire préfigurant les ordinateurs programmables, <strong>même si elle n'a jamais été construite de son vivant</strong>, car trop coûteuse. On estime aujourd'hui que la machine complète aurait constitué un enchevêtrement de roues et d'engrenages mus par la vapeur et occupant la place d'une locomotive.</li>
+</ul>
+<p><strong>Analyse de Charles Babbage et Ada Lovelace</strong> :</p>
+<ul>
+<li><strong>Ada Lovelace</strong> (<em>1843</em>) : Pionnière dans la programmation informatique, Ada Lovelace a créé le premier programme pour la machine analytique, jetant les bases de la programmation.
+<a href="https://www.youtube.com/watch?v=PK-AeOnK16M" target="_blank">Voici une petite vidéo</a> intéressante sur le sujet.</li>
+</ul>
+<p><strong>20e siècle</strong> :</p>
+<ul>
+<li>
+<p><strong>"A Symbolic Analysis of Relay and Switching Circuits"</strong> de Shannon (<em>1937</em>) : Le travail de Claude Shannon a établi les fondements de la théorie des circuits logiques, essentielle à la conception des premiers ordinateurs.</p>
+</li>
+<li>
+<p><strong>ENIAC</strong> (<em>1946</em>) : Le premier ordinateur électronique à grande échelle, l'ENIAC, a marqué le passage des calculateurs mécaniques aux <strong>machines électroniques programmables</strong>.</p>
+</li>
+<li>
+<p><strong>"First Draft of a Report on the EDVAC"</strong> de Von Neumann (<em>1945</em>) : Le document de Von Neumann a introduit le concept d'architecture von Neumann, standard pour la conception des ordinateurs modernes. Il s'est basé sur les travaux d'<strong>Alan Turing</strong> (en 1936), notamment des concepts suivants :</p>
+<ul>
+<li><strong>Machine de Turing</strong> : Turing a proposé un <strong>modèle abstrait</strong> de machine, connu sous le nom de machine de Turing, qui fonctionne selon des règles simples et manipule des symboles sur une bande infinie. Cette machine hypothétique possède une tête de lecture/écriture mobile qui peut se déplacer vers la gauche ou la droite et changer l'état de la machine en fonction des symboles lus. Voici une <a href="https://images.cnrs.fr/video/3001" target="_blank">petite vidéo du CNRS</a> sur le sujet, que je vous invite à visionner.
+Voici également un <a href="https://zanotti.univ-tln.fr/turing/turing.php" target="_blank">simulateur de machine de Turing</a> permettant de mieux comprendre son fonctionnement.</li>
+<li><strong>Universalité</strong> : Turing a démontré qu'il était possible de construire une machine de Turing universelle, capable de simuler n'importe quelle autre machine de Turing. Cette idée d'universalité signifie que, en principe, une seule machine pourrait exécuter n'importe quel programme, établissant ainsi le concept de programmabilité et d'instructions stockées.</li>
+</ul>
+</li>
+</ul>
+<p><strong>Développements clés dans les composants électroniques</strong> :</p>
+<ul>
+<li>
+<p><strong>Transistor</strong> (<em>1947</em>) : L'invention du transistor a révolutionné l'électronique, remplaçant les tubes à vide et permettant la miniaturisation des composants.</p>
+</li>
+<li>
+<p><strong>Circuit intégré</strong> (<em>1958</em>) : Les circuits intégrés ont consolidé de multiples composants sur une seule puce, accélérant les calculs et réduisant la taille des ordinateurs.</p>
+</li>
+<li>
+<p><strong>MOS Transistor</strong> (<em>1960</em>) : Le transistor MOS a ouvert la voie aux circuits intégrés à faible consommation d'énergie, crucial pour les appareils portables et les microprocesseurs modernes.</p>
+</li>
+</ul>
+<p><strong>Évolution des composants électroniques</strong> :</p>
+<ul>
+<li>
+<p><strong>7400 - Texas Instruments</strong> (<em>1964</em>) : La série 7400 de circuits intégrés logiques a facilité la construction de systèmes électroniques plus complexes.</p>
+</li>
+<li>
+<p><strong>4004 - Intel</strong> (<em>1971</em>) : Le premier microprocesseur, le 4004, a introduit l'idée d'un processeur complet sur une seule puce, marquant le début de l'ère des ordinateurs personnels.</p>
+</li>
+<li>
+<p><strong>Power4 - IBM</strong> (<em>2001</em>) : L'architecture avancée de Power4 a ouvert la voie aux serveurs hautes performances et aux superordinateurs.</p>
+</li>
+<li>
+<p><strong>Snapdragon 855 - Qualcomm</strong> (<em>2018</em>) : La puce mobile Snapdragon 855 a défini de nouveaux standards pour les performances des appareils mobiles et l'intégration de technologies avancées.</p>
+</li>
+</ul>
+<p><strong>Architecture moderne</strong> :</p>
+<ul>
+<li>
+<p><strong>Carte mère</strong> (<em>1980s</em>) : La carte mère est devenue le socle central d'un ordinateur, connectant tous les composants et permettant une évolutivité aisée.</p>
+</li>
+<li>
+<p><strong>Raspberry Pi</strong> (<em>2012</em>) : La sortie du Raspberry Pi a rendu les ordinateurs accessibles à un public plus large grâce à son faible coût et à sa polyvalence pour les projets informatiques.</p>
+</li>
+</ul>
+</div>
+<h2 id="le-modele-de-von-neumann">Le modèle de Von Neumann<a class="headerlink" href="#le-modele-de-von-neumann" title="Permanent link">¶</a></h2>
+<h3 id="presentation">Présentation<a class="headerlink" href="#presentation" title="Permanent link">¶</a></h3>
+<p>Le <strong>modèle d'architecture de Von Neumann</strong>, fondamental dans la <strong>conception des ordinateurs modernes</strong>, tire ses origines des travaux novateurs d'<strong>Alan Turing</strong> sur les <strong>machines universelles</strong>.</p>
+<p>Développé dans les <strong>années 1940</strong> par le <strong>mathématicien</strong> et <strong>physicien John von Neumann</strong>, ce modèle a été influencé par les idées de <strong>Turing</strong> concernant les <strong>machines universelles de calcul</strong>.</p>
+<p>L'<strong>architecture de Von Neumann</strong> repose sur le concept de <mark><strong>programme</strong></mark> <strong>stocké</strong>, où les <strong>instructions</strong> et les <strong>données</strong> sont <strong>traitées de la même manière</strong> et sont <strong>toutes deux stockées dans la mémoire de l'ordinateur</strong>. Cela contraste avec les premières machines, où les <strong>programmes</strong> étaient <strong>câblés physiquement</strong>. L'introduction de cette architecture a considérablement simplifié le processus de programmation, permettant aux programmeurs de manipuler les <strong>instructions</strong> comme des <strong>données</strong>.</p>
+<p>Le <strong>modèle de Von Neumann</strong> a donc joué un rôle crucial dans l'<strong>évolution des ordinateurs</strong> en les rendant <strong>plus flexibles</strong>, <strong>programmables</strong> et capables d'exécuter une <strong>variété de tâches</strong> en fonction des <strong>instructions fournies</strong>, contribuant ainsi de manière significative à l'essor de l'informatique moderne.</p>
+<figure>
+<p><img alt="Modèle de Von Neumann" src="../images/ualVonNeumann.png">
+  </p>
+<figcaption>Modèle de Von Neumann (<a href="https://www.numerique-sciences-informatiques.fr/coursVonNeumann.php" target="_blank">Source de l'image</a>)</figcaption>
+</figure>
+<p><strong>MBR</strong> (memory buffer register) contient les <strong>données / instructions</strong> à être <strong>stockées / lues</strong>, on l'appelle aussi <em>MDR</em> : memory data register.<br>
+<strong>MAR</strong> (memory adress register) : registre contenant l'adresse de la mémoire où sera stocké la donnée.</p>
+<details class="tip">
+<summary>Voir une version plus détaillée du modèle de Von Neumann</summary>
+<p><figure markdown>
+<img alt="Modèle de Von Neumann" src="../images/Von_Neumann_2.png" width="500">
+<figcaption>Modèle de Von Neumann</figcaption>
+</figure></p>
+</details>
+<div class="admonition abstract">
+<p class="admonition-title">Modèle de Von Neumann</p>
+<p>Un <strong>ordinateur</strong> est une machine <mark><strong>programmable</strong></mark>, <mark><strong>automatique</strong></mark> et <mark><strong>universelle</strong></mark> :</p>
+<ul>
+<li><strong>programmable</strong> : la séquence d’opérations exécutée par un ordinateur peut être entièrement spécifiée dans le texte d’un programme ;</li>
+<li><strong>automatique</strong> : un ordinateur peut exécuter un programme sans intervention extérieure (câblage . . .) ;</li>
+<li><strong>universelle</strong> : un ordinateur peut exécuter tout programme calculable (selon la théorie de Turing) avec le jeu d’instructions <strong>câblé dans son processeur</strong>.</li>
+</ul>
+<p>En <strong>1945</strong>, <strong>John von Neumann</strong>, <strong>mathématicien</strong> hongrois exilé aux États-Unis, publie un rapport sur la réalisation du <strong>calculateur EDVAC</strong> où il propose une <strong>architecture</strong> permettant d’<strong>implémenter une machine universelle</strong>, décrite par <strong>Alan Turing</strong> dans son article fondateur de <strong>1936</strong> sur le problème de l’<strong>indécidabilité</strong>.</p>
+<p>L’<strong>architecture de Von Neumann</strong> va servir de modèle pour <mark>la plupart des ordinateurs de 1945 jusqu’à nos jours</mark>, elle se compose de <strong>quatre parties distinctes</strong> :</p>
+<ul>
+<li>L’<mark><strong>Unité Centrale de Traitement</strong></mark> (<em>Central Processing Unit</em> en anglais) ou <strong>Processeur</strong>, qui permet d'exécuter les instructions machine des programmes informatiques, est constituée de <strong>deux sous-unités</strong> :<ul>
+<li>L’<mark><strong>Unité de Commande</strong></mark> (<em>UC</em>) charge la <strong>prochaine instruction</strong> dont l’<strong>adresse mémoire</strong> se trouve dans un <strong>registre</strong> appelé <strong>Compteur de Programme</strong> (PC en anglais) ou <strong>Compteur ordinal</strong>, la <strong>décode</strong> avec le <strong>décodeur</strong> et commande l’<strong>exécution</strong> par l’<strong>ALU</strong> avec le <strong>séquenceur</strong>. L’instruction en cours d’exécution est chargée dans le <strong>Registre d’Instruction</strong> (<strong>IR</strong>). L’Unité de Commande peut aussi effectuer une <strong>opération de branchement</strong>, un <strong>saut dans le programme</strong>, en modifiant le <strong>Compteur de Programme</strong>, qui par défaut est <strong>incrémenté de 1</strong> lors de chaque instruction.</li>
+<li>L’<mark><strong>Unité Arithmétique et Logique</strong></mark> (<em>ALU</em> en anglais) qui réalise des <strong>opérations arithmétiques</strong> (<em>addition</em>, <em>multiplication</em>...), <strong>logiques</strong> (<em>et</em>, <em>ou</em>...), de <strong>comparaisons</strong> ou de <strong>déplacement de mémoire</strong> (<em>copie de</em> ou <em>vers</em> la mémoire). L’<strong>ALU</strong> stocke les données dans des <strong>mémoires d’accès très rapide</strong> appelées <strong>registres</strong>. Les <strong>opérations</strong> sont réalisées par des <strong>circuits logiques</strong> constituant le <strong>jeu d’instructions</strong> du processeur.</li>
+</ul>
+</li>
+<li>La <mark><strong>mémoire</strong></mark> où sont stockés les <strong>données et les programmes</strong>.<br>
+Il y a différents <strong>types de mémoires</strong> : la mémoire <strong>volatile</strong> (<em>RAM</em> par exemple), la mémoire <strong>permanente</strong> (<em>disque dur</em> par exemple).</li>
+<li>Des <mark><strong>bus</strong></mark> qui sont des <strong>fils</strong> reliant le <strong>CPU</strong> et la <strong>mémoire</strong> et permettant les <strong>échanges de données et d’adresses</strong>. Les <mark><strong>adresses</strong></mark>, les <mark><strong>données</strong></mark> et les <mark><strong>commandes</strong></mark> circulent par des <strong>bus d'adresse</strong>, des <strong>bus de données</strong> et le <strong>bus de contrôle</strong>. Un <strong>bus</strong> ne peut être utilisé que par deux composants (émetteur/récepteur) à la fois !</li>
+<li>Des <mark><strong>dispositifs d’entrées/sorties</strong></mark> permettant d’échanger avec l’extérieur (<strong>lecture</strong> ou <strong>écriture</strong> de <strong>données</strong>).</li>
+</ul>
+<p><strong>Dans le modèle de Von Neumann, le processeur exécute une instruction à la fois, de façon séquentielle.</strong></p>
+</div>
+<details class="abstract">
+<summary>Cycle d'instruction</summary>
+<p>Le <strong>cycle d’une instruction</strong> est constitué d’un <strong>cycle de recherche</strong> puis d’un <strong>cycle d’exécution</strong> qui mettent en jeu des <strong>échanges</strong> entre la <strong>mémoire</strong> et l’<strong>Unité Centrale de Traitement</strong> (qui contient l'<strong>ALU</strong> et les <strong>registres</strong>), synchronisés par des <strong>signaux périodiques</strong> émis par une <strong>horloge à quartz</strong>. Chaque <strong>cycle</strong> peut couvrir plusieurs <strong>cycles d’horloge</strong>.</p>
+<p><figure markdown>
+<img alt="Cycle d'instruction" src="../images/cycle_instruction.png">
+<figcaption><ins>Source</ins> : Architecture et technologie des ordinateurs d’Emmanuel Lazard</figcaption>
+</figure></p>
+<p>Le <strong>cycle d'instruction</strong> dans une <strong>architecture de Von Neumann</strong> suit généralement ces étapes :</p>
+<ol>
+<li><strong>Fetch</strong> (Chargement) : L'<strong>unité de contrôle</strong> (<em>Control Unit</em>) extrait l'instruction depuis la <strong>mémoire principale</strong> (<em>RAM</em>) à l'adresse spécifiée par le <strong>compteur de programme</strong> (Program Counter, registre <strong>PC</strong>), puis la stocke dans le <strong>registre d'instruction</strong>.
+<img alt="Cycle Fetch" src="../images/fetch.png"></li>
+<li><strong>Decode</strong> (Décodage) : L'<strong>unité de contrôle interprète l'instruction</strong> extraite pour comprendre <strong>quelle opération</strong> doit être effectuée et sur <strong>quelles données</strong>.</li>
+<li><strong>Execute</strong> (Exécution) : L'<strong>unité de traitement</strong> (<em>ALU - Arithmetic Logic Unit</em>) effectue l'opération demandée, que ce soit une opération <strong>arithmétique</strong>, <strong>logique</strong> ou de <strong>transfert de données</strong>.</li>
+<li><strong>Write Back</strong> (Écriture) : Les <strong>résultats</strong> de l'<strong>opération</strong> peuvent être <strong>stockés</strong> dans un <strong>registre</strong> ou dans la <strong>mémoire</strong>, en fonction de l'<strong>instruction</strong>.</li>
+<li><strong>Increment</strong> (Incrémentation) : Le <strong>compteur de programme</strong> (registre <strong>PC</strong>) est généralement <strong>incrémenté</strong> pour <strong>pointer vers l'instruction suivante</strong>.</li>
+</ol>
+<p>Ce cycle se répète continuellement, traitant chaque instruction séquentiellement. Chaque étape du cycle est synchronisée par l'<strong>horloge du système</strong>. L'architecture de Von Neumann permet à l'ordinateur de charger des instructions depuis la mémoire, de les décoder, de les exécuter et d'écrire les résultats, suivant ainsi un <strong>modèle séquentiel</strong>. Cette architecture est fondamentale dans la conception des processeurs modernes.</p>
+</details>
+<details class="abstract">
+<summary>Registres PC et IR</summary>
+<p>Le <strong>compteur de programme</strong> (<strong>PC</strong> pour <em>Program counter</em>) contient en permanence l'<strong>adresse de la prochaine instruction à exécuter</strong>.</p>
+<p>À chaque <strong>début de cycle d'exécution</strong>, l'<strong>instruction à exécuter</strong> est <strong>chargée</strong> dans le <strong>registre IR</strong> à partir de l'<strong>adresse contenue dans le registre PC</strong>.</p>
+<p>Ensuite, le <strong>registre PC est incrémenté</strong> pour <strong>pointer</strong> sur l'<strong>instruction suivante</strong>.</p>
+<p>Le <strong>registre d'instruction</strong> (<strong>IR</strong>) contient l'<strong>instruction en cours d'exécution</strong>.</p>
+<p>Ce <strong>registre</strong> est <strong>chargé</strong> au <strong>début du cycle d'exécution</strong> par l'<strong>instruction</strong> dont l'<strong>adresse</strong> est donnée par le <strong>compteur de programme PC</strong>.</p>
+</details>
+<h3 id="la-memoire">La mémoire<a class="headerlink" href="#la-memoire" title="Permanent link">¶</a></h3>
+<p>La <strong>mémoire</strong> joue un rôle essentiel dans le <strong>stockage de données et de programmes</strong>. Elle se subdivise en <strong>deux catégories</strong> distinctes :</p>
+<ul>
+<li>La <strong>mémoire volatile</strong>, qui héberge les <strong>programmes</strong> et les <strong>données en cours d'utilisation</strong> (on parle de <em>processus</em> pour les programmes en cours d'utilisation). Cette mémoire perd son contenu dès qu'elle n'est plus <strong>alimentée</strong> en énergie.</li>
+<li>La <strong>mémoire permanente</strong>, qui renferme les <strong>programmes</strong> et les <strong>données fondamentaux</strong> de la <strong>machine</strong>. Contrairement à la <strong>mémoire volatile</strong>, cette mémoire <strong>conserve son contenu</strong> même en cas de mise <strong>hors tension</strong>.</li>
+</ul>
+<p>La plupart des mémoires organisent les informations par <strong>adresses</strong>, chaque <strong>octet</strong> étant accessible via une <strong>adresse unique</strong>.</p>
+<p>Pour des considérations économiques, les <strong>mémoires</strong> sont généralement regroupées en plusieurs catégories distinctes.</p>
+<h4 id="une-memoire-de-masse-ou-memoire-de-stockage">Une mémoire de masse ou mémoire de stockage<a class="headerlink" href="#une-memoire-de-masse-ou-memoire-de-stockage" title="Permanent link">¶</a></h4>
+<figure>
+<p><img alt="HDD" src="../images/HDD.jpg" width="200"></p>
+<figcaption>HDD</figcaption>
+</figure>
+<figure>
+<p><img alt="SSD" src="../images/SSD.jpg" width="200"></p>
+<figcaption>SSD</figcaption>
+</figure>
+<p>Elle permet de stocker à <strong>long terme</strong> des <strong>grandes quantités d’informations</strong>. Les technologies les plus courantes de mémoires de masse sont <strong>électromécaniques</strong> (<strong>disques durs – HDD</strong>) ou à semi-conducteurs (<strong>SSD</strong>, <strong>clefs USB</strong>, …), elles visent à obtenir une capacité de stockage élevée à faible coût et ont généralement une vitesse inférieure aux autres mémoires.</p>
+<p><em>ordres de grandeur</em> :</p>
+<ul>
+<li><strong>capacité</strong> : jusqu’à 10 To (HDD)</li>
+<li><strong>vitesse</strong> : jusqu’à 500 Mo/s (SSD)</li>
+</ul>
+<h4 id="la-memoire-vive-ou-ram">La mémoire vive, ou RAM<a class="headerlink" href="#la-memoire-vive-ou-ram" title="Permanent link">¶</a></h4>
+<figure>
+<p><img alt="SSD" src="../images/DRAM_DDR2_512.jpg" width="300"></p>
+<figcaption>SDRAM</figcaption>
+</figure>
+<p>La <strong>mémoire vive</strong>, également connue sous le nom de <strong>RAM</strong> (<em>Random Access Memory</em>), constitue l'<strong>espace principal de stockage du microprocesseur</strong>. Cependant, il s'agit d'une <strong>mémoire volatile</strong>, ce qui signifie que son contenu est <strong>perdu</strong> lorsque <strong>l'alimentation est coupée</strong>. Elle est nommée <strong>RAM</strong> en raison de son <strong>accès rapide aux données, indépendamment de leur emplacement</strong>.</p>
+<p><em>Ordres de grandeur</em> :</p>
+<ul>
+<li><strong>Capacité</strong> : jusqu'à 32 Go</li>
+<li><strong>Vitesse</strong> : jusqu'à 2 Go/s</li>
+</ul>
+<h4 id="une-memoire-cache">Une mémoire cache<a class="headerlink" href="#une-memoire-cache" title="Permanent link">¶</a></h4>
+<figure>
+<p><img alt="Différents niveaux de mémoire" src="../images/Mem_hierarchy.jpg" width="400"></p>
+<figcaption>Différents niveaux de mémoire</figcaption>
+</figure>
+<details class="tip">
+<summary>Explication de ce schéma</summary>
+<p><strong>Mot</strong> :</p>
+<ul>
+<li>Le terme "mot" fait généralement référence à la plus petite unité de données que le processeur peut manipuler en une seule opération. La taille d'un mot peut varier en fonction de l'architecture du processeur, mais c'est souvent la taille des registres du processeur.</li>
+</ul>
+<p><strong>L1 et L2</strong> :</p>
+<ul>
+<li><strong>"L1"</strong> et <strong>"L2"</strong> font référence aux niveaux de mémoire cache dans la <strong>hiérarchie de mémoire d'un processeur</strong>.<ul>
+<li><strong>L1 (Level 1)</strong> : C'est la première couche de mémoire cache, généralement intégrée directement dans le processeur. Elle est de petite capacité, mais elle offre une très haute vitesse d'accès. Le terme "ligne" entre "CPU" et "L1" pourrait indiquer le flux direct de données entre le processeur (CPU) et la mémoire cache de niveau 1.</li>
+<li><strong>L2 (Level 2)</strong> : C'est la deuxième couche de mémoire cache, située généralement à proximité du processeur mais avec une capacité plus grande que la L1. La connexion entre L1 et L2 peut être représentée par le terme "ligne" et indique le transfert de données entre la mémoire cache de niveau 1 et la mémoire cache de niveau 2.</li>
+</ul>
+</li>
+</ul>
+</details>
+<p>Bien que la <strong>RAM</strong> soit <strong>rapide</strong>, le <strong>microprocesseur</strong> l'est <strong>encore plus</strong> ! Pour éviter de limiter ses performances en le contraignant à attendre (connu sous le terme de goulot d'étranglement), on utilise des <strong>unités de mémoire plus petites</strong>, mais <strong>considérablement plus rapides</strong>, bien que plus <strong>coûteuses</strong>. Les différentes niveaux de mémoire cache servent à stocker temporairement des informations fréquemment consultées. Elles se distinguent par leur vitesse élevée et leur coût important pour une capacité de stockage limitée.</p>
+<p><em>Ordres de grandeur</em> :</p>
+<ul>
+<li><strong>Capacité</strong> : quelques ko (L1) à quelques Mo (L2)</li>
+<li><strong>Vitesse</strong> : jusqu'à 5 Go/s</li>
+</ul>
+<h4 id="le-registre-de-processeur">Le registre de processeur<a class="headerlink" href="#le-registre-de-processeur" title="Permanent link">¶</a></h4>
+<p>Intégré directement dans le <strong>processeur</strong>, le <strong>registre de processeur</strong> représente un type de mémoire <strong>extrêmement rapide mais également coûteux</strong>. En conséquence, il est réservé à une quantité <strong>très restreinte</strong> de données.</p>
+<p><em>Ordres de grandeur</em> :</p>
+<ul>
+<li><strong>Capacité</strong> : quelques dizaines d'octets</li>
+<li><strong>Vitesse</strong> : jusqu'à 30 Go/s</li>
+</ul>
+<h3 id="les-bus">Les bus<a class="headerlink" href="#les-bus" title="Permanent link">¶</a></h3>
+<p>Afin de faciliter la circulation des données entre les divers composants d'un ordinateur tels que la mémoire, le CPU et les entrées/sorties, des systèmes de communication appelés bus sont utilisés. Ces bus se déclinent en trois catégories principales :</p>
+<ul>
+<li>Le <strong>bus d'adresse</strong> a pour fonction de transmettre des adresses, telles que l'adresse d'une donnée à extraire de la mémoire.</li>
+<li>Le <strong>bus de données</strong> est dédié à la transmission des données elles-mêmes.</li>
+<li>Le <strong>bus de contrôle</strong> a pour rôle de définir le type d'action à entreprendre, par exemple, l'écriture ou la lecture d'une donnée en mémoire.</li>
+</ul>
+<figure>
+<p><img alt="Architecture avec les bus" src="../images/Architecture_Von_Neumann_avec_les_bus.png" width="450"></p>
+<figcaption><u>Source</u> : <a href="https://info.blaisepascal.fr/nsi-modele-darchitecture-de-von-neumann/#Les_bus" target="_blank">info.blaisepascal.fr</a></figcaption>
+</figure>
+<h3 id="un-petit-qcm">Un petit QCM<a class="headerlink" href="#un-petit-qcm" title="Permanent link">¶</a></h3>
+<details class="tip">
+<summary>QCM d'entraînement</summary>
+<p>Qu'est-ce qui caractérise l'architecture de Von Neumann ?</p>
+<ol>
+<li>La présence d'une unité arithmétique et logique (UAL)</li>
+<li>La séparation de la mémoire et du processeur</li>
+<li>L'utilisation exclusive de la mémoire permanente</li>
+</ol>
+<p>Quelle est la fonction principale de l'unité de commande dans l'architecture de Von Neumann ?</p>
+<ol>
+<li>Effectuer des opérations arithmétiques</li>
+<li>Contrôler le flux d'instructions</li>
+<li>Stocker des données à long terme</li>
+</ol>
+<p>Quel composant est responsable de l'exécution des opérations arithmétiques dans un ordinateur de type Von Neumann ?</p>
+<ol>
+<li>Unité de commande</li>
+<li>Unité arithmétique et logique (UAL)</li>
+<li>Mémoire vive (RAM)</li>
+</ol>
+<p>Quelle est la caractéristique principale de la mémoire volatile dans l'architecture de Von Neumann ?</p>
+<ol>
+<li>Elle conserve son contenu après la mise hors tension.</li>
+<li>Elle est utilisée pour le stockage à long terme.</li>
+<li>Son contenu est perdu lorsqu'elle n'est plus alimentée.</li>
+</ol>
+<p>Quel est le rôle du bus d'adresse dans un système Von Neumann ?</p>
+<ol>
+<li>Faire circuler des adresses vers la mémoire</li>
+<li>Faire circuler des données</li>
+<li>Contrôler le type d'action à effectuer</li>
+</ol>
+<p>Pourquoi utilise-t-on des mémoires caches dans l'architecture de Von Neumann ?</p>
+<ol>
+<li>Pour augmenter la capacité de stockage</li>
+<li>Pour accélérer l'accès aux données fréquemment utilisées</li>
+<li>Pour réduire le coût global du système</li>
+</ol>
+<p>Qu'est-ce qui caractérise la mémoire permanente dans l'architecture de Von Neumann ?</p>
+<ol>
+<li>Sa volatilité</li>
+<li>Sa capacité à stocker des données de manière permanente</li>
+<li>Sa vitesse élevée d'accès aux données</li>
+</ol>
+<p>Quel est le rôle du registre de processeur dans l'architecture de Von Neumann ?</p>
+<ol>
+<li>Stocker des données de manière permanente</li>
+<li>Effectuer des opérations arithmétiques</li>
+<li>Stocker temporairement des données pour un accès rapide</li>
+</ol>
+<p>Quelle est la base du langage machine utilisé dans l'architecture de Von Neumann ?</p>
+<ol>
+<li>Base 8 (octal)</li>
+<li>Base 10 (décimale)</li>
+<li>Base 2 (binaire)</li>
+</ol>
+<p>Qui est considéré comme le père de l'architecture de Von Neumann ?</p>
+<ol>
+<li>Alan Turing</li>
+<li>John von Neumann</li>
+<li>Charles Babbage</li>
+</ol>
+</details>
+<h2 id="organisation-de-la-memoire">Organisation de la mémoire<a class="headerlink" href="#organisation-de-la-memoire" title="Permanent link">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Exercice - Organisation de la mémoire</p>
+<p>Pour vérifier votre compréhension de l'organisation de la mémoire, vous pouvez réaliser les <strong>exercices 1 et 2</strong> de la <strong>partie 1</strong> du document suivant proposé par le <a href="https://www.nsi-a-feuillade.fr/" target="_blank">lycée Louis Feuillade</a> :</p>
+<p></p><center>
+<a href="../documents/04b-Exercice-simul_archi_von_Neumann673046053.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.9.9 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.76.76 0 0 0-.49-.18M15 10V8h5v2zm-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83zM10 0h2v5h-2zM3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83zm0-11.32 1.41-1.41 2.83 2.83-1.41 1.41zM7 10H2V8h5z"></path></svg></span> Télécharger la fiche d'exercices</a>
+</center>
+</div>
+<h2 id="instructions-machine">Instructions machine<a class="headerlink" href="#instructions-machine" title="Permanent link">¶</a></h2>
+<h3 id="le-transistor">Le transistor<a class="headerlink" href="#le-transistor" title="Permanent link">¶</a></h3>
+<p>Vous l'avez vu, le composant principal des <strong>circuits d'un ordinateur</strong> est le <strong>transistor</strong>.</p>
+<figure>
+<p><img alt="Un transistor" src="../images/transistor.png">
+  </p>
+<figcaption>Un transistor</figcaption>
+</figure>
+<p>Dans un ordinateur, les <strong>transistors</strong> agissent comme des <strong>interrupteurs</strong>, adoptant <strong>deux états fondamentaux</strong> :</p>
+<ul>
+<li>soit le transistor <strong>autorise le passage du courant électrique</strong> (interrupteur <strong>fermé</strong>),</li>
+<li>soit il le <strong>bloque</strong> (interrupteur <strong>ouvert</strong>). </li>
+</ul>
+<p>Cette dichotomie constitue l'essence même du fonctionnement d'un <strong>transistor</strong> dans un ordinateur, ne laissant place qu'à <strong>deux états distincts</strong> : soit le courant <strong>circule</strong> (état "haut"), soit il ne <strong>circule pas</strong> (état "bas"). Ces états sont souvent représentés par les <strong>chiffres</strong> <code>1</code> et <code>0</code> respectivement.<br>
+Ainsi, le fonctionnement de l'ordinateur se résume à l'<strong>utilisation exclusive de deux chiffres</strong>, d'où la raison pour laquelle il opère en <strong>base 2</strong> (<em>système binaire</em>) plutôt qu'en base 10, comme dans la vie quotidienne.</p>
+<p>Le <strong>transistor</strong> joue un rôle central dans la construction des circuits logiques, qui permettent d'effectuer des <strong>opérations booléennes</strong>. Ces opérations sont directement liées à l'<strong>algèbre de Boole</strong>, développée par le mathématicien britannique <strong>George Boole</strong> au <strong>XIXe siècle</strong>.</p>
+<p>Pour en savoir plus sur les circuits logiques, vous pouvez <a href="../circuits/">consulter ce cours</a>.</p>
+<h3 id="le-langage-machine">Le langage machine<a class="headerlink" href="#le-langage-machine" title="Permanent link">¶</a></h3>
+<p>Le <strong>CPU</strong> se consacre exclusivement à la gestion de <strong>grandeurs booléennes</strong>, d'où le codage en <strong>binaire</strong> des instructions qu'il exécute. Le <strong>langage machine</strong> (langage dit de <em>bas niveau</em>) englobe l'ensemble des <strong>instructions directement exécutables par le microprocesseur</strong>. En opposition, les <strong>langages de programmation</strong> évolués (langages dits de <em>haut niveau</em>) tels que <strong>Python</strong> ou <strong>C++</strong>, conçus pour l'interaction humaine, présentent des <strong>instructions complexes</strong> opérant sur des types de données bien plus élaborés que les simples booléens.</p>
+<p>Ainsi, une <strong>conversion du langage évolué</strong> vers le <strong>langage machine</strong> est nécessaire, où chaque instruction évoluée engendre plusieurs <strong>instructions élémentaires</strong> en <strong>langage machine</strong>. Cette transition peut se faire soit par <strong>compilation</strong> (pour l'ensemble du code, c'est le cas avec le langage <strong>C</strong> par exemple), soit par <strong>interprétation</strong> (au fur et à mesure du déroulement du code, c'est le cas avec le langage <strong>Python</strong> par exemple).</p>
+<div class="admonition abstract">
+<p class="admonition-title">Instruction machine</p>
+<p>Une <strong>instruction machine</strong>, essentiellement une <strong>chaîne binaire</strong> de <strong>32 bits</strong>, se compose principalement de deux parties :</p>
+<p><img alt="Chaîne binaire d'une instruction machine" src="../images/instr_machine.png"></p>
+<ul>
+<li>le champ <mark>"<strong>code opération</strong>"</mark> spécifiant le <strong>type de traitement</strong> que le processeur doit réaliser (par exemple le code <span class="arithmatex">\(0010~0110\)</span> donne l’ordre au CPU d’effectuer une <strong>multiplication</strong>),</li>
+<li>le champ <mark>"<strong>opérandes</strong>"</mark> indiquant la <strong>nature des données</strong> sur lesquelles l'opération désignée par le "code opération" doit s'appliquer.</li>
+</ul>
+<p>Les <strong>instructions machines</strong>, qualifiées d'<strong>instructions de bas niveau</strong>, englobent :</p>
+<ul>
+<li>des <mark><strong>opérations arithmétiques</strong></mark> (<em>addition</em>, <em>soustraction</em>, <em>multiplication</em>).<br>
+<em>Par exemple, on peut avoir une instruction qui ressemble à « additionne la valeur contenue dans le registre R1 et le nombre 789 et range le résultat dans le registre R0 ».</em></li>
+<li>des <mark><strong>transferts de données</strong></mark> entre le <strong>CPU</strong> et la <strong>mémoire vive</strong>.<br>
+<em>Par exemple, on peut avoir une instruction qui ressemble à « prendre la valeur située à l’adresse mémoire 487 et la placer dans la registre R2 » ou encore « prendre la valeur située dans le registre R1 et la placer à l’adresse mémoire 512 ».</em></li>
+<li>des <mark><strong>ruptures de séquence</strong></mark>.<br>
+<em>Par exemple : si l’instruction n°1 est située à l’adresse mémoire 343, l’instruction n°2 sera située à l’adresse mémoire 344, l’instruction n°3 sera située à l’adresse mémoire 345…
+Au cours de l’exécution d’un programme, le CPU passe d’une instruction à une autre en passant d’une adresse mémoire à l’adresse mémoire immédiatement supérieure :<br>
+Par exemple, après avoir exécuté l’instruction n°2 (situé à l’adresse mémoire 344), le CPU « va chercher » l’instruction suivante à l’adresse mémoire 344+1=345.<br>
+Les instructions de rupture de séquence d’exécution encore appelées instructions de saut ou de branchement permettent d’interrompre l’ordre initial sous certaines conditions en passant à une instruction située une adresse mémoire donnée.<br>
+Par exemple, dans le cas où à l’adresse mémoire 354 nous avons l’instruction suivante : « si la valeur contenue dans le registre R1 est strictement supérieure à 0 alors exécuter l’instruction située à l’adresse mémoire 4521 ».<br>
+Si la valeur contenue dans le registre R1 est strictement supérieure à 0 alors la prochaine instruction à exécuter est l’adresse mémoire 4521, dans le contraire, la prochaine instruction à exécuter est à l’adresse mémoire 355.</em></li>
+</ul>
+</div>
+<p>Les opérandes peuvent prendre la forme de <strong>valeurs immédiates</strong>, de <strong>registres du CPU</strong>, ou de <strong>données en mémoire vive</strong>.</p>
+<h3 id="assembleur">Assembleur<a class="headerlink" href="#assembleur" title="Permanent link">¶</a></h3>
+<p>L'<strong>assembleur</strong> facilite la lisibilité des <strong>instructions</strong> en remplaçant les <strong>mots binaires</strong> par des <strong>symboles mnémoniques</strong>.</p>
+<p>Par exemple, l'<strong>instruction binaire</strong> suivante :<br>
+</p><center>
+<span class="arithmatex">\(111000101000~0010~0001~000001111101\)</span><br>
+</center>
+signifie :<br>
+<center>
+« additionne le nombre 125 et la valeur située dans le registre R2 , range le résultat dans le registre R1 »<br>
+</center>
+et se traduit en <strong>assembleur</strong> par :<br>
+<center>
+<mark>"ADD R1, R2, #125"</mark><br>
+</center>
+Cela préserve ainsi la représentation binaire sous-jacente tout en simplifiant la programmation.
+<div class="admonition tip">
+<p>Il est à noter que chaque élément de l'instruction occupe une quantité de mémoire bien définie, par exemple, en architecture <strong>ARM</strong> :</p>
+<ul>
+<li>l'instruction <strong>ADD</strong> occupe les <strong>12 bits de poids fort</strong></li>
+<li>les <strong>adresses</strong> des <strong>registres R1 et R2</strong> occupent chacune <strong>4 bits</strong></li>
+<li>l'<strong>opérande #125</strong> occupe les <strong>12 bits de poids faible</strong>.</li>
+</ul>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Instructions de sauts</p>
+<p>Le <a href="https://www.peterhigginson.co.uk/AQA/" target="_blank">simulateur de CPU</a> que nous utiliserons prend en charge les <strong>instructions de saut</strong> suivantes :</p>
+<p>Vous pouvez faire un <strong>saut sans condition</strong> avec l'instruction :</p>
+<ul>
+<li><code>B &lt;label&gt;</code> : pour sauter directement à un <strong>label</strong> indiqué,</li>
+</ul>
+<p>Vous pouvez faire un <strong>saut avec condition</strong>, après avoir exécuté une instruction de <strong>comparaison</strong> <code>CMP</code> :</p>
+<ul>
+<li><code>BEQ &lt;label&gt;</code> : sauter au <strong>label</strong> indiqué si <strong>les deux éléments comparés sont égaux</strong> (<em>EQ</em> = <em>Equal</em>),</li>
+<li><code>BNE &lt;label&gt;</code> : sauter au <strong>label</strong> indiqué si <strong>les deux éléments comparés ne sont pas égaux</strong> (<em>NE</em> = <em>Not Equal</em>),</li>
+<li><code>BGT &lt;label&gt;</code> : sauter au <strong>label</strong> indiqué si <strong>le premier élément est plus grand que le deuxième</strong> (<em>GT</em> = <em>Greater Than</em>),</li>
+<li><code>BLT &lt;label&gt;</code> : sauter au <strong>label</strong> indiqué si <strong>le premier élément est plus petit que le deuxième</strong> (<em>LT</em> = <em>Less Than</em>).</li>
+</ul>
+<p>Il existe également d'<strong>autres instructions conditionnelles</strong>, comme <code>BGE</code> (<em>Greater or Equal</em> = <em>plus grand ou égal</em>) ou <code>BLE</code> (<em>Less or Equal</em> = <em>plus petit ou égal</em>), mais celles-ci ne sont pas prises en charge dans ce simulateur.</p>
+<p>Voici un <strong>exemple d'utilisation de sauts</strong> pour créer une <strong>boucle</strong> qui itère <strong>tant que</strong> la <strong>valeur</strong> du <strong>registre</strong> <code>R0</code> est <strong>inférieure à 5</strong> :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>    MOV R0, #1
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>encore:
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    CMP R0, #5
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    BEQ fin
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    ADD R0, R0, #1
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    B encore
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>fin:
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    HALT
+</span></code></pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">TP - Programmer en assembleur</p>
+<p>Pour s'entraîner à la <strong>programmation en assembleur</strong>, on travaillera avec un <a href="https://www.peterhigginson.co.uk/AQA/" target="_blank">simulateur de CPU basé sur l'architecture de Von Neumann de Peter Higginson</a>.</p>
+<p>Suivez les <strong>étapes</strong> suivantes :</p>
+<ol>
+<li><a href="https://info.blaisepascal.fr/nsi-simulateur-de-cpu/" target="_blank">Découvrir le simulateur</a> - lisez attentivement la page et réalisez les quelques tâches à effectuer.</li>
+<li><a href="../documents/TPAssembleurAQAEleve.odt" target="_blank">Télécharger le TP</a> - complétez directement le fichier à l'aide du logiciel <strong>LibreOffice Writer</strong>.</li>
+</ol>
+<p>Ce TP est proposé par le <a href="https://sites.google.com/view/nsi-toulouse-centre" target="_blank">lycée Ozenne</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Autres exercices - Programmation en assembleur</p>
+<p>Pour vous entraîner davantage sur la <strong>programmation en assembleur</strong>, vous pouvez également réaliser les <strong>exercices</strong> de la <strong>partie 2</strong> du document suivant proposé par le <a href="https://www.nsi-a-feuillade.fr/" target="_blank">lycée Louis Feuillade</a> :</p>
+<p></p><center>
+<a href="../documents/04b-Exercice-simul_archi_von_Neumann673046053.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.9.9 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.76.76 0 0 0-.49-.18M15 10V8h5v2zm-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83zM10 0h2v5h-2zM3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83zm0-11.32 1.41-1.41 2.83 2.83-1.41 1.41zM7 10H2V8h5z"></path></svg></span> Télécharger la fiche d'exercices</a>
+</center>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+<script src="../../../pyodide-mkdocs/ide.js"></script> 
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - Erwan Demerville
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../js/open_in_new_tab.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,2034 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/archi/os/">
+      
+      
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Systèmes d'exploitation - Numérique et sciences informatiques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+
+      
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
+<!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.asm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-md5"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script src="../../../pyodide-mkdocs/utils.js"></script> 
+<script src="../../../pyodide-mkdocs/interpreter.js"></script> 
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+<link rel="stylesheet" href="../../../pyodide-mkdocs/pyoditeur.css">
+
+
+<input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
+
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="my_theme" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#systemes-dexploitation" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numérique et sciences informatiques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Systèmes d'exploitation
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="my_theme" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer en mode nuit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode nuit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Passer en mode jour"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode jour" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Accueil
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Première
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../terminale/" class="md-tabs__link">
+          
+  
+    
+  
+  Terminale
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../rendus/" class="md-tabs__link">
+        
+  
+    
+  
+  Rendu des travaux
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Numérique et sciences informatiques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Accueil
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Première
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Première
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../bases_python/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Les bases de Python
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Les bases de Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction au Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/thonny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Découverte de l'IDE Thonny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/chassetresor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jeu - Chasse au trésor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/exercices_fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices sur les fonctions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/exercices_while/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices sur les boucles while
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/notebooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notebooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../representation_donnees/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Représentation des données
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Représentation des données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../representation_donnees/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../representation_donnees/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices et notebooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Architecture matérielle
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture matérielle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à la logique booléenne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonctions et expressions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../circuits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les circuits logiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Terminale
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Terminale
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/modularite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Modularité
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Modularité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/modularite/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité - Utilisation d'une API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/modularite/modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion de modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/mise_au_point/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Mise au point de programmes
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mise au point de programmes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/preliminaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité préliminaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours et exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/activite_finale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité finale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/ds1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Corrigé DS n°1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/poo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Programmation orientée objet
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Programmation orientée objet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/preliminaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité d'introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/pokemon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP - Un jeu Pokémon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/recursivite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Récursivité
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Récursivité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recursivite/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recursivite/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recursivite/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/listes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Listes chaînées
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Listes chaînées
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/listes/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/listes/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/e3c/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Sujet e3c
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Sujet e3c
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/entrainement_python/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Entraînement Python
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            Entraînement Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rendus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendu des travaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#une-video-dintroduction" class="md-nav__link">
+    <span class="md-ellipsis">
+      Une vidéo d'introduction
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#principes-generaux-et-composants-logiciels" class="md-nav__link">
+    <span class="md-ellipsis">
+      Principes généraux et composants logiciels
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#historique-des-systemes-dexploitation" class="md-nav__link">
+    <span class="md-ellipsis">
+      Historique des systèmes d'exploitation
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#systemes-libres-vs-proprietaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      Systèmes libres vs propriétaires
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tp-les-commandes-linux" class="md-nav__link">
+    <span class="md-ellipsis">
+      TP - Les commandes Linux
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+
+<div><h1 id="systemes-dexploitation">Systèmes d'exploitation<a class="headerlink" href="#systemes-dexploitation" title="Permanent link">¶</a></h1>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">¶</a></h2>
+<p>Examinons ensemble le petit script Python ci-dessous :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">getsize</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="kn">from</span> <span class="nn">tkinter.filedialog</span> <span class="kn">import</span> <span class="n">askopenfilename</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="n">fichier</span> <span class="o">=</span> <span class="n">askopenfilename</span><span class="p">()</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="k">if</span> <span class="n">fichier</span><span class="p">:</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="n">fichier</span><span class="p">,</span> <span class="s2">"fait"</span><span class="p">,</span> <span class="nb">str</span><span class="p">(</span><span class="n">getsize</span><span class="p">(</span><span class="n">fichier</span><span class="p">)),</span> <span class="s2">"octets"</span><span class="p">)</span>
+</span></code></pre></div>
+<p>La fonction <code>askopenfilename()</code> génère une <strong>boîte de dialogue</strong> pour <strong>sélectionner un fichier</strong>. Si l'utilisateur <strong>annule l'opération</strong> en <strong>fermant la boîte de dialogue</strong>, la fonction <strong>renvoie une chaîne de caractères vide</strong>. Autrement, elle <strong>renvoie</strong> une <strong>chaîne de caractères</strong> contenant le <strong>chemin du fichier</strong>, comprenant le <strong>nom du fichier</strong> et <strong>tous les répertoires nécessaires pour y accéder</strong>.</p>
+<p>Une fois que le nom du fichier est obtenu, le programme <strong>vérifie qu'il n'est pas vide</strong>.<br>
+Dans ce cas, il <strong>affiche</strong> le <strong>nom du fichier</strong> ainsi que <strong>sa taille en octets</strong>, obtenue grâce à la fonction <code>getsize()</code> de la bibliothèque standard Python. Le programme se termine lorsque l'utilisateur <strong>ferme la fenêtre</strong> créée par l'appel à <code>askopenfilename()</code>.</p>
+<div class="admonition success">
+<p>Ce <strong>script</strong> met en lumière <strong>différentes fonctionnalités fournies par un système d'exploitation</strong> :</p>
+<ul>
+<li>Tout d'abord, <strong>lors de l'exécution du programme</strong>, <strong>le reste du système continue de fonctionner sans interruption</strong>, ce qui reste transparent à la fois pour l'utilisateur (le programme s'ajoute à la liste des programmes en cours d'exécution) et pour le programmeur (le code est une séquence d'instructions indépendante des autres programmes en cours). Ensuite, on observe que <strong>le nombre potentiel de programmes en cours d'exécution</strong> peut <strong>dépasser le nombre de processeurs de la machine</strong>, suggérant que quelque chose permet à tous les programmes de fonctionner en parallèle sans intervention du programmeur.</li>
+<li>Deuxièmement, le programme fonctionne correctement <strong>indépendamment de l'emplacement du fichier choisi</strong> (disque dur, partage réseau, clé USB). Le programmeur n'a pas besoin d'écrire un code spécifique pour gérer <strong>différents périphériques de stockage</strong>. De plus, le programme s'exécute <strong>de manière cohérente</strong>, quelle que soit <strong>la taille de l'écran</strong> ou le <strong>dispositif de pointage utilisé</strong> (pavé tactile ou souris).</li>
+<li>Enfin, quel que soit la taille du fichier, le <strong>temps d'exécution du programme</strong>, une fois le <strong>fichier choisi</strong>, reste <strong>constant</strong>. Notamment, la <strong>demande de la taille</strong> d'un <strong>grand fichier</strong> est <strong>aussi rapide que pour un fichier plus petit</strong>. De plus, le programme peut répondre même pour des fichiers très simples (comme des fichiers texte) qui ne contiennent pas leur taille comme information. Ces observations suggèrent que "le système" maintient des <strong>méta-données associées aux fichiers</strong>, telles que <strong>leur taille</strong> ou <strong>leur type</strong>.</li>
+</ul>
+</div>
+<h2 id="une-video-dintroduction">Une vidéo d'introduction<a class="headerlink" href="#une-video-dintroduction" title="Permanent link">¶</a></h2>
+<p>Voici une petite <strong>vidéo d'introduction aux systèmes d'exploitation</strong> :</p>
+<p></p><center>
+<a href="https://www.youtube.com/watch?v=4OhUDAtmAUo" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559"></path></svg></span> Visionner la vidéo</a>
+</center>
+<div class="admonition success">
+<p>Pour faire l'interface entre le ma<strong>t</strong>ériel et l'<strong>utilisateur</strong>, un <strong>ensemble de programmes</strong>, appelé <strong>système d'exploitation</strong> (<strong>SE</strong> ou <strong>OS</strong> en anglais pour <em>Operating System</em>) "tournent" donc en permanence sur un ordinateur de façon à faciliter son utilisation.</p>
+<p>Les <strong>utilisateurs</strong> utilisent les <strong>applications</strong>, qui demandent des <strong>ressources</strong> au <strong>système d’exploitation</strong>, qui <strong>pilote le matériel informatique</strong>, le partageant entre <strong>différentes applications</strong> et <strong>différents utilisateurs</strong>.</p>
+<p>Le système d'exploitation étant <strong>proches de la machine</strong>, les <strong>plus anciens</strong> étaient donc <strong>écrits en assembleur</strong>; actuellement, ils sont généralement écrits <strong>dans un langage à mi-chemin entre le bas niveau et le haut niveau</strong>, comme le <strong>langage C</strong>.</p>
+</div>
+<h2 id="principes-generaux-et-composants-logiciels">Principes généraux et composants logiciels<a class="headerlink" href="#principes-generaux-et-composants-logiciels" title="Permanent link">¶</a></h2>
+<p>Un <strong>système d'exploitation</strong> est un <strong>programme</strong> ou un <strong>ensemble de programmes</strong> conçus pour <strong>gérer les ressources matérielles et logicielles d'un ordinateur</strong>. Son rôle principal est de <strong>fournir</strong> un <strong>accès unifié</strong> aux <strong>ressources de la machine</strong> pour les programmes utilisateurs. Le schéma ci-dessous illustre la position du système d'exploitation et ses diverses interactions :</p>
+<p><img alt="Schéma OS" src="../images/schema_os.png"></p>
+<p>L'<strong>utilisateur</strong> interagit avec des <strong>programmes</strong> tels que des <em>jeux</em>, un <em>navigateur web</em> ou un <em>logiciel de traitement de texte</em>. Ces <strong>programmes</strong> nécessitent l'<strong>utilisation des ressources matérielles</strong> pour effectuer leurs tâches, comme la lecture ou la sauvegarde de fichiers, l'affichage d'images à l'écran, ou la récupération des caractères saisis au clavier ou de la position du pointeur de la souris. Le <strong>système d'exploitation</strong> offre un <strong>ensemble de fonctions primitives</strong> permettant cette <strong>interaction avec le matériel</strong>.
+Le système d'exploitation permet à l'utilisateur de s'<strong>abstraire du matériel</strong>, en fournissant des <strong>services communs</strong> pour <strong>tous les matériels</strong>.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Principaux éléments d'un SE</p>
+<p>Un système d’exploitation est constitué de différents éléments :</p>
+<ol>
+<li>Le <mark><strong>noyau</strong></mark> : C’est le <strong>cœur du système</strong>. Il est lui-même constitué de <strong>plusieurs composants logiciels</strong> :<ul>
+<li>L'<mark><strong>ordonnanceur</strong></mark>, responsable de la décision quant à quel <strong>programme</strong> doit <strong>s'exécuter à un moment donné</strong> sur le <strong>processeur</strong>.</li>
+<li>Le <mark><strong>gestionnaire de mémoire</strong></mark>, chargé de <strong>répartir la mémoire vive</strong> entre les <strong>différents programmes en cours d'exécution</strong>.</li>
+<li>Les différents <mark><strong>systèmes de fichiers</strong></mark>, déterminant la <strong>manière</strong> de <strong>stocker les fichiers</strong> sur des <strong>supports physiques</strong> tels que <em>disques</em>, <em>clés USB</em>, <em>disques optiques</em>, etc.</li>
+<li>La <mark><strong>pile réseau</strong></mark>, implémentant, entre autres, des <strong>protocoles</strong> tels que <strong>TCP/IP</strong> (on en parlera lors du chapitre dédié aux réseaux informatiques).</li>
+<li>Les <mark><strong>pilotes de périphériques</strong></mark>, également appelés "drivers" en anglais, ayant pour objectif de <strong>gérer</strong> les <strong>dispositifs matériels</strong> tels que <strong>cartes graphiques</strong>, <strong>disques durs</strong>, <strong>claviers</strong>, etc.</li>
+</ul>
+</li>
+<li>L'<mark><strong>invite de commande</strong></mark> : C’est un moyen d’accéder directement à <strong>certaines fonctions du système d’exploitation</strong> ou à sa <strong>configuration</strong>. Il existe plusieurs variantes de l’<strong>invite de commande</strong> (ou <em>Shell</em> en anglais), par exemple <code>bash</code>, <code>ksh</code> et <code>zsh</code> sur les systèmes Linux.</li>
+<li>L'<strong><mark>interface graphique</mark></strong> : L’interface graphique est une <strong>IHM</strong> (<strong>I</strong>nterface <strong>H</strong>omme <strong>M</strong>achine) permettant d’interagir avec le système d’exploitation et les applications dans un environnement graphique.</li>
+</ol>
+</div>
+<p>Voici une vidéo proposée par Lumni sur le <strong>fonctionnement d'un système d'exploitation</strong> :</p>
+<p></p><center>
+<a href="http://www.lumni.fr/video/comprendre-ce-qu-est-un-systeme-d-exploitation" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559"></path></svg></span> Visionner la vidéo</a>
+</center>
+<h2 id="historique-des-systemes-dexploitation">Historique des systèmes d'exploitation<a class="headerlink" href="#historique-des-systemes-dexploitation" title="Permanent link">¶</a></h2>
+<ul>
+<li><strong>Avant 1950</strong> : Les premiers calculateurs, comme l'ENIAC (1945), ne disposent <strong>pas de système d'exploitation</strong>. Ils exécutent <strong>un seul programme à la fois</strong>, saisi en <strong>recâblant physiquement</strong> l'ordinateur via la connexion de câbles entre différentes sections effectuant des calculs élémentaires.</li>
+<li><strong>1956</strong> : <strong>GM-NAA I/O</strong> est l'un des premiers systèmes d'exploitation. Ce programme opère sur le calculateur <strong>IBM 704</strong> et a pour rôle d'exécuter séquentiellement des programmes utilisateurs stockés sur des cartes perforées. Il propose également des <strong>routines</strong> pour accéder facilement aux <strong>périphériques d'entrée/sortie</strong>.</li>
+<li><strong>1967</strong> : <strong>MultICS</strong> (Multiplexed Information and Computing Service), développé au centre de recherche de  <strong>Bell Labs</strong> et au <strong>MIT</strong>, est l'un des premiers <strong>systèmes d'exploitation à temps partagé</strong>, permettant à <strong>plusieurs programmes</strong> de s'<strong>exécuter simultanément</strong>. Il influence considérablement les systèmes d'exploitation modernes.</li>
+<li><strong>1970-1990</strong> : <mark><strong>Unix</strong></mark>, créé par l'entreprise <strong>AT&amp;T</strong> et développé à <strong>Bell Labs</strong>, est l'un des <strong>premiers systèmes d'exploitation multitâches et multi-utilisateurs</strong>. Ses premières versions sont écrites en <strong>assembleur</strong>, puis en <strong>langage C</strong>, créé à cet effet. Une <strong>variante d'Unix</strong>, la <em>Berkeley Software Distribution</em> (<em>BSD</em>), voit le jour et prospère entre <strong>1978</strong> et <strong>1990</strong>.</li>
+<li><strong>1960-1980</strong> : Les ordinateurs <strong>IBM</strong> utilisent divers systèmes d'exploitation, différents d'<strong>Unix</strong>. À partir des années <strong>1980</strong>, ils adoptent notamment le système <mark><strong>MS-DOS</strong></mark> de <strong>Microsoft</strong>, conçu pour fonctionner exclusivement sur le processeur <strong>x86</strong> d'<strong>Intel</strong>.</li>
+<li><strong>1980-1990</strong> : Le succès de l'<strong>architecture x86</strong> d'<strong>Intel</strong> et de l'<strong>ordinateur personnel</strong> (<strong>PC</strong>) établit <strong>MS-DOS</strong> comme le <strong>principal système d'exploitation pour les particuliers</strong> et de <strong>nombreux secteurs d'activité</strong>.</li>
+<li><strong>1990-présent</strong> : <strong>Microsoft</strong> développe un <strong>système graphique au-dessus de MS-DOS</strong>, qui évolue ensuite en un <strong>système d'exploitation indépendant</strong>, le système <mark><strong>Windows</strong></mark>. Il devient le système le plus largement utilisé sur les <strong>PC</strong> après <strong>MS-DOS</strong>.</li>
+<li><strong>1984-2001</strong> : En parallèle, Apple commercialise des ordinateurs personnels basés sur l'architecture <strong>Motorola</strong> puis <strong>PowerPC</strong>. Ces machines fonctionnent avec le système d'exploitation <mark><strong>Mac OS</strong></mark>, un système graphique.</li>
+<li><strong>1991</strong> : <strong>Linus Torvalds</strong>, étudiant à l'Université d'Helsinki, souhaite modifier le système <strong>MINIX</strong> (variante d'Unix pour processeurs Intel, développée par Andrew S. Tanenbaum). Ne pouvant diffuser les modifications en raison de la licence logicielle, Torvalds crée son propre système d'exploitation, <mark><strong>Linux</strong></mark>, qu'il diffuse sous la <strong>licence libre GNU GPL</strong>.</li>
+<li><strong>1991-présent</strong> : <strong>Linux</strong> connaît une adoption rapide en raison de sa diffusion sous <strong>licence libre</strong>, devenant un système d'exploitation courant pour <strong>serveurs</strong>, <strong>calculs</strong> et <strong>stockage</strong>.</li>
+<li><strong>2001-présent</strong> : <strong>Apple</strong> crée <mark><strong>macOS</strong></mark>, basé sur <strong>BSD</strong>, en tant que <strong>nouveau système d'exploitation</strong>.</li>
+<li><strong>2007-présent</strong> : <strong>Apple</strong> adapte le <strong>cœur de macOS</strong> pour les <strong>téléphones portables</strong> et le commercialise.</li>
+<li><strong>2008-présent</strong> : <strong>Google</strong> diffuse <mark><strong>Android</strong></mark>, un système d'exploitation pour téléphones mobiles, utilisant le <strong>noyau Linux</strong> auquel des <strong>programmes</strong> et <strong>bibliothèques non libres</strong> sont ajoutés.</li>
+</ul>
+<h2 id="systemes-libres-vs-proprietaires">Systèmes libres vs propriétaires<a class="headerlink" href="#systemes-libres-vs-proprietaires" title="Permanent link">¶</a></h2>
+<p>Les systèmes d'exploitation <strong>Windows</strong>, <strong>macOS</strong> ou encore <strong>UNIX</strong> sont considérés comme des systèmes <mark><strong>"propriétaires"</strong></mark> (certains utilisent le terme "privateurs"), ce qui signifie qu'ils <strong>ne sont pas libres</strong>. Mais qu'est-ce qu'un <strong>logiciel libre</strong> de manière plus générale ?</p>
+<div class="admonition quote">
+<p>Selon <em>Wikipédia</em>, "Un logiciel libre est un logiciel dont l'utilisation, l'étude, la modification et la duplication par autrui en vue de sa diffusion sont permises, techniquement et légalement, ceci afin de garantir certaines libertés induites, dont le contrôle du programme par l'utilisateur et la possibilité de partage entre individus." Le système UNIX ne respecte pas ces droits (par exemple, le code source d'UNIX n'est pas disponible, rendant l'étude d'UNIX impossible). UNIX est donc considéré comme un système "propriétaire", opposé à un système "libre". Il est important de noter que la notion de logiciel libre ne signifie pas nécessairement qu'il est gratuit, bien que cela soit souvent le cas. La confusion entre "libre" et "gratuit" provient de l'anglais, car "free" signifie à la fois "libre" et "gratuit".</p>
+</div>
+<p>En <strong>1991</strong>, <strong>Linus Torvalds</strong>, un étudiant finlandais, décide de créer un <strong>clone libre d'UNIX</strong> à partir de zéro, car le <strong>code source d'UNIX</strong> n'est <strong>pas public</strong>. Ce <strong>clone d'UNIX</strong> est baptisé <mark><strong>Linux</strong></mark> (Linus + UNIX).</p>
+<p>Voici une courte vidéo racontant l'histoire de Linux avec plus de détails :</p>
+<p></p><center>
+<a href="https://www.youtube.com/watch?v=IquNF_DXcF8" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559"></path></svg></span> Visionner la vidéo</a>
+</center>
+<div class="admonition abstract">
+<p>La différence fondamentale réside dans le fait que le <strong>code</strong> d'un <strong>logiciel libre</strong> (et donc d'un système libre) est <strong>public</strong>. En général, on peut le <strong>modifier</strong> ou <strong>l'utiliser pour créer de nouveaux produits</strong>.</p>
+<p>Les <strong>logiciels propriétaires</strong> sont généralement <strong>non ouverts</strong>, ce qui rend <strong>plus difficile</strong> (voire illégal) leur <strong>modification</strong>.</p>
+<p>Les <strong>logiciels libres</strong> sont souvent <strong>entretenus par la communauté</strong>, mais peuvent également l'être par des <strong>entreprises</strong> les utilisant et ayant <strong>intérêt</strong> à les <strong>maintenir efficaces et utilisés par d'autres</strong>, garantissant ainsi la <strong>disponibilité de développeurs</strong> pour contribuer à leur maintenance.</p>
+<p>Quant aux <strong>logiciels propriétaires</strong>, ils sont principalement <strong>développés</strong> et <strong>mis à jour par l'entreprise qui les possède</strong> et qui peut décider d'<strong>arrêter de les maintenir</strong>.</p>
+<p>Ce sont deux modèles économiques très différents.</p>
+<ul>
+<li><strong>Systèmes libres</strong> : GNU/Linux, GNU/BSD, Android (pas complètement),...</li>
+<li><strong>Systèmes propriétaires</strong> : Windows, macOS, iOS,...</li>
+</ul>
+<p>Les <strong>systèmes d'exploitation libres</strong> ont longtemps été perçus comme destinés uniquement aux "geeks" et autres experts en informatique, difficiles à utiliser par le grand public en raison de leur complexité. Cette réputation est aujourd'hui <strong>complètement injustifiée</strong>, car ils sont devenus aussi <strong>conviviaux</strong> que les systèmes propriétaires "classiques".</p>
+</div>
+<h2 id="tp-les-commandes-linux">TP - Les commandes Linux<a class="headerlink" href="#tp-les-commandes-linux" title="Permanent link">¶</a></h2>
+<div class="admonition success">
+<p class="admonition-title">À télécharger</p>
+<p>Téléchargez les <strong>trois fichiers suivants</strong> :</p>
+<ul>
+<li><a href="../documents/activite_commandes.odt" target="_blank">activite_commandes.odt</a> - L'énoncé de l'activité, à compléter directement dans le fichier.</li>
+<li><a href="../documents/commandes_linux.pdf" target="_blank">commandes_linux.pdf</a> - Récapitulatif des commandes Linux essentielles.</li>
+<li><a href="https://mega.nz/file/GhRw3ZSR#CXElAdjtMAMSTqKaoiXndk9yCwEo7IMIpeTnHOGwpj0" target="_blank">etat_machine.bin</a> - Une sauvegarde d'état de la machine que vous allez utiliser.</li>
+</ul>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+<script src="../../../pyodide-mkdocs/ide.js"></script> 
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - Erwan Demerville
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../js/open_in_new_tab.js"></script>
+      
+    
+  </body>
+</html>
