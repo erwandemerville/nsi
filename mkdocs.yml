@@ -94,6 +94,9 @@ nav:
       - terminale/listes/index.md
       - Cours: terminale/listes/cours.md
       - Exercices: terminale/listes/exercices.md
+    - Piles et files:
+      - terminale/pilesfiles/index.md
+      - Cours: terminale/pilesfiles/cours.md
     - Sujet e3c:
       - terminale/e3c/index.md
     - Entraînement Python:
