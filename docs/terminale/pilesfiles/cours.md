@@ -195,8 +195,55 @@ class Pile:
 
     Les **annotations de type** servent juste d'**indications** et n'ont aucun effet sur l'exécution du programme.
 
-??? note "À faire"
-    En reprenant le squelette ci-dessus, écrivez l'implémentation d'une Pile avec une liste Python.
+??? tip "Voir l'implémentation complète"
+    Voici finalement notre implémentation :
+
+    ```python
+    class Pile:
+
+        def __init__(self: 'Pile'):
+            ''' Constructeur de la classe Pile. '''
+
+            self.contenu = []
+
+        # Opérations de base
+
+        def est_vide(self: 'Pile') -> bool:
+            ''' Renvoie True si la pile est vide, False sinon. '''
+
+            return not self.contenu
+
+        def empiler(self: 'Pile', elt: int) -> None:
+            ''' Empile un élément donné au sommet de la pile. '''
+
+            self.contenu.append(elt)
+        
+        def depiler(self: 'Pile') -> None:
+            ''' Dépiler l'élément situé au sommet de la pile NON VIDE. '''
+
+            if self.est_vide():
+                raise ValueError("Erreur : Impossible de dépiler sur une pile vide !")
+            return self.contenu.pop()
+
+        # Autres opérations
+
+        def nombre_elements(self: 'Pile') -> int:
+            ''' Renvoie le nb d'éléments de la pile. '''
+
+            return len(self.contenu)
+
+        def vider(self: 'Pile') -> None:
+            ''' Vide la pile (supprime tous ses éléments). '''
+
+            self.contenu = []
+
+        def obtenir_element(self: 'Pile') -> int:
+            ''' Renvoie l'élément au sommet de la pile NON VIDE SANS LE SUPPRIMER. '''
+
+            if self.est_vide():
+                raise ValueError("Erreur : La pile est vide !")
+            return self.contenu[self.nombre_elements() - 1]
+    ```
 
 ### Avec une liste chaînée
 

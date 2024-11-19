@@ -244,6 +244,7 @@ class Pile:
                 raise ValueError("Erreur : La pile est vide !")
             return self.contenu[self.nombre_elements() - 1]
     ```
+
 ### Avec une liste chaînée
 
 On va cette fois utiliser une **liste chaînée** pour représenter le **contenu** de notre `Pile`.  
