@@ -26,5 +26,6 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Récursivité](terminale/recursivite/index.md) | Utilisation de la récursivité en langage Python. |
 | [Les listes chaînées](terminale/listes/index.md) | Structure de liste chaînée et implémentation. |
 | [Piles et files](terminale/pilesfiles/index.md) | Structures de piles et de files et implémentations. |
+| [Les arbres](terminale/arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |
 | [:material-pencil: Sujet e3c de rentrée corrigé](terminale/e3c/index.md) | Le sujet d'e3c de rentrée avec correction détaillée. |
 | [:material-language-python: Révisions / Entraînement Python](terminale/entrainement_python/index.md) | Quelques exercices pour vous exercer au langage Python. |
