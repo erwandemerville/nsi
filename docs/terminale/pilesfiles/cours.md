@@ -150,7 +150,7 @@ class Pile:
 
         pass
     
-    def depiler(self: 'Pile') -> None:
+    def depiler(self: 'Pile') -> int:
         ''' Dépiler l'élément situé au sommet de la pile NON VIDE. '''
 
         pass
@@ -172,7 +172,6 @@ class Pile:
 
         pass
         
-    '''
 ```
 
 !!! success ""
@@ -218,7 +217,7 @@ class Pile:
 
             self.contenu.append(elt)
         
-        def depiler(self: 'Pile') -> None:
+        def depiler(self: 'Pile') -> int:
             ''' Dépiler l'élément situé au sommet de la pile NON VIDE. '''
 
             if self.est_vide():
@@ -295,7 +294,7 @@ class Pile:
 
         pass
     
-    def depiler(self: 'Pile') -> None:
+    def depiler(self: 'Pile') -> int:
         ''' Dépiler l'élément situé au sommet de la pile NON VIDE. '''
 
         pass
@@ -316,12 +315,72 @@ class Pile:
         ''' Renvoie l'élément au sommet de la pile NON VIDE SANS LE SUPPRIMER. '''
 
         pass
-    '''
-
 ```
 
-??? note "À faire"
-    En reprenant le squelette ci-dessus, écrivez l'implémentation d'une Pile avec une liste chaînée.
+??? tip "Voir l'implémentation complète"
+
+    ```python
+    class Cellule:
+        ''' Une cellule d'une liste chaînée. '''
+
+        def __init__(self, v, s):
+            self.valeur = v  # Valeur contenue dans la cellule
+            self.suivante = s  # Cellule suivante
+
+    class Pile:
+
+        def __init__(self: 'Pile'):
+            ''' Constructeur de la classe Pile. '''
+
+            self.contenu = None
+
+        # Opérations de base
+
+        def est_vide(self: 'Pile') -> bool:
+            ''' Renvoie True si la pile est vide, False sinon. '''
+
+            return self.contenu is None
+
+        def empiler(self: 'Pile', elt: int) -> None:
+            ''' Empile un élément donné au sommet de la pile. '''
+
+            self.contenu = Cellule(elt, self.contenu)
+        
+        def depiler(self: 'Pile') -> int:
+            ''' Dépiler l'élément situé au sommet de la pile NON VIDE. '''
+
+            if self.est_vide():
+                raise ValueError("Erreur : Impossible de dépiler sur une pile vide !")
+            res = self.contenu.valeur
+            self.contenu = self.contenu.suivante
+            return res
+
+        # Autres opérations
+
+        # Autres opérations
+
+        def nombre_elements(self: 'Pile') -> int:
+            ''' Renvoie le nb d'éléments de la pile. '''
+
+            res = 0
+            c = self.contenu
+            while c is not None:
+                res += 1
+                c = c.suivante
+            return res
+
+        def vider(self: 'Pile') -> None:
+            ''' Vide la pile (supprime tous ses éléments). '''
+
+            self.contenu = None
+
+        def obtenir_element(self: 'Pile') -> int:
+            ''' Renvoie l'élément au sommet de la pile NON VIDE SANS LE SUPPRIMER. '''
+
+            if self.est_vide():
+                raise ValueError("Erreur : La pile est vide !")
+            return self.contenu.valeur
+    ```
 
 ## Implémentations d'une file
 

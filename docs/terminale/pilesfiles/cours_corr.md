@@ -381,7 +381,6 @@ class Pile:
             if self.est_vide():
                 raise ValueError("Erreur : La pile est vide !")
             return self.contenu.valeur
-        '''
     ```
 
 ## Implémentations d'une file
