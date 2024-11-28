@@ -2,302 +2,307 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://nsi.erwandemerville.fr/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/rendus/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/archi/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/archi/circuits/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/archi/fonctions/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/archi/introduction/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/archi/os/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/archi/vonneumann/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/bases_python/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/bases_python/chassetresor/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/bases_python/cours/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/bases_python/dm1/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/bases_python/exercices_fonctions/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/premiere/bases_python/exercices_listes/</loc>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/bases_python/exercices_while/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/bases_python/notebooks/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/bases_python/thonny/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/representation_donnees/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/representation_donnees/cours/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/representation_donnees/cours_corr/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/premiere/representation_donnees/exercices/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/arbres/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/arbres/abr/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/arbres/exercices_abr/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/arbres/exercices_parcours/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/arbres/exercices_vocabulaire/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/arbres/implementation_abr/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/arbres/implementation_arbres/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/arbres/implementations_arbres/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/arbres/parcours/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/arbres/type_abstrait/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/arbres/vocabulaire/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/e3c/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/entrainement_python/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/listes/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/listes/cours/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/listes/cours_corr/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/listes/exercices/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/mise_au_point/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/mise_au_point/activite_finale/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/mise_au_point/cours/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/mise_au_point/ds1/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/mise_au_point/preliminaire/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/modularite/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/modularite/api/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/modularite/api_corr/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/modularite/modules/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/pilesfiles/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/pilesfiles/cours/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/pilesfiles/cours_corr/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/poo/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/poo/cours/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/poo/exercices/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/poo/pokemon/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/poo/preliminaire/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/recursivite/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/recursivite/cours/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/recursivite/exercices/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://nsi.erwandemerville.fr/terminale/recursivite/introduction/</loc>
-         <lastmod>2024-11-27</lastmod>
+         <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -489,6 +489,8 @@
       
         
       
+        
+      
     
     
       
@@ -829,6 +831,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Création d'une liste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creer-une-liste-vide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Créer une liste vide
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creer-une-liste-non-vide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Créer une liste non vide
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -974,6 +1000,27 @@
   
   <span class="md-ellipsis">
     Exercices sur les boucles while
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercices_listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices sur les listes
   </span>
   
 
@@ -2926,6 +2973,30 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Création d'une liste">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creer-une-liste-vide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Créer une liste vide
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#creer-une-liste-non-vide" class="md-nav__link">
+    <span class="md-ellipsis">
+      Créer une liste non vide
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -3581,50 +3652,55 @@ La boucle <strong>continue tant qu'il reste des essais</strong> (tant que <code>
 <h2 id="les-listes">Les listes<a class="headerlink" href="#les-listes" title="Permanent link">¶</a></h2>
 <p>En programmation en langage <strong>Python</strong>, les <strong>listes</strong> sont l'une des <strong>structures de données</strong> les plus couramment utilisées. Une <strong>liste</strong> (<strong>objet</strong> de type <code>list</code>) est une <strong>collection ordonnée d'éléments</strong> pouvant être de différents <strong>types</strong> (<em>nombres entiers</em>, <em>flottants</em>, <em>chaînes de caractères</em>, <em>objets</em>, etc.). Les listes sont extrêmement flexibles et permettent de stocker et de manipuler des données de manière efficace.</p>
 <h3 id="creation-dune-liste">Création d'une liste<a class="headerlink" href="#creation-dune-liste" title="Permanent link">¶</a></h3>
-<p>Pour <strong>créer une liste</strong> en Python, vous pouvez utiliser des crochets <code>[]</code> et séparer les éléments par des <strong>virgules</strong>. Voici comment créer une liste simple :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<p>Pour <strong>créer une liste</strong> en Python, on utilise les <strong>crochets</strong> <code>[]</code>.</p>
+<h4 id="creer-une-liste-vide">Créer une liste vide<a class="headerlink" href="#creer-une-liste-vide" title="Permanent link">¶</a></h4>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-24-1"><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a><span class="n">ma_liste_vide</span> <span class="o">=</span> <span class="p">[]</span>
+</span></code></pre></div>
+<h4 id="creer-une-liste-non-vide">Créer une liste non vide<a class="headerlink" href="#creer-une-liste-non-vide" title="Permanent link">¶</a></h4>
+<p>On peut également <strong>créer une liste</strong> et directement y mettre des <strong>éléments</strong>, en les séparant par des <strong>virgules</strong>. Voici un exemple :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </span></code></pre></div>
 <p>On aurait également pu créer cette <strong>liste</strong> en utilisant la méthode de <strong>création par compréhension</strong>, en utilisant une <strong>boucle</strong> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-25-1"><a id="__codelineno-25-1" name="__codelineno-25-1" href="#__codelineno-25-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
 </span></code></pre></div>
 <p>Si l'on voulait créer une <strong>liste</strong> contenant <strong>tous les nombres pairs de 2 à 98</strong> en utilisant la méthode <strong>par compréhension</strong>, on aurait écrit :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-26-1"><a id="__codelineno-26-1" name="__codelineno-26-1" href="#__codelineno-26-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
 </span></code></pre></div>
 <p>ou bien, en ajoutant une <strong>condition</strong> <code>if</code> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-27-1"><a id="__codelineno-27-1" name="__codelineno-27-1" href="#__codelineno-27-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span> <span class="k">if</span> <span class="n">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span> <span class="k">if</span> <span class="n">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
 </span></code></pre></div>
 <p>Une liste peut contenir <strong>n'importe quel type d'élément</strong>, y compris <strong>d'autres listes</strong>. Par exemple :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-28-1"><a id="__codelineno-28-1" name="__codelineno-28-1" href="#__codelineno-28-1"></a><span class="n">liste_mixte</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"texte"</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">liste_mixte</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"texte"</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]]</span>
 </span></code></pre></div>
 <h3 id="acces-aux-elements-dune-liste">Accès aux éléments d'une liste<a class="headerlink" href="#acces-aux-elements-dune-liste" title="Permanent link">¶</a></h3>
 <p>Vous pouvez <strong>accéder</strong> aux <strong>éléments individuels d'une liste</strong> en utilisant leur <strong>indice</strong> (<em>position</em>) dans la <strong>liste</strong>. L'indice <strong>commence à <code>0</code></strong> pour le <strong>premier élément</strong>. Voici comment accéder aux éléments d'une liste :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-29-1"><a id="__codelineno-29-1" name="__codelineno-29-1" href="#__codelineno-29-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
-</span><span id="__span-29-2"><a id="__codelineno-29-2" name="__codelineno-29-2" href="#__codelineno-29-2"></a>
-</span><span id="__span-29-3"><a id="__codelineno-29-3" name="__codelineno-29-3" href="#__codelineno-29-3"></a><span class="c1"># Accès au premier élément (indice 0)</span>
-</span><span id="__span-29-4"><a id="__codelineno-29-4" name="__codelineno-29-4" href="#__codelineno-29-4"></a><span class="n">premier_element</span> <span class="o">=</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># premier_element contient maintenant 10</span>
-</span><span id="__span-29-5"><a id="__codelineno-29-5" name="__codelineno-29-5" href="#__codelineno-29-5"></a>
-</span><span id="__span-29-6"><a id="__codelineno-29-6" name="__codelineno-29-6" href="#__codelineno-29-6"></a><span class="c1"># Accès au troisième élément (indice 2)</span>
-</span><span id="__span-29-7"><a id="__codelineno-29-7" name="__codelineno-29-7" href="#__codelineno-29-7"></a><span class="n">troisieme_element</span> <span class="o">=</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># troisieme_element contient maintenant 30</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
+</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="c1"># Accès au premier élément (indice 0)</span>
+</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="n">premier_element</span> <span class="o">=</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>  <span class="c1"># premier_element contient maintenant 10</span>
+</span><span id="__span-30-5"><a id="__codelineno-30-5" name="__codelineno-30-5" href="#__codelineno-30-5"></a>
+</span><span id="__span-30-6"><a id="__codelineno-30-6" name="__codelineno-30-6" href="#__codelineno-30-6"></a><span class="c1"># Accès au troisième élément (indice 2)</span>
+</span><span id="__span-30-7"><a id="__codelineno-30-7" name="__codelineno-30-7" href="#__codelineno-30-7"></a><span class="n">troisieme_element</span> <span class="o">=</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># troisieme_element contient maintenant 30</span>
 </span></code></pre></div>
 <h3 id="modification-des-elements-dune-liste">Modification des éléments d'une liste<a class="headerlink" href="#modification-des-elements-dune-liste" title="Permanent link">¶</a></h3>
 <p>Les éléments d'une liste peuvent être <strong>modifiés</strong> en <strong>utilisant leur indice</strong>. Par exemple :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-30-1"><a id="__codelineno-30-1" name="__codelineno-30-1" href="#__codelineno-30-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
-</span><span id="__span-30-2"><a id="__codelineno-30-2" name="__codelineno-30-2" href="#__codelineno-30-2"></a>
-</span><span id="__span-30-3"><a id="__codelineno-30-3" name="__codelineno-30-3" href="#__codelineno-30-3"></a><span class="c1"># Modification du deuxième élément (indice 1)</span>
-</span><span id="__span-30-4"><a id="__codelineno-30-4" name="__codelineno-30-4" href="#__codelineno-30-4"></a><span class="n">ma_liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span>  <span class="c1"># La liste devient maintenant [10, 25, 30, 40, 50]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a>
+</span><span id="__span-31-3"><a id="__codelineno-31-3" name="__codelineno-31-3" href="#__codelineno-31-3"></a><span class="c1"># Modification du deuxième élément (indice 1)</span>
+</span><span id="__span-31-4"><a id="__codelineno-31-4" name="__codelineno-31-4" href="#__codelineno-31-4"></a><span class="n">ma_liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span>  <span class="c1"># La liste devient maintenant [10, 25, 30, 40, 50]</span>
 </span></code></pre></div>
 <h3 id="ajout-et-suppression-delements">Ajout et suppression d'éléments<a class="headerlink" href="#ajout-et-suppression-delements" title="Permanent link">¶</a></h3>
 <p>Pour <strong>ajouter un élément à la fin d'une liste</strong>, vous pouvez utiliser la <strong>méthode</strong> <code>append()</code> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-31-1"><a id="__codelineno-31-1" name="__codelineno-31-1" href="#__codelineno-31-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-</span><span id="__span-31-2"><a id="__codelineno-31-2" name="__codelineno-31-2" href="#__codelineno-31-2"></a><span class="n">ma_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># La liste devient maintenant [1, 2, 3, 4]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="n">ma_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>  <span class="c1"># La liste devient maintenant [1, 2, 3, 4]</span>
 </span></code></pre></div>
 <p>Pour <strong>supprimer un élément</strong> en fonction de <strong>sa valeur</strong>, vous pouvez utiliser la <strong>méthode</strong> <code>remove()</code> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-32-1"><a id="__codelineno-32-1" name="__codelineno-32-1" href="#__codelineno-32-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</span><span id="__span-32-2"><a id="__codelineno-32-2" name="__codelineno-32-2" href="#__codelineno-32-2"></a><span class="n">ma_liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># La liste devient maintenant [1, 2, 4, 5]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="n">ma_liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>  <span class="c1"># La liste devient maintenant [1, 2, 4, 5]</span>
 </span></code></pre></div>
 <p>Pour <strong>supprimer un élément</strong> en fonction de <strong>son indice</strong>, vous pouvez utiliser le <strong>mot-clé</strong> <code>del</code> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-33-1"><a id="__codelineno-33-1" name="__codelineno-33-1" href="#__codelineno-33-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</span><span id="__span-33-2"><a id="__codelineno-33-2" name="__codelineno-33-2" href="#__codelineno-33-2"></a><span class="k">del</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># La liste devient maintenant [1, 2, 4, 5]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="k">del</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># La liste devient maintenant [1, 2, 4, 5]</span>
 </span></code></pre></div>
 <p>À noter que la <strong>suppression d'éléments dans une liste</strong> n'est pas au programme de <em>première</em>, ni même de <em>terminale</em>. Vous ne serez donc pas interrogés dessus, mais cela peut s'avérer bien utile tout de même.</p>
 <h3 id="parcours-dune-liste-avec-des-boucles">Parcours d'une liste avec des boucles<a class="headerlink" href="#parcours-dune-liste-avec-des-boucles" title="Permanent link">¶</a></h3>
@@ -3654,22 +3730,22 @@ La boucle <strong>continue tant qu'il reste des essais</strong> (tant que <code>
 <details class="tip">
 <summary>Aide - Code à trous</summary>
 <p>Pour vous aider, vous pouvez réutiliser ce programme à trous :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-34-1"><a id="__codelineno-34-1" name="__codelineno-34-1" href="#__codelineno-34-1"></a><span class="c1"># Créer une liste contenant les entiers de 1 à 5</span>
-</span><span id="__span-34-2"><a id="__codelineno-34-2" name="__codelineno-34-2" href="#__codelineno-34-2"></a><span class="n">nombres</span> <span class="o">=</span> <span class="o">.......</span>
-</span><span id="__span-34-3"><a id="__codelineno-34-3" name="__codelineno-34-3" href="#__codelineno-34-3"></a>
-</span><span id="__span-34-4"><a id="__codelineno-34-4" name="__codelineno-34-4" href="#__codelineno-34-4"></a><span class="c1"># Parcourir la liste et afficher chaque élément</span>
-</span><span id="__span-34-5"><a id="__codelineno-34-5" name="__codelineno-34-5" href="#__codelineno-34-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Liste d'origine :"</span><span class="p">)</span>
-</span><span id="__span-34-6"><a id="__codelineno-34-6" name="__codelineno-34-6" href="#__codelineno-34-6"></a><span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="o">.......</span><span class="p">:</span>
-</span><span id="__span-34-7"><a id="__codelineno-34-7" name="__codelineno-34-7" href="#__codelineno-34-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="o">.......</span><span class="p">)</span>
-</span><span id="__span-34-8"><a id="__codelineno-34-8" name="__codelineno-34-8" href="#__codelineno-34-8"></a>
-</span><span id="__span-34-9"><a id="__codelineno-34-9" name="__codelineno-34-9" href="#__codelineno-34-9"></a><span class="c1"># Modifier la liste pour qu'elle contienne les carrés des nombres de 1 à 5</span>
-</span><span id="__span-34-10"><a id="__codelineno-34-10" name="__codelineno-34-10" href="#__codelineno-34-10"></a><span class="k">for</span> <span class="o">...</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">.......</span><span class="p">):</span>
-</span><span id="__span-34-11"><a id="__codelineno-34-11" name="__codelineno-34-11" href="#__codelineno-34-11"></a>    <span class="n">nombres</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">.......</span> <span class="o">**</span> <span class="mi">2</span>
-</span><span id="__span-34-12"><a id="__codelineno-34-12" name="__codelineno-34-12" href="#__codelineno-34-12"></a>
-</span><span id="__span-34-13"><a id="__codelineno-34-13" name="__codelineno-34-13" href="#__codelineno-34-13"></a><span class="c1"># Parcourir la liste mise à jour et afficher chaque élément</span>
-</span><span id="__span-34-14"><a id="__codelineno-34-14" name="__codelineno-34-14" href="#__codelineno-34-14"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Liste mise à jour :"</span><span class="p">)</span>
-</span><span id="__span-34-15"><a id="__codelineno-34-15" name="__codelineno-34-15" href="#__codelineno-34-15"></a><span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="o">.......</span><span class="p">:</span>
-</span><span id="__span-34-16"><a id="__codelineno-34-16" name="__codelineno-34-16" href="#__codelineno-34-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="o">.......</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-35-1"><a id="__codelineno-35-1" name="__codelineno-35-1" href="#__codelineno-35-1"></a><span class="c1"># Créer une liste contenant les entiers de 1 à 5</span>
+</span><span id="__span-35-2"><a id="__codelineno-35-2" name="__codelineno-35-2" href="#__codelineno-35-2"></a><span class="n">nombres</span> <span class="o">=</span> <span class="o">.......</span>
+</span><span id="__span-35-3"><a id="__codelineno-35-3" name="__codelineno-35-3" href="#__codelineno-35-3"></a>
+</span><span id="__span-35-4"><a id="__codelineno-35-4" name="__codelineno-35-4" href="#__codelineno-35-4"></a><span class="c1"># Parcourir la liste et afficher chaque élément</span>
+</span><span id="__span-35-5"><a id="__codelineno-35-5" name="__codelineno-35-5" href="#__codelineno-35-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Liste d'origine :"</span><span class="p">)</span>
+</span><span id="__span-35-6"><a id="__codelineno-35-6" name="__codelineno-35-6" href="#__codelineno-35-6"></a><span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="o">.......</span><span class="p">:</span>
+</span><span id="__span-35-7"><a id="__codelineno-35-7" name="__codelineno-35-7" href="#__codelineno-35-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="o">.......</span><span class="p">)</span>
+</span><span id="__span-35-8"><a id="__codelineno-35-8" name="__codelineno-35-8" href="#__codelineno-35-8"></a>
+</span><span id="__span-35-9"><a id="__codelineno-35-9" name="__codelineno-35-9" href="#__codelineno-35-9"></a><span class="c1"># Modifier la liste pour qu'elle contienne les carrés des nombres de 1 à 5</span>
+</span><span id="__span-35-10"><a id="__codelineno-35-10" name="__codelineno-35-10" href="#__codelineno-35-10"></a><span class="k">for</span> <span class="o">...</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">.......</span><span class="p">):</span>
+</span><span id="__span-35-11"><a id="__codelineno-35-11" name="__codelineno-35-11" href="#__codelineno-35-11"></a>    <span class="n">nombres</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">.......</span> <span class="o">**</span> <span class="mi">2</span>
+</span><span id="__span-35-12"><a id="__codelineno-35-12" name="__codelineno-35-12" href="#__codelineno-35-12"></a>
+</span><span id="__span-35-13"><a id="__codelineno-35-13" name="__codelineno-35-13" href="#__codelineno-35-13"></a><span class="c1"># Parcourir la liste mise à jour et afficher chaque élément</span>
+</span><span id="__span-35-14"><a id="__codelineno-35-14" name="__codelineno-35-14" href="#__codelineno-35-14"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Liste mise à jour :"</span><span class="p">)</span>
+</span><span id="__span-35-15"><a id="__codelineno-35-15" name="__codelineno-35-15" href="#__codelineno-35-15"></a><span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="o">.......</span><span class="p">:</span>
+</span><span id="__span-35-16"><a id="__codelineno-35-16" name="__codelineno-35-16" href="#__codelineno-35-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="o">.......</span><span class="p">)</span>
 </span></code></pre></div>
 </details>
 <p>Vous pouvez réaliser ce programme sur <strong><em>Thonny</em></strong> ou dans l'<strong>IDE ci-dessous</strong> (vous pourrez <em>télécharger</em> votre programme en cliquant sur le <em>deuxième bouton</em> pour le conserver.)</p>
