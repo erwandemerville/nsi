@@ -2611,14 +2611,6 @@ L'instruction <code>pyxel.cls(0)</code> est nécessaire pour pouvoir modifier no
 Ici, on se contente d'<strong>instancier la classe</strong><code>SnakeGame</code>, ce qui entraîne automatiquement l'<strong>exécution du jeu</strong> (puisque l'instruction <code>pyxel.run</code> est dans le <strong>constructeur de la classe</strong>). Vous remarquerez que l'on ne stocke pas notre nouvel <strong>objet</strong> dans une <strong>variable</strong>, puisqu'on n'a pas besoin de le modifier.</li>
 </ul>
 </div>
-<div class="admonition danger">
-<p class="admonition-title">Erreur sur votre feuille</p>
-<p>Dans la <strong>version papier de l'énoncé</strong> que je vous ai donnée, il y a une petite <strong>erreur</strong> sur la <strong><ins>page 2</ins></strong>, sur l'extrait de code suivant :</p>
-<p><img alt="Screen erreur" src="../images/screen_erreur.png" width="300"></p>
-<p>En effet, le <code>score</code> doit être un <strong>attribut</strong> défini dans le <strong>constructeur</strong> de la classe, puisque l'on souhaite le <strong>stocker</strong> et pouvoir à tout moment le <strong>modifier</strong> dans notre méthode <code>update</code> (en l'occurence, on augmentera ce score à chaque fois que le snake mangera une nourriture).<br>
-<mark>Il faut donc remplacer <code>score</code> par <code>self.score</code></mark> :</p>
-<p><img alt="Screen erreur" src="../images/screen_erreur_rectifiee.png"></p>
-</div>
 <div class="admonition warning">
 <p class="admonition-title">Information - Déplacement du snake</p>
 <p>En bas de la <strong>page 3</strong> de l'<strong>énoncé</strong>, on vous donne une partie du code permettant de <strong>réagir aux touches du clavier</strong> en <strong>modifiant</strong> la <strong>direction de déplacement</strong> du <strong>snake</strong> :</p>
