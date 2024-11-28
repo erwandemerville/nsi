@@ -286,6 +286,26 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/pyxel/</loc>
+         <lastmod>2024-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/pyxel/projetjv/</loc>
+         <lastmod>2024-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/pyxel/realisations/</loc>
+         <lastmod>2024-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/pyxel/snake/</loc>
+         <lastmod>2024-11-28</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://nsi.erwandemerville.fr/terminale/recursivite/</loc>
          <lastmod>2024-11-28</lastmod>
          <changefreq>daily</changefreq>
