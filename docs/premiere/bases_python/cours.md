@@ -38,7 +38,7 @@ Un programme est ainsi composé :
 
 ## Un IDE pour débuter
 
-Il existe de nombreux **environnements de développement** (*EDI*, ou *IDE* en anglais) permettant de développer en Python. Celui que je vous conseille pour débuter est **<u>Thonny</u>**, [cliquez-ici pour découvrir l'IDE Thonny](thonny.md){ target="_blank" }.
+Il existe de nombreux **environnements de développement** (*EDI*, ou *IDE* en anglais) permettant de développer en Python. Celui que je vous conseille pour débuter est **<u>Thonny</u>**, [cliquez-ici pour télécharger et découvrir l'IDE Thonny](thonny.md){ target="_blank" }.
 
 ## Expressions arithmétiques, variables et instructions
 

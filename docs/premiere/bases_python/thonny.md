@@ -1,4 +1,4 @@
-!!! quote "Sources"
+??? quote "Sources"
     > Serge Bays - *Spécialité Numérique et sciences informatiques - Première*  
     > Zonensi - [Programmation en Python et utilisation de Thonny](https://www.zonensi.fr/Maths/Seconde/AlgoBases/ProgrammationPythonThonny/){ target="_blank" }
 
@@ -6,13 +6,10 @@
 
 Tout au long de l'année, nous utiliserons un **IDE** (pour *integrated development environment*) ou **EDI** en français (pour *environnement de développement*) **gratuit** et **open source** conçu spécialement pour les débutants : <u>**Thonny**</u>.
 
-!!! note "À faire"
-    Cliquez sur "Démarrer", puis cherchez et exécutez **Thonny** pour lancer le programme.
-
 !!! info "Installer Thonny à la maison"
     **Thonny** est un programme **multiplateforme**, vous pouvez donc l'installer sur Windows, mais aussi sur Linux ou MacOS.  
     De plus, Thonny est livré avec **Python** version **3.10**, vous n'avez donc pas à installer Python séparément.
-    Vous pouvez télécharger **Thonny** [depuis le site officiel](https://thonny.org/){ target="_blank" }.
+    Vous pouvez télécharger **Thonny** [depuis le site officiel en cliquant ici](https://thonny.org/){ target="_blank" }.
 
 ## Présentation de Thonny
 
