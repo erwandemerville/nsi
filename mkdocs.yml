@@ -57,6 +57,7 @@ nav:
       - Jeu - Chasse au trésor: premiere/bases_python/chassetresor.md
       - Exercices sur les fonctions: premiere/bases_python/exercices_fonctions.md
       - Exercices sur les boucles while: premiere/bases_python/exercices_while.md
+      - Exercices sur les listes: premiere/bases_python/exercices_listes.md
       - Notebooks: premiere/bases_python/notebooks.md
     - Représentation des données:
       - premiere/representation_donnees/index.md
@@ -67,6 +68,9 @@ nav:
       - Introduction à la logique booléenne: premiere/archi/introduction.md
       - Fonctions et expressions: premiere/archi/fonctions.md
       - Les circuits logiques: premiere/archi/circuits.md
+    - Le module Pyxel:
+      - premiere/pyxel/index.md
+      - Jeu de snake: premiere/pyxel/snake.md
   - Terminale:
     - terminale/index.md
     - Modularité:
@@ -116,6 +120,9 @@ nav:
       - terminale/e3c/index.md
     - Entraînement Python:
       - terminale/entrainement_python/index.md
+    - Le module Pyxel:
+      - terminale/pyxel/index.md
+      - Jeu de snake: terminale/pyxel/snake.md
   - Rendu des travaux: rendus.md
 
 markdown_extensions:

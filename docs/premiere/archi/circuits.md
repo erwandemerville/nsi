@@ -7,18 +7,19 @@ Ce cours fait suite au [cours d'introduction à la logique booléenne](introduct
 
 ## TP - Circuits logiques avec Logisim
 
-Pour introduire ce chapitre, voici un **TP** à travers lequel vous réaliserez des **circuits logiques** à l'aide du logiciel **Logisim**.
+Pour introduire ce chapitre, voici un **TP** à travers lequel vous réaliserez des **circuits logiques** à l'aide du logiciel *Logisim*.
 
 !!! success "Télécharger le TP"
-    Tout d'abord, **téléchargez le logiciel Logisim** et placez-le dans votre dossier de travail de manière à ne pas avoir à le réinstaller lors d'une prochaine séance :
+    Tout d'abord, vous devez **télécharger l'application** *Logisim*.  
+    Il s'agit ici d'une *version portable*, **téléchargez** et **dézippez** l'**archive** `logisim.zip` dans votre dossier de travail. Ensuite, il ne vous reste qu'à **exécuter** `logisim-evolution.exe` pour lancer l'application.
 
-    <center>
-    [:material-cursor-default-click: Télécharger `Logisim`](https://sourceforge.net/projects/circuit/){ target="_blank" }
+    <center style="font-size:1.4em">
+    [:material-cursor-default-click: Télécharger `logisim.zip`](https://mega.nz/file/agA0VbZI#C27EcZALkCJqxlUGgfX4IPKfREzsENjcX_EmTXBASzs)
     </center>
 
     Téléchargez ensuite les deux fichiers suivants :
     
-    - [NSI_Circuits_Logiques.pdf](documents/NSI_Circuits_Logiques.pdf){ target="_blank" } - **Énoncé du TP** au format **PDF**.
-    - [Doc_reponses_TP_Logisim.odt](documents/Doc_reponses_TP_Logisim.odt){ target="_blank" } - document vous permettant de **répondre aux questions** du **TP**.
+    - [NSI_Circuits_Logiques.pdf](documents/NSI_Circuits_Logiques.pdf) - **Énoncé du TP** au format **PDF**.
+    - [Doc_reponses_TP_Logisim.odt](documents/Doc_reponses_TP_Logisim.odt) - document vous permettant de **répondre aux questions** du **TP**.
 
     Vous rendrez ce travail sur **Éléa**.

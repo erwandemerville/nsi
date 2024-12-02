@@ -11,3 +11,4 @@
 | [Les arbres](arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |
 | [:material-pencil: Sujet e3c de rentrée corrigé](e3c/index.md) | Le sujet d'e3c de rentrée avec correction détaillée. |
 | [:material-language-python: Révisions / Entraînement Python](entrainement_python/index.md) | Quelques exercices pour vous exercer au langage Python. |
+| [:video_game: Le module Pyxel](pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |
