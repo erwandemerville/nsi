@@ -108,22 +108,38 @@ def est_feuille(ab: Arbre) -> bool:
 def taille(ab: Arbre) -> int:
     ''' Renvoie la taille d'un arbre. '''
     
-    pass
+    if est_vide(ab):
+        return 0
+    else:
+        return 1 + taille(gauche(ab)) + taille(droite(ab))
 
 def hauteur(ab: Arbre) -> int:
     ''' Renvoie la hauteur d'un arbre. '''
     
-    pass
+    if est_vide(ab):
+        return -1
+    else:
+        return 1 + max(hauteur(gauche(ab)), hauteur(droite(ab)))
 
 def nb_feuilles(ab: Arbre) -> int:
     ''' Renvoie le nombre de feuilles d'un arbre binaire. '''
     
-    pass
+    if est_vide(ab):
+        return 0
+    elif est_feuille(ab):
+        return 1
+    else:
+        return nb_feuilles(gauche(ab)) + nb_feuilles(droite(ab))
 
 def est_present(ab: Arbre, el: 'int|str') -> bool:
     ''' Renvoie True si un noeud contenant l'élément el est présent dans l'arbre, False sinon. '''
     
-    pass
+    if est_vide(ab):
+        return False
+    elif valeur_racine(ab) == el:
+        return True
+    else:
+        return est_present(gauche(ab)) or est_present(droite(ab))
 
 # Fonctions de parcours d'arbres
 
