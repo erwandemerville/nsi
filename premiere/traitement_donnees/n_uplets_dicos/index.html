@@ -493,6 +493,8 @@
       
         
       
+        
+      
     
     
       
@@ -672,6 +674,27 @@
   
   <span class="md-ellipsis">
     Notebooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/ds2_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Correction DS2
   </span>
   
 
@@ -2955,15 +2978,26 @@ L'ordre d'insertion <strong>n'a pas d'importance</strong>, puisque contrairement
 <h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Exercice 1</p>
-<p>Écrire une <strong>fonction</strong> <code>occurence(texte)</code> qui <strong>compte le nombre d'occurences</strong> de <strong>chaque caractère</strong> du texte.</p>
+<p>Écrire une fonction <code>afficher(liste)</code> qui prend en entrée une <strong>liste de tuples</strong> représentant des données sur des élèves, de la forme :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">[(</span><span class="s2">"Bastien"</span><span class="p">,</span> <span class="s2">"Dubois"</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Stéphane"</span><span class="p">,</span> <span class="s2">"Carlier"</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Vincent"</span><span class="p">,</span> <span class="s2">"Duboeuf"</span><span class="p">,</span> <span class="mi">15</span><span class="p">)]</span>
+</span></code></pre></div>
+<p>Et qui effectue un <strong>affichage</strong> comme suit (en prenant l'exemple de la liste ci-dessus) :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">Bastien</span> <span class="n">Dubois</span> <span class="o">-</span> <span class="mi">15</span> <span class="n">ans</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">Stéphane</span> <span class="n">Carlier</span> <span class="o">-</span> <span class="mi">16</span> <span class="n">ans</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">Vincent</span> <span class="n">Duboeuf</span> <span class="o">-</span> <span class="mi">15</span> <span class="n">ans</span>
+</span></code></pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Exercice 2</p>
+<p>Écrire une <strong>fonction</strong> <code>occurence(texte)</code> qui <strong>renvoie</strong> un <strong>dictionnaire</strong> du <strong>nombre d'occurences</strong> de <strong>chaque caractère</strong> d'un texte donné.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 3</p>
 <p>Écrire une fonction <code>plus_frequent(d, k)</code> qui <strong>renvoie</strong> le <strong>mot</strong> de <code>k</code> <strong>lettres</strong> qui est <strong>associé</strong> dans le dictionnaire <code>d</code> à <strong>la plus grande valeur</strong>. En cas d’égalité, on choisira <strong>arbitrairement</strong>. S’il n’y a aucun mot de <code>k</code> lettres dans <code>d</code>, on renverra la <strong>chaîne vide</strong>.</p>
 <p>Par exemple, <code>plus_frequent({"chien": 10, "chat": 12, "ours": 6}, 4)</code> renverrait <code>"ours"</code>.</p>
 </div>
 <div class="admonition note">
-<p class="admonition-title">Exercice 3</p>
+<p class="admonition-title">Exercice 4</p>
 <p>Écrire une <strong>fonction</strong> <code>même_jour(lst)</code> qui prend une <strong>liste de tuples</strong> dont <strong>chaque tuple</strong> correspond à une <strong>date de naissance</strong> de la forme <code>(&lt;jour&gt;, &lt;mois&gt;, &lt;année&gt;)</code>, par exemple <code>(3, 5, 1995)</code>, et qui renvoie <strong>le nombre de personnes qui sont nées</strong> le <strong>même jour</strong> et le <strong>même mois</strong>.</p>
 </div></div>
 
