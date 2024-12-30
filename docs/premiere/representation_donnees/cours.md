@@ -81,7 +81,32 @@ Le **codage binaire** d'un nombre décimal consiste à passer de la **base 10** 
     Cette manière d'**encoder les entiers naturels** à l'aide de **séquences** de $k$ **bits** permet de représenter les entiers de $0$ à $2^k − 1$. Sur **1 octet** (= **8 bits**) par exemple, on peut donc représenter les **entiers naturels** de $0$ à $255$.
 
 ??? tip "Rappels - Base 16 (hexadécimale)"
-    ...
+    Un nombre entier en **base 16**, aussi appelée **base hexadécimale**, est une séquence de **chiffres** qui utilise **16 symboles** distincts :
+
+    $0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F$
+
+    - Les symboles $0$ à $9$ représentent les valeurs $0$ à $9$.
+    - Les symboles $A$ à $F$ représentent les valeurs décimales $10$ à $15$.
+
+    Chaque **chiffre hexadécimal** est associé à un poids $16^i$, correspondant à une puissance de $16$ qui dépend de sa position $i$ dans la séquence, en partant de la droite vers la gauche.  
+    Une séquence hexadécimale $h_{k−1}, h_{k−2}, \ldots, h_1, h_0$ de $k$ chiffres hexadécimaux correspond au nombre entier $N$ suivant :
+
+    $N = h_{k−1} \times 16^{k−1} + h_{k−2} \times 16^{k−2} + \cdots + h_1 \times 16^1 + h_0 \times 16^0$
+
+    *Exemple* : La séquence hexadécimale $2F3$ :
+
+    | Séquence     | 2    | F    | 3    |
+    | ------------ | ---- | ---- | ---- |
+    | **Position** | 2    | 1    | 0    |
+    | **Poids**    | $16^2$ | $16^1$ | $16^0$ |
+
+    - $2 \times 16^2 = 2 \times 256 = 512$
+    - $F \times 16^1 = 15 \times 16 = 240$
+    - $3 \times 16^0 = 3 \times 1 = 3$
+
+    La valeur totale est donc :
+
+    $N = 512 + 240 + 3 = 755_{10}$
 
 ### Méthode des divisions euclidiennes successives
 

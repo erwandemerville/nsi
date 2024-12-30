@@ -59,6 +59,7 @@ nav:
       - Exercices sur les boucles while: premiere/bases_python/exercices_while.md
       - Exercices sur les listes: premiere/bases_python/exercices_listes.md
       - Notebooks: premiere/bases_python/notebooks.md
+      - Correction DS2: premiere/bases_python/ds2_correction.md
     - Représentation des données:
       - premiere/representation_donnees/index.md
       - Cours: premiere/representation_donnees/cours.md
@@ -68,6 +69,11 @@ nav:
       - Introduction à la logique booléenne: premiere/archi/introduction.md
       - Fonctions et expressions: premiere/archi/fonctions.md
       - Les circuits logiques: premiere/archi/circuits.md
+    - Traitement des données en tables:
+      - premiere/traitement_donnees/index.md
+      - n-uplets et dictionnaires: premiere/traitement_donnees/n_uplets_dicos.md
+      - Cours: premiere/traitement_donnees/cours.md
+      - Le module Pandas: premiere/traitement_donnees/pandas.md
     - Le module Pyxel:
       - premiere/pyxel/index.md
       - Jeu de snake: premiere/pyxel/snake.md

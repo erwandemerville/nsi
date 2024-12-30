@@ -20,11 +20,11 @@ Une **représentation** de cette **bibliothèque** peut être donnée sous la fo
 ![P2_ABR_1](images/P2_ABR_1.png)
 
 !!! note "Questions"
-    1. Dans cet arbre, **préciser** où sont situés les livres dont le titre commence par :
-       * **KNU**
-       * **UDP**
-       * **JET**
-       * **RSA**
+    1. **Redessinez** cet **arbre binaire**, en y ajoutant les **noeuds** qui correspondent aux **pièces** où sont situés les livres dont le titre commence par :
+          * **KNU**
+          * **UDP**
+          * **JET**
+          * **RSA**
 
     2. Pourquoi y-a-t-il 17 576 pièces différentes ?
 

@@ -1,5 +1,7 @@
 # Les bases du langage Python
 
+## Cours et activités
+
 | Liste des contenus                           | Description                         |
 | -------------------------------------------- | ----------------------------------- |
 | [Cours - Introduction à la programmation Python](cours.md) | Cours d'introduction au langage Python. |
@@ -9,3 +11,9 @@
 | [Exercices sur les boucles while](exercices_while.md) | Exercices sur les boucles non-bornées `while`. |
 | [Exercices sur les listes](exercices_listes.md) | Exercices sur les *listes* en Python. |
 | [Notebooks d'exercices](notebooks.md) | Des *notebooks Jupyter* pour vous exercer. |
+
+## Corrections DM et DS
+
+| Liste des contenus                           | Description                         |
+| -------------------------------------------- | ----------------------------------- |
+| [Correction du DS 2](ds2_correction.md) | Correction du DS n°2. |
