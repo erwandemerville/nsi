@@ -203,7 +203,7 @@ Comme cela a été vu dans les [exercices](exercices_abr.md), la **rercherche** 
 
 !!! note "Exercice 4"
     En vous aidant du déroulement décrit ci-dessus, écrire le **code Python** de la méthode `rechercher`.<br />
-    *Remarque* : On aura pas besoin de rajouter une condition dans le code pour vérifier si l'arbre binaire est bien un arbre binaire de recherche, car cela a été **spécifié** en tant que **condition d'utilisation** (*CU*) :<br /> `''' :CU: self.est_ABR() == True '''`
+    *Remarque* : On aura pas besoin de rajouter une condition dans le code pour vérifier si l'arbre binaire est bien un arbre binaire de recherche, car cela a été **spécifié** en tant que **précondition** (ou *CU*, pour *condition d'utilisation*) :<br /> `''' :CU: self.est_ABR() == True '''`
 
 ## Insertion dans un arbre binaire de recherche
 
