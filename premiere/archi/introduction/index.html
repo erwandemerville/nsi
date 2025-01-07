@@ -2892,21 +2892,28 @@ Les <strong>portes logiques</strong> vues précédemment peuvent ainsi être con
 <h2 id="en-python">En Python<a class="headerlink" href="#en-python" title="Permanent link">¶</a></h2>
 <h3 id="operations-bit-a-bit">Opérations bit-à-bit<a class="headerlink" href="#operations-bit-a-bit" title="Permanent link">¶</a></h3>
 <p>Python dispose de nombreux <strong>opérateurs</strong> qui permettent d'effectuer des <strong>opérations logiques</strong> entre des <strong>bits</strong>. On les appelle <strong>opérateurs <em>bit-à-bit</em></strong> (<em>bitwise</em> en anglais).</p>
-<p>L’opérateur <code>&amp;</code> réalise un <strong>et logique</strong> entre les <strong>représentations binaires de deux nombres</strong>.</p>
+<p>L’opérateur <code>&amp;</code> réalise un <strong>et logique</strong> entre les <strong>représentations binaires de deux nombres</strong> :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">&amp;</span> <span class="mi">12</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="mi">4</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="mb">0b0101</span> <span class="o">&amp;</span> <span class="mb">0b1100</span><span class="p">)</span>
 </span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="err">’</span><span class="mb">0b100</span><span class="err">’</span>
 </span></code></pre></div>
 <p><em>Rappel</em> : La fonction <code>bin(x)</code> renvoie l'écriture binaire d'un nombre entier <code>x</code>.</p>
-<p>L'opérateur <code>|</code> permet quant à lui d'effectuer un <strong>OU bit-à-bit</strong>.</p>
+<p>L'opérateur <code>|</code> permet quant à lui d'effectuer un <strong>OU bit-à-bit</strong> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">|</span> <span class="mi">12</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="mi">13</span>
+</span></code></pre></div>
+<p>L'opérateur <code>^</code> réalise un <strong>XOR</strong> (<em>OU exclusif</em>) :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="mi">5</span> <span class="o">^</span> <span class="mi">12</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="mi">9</span>
+</span></code></pre></div>
 <h3 id="decalages-de-bits">Décalages de bits<a class="headerlink" href="#decalages-de-bits" title="Permanent link">¶</a></h3>
 <p>Python propose également des <strong>opérateurs</strong> pour <strong>décaler les bits</strong> d’un <strong>nombre</strong> vers la <strong>droite</strong> ou vers la <strong>gauche</strong>. On note ces opérateurs <code>&lt;&lt;</code> et <code>&gt;&gt;</code>, et ils prennent <strong>deux arguments</strong> : le <strong>nombre</strong> dont il faut <strong>décaler les bits</strong> et le <strong>nombre de position à décaler</strong>.</p>
 <p>Par exemple, pour décaler les bits d’un nombre de <strong>2 positions vers la gauche</strong>, on écrira :</p>
-<p></p><div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="mi">40</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="mb">0b0001010</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">)</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="err">’</span><span class="mb">0b101000</span><span class="err">’</span>
+<p></p><div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="mi">10</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="mi">40</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">bin</span><span class="p">(</span><span class="mb">0b0001010</span> <span class="o">&lt;&lt;</span> <span class="mi">2</span><span class="p">)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="err">’</span><span class="mb">0b101000</span><span class="err">’</span>
 </span></code></pre></div>
 Si on avait voulu <strong>décaler vers la droite</strong>, on aurait utilisé l'opérateur <code>&gt;&gt;</code>.
 On constate que <strong>décaler d'un cran à gauche</strong> permet de <strong>multiplier un nombre par deux</strong> et que <strong>décaler d'un cran à droite</strong> permet de <strong>diviser un nombre par deux</strong>.</div>
