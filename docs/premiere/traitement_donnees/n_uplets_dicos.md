@@ -206,9 +206,44 @@ Enfin, tout comme pour les **listes**, il est possible de **construire un dictio
     Écrire une **fonction** `occurence(texte)` qui **renvoie** un **dictionnaire** du **nombre d'occurences** de **chaque caractère** d'un texte donné.
 
 !!! note "Exercice 3"
-    Écrire une fonction `plus_frequent(d, k)` qui **renvoie** le **mot** de `k` **lettres** qui est **associé** dans le dictionnaire `d` à **la plus grande valeur**. En cas d’égalité, on choisira **arbitrairement**. S’il n’y a aucun mot de `k` lettres dans `d`, on renverra la **chaîne vide**.
+    Écrire une fonction `plus_frequent(d, k)`, prenant en entrée un *dictionnaire* `d` et un *entier* `k`, qui **renvoie** le **mot** de `k` **lettres** qui est **associé** dans le dictionnaire `d` à **la plus grande valeur**. En cas d’égalité, on choisira **arbitrairement**. S’il n’y a aucun mot de `k` lettres dans `d`, on renverra la **chaîne vide**.
 
     Par exemple, `plus_frequent({"chien": 10, "chat": 12, "ours": 6}, 4)` renverrait `"ours"`.
  
 !!! note "Exercice 4"
-    Écrire une **fonction** `même_jour(lst)` qui prend une **liste de tuples** dont **chaque tuple** correspond à une **date de naissance** de la forme `(<jour>, <mois>, <année>)`, par exemple `(3, 5, 1995)`, et qui renvoie **le nombre de personnes qui sont nées** le **même jour** et le **même mois**.
+    On modélise des informations (nom, taille et poids) sur des **Pokémons** de la façon suivante :
+
+    ```python
+    exemple_pokemons = {
+        'Bulbizarre' :(70, 7),
+        'Herbizarre': (100, 13),
+        'Abo': (200, 7),
+        'Jungko': (170, 52)}
+    ```
+
+    Par exemple, **Bulbizarre** est un **Pokémon** qui mesure *70 cm* et qui pèse *7 kg*.
+
+    1. Quel est le type de `exemple_pokemons` ?
+    2. Quelle instruction permet d'ajouter à cette structure de données le Pokémon **Goupix** qui mesure *60 cm* et qui pèse *10 kg* ?
+    3. On donne le code suivant :
+    ```python
+    def le_plus_grand(pokemons):
+        grand = None
+        taille_max = None
+        for (nom, (taille, poids)) in pokemons.items():
+            if taille_max is None or taille > taille_max:
+                taillemax = taille
+                grand = nom
+        return (grand, taille_max)
+    ```
+    a. Quelle est la valeur de `le_plus_grand(exemple_pokemons)` ?  
+    b. Écrire le code d'une fonction `le_plus_leger` qui prend des **Pokémons** en paramètre et qui **renvoie** un **tuple** dont la **première composante** est le **nom du Pokémon le plus léger** et la **deuxième composante** est son **poids**.
+    ```python
+    assert le_plus_leger(exemple_pokemons) == ('Bulbizarre', 7)
+    ```
+    4. Écrire le code d'une fonction taille qui prend en paramètre un dictionnaire de Pokémons ainsi que le nom d'un Pokémon, et qui renvoie la taille de ce Pokémon.
+    ```python
+    assert taille(exemple_pokemons, 'Abo') == 200
+    assert taille(exemple_pokemons, 'Jungko') == 170
+    assert taille(exemple_pokemons, 'Dracaufeu') is None
+    ```

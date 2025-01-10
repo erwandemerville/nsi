@@ -150,8 +150,8 @@ class Arbre:
         Autre version, vérifiant si la liste des noeuds visités en ordre infixe est triée dans l'ordre croissant. '''
         
         lst_valeurs = self.parcours_infixe()  # Récupérer la liste des valeurs des noeuds visités en parcours infixe
-        for i in range(1, len(lst_valeurs)):
-            if lst_valeurs[i] < lst_valeurs[i - 1]:
+        for i in range(len(lst_valeurs) - 1):
+            if not lst_valeurs[i] <= lst_valeurs[i + 1]:
                 return False
         return True
 

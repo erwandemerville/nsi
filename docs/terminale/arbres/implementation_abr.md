@@ -82,6 +82,74 @@ Pour cette activité, on écrira **toutes les opérations sous la forme de méth
 
         Pour utiliser les fonctions de `dessin.py`, vous devez également **dé-commenter** la **première ligne** `from dessin import dessiner` du fichier `abr.py`, qui a été commentée pour éviter les erreurs.
 
+??? tip "Correction"
+    Voici la **correction** des fonctions `minimum`, `maximum` et `est_ABR` :
+
+    ```python
+    def minimum(self: 'Arbre') -> int:
+        ''' Renvoie la valeur minimale des noeuds de l'arbre
+        :CU: L'abre n'est PAS vide '''
+
+        if self.est_feuille():
+            return self.valeur_racine()
+        elif self.gauche().est_vide():
+            return min(self.valeur_racine(), self.droite().minimum())
+        elif self.droite().est_vide():
+            return min(self.valeur_racine(), self.gauche().minimum())
+        else:
+            return min(self.gauche().minimum(), self.valeur_racine(), self.droite().minimum())
+
+    def maximum(self: 'Arbre') -> int:
+        ''' Renvoie la valeur maximale des noeuds de l'arbre
+        :CU: L'arbre n'est PAS vide '''
+
+        if self.est_feuille():
+            return self.valeur_racine()
+        elif self.gauche().est_vide():
+            return max(self.valeur_racine(), self.droite().maximum())
+        elif self.droite().est_vide():
+            return max(self.valeur_racine(), self.gauche().maximum())
+        else:
+            return max(self.gauche().maximum(), self.valeur_racine(), self.droite().maximum())
+        
+    def est_ABR(self: 'Arbre') -> bool:
+        ''' Renvoie True si l'arbre binaire est un arbre binaire de recherche, False sinon. '''
+        
+        if self.est_vide() or self.est_feuille():
+            return True
+        else:
+            if not self.gauche().est_vide() and not self.gauche().maximum() <= self.valeur_racine():
+                return False
+            if not self.droite().est_vide() and not self.droite().minimum() > self.valeur_racine():
+                return False
+            if not self.gauche().est_ABR() or not self.droite().est_ABR():
+                return False
+            return True
+
+    def est_ABR_v2(self: 'Arbre') -> bool:
+        ''' Renvoie True si l'arbre binaire est un arbre binaire de recherche, False sinon.
+        Autre version, vérifiant si la liste des noeuds visités en ordre infixe est triée dans l'ordre croissant. '''
+        
+        lst_valeurs = self.parcours_infixe()  # Récupérer la liste des valeurs des noeuds visités en parcours infixe
+        for i in range(len(lst_valeurs) - 1):
+            if not lst_valeurs[i] <= lst_valeurs[i + 1]:
+                return False
+        return True
+
+    def rechercher(self: 'Arbre', elt: 'int|str') -> bool:
+        ''' Recherche l'élément elt dans l'arbre, renvoie True s'il est trouvé, False sinon.
+        :CU: self.est_ABR() == True '''
+        
+        if self.est_vide():
+            return False
+        elif self.valeur_racine() == elt:
+            return True
+        elif elt <= self.valeur_racine():
+            return self.gauche().rechercher(elt)
+        else:
+            return self.droite().rechercher(elt)
+    ```
+
 !!! info "Important"
     Ici, on a fait le choix de travailler avec une structure **immuable**.<br />
     En l'occurence, la méthode `inserer` **renvoie** un **nouvel arbre binaire de recherche**, et **ne modifie pas** directement l'arbre sur lequel elle est appelée.

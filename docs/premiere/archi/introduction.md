@@ -64,7 +64,7 @@ Aussi, pour simplifier la définition des fonctions booléennes, on utilisera pl
 
 Python dispose de nombreux **opérateurs** qui permettent d'effectuer des **opérations logiques** entre des **bits**. On les appelle **opérateurs *bit-à-bit*** (*bitwise* en anglais).
 
-L’opérateur `&` réalise un **et logique** entre les **représentations binaires de deux nombres**.
+L’opérateur `&` réalise un **et logique** entre les **représentations binaires de deux nombres** :
 
 ```python
 >>> 5 & 12
@@ -75,7 +75,19 @@ L’opérateur `&` réalise un **et logique** entre les **représentations binai
 
 *Rappel* : La fonction `bin(x)` renvoie l'écriture binaire d'un nombre entier `x`.
 
-L'opérateur `|` permet quant à lui d'effectuer un **OU bit-à-bit**.
+L'opérateur `|` permet quant à lui d'effectuer un **OU bit-à-bit** :
+
+```python
+>>> 5 | 12
+13
+```
+
+L'opérateur `^` réalise un **XOR** (*OU exclusif*) :
+
+```python
+>>> 5 ^ 12
+9
+```
 
 ### Décalages de bits
 
