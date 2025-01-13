@@ -137,9 +137,9 @@ class Arbre:
         if self.est_vide() or self.est_feuille():
             return True
         else:
-            if not self.gauche().est_vide() and self.gauche().maximum() > self.valeur_racine():
+            if not self.gauche().est_vide() and not self.gauche().maximum() <= self.valeur_racine():
                 return False
-            if not self.droite().est_vide() and self.droite().minimum() <= self.valeur_racine():
+            if not self.droite().est_vide() and not self.droite().minimum() > self.valeur_racine():
                 return False
             if not self.gauche().est_ABR() or not self.droite().est_ABR():
                 return False
