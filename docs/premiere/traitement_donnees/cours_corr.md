@@ -199,6 +199,13 @@ Ouvrons d'abord ce fichier avec *LibreOffice Calc* pour visuellement son contenu
         - `delim`, qui correspond au **délimiteur** à utiliser, initialisé à `;`,
         - `ordre`, initialisé à `None`, permettant si on le souhaite de définir l'**ordre des attributs** de la table.
 
+!!! tip "Correction des exercices"
+    Une **version corrigée** du fichier `manipulation_tables.py`, contenant des **explications détaillées**, est disponible :
+
+    <center>
+    [:material-cursor-default-click: Télécharger `manipulation_tables_corr.py`](src/manipulation_tables_corr.py){ target="_blank" }
+    </center>
+
 !!! note "Exercice 1 - *Créer un fichier CSV*"
     Compléter la **fonction** `creer_table_classe` qui consiste à **créer une table** dans un **fichier CSV** contenant le *nom*, *prénom*, l'*âge* et la *classe* de **chaque élève** de **première NSI**.
 
@@ -222,8 +229,7 @@ Pour les **exercices suivants**, on travaillera avec notre fichier `fr-en-effect
     Cela permettra de **lire le fichier** `fr-en-effectifs-specialites-doublettes-terminale-generale.csv` et de récupérer la **table** sous la forme d'une **liste de dictionnaires** dans la variable `table`.
 
 !!! note "Exercice 3"
-    Complétez les fonctions `chercher_academie`, `effectif_total_terminale`, `effectif_total_eleves_nsi`, `compter_lycees_generaux`, `moyenne_garcons_nsi` et `lycees_academie`.  
-    Lisez bien les **docstrings** pour comprendre ce que doit faire chaque fonction.
+    Complétez toutes les autres fonctions de `manipulation_tables.py`. Lisez bien les **docstrings** pour comprendre ce que doit faire chaque fonction.
 
 ## Trier une table de données
 

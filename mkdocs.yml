@@ -52,14 +52,18 @@ nav:
     - premiere/index.md
     - Les bases de Python:
       - premiere/bases_python/index.md
-      - Introduction au Python: premiere/bases_python/cours.md
-      - Découverte de l'IDE Thonny: premiere/bases_python/thonny.md
-      - Jeu - Chasse au trésor: premiere/bases_python/chassetresor.md
-      - Exercices sur les fonctions: premiere/bases_python/exercices_fonctions.md
-      - Exercices sur les boucles while: premiere/bases_python/exercices_while.md
-      - Exercices sur les listes: premiere/bases_python/exercices_listes.md
-      - Notebooks: premiere/bases_python/notebooks.md
-      - Correction DS2: premiere/bases_python/ds2_correction.md
+      - Cours:
+        - Introduction au Python: premiere/bases_python/cours.md
+      - Activités:
+        - Découverte de l'IDE Thonny: premiere/bases_python/thonny.md
+        - Jeu - Chasse au trésor: premiere/bases_python/chassetresor.md
+        - Exercices sur les fonctions: premiere/bases_python/exercices_fonctions.md
+        - Exercices sur les boucles while: premiere/bases_python/exercices_while.md
+        - Exercices sur les listes: premiere/bases_python/exercices_listes.md
+        - Rappels sur les fonctions: premiere/bases_python/rappels_fonctions.md
+        - Notebooks: premiere/bases_python/notebooks.md
+      - Corrections:
+        - Correction DS2: premiere/bases_python/ds2_correction.md
     - Représentation des données:
       - premiere/representation_donnees/index.md
       - Cours: premiere/representation_donnees/cours.md
@@ -69,6 +73,9 @@ nav:
       - Introduction à la logique booléenne: premiere/archi/introduction.md
       - Fonctions et expressions: premiere/archi/fonctions.md
       - Les circuits logiques: premiere/archi/circuits.md
+    - Algorithmique:
+      - premiere/algorithmique/index.md
+      - Recherche séquentielle: premiere/algorithmique/rechercheseq.md
     - Traitement des données en tables:
       - premiere/traitement_donnees/index.md
       - n-uplets et dictionnaires: premiere/traitement_donnees/n_uplets_dicos.md

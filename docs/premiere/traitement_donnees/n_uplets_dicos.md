@@ -185,7 +185,7 @@ Enfin, tout comme pour les **listes**, il est possible de **construire un dictio
 {0: 0, 1: 1, 4: 2, 16: 4, 9: 3}
 ```
 
-## Exercices
+## Exercices - Tuples
 
 !!! note "Exercice 1"
     Écrire une fonction `afficher(liste)` qui prend en entrée une **liste de tuples** représentant des données sur des élèves, de la forme :
@@ -202,48 +202,39 @@ Enfin, tout comme pour les **listes**, il est possible de **construire un dictio
     Vincent Duboeuf - 15 ans
     ```
 
-!!! note "Exercice 2"
-    Écrire une **fonction** `occurence(texte)` qui **renvoie** un **dictionnaire** du **nombre d'occurences** de **chaque caractère** d'un texte donné.
-
-!!! note "Exercice 3"
-    Écrire une fonction `plus_frequent(d, k)`, prenant en entrée un *dictionnaire* `d` et un *entier* `k`, qui **renvoie** le **mot** de `k` **lettres** qui est **associé** dans le dictionnaire `d` à **la plus grande valeur**. En cas d’égalité, on choisira **arbitrairement**. S’il n’y a aucun mot de `k` lettres dans `d`, on renverra la **chaîne vide**.
-
-    Par exemple, `plus_frequent({"chien": 10, "chat": 12, "ours": 6}, 4)` renverrait `"ours"`.
- 
-!!! note "Exercice 4"
-    On modélise des informations (nom, taille et poids) sur des **Pokémons** de la façon suivante :
+??? tip "Correction exercice 1"
+    Il y a plusieurs solutions pour écrire cette fonction.  
+    On peut faire un **parcours** en récupérant **chaque tuple** contenu dans la **liste** :
 
     ```python
-    exemple_pokemons = {
-        'Bulbizarre' :(70, 7),
-        'Herbizarre': (100, 13),
-        'Abo': (200, 7),
-        'Jungko': (170, 52)}
+    def afficher(liste):
+        for infos in liste:
+            print(f"{infos[0]} {infos[1]} - {infos[2]} ans")
     ```
 
-    Par exemple, **Bulbizarre** est un **Pokémon** qui mesure *70 cm* et qui pèse *7 kg*.
+    On peut également récupérer directement **chaque information** des tuples (*prénom*, *nom* et *âge*) dans des **variables différentes** :
 
-    1. Quel est le type de `exemple_pokemons` ?
-    2. Quelle instruction permet d'ajouter à cette structure de données le Pokémon **Goupix** qui mesure *60 cm* et qui pèse *10 kg* ?
-    3. On donne le code suivant :
     ```python
-    def le_plus_grand(pokemons):
-        grand = None
-        taille_max = None
-        for (nom, (taille, poids)) in pokemons.items():
-            if taille_max is None or taille > taille_max:
-                taillemax = taille
-                grand = nom
-        return (grand, taille_max)
+    def afficher(liste):
+        for prenom, nom, age in liste:
+            print(f"{prenom} {nom} - {age} ans")
     ```
-    a. Quelle est la valeur de `le_plus_grand(exemple_pokemons)` ?  
-    b. Écrire le code d'une fonction `le_plus_leger` qui prend des **Pokémons** en paramètre et qui **renvoie** un **tuple** dont la **première composante** est le **nom du Pokémon le plus léger** et la **deuxième composante** est son **poids**.
-    ```python
-    assert le_plus_leger(exemple_pokemons) == ('Bulbizarre', 7)
-    ```
-    4. Écrire le code d'une fonction taille qui prend en paramètre un dictionnaire de Pokémons ainsi que le nom d'un Pokémon, et qui renvoie la taille de ce Pokémon.
-    ```python
-    assert taille(exemple_pokemons, 'Abo') == 200
-    assert taille(exemple_pokemons, 'Jungko') == 170
-    assert taille(exemple_pokemons, 'Dracaufeu') is None
-    ```
+
+    On a ici utilisé des *f-strings* pour gérer les **affichages**.
+
+    Pour des rappels concernant les différentes façons d'utiliser la fonction `print`, vous pouvez [consulter cette page de cours](../bases_python/cours.md#affichage-sur-la-sortie-standard).
+
+## Exercices - Dictionnaires
+
+!!! note "Notebooks"
+    Voici un *notebook Capytale* d'introduction sur les **dictionnaires** :
+
+    <center style="font-size:1.3em">
+    [:octicons-link-external-16: Activité - Les dictionnaires en Python](https://capytale2.ac-paris.fr/web/c/833e-5256221)
+    </center>
+
+    D'autres exercices sur les dictionnaires et tuples :
+    
+    <center style="font-size:1.3em">
+    [:octicons-link-external-16: D'autres exercices](https://capytale2.ac-paris.fr/web/c/c194-5253109)
+    </center>
