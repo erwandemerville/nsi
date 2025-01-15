@@ -1370,9 +1370,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercices" class="md-nav__link">
+  <a href="#exercices-tuples" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercices
+      Exercices - Tuples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices-dictionnaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercices - Dictionnaires
     </span>
   </a>
   
@@ -3082,9 +3091,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercices" class="md-nav__link">
+  <a href="#exercices-tuples" class="md-nav__link">
     <span class="md-ellipsis">
-      Exercices
+      Exercices - Tuples
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exercices-dictionnaires" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercices - Dictionnaires
     </span>
   </a>
   
@@ -3235,7 +3253,7 @@ L'ordre d'insertion <strong>n'a pas d'importance</strong>, puisque contrairement
 <div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="p">{</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">}</span>
 </span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">16</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">¶</a></h2>
+<h2 id="exercices-tuples">Exercices - Tuples<a class="headerlink" href="#exercices-tuples" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Exercice 1</p>
 <p>Écrire une fonction <code>afficher(liste)</code> qui prend en entrée une <strong>liste de tuples</strong> représentant des données sur des élèves, de la forme :</p>
@@ -3263,48 +3281,17 @@ On peut faire un <strong>parcours</strong> en récupérant <strong>chaque tuple<
 <p>On a ici utilisé des <em>f-strings</em> pour gérer les <strong>affichages</strong>.</p>
 <p>Pour des rappels concernant les différentes façons d'utiliser la fonction <code>print</code>, vous pouvez <a href="../../bases_python/cours/#affichage-sur-la-sortie-standard">consulter cette page de cours</a>.</p>
 </details>
+<h2 id="exercices-dictionnaires">Exercices - Dictionnaires<a class="headerlink" href="#exercices-dictionnaires" title="Permanent link">¶</a></h2>
 <div class="admonition note">
-<p class="admonition-title">Exercice 2</p>
-<p>Écrire une <strong>fonction</strong> <code>occurence(texte)</code> qui <strong>renvoie</strong> un <strong>dictionnaire</strong> du <strong>nombre d'occurences</strong> de <strong>chaque caractère</strong> d'un texte donné.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Exercice 3</p>
-<p>Écrire une fonction <code>plus_frequent(d, k)</code>, prenant en entrée un <em>dictionnaire</em> <code>d</code> et un <em>entier</em> <code>k</code>, qui <strong>renvoie</strong> le <strong>mot</strong> de <code>k</code> <strong>lettres</strong> qui est <strong>associé</strong> dans le dictionnaire <code>d</code> à <strong>la plus grande valeur</strong>. En cas d’égalité, on choisira <strong>arbitrairement</strong>. S’il n’y a aucun mot de <code>k</code> lettres dans <code>d</code>, on renverra la <strong>chaîne vide</strong>.</p>
-<p>Par exemple, <code>plus_frequent({"chien": 10, "chat": 12, "ours": 6}, 4)</code> renverrait <code>"ours"</code>.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Exercice 4</p>
-<p>On modélise des informations (nom, taille et poids) sur des <strong>Pokémons</strong> de la façon suivante :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="n">exemple_pokemons</span> <span class="o">=</span> <span class="p">{</span>
-</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>    <span class="s1">'Bulbizarre'</span> <span class="p">:(</span><span class="mi">70</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
-</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a>    <span class="s1">'Herbizarre'</span><span class="p">:</span> <span class="p">(</span><span class="mi">100</span><span class="p">,</span> <span class="mi">13</span><span class="p">),</span>
-</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a>    <span class="s1">'Abo'</span><span class="p">:</span> <span class="p">(</span><span class="mi">200</span><span class="p">,</span> <span class="mi">7</span><span class="p">),</span>
-</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a>    <span class="s1">'Jungko'</span><span class="p">:</span> <span class="p">(</span><span class="mi">170</span><span class="p">,</span> <span class="mi">52</span><span class="p">)}</span>
-</span></code></pre></div>
-<p>Par exemple, <strong>Bulbizarre</strong> est un <strong>Pokémon</strong> qui mesure <em>70 cm</em> et qui pèse <em>7 kg</em>.</p>
-<ol>
-<li>Quel est le type de <code>exemple_pokemons</code> ?</li>
-<li>Quelle instruction permet d'ajouter à cette structure de données le Pokémon <strong>Goupix</strong> qui mesure <em>60 cm</em> et qui pèse <em>10 kg</em> ?</li>
-<li>On donne le code suivant :
-<div class="language-python highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="k">def</span> <span class="nf">le_plus_grand</span><span class="p">(</span><span class="n">pokemons</span><span class="p">):</span>
-</span><span id="__span-19-2"><a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>    <span class="n">grand</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="__span-19-3"><a id="__codelineno-19-3" name="__codelineno-19-3" href="#__codelineno-19-3"></a>    <span class="n">taille_max</span> <span class="o">=</span> <span class="kc">None</span>
-</span><span id="__span-19-4"><a id="__codelineno-19-4" name="__codelineno-19-4" href="#__codelineno-19-4"></a>    <span class="k">for</span> <span class="p">(</span><span class="n">nom</span><span class="p">,</span> <span class="p">(</span><span class="n">taille</span><span class="p">,</span> <span class="n">poids</span><span class="p">))</span> <span class="ow">in</span> <span class="n">pokemons</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-</span><span id="__span-19-5"><a id="__codelineno-19-5" name="__codelineno-19-5" href="#__codelineno-19-5"></a>        <span class="k">if</span> <span class="n">taille_max</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">taille</span> <span class="o">&gt;</span> <span class="n">taille_max</span><span class="p">:</span>
-</span><span id="__span-19-6"><a id="__codelineno-19-6" name="__codelineno-19-6" href="#__codelineno-19-6"></a>            <span class="n">taillemax</span> <span class="o">=</span> <span class="n">taille</span>
-</span><span id="__span-19-7"><a id="__codelineno-19-7" name="__codelineno-19-7" href="#__codelineno-19-7"></a>            <span class="n">grand</span> <span class="o">=</span> <span class="n">nom</span>
-</span><span id="__span-19-8"><a id="__codelineno-19-8" name="__codelineno-19-8" href="#__codelineno-19-8"></a>    <span class="k">return</span> <span class="p">(</span><span class="n">grand</span><span class="p">,</span> <span class="n">taille_max</span><span class="p">)</span>
-</span></code></pre></div>
-a. Quelle est la valeur de <code>le_plus_grand(exemple_pokemons)</code> ?<br>
-b. Écrire le code d'une fonction <code>le_plus_leger</code> qui prend des <strong>Pokémons</strong> en paramètre et qui <strong>renvoie</strong> un <strong>tuple</strong> dont la <strong>première composante</strong> est le <strong>nom du Pokémon le plus léger</strong> et la <strong>deuxième composante</strong> est son <strong>poids</strong>.
-<div class="language-python highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a><span class="k">assert</span> <span class="n">le_plus_leger</span><span class="p">(</span><span class="n">exemple_pokemons</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="s1">'Bulbizarre'</span><span class="p">,</span> <span class="mi">7</span><span class="p">)</span>
-</span></code></pre></div></li>
-<li>Écrire le code d'une fonction taille qui prend en paramètre un dictionnaire de Pokémons ainsi que le nom d'un Pokémon, et qui renvoie la taille de ce Pokémon.
-<div class="language-python highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a><span class="k">assert</span> <span class="n">taille</span><span class="p">(</span><span class="n">exemple_pokemons</span><span class="p">,</span> <span class="s1">'Abo'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">200</span>
-</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a><span class="k">assert</span> <span class="n">taille</span><span class="p">(</span><span class="n">exemple_pokemons</span><span class="p">,</span> <span class="s1">'Jungko'</span><span class="p">)</span> <span class="o">==</span> <span class="mi">170</span>
-</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a><span class="k">assert</span> <span class="n">taille</span><span class="p">(</span><span class="n">exemple_pokemons</span><span class="p">,</span> <span class="s1">'Dracaufeu'</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span>
-</span></code></pre></div></li>
-</ol>
+<p class="admonition-title">Notebooks</p>
+<p>Voici un <em>notebook Capytale</em> d'introduction sur les <strong>dictionnaires</strong> :</p>
+<p></p><center style="font-size:1.3em">
+<a href="https://capytale2.ac-paris.fr/web/c/833e-5256221"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"></path></svg></span> Activité - Les dictionnaires en Python</a>
+</center>
+<p>D'autres exercices sur les dictionnaires et tuples :</p>
+<p></p><center style="font-size:1.3em">
+<a href="https://capytale2.ac-paris.fr/web/c/c194-5253109"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"></path></svg></span> D'autres exercices</a>
+</center>
 </div></div>
 
 

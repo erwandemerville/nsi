@@ -34,9 +34,13 @@ def creer_csv(table, fichier=FICHIER_SORTIE, delim=';', ordre=None):
 
 # Manipulation de tables (à compléter)
 
+# EXERCICE 1 - Fonction à compléter
+
 def creer_table_classe():
 
     pass
+
+# EXERCICE 2 - Fonction à compléter
 
 def lister_colonnes(table):
     ''' Prend une table en entrée et renvoie une liste contenant ses attributs.
