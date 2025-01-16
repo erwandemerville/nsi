@@ -112,12 +112,17 @@ Si l'on reprend les arbres précédents :
 
     !!! note "Insertion dans un arbre binaire de recherche"
         ```
-        ALGO : insertion
+        ALGO : inserer
         ENTREES : abr : Arbre binaire de recherche
                   elt : Element
         SORTIE : Arbre binaire de recherche
         DEBUT
-            À COMPLÉTER
+            SI abr EST VIDE, alors :
+                Renvoyer nouvel_ABR(elt, ABR_VIDE, ABR_VIDE)
+            SINON SI elt <= valeur_racine(abr), alors:
+                Renvoyer nouvel_ABR(valeur_racine(abr), inserer(gauche(abr), elt), droite(abr))
+            SINON :
+                Renvoyer nouvel_ABR(valeur_racine(abr), gauche(abr), inserer(droite(abr), elt))
         FIN
         ```
 
