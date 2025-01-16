@@ -395,4 +395,19 @@
          <lastmod>2025-01-16</lastmod>
          <changefreq>daily</changefreq>
     </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/routage/</loc>
+         <lastmod>2025-01-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/routage/cours/</loc>
+         <lastmod>2025-01-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/routage/exercices/</loc>
+         <lastmod>2025-01-16</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
 </urlset>
