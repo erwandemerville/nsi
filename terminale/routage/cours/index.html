@@ -2913,15 +2913,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#exercices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exercices
-    </span>
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -2959,7 +2950,7 @@
   
   
     <li class="md-nav__item">
-      <a href="https://www.numerique-sciences-informatiques.fr/TP-reseaux.pdf" class="md-nav__link">
+      <a href="../tp_filius/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3335,15 +3326,6 @@
   <a href="#le-champ-ttl" class="md-nav__link">
     <span class="md-ellipsis">
       Le champ TTL
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercices" class="md-nav__link">
-    <span class="md-ellipsis">
-      Exercices
     </span>
   </a>
   
@@ -3977,7 +3959,11 @@ font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 </table>
 </details>
 <details class="success">
-<summary>Une petite vidéo résumant OSPF</summary>
+<summary>Vidéos résumant le principe d'OSPF</summary>
+<p>Voici deux vidéos permettant de comprendre le principe d'un <strong>protocole</strong> à <strong>état de liens</strong>, puis le principe spécifique du <strong>protocole OSPF</strong> :</p>
+<p><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/-utHPKREZV8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+<p><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/FeZI3Xl7j84" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
+<p>Voici une autre vidéo (qui dépasse le cadre du programme) montrant le principe d'<strong>OSPF</strong>, ainsi que les <strong>commandes</strong> permettant de configurer un réseau utilisant ce protocole :</p>
 <p><iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/RbPrYZzs_2M" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></p>
 </details>
 <details class="quote">
@@ -4216,137 +4202,7 @@ Ainsi, <strong>R4</strong> communique à <strong>toutes les autres zones</strong
 <p>Étant donné que tous les réseaux ne sont pas administrés par des <strong>protocoles dynamiques</strong> tels que <strong>RIP</strong> ou <strong>OSPF</strong>, il est envisageable que des <strong>boucles de routage</strong> existent. C'est particulièrement le cas dans des réseaux où les tables sont <strong>configurées manuellement</strong> (routage <em>statique</em>). Pour éviter qu'un paquet ne circule indéfiniment dans de tels scénarios, les protocoles de communication comme <strong>IP</strong> ont mis en place un <strong>mécanisme</strong> basé sur un <strong>compteur de durée de vie</strong>.</p>
 <p>Ainsi, chaque paquet contient un octet appelé <mark><strong>TTL</strong></mark> (<em>Time To Live</em> en anglais) qui spécifie le <strong>nombre de routeurs</strong> que le <strong>paquet</strong> peut <strong>encore traverser</strong> (la durée de vie initiale du paquet est fixée par le protocole). À chaque passage par un routeur, ce compteur est <strong>décrémenté</strong>. Lorsqu'un routeur reçoit un paquet avec un <strong>compteur TTL</strong> à <code>0</code>, il le <strong>détruit</strong>. Cette méthode garantit qu'un paquet ne peut pas errer indéfiniment dans le réseau.</p>
 <p>Lors de l'exécution d'un <strong>ping</strong>, on peut <strong>spécifier le TTL souhaité</strong> :<br>
-<code>ping -c 1 -t n erwandemerville.fr</code> : envoie <strong>1 paquet</strong> avec un <strong>TTL de <code>n</code></strong>.</p>
-<h2 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Exercice 1 - Composants dans un réseau</p>
-<p>Identifiez les différents composants du réseau suivant :</p>
-<p><img alt="Composants d'un réseau" src="../images/composants_reseau.png"></p>
-<p>A = <code>..........</code><br>
-B = <code>..........</code><br>
-C = <code>..........</code><br>
-D = <code>..........</code></p>
-</div>
-<p>Pour les <strong>exercices 2, 3 et 4</strong>, on utilisera la <strong>figure suivante</strong> :</p>
-<figure>
-<p><img alt="Un exemple de réseau" src="../images/reseau_exo2.png"></p>
-<figcaption>Un exemple de réseau (extrait du <b>Balabonski Terminale</b>)</figcaption>
-</figure>
-<div class="admonition note">
-<p class="admonition-title">Exercice 2</p>
-<p>On considère le réseau de la <strong>figure précédente</strong>.</p>
-<p>Dans ce réseau, les <strong>nœuds A à F</strong> sont des <strong>routeurs</strong> dont on veut <strong>calculer les tables de routage</strong>. On suppose que l'on a <strong>exécuté le protocole RIP</strong> sur ce <strong>réseau</strong>.<br>
-Compléter la <strong>table suivante</strong>, qui indique pour <strong>chaque machine</strong> la <strong>portion de la table de routage</strong> pour la <strong>destination G</strong>.</p>
-<p><mark>Attention, ici, pour simplifier, on a pas indiqué les <strong>adresses des réseaux</strong> comme <strong>destinations</strong> (chose que l'on est censé faire normalement), mais les <strong>noms des routeurs</strong> qui sont directement <strong>reliés à ces réseaux</strong>.<br>
-Même chose pour les <strong>passerelles</strong>, on a indiqué les <strong>noms des routeurs</strong> plutôt que les <strong>adresses IP de leurs interfaces</strong>.</mark></p>
-<table>
-<thead>
-<tr>
-<th>machine</th>
-<th>destination</th>
-<th>passerelle</th>
-<th>interface</th>
-<th>distance</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A</td>
-<td>G</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>B</td>
-<td>G</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>C</td>
-<td>G</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>D</td>
-<td>G</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>E</td>
-<td>G</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>F</td>
-<td>G</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>G</td>
-<td>G</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Exercice 3</p>
-<p>On considère le <strong>réseau</strong> de la <strong>figure précédente</strong> ainsi que le <strong>tableau</strong> trouvé en <strong>solution de l'exercice 2</strong>.</p>
-<p>On suppose maintenant que le <strong>lien B-F tombe en panne</strong>.</p>
-<ol>
-<li>Quel est le <strong>vecteur de distance</strong> envoyé par <strong>B</strong> à ses <strong>voisins</strong> pour <strong>atteindre G</strong>, une fois qu'il détecte la <strong>panne</strong> (on suppose que les autres nœuds n'ont pas modifié leurs tables de routage) ?</li>
-<li>Pour chacun des <strong>événements</strong> suivants, dire lequel des <strong>quatre cas</strong> (évoqués dans le bloc "Principe du protocole RIP") du protocole <strong>RIP</strong> est appliqué. On supposera, pour simplifier, qu'aucun autre événement ne se produit entre-temps et qu'ils sont tous exécutés « en séquence ».<ol>
-<li>Les <strong>routeurs A et C</strong> reçoivent de <strong>B</strong> le <strong>vecteur trouvé à la question 1</strong>.</li>
-<li>Le <strong>routeur C</strong> retransmet ce <strong>même vecteur</strong> à <strong>D</strong>.</li>
-<li>Le <strong>routeur D</strong> transmet le <strong>vecteur <code>(G,3)</code></strong> à <strong>C</strong>.</li>
-</ol>
-</li>
-<li>Après le <strong>dernier cas ci-dessus</strong>, quel <strong>vecteur</strong> est transmis par <strong>C</strong> à <strong>A et B</strong> ?</li>
-</ol>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Exercice 4</p>
-<p>On considère les <strong>débits</strong> de <strong>quelques liaisons</strong> :</p>
-<ul>
-<li>Ethernet : <span class="arithmatex">\(10~Mbit/s\)</span></li>
-<li>Bluetooth : <span class="arithmatex">\(3~Mbit/s\)</span></li>
-<li>FastEthernet : <span class="arithmatex">\(100~Mbit/s\)</span></li>
-<li>Fibre : <span class="arithmatex">\(10~Gbit/s\)</span></li>
-</ul>
-<p>Calculez le <strong>coût</strong> correspondant à <strong>chacun de ces débits</strong>.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Exercice 5</p>
-<p>On considère le <strong>réseau</strong> de la <strong>figure précédente</strong>. Pour <strong>chacun</strong> des <strong>liens</strong> du <strong>réseau</strong>, proposer une <strong>technologie réseau</strong> faisant que, pour les <strong>nœuds A,B et C</strong>, la <strong>route pour atteindre G</strong> soit <strong>différente</strong> selon que l'on utilise <strong>OSPF</strong> ou <strong>RIP</strong>.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Exercice 6</p>
-<p>On considère un réseau ayant les propriétés suivantes :</p>
-<ul>
-<li>la distance entre <strong>deux nœuds</strong> est <strong>toujours inférieure à 15</strong> ;</li>
-<li>pour <strong>chaque paire de nœuds</strong> <code>(A, B)</code>, il n'existe <strong>pas plusieurs chemins</strong> de <strong>même taille</strong> entre <strong>A et B</strong>.</li>
-</ul>
-<p>On considère ce <strong>réseau</strong> comme une <strong>unique zone</strong> <em>backbone</em> <strong>OSPF</strong>.<br>
-Donner une <strong>condition suffisante</strong> pour qu'<strong>OSPF</strong> et <strong>RIP</strong> calculent <strong>les même routes</strong>.</p>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Exercice 7</p>
-<p>Si l'on essaie d'exécuter plusieurs fois de suite la <strong>commande</strong> <code>traceroute - I &lt;url d'un site&gt;</code>, obtiendra t-on toujours le <strong>même résultat</strong> ? (Vous pouvez faire des tests sur les sites de votre choix.)</p>
-<p>Justifier.</p>
-</div></div>
+<code>ping -c 1 -t n erwandemerville.fr</code> : envoie <strong>1 paquet</strong> avec un <strong>TTL de <code>n</code></strong>.</p></div>
 
 
 
