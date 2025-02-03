@@ -129,6 +129,11 @@ nav:
         - Parcours d'arbres binaires: terminale/arbres/exercices_parcours.md
         - Arbre binaires de recherche: terminale/arbres/exercices_abr.md
         - Implémentations d'arbres binaires et ABR: terminale/arbres/implementations_arbres.md
+    - Protocoles de routage:
+      - terminale/routage/index.md
+      - Cours: terminale/routage/cours.md
+      - Exercices: terminale/routage/exercices.md
+      - TP Filius: terminale/routage/tp_filius.md
     - Sujet e3c:
       - terminale/e3c/index.md
     - Entraînement Python:
@@ -153,6 +158,8 @@ markdown_extensions:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
   - toc:
       title: Sur cette page
       permalink: true

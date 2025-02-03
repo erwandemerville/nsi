@@ -36,3 +36,13 @@ def ecrire_fichier(table, fichier, delimiteur=","):
         t = [val for cle, val in table[i].items()] # Récupérer les valeurs de la ligne dans une liste
         f.write(f"{delimiteur.join(t)}\n")
     f.close()
+
+# VOTRE PROGRAMME
+# 1 - Lire le fichier exemple.csv
+table = ...
+# 2 - Créer un nouveau dictionnaire avec vos informations
+infos = {}
+# 3 - Ajouter ce dictionnaire à la liste table
+...
+# 4 - Créer le nouveau fichier CSV
+...

@@ -103,11 +103,14 @@ On peut récupérer les **données** d'un **fichier** avec les fonctions de base
 
 Pour cela, on va utiliser la fonction `open` pour **ouvrir un fichier** et les fonctions `readlines` et `readline` afin d'en récupérer le contenu.
 
-Voici un fichier `lire_ecrire.py` contenant une **fonction** `lire_fichier` permettant de **lire une table de données** (en `.csv` ou `.txt`) et qui **renvoie** une **liste de dictionnaires**, et un fichier `ecrire_fichier` qui **crée un fichier** à partir d'une **table de données**.
+!!! note "À faire 1"
+    Voici un fichier `lire_ecrire.py` contenant une **fonction** `lire_fichier` permettant de **lire une table de données** (en `.csv` ou `.txt`) et qui **renvoie** une **liste de dictionnaires**, et un fichier `ecrire_fichier` qui **crée un fichier** à partir d'une **table de données**.
 
-<center>
-[:material-cursor-default-click: Télécharger le fichier `lire_ecrire.py`](src/lire_ecrire.py){ target="_blank" }
-</center>
+    <center>
+    [:material-cursor-default-click: Télécharger le fichier `lire_ecrire.py`](src/lire_ecrire.py){ target="_blank" }
+    </center>
+
+    Ouvrez ce fichier dans **Thonny**.
 
 En reprenant le **CSV précédent** :
 
@@ -145,12 +148,14 @@ table
 <u><b>Note</b></u> : Les données sont toutes enregistrées en **chaînes de caractères**.<br />
 On peut utiliser des fonctions comme **int()**, **float()** ou encore **eval()** pour convertir les données.
 
-!!! note "À faire"
+!!! note "À faire 2"
     Téléchargez le fichier `exemple.csv` contenant les enregistrements de l'exemple précédent :
     
     <center>
     [:material-cursor-default-click: Télécharger le fichier `exemple.csv`](src/exemple.csv){ target="_blank" }
     </center>
+
+    Tout en bas du fichier `lire_ecrire.py`, écrire un **programme** pour :
 
     1. Lire le fichier **CSV** avec la fonction `lire_fichier` du fichier [lire_ecrire.py](src/lire_ecrire.py){ target="_blank" } et stocker le résultat dans une **variable**.
     2. Votre **variable** contient donc une **liste de dictionnaires**. Rajoutez un **nouvel enregistrement** contenant votre **nom, prénom, âge et date de naissance**.
@@ -200,9 +205,29 @@ Ouvrons d'abord ce fichier avec *LibreOffice Calc* pour visuellement son contenu
         - `ordre`, initialisé à `None`, permettant si on le souhaite de définir l'**ordre des attributs** de la table.
 
 !!! note "Exercice 1 - *Créer un fichier CSV*"
-    Compléter la **fonction** `creer_table_classe` qui consiste à **créer une table** dans un **fichier CSV** contenant le *nom*, *prénom*, l'*âge* et la *classe* de **chaque élève** de **première NSI**.
+    Compléter la **fonction** `creer_table_classe` qui consiste à **créer une table** dans un **fichier CSV** contenant le *nom*, *prénom*, l'*âge* et la *classe* de **chaque élève** d'une **classe fictive de première NSI**.
 
-    Vous devrez donc, dans la fonction, appeler `creer_csv` en lui donnant **en entrée** la **liste de dictionnaires** que vous aurez créé. Le **fichier CSV de sortie** sera **par défaut** celui contenu dans `FICHIER_SORTIE` (initialement `'mon_fichier.csv'`), que vous pouvez **changer** si vous le souhaitez.
+    Vous utiliserez la **table de donnéees** suivante (*liste de dictionnaires*) :
+
+    ```python
+    classe = [{"nom": "Lizotte", "prenom": "Emma", "age": "15", "classe": "1G2"},
+              {"nom": "Aubert", "prenom": "Luc", "age": "16", "classe": "1G1"},
+              {"nom": "Rousset", "prenom": "Théo", "age": "15", "classe": "1G1"},
+              {"nom": "Dubois", "prenom": "Maxime", "age": "16", "classe": "1G3"},
+              {"nom": "Levasseur", "prenom": "Maria", "age": "15", "classe": "1G2"},
+              {"nom": "Chabrier", "prenom": "Pierre", "age": "15", "classe": "1G1"},
+              {"nom": "Levy", "prenom": "Sylvain", "age": "16", "classe": "1G3"},
+              {"nom": "Robin", "prenom": "Thomas", "age": "16", "classe": "1G4"},
+              {"nom": "Cornemuse", "prenom": "Carla", "age": "16", "classe": "1G2"},
+              {"nom": "Gomme", "prenom": "Mathieu", "age": "16", "classe": "1G4"},
+              {"nom": "Bornil", "prenom": "Raphaël", "age": "15", "classe": "1G2"},
+              {"nom": "Marnier", "prenom": "Alexandre", "age": "16", "classe": "1G1"},
+              {"nom": "Soubois", "prenom": "Lucie", "age": "15", "classe": "1G4"}]
+    ```
+
+    Vous devrez donc, dans la fonction, appeler `creer_csv` en lui donnant **en entrée** cette **liste de dictionnaires**. Le **fichier CSV de sortie** sera **par défaut** celui contenu dans `FICHIER_SORTIE` (initialement `'mon_fichier.csv'`), que vous pouvez **changer** si vous le souhaitez.
+
+
 
 !!! note "Exercice 2 - *Lister les colonnes*"
     Complétez la fonction `lister_colonnes` qui **prend une table** (*liste de dictionnaires*) en entrée et **renvoie** une **liste des attributs** de la table.
