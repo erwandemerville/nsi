@@ -353,6 +353,3 @@ On dispose de ces deux tables qui contiennent toutes les deux une colonne *nom* 
     Complétez les `...` de la **fonction à trous** suivante :
 
     {{ IDE('scripts/fusion_tables.py') }}
-
-??? tip "Correction exercice 6"
-    {{ IDE('scripts/fusion_tables_corr.py') }}
