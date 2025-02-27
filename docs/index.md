@@ -17,6 +17,7 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Architecture matérielle](premiere/archi/index.md) | Circuits logiques, algèbre de Boole, modèle de Von Neumann... |
 | [Algorithmique](premiere/algorithmique/index.md) | Algorithmes et leur implémentation en langage Python (*recherche séquentielle*, *recherche dichotomique*, *algorithmes de tri*...) |
 | [Traitement des données en tables](premiere/traitement_donnees/index.md) | Traitement des données en tables. |
+| [Interactions Homme-Machine sur le web](premiere/interactions/index.md) | Interactions Homme-Machine sur le web |
 | [:video_game: Le module Pyxel](premiere/pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |
 
 ## NSI terminale
