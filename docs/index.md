@@ -32,6 +32,7 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Piles et files](terminale/pilesfiles/index.md) | Structures de piles et de files et implémentations. |
 | [Les arbres](terminale/arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |
 | [Protocoles de routage](terminale/routage/index.md) | Protocoles de routage RIP et OSPF. |
+| [Recherche textuelle](terminale/recherche_textuelle/index.md) | Algorithmes de recherche dans un texte. |
 | [:material-pencil: Sujet e3c de rentrée corrigé](terminale/e3c/index.md) | Le sujet d'e3c de rentrée avec correction détaillée. |
 | [:material-language-python: Révisions / Entraînement Python](terminale/entrainement_python/index.md) | Quelques exercices pour vous exercer au langage Python. |
 | [:video_game: Le module Pyxel](terminale/pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |

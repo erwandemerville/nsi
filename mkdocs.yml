@@ -140,6 +140,10 @@ nav:
       - Cours: terminale/routage/cours.md
       - Exercices: terminale/routage/exercices.md
       - TP Filius: terminale/routage/tp_filius.md
+    - Recherche textuelle:
+      - terminale/recherche_textuelle/index.md
+      - TP d'introduction: terminale/recherche_textuelle/tp_intro.md
+      - Cours: terminale/recherche_textuelle/cours.md
     - Sujet e3c:
       - terminale/e3c/index.md
     - Entraînement Python:
