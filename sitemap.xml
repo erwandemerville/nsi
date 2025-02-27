@@ -396,6 +396,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/recherche_textuelle/</loc>
+         <lastmod>2025-02-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/recherche_textuelle/cours/</loc>
+         <lastmod>2025-02-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/recherche_textuelle/tp_intro/</loc>
+         <lastmod>2025-02-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://nsi.erwandemerville.fr/terminale/recursivite/</loc>
          <lastmod>2025-02-27</lastmod>
          <changefreq>daily</changefreq>
