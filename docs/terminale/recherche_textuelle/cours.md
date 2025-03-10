@@ -84,7 +84,7 @@ def BMH(texte, motif):
     i = len(motif) - 1  # stocker indice du dernier caractère du motif
     while i < len(texte):  # parcourir le texte
         b = True  # initialiser b à True
-        for j in range(len(motif) - 1):  # parcourir le motif
+        for j in range(len(motif)):  # parcourir le motif
             if texte[i - j] != motif[len(motif) - j - 1]:  # Comparer un caractère du motif avec un caractère du texte
                 b = False  # si un caractère ne correspond pas, b passe à False
         if b:  # si b est resté à True, alors on a trouvé le motif
@@ -102,5 +102,9 @@ def BMH(texte, motif):
 Pour aller plus loin, vous pouvez consulter le notebook `Boyer_Moore_BS_Eleve.ipynb` ci-dessous présentant la **règle du bon suffixe**, ainsi que le notebook `Boyer_Moore_complet.ipynb` implémentant l'**algorithme de Boyer-Moore complet**, utilisant à la fois la **règle du mauvais caractère** et la **règle du bon suffixe**.
 
 !!! success "Notebooks"
-    - [Boyer_Moore_BS.ipynb](src/Boyer_Moore_BS_Eleve.ipynb) - découverte de la règle du **bon suffixe**
-    - [Boyer_Moore_complet.ipynb](src/Boyer_Moore_complet_Eleve.ipynb) - algorithme de **Boyer-Moore** avec la **règle du mauvais caractère** et la **règle du bon suffixe**
+    - [Boyer Moore avec la règle du bon suffixe](https://capytale2.ac-paris.fr/web/c/c676-5756802) - découverte de la règle du **bon suffixe**
+    - [Boyer Moore complet](https://capytale2.ac-paris.fr/web/c/f0a8-5756846) - algorithme de **Boyer-Moore** avec la **règle du mauvais caractère** et la **règle du bon suffixe**
+
+Voici également une petite **vidéo** expliquant le principe de la **règle du bon suffixe** :
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/YGejqMcfu98?si=GYhF6-mvBowpg-j1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
