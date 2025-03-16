@@ -86,6 +86,15 @@ On va exécuter de façon **interactive** une **séquence d'instructions Javascr
 [:material-cursor-default-click: Cours sur le langage JavaScript (à lire)](https://pgdg.frama.io/1nsi/ihm/js/){ style="font-size:1.5em" target="_blank" }
 </center>
 
+*Exemples* de codes à tester issus du cours ci-dessus :
+
+- [Exemple d'implémentation de gestionnaire d'évènements](https://codepen.io/erwandemerville/pen/YPzrgWb)
+- [Exemple d'un tableau 3x3 dont on veut connaître la case cliquée](https://codepen.io/erwandemerville/pen/GgRMeEg)
+- [Exemple d'utilisation de variable](https://codepen.io/erwandemerville/pen/wBvrOMM)
+- [Exemple de sélection d'éléments](https://codepen.io/erwandemerville/pen/yyLzwNb)
+
+## Autres ressources
+
 Voici également d'autres ressources intéressantes pour vous permettre d'approfondir votre maîtrise du langage **javascript** :
 
 - [https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide](https://developer.mozilla.org/fr/docs/Web/JavaScript/Guide)

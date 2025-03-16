@@ -28,52 +28,7 @@ Directement inspiré du **modèle relationnel** introduit par Edgar Frank Codd (
 Le **langage SQL** permet de **créer des tables** en spécifiant leur **nom**, leurs **attributs**, les **types** de ces derniers et les **contraintes** associées à la table.
 
 !!! abstract ""
-    On propose de reprendre le **diagramme** et le **schéma relationnel** définis dans la correction de l'[exercice 2 sur le modèle relationnel](modele_relationnel.md#un-exemple-pratique) du cours précédent :
-
-    ```mermaid
-    erDiagram
-        LIVRES ||--o{ AUTEURS : "Auteur_ID"
-        LIVRES ||--o{ LANGUES : "Langue_ID"
-        LIVRES {
-            INT ID_Livre
-            STR Titre
-            INT Annee_Publication
-            INT Langue_ID
-            INT Auteur_ID
-        }
-
-        AUTEURS {
-            INT ID_Auteur
-            STR Nom
-            STR Prenom
-            DATE Date_Naissance
-        }
-
-        THEMES {
-            INT ID_Theme
-            STR Nom
-        }
-
-        LANGUES {
-            INT ID_Langue
-            STR Nom
-        }
-
-        LIVRES_Themes ||--o{ LIVRES : "ID_Livre"
-        LIVRES_Themes ||--o{ THEMES : "ID_Theme"
-        LIVRES_Themes {
-            INT ID_Livre
-            INT ID_Theme
-        }
-    ```
-
-    Et voici le **schéma relationnel** correspondant :
-
-    - *Livres*(<u>*ID_Livre* Int</u>, *Titre* String, *Annee_Publication* Int, #*Langue_ID* Int, #*Auteur_ID* Int)
-    - *Auteurs*(<u>*ID_Auteur* Int</u>, *Nom* String, *Prenom* String, *Date_Naissance* Date)
-    - *Themes*(<u>*ID_Theme* Int</u>, *Nom* String)
-    - *Langues*(<u>*ID_Langue* Int</u>, *Nom* String)
-    - *Livres_Themes*(<u>#*ID_Livre* Int, #*ID_Theme* Int</u>)
+    On propose de reprendre le **diagramme** et le **schéma relationnel** définis dans la correction de l'[exercice 2 sur le modèle relationnel](modele_relationnel.md#un-exemple-pratique) du cours précédent.
 
 !!! abstract "DB Browser for SQLite"
     Dans le cadre de ce cours sur le **SQL**, on travaillera avec le logiciel *DB Browser for SQLite*, permettant de **manipuler** des **bases de données** à l'aide de la **bibliothèque** *SQLite* et de bénéficier d'une interface graphique simplifiant la **manipulation des tables**.

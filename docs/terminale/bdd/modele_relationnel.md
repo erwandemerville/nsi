@@ -84,7 +84,7 @@ Voici une **table de données** sur plusieurs **livres** :
 !!! note "Exercice 2"
     Quels éléments de la table sont en contradiction avec les **principes du modèle relationnel** énoncés ci-dessus ?
    
-    Redistribuer les données dans **4 tables différentes**, en donnant leur *schéma relationnel*.
+    Redistribuer les données dans **4** ou **5 tables différentes**, en donnant le *diagramme* et le *schéma relationnel*.
 
 !!! warning ""
     On peut **modéliser** une **base de données** sous la forme d'un **diagramme** ou d'un **schéma relationnel** (voir le bloc de *correction* ci-dessus).  

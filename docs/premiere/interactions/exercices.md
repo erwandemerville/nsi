@@ -22,12 +22,11 @@
 !!! success ""
     **HTML et CSS** :
 
-    - [Notebook - Les bases du HTML et du CSS](src/06a_basesHTML_CSS.ipynb){ target="_blank" }
-    - [Notebook - CSS approfondissement](src/06b_CSS_avancee.ipynb){ target="_blank" }
+    - [Notebook - CSS approfondissement](https://capytale2.ac-paris.fr/web/c/8995-5927955)
 
     **JavaScript** :
 
-    - [Notebook - Modifier les éléments du DOM avec JavaScript](src/06c_DOM_javascript.ipynb){ target="_blank" }
+    - [Notebook - Modifier les éléments du DOM avec JavaScript](https://capytale2.ac-paris.fr/web/c/2118-5957308)
 
 ## Autres exercices
 

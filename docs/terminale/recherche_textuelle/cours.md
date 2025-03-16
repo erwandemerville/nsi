@@ -15,20 +15,19 @@ Avant de voir l'algorithme de **Boyer-Moore**, rappelons la méthode de **recher
     **ENTRÉES** :  
     &emsp;&emsp;`texte` : texte dans lequel rechercher - **chaîne de caractères**  
     &emsp;&emsp;`motif` : motif à rechercher dans le texte - **chaîne de caractères**  
-    **SORTIE** : liste des **positions** (indices) de `motif` dans `texte`
+    **SORTIE** : position (*indice*) de la **première occurence** de `motif` dans `texte`, ou `-1`
 
     **DÉBUT ALGORITHME**  
-    &emsp;&emsp;res ← *LISTE VIDE*  
     &emsp;&emsp;**POUR** i **ALLANT DE** 0 **À** longueur(texte) $-$ longueur(motif) :  
     &emsp;&emsp;&emsp;&emsp;j ← 0  
     &emsp;&emsp;&emsp;&emsp;**TANT QUE** j $<$ longueur(motif) **ET QUE** texte[i $+$ j] $=$ motif[j] :    
     &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;j ← j $+$ 1  
     &emsp;&emsp;&emsp;&emsp;**FIN TANT QUE**  
     &emsp;&emsp;&emsp;&emsp;**SI** j $=$ longueur(motif), **ALORS** :  
-    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Ajouter** i **à** res  
+    &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;**Renvoyer** i  
     &emsp;&emsp;&emsp;&emsp;**FIN SI**  
     &emsp;&emsp;**FIN POUR**  
-    &emsp;&emsp;**Renvoyer** res  
+    &emsp;&emsp;**Renvoyer** -1  
     **FIN ALGORITHME**
     </div>
 
@@ -62,7 +61,9 @@ Voici une petite **vidéo** récapitulant le **principe** de fonctionnement de l
 Voici une animation montrant le fonctionnement de l'algorithme de **Boyer-Moore-Horspool**.
 Vous pouvez changer le *texte*, le *motif* (*pattern*), ainsi que la *vitesse d'animation* (*Animation Speed*).
 
-<embed type="text/html" src="https://cmps-people.ok.ubc.ca/ylucet/DS/BoyerMoore.html" width="700" height="700"> 
+<center style="font-size: 1.4em">
+[:octicons-link-external-16: Accéder à l'animation](https://cmps-people.ok.ubc.ca/ylucet/DS/BoyerMoore.html)
+</center>
 
 ## L'algorithme
 
@@ -79,22 +80,24 @@ def decalage(motif):
 À présent, on peut écrire l'**algorithme de Boyer-Moore-Horspool** de la manière suivante :
 
 ```python
-def BMH(texte, motif):
-    D = decalage(motif)  # création de la table des décalages
-    i = len(motif) - 1  # stocker indice du dernier caractère du motif
-    while i < len(texte):  # parcourir le texte
-        b = True  # initialiser b à True
-        for j in range(len(motif)):  # parcourir le motif
-            if texte[i - j] != motif[len(motif) - j - 1]:  # Comparer un caractère du motif avec un caractère du texte
-                b = False  # si un caractère ne correspond pas, b passe à False
-        if b:  # si b est resté à True, alors on a trouvé le motif
-            return True  # on renvoie True
-        # sinon :
-        if texte[i] in D.keys():  # si le caractère i est dans le motif
-            i = i + D[texte[i]]  # on décale le motif de la valeur (de la table de sauts D) associée au caractère présent à l'indice i du texte
+def boyer_moore(texte, motif):
+    decale = decalage(motif)  # définir la table de décalage du motif
+    i = len(motif) - 1  # variable de boucle de la première boucle (parcours du texte)
+    while i < len(texte):  # tant qu'on a pas parcouru tout le texte
+        j = 0  # variable de boucle de la deuxième boucle (parcours du motif)
+        while j < len(motif) and texte[i - j] == motif[len(motif) - 1 - j]:  # tant qu'on a pas parcouru tout le motif et que les caractères correspondent
+            j += 1  # on incrémente j
+
+        # vérifier si on a parcouru tout le motif
+        if j == len(motif):
+            return i - len(motif) + 1  # renvoyer la position du motif dans le texte
+        
+        # décaler i en fonction de la table de décalage
+        if texte[i] in decale:  # regarder si le caractère d'indice i du texte est dans le motif
+            i += decale[texte[i]]  # si oui, on décale selon la valeur stockée dans la table de décalage
         else:  # sinon
-            i = i + len(motif)  # on décale le motif de la longueur du texte
-    return False  # motif non trouvé : on renvoie False
+            i += len(motif)  # on décale de la longueur du motif
+    return -1
 ```
 
 ## Aller plus loin
