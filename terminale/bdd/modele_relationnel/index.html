@@ -3257,9 +3257,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#un-exemple-pratique" class="md-nav__link">
+  <a href="#un-premier-exemple-pratique" class="md-nav__link">
     <span class="md-ellipsis">
-      Un exemple pratique
+      Un premier exemple pratique
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-autre-exemple-pratique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un autre exemple pratique
     </span>
   </a>
   
@@ -3626,9 +3635,18 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#un-exemple-pratique" class="md-nav__link">
+  <a href="#un-premier-exemple-pratique" class="md-nav__link">
     <span class="md-ellipsis">
-      Un exemple pratique
+      Un premier exemple pratique
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#un-autre-exemple-pratique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Un autre exemple pratique
     </span>
   </a>
   
@@ -3731,7 +3749,39 @@
 <li>définir les <em>contraintes</em> de la <strong>base de données</strong>, c'est-à-dire l'<strong>ensemble</strong> des <strong>propriétés logiques</strong> que nos <strong>données</strong> doivent <strong>vérifier à tout moment</strong> (voir la partie <a href="#les-contraintes-dintegrite">contraintes d'intégrité</a>.)</li>
 </ol>
 </div>
-<h2 id="un-exemple-pratique">Un exemple pratique<a class="headerlink" href="#un-exemple-pratique" title="Permanent link">¶</a></h2>
+<h2 id="un-premier-exemple-pratique">Un premier exemple pratique<a class="headerlink" href="#un-premier-exemple-pratique" title="Permanent link">¶</a></h2>
+<p>On souhaite créer la <strong>base de données</strong> d'une société de <strong>location de skis</strong>.</p>
+<p>Voici un <strong>diagramme</strong> représentant 3 tables de données :</p>
+<pre class="mermaid"><code>erDiagram
+    CLIENTS ||--o{ LOCATIONS : "ID_Client"
+    CLIENTS {
+        INT ID
+        STR Nom
+        STR Prenom
+        STR Telephone
+    }
+
+    ARTICLES ||--o{ LOCATIONS : "ID_Article"
+    ARTICLES {
+        INT ID
+        STR Marque
+        STR Modele
+        FLOAT Prix
+    }
+
+    LOCATIONS {
+        INT ID_Client
+        INT ID_Article
+        DATE Date_Debut
+        DATE Date_Fin
+    }</code></pre>
+<p>Et voici le <strong>schéma relationnel</strong> correspondant :</p>
+<ul>
+<li><em>Clients</em>(<u><em>ID</em> INT</u>, <em>Nom</em> STR, <em>Prenom</em> STR, <em>Telephone</em> STR)</li>
+<li><em>Articles</em>(<u><em>ID</em> INT</u>, <em>Marque</em> STR, <em>Modele</em> STR, <em>Prix</em> FLOAT)</li>
+<li><em>Locations</em>(<u>#<em>ID_Client</em> INT, #<em>ID_Article</em> INT</u>, <em>Date_Debut</em> DATE, <em>Date_Fin</em> DATE)</li>
+</ul>
+<h2 id="un-autre-exemple-pratique">Un autre exemple pratique<a class="headerlink" href="#un-autre-exemple-pratique" title="Permanent link">¶</a></h2>
 <p>Voici une <strong>table de données</strong> sur plusieurs <strong>livres</strong> :</p>
 <table>
 <thead>
