@@ -3753,7 +3753,7 @@
 <p>On souhaite créer la <strong>base de données</strong> d'une société de <strong>location de skis</strong>.</p>
 <p>Voici un <strong>diagramme</strong> représentant 3 tables de données :</p>
 <pre class="mermaid"><code>erDiagram
-    CLIENTS ||--o{ LOCATIONS : "ID_Client"
+    LOCATIONS ||--o{ CLIENTS : "ID_Client"
     CLIENTS {
         INT ID
         STR Nom
@@ -3761,7 +3761,7 @@
         STR Telephone
     }
 
-    ARTICLES ||--o{ LOCATIONS : "ID_Article"
+    LOCATIONS ||--o{ ARTICLES : "ID_Article"
     ARTICLES {
         INT ID
         STR Marque
