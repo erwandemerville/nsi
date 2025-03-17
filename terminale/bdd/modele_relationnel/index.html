@@ -3775,7 +3775,8 @@
         DATE Date_Debut
         DATE Date_Fin
     }</code></pre>
-<p>Et voici le <strong>schéma relationnel</strong> correspondant :</p>
+<p>Et voici le <strong>schéma relationnel</strong> correspondant.
+Les <strong>attributs soulignées</strong> forment <u><strong>la clé primaire</strong></u> et les <strong>clés</strong> précédées d'un <strong>#</strong> sont des <strong>clés étrangères</strong>.</p>
 <ul>
 <li><em>Clients</em>(<u><em>ID</em> INT</u>, <em>Nom</em> STR, <em>Prenom</em> STR, <em>Telephone</em> STR)</li>
 <li><em>Articles</em>(<u><em>ID</em> INT</u>, <em>Marque</em> STR, <em>Modele</em> STR, <em>Prix</em> FLOAT)</li>
@@ -3956,6 +3957,52 @@
 <p>Quels éléments de la table sont en contradiction avec les <strong>principes du modèle relationnel</strong> énoncés ci-dessus ?</p>
 <p>Redistribuer les données dans <strong>4</strong> ou <strong>5 tables différentes</strong>, en donnant le <em>diagramme</em> et le <em>schéma relationnel</em>.</p>
 </div>
+<details class="tip">
+<summary>Correction possible exercice 2</summary>
+<p>Voici une possibilité de <strong>modélisation</strong> de cette <strong>base de données</strong>, ici sous la forme d'un <strong>diagramme</strong> :</p>
+<pre class="mermaid"><code>erDiagram
+    LIVRES ||--o{ AUTEURS : "Auteur_ID"
+    LIVRES ||--o{ LANGUES : "Langue_ID"
+    LIVRES {
+        INT ID_Livre
+        STR Titre
+        INT Annee_Publication
+        INT Langue_ID
+        INT Auteur_ID
+    }
+
+    AUTEURS {
+        INT ID_Auteur
+        STR Nom
+        STR Prenom
+        DATE Date_Naissance
+    }
+
+    THEMES {
+        INT ID_Theme
+        STR Nom
+    }
+
+    LANGUES {
+        INT ID_Langue
+        STR Nom
+    }
+
+    LIVRES_Themes ||--o{ LIVRES : "ID_Livre"
+    LIVRES_Themes ||--o{ THEMES : "ID_Theme"
+    LIVRES_Themes {
+        INT ID_Livre
+        INT ID_Theme
+    }</code></pre>
+<p>Et voici le <strong>schéma relationnel</strong> correspondant :</p>
+<ul>
+<li><em>Livres</em>(<u><em>ID_Livre</em> Int</u>, <em>Titre</em> String, <em>Annee_Publication</em> Int, #<em>Langue_ID</em> Int, #<em>Auteur_ID</em> Int)</li>
+<li><em>Auteurs</em>(<u><em>ID_Auteur</em> Int</u>, <em>Nom</em> String, <em>Prenom</em> String, <em>Date_Naissance</em> Date)</li>
+<li><em>Themes</em>(<u><em>ID_Theme</em> Int</u>, <em>Nom</em> String)</li>
+<li><em>Langues</em>(<u><em>ID_Langue</em> Int</u>, <em>Nom</em> String)</li>
+<li><em>Livres_Themes</em>(<u>#<em>ID_Livre</em> Int, #<em>ID_Theme</em> Int</u>)</li>
+</ul>
+</details>
 <div class="admonition warning">
 <p>On peut <strong>modéliser</strong> une <strong>base de données</strong> sous la forme d'un <strong>diagramme</strong> ou d'un <strong>schéma relationnel</strong> (voir le bloc de <em>correction</em> ci-dessus).<br>
 Dans le cadre du <em>programme de terminale</em>, vous devez surtout retenir la façon dont on crée un <strong>schéma relationnel</strong>.</p>
