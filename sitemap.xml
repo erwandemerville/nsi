@@ -96,6 +96,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://nsi.erwandemerville.fr/premiere/bases_python/listes/</loc>
+         <lastmod>2025-03-18</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://nsi.erwandemerville.fr/premiere/bases_python/n_uplets_dicos/</loc>
          <lastmod>2025-03-18</lastmod>
          <changefreq>daily</changefreq>
