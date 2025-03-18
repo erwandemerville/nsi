@@ -520,7 +520,7 @@
               
   
   <span class="md-ellipsis">
-    Les bases de Python
+    Le langage Python
   </span>
   
 
@@ -536,7 +536,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
-            Les bases de Python
+            Le langage Python
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -550,6 +550,8 @@
   
     
     
+      
+        
       
         
       
@@ -596,6 +598,27 @@
   
   <span class="md-ellipsis">
     Introduction au Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/traitement_donnees/n_uplets_dicos.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    n-uplets et dictionnaires
   </span>
   
 
@@ -1242,8 +1265,6 @@
       
         
       
-        
-      
     
     
       
@@ -1283,27 +1304,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../premiere/traitement_donnees/n_uplets_dicos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    n-uplets et dictionnaires
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -3821,6 +3821,19 @@ On qualifie d'<strong>abstrait</strong> ce type de donnée car on ne spécifie p
 <div class="admonition note">
 <p class="admonition-title">À faire</p>
 <p>Écrivez <strong>de manière récursive</strong> les <strong>fonctions</strong> <code>longueur</code>, <code>afficher</code>, <code>nieme_element</code>, <code>concatener</code> et <code>renverser</code>, en respectant bien la documentation.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Implémentation finale</p>
+<p><a href="../scripts/cellule.py" target="_blank">Télécharger cellule.py</a></p>
+<p></p><div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_5e5ea19e8aef39daf80e87b7d840ab3d18536229" class="comment">###</span><div class="line" id="editor_5e5ea19e8aef39daf80e87b7d840ab3d18536229"></div><div id="term_editor_5e5ea19e8aef39daf80e87b7d840ab3d18536229" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_5e5ea19e8aef39daf80e87b7d840ab3d18536229","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_5e5ea19e8aef39daf80e87b7d840ab3d18536229","scripts/cellule")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_5e5ea19e8aef39daf80e87b7d840ab3d18536229').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_5e5ea19e8aef39daf80e87b7d840ab3d18536229" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_5e5ea19e8aef39daf80e87b7d840ab3d18536229")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_5e5ea19e8aef39daf80e87b7d840ab3d18536229")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div><span id="content_editor_5e5ea19e8aef39daf80e87b7d840ab3d18536229" class="py_mk_hide">class Cellule:bksl-nl    ''' Une cellule d'une liste chaînée. '''bksl-nlbksl-nl    def py-undpy-undinitpy-undpy-und(self, v, s):bksl-nl        self.valeur = v  # Valeur contenue dans la cellulebksl-nl        self.suivante = s  # Cellule suivantebksl-nlbksl-nl    def py-undpy-undlenpy-undpy-und(self):bksl-nl        ''' Renvoie la longueur de la liste non vide. '''bksl-nl        bksl-nl        if self.suivante == None:bksl-nl            return 1bksl-nl        else:bksl-nl            return 1 + len(self.suivante)bksl-nl        bksl-nl    def py-undpy-undstrpy-undpy-und(self):bksl-nl        ''' Renvoie une représentation textuelle de la liste. '''bksl-nlbksl-nl        res = f'[{self.valeur}'bksl-nl        cell = self.suivantebksl-nl        while cell:bksl-nl            res += f', {cell.valeur}'bksl-nl            cell = cell.suivantebksl-nl        res += ']'bksl-nl        return resbksl-nlbksl-nl# Fonctions définies en dehors de la classebksl-nlbksl-nldef longueur(lst):bksl-nl    ''' Renvoie la longueur d'une liste.bksl-nl    Si la liste est un objet None, cette longueur vaut 0.bksl-nl    Sinon, la longueur est calculée avec la méthode py-undpy-undlenpy-undpy-und de la classe Cellule. '''bksl-nlbksl-nl    if lst is None:  # si la liste chaînée est VIDEbksl-nl        return 0  # sa longueur vaut 0bksl-nl    else:bksl-nl        return len(lst)  # sinon, on fait appel à la méthode spéciale py-undpy-undlenpy-undpy-undbksl-nlbksl-nldef afficher(lst):bksl-nl    ''' Affiche textuellement la liste.bksl-nl    Si la liste est VIDE, représentée par l'objet None, l'affichage sera '[]'.bksl-nl    Sinon, l'affichage sera obtenu avec la méthode py-undpy-undstrpy-undpy-und de la classe Cellule. '''bksl-nlbksl-nl    if lst is None:  # si la liste chaînée est VIDEbksl-nl        print('[]')bksl-nl    else:bksl-nl        print(lst)  # on fait appel à la méthode spéciale py-undpy-undstrpy-undpy-undbksl-nlbksl-nldef niemepy-undelement(n, lst):bksl-nl    ''' Renvoie le n-ième élément de la liste lst NON VIDE.bksl-nl    Les éléments sont indexés à partir de 0.bksl-nl    :param lst: (Cellule) une liste chaînée non vide.bksl-nl    :return: l'élément contenu à l'indice n de la liste. '''bksl-nlbksl-nl    if lst is None:bksl-nl        raise ValueError("La liste ne doit pas être vide !")bksl-nl    elif n == 0:  # cas de base : si n vaut 0bksl-nl        return lst.valeur  # on renvoie la première valeur de la liste lstbksl-nl    else:bksl-nl        return niemepy-undelement(n - 1, lst.suivante)  # cas général (récursif)bksl-nlbksl-nldef concatener(l1, l2):bksl-nl    ''' Renvoie une nouvelle liste, résultant de la concaténation des listes l1 et l2.bksl-nl    :param l1: (Cellule | None) une liste chaînéebksl-nl    :param l2: (Cellule | None) une autre liste chaînéebksl-nl    :return: (Cellule | None) une nouvelle liste chaînée '''bksl-nlbksl-nl    if l1 is None:  # cas de base : si la liste l1 est VIDEbksl-nl        return l2  # on renvoie simplement l2bksl-nl    else:bksl-nl        return Cellule(l1.valeur, concatener(l1.suivante, l2))  # cas général (récursif)bksl-nlbksl-nldef renverserpy-undrec(lst):bksl-nl    ''' Renvoie une nouvelle liste contenant les éléments de <code>lst</code> mais dans l'ordre inverse.bksl-nl    Implémentation récursive, plus simple à écrire mais moins efficace, car on doitbksl-nl    faire autant de concaténations qu'il y a d'éléments dans lst.bksl-nl    :param lst: (Cellule | None) une liste chaînéebksl-nl    :return: (Cellule | None) une nouvelle liste chaînée '''bksl-nlbksl-nl    if lst is None:  # cas de base : si la liste lst est VIDEbksl-nl        return None  # une liste VIDE renservée reste une liste VIDEbksl-nl    else:bksl-nl        return concatener(renverserpy-undrec(lst.suivante), Cellule(lst.valeur, None))  # cas général (récursif)bksl-nlbksl-nldef renverserpy-undit(lst):bksl-nl    ''' Renvoie une nouvelle liste contenant les éléments de <code>lst</code> mais dans l'ordre inverse.bksl-nl    Version itérative, plus efficace que la version récursive précédente.bksl-nl    :param lst: (Cellule | None) une liste chaînéebksl-nl    :return: (Cellule | None) une nouvelle liste chaînée '''bksl-nlbksl-nl    res = None  # créer une nouvelle liste chaînée VIDEbksl-nl    c = lst  # stocker la première cellule de lstbksl-nl    while c is not None:  # tant que l'on a pas parcouru toute la listebksl-nl        res = Cellule(c.valeur, res)  # on crée une nouvelle liste à partir de la valeur de la cellule cbksl-nl                                      # et de l'ancienne liste contenue dans resbksl-nl        c = c.suivante  # on récupère la cellule suivante pour la stocker dans cbksl-nl    return res  # renvoyer notre nouvelle liste chaînéebksl-nl    bksl-nl# Créer une nouvelle liste contenant 1, 2, 3bksl-nllst = Cellule(1, Cellule(2, Cellule(3, None)))bksl-nllstpy-undvide = Nonebksl-nlafficher(lst)bksl-nlafficher(lstpy-undvide)bksl-nl</span><span id="corr_content_editor_5e5ea19e8aef39daf80e87b7d840ab3d18536229" class="py_mk_hide" data-strudel=""></span>
+<div class="admonition info">
+<p class="admonition-title">Remarques</p>
+<ul>
+<li>La fonction <strong>concatener</strong> ne <strong>modifie pas</strong> les deux <strong>listes chaînées</strong> <code>l1</code> et <code>l2</code> passées en entrée, elle renvoie <strong>une nouvelle liste chaînée</strong>. Pour créer une liste chaînée non vide, on fait appel au constructeur de la classe <code>Cellule</code>.</li>
+<li>Il faut bien comprendre que dans notre <strong>implémentation</strong>, une <strong>liste chaînée</strong>, représentée par une <strong>instance de la classe</strong> <code>Cellule</code>, est <strong>confondue</strong> avec <strong>la première cellule de cette liste</strong> (les deux sont identiques). C'est pourquoi, à la ligne <code>81</code> dans la fonction <code>renverser_it</code>, <strong>stocker</strong> la <strong>première cellule</strong> de la liste <code>lst</code> revient à stocker la liste <code>lst</code> elle-même.</li>
+<li>La fonction récursive <code>renverser_rec</code> n'est pas très efficace, puisqu'on fait autant de concaténations qu'il y a d'éléments dans la liste initiale. La version itérative <code>renverser_it</code> est plus efficace car on effectue un parcours de la liste initiale, en ajoutant chaque élément à notre nouvelle liste (en recréant à chaque fois une nouvelle liste en instanciant <code>Cellule</code>). Cet ajout est <strong>moins coûteux</strong> qu'une concaténation.</li>
+</ul>
+</div>
 </div></div>
 
 

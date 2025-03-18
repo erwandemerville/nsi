@@ -520,7 +520,7 @@
               
   
   <span class="md-ellipsis">
-    Les bases de Python
+    Le langage Python
   </span>
   
 
@@ -536,7 +536,7 @@
         <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
-            Les bases de Python
+            Le langage Python
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
@@ -550,6 +550,8 @@
   
     
     
+      
+        
       
         
       
@@ -596,6 +598,27 @@
   
   <span class="md-ellipsis">
     Introduction au Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/traitement_donnees/n_uplets_dicos.md" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    n-uplets et dictionnaires
   </span>
   
 
@@ -1242,8 +1265,6 @@
       
         
       
-        
-      
     
     
       
@@ -1283,27 +1304,6 @@
           </label>
           <ul class="md-nav__list" data-md-scrollfix>
             
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../premiere/traitement_donnees/n_uplets_dicos/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    n-uplets et dictionnaires
-  </span>
-  
-
-      </a>
-    </li>
-  
-
               
             
               
@@ -3154,9 +3154,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#animation" class="md-nav__link">
+  <a href="#animation-de-lalgorithme-de-boyer-moore-horspool" class="md-nav__link">
     <span class="md-ellipsis">
-      Animation
+      Animation de l'algorithme de Boyer-Moore-Horspool
     </span>
   </a>
   
@@ -3644,9 +3644,9 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#animation" class="md-nav__link">
+  <a href="#animation-de-lalgorithme-de-boyer-moore-horspool" class="md-nav__link">
     <span class="md-ellipsis">
-      Animation
+      Animation de l'algorithme de Boyer-Moore-Horspool
     </span>
   </a>
   
@@ -3733,40 +3733,221 @@
 <p>Voici une petite <strong>vidéo</strong> récapitulant le <strong>principe</strong> de fonctionnement de l'<strong>algorithme de Boyer-Moore-Horspool</strong> (version <strong>simplifiée</strong> de l'<strong>algorithme de Boyer-Moore</strong>).<br>
 <em>Source de la vidéo : <a href="https://www.youtube.com/watch?v=9OYJ8L9R1F0" target="_blank">https://www.youtube.com/watch?v=9OYJ8L9R1F0</a></em>.</p>
 <p><div class="video-container"><iframe src="../src/video_BMH.mp4" style="position:relative;width:100%;height:22.172vw" frameborder="0" allowfullscreen alt="type:video"></iframe></div></p>
-<h2 id="animation">Animation<a class="headerlink" href="#animation" title="Permanent link">¶</a></h2>
+<h2 id="animation-de-lalgorithme-de-boyer-moore-horspool">Animation de l'algorithme de Boyer-Moore-Horspool<a class="headerlink" href="#animation-de-lalgorithme-de-boyer-moore-horspool" title="Permanent link">¶</a></h2>
 <p>Voici une animation montrant le fonctionnement de l'algorithme de <strong>Boyer-Moore-Horspool</strong>.
-Vous pouvez changer le <em>texte</em>, le <em>motif</em> (<em>pattern</em>), et avancer en mot <em>pas à pas</em> (avec les boutons <em>Avancer</em> et <em>Reculer</em>) au <em>automatique</em>.</p>
-<p></p><center style="font-size: 1.4em">
-<a href="../animation.html"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"></path></svg></span> Accéder à l'animation</a>
-</center>
+Vous pouvez changer le <em>texte</em>, le <em>motif</em> (<em>pattern</em>), et avancer en mode <em>pas à pas</em> (avec les boutons <em>Avancer</em> et <em>Reculer</em>) au en mode <em>automatique</em>.</p>
+<style>
+    .container_animation { margin: 20px auto; width: 100%; border: 1px dotted black; text-align: center; font-family: Arial, sans-serif; }
+    .container_animation .input-group { margin-bottom: 10px; }
+    body[data-md-color-scheme="my_theme"] .container_animation input { background-color: #f6f6f6; }
+    .md-typeset .container_animation table td { font-size: 16px; padding: 0.5em 1em; }
+    .container_animation .compare { background-color: lightblue; }
+    .container_animation .mismatch { background-color: lightcoral; }
+    .container_animation .shift-highlight { background-color: #fff750; }
+    .container_animation .controls button { margin: 5px; padding: 10px; }
+    .container_animation .info { margin-top: 20px; font-size: 18px; }
+</style>
+<div class="container_animation">
+    <div class="input-group">
+        <label for="texte">Texte :</label>
+        <input type="text" id="texte" value="agracadabra">
+        <label for="motif">Motif :</label>
+        <input type="text" id="motif" value="abra">
+    </div>
+    <div class="controls">
+        <button onclick="startAnimation()" class="md-button">Exécuter</button>
+        <button onclick="stepForward()" class="md-button">Avancer</button>
+        <button onclick="stepBackward()" class="md-button">Reculer</button>
+        <button onclick="toggleAutoPlay()" id="autoButton" class="md-button">Automatique</button>
+    </div>
+    <table>
+        <tr id="text-display"></tr>
+        <tr id="pattern-display"></tr>
+    </table>
+    <div class="info" id="info"></div>
+    <div class="info" id="shift-table"></div>
+</div>
+<script>
+    let text, pattern, shiftTable, steps = [], stepIndex = 0, autoInterval, isAutoPlaying = false;
+
+    function computeShiftTable(motif) {
+        let table = {};
+        for (let i = 0; i < motif.length - 1; i++) {
+            table[motif[i]] = motif.length - 1 - i;
+        }
+        return table;
+    }
+
+    function startAnimation() {
+        text = document.getElementById("texte").value;
+        pattern = document.getElementById("motif").value;
+        shiftTable = computeShiftTable(pattern);
+        document.getElementById("shift-table").innerHTML = "Table de décalage : <b>" + JSON.stringify(shiftTable) + "</b>";
+        steps = [];
+        stepIndex = 0;
+        executeAlgorithm();
+    }
+
+    function executeAlgorithm() {
+        let i = 0;
+        while (i <= text.length - pattern.length) {
+            let j = pattern.length - 1;
+            while (j >= 0) {
+                let match = text[i + j] === pattern[j];
+                steps.push({ index: i, match: j, type: "compare", isMatch: match });
+                if (!match) break;
+                j--;
+            }
+            if (j < 0) {
+                steps.push({ index: i, found: true });
+                break;
+            }
+            let shiftChar = text[i + pattern.length - 1];
+            let shift = shiftTable[shiftChar] || pattern.length;
+            let shiftReason = shiftChar in shiftTable 
+                ? `Le caractère <span style="color: #ff782b">'<strong>${shiftChar}</strong>'</span> est dans la table de décalage.` 
+                : `Le caractère <span style="color: #ff782b">'<strong>${shiftChar}</strong>'</span> n'est pas dans la table, décalage de la longueur du motif.`;
+            steps.push({ index: i, shift: shift, shiftReason: shiftReason, shiftChar: shiftChar });
+            i += shift;
+        }
+        // Si on atteint la fin du texte sans trouver le motif, ajouter un message final
+        if (i > text.length - pattern.length) {
+            steps.push({ notFound: true });
+        }
+        // Mettre à jour l'affichage
+        updateDisplay();
+    }
+
+    function updateDisplay() {
+        if (stepIndex < 0) stepIndex = 0;
+        if (stepIndex >= steps.length) return;
+        let step = steps[stepIndex];
+
+        let textHTML = text.split('').map((c, idx) => {
+            let classes = "";
+            if (idx === step.index + step.match) classes += step.isMatch ? "compare" : "mismatch";
+            if (step.shiftChar && idx === step.index + pattern.length - 1) classes += " shift-highlight";
+            return `<td class="${classes}">${c}</td>`;
+        }).join('');
+        document.getElementById("text-display").innerHTML = textHTML;
+
+        let patternHTML = "<td></td>".repeat(step.index) + pattern.split('').map((c, idx) => {
+            let classes = "";
+            if (step.type === "compare" && idx === step.match) classes += step.isMatch ? "compare" : "mismatch";
+            return `<td class="${classes}">${c}</td>`;
+        }).join('');
+        document.getElementById("pattern-display").innerHTML = patternHTML;
+
+        if (step.type === "compare") {
+            document.getElementById("info").innerText = `Comparaison : ${text[step.index + step.match]} ${step.isMatch ? "==" : "!="} ${pattern[step.match]}`;
+        } else if (step.found) {
+            document.getElementById("info").innerHTML = `Motif trouvé en position <b>i = ${step.index}</b>`;
+        } else if (step.notFound) {
+            document.getElementById("info").innerText = "Fin du parcours, le motif n'a pas été trouvé.";
+        } else {
+            document.getElementById("info").innerHTML = `${step.shiftReason}<br /> Décalage de ${step.shift} positions.`;
+        }
+    }
+
+    function stepForward() {
+        if (stepIndex < steps.length) {
+            stepIndex++;
+            updateDisplay();
+        }
+    }
+
+    function stepBackward() {
+        if (stepIndex > 0) {
+            stepIndex--;
+            updateDisplay();
+        }
+    }
+
+    function toggleAutoPlay() {
+        if (isAutoPlaying) {
+            clearInterval(autoInterval);
+            isAutoPlaying = false;
+            document.getElementById("autoButton").innerText = "Automatique";
+        } else {
+            isAutoPlaying = true;
+            document.getElementById("autoButton").innerText = "Arrêter";
+            autoInterval = setInterval(() => {
+                if (stepIndex >= steps.length) {
+                    clearInterval(autoInterval);
+                    isAutoPlaying = false;
+                    document.getElementById("autoButton").innerText = "Automatique";
+                }
+                stepForward();
+            }, 1000);
+        }
+    }
+</script>
+
 <h2 id="lalgorithme">L'algorithme<a class="headerlink" href="#lalgorithme" title="Permanent link">¶</a></h2>
 <p>La <strong>table des sauts</strong> (ou <em>table de décalage</em>) peut être <strong>créée</strong> avec l'<strong>algorithme</strong> suivant, ici écrit en <em>Python</em> :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">decalage</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>    <span class="n">Dec</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="n">Dec</span><span class="p">[</span><span class="n">motif</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>    <span class="k">return</span> <span class="n">Dec</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">''' Renvoie la table de décalage du motif donné.</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="sd">    :param motif: (str) un motif</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="sd">    :return: (dict) table de dacalage du motif '''</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="n">Dec</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="n">Dec</span><span class="p">[</span><span class="n">motif</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">i</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">return</span> <span class="n">Dec</span>
 </span></code></pre></div>
 <p>À présent, on peut écrire l'<strong>algorithme de Boyer-Moore-Horspool</strong> de la manière suivante :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">boyer_moore</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">decale</span> <span class="o">=</span> <span class="n">decalage</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span>  <span class="c1"># définir la table de décalage du motif</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># variable de boucle de la première boucle (parcours du texte)</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">):</span>  <span class="c1"># tant qu'on a pas parcouru tout le texte</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># variable de boucle de la deuxième boucle (parcours du motif)</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="ow">and</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">motif</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">j</span><span class="p">]:</span>  <span class="c1"># tant qu'on a pas parcouru tout le motif et que les caractères correspondent</span>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># on incrémente j</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="c1"># vérifier si on a parcouru tout le motif</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            <span class="k">return</span> <span class="n">i</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># renvoyer la position du motif dans le texte</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>
-</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>        <span class="c1"># décaler i en fonction de la table de décalage</span>
-</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="k">if</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">decale</span><span class="p">:</span>  <span class="c1"># regarder si le caractère d'indice i du texte est dans le motif</span>
-</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="n">decale</span><span class="p">[</span><span class="n">texte</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>  <span class="c1"># si oui, on décale selon la valeur stockée dans la table de décalage</span>
-</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>        <span class="k">else</span><span class="p">:</span>  <span class="c1"># sinon</span>
-</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span>  <span class="c1"># on décale de la longueur du motif</span>
-</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">boyer_moore_horspool</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">''' Recherche d'un motif dans un texte avec l'algorithme de Boyer-Moore-Horspool.</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">    :param texte: (str) un texte</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">    :param motif: (str) un motif à chercher dans le texte</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">    :return: (int) la position de la première occurence du motif dans le texte '''</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">decale</span> <span class="o">=</span> <span class="n">decalage</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span>  <span class="c1"># définir la table de décalage du motif</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">i</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># variable de boucle de la première boucle (parcours du texte)</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">):</span>  <span class="c1"># tant qu'on a pas parcouru tout le texte</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="n">j</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># variable de boucle de la deuxième boucle (parcours du motif)</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>        <span class="k">while</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="ow">and</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">motif</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">j</span><span class="p">]:</span>  <span class="c1"># tant qu'on a pas parcouru tout le motif et que les caractères correspondent</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>            <span class="n">j</span> <span class="o">+=</span> <span class="mi">1</span>  <span class="c1"># on incrémente j</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>        <span class="c1"># vérifier si on a parcouru tout le motif</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>        <span class="k">if</span> <span class="n">j</span> <span class="o">==</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a>            <span class="k">return</span> <span class="n">i</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span>  <span class="c1"># renvoyer la position du motif dans le texte</span>
+</span><span id="__span-2-17"><a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a>
+</span><span id="__span-2-18"><a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a>        <span class="c1"># décaler i en fonction de la table de décalage</span>
+</span><span id="__span-2-19"><a id="__codelineno-2-19" name="__codelineno-2-19" href="#__codelineno-2-19"></a>        <span class="k">if</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="ow">in</span> <span class="n">decale</span><span class="p">:</span>  <span class="c1"># regarder si le caractère d'indice i du texte est dans le motif</span>
+</span><span id="__span-2-20"><a id="__codelineno-2-20" name="__codelineno-2-20" href="#__codelineno-2-20"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="n">decale</span><span class="p">[</span><span class="n">texte</span><span class="p">[</span><span class="n">i</span><span class="p">]]</span>  <span class="c1"># si oui, on décale selon la valeur stockée dans la table de décalage</span>
+</span><span id="__span-2-21"><a id="__codelineno-2-21" name="__codelineno-2-21" href="#__codelineno-2-21"></a>        <span class="k">else</span><span class="p">:</span>  <span class="c1"># sinon</span>
+</span><span id="__span-2-22"><a id="__codelineno-2-22" name="__codelineno-2-22" href="#__codelineno-2-22"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span>  <span class="c1"># on décale de la longueur du motif</span>
+</span><span id="__span-2-23"><a id="__codelineno-2-23" name="__codelineno-2-23" href="#__codelineno-2-23"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
 </span></code></pre></div>
+<p></p><center>
+<p><a class="md-button" href="https://pythontutor.com/render.html#code=def%20decalage%28motif%29%3A%0A%20%20%20%20Dec%20%3D%20%7B%7D%0A%20%20%20%20for%20i%20in%20range%28len%28motif%29%20-%201%29%3A%0A%20%20%20%20%20%20%20%20Dec%5Bmotif%5Bi%5D%5D%20%3D%20len%28motif%29%20-%201%20-%20i%0A%20%20%20%20return%20Dec%0A%0Adef%20boyer_moore_horspool%28texte,%20motif%29%3A%0A%20%20%20%20decale%20%3D%20decalage%28motif%29%20%20%23%20d%C3%A9finir%20la%20table%20de%20d%C3%A9calage%20du%20motif%0A%20%20%20%20i%20%3D%20len%28motif%29%20-%201%20%20%23%20variable%20de%20boucle%20de%20la%20premi%C3%A8re%20boucle%20%28parcours%20du%20texte%29%0A%20%20%20%20while%20i%20%3C%20len%28texte%29%3A%20%20%23%20tant%20qu'on%20a%20pas%20parcouru%20tout%20le%20texte%0A%20%20%20%20%20%20%20%20j%20%3D%200%20%20%23%20variable%20de%20boucle%20de%20la%20deuxi%C3%A8me%20boucle%20%28parcours%20du%20motif%29%0A%20%20%20%20%20%20%20%20while%20j%20%3C%20len%28motif%29%20and%20texte%5Bi%20-%20j%5D%20%3D%3D%20motif%5Blen%28motif%29%20-%201%20-%20j%5D%3A%20%20%23%20tant%20qu'on%20a%20pas%20parcouru%20tout%20le%20motif%20et%20que%20les%20caract%C3%A8res%20correspondent%0A%20%20%20%20%20%20%20%20%20%20%20%20j%20%2B%3D%201%20%20%23%20on%20incr%C3%A9mente%20j%0A%0A%20%20%20%20%20%20%20%20%23%20v%C3%A9rifier%20si%20on%20a%20parcouru%20tout%20le%20motif%0A%20%20%20%20%20%20%20%20if%20j%20%3D%3D%20len%28motif%29%3A%0A%20%20%20%20%20%20%20%20%20%20%20%20return%20i%20-%20len%28motif%29%20%2B%201%20%20%23%20renvoyer%20la%20position%20du%20motif%20dans%20le%20texte%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20%23%20d%C3%A9caler%20i%20en%20fonction%20de%20la%20table%20de%20d%C3%A9calage%0A%20%20%20%20%20%20%20%20if%20texte%5Bi%5D%20in%20decale%3A%20%20%23%20regarder%20si%20le%20caract%C3%A8re%20d'indice%20i%20du%20texte%20est%20dans%20le%20motif%0A%20%20%20%20%20%20%20%20%20%20%20%20i%20%2B%3D%20decale%5Btexte%5Bi%5D%5D%20%20%23%20si%20oui,%20on%20d%C3%A9cale%20selon%20la%20valeur%20stock%C3%A9e%20dans%20la%20table%20de%20d%C3%A9calage%0A%20%20%20%20%20%20%20%20else%3A%20%20%23%20sinon%0A%20%20%20%20%20%20%20%20%20%20%20%20i%20%2B%3D%20len%28motif%29%20%20%23%20on%20d%C3%A9cale%20de%20la%20longueur%20du%20motif%0A%20%20%20%20return%20-1%0A%0Aboyer_moore_horspool%28%22agracadabra%22,%20%22abra%22%29&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=nevernest&amp;mode=display&amp;origin=opt-frontend.js&amp;py=311&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M3.75 2h3.5a.75.75 0 0 1 0 1.5h-3.5a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h8.5a.25.25 0 0 0 .25-.25v-3.5a.75.75 0 0 1 1.5 0v3.5A1.75 1.75 0 0 1 12.25 14h-8.5A1.75 1.75 0 0 1 2 12.25v-8.5C2 2.784 2.784 2 3.75 2m6.854-1h4.146a.25.25 0 0 1 .25.25v4.146a.25.25 0 0 1-.427.177L13.03 4.03 9.28 7.78a.75.75 0 0 1-1.042-.018.75.75 0 0 1-.018-1.042l3.75-3.75-1.543-1.543A.25.25 0 0 1 10.604 1"></path></svg></span> Visualiser avec Python Tutor</a></p>
+<p></p></center>
+<details class="tip">
+<summary>Autre écriture de la fonction</summary>
+<p>Voici une autre manière d'écrire la fonction, en initialant <code>i</code> avec la valeur <code>0</code>.<br>
+Le principe reste le même, il y a juste quelques petites modifications à faire.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span> <span class="nf">boyer_moore_horspool</span><span class="p">(</span><span class="n">texte</span><span class="p">,</span> <span class="n">motif</span><span class="p">):</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>    <span class="n">decale</span> <span class="o">=</span> <span class="n">decalage</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span>  <span class="c1"># définir la table de décalage du motif</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="n">i</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># variable de boucle de la première boucle (parcours du texte)</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>    <span class="k">while</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">texte</span><span class="p">)</span> <span class="o">-</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">):</span>  <span class="c1"># tant qu'on a pas parcouru tout le texte</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>        <span class="n">j</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>  <span class="c1"># variable de boucle de la deuxième boucle (parcours du motif, en commençant à la fin)</span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>        <span class="k">while</span> <span class="n">j</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="n">j</span><span class="p">]</span> <span class="o">==</span> <span class="n">motif</span><span class="p">[</span><span class="n">j</span><span class="p">]:</span>  <span class="c1"># tant qu'on a pas parcouru tout le motif et que les caractères correspondent</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a>            <span class="n">j</span> <span class="o">-=</span> <span class="mi">1</span>  <span class="c1"># on décrémente j</span>
+</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a>
+</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a>        <span class="c1"># vérifier si on a parcouru tout le motif</span>
+</span><span id="__span-3-10"><a id="__codelineno-3-10" name="__codelineno-3-10" href="#__codelineno-3-10"></a>        <span class="k">if</span> <span class="n">j</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+</span><span id="__span-3-11"><a id="__codelineno-3-11" name="__codelineno-3-11" href="#__codelineno-3-11"></a>            <span class="k">return</span> <span class="n">i</span>  <span class="c1"># renvoyer la position du motif dans le texte</span>
+</span><span id="__span-3-12"><a id="__codelineno-3-12" name="__codelineno-3-12" href="#__codelineno-3-12"></a>
+</span><span id="__span-3-13"><a id="__codelineno-3-13" name="__codelineno-3-13" href="#__codelineno-3-13"></a>        <span class="c1"># décaler i en fonction de la table de décalage</span>
+</span><span id="__span-3-14"><a id="__codelineno-3-14" name="__codelineno-3-14" href="#__codelineno-3-14"></a>        <span class="n">car</span> <span class="o">=</span> <span class="n">texte</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span>  <span class="c1"># caractère à chercher dans la table de décalage</span>
+</span><span id="__span-3-15"><a id="__codelineno-3-15" name="__codelineno-3-15" href="#__codelineno-3-15"></a>        <span class="k">if</span> <span class="n">car</span> <span class="ow">in</span> <span class="n">decale</span><span class="p">:</span>  <span class="c1"># regarder si le caractère 'car' est dans le motif</span>
+</span><span id="__span-3-16"><a id="__codelineno-3-16" name="__codelineno-3-16" href="#__codelineno-3-16"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="n">decale</span><span class="p">[</span><span class="n">car</span><span class="p">]</span>  <span class="c1"># si oui, on décale selon la valeur stockée dans la table de décalage</span>
+</span><span id="__span-3-17"><a id="__codelineno-3-17" name="__codelineno-3-17" href="#__codelineno-3-17"></a>        <span class="k">else</span><span class="p">:</span>  <span class="c1"># sinon</span>
+</span><span id="__span-3-18"><a id="__codelineno-3-18" name="__codelineno-3-18" href="#__codelineno-3-18"></a>            <span class="n">i</span> <span class="o">+=</span> <span class="nb">len</span><span class="p">(</span><span class="n">motif</span><span class="p">)</span>  <span class="c1"># on décale de la longueur du motif</span>
+</span><span id="__span-3-19"><a id="__codelineno-3-19" name="__codelineno-3-19" href="#__codelineno-3-19"></a>    <span class="k">return</span> <span class="o">-</span><span class="mi">1</span>
+</span></code></pre></div>
+</details>
 <h2 id="aller-plus-loin">Aller plus loin<a class="headerlink" href="#aller-plus-loin" title="Permanent link">¶</a></h2>
 <p>Pour aller plus loin, vous pouvez consulter le notebook <code>Boyer_Moore_BS_Eleve.ipynb</code> ci-dessous présentant la <strong>règle du bon suffixe</strong>, ainsi que le notebook <code>Boyer_Moore_complet.ipynb</code> implémentant l'<strong>algorithme de Boyer-Moore complet</strong>, utilisant à la fois la <strong>règle du mauvais caractère</strong> et la <strong>règle du bon suffixe</strong>.</p>
 <div class="admonition success">
