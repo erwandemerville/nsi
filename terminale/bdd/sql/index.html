@@ -3730,7 +3730,49 @@
 <p>Directement inspiré du <strong>modèle relationnel</strong> introduit par Edgar Frank Codd (considéré comme l'<strong>inventeur</strong> du <strong>modèle relationnel</strong> et des <strong>SGBD relationnels</strong>), le <strong>langage SQL</strong> permet la <strong>définition de relations</strong> (ou <strong>tables</strong>) dans une <strong>base de données relationnelle</strong>. Ce langage est standardisé par l'<strong>ISO</strong> (<em>Organisation internationale de normalisation</em>), sous la référence <em>ISO / IEC 9075</em>. La dernière version du standard date de <strong>2016</strong>.</p>
 <p>Le <strong>langage SQL</strong> permet de <strong>créer des tables</strong> en spécifiant leur <strong>nom</strong>, leurs <strong>attributs</strong>, les <strong>types</strong> de ces derniers et les <strong>contraintes</strong> associées à la table.</p>
 <div class="admonition abstract">
-<p>On propose de reprendre le <strong>diagramme</strong> et le <strong>schéma relationnel</strong> définis dans la correction de l'<a href="../modele_relationnel/#un-exemple-pratique">exercice 2 sur le modèle relationnel</a> du cours précédent.</p>
+<p>On propose de reprendre le <strong>diagramme</strong> et le <strong>schéma relationnel</strong> définis dans la correction de l'<a href="../modele_relationnel/#un-exemple-pratique">exercice 2 sur le modèle relationnel</a> du cours précédent :</p>
+<pre class="mermaid"><code>erDiagram
+    LIVRES ||--o{ AUTEURS : "Auteur_ID"
+    LIVRES ||--o{ LANGUES : "Langue_ID"
+    LIVRES {
+        INT ID_Livre
+        STR Titre
+        INT Annee_Publication
+        INT Langue_ID
+        INT Auteur_ID
+    }
+
+    AUTEURS {
+        INT ID_Auteur
+        STR Nom
+        STR Prenom
+        DATE Date_Naissance
+    }
+
+    THEMES {
+        INT ID_Theme
+        STR Nom
+    }
+
+    LANGUES {
+        INT ID_Langue
+        STR Nom
+    }
+
+    LIVRES_Themes ||--o{ LIVRES : "ID_Livre"
+    LIVRES_Themes ||--o{ THEMES : "ID_Theme"
+    LIVRES_Themes {
+        INT ID_Livre
+        INT ID_Theme
+    }</code></pre>
+<p>Et voici le <strong>schéma relationnel</strong> correspondant :</p>
+<ul>
+<li><em>Livres</em>(<u><em>ID_Livre</em> Int</u>, <em>Titre</em> String, <em>Annee_Publication</em> Int, #<em>Langue_ID</em> Int, #<em>Auteur_ID</em> Int)</li>
+<li><em>Auteurs</em>(<u><em>ID_Auteur</em> Int</u>, <em>Nom</em> String, <em>Prenom</em> String, <em>Date_Naissance</em> Date)</li>
+<li><em>Themes</em>(<u><em>ID_Theme</em> Int</u>, <em>Nom</em> String)</li>
+<li><em>Langues</em>(<u><em>ID_Langue</em> Int</u>, <em>Nom</em> String)</li>
+<li><em>Livres_Themes</em>(<u>#<em>ID_Livre</em> Int, #<em>ID_Theme</em> Int</u>)</li>
+</ul>
 </div>
 <div class="admonition abstract">
 <p class="admonition-title">DB Browser for SQLite</p>
