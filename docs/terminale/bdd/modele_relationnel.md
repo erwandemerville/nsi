@@ -52,7 +52,46 @@ Dans ce **modèle**, un **objet modélisé** (on parle d'**entité**) est repré
     2. modéliser les *ensembles d'entités* comme des **relations** en donnant leur **schéma**, en s'attachant en particulier à choisir le **bon domaine** pour **chaque attribut**;
     3. définir les *contraintes* de la **base de données**, c'est-à-dire l'**ensemble** des **propriétés logiques** que nos **données** doivent **vérifier à tout moment** (voir la partie [contraintes d'intégrité](#les-contraintes-dintegrite).)
 
-## Un exemple pratique
+## Un premier exemple pratique
+
+On souhaite créer la **base de données** d'une société de **location de skis**.
+
+Voici un **diagramme** représentant 3 tables de données :
+
+```mermaid
+erDiagram
+    LOCATIONS ||--o{ CLIENTS : "ID_Client"
+    CLIENTS {
+        INT ID
+        STR Nom
+        STR Prenom
+        STR Telephone
+    }
+
+    LOCATIONS ||--o{ ARTICLES : "ID_Article"
+    ARTICLES {
+        INT ID
+        STR Marque
+        STR Modele
+        FLOAT Prix
+    }
+
+    LOCATIONS {
+        INT ID_Client
+        INT ID_Article
+        DATE Date_Debut
+        DATE Date_Fin
+    }
+```
+
+Et voici le **schéma relationnel** correspondant.
+Les **attributs soulignées** forment <u>**la clé primaire**</u> et les **clés** précédées d'un **#** sont des **clés étrangères**.
+
+- *Clients*(<u>*ID* INT</u>, *Nom* STR, *Prenom* STR, *Telephone* STR)
+- *Articles*(<u>*ID* INT</u>, *Marque* STR, *Modele* STR, *Prix* FLOAT)
+- *Locations*(<u>#*ID_Client* INT, #*ID_Article* INT</u>, *Date_Debut* DATE, *Date_Fin* DATE)
+
+## Un autre exemple pratique
 
 Voici une **table de données** sur plusieurs **livres** :
 
@@ -85,6 +124,54 @@ Voici une **table de données** sur plusieurs **livres** :
     Quels éléments de la table sont en contradiction avec les **principes du modèle relationnel** énoncés ci-dessus ?
    
     Redistribuer les données dans **4** ou **5 tables différentes**, en donnant le *diagramme* et le *schéma relationnel*.
+
+??? tip "Correction possible exercice 2"
+    Voici une possibilité de **modélisation** de cette **base de données**, ici sous la forme d'un **diagramme** :
+
+    ```mermaid
+    erDiagram
+        LIVRES ||--o{ AUTEURS : "Auteur_ID"
+        LIVRES ||--o{ LANGUES : "Langue_ID"
+        LIVRES {
+            INT ID_Livre
+            STR Titre
+            INT Annee_Publication
+            INT Langue_ID
+            INT Auteur_ID
+        }
+
+        AUTEURS {
+            INT ID_Auteur
+            STR Nom
+            STR Prenom
+            DATE Date_Naissance
+        }
+
+        THEMES {
+            INT ID_Theme
+            STR Nom
+        }
+
+        LANGUES {
+            INT ID_Langue
+            STR Nom
+        }
+
+        LIVRES_Themes ||--o{ LIVRES : "ID_Livre"
+        LIVRES_Themes ||--o{ THEMES : "ID_Theme"
+        LIVRES_Themes {
+            INT ID_Livre
+            INT ID_Theme
+        }
+    ```
+
+    Et voici le **schéma relationnel** correspondant :
+
+    - *Livres*(<u>*ID_Livre* Int</u>, *Titre* String, *Annee_Publication* Int, #*Langue_ID* Int, #*Auteur_ID* Int)
+    - *Auteurs*(<u>*ID_Auteur* Int</u>, *Nom* String, *Prenom* String, *Date_Naissance* Date)
+    - *Themes*(<u>*ID_Theme* Int</u>, *Nom* String)
+    - *Langues*(<u>*ID_Langue* Int</u>, *Nom* String)
+    - *Livres_Themes*(<u>#*ID_Livre* Int, #*ID_Theme* Int</u>)
 
 !!! warning ""
     On peut **modéliser** une **base de données** sous la forme d'un **diagramme** ou d'un **schéma relationnel** (voir le bloc de *correction* ci-dessus).  

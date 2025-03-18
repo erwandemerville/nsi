@@ -63,8 +63,7 @@ Comme dans le cas des **listes chaînées**, il y a plusieurs façons d'**implé
     | $obtenir\_element :~Pile[Elements] \rightarrow Element$                 | Renvoie l'élément au **sommet de la pile** donnée, **sans le retirer**.     |
 
 !!! abstract "Type abstrait *File*"
-    Voici *une manière* de définir l'**interface** `File` représentant une **file**.  
-    <span style="color:rgb(200,50,50)">(À compléter pour lundi 13/11/2023)</span>
+    Voici *une manière* de définir l'**interface** `File` représentant une **file**.
 
 	**Utilise :** *Element*, *Entier*, *Booleen*<br />
 	**Opérations fondamentales (primitives):**
@@ -128,51 +127,52 @@ Ainsi, notre classe `Pile` contiendra **un seul attribut**, que nous nommerons `
     - l'opération `empiler`, permettant d'**ajouter** un **nouvel élément** au **sommet de la pile**, ajoutera cet élément **à la fin** de la *liste Python* de l'attribut `contenu`,
     - l'opération `depiler`, permettant de **retirer** et de **renvoyer** l'élément situé au **sommet de la pile**, retirera et renverra l'élément situé **à la fin** de la *liste Python* de l'attribut `contenu`.
 
-Voici le **squelette** de notre classe `Pile` :
+??? note "Classe `Pile` à compléter"
+    Complétez l'implémentation suivante de la classe `Pile` utilisant une **liste Python** :
 
-```python
-class Pile:
+    ```python
+    class Pile:
 
-    def __init__(self: 'Pile'):
-        ''' Constructeur de la classe Pile. '''
+        def __init__(self: 'Pile'):
+            ''' Constructeur de la classe Pile. '''
 
-        self.contenu = []
+            self.contenu = []
 
-    # Opérations de base
+        # Opérations de base
 
-    def est_vide(self: 'Pile') -> bool:
-        ''' Renvoie True si la pile est vide, False sinon. '''
+        def est_vide(self: 'Pile') -> bool:
+            ''' Renvoie True si la pile est vide, False sinon. '''
 
-        pass
+            pass
 
-    def empiler(self: 'Pile', elt: int) -> None:
-        ''' Empile un élément donné au sommet de la pile. '''
+        def empiler(self: 'Pile', elt: int) -> None:
+            ''' Empile un élément donné au sommet de la pile. '''
 
-        pass
-    
-    def depiler(self: 'Pile') -> int:
-        ''' Dépiler l'élément situé au sommet de la pile NON VIDE. '''
-
-        pass
-
-    # Autres opérations
-
-    def nombre_elements(self: 'Pile') -> int:
-        ''' Renvoie le nb d'éléments de la pile. '''
-
-        pass
-
-    def vider(self: 'Pile') -> None:
-        ''' Vide la pile (supprime tous ses éléments). '''
-
-        pass
-
-    def obtenir_element(self: 'Pile') -> int:
-        ''' Renvoie l'élément au sommet de la pile NON VIDE SANS LE SUPPRIMER. '''
-
-        pass
+            pass
         
-```
+        def depiler(self: 'Pile') -> int:
+            ''' Dépiler l'élément situé au sommet de la pile NON VIDE. '''
+
+            pass
+
+        # Autres opérations
+
+        def nombre_elements(self: 'Pile') -> int:
+            ''' Renvoie le nb d'éléments de la pile. '''
+
+            pass
+
+        def vider(self: 'Pile') -> None:
+            ''' Vide la pile (supprime tous ses éléments). '''
+
+            pass
+
+        def obtenir_element(self: 'Pile') -> int:
+            ''' Renvoie l'élément au sommet de la pile NON VIDE SANS LE SUPPRIMER. '''
+
+            pass
+            
+    ```
 
 !!! success ""
     Cette **classe** `Pile` contient :
@@ -265,57 +265,58 @@ Initialement, l'**attribut** `contenu` sera donc égal à `None`, représentant 
 
     En effet, ajouter les éléments **à la fin de la liste chaînée** serait coûteux car, à chaque **empilement** ou **dépilement**, il faudrait **parcourir entièrement la liste** pour aller chercher la **dernière cellule** ! Alors qu'en ajoutant les éléments** au début de la liste chaînée**, on a **pas de parcours** à effectuer.
 
-Voici le **squelette** de notre classe `Pile` :
+??? note "Classe `Pile` à compléter"
+    Complétez l'implémentation suivante de la classe `Pile` utilisant une **liste chaînée** :
 
-```python
-class Cellule:
-    ''' Une cellule d'une liste chaînée. '''
+    ```python
+    class Cellule:
+        ''' Une cellule d'une liste chaînée. '''
 
-    def __init__(self, v, s):
-        self.valeur = v  # Valeur contenue dans la cellule
-        self.suivante = s  # Cellule suivante
+        def __init__(self, v, s):
+            self.valeur = v  # Valeur contenue dans la cellule
+            self.suivante = s  # Cellule suivante
 
-class Pile:
+    class Pile:
 
-    def __init__(self: 'Pile'):
-        ''' Constructeur de la classe Pile. '''
+        def __init__(self: 'Pile'):
+            ''' Constructeur de la classe Pile. '''
 
-        self.contenu = None
+            self.contenu = None
 
-    # Opérations de base
+        # Opérations de base
 
-    def est_vide(self: 'Pile') -> bool:
-        ''' Renvoie True si la pile est vide, False sinon. '''
+        def est_vide(self: 'Pile') -> bool:
+            ''' Renvoie True si la pile est vide, False sinon. '''
 
-        pass
+            pass
 
-    def empiler(self: 'Pile', elt: int) -> None:
-        ''' Empile un élément donné au sommet de la pile. '''
+        def empiler(self: 'Pile', elt: int) -> None:
+            ''' Empile un élément donné au sommet de la pile. '''
 
-        pass
-    
-    def depiler(self: 'Pile') -> int:
-        ''' Dépiler l'élément situé au sommet de la pile NON VIDE. '''
+            pass
+        
+        def depiler(self: 'Pile') -> int:
+            ''' Dépiler l'élément situé au sommet de la pile NON VIDE. '''
 
-        pass
+            pass
 
-    # Autres opérations
+        # Autres opérations
 
-    def nombre_elements(self: 'Pile') -> int:
-        ''' Renvoie le nb d'éléments de la pile. '''
+        def nombre_elements(self: 'Pile') -> int:
+            ''' Renvoie le nb d'éléments de la pile. '''
 
-        pass
+            pass
 
-    def vider(self: 'Pile') -> None:
-        ''' Vide la pile (supprime tous ses éléments). '''
+        def vider(self: 'Pile') -> None:
+            ''' Vide la pile (supprime tous ses éléments). '''
 
-        pass
+            pass
 
-    def obtenir_element(self: 'Pile') -> int:
-        ''' Renvoie l'élément au sommet de la pile NON VIDE SANS LE SUPPRIMER. '''
+        def obtenir_element(self: 'Pile') -> int:
+            ''' Renvoie l'élément au sommet de la pile NON VIDE SANS LE SUPPRIMER. '''
 
-        pass
-```
+            pass
+    ```
 
 ??? tip "Voir l'implémentation complète"
 
@@ -354,8 +355,6 @@ class Pile:
             res = self.contenu.valeur
             self.contenu = self.contenu.suivante
             return res
-
-        # Autres opérations
 
         # Autres opérations
 
@@ -399,8 +398,8 @@ Ici, on représentera le **contenu de la file** avec une **liste Python** (qui s
     - l'opération `enfiler`, permettant d'**ajouter** un **nouvel élément** à la **file**, ajoutera cet élément **à la fin** de la *liste Python* de l'attribut `contenu`,
     - l'opération `defiler`, permettant de **retirer** et de **renvoyer** un élément de la **file**, retirera et renverra l'élément situé **au début** de la *liste Python* de l'attribut `contenu`.
 
-??? note "À faire - Implémentation"
-    Complétez l'implémentation suivante de la classe File avec une liste Python :
+??? note "Classe `File` à compléter"
+    Complétez l'implémentation suivante de la classe `File` utilisant une **liste Python** :
 
     ```python
     class File:
@@ -409,6 +408,8 @@ Ici, on représentera le **contenu de la file** avec une **liste Python** (qui s
             :param contenu: (list[int]) une liste d'entiers '''
 
             self.contenu = []
+
+        # Opérations de base
             
         def est_vide(self) -> bool:
             ''' Renvoie True si la file est vide, False sinon.'''
@@ -427,6 +428,8 @@ Ici, on représentera le **contenu de la file** avec une **liste Python** (qui s
 
             ...
         
+        # Autres opérations
+
         def nombre_elements(self) -> int:
             ''' Renvoie le nombre d'éléments de la file. '''
 
@@ -441,6 +444,59 @@ Ici, on représentera le **contenu de la file** avec une **liste Python** (qui s
             ''' Renvoie le premier élément ajouté à la file sans le supprimer. '''
 
             ...
+    ```
+
+??? tip "Voir l'implémentation complète"
+
+    ```python
+    class File:
+        def __init__(self):
+            ''' Constructeur de la classe File.
+            :param contenu: (list[int]) une liste d'entiers '''
+
+            self.contenu = []
+        
+        # Opérations de base
+
+        def est_vide(self) -> bool:
+            ''' Renvoie True si la file est vide, False sinon.'''
+            
+            return not self.contenu
+
+        def enfiler(self, elt) -> None:
+            ''' Enfile un élément dans la file. '''
+            
+            self.contenu.append(elt)
+        
+        
+        def defiler(self) -> int:
+            ''' Défile le premier élément ajouté à la file, et le renvoie.
+            LEVER UNE ERREUR si la file est VIDE. '''
+
+            if self.est_vide():
+                raise ValueError("La liste ne doit pas être vide")
+            else:
+                return self.contenu.pop(0)
+        
+        # Autres opérations
+        
+        def nombre_elements(self) -> int:
+            ''' Renvoie le nombre d'éléments de la file. '''
+
+            return len(self.contenu)
+        
+        def vider(self) -> None:
+            ''' Vide la file (supprime tous ses éléments). '''
+
+            self.contenu = []
+        
+        def obtenir_element(self) -> int:
+            ''' Renvoie le premier élément ajouté à la file sans le supprimer. '''
+
+            if self.est_vide():
+                raise ValueError("La liste ne doit pas être vide")
+            else:
+                return self.contenu[0]
     ```
 
 ### Avec une liste chaînée
@@ -461,8 +517,8 @@ Ainsi :
 - la méthode `enfiler` de notre classe `File` **ajoutera** un **élément** à la **queue** de la **liste chaînée**,
 - la méthode `defiler` de notre classe `File` **retirera** l'**élément** situé en **tête** de la **liste chaînée**.
 
-??? note "À faire - Implémentation"
-    En reprenant le squelette ci-dessus, écrivez l'implémentation d'une File avec une liste chaînée.
+??? note "Classe `File` à compléter"
+    Complétez l'implémentation suivante de la classe `File` utilisant une **liste chaînée**.
 
     ```python
     class Cellule:
@@ -496,6 +552,51 @@ Ainsi :
             ...
     ```
 
+??? tip "Voir l'implémentation complète"
+
+    ```python
+    class Cellule:
+        ''' Implémentation d'une liste chaînée. '''
+        
+        def __init__(self, v, s):
+            self.valeur = v  # valeur de la cellule
+            self.suivante = s  # cellule suivante
+
+    class File:
+        
+        def __init__(self: 'File'):
+            # La liste chaînée ne contient initialement aucune cellule,
+            # donc la tête et la queue sont initialisées à None
+            self.tete = None
+            self.queue = None
+        
+        # Opérations de base
+
+        def est_vide(self: 'File') -> bool:
+            # Si la liste chaînée est vide, la tête et la queue contiennent None.
+            return self.tete is None
+        
+        def enfiler(self: 'File', elt: int) -> None:
+            a = Cellule(elt, None)  # on crée la nouvelle cellule que l'on ajoutera en queue de la liste chaînée
+            if self.est_vide():
+                # Si la liste chaînée est vide, la nouvelle cellule ajoutée
+                # sera alors à la fois la cellule tête et la cellule queue.
+                self.tete = a
+            else:
+                # Sinon, on lie l'ancienne cellule queue de la liste chaînée à notre nouvelle cellule.
+                self.queue.suivante = a
+            self.queue = a  # quoiqu'il en soit, la nouvelle cellule créée devient la queue de la liste chaînée
+        
+        def defiler(self: 'File') -> int:
+            if self.est_vide():
+                # On ne peut pas défiler sur une file vide, donc on lève une erreur.
+                raise IndexError("Impossible de défiler sur une file vide !")
+            j = self.tete.valeur  # on stocke la valeur de la cellule tête actuelle de la liste chaînée
+            self.tete = self.tete.suivante  # la nouvelle cellule tête est la cellule qui suit l'ancienne
+            if self.tete is None:  # si la nouvelle cellule tête est vide :
+                self.queue = None  # cela signifie que la liste chaînée est vide, donc la queue vaut aussi None
+            return j  # on renvoie la valeur de l'ancienne cellule tête que l'on avait stocké dans j
+    ```
 ## Exercices
 
 !!! note "Exercice 1"
@@ -518,3 +619,39 @@ Ainsi :
     **Écrire** une **fonction** prenant en **paramètre** une **chaîne de caractères** représentant une expression en **notation polonaise inverse** composée d'**additions** et de **multiplications** de **nombres entiers** et **renvoyant la valeur de cette expression**. On supposera que les éléments de l'expression sont séparés par des **espaces**.
     
     *Attention* : cette fonction ne doit pas renvoyer de résultat si l'expression est mal écrite. 
+
+??? tip "Correction exercice 1"
+
+    ```python
+    def est_bien_parenthesee(chaine):
+        pile = Pile()
+        for c in chaine:
+            if c == "(":
+                pile.empiler(c)
+            elif c == ")":
+                if pile.est_vide():
+                    return False
+        return pile.est_vide()
+    ```
+
+??? tip "Correction exercice 2"
+    On **itère** sur les **éléments obtenus** en **découpant la chaîne** au niveau des **espaces**. 
+    On isole d'abord les cas des opérateurs, qui sont les plus faciles à identifier, et on suppose que tout ce qui n'est pas `+` ou `*` est un **entier** (cette branche échouera si on trouve encore autre chose dans l'expression).
+    
+    À la fin, on **dépile** le **dernier élément** et on **vérifie** que la **pile** est bien **vide** avant de **renvoyer ce résultat**. Si à un moment donné, il était **impossible de dépiler**, alors le programme aura de toute façon **échoué**.
+    
+    ```python
+    def eval_polonaise_inverse(s):
+        pile = Pile()
+        for e in s.split(" "):
+            if e == "+" or e == "*":
+                x = pile.depiler()
+                y = pile.depiler()
+                z = x + y if e == "+" else x * y
+                pile.empiler(z)
+            else:
+                pile.empiler(int(e))
+        res = pile.depiler()
+        assert pile.est_vide()
+        return res
+    ```

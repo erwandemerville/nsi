@@ -5,7 +5,8 @@
 | Liste des contenus                           | Description                         |
 | -------------------------------------------- | ----------------------------------- |
 | [Cours - Introduction à la programmation Python](cours.md) | Cours d'introduction au langage Python (*variables*, *types*, *affichage et saisie utilisateur*, *boucles*, *booléens*, *listes*...). |
-| [Cours - Les n-uplets et dictionnaires](../traitement_donnees/n_uplets_dicos.md) | Présentation des n-uplets et dictionnaires en Python. |
+| [Cours - Les listes en Python](listes.md) | Cours sur les *listes* en langage Python. |
+| [Cours - Les n-uplets et dictionnaires](n_uplets_dicos.md) | Présentation des n-uplets et dictionnaires en Python. |
 
 ## Activités
 

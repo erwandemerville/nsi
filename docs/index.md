@@ -12,7 +12,7 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 
 | Liste des contenus                           | Description                         |
 | -------------------------------------------- | ----------------------------------- |
-| [Les bases du langage Python](premiere/bases_python/index.md) | Les bases du langage Python. |
+| [Le langage Python](premiere/bases_python/index.md) | Les bases du langage Python. |
 | [Représentation des données en machine](premiere/representation_donnees/index.md) | Représentation des entiers, réels, encodage du texte... |
 | [Architecture matérielle](premiere/archi/index.md) | Circuits logiques, algèbre de Boole, modèle de Von Neumann... |
 | [Algorithmique](premiere/algorithmique/index.md) | Algorithmes et leur implémentation en langage Python (*recherche séquentielle*, *recherche dichotomique*, *algorithmes de tri*...) |

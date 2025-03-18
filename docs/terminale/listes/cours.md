@@ -101,3 +101,13 @@ On crée une classe `Cellule` permettant de représenter une **cellule** (ou un 
 
 !!! note "À faire"
     Écrivez **de manière récursive** les **fonctions** `longueur`, `afficher`, `nieme_element`, `concatener` et `renverser`, en respectant bien la documentation.
+
+!!! tip "Implémentation finale"
+    [Télécharger cellule.py](scripts/cellule.py){ target="_blank" }
+
+    {{ IDE('scripts/cellule.py') }}
+
+    !!! info "Remarques"
+        - La fonction **concatener** ne **modifie pas** les deux **listes chaînées** `l1` et `l2` passées en entrée, elle renvoie **une nouvelle liste chaînée**. Pour créer une liste chaînée non vide, on fait appel au constructeur de la classe `Cellule`.
+        - Il faut bien comprendre que dans notre **implémentation**, une **liste chaînée**, représentée par une **instance de la classe** `Cellule`, est **confondue** avec **la première cellule de cette liste** (les deux sont identiques). C'est pourquoi, à la ligne `81` dans la fonction `renverser_it`, **stocker** la **première cellule** de la liste `lst` revient à stocker la liste `lst` elle-même.
+        - La fonction récursive `renverser_rec` n'est pas très efficace, puisqu'on fait autant de concaténations qu'il y a d'éléments dans la liste initiale. La version itérative `renverser_it` est plus efficace car on effectue un parcours de la liste initiale, en ajoutant chaque élément à notre nouvelle liste (en recréant à chaque fois une nouvelle liste en instanciant `Cellule`). Cet ajout est **moins coûteux** qu'une concaténation.

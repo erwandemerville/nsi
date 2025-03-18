@@ -10,6 +10,7 @@
 | [Piles et files](pilesfiles/index.md) | Structures de piles et de files et implémentations. |
 | [Les arbres](arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |
 | [Protocoles de routage](routage/index.md) | Protocoles de routage RIP et OSPF. |
+| [Recherche textuelle](recherche_textuelle/index.md) | Algorithmes de recherche dans un texte. |
 | [Bases de données - représentations et applications](bdd/index.md) | Modèle relationnel, bases de données, SQL... |
 | [:material-pencil: Sujet e3c de rentrée corrigé](e3c/index.md) | Le sujet d'e3c de rentrée avec correction détaillée. |
 | [:material-language-python: Révisions / Entraînement Python](entrainement_python/index.md) | Quelques exercices pour vous exercer au langage Python. |
