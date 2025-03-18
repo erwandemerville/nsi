@@ -54,7 +54,8 @@ nav:
       - premiere/bases_python/index.md
       - Cours:
         - Introduction au Python: premiere/bases_python/cours.md
-        - n-uplets et dictionnaires: premiere/traitement_donnees/n_uplets_dicos.md
+        - Les listes Python: premiere/bases_python/listes.md
+        - n-uplets et dictionnaires: premiere/bases_python/n_uplets_dicos.md
       - Activités:
         - Découverte de l'IDE Thonny: premiere/bases_python/thonny.md
         - Jeu - Chasse au trésor: premiere/bases_python/chassetresor.md
