@@ -3829,11 +3829,13 @@ Pour gérer le <strong>traitement des requêtes</strong> et l'<strong>interactio
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Host:<span class="w"> </span>www.monsite.com<span class="o">[</span>CRLF<span class="o">]</span>
 </span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>User-Agent:<span class="w"> </span>Mozilla/5.0<span class="w"> </span>Safari/531.9<span class="o">[</span>CRLF<span class="o">][</span>CRLF<span class="o">]</span>
 </span></code></pre></div>
-<p>La <strong>première ligne</strong> contient toujours :
-- le <strong>type de requête</strong> (ici <code>GET</code>), la partie <strong>chemin de l'URL</strong> de la <strong>ressource cible</strong> et enfin la <strong>version du protocole</strong> (1.0 ou 1.1 généralement, ici <code>1.1</code>).
-- Les <strong>2 types de requête</strong> les plus courantes sont :
-  - <mark><strong>GET</strong></mark> : permet d'<mark>obtenir</mark> une <strong>ressource</strong>. Il s'agit de la requête la plus utilisée sur Internet, c'est celle qui est utilisée lorsque vous accédez à un site web dans votre navigateur.
-  - <mark><strong>POST</strong></mark> : permet d'<strong>envoyer</strong> le <strong>contenu d'un formulaire</strong> à un <strong>serveur</strong>, afin que ces données soient <strong>traitées</strong> (par exemple, un formulaire de connexion à un site web utilise la méthode <code>POST</code>).</p>
+<p>La <strong>première ligne</strong> contient toujours :</p>
+<ul>
+<li>le <strong>type de requête</strong> (ici <code>GET</code>), la partie <strong>chemin de l'URL</strong> de la <strong>ressource cible</strong> et enfin la <strong>version du protocole</strong> (1.0 ou 1.1 généralement, ici <code>1.1</code>).</li>
+<li>Les <strong>2 types de requête</strong> les plus courantes sont :</li>
+<li><mark><strong>GET</strong></mark> : permet d'<mark>obtenir</mark> une <strong>ressource</strong>. Il s'agit de la requête la plus utilisée sur Internet, c'est celle qui est utilisée lorsque vous accédez à un site web dans votre navigateur.</li>
+<li><mark><strong>POST</strong></mark> : permet d'<strong>envoyer</strong> le <strong>contenu d'un formulaire</strong> à un <strong>serveur</strong>, afin que ces données soient <strong>traitées</strong> (par exemple, un formulaire de connexion à un site web utilise la méthode <code>POST</code>).</li>
+</ul>
 <p>Les <code>[CRLF]</code> symbolisent une <strong>séquence ASCII</strong>, appelée <code>[Carriage Return - Line feed]</code>. C'est en fait le <strong>délimiteur</strong> utilisé par le <strong>protocole HTTP</strong> pour séparer les <strong>lignes</strong> de l'<strong>en-tête</strong>. En <strong>ASCII</strong>, c'est le caractère <em>13</em> suivi du caractère <em>10</em>.</p>
 <p>Les <strong>lignes suivantes</strong> sont des <strong>champs HTTP</strong>, toujours formatées de cette manière <code>"NomChamps: Valeur"</code>.</p>
 </div>
@@ -3890,7 +3892,7 @@ Le <code>--head</code> permet de ne récupérer <strong>que l'en-tête de la ré
 <a href="../src/serveurpythonflasktp.pdf" style="font-size:1.5em" target="_blank">Quelques exemples avec Flask</a>
 </center>
 <p></p><center>
-<a href="https://capytale2.ac-paris.fr/web/c/cd79-3407657" style="font-size:1.5em" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.9.9 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.76.76 0 0 0-.49-.18M15 10V8h5v2zm-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83zM10 0h2v5h-2zM3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83zm0-11.32 1.41-1.41 2.83 2.83-1.41 1.41zM7 10H2V8h5z"></path></svg></span> Un TP avec Flask</a>
+<a href="https://capytale2.ac-paris.fr/web/c/4c81-6110190" style="font-size:1.5em" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.9.9 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.76.76 0 0 0-.49-.18M15 10V8h5v2zm-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83zM10 0h2v5h-2zM3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83zm0-11.32 1.41-1.41 2.83 2.83-1.41 1.41zM7 10H2V8h5z"></path></svg></span> Un TP avec Flask</a>
 </center></div>
 
 
