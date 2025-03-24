@@ -62,7 +62,7 @@ individus = [("Alice", 7, 1, 1941), ("Bob", 9, 12, 1909), ("Charles", 14, 12, 19
 
 On peut maintenant **parcourir cette liste de tuples** de différentes manières :
 
-{{ IDE('scripts/01.py') }}
+{{ IDE('scripts/33.py') }}
 
 ## Les dictionnaires
 
@@ -162,19 +162,19 @@ d = {"nom":"Alice", "jour":7, "mois":1, "annee":1941}
 
 On peut parcourir les **clés** de la façon suivante :
 
-{{ IDE('scripts/02.py') }}
+{{ IDE('scripts/34.py') }}
 
 On peut également **parcourir les clés** d'un **dictionnaire** avec la construction `d.keys()` :
 
-{{ IDE('scripts/03.py') }}
+{{ IDE('scripts/35.py') }}
 
 Si l'on souhaite faire la même chose avec les **valeurs** associées aux **clés** du dictionnaire, le principe est le même mais avec la construction `d.values()` :
 
-{{ IDE('scripts/04.py') }}
+{{ IDE('scripts/36.py') }}
 
 On peut également parcourir **à la fois les clés et les valeurs** avec la construction `d.items()`. Dans ce cas là, chaque élément sera un **tuple** de type `(clé, valeur)` :
 
-{{ IDE('scripts/05.py') }}
+{{ IDE('scripts/37.py') }}
 
 ### Dictionnaires par compréhension
 
