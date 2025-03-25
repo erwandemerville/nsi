@@ -388,16 +388,92 @@ L'intérêt d'une telle **base de données** est de pouvoir effectuer des **requ
 !!! note "À faire 4 - Requêtes sur la base de données"
     1 - Afficher **tous les titres des livres**.
 
+    ??? tip "Correction 1"
+        ```sql
+        SELECT Titre
+        FROM Livres;
+        ```
+    
+    Ici, on a fait une **projection** : on a affiché uniquement le contenu de la **colonne** `Titre`, pour **tous les enregistrements** de la table `Livres`.
+
     2 - Afficher les **noms** et **prénoms** de **tous les auteurs nés après 1920**.
+
+    ??? tip "Correction 2"
+        ```sql
+        SELECT Nom, Prenom
+        FROM Auteurs
+        WHERE Date_Naissance > 1920;
+        ```
+    
+    Ici, il s'agit d'une **projection** avec **restriction** : on affiche uniquement les valeurs des colonnes spécifiées, en ajoutant une **condition** avec la clause `WHERE ...` pour n'obtenir que des résultats bien précis.
 
     3 - Compter le **nombre total de livres** publiés en **anglais** (l'*ID* correspondant à la *langue anglaise* est `1`).
 
-    4 - Afficher les **titres** des **livres** publiés **avant 1950** et écrits par des **auteurs française** (l'*ID* correspondant à la *langue française* est `2`).
+    ??? tip "Correction 3"
+        ```sql
+        SELECT COUNT(*) AS total
+        FROM Livres
+        WHERE Langue_ID = 1;
+        ```
+    
+    On a utilisé la **fonction d'agrégat** `COUNT` qui permet de **compter tous les enregistrements** obtenus. Il existe d'autres **fonctions d'agrégat** permettant d'obtenir la **somme** (`SUM`), la **moyenne** (`AVG`), le **maximum** (`MAX`) et le **minimum** (`MIN`) d'un **ensemble de lignes**.
+
+    On a également **créé un alias** en utilisant le mot-clé `AS`, ainsi, la **colonne résultante** s'appellera `total` au lieu de s'appeler `COUNT(*)`.
+
+    4 - Afficher les **titres** des **livres** publiés **avant 1950** et écrits par des **auteurs français** (l'*ID* correspondant à la *langue française* est `2`).
+
+    ??? tip "Correction 4"
+        ```sql
+        SELECT Titre
+        FROM Livres
+        WHERE Annee_Publication < 1950
+        AND Langue_ID = 2;
+        ```
     
     5 - Afficher les **noms** des **auteurs** qui **ont écrit au moins deux livres**.
 
+    ??? tip "Correction 5"
+        ```sql
+        SELECT Nom, Prenom
+        FROM Auteurs
+        JOIN Livres
+        ON Auteurs.ID_Auteur = Livres.Auteur_ID
+        GROUP BY Auteurs.ID_Auteur
+        HAVING COUNT(Livres.ID_Livre) >= 2;
+        ```
+
+    Ici, on utilise `JOIN` pour créer une **jointure** entre **deux tables** : la table `Livres` et la table `Auteurs`, en indiquant que l'on effectue le lien entre la **clé primaire** `Auteurs.ID_Auteur` et la **clé étrangère** `Livres.Auteur_ID`.
+
+    On **groupe les résultats** par rapport à l'attribut `Auteurs.ID_Auteur` (on aura donc un seul résultat dans chaque groupe), puis on affiche **uniquement les groupes pour lesquels il y a au moins deux livres**.
+
+    Plutôt qu'utiliser une **jointure**, on peut également utiliser un **produit cartésien** (*produit d'ensembles de n-uplets*) :
+
+    ??? tip "Correction 5 *(version 2)*"
+        ```sql
+        SELECT Nom, Prenom
+        FROM Auteurs, Livres
+        WHERE Auteurs.ID_Auteur = Livres.Auteur_ID
+        GROUP BY Auteurs.ID_Auteur
+        HAVING COUNT(Livres.ID_Livre) >= 2;
+        ```
+
     6 - **Compter** le **nombre de livres écrits** par **chaque auteur**, et les **afficher** (on affichera le nom et le prénom de l'auteur ainsi que le nombre de livres écrits) par **ordre décroissant du nombre de livres** :
 
+    ??? tip "Correction 6"
+        ```sql
+        SELECT Auteurs.Nom, Auteurs.Prenom, COUNT(Livres.ID_Livre) AS NombreLivres
+        FROM Auteurs
+        JOIN Livres
+        ON Auteurs.ID_Auteur = Livres.Auteur_ID
+        GROUP BY Auteurs.ID_Auteur
+        ORDER BY NombreLivres DESC;
+        ```
+    
+    Ici, on a écrit `SELECT Auteurs.Nom, Auteurs.Prenom`, alors qu'on aurait pu écrire `SELECT Nom, Prenom`, puisqu'il n'y a pas d'**attributs** `Nom` et `Prenom` dans la table `Livres`.  
+    Dans certains cas, **sélectionner** les **attributs** de cette manière permet de **lever une ambiguïté** qui peut exister lorsque **plusieurs tables possèdent les mêmes noms d'attributs**.
+
+    On a indiqué avec `ORDER BY NombreLivres DESC` que l'on souhaite **trier les lignes** par rapport à l'attribut `NombreLivres` de manière **décroissante**. (Si on avait voulu trier par ordre croissant, on aurait pas mis le `DESC`.)
+    
     7 - **Afficher** les **thèmes distincts des livres publiés en anglais** (l'*ID* correspondant à la *langue anglaise* est `1`).
     
     8 - **Afficher** les **titres** des **livres écrits par des auteurs nés après 1920** et **publiés en français**, **classés par ordre alphabétique des titres**.

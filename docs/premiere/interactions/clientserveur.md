@@ -111,6 +111,7 @@ Les très gros sites web comme *Google*, *Amazon* ou encore *Facebook*, possède
     ```
 
     La **première ligne** contient toujours :
+
     - le **type de requête** (ici `GET`), la partie **chemin de l'URL** de la **ressource cible** et enfin la **version du protocole** (1.0 ou 1.1 généralement, ici `1.1`).
     - Les **2 types de requête** les plus courantes sont :
       - ==**GET**== : permet d'==obtenir== une **ressource**. Il s'agit de la requête la plus utilisée sur Internet, c'est celle qui est utilisée lorsque vous accédez à un site web dans votre navigateur.
@@ -179,5 +180,5 @@ Le `--head` permet de ne récupérer **que l'en-tête de la réponse**, sans le 
 </center>
 
 <center>
-[:material-cursor-default-click: Un TP avec Flask](https://capytale2.ac-paris.fr/web/c/cd79-3407657){ style="font-size:1.5em" target="_blank" }
+[:material-cursor-default-click: Un TP avec Flask](https://capytale2.ac-paris.fr/web/c/4c81-6110190){ style="font-size:1.5em" target="_blank" }
 </center>
