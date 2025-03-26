@@ -3732,7 +3732,26 @@ L'<strong>inspecteur des outils de développement</strong>, accessibles avec la 
 </span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="o">&gt;&gt;&gt;</span><span class="w"> </span><span class="ow">typeof</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
 </span></code></pre></div>
 <p>Indiquez les <strong>bonnes réponses</strong> dans la phrase suivante :<br>
-<strong>Javascript</strong> est à <strong>typage</strong> (fort | faible) et (dynamique | statique) et une <strong>variable égale à 5</strong> se déclare avec (<code>let a = 5</code> | <code>a = 5</code>).</p>
+<strong>Javascript</strong> est à <strong>typage</strong> (fort | faible) et (dynamique | statique), et une <strong>variable égale à <code>5</code></strong> se déclare avec (<code>let a = 5</code> | <code>a = 5</code>).</p>
+</div>
+<details class="tip" open="open">
+<summary>Solution - À faire 1</summary>
+<p><strong>JavaScript</strong> est à <mark><strong>typage faible</strong></mark> et <mark><strong>dynamique</strong></mark>, et une <strong>variable égale à <code>5</code></strong> se déclare avec <mark><strong>let a = 5</strong></mark>.</p>
+</details>
+<div class="admonition info">
+<p class="admonition-title">Différences entre typage fort/faible et statique/dynamique</p>
+<ul>
+<li><strong>Typage fort</strong> vs <strong>typage faible</strong> :<ul>
+<li>Un <strong>langage</strong> à <strong>typage fort</strong> impose des <strong>conversions explicite</strong>s entre types (ex. <em>Java</em>, <em>Python</em>).</li>
+<li>Un <strong>langage</strong> à <strong>typage faible</strong> effectue des <strong>conversions implicites</strong>, parfois imprévisibles (ex. <em>JavaScript</em>, <em>PHP</em>).</li>
+</ul>
+</li>
+<li><strong>Typage statique</strong> vs <strong>typage dynamique</strong> :<ul>
+<li>Un <strong>langage</strong> à <strong>typage statique</strong> vérifie les <strong>types</strong> à la <strong>compilation</strong> et impose de <strong>déclarer les types des variables</strong> (ex. <em>Java</em>, <em>C</em>).</li>
+<li>Un <strong>langage</strong> à <strong>typage dynamique</strong> effectue la vérification des <strong>types</strong> à l’<strong>exécution</strong>, permettant de changer le type d’une variable (ex. <em>JavaScript</em>, <em>Python</em>).</li>
+</ul>
+</li>
+</ul>
 </div>
 <div class="admonition note">
 <p class="admonition-title">À faire 2</p>
@@ -3757,11 +3776,20 @@ L'<strong>inspecteur des outils de développement</strong>, accessibles avec la 
 </span></code></pre></div>
 <p>Indiquez les <strong>bonnes réponses</strong> dans les deux phrases suivantes :</p>
 <ol>
-<li>en <strong>JavaScript</strong>, les blocs d'instructions sont <strong>délimités</strong> par (l'indentation | des accolades), les <strong>fonctions</strong> sont <strong>déclarées</strong> avec le mot clef (def | function) et une <strong>boucle bornée</strong> sur les <strong>entiers</strong> entre <strong>1</strong> et <strong>10</strong> commence par l'instruction ( <code>for k in range(1, 11)</code> | <code>for (let k = 1; k &lt; 11; k = k + 1)</code> )</li>
-<li>la <strong>fonction</strong> <code>alert</code> affiche son paramètre dans (une fenêtre pop-up | la console) tandis que la <strong>fonction</strong> <code>console.log</code> affiche son paramètre dans (une fenêtre pop-up | la console).</li>
+<li>en <strong>JavaScript</strong>, les blocs d'instructions sont <strong>délimités</strong> par (l'indentation | des accolades), les <strong>fonctions</strong> sont <strong>déclarées</strong> avec le mot clef (def | function) et une <strong>boucle bornée</strong> sur les <strong>entiers</strong> entre <code>1</code> et <code>10</code> commence par l'instruction ( <code>for k in range(1, 11)</code> | <code>for (let k = 1; k &lt; 11; k = k + 1)</code> )</li>
+<li>la <strong>fonction</strong> <code>alert</code> affiche la valeur donnée dans (une fenêtre pop-up | la console) tandis que la <strong>fonction</strong> <code>console.log</code> affiche la valeur donnée dans (une fenêtre pop-up | la console).</li>
 </ol>
 </div>
+<details class="tip" open="open">
+<summary>Solution - À faire 2</summary>
+<ol>
+<li>En <strong>JavaScript</strong>, les blocs d’instructions sont <strong>délimités</strong> par <mark><strong>des accolades</strong></mark>, les <strong>fonctions</strong> sont <strong>déclarées</strong> avec le mot-clé <mark><strong>function</strong></mark> et une <strong>boucle bornée</strong> sur les <strong>entiers</strong> entre <code>1</code> et <code>10</code> commence par l’instruction <code>for (let k = 1; k &lt; 11; k = k + 1)</code>.</li>
+<li>La <strong>fonction</strong> <code>alert</code> affiche la valeur donnée dans <mark><strong>une fenêtre pop-up</strong></mark> tandis que la <strong>fonction</strong> <code>console.log</code> affiche la valeur donnée dans <mark><strong>la console</strong></mark>.</li>
+</ol>
+</details>
 <h2 id="cours">Cours<a class="headerlink" href="#cours" title="Permanent link">¶</a></h2>
+<div class="admonition success">
+<p>Voici un <strong>cours</strong> très bien fait sur le <strong>JavaScript</strong>, proposé par les enseignants <em>Éric ROUGIER</em> et <em>Paul GODARD</em> :</p>
 <p></p><center>
 <a href="https://pgdg.frama.io/1nsi/ihm/js/" style="font-size:1.5em" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.9.9 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.76.76 0 0 0-.49-.18M15 10V8h5v2zm-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83zM10 0h2v5h-2zM3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83zm0-11.32 1.41-1.41 2.83 2.83-1.41 1.41zM7 10H2V8h5z"></path></svg></span> Cours sur le langage JavaScript (à lire)</a>
 </center>
@@ -3772,6 +3800,7 @@ L'<strong>inspecteur des outils de développement</strong>, accessibles avec la 
 <li><a href="https://codepen.io/erwandemerville/pen/wBvrOMM">Exemple d'utilisation de variable</a></li>
 <li><a href="https://codepen.io/erwandemerville/pen/yyLzwNb">Exemple de sélection d'éléments</a></li>
 </ul>
+</div>
 <h2 id="autres-ressources">Autres ressources<a class="headerlink" href="#autres-ressources" title="Permanent link">¶</a></h2>
 <p>Voici également d'autres ressources intéressantes pour vous permettre d'approfondir votre maîtrise du langage <strong>javascript</strong> :</p>
 <ul>

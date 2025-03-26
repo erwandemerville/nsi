@@ -3851,11 +3851,9 @@ Pour gérer le <strong>traitement des requêtes</strong> et l'<strong>interactio
 </span></code></pre></div>
 <p>La <strong>première ligne</strong> de la <strong>réponse</strong> contient toujours un <strong>code HTTP</strong> indiquant si la requête a <strong>réussi ou pas</strong> (ici, le code est <code>200</code>, indiquant une <strong>réussite</strong>).</p>
 <p>Ensuite, comme pour la <strong>réponse</strong>, on trouve les <strong>lignes</strong> des <strong>champs HTTP</strong>.
-- La ligne <strong>Server</strong> indique le <strong>type de serveur</strong> qui a fourni la réponse (le plus</p>
+- La ligne <strong>Server</strong> indique le <strong>type de serveur</strong> qui a fourni la réponse (le plus souvent Apache (installé sur près de la moitié des serveurs mondiaux).
+- Ensuite se trouve le corps de la réponse, qui dans le cas d'un <strong>GET</strong> d'un fichier <strong>HTML</strong> contient par exemple le <strong>code HTML</strong> de la page visée.</p>
 </div>
-<p>souvent Apache..(installé sur près de la moitié des serveurs mondiaux)
-Ensuite se trouve le corps de la réponse, qui dans le cas d'un GET d'un fichier
-HTML contient par exemple le code HTML de la page visée.</p>
 <h3 id="la-commande-curl">La commande <code>curl</code><a class="headerlink" href="#la-commande-curl" title="Permanent link">¶</a></h3>
 <p>La commande <code>curl</code> permet d'effectuer une <strong>requête</strong> vers un <strong>serveur web</strong>.</p>
 <p>Par exemple : <code>curl https://nsi.erwandemerville.fr --head</code>.<br>
