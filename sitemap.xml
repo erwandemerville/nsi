@@ -296,6 +296,16 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/diviserregner/</loc>
+         <lastmod>2025-03-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/diviserregner/cours/</loc>
+         <lastmod>2025-03-27</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://nsi.erwandemerville.fr/terminale/e3c/</loc>
          <lastmod>2025-03-27</lastmod>
          <changefreq>daily</changefreq>
