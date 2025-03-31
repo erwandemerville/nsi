@@ -28,6 +28,16 @@
 
     - [Notebook - Modifier les éléments du DOM avec JavaScript](https://capytale2.ac-paris.fr/web/c/2118-5957308)
 
+## Un jeu de Morpion
+
+<center style="font-size: 1.3em">
+[TP - Un jeu de morpion en JavaScript](https://capytale2.ac-paris.fr/web/c/0837-6156002)
+
+[TP Corrigé - Un jeu de morpion en JavaScript](https://capytale2.ac-paris.fr/web/c/fb52-6131476)
+
+Corrigé vidéo - Un jeu de morpion en JavaScript (à venir)
+</center>
+
 ## Autres exercices
 
 Voici d'autres **exercices** pour vous permettre d'aller plus loin dans votre apprentissage du **JavaScript** :

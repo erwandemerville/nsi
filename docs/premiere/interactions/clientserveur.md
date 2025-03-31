@@ -136,10 +136,8 @@ Les très gros sites web comme *Google*, *Amazon* ou encore *Facebook*, possède
     La **première ligne** de la **réponse** contient toujours un **code HTTP** indiquant si la requête a **réussi ou pas** (ici, le code est `200`, indiquant une **réussite**).
 
     Ensuite, comme pour la **réponse**, on trouve les **lignes** des **champs HTTP**.
-    - La ligne **Server** indique le **type de serveur** qui a fourni la réponse (le plus
-souvent Apache..(installé sur près de la moitié des serveurs mondiaux)
-Ensuite se trouve le corps de la réponse, qui dans le cas d'un GET d'un fichier
-HTML contient par exemple le code HTML de la page visée.
+    - La ligne **Server** indique le **type de serveur** qui a fourni la réponse (le plus souvent Apache (installé sur près de la moitié des serveurs mondiaux).
+    - Ensuite se trouve le corps de la réponse, qui dans le cas d'un **GET** d'un fichier **HTML** contient par exemple le **code HTML** de la page visée.
 
 ### La commande `curl`
 

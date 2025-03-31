@@ -151,6 +151,11 @@ nav:
       - Modèle relationnel: terminale/bdd/modele_relationnel.md
       - Le langage SQL: terminale/bdd/sql.md
       - Activité - Une base de films: terminale/bdd/src/activite_movies.zip
+      - Entraînement - Extrait sujet de bac: terminale/bdd/src/extrait_bac.pdf
+    - Diviser pour régner:
+      - terminale/diviserregner/index.md
+      - Cours: terminale/diviserregner/cours.md
+      - Notebook - Exercices: https://capytale2.ac-paris.fr/web/c/ebe4-6210253
     - Sujet e3c:
       - terminale/e3c/index.md
     - Entraînement Python:
@@ -160,6 +165,7 @@ nav:
       - Jeu de snake: terminale/pyxel/snake.md
   - Rendu des travaux: rendus.md
   - Partage de fichiers: https://bit.ly/nsipartage
+  - Sujets pratiques 2025 : https://sujets.examens-concours.gouv.fr/delos/public/bgt/nsi
 
 markdown_extensions:
   - pymdownx.arithmatex:

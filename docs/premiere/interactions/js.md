@@ -50,7 +50,18 @@ On va exécuter de façon **interactive** une **séquence d'instructions Javascr
     ```
 
     Indiquez les **bonnes réponses** dans la phrase suivante :  
-    **Javascript** est à **typage** (fort | faible) et (dynamique | statique) et une **variable égale à 5** se déclare avec (`let a = 5` | `a = 5`).
+    **Javascript** est à **typage** (fort | faible) et (dynamique | statique), et une **variable égale à `5`** se déclare avec (`let a = 5` | `a = 5`).
+
+???+ tip "Solution - À faire 1"
+    **JavaScript** est à ==**typage faible**== et ==**dynamique**==, et une **variable égale à `5`** se déclare avec ==**let a = 5**==.
+
+!!! info "Différences entre typage fort/faible et statique/dynamique"
+    - **Typage fort** vs **typage faible** :
+        - Un **langage** à **typage fort** impose des **conversions explicite**s entre types (ex. *Java*, *Python*).
+        - Un **langage** à **typage faible** effectue des **conversions implicites**, parfois imprévisibles (ex. *JavaScript*, *PHP*).
+    - **Typage statique** vs **typage dynamique** :
+        - Un **langage** à **typage statique** vérifie les **types** à la **compilation** et impose de **déclarer les types des variables** (ex. *Java*, *C*).
+        - Un **langage** à **typage dynamique** effectue la vérification des **types** à l’**exécution**, permettant de changer le type d’une variable (ex. *JavaScript*, *Python*).
 
 !!! note "À faire 2"
     Examinons un exemple avec une **fonction**, une **structure conditionnelle** et une **boucle**. Dans la console, passer en mode **éditeur multiligne** en appuyant sur ++ctrl+b++ et saisissez le **code** ci-dessous :
@@ -77,21 +88,28 @@ On va exécuter de façon **interactive** une **séquence d'instructions Javascr
 
     Indiquez les **bonnes réponses** dans les deux phrases suivantes :
     
-    1. en **JavaScript**, les blocs d'instructions sont **délimités** par (l'indentation | des accolades), les **fonctions** sont **déclarées** avec le mot clef (def | function) et une **boucle bornée** sur les **entiers** entre **1** et **10** commence par l'instruction ( `for k in range(1, 11)` | `for (let k = 1; k < 11; k = k + 1)` )
-    2. la **fonction** `alert` affiche son paramètre dans (une fenêtre pop-up | la console) tandis que la **fonction** `console.log` affiche son paramètre dans (une fenêtre pop-up | la console).
+    1. en **JavaScript**, les blocs d'instructions sont **délimités** par (l'indentation | des accolades), les **fonctions** sont **déclarées** avec le mot clef (def | function) et une **boucle bornée** sur les **entiers** entre `1` et `10` commence par l'instruction ( `for k in range(1, 11)` | `for (let k = 1; k < 11; k = k + 1)` )
+    2. la **fonction** `alert` affiche la valeur donnée dans (une fenêtre pop-up | la console) tandis que la **fonction** `console.log` affiche la valeur donnée dans (une fenêtre pop-up | la console).
+
+???+ tip "Solution - À faire 2"
+	1.	En **JavaScript**, les blocs d’instructions sont **délimités** par ==**des accolades**==, les **fonctions** sont **déclarées** avec le mot-clé ==**function**== et une **boucle bornée** sur les **entiers** entre `1` et `10` commence par l’instruction `for (let k = 1; k < 11; k = k + 1)`.
+	2.	La **fonction** `alert` affiche la valeur donnée dans ==**une fenêtre pop-up**== tandis que la **fonction** `console.log` affiche la valeur donnée dans ==**la console**==.
 
 ## Cours
 
-<center>
-[:material-cursor-default-click: Cours sur le langage JavaScript (à lire)](https://pgdg.frama.io/1nsi/ihm/js/){ style="font-size:1.5em" target="_blank" }
-</center>
+!!! success ""
+    Voici un **cours** très bien fait sur le **JavaScript**, proposé par les enseignants *Éric ROUGIER* et *Paul GODARD* :
 
-*Exemples* de codes à tester issus du cours ci-dessus :
+    <center>
+    [:material-cursor-default-click: Cours sur le langage JavaScript (à lire)](https://pgdg.frama.io/1nsi/ihm/js/){ style="font-size:1.5em" target="_blank" }
+    </center>
 
-- [Exemple d'implémentation de gestionnaire d'évènements](https://codepen.io/erwandemerville/pen/YPzrgWb)
-- [Exemple d'un tableau 3x3 dont on veut connaître la case cliquée](https://codepen.io/erwandemerville/pen/GgRMeEg)
-- [Exemple d'utilisation de variable](https://codepen.io/erwandemerville/pen/wBvrOMM)
-- [Exemple de sélection d'éléments](https://codepen.io/erwandemerville/pen/yyLzwNb)
+    *Exemples* de codes à tester issus du cours ci-dessus :
+
+    - [Exemple d'implémentation de gestionnaire d'évènements](https://codepen.io/erwandemerville/pen/YPzrgWb)
+    - [Exemple d'un tableau 3x3 dont on veut connaître la case cliquée](https://codepen.io/erwandemerville/pen/GgRMeEg)
+    - [Exemple d'utilisation de variable](https://codepen.io/erwandemerville/pen/wBvrOMM)
+    - [Exemple de sélection d'éléments](https://codepen.io/erwandemerville/pen/yyLzwNb)
 
 ## Autres ressources
 
