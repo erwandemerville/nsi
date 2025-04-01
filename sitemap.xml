@@ -326,6 +326,21 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/epreuve_pratique/</loc>
+         <lastmod>2025-04-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/epreuve_pratique/entrainement/</loc>
+         <lastmod>2025-04-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/grand_oral/</loc>
+         <lastmod>2025-04-01</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://nsi.erwandemerville.fr/terminale/listes/</loc>
          <lastmod>2025-04-01</lastmod>
          <changefreq>daily</changefreq>
