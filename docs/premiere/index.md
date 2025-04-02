@@ -8,4 +8,5 @@
 | [Algorithmique](algorithmique/index.md) | Algorithmes et leur implémentation en langage Python (*recherche séquentielle*, *recherche dichotomique*, *algorithmes de tri*...) |
 | [Traitement des données en tables](traitement_donnees/index.md) | Traitement des données en tables. |
 | [Interactions Homme-Machine sur le web](interactions/index.md) | Interactions Homme-Machine sur le web |
+| [Les algorithmes gloutons](gloutons/index.md) | Cours et exercices sur les **algorithmes gloutons**. |
 | [:video_game: Le module Pyxel](pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |

@@ -18,6 +18,7 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Algorithmique](premiere/algorithmique/index.md) | Algorithmes et leur implémentation en langage Python (*recherche séquentielle*, *recherche dichotomique*, *algorithmes de tri*...) |
 | [Traitement des données en tables](premiere/traitement_donnees/index.md) | Traitement des données en tables. |
 | [Interactions Homme-Machine sur le web](premiere/interactions/index.md) | Interactions Homme-Machine sur le web |
+| [Les algorithmes gloutons](premiere/gloutons/index.md) | Cours et exercices sur les **algorithmes gloutons**. |
 | [:video_game: Le module Pyxel](premiere/pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |
 
 ## NSI terminale
@@ -38,3 +39,5 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [:material-pencil: Sujet e3c de rentrée corrigé](terminale/e3c/index.md) | Le sujet d'e3c de rentrée avec correction détaillée. |
 | [:material-language-python: Révisions / Entraînement Python](terminale/entrainement_python/index.md) | Quelques exercices pour vous exercer au langage Python. |
 | [:video_game: Le module Pyxel](terminale/pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |
+| [:fontawesome-solid-computer: Épreuve pratique de NSI](epreuve_pratique/index.md) | Ressources concernant l'épreuve pratique de NSI. |
+| [:material-account-voice: Le « Grand oral »](grand_oral/index.md) | Ressources concernant l'examen du « Grand oral ». |

@@ -88,6 +88,9 @@ nav:
       - Le JavaScript: premiere/interactions/js.md
       - Modèle client/serveur et HTTP: premiere/interactions/clientserveur.md
       - Notebooks et exercices: premiere/interactions/exercices.md
+    - Algorithmes gloutons:
+      - premiere/gloutons/index.md
+      - Cours: premiere/gloutons/cours.md
     - Le module Pyxel:
       - premiere/pyxel/index.md
       - Jeu de snake: premiere/pyxel/snake.md
@@ -163,9 +166,10 @@ nav:
     - Le module Pyxel:
       - terminale/pyxel/index.md
       - Jeu de snake: terminale/pyxel/snake.md
+    - Épreuve pratique de NSI: terminale/epreuve_pratique/index.md
+    - Le « Grand oral »: terminale/grand_oral/index.md
   - Rendu des travaux: rendus.md
   - Partage de fichiers: https://bit.ly/nsipartage
-  - Sujets pratiques 2025 : https://sujets.examens-concours.gouv.fr/delos/public/bgt/nsi
 
 markdown_extensions:
   - pymdownx.arithmatex:

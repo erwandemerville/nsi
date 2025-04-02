@@ -35,7 +35,7 @@
 
 [TP Corrigé - Un jeu de morpion en JavaScript](https://capytale2.ac-paris.fr/web/c/fb52-6131476)
 
-Corrigé vidéo - Un jeu de morpion en JavaScript (à venir)
+[Corrigé vidéo - Un jeu de morpion en JavaScript](https://youtu.be/WkEeT51Do-M)
 </center>
 
 ## Autres exercices
