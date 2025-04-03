@@ -166,8 +166,13 @@ nav:
     - Le module Pyxel:
       - terminale/pyxel/index.md
       - Jeu de snake: terminale/pyxel/snake.md
-    - Épreuve pratique de NSI: terminale/epreuve_pratique/index.md
-    - Le « Grand oral »: terminale/grand_oral/index.md
+    - Épreuve pratique de NSI:
+      - terminale/epreuve_pratique/index.md
+      - Sujets d'entraînement: terminale/epreuve_pratique/entrainement.md
+      - Banque de sujets: https://sujets.examens-concours.gouv.fr/delos/public/bgt/nsi
+      - Corrections des sujets: https://glassus.github.io/terminale_nsi/T6_6_Epreuve_pratique/BNS_2025/
+    - Le « Grand oral »: 
+      - terminale/grand_oral/index.md
   - Rendu des travaux: rendus.md
   - Partage de fichiers: https://bit.ly/nsipartage
 
