@@ -1,0 +1,6 @@
+# Classe Tamagotchi
+class Tamagotchi:
+    ...
+
+# Programme principal
+...
