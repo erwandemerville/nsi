@@ -112,6 +112,7 @@ nav:
       - Cours: terminale/poo/cours.md
       - TP - Un jeu Pokémon: terminale/poo/pokemon.md
       - Exercices: terminale/poo/exercices.md
+      - TP Tamagotchi: terminale/poo/tamagotchi.md
     - Récursivité:
       - terminale/recursivite/index.md
       - Introduction: terminale/recursivite/introduction.md
@@ -159,6 +160,11 @@ nav:
       - terminale/diviserregner/index.md
       - Cours: terminale/diviserregner/cours.md
       - Notebook - Exercices: https://capytale2.ac-paris.fr/web/c/ebe4-6210253
+    - Graphes:
+      - terminale/graphes/index.md
+      - Introduction aux graphes: terminale/graphes/cours.md
+      - Implémentation en Python: terminale/graphes/implementation.md
+      - Exercices: terminale/graphes/exercices.md
     - Sujet e3c:
       - terminale/e3c/index.md
     - Entraînement Python:
