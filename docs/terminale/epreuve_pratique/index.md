@@ -1,6 +1,6 @@
 # Épreuve pratique de NSI
 
-L'épreuve pratique de Numérique et sciences informatiques se déroule les jours suivants l'épreuve écrite (**mardi 17 juin** ou **mercredi 18 juin 2025** entre 14h et 17h30).
+L'épreuve pratique de Numérique et sciences informatiques se déroule du **3 au 6 juin 2025**.
 
 | Liste des contenus                      | Description                                              |
 | --------------------------------------- | -------------------------------------------------------- |

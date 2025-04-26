@@ -91,6 +91,7 @@ nav:
     - Algorithmes gloutons:
       - premiere/gloutons/index.md
       - Cours: premiere/gloutons/cours.md
+      - Python - Voyageur de commerce: premiere/gloutons/voyageur_commerce.md
     - Le module Pyxel:
       - premiere/pyxel/index.md
       - Jeu de snake: premiere/pyxel/snake.md

@@ -35,6 +35,8 @@ Avant d'implémenter notre **structure de graphe** en Python, définissons tout 
 
 ### Implémentation avec un dictionnaire
 
+Plutôt qu'utiliser plusieurs **listes d'adjacence**, on utilisera un **dictionnaire d'adjacence** qui permettra de stocker les **voisins** de chaque **sommet** du graphe.
+
 !!! note "À faire 1"
     **Téléchargez** le **fichier Python** ci-dessous :
 
