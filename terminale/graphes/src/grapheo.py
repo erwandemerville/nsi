@@ -17,8 +17,8 @@ class Graphe:
         
         pass
     
-    def ajouter_arete(self, s1:str, s2:str):
-        ''' Ajoute une arête entre les sommets s1 et s2 du graphe.
+    def ajouter_arc(self, s1:str, s2:str):
+        ''' Ajoute un arc entre les sommets s1 et s2 du graphe.
         Si les sommets n'existent pas, on les crée. '''
         
         pass
@@ -28,68 +28,86 @@ class Graphe:
         
         pass
     
-    def supprimer_arete(self, s1:str, s2:str):
-        ''' Supprime l'arête du graphe entre les sommets s1 et s2. '''
+    def supprimer_arc(self, s1:str, s2:str):
+        ''' Supprime l'arc du graphe entre les sommets s1 et s2. '''
         
         pass
     
     # Autres opérations
-    
-    def est_arete(self,s1,s2) -> bool:
-        ''' Renvoie True si une arête existe entre s1 et s2, False sinon. '''
-        
-        pass
 
     def est_sommet(self,s) -> bool:
         ''' Renvoie True si s est un sommet du graphe, False sinon. '''
         
         pass
-    
+
+    def est_arc(self,s1,s2) -> bool:
+        ''' Renvoie True si un arc existe entre s1 et s2, False sinon. '''
+        
+        pass
+
     def ordre(self) -> int:
         ''' Renvoie l'ordre du graphe. '''
         
         pass
     
     def degre_entrant(self, s: str) -> int:
-        ''' Renvoie le degré entrant d'un sommet s du graphe. '''
+        ''' Renvoie le degré entrant d'un sommet s du graphe.
+        On vérifiera si le sommet existe.
+        Si le sommet n'existe pas, on renvoie -1. '''
+
         pass
     
     def degre_sortant(self, s: str) -> int:
-        ''' Renvoie le degré sortant d'un sommet s du graphe. '''
-        
-        pass
-    
-    def degre(self, s: str) -> int:
-        ''' Renvoie le degré d'un sommet s donné du graphe.
+        ''' Renvoie le degré sortant d'un sommet s du graphe.
         On vérifiera si le sommet existe.
         Si le sommet n'existe pas, on renvoie -1. '''
         
         pass
     
-    def voisins(self, s: str) -> list:
-        ''' Renvoie une liste des voisins du sommet donné.
+    def degre(self, s: str) -> int:
+        ''' Renvoie le degré total d'un sommet s donné du graphe.
+        On vérifiera si le sommet existe.
+        Si le sommet n'existe pas, on renvoie -1. '''
+        
+        pass
+    
+    def successeurs(self, s: str) -> list:
+        ''' Renvoie une liste des successeurs du sommet donné.
         On vérifiera si le sommet existe. '''
         
         pass
-    
-    def affiche(self):
-        ''' Affiche une représentation visuelle du graphe. '''
+
+    def predecesseurs(self, s: str) -> list:
+        ''' Renvoie une liste des prédecesseurs du sommet donné.
+        On vérifiera si le sommet existe. '''
         
         pass
-    
+
     # Parcours de graphes
-    
-    pass
+
+    def parcours_largeur(self, depart: str) -> list:
+        ''' Renvoie liste des sommets parcourus avec le parcours
+        en largeur. '''
+        
+        pass
+
+    def parcours_profondeur(self, depart: str) -> list:
+        ''' Renvoie liste des sommets parcourus avec parcours en profondeur. '''
+        
+        pass
 
     # Affichage
-    
+
     def affiche(self):
         ''' Affiche une représentation visuelle du graphe. '''
         
         G = nx.DiGraph()
-        for sommet, voisins in self.adj.items():
-            for voisin in voisins:
-                G.add_edge(sommet, voisin)
+        for sommet in self.etiq:
+            G.add_node(sommet)
+        for s1 in range(self.nb_sommets):
+            for s2 in range(self.nb_sommets):
+                if self.mat[s1][s2] == 1:
+                    G.add_edge(self.etiq[s1], self.etiq[s2])
         nx.draw(G, with_labels=True, node_color='skyblue', node_size=800, font_size=12, font_weight='bold')
         plt.show()
 

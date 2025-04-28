@@ -1552,6 +1552,8 @@
       
         
       
+        
+      
     
     
       
@@ -1626,6 +1628,27 @@
   
   <span class="md-ellipsis">
     Python - Voyageur de commerce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../premiere/gloutons/src/gloutons_eleve.odt" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fiche - Algos gloutons
   </span>
   
 
@@ -4433,35 +4456,37 @@
 <h3 id="parcours-de-graphes">Parcours de graphes<a class="headerlink" href="#parcours-de-graphes" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">À faire 2</p>
-<p>Dans votre fichier <code>graphe.py</code>, ajoutez une fonction <code>parcours_largeur(self, s: str) -&gt; list</code> qui prend un <strong>sommet</strong> en entrée et renvoie la <strong>liste des sommets</strong> parcourus avec un <strong>parcours en largeur</strong>.<br>
-Vous écrirez cette fonction de manière <strong>itérative</strong>.</p>
+<p>Dans votre fichier <code>graphe.py</code>, ajoutez une méthode <code>parcours_largeur(self, s: str) -&gt; list</code> qui prend un <strong>sommet</strong> en entrée et renvoie la <strong>liste des sommets</strong> parcourus avec un <strong>parcours en largeur</strong>.<br>
+Vous écrirez cette méthode de manière <strong>itérative</strong>.</p>
+<p>Vous pouvez vous aider de <a href="https://fr.wikipedia.org/wiki/Algorithme_de_parcours_en_largeur#Pseudo_code">cet algorithme en pseudo-code</a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">À faire 3</p>
-<p>Ajoutez une fonction <code>parcours_profondeur(self, s: str) -&gt; list</code> qui prend un <strong>sommet</strong> en entrée et renvoie la <strong>liste des sommets</strong> parcourus avec un <strong>parcours en profondeur</strong>.<br>
-Vous écrirez cette fonction de manière <strong>itérative</strong>.</p>
+<p>Ajoutez une méthode <code>parcours_profondeur(self, s: str) -&gt; list</code> qui prend un <strong>sommet</strong> en entrée et renvoie la <strong>liste des sommets</strong> parcourus avec un <strong>parcours en profondeur</strong>.<br>
+Vous écrirez cette méthode de manière <strong>itérative</strong>.</p>
+<p>Vous pouvez vous aider de <a href="https://fr.wikipedia.org/wiki/Algorithme_de_parcours_en_profondeur#Impl%C3%A9mentation_it%C3%A9rative">cet algorithme en pseudo-code</a>.</p>
 </div>
 <div class="admonition note">
 <p class="admonition-title">À faire 4</p>
-<p>Écrivez maintenant une fonction <code>parcours_profondeur_rec(self, s: str) -&gt; list</code> qui effectue le même <strong>parcours en profondeur</strong>, mais de manière <strong>récursive</strong>.</p>
+<p>Écrivez maintenant une méthode <code>parcours_profondeur_rec(self, s: str) -&gt; list</code> qui effectue le même <strong>parcours en profondeur</strong>, mais de manière <strong>récursive</strong>.</p>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Aide - À faire 4</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>    <span class="k">def</span> <span class="nf">parcours_profondeur_rec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">visites</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">        </span><span class="sd">''' Effectue un parcours en profondeur de manière récursive. '''</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">parcours_profondeur_rec</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">visites</span><span class="o">=</span><span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">list</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">''' Effectue un parcours en profondeur de manière récursive. '''</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="k">if</span> <span class="n">visites</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># si c'est le premier appel de la fonction,</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>            <span class="n">visites</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># on initialise la liste des sommets visités</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="o">...</span>  <span class="c1"># ajouter le sommet s aux sommets visités</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>        <span class="k">for</span> <span class="o">...</span> <span class="ow">in</span> <span class="o">...</span><span class="p">:</span>  <span class="c1"># pour chaque sommet voisin du sommet s</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>            <span class="k">if</span> <span class="o">...</span> <span class="ow">not</span> <span class="ow">in</span> <span class="o">...</span><span class="p">:</span>  <span class="c1"># si le voisin courant n'a pas déjà été visité</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>                <span class="o">...</span>  <span class="c1"># on parcourt récursivement ce sommet</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="k">return</span> <span class="o">...</span>  <span class="c1"># on renvoie la liste des sommets visités</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    <span class="k">if</span> <span class="n">visites</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>  <span class="c1"># si c'est le premier appel de la méthode,</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="n">visites</span> <span class="o">=</span> <span class="p">[]</span>  <span class="c1"># on initialise la liste des sommets visités</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    <span class="o">...</span>  <span class="c1"># ajouter le sommet s aux sommets visités</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="k">for</span> <span class="o">...</span> <span class="ow">in</span> <span class="o">...</span><span class="p">:</span>  <span class="c1"># pour chaque sommet voisin du sommet s</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>        <span class="k">if</span> <span class="o">...</span> <span class="ow">not</span> <span class="ow">in</span> <span class="o">...</span><span class="p">:</span>  <span class="c1"># si le sommet voisin courant n'a pas déjà été visité</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>            <span class="n">visites</span> <span class="o">=</span> <span class="o">...</span>  <span class="c1"># on parcourt récursivement ce sommet</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="k">return</span> <span class="o">...</span>  <span class="c1"># on renvoie la liste des sommets visités</span>
 </span></code></pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">À faire 5</p>
-<p>Écrire une fonction <code>distances(self, s: str) -&gt; dict</code> qui renvoie le <strong>dictionnaire des distances</strong> entre un sommet <code>s</code> donné et chaque autre sommet du graphe, après avoir effectué un <strong>parcours en largeur</strong>.</p>
+<p>Écrire une méthode <code>distances(self, s: str) -&gt; dict</code> qui renvoie le <strong>dictionnaire des distances</strong> entre un sommet <code>s</code> donné et chaque autre sommet du graphe, après avoir effectué un <strong>parcours en largeur</strong>.</p>
 <p>On procédera de la manière suivante :</p>
 <ol>
 <li>initialiser le <strong>dictionnaire des distances</strong>, contenant initialement le sommet <code>s</code>, auquel on associera la <strong>distance</strong> <code>0</code>,</li>
@@ -4482,19 +4507,19 @@ Vous écrirez cette fonction de manière <strong>itérative</strong>.</p>
 <p>On souhaite ajouter une <strong>méthode</strong> à notre classe <code>Graphe</code> permettant de déterminer si un <strong>graphe</strong> est un <strong>arbre</strong>.</p>
 <p>On rappelle qu'il faut pour cela vérifier :</p>
 <ul>
-<li>que le graphe soit <strong>connexe</strong>,</li>
-<li>que le graphe ne contienne <strong>aucun cycle</strong>.</li>
+<li>que le graphe est <strong>connexe</strong>,</li>
+<li>que le graphe ne contient <strong>aucun cycle</strong>.</li>
 </ul>
 <div class="admonition note">
 <p class="admonition-title">À faire 6</p>
-<p>Écrivez une fonction <code>est_connexe(self) -&gt; bool</code> qui renvoie <strong>True</strong> si le graphe est <strong>connexe</strong>, et <strong>False</strong> sinon.</p>
+<p>Écrivez une méthode <code>est_connexe(self) -&gt; bool</code> qui renvoie <strong>True</strong> si le graphe est <strong>connexe</strong>, et <strong>False</strong> sinon.</p>
 </div>
 <p>Pour la <strong>détection des cycles</strong>, on utilisera l'algorithme suivant, basé sur le <strong>parcours en profondeur</strong> :</p>
 <p><img alt="Détection cycles" src="../images/detection_cycles.png"></p>
 <p>On adaptera cet algorithme pour qu'il puisse fonctionner avec des <strong>sommets</strong> autres que des <em>entiers</em> de <code>0</code> à <code>n</code>, en utilisant non pas une liste de prédecesseurs mais un <strong>dictionnaire des prédecesseurs</strong>.</p>
 <div class="admonition note">
 <p class="admonition-title">À faire 7</p>
-<p>Recopiez et complétez la fonction <code>detection_cycle</code> suivante :</p>
+<p>Recopiez et complétez la méthode <code>detection_cycle</code> suivante :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">detection_cycle</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">s</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">''' Renvoie true si un cycle atteignable par s est détecté, False sinon. '''</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
@@ -4505,11 +4530,15 @@ Vous écrirez cette fonction de manière <strong>itérative</strong>.</p>
 </span></code></pre></div>
 <p>Puisque l'on utilise un <strong>dictionnaire</strong> au lieu d'un <strong>tableau</strong>, l'instruction <code>Si Pred[v] = -1</code> dans le pseudo-code, qui permet de vérifier si le sommet <code>v</code> n'a pas déjà été visité, sera remplacé par <code>Si v EST DANS pred</code>.</p>
 </div>
+<div class="admonition note">
+<p class="admonition-title">À faire 8</p>
+<p>Enfin, écrivez une <strong>méthode</strong> <code>est_arbre(self) -&gt; bool</code> qui renvoie <code>True</code> si le <strong>graphe</strong> est un <strong>arbre</strong>, et <code>False</code> sinon.</p>
+</div>
 <h2 id="graphe-oriente">Graphe orienté<a class="headerlink" href="#graphe-oriente" title="Permanent link">¶</a></h2>
 <h3 id="type-abstrait_1">Type abstrait<a class="headerlink" href="#type-abstrait_1" title="Permanent link">¶</a></h3>
 <p>Nous allons définir cette fois un <strong>type abstrait <code>GrapheO</code></strong>, représentant un <strong>graphe orienté</strong>, ainsi que les <strong>opérations</strong> qui y seront associées.</p>
 <div class="admonition abstract">
-<p class="admonition-title">Type abstrait <em>Graphe</em></p>
+<p class="admonition-title">Type abstrait <em>Graphe Orienté</em></p>
 <p><strong>Utilise :</strong> <em>Sommet</em>, <em>Entier</em>, <em>Booléen</em>, <em>Liste</em><br>
 <strong>Opérations de base :</strong><br>
      <span class="arithmatex">\(nouveau\_graphe :~\rightarrow Graphe\)</span><br>
@@ -4521,8 +4550,11 @@ Vous écrirez cette fonction de manière <strong>itérative</strong>.</p>
      <span class="arithmatex">\(est\_sommet :~Graphe \times Sommet \rightarrow Booléen\)</span><br>
      <span class="arithmatex">\(est\_arc :~Graphe \times Sommet \times Sommet \rightarrow Booléen\)</span><br>
      <span class="arithmatex">\(ordre :~Graphe \rightarrow Entier\)</span><br>
+     <span class="arithmatex">\(degre_entrant :~Graphe \times Sommet \rightarrow Entier\)</span><br>
+     <span class="arithmatex">\(degre_sortant :~Graphe \times Sommet \rightarrow Entier\)</span><br>
      <span class="arithmatex">\(degre :~Graphe \times Sommet \rightarrow Entier\)</span><br>
-     <span class="arithmatex">\(voisins :~Graphe \times Sommet \rightarrow Liste\)</span><br></p>
+     <span class="arithmatex">\(successeurs :~Graphe \times Sommet \rightarrow Liste\)</span><br>
+     <span class="arithmatex">\(predecesseurs :~Graphe \times Sommet \rightarrow Liste\)</span></p>
 </div>
 <h3 id="implementation-avec-une-matrice-dadjacence">Implémentation avec une matrice d'adjacence<a class="headerlink" href="#implementation-avec-une-matrice-dadjacence" title="Permanent link">¶</a></h3>
 <div class="admonition note">
@@ -4531,7 +4563,7 @@ Vous écrirez cette fonction de manière <strong>itérative</strong>.</p>
 <p></p><center>
 <a href="../src/grapheo.py" style="font-size:1.2em" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.9.9 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.76.76 0 0 0-.49-.18M15 10V8h5v2zm-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83zM10 0h2v5h-2zM3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83zm0-11.32 1.41-1.41 2.83 2.83-1.41 1.41zM7 10H2V8h5z"></path></svg></span> Télécharger <code>grapheo.py</code></a>
 </center>
-<p>Complétez chaque <strong>méthode</strong> de la classe <code>Graphe</code> (à l'exception de la méthode <code>affiche</code> qui vous est donnée.)</p>
+<p>Complétez chaque <strong>méthode</strong> définie dans la classe <code>GrapheO</code> (à l'exception de la méthode <code>affiche</code> qui vous est donnée.)</p>
 </div></div>
 
 

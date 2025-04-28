@@ -1610,6 +1610,8 @@
       
         
       
+        
+      
     
     
       
@@ -1684,6 +1686,27 @@
   
   <span class="md-ellipsis">
     Python - Voyageur de commerce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gloutons/src/gloutons_eleve.odt" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fiche - Algos gloutons
   </span>
   
 
@@ -4237,20 +4260,31 @@
 <h1 id="les-circuits-logiques">Les circuits logiques<a class="headerlink" href="#les-circuits-logiques" title="Permanent link">¶</a></h1>
 <p>Ce cours fait suite au <a href="../introduction/" target="_blank">cours d'introduction à la logique booléenne</a> et au <a href="../fonctions/" target="_blank">cours sur les fonctions et expressions booléennes</a>. N'hésitez pas à relire ces cours si besoin.</p>
 <h2 id="tp-circuits-logiques-avec-logisim">TP - Circuits logiques avec Logisim<a class="headerlink" href="#tp-circuits-logiques-avec-logisim" title="Permanent link">¶</a></h2>
-<p>Pour introduire ce chapitre, voici un <strong>TP</strong> à travers lequel vous réaliserez des <strong>circuits logiques</strong> à l'aide du logiciel <em>Logisim</em>.</p>
+<p>Pour introduire ce chapitre, je vous propose un petit <strong>TP</strong> consistant à réaliser des <strong>circuits logiques</strong> à l'aide du logiciel <em>Logisim</em>.</p>
+<p>Vous devez tout d'abord <strong>installer le logiciel</strong> <em>Logisim</em>.<br>
+Suivez la démarche ci-desous pour installer <em>Logisim</em> sur les PC du lycée, ou sur votre PC personnel.</p>
+<details class="info">
+<summary>Installer <em>Logisim</em> sur les <strong>PC du lycée</strong></summary>
+<p>Sur les <strong>PC du lycée</strong>, vous n'avez pas les <strong>droits d'administrateur</strong>, ce qui empêche l'installation de nouveaux logiciels. On utilisera donc une <em>version portable</em> du logiciel, qui ne nécessite pas d'installation.</p>
+<p><strong>Téléchargez</strong> et <strong>dézippez</strong> (avec <em>7-Zip</em> par exemple) l'<strong>archive</strong> <code>logisim_portable.zip</code> ci-dessous dans votre <strong>dossier de travail</strong>.<br>
+Ensuite, il ne vous reste qu'à <strong>exécuter</strong> l'application <code>logisim-evolution.exe</code> pour lancer l'application.</p>
+<p></p><center style="font-size:1.4em">
+<a href="https://mega.nz/file/agA0VbZI#C27EcZALkCJqxlUGgfX4IPKfREzsENjcX_EmTXBASzs"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.9.9 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.76.76 0 0 0-.49-.18M15 10V8h5v2zm-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83zM10 0h2v5h-2zM3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83zm0-11.32 1.41-1.41 2.83 2.83-1.41 1.41zM7 10H2V8h5z"></path></svg></span> Télécharger <code>logisim_portable.zip</code></a>
+</center>
+</details>
+<details class="info">
+<summary>Installer <em>Logisim</em> sur votre <strong>PC personnel</strong></summary>
+<p>Rendez-vous sur la <a href="https://sourceforge.net/projects/circuit/">page de téléchargement de Logisim</a>.<br>
+Téléchargez la dernière version de Logisim en <em>.exe</em>, et suivez le <strong>processus d'installation</strong>.</p>
+</details>
 <div class="admonition success">
 <p class="admonition-title">Télécharger le TP</p>
-<p>Tout d'abord, vous devez <strong>télécharger l'application</strong> <em>Logisim</em>.<br>
-Il s'agit ici d'une <em>version portable</em>, <strong>téléchargez</strong> et <strong>dézippez</strong> l'<strong>archive</strong> <code>logisim.zip</code> dans votre dossier de travail. Ensuite, il ne vous reste qu'à <strong>exécuter</strong> <code>logisim-evolution.exe</code> pour lancer l'application.</p>
-<p></p><center style="font-size:1.4em">
-<a href="https://mega.nz/file/agA0VbZI#C27EcZALkCJqxlUGgfX4IPKfREzsENjcX_EmTXBASzs"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.9.9 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.76.76 0 0 0-.49-.18M15 10V8h5v2zm-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83zM10 0h2v5h-2zM3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83zm0-11.32 1.41-1.41 2.83 2.83-1.41 1.41zM7 10H2V8h5z"></path></svg></span> Télécharger <code>logisim.zip</code></a>
-</center>
-<p>Téléchargez ensuite les deux fichiers suivants :</p>
+<p>Téléchargez les deux fichiers suivants :</p>
 <ul>
 <li><a href="../documents/NSI_Circuits_Logiques.pdf">NSI_Circuits_Logiques.pdf</a> - <strong>Énoncé du TP</strong> au format <strong>PDF</strong>.</li>
 <li><a href="../documents/Doc_reponses_TP_Logisim.odt">Doc_reponses_TP_Logisim.odt</a> - document vous permettant de <strong>répondre aux questions</strong> du <strong>TP</strong>.</li>
 </ul>
-<p>Vous rendrez ce travail sur <strong>Éléa</strong>.</p>
+<p>Vous rendrez ce travail sur <strong>Éléa</strong>, sur la page prévue à cet effet.</p>
 </div></div>
 
 

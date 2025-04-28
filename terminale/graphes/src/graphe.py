@@ -6,6 +6,7 @@ class Graphe:
         self.adj = {}
 
     # Opérations de base
+
     def ajouter_sommet(self, s: str):
         ''' Ajoute un nouveau sommet au graphe. '''
         
@@ -32,6 +33,7 @@ class Graphe:
         pass
     
     # Autres opérations
+
     def est_sommet(self, s: str) -> bool:
         ''' Vérifie que le sommet donné existe. '''
         
@@ -48,7 +50,7 @@ class Graphe:
         pass
     
     def degre(self, s: str) -> int:
-        ''' Renvoie le degré du graphe. '''
+        ''' Renvoie le degré d'un sommet du graphe. '''
         
         pass
     
@@ -57,6 +59,26 @@ class Graphe:
         
         pass
     
+    def affiche(self):
+        ''' Affiche une représentation visuelle du graphe. '''
+        
+        G = nx.Graph()
+        for sommet, voisins in self.adj.items():
+            for voisin in voisins:
+                G.add_edge(sommet, voisin)
+        nx.draw(G, with_labels=True, node_color='skyblue', node_size=800, font_size=12, font_weight='bold')
+        plt.show()
+
+    # Parcours de graphes
+
+    pass
+
+    # Connexité, cycles et arbre
+
+    pass
+
+    # Affichage
+
     def affiche(self):
         ''' Affiche une représentation visuelle du graphe. '''
         
