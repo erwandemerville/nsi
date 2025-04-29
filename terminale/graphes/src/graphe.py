@@ -58,16 +58,6 @@ class Graphe:
         ''' Renvoie une liste des voisins du sommet donné. '''
         
         pass
-    
-    def affiche(self):
-        ''' Affiche une représentation visuelle du graphe. '''
-        
-        G = nx.Graph()
-        for sommet, voisins in self.adj.items():
-            for voisin in voisins:
-                G.add_edge(sommet, voisin)
-        nx.draw(G, with_labels=True, node_color='skyblue', node_size=800, font_size=12, font_weight='bold')
-        plt.show()
 
     # Parcours de graphes
 
