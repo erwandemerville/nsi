@@ -14,7 +14,7 @@
         <link rel="prev" href="../">
       
       
-        <link rel="next" href="../voyageur_commerce/">
+        <link rel="next" href="../src/gloutons_eleve.odt">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -1765,11 +1765,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../voyageur_commerce/" class="md-nav__link">
+      <a href="../src/gloutons_eleve.odt" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Python - Voyageur de commerce
+    Fiche - Algos gloutons
   </span>
   
 
@@ -1786,11 +1786,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../src/gloutons_eleve.odt" class="md-nav__link">
+      <a href="../voyageur_commerce/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Fiche - Algos gloutons
+    Python - Voyageur de commerce
   </span>
   
 
@@ -4531,18 +4531,37 @@
 <p class="admonition-title">Q.1</p>
 <p>Partons de <strong>Lille</strong>. Combien de destinations différentes peut-on choisir ?</p>
 </div>
+<details class="tip">
+<summary>Correction Q.1</summary>
+<p>On peut choisir <strong>5 destinations</strong> à partir de <strong>Lille</strong>.</p>
+</details>
 <div class="admonition note">
 <p class="admonition-title">Q.2</p>
-<p>Partant de <strong>Lille</strong>, on choisit Bordeaux. Combien de destinations différentes peut-on choisir ensuite ?</p>
+<p>Partant de <strong>Lille</strong>, on choisit <strong>Bordeaux</strong>. Combien de destinations différentes peut-on choisir ensuite ?</p>
 </div>
+<details class="tip">
+<summary>Correction Q.2</summary>
+<p>On peut choisir <strong>4 destinations</strong> à partir de <strong>Bordeaux</strong>.</p>
+</details>
 <div class="admonition note">
 <p class="admonition-title">Q.3</p>
 <p>Après avoir choisi <strong>Lille - Bordeaux - Brest</strong>, combien de destinations différentes peut-on choisir ensuite ?</p>
 </div>
+<details class="tip">
+<summary>Correction Q.3</summary>
+<p>On peut choisir <strong>3 destinations</strong> à partir de <strong>Brest</strong>.</p>
+</details>
 <div class="admonition note">
 <p class="admonition-title">Q.4</p>
 <p>Combien de <strong>possibilités d'itinéraires différents</strong> va-t-on avoir en partant d'une <strong>première ville aléatoire</strong> pour aller jusqu'à la <strong>6e ville</strong> ? Faire le <strong>calcul</strong>.</p>
 </div>
+<details class="tip">
+<summary>Correction Q.4</summary>
+<p>Le nombre total d'itinéraires différents s'obtient par le calcul suivant :</p>
+<p><span class="arithmatex">\(6 \times 5 \times 4 \times 3 \times 2 \times 1 = 6! = 720\)</span> itinéraires.</p>
+<p>En effet, il y a au début <strong>6 villes</strong> possibles, puis <strong>5</strong>, puis <strong>4</strong>, puis <strong>3</strong>, puis <strong>2</strong>, puis <strong>une seule</strong>.<br>
+Le nombre d'itinéraires totale correspond donc à <span class="arithmatex">\(6!\)</span> (6 <em>factorielle</em>).</p>
+</details>
 <p>Ici, il s'agit de trouver un <strong>chemin fermé</strong>, c'est un <strong>cycle</strong>.</p>
 <ul>
 <li><strong>1er simplification</strong> : le point de départ n'a aucune importance puisqu'on passe successivement dans <strong>toutes les villes</strong> et qu'on revient au <strong>point de départ</strong>.</li>
@@ -4553,10 +4572,20 @@
 <p class="admonition-title">Q.5</p>
 <p>Combien de <strong>possibilités</strong> doit-on vraiment calculer en tenant compte des <strong>deux simplifications</strong> précédentes ?</p>
 </div>
+<details class="tip">
+<summary>Correction Q.5</summary>
+<p>En tenant compte des <strong>deux simplifications</strong>, le calcul peut se ré-écrire de la manière suivante :</p>
+<p><span class="arithmatex">\(\frac{5 \times 4 \times 3 \times 2 \times 1}{2} = \frac{5!}{2} = \frac{120}{2} = 60\)</span> itinéraires.</p>
+</details>
 <div class="admonition note">
 <p class="admonition-title">Q.6</p>
-<p>Combien de <strong>possibilités d'itinéraires différents</strong> va-t-on avoir pour <strong>12 villes</strong> ? Juste deux petites villes en plus...</p>
+<p>Combien de <strong>possibilités d'itinéraires différents</strong> va-t-on avoir pour <strong>12 villes</strong> ? Juste six petites villes en plus...</p>
 </div>
+<details class="tip">
+<summary>Correction Q.6</summary>
+<p>En ajoutant <strong>6 villes</strong> supplémentaires, on aura donc <span class="arithmatex">\(\frac{11!}{2} = \frac{39916800}{2} = 19~958~400\)</span> itinéraires possibles, soit près de <strong>20 millions</strong> de trajets à vérifier !</p>
+<p>On voit donc que la <strong>résolution</strong> par <strong>force brute</strong> peut vite devenir inenvisageable, tant le <strong>temps de résolution</strong> peut devenir très long...</p>
+</details>
 <h3 id="resolution-par-force-brute">Résolution par force brute<a class="headerlink" href="#resolution-par-force-brute" title="Permanent link">¶</a></h3>
 <p>Avant de passer aux <strong>algorithmes gloutons</strong>, voyons comment résoudre ce problème par <strong>force brute</strong> : nous allons faire <strong>tous les calculs</strong> et ne garder que le <strong>meilleur</strong>.</p>
 <p>Ici, avec <strong>6 villes</strong>, il faut donc tester les <strong>60 possibilités</strong> une par une.<br>
@@ -4723,18 +4752,34 @@ Avec <strong>12 villes</strong>, on passe à <strong>20 millions de possibilité
 <p class="admonition-title">Q.8</p>
 <p>On décide de partir de Lyon. Choisir la ville suivante en prenant la ville la plus proche non encore visitée. Calculer la distance parcourue.</p>
 </div>
+<details class="tip">
+<summary>Correction Q.8</summary>
+<p>On choisira <strong>Marseille</strong>, car c'est la ville la plus proche de <strong>Lyon</strong>.</p>
+</details>
 <div class="admonition note">
 <p class="admonition-title">Q.9</p>
-<p>On a fait Lyon-Marseille. Quelle ville choisir ensuite ?</p>
+<p>On a fait <strong>Lyon-Marseille</strong>. Quelle ville choisir ensuite ?</p>
 </div>
+<details class="tip">
+<summary>Correction Q.9</summary>
+<p>On choisira <strong>Bordeaux</strong>, car c'est la ville (non visitée) la plus proche de <strong>Marseille</strong>.</p>
+</details>
 <div class="admonition note">
 <p class="admonition-title">Q.10</p>
-<p>On a fait Lyon-Marseille-Bordeaux. Quelle ville choisir ensuite ?</p>
+<p>On a fait <strong>Lyon-Marseille-Bordeaux</strong>. Quelle ville choisir ensuite ?</p>
 </div>
+<details class="tip">
+<summary>Correction Q.10</summary>
+<p>On choisira <strong>Paris</strong>, car c'est la ville (non visitée) la plus proche de <strong>Bordeaux</strong>.</p>
+</details>
 <div class="admonition note">
 <p class="admonition-title">Q.11</p>
-<p>On a fait Lyon-Marseille-Bordeaux-Paris. Quelle ville choisir ensuite ?</p>
+<p>On a fait <strong>Lyon-Marseille-Bordeaux-Paris</strong>. Quelle ville choisir ensuite ?</p>
 </div>
+<details class="tip">
+<summary>Correction Q.11</summary>
+<p>On choisira <strong>Lille</strong>, car c'est la ville (non visitée) la plus proche de <strong>Paris</strong>.</p>
+</details>
 <p>A partir de là, c'est fini. On fait <strong>Lille-Brest</strong> (c'est la seule destination disponible) puis <strong>Brest-Lyon</strong> pour revenir au <strong>point de départ</strong>.</p>
 <p>Cela donne <strong>d = 367 + 637 + 554 + 225 + 708 + 872 km</strong>, soit au total <strong>d = 3363 km</strong>.</p>
 <ul>
@@ -4884,7 +4929,7 @@ On peut, pour cela, utiliser la fonction native <code>round()</code> qui permet 
 </span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a>            <span class="n">i</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
 </span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a>    <span class="k">return</span> <span class="n">res</span>
 </span></code></pre></div>
-<p><strong>Question 1</strong> : donner le contenu du tableau choix_en_cents après exécution de la ligne 4. Tenir compte du tableau fourni en ligne 1.</p>
+<p><strong>Question 1</strong> : donner le contenu du tableau <code>pieces_en_cents</code> après exécution de la ligne 4. Tenir compte du tableau fourni en ligne 1.</p>
 <p><strong>Question 2</strong> : comment se nomme cette manière de créer un tableau : par <em>compréhension</em>, par <em>extension et ajouts successifs</em>, par <em>omission</em>, par <em>dissimulation</em> ?</p>
 <p><strong>Question 3</strong> : les calculs des lignes <em>9</em> et <em>10</em> sont donc faits en <em>cents</em>. En regardant la ligne <em>10</em>, dire si le résultat transmis par la fonction va lui être donné en <strong>euros</strong> ou en <strong>centimes</strong>.</p>
 </div>

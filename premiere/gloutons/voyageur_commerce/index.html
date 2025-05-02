@@ -11,10 +11,10 @@
         <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/gloutons/voyageur_commerce/">
       
       
-        <link rel="prev" href="../cours/">
+        <link rel="prev" href="../src/gloutons_eleve.odt">
       
       
-        <link rel="next" href="../src/gloutons_eleve.odt">
+        <link rel="next" href="../../pyxel/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -1627,6 +1627,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../src/gloutons_eleve.odt" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fiche - Algos gloutons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -1649,27 +1670,6 @@
 
       </a>
       
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../src/gloutons_eleve.odt" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Fiche - Algos gloutons
-  </span>
-  
-
-      </a>
     </li>
   
 
@@ -4199,8 +4199,65 @@
 <p class="admonition-title">À télécharger</p>
 <p>Voici le programme <em>Python</em> que vous devrez compléter :</p>
 <p></p><center style="font-size:1.3em">
-<a href="../src/voyageur_commerce.py">Télécharger <code>voyageur_commerce.py</code></a>
+<a href="../src/voyageur_commerce_glouton.py">Télécharger <code>voyageur_commerce_glouton.py</code></a>
 </center>
+<p>Voici un programme <strong>déjà complet</strong> permettant de tester la <strong>résolution</strong> du problème du <strong>voyageur de commerce</strong> avec la <strong>méthode par force brute</strong> :</p>
+<p></p><center style="font-size:1.3em">
+<a href="../src/voyageur_commerce_bf.py">Télécharger <code>voyageur_commerce_bf.py</code></a>
+</center>
+</div>
+<div class="admonition info">
+<p>Vous répondrez aux questions suivantes <strong>sur une feuille</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 1</p>
+<p>Ouvrez le <strong>programme</strong> <code>voyageur_commerce_bf.py</code>.</p>
+<p>L'algorithme de <strong>résolution par force brute</strong> peut être testé avec un <strong>maximum</strong> de <strong>14 villes de France</strong>, définies dans la liste <code>villes</code>. Les <strong>distances</strong> entre chaque ville sont définies dans le tableau <code>distances</code>.</p>
+<p>La <strong>ville de départ</strong> est indiquée dans la constante <code>VILLE_DEPART</code> (et vaut initialement <code>Brest</code>)
+La constante <code>NB_VILLES</code> contient initialement la valeur <code>6</code>, ce qui signifie que seules les <strong>6 premières villes</strong> de la liste <code>villes</code> sont prises en compte.<br>
+Il s'agit des mêmes villes que dans <a href="../cours/#probleme-du-voyageur-de-commerce">le cours</a>.</p>
+<p>Sans rien changer au programme, <strong>exécutez-le</strong>, et vérifiez que vous obtenez bien les <strong>mêmes résultats</strong> que ceux que l'on avait indiqué dans <a href="../cours/#resolution-par-force-brute">le cours</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<p>Toujours dans le programme <code>voyageur_commerce_bf.py</code>, remplacez la valeur de <code>NB_VILLES</code> par <code>10</code>, et <strong>exécutez</strong> de nouveau le programme.<br>
+Quel est le <strong>temps d'exécution</strong> (en secondes) obtenu ?</p>
+<p>Même question avec <code>11</code> villes, puis avec <code>12</code> villes.</p>
+<p>Que peut-on dire de l'évolution <strong>du temps d'exécution</strong> à chaque ajout d'<strong>une seule</strong> ville ?</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 3</p>
+<p>Ouvrez à présent le <strong>programme</strong> <code>voyageur_commerce_glouton.py</code>.</p>
+<p>Les <strong>variables</strong> et <strong>constantes</strong> sont les mêmes que dans le programme précédent.</p>
+<p>Ici, pour écrire plus facilement l'algorithme glouton de résolution du problème, on va préalablement créer un <strong>dictionnaire des distances</strong>, contenant à la fois les <strong>noms des villes</strong> et les <strong>distances entre chaque ville</strong>.<br>
+Il s'agira d'un <strong>dictionnaire de dictionnaires</strong>, sous la forme suivante (ici avec 6 villes) :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span><span class="s1">'Brest'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'Brest'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'Bordeaux'</span><span class="p">:</span> <span class="mi">598</span><span class="p">,</span> <span class="s1">'Lille'</span><span class="p">:</span> <span class="mi">708</span><span class="p">,</span> <span class="s1">'Lyon'</span><span class="p">:</span> <span class="mi">872</span><span class="p">,</span> <span class="s1">'Marseille'</span><span class="p">:</span> <span class="mi">1130</span><span class="p">,</span> <span class="s1">'Paris'</span><span class="p">:</span> <span class="mi">572</span><span class="p">},</span> 
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="s1">'Bordeaux'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'Brest'</span><span class="p">:</span> <span class="mi">598</span><span class="p">,</span> <span class="s1">'Bordeaux'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'Lille'</span><span class="p">:</span> <span class="mi">802</span><span class="p">,</span> <span class="s1">'Lyon'</span><span class="p">:</span> <span class="mi">520</span><span class="p">,</span> <span class="s1">'Marseille'</span><span class="p">:</span> <span class="mi">637</span><span class="p">,</span> <span class="s1">'Paris'</span><span class="p">:</span> <span class="mi">554</span><span class="p">},</span> 
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="s1">'Lille'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'Brest'</span><span class="p">:</span> <span class="mi">708</span><span class="p">,</span> <span class="s1">'Bordeaux'</span><span class="p">:</span> <span class="mi">802</span><span class="p">,</span> <span class="s1">'Lille'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'Lyon'</span><span class="p">:</span> <span class="mi">650</span><span class="p">,</span> <span class="s1">'Marseille'</span><span class="p">:</span> <span class="mi">1002</span><span class="p">,</span> <span class="s1">'Paris'</span><span class="p">:</span> <span class="mi">225</span><span class="p">},</span> 
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="s1">'Lyon'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'Brest'</span><span class="p">:</span> <span class="mi">872</span><span class="p">,</span> <span class="s1">'Bordeaux'</span><span class="p">:</span> <span class="mi">520</span><span class="p">,</span> <span class="s1">'Lille'</span><span class="p">:</span> <span class="mi">650</span><span class="p">,</span> <span class="s1">'Lyon'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'Marseille'</span><span class="p">:</span> <span class="mi">367</span><span class="p">,</span> <span class="s1">'Paris'</span><span class="p">:</span> <span class="mi">465</span><span class="p">},</span> 
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="s1">'Marseille'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'Brest'</span><span class="p">:</span> <span class="mi">1130</span><span class="p">,</span> <span class="s1">'Bordeaux'</span><span class="p">:</span> <span class="mi">637</span><span class="p">,</span> <span class="s1">'Lille'</span><span class="p">:</span> <span class="mi">1002</span><span class="p">,</span> <span class="s1">'Lyon'</span><span class="p">:</span> <span class="mi">367</span><span class="p">,</span> <span class="s1">'Marseille'</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="s1">'Paris'</span><span class="p">:</span> <span class="mi">777</span><span class="p">},</span> 
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="s1">'Paris'</span><span class="p">:</span> <span class="p">{</span><span class="s1">'Brest'</span><span class="p">:</span> <span class="mi">572</span><span class="p">,</span> <span class="s1">'Bordeaux'</span><span class="p">:</span> <span class="mi">554</span><span class="p">,</span> <span class="s1">'Lille'</span><span class="p">:</span> <span class="mi">225</span><span class="p">,</span> <span class="s1">'Lyon'</span><span class="p">:</span> <span class="mi">465</span><span class="p">,</span> <span class="s1">'Marseille'</span><span class="p">:</span> <span class="mi">777</span><span class="p">,</span> <span class="s1">'Paris'</span><span class="p">:</span> <span class="mi">0</span><span class="p">}}</span>
+</span></code></pre></div>
+<p>Complétez la <strong>fonction</strong> <code>creer_dict</code> qui <strong>crée ce dictionnaire</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 4</p>
+<p>On souhaite maintenant écrire une fonction <code>trouver_ville_suivante(ville_actuelle, villes_restantes, villes)</code>, qui sera utilisée par la fonction principale de résolution <code>voyageur</code>, et qui prend en entrée <strong>une ville</strong> (<code>ville_actuelle</code>), une <strong>liste des villes non encore visitées</strong> (<code>villes_restantes</code>) et le <strong>dictionnaire des villes et distances</strong> (<code>villes</code>) telle que définie dans l'exercice précédent, et qui <strong>renvoie</strong> la <strong>prochaine ville à visiter</strong>, c'est-à-dire la <mark><strong>ville non visitée de plus petite distance avec la ville actuelle</strong></mark>.</p>
+<p>Par exemple, si on appelle la fonction avec <code>"Lyon"</code> pour <code>ville_actuelle</code>, et <code>["Brest", "Bordeaux", "Lille", "Marseille", "Paris"]</code> pour <code>villes_restantes</code>, la fonctionn doit <strong>renvoyer</strong> <code>"Marseille"</code>.</p>
+<p>Écrivez cette <strong>fonction</strong> <code>trouver_ville_suivante</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 5</p>
+<p>Enfin, on peut maintenant écrire la <strong>fonction principale</strong> <code>voyageur(villes, ville_depart)</code>, qui résout le <strong>problème du voyageur</strong> avec la <mark><strong>méthode gloutonne</strong></mark>.<br>
+Cette fonction prend le <strong>dictionnaire des villes et distances</strong> (<code>villes</code>), et une <strong>ville de départ</strong> pour le trajet (<code>ville_depart</code>), et <strong>renvoie</strong> un <strong>tuple de deux éléments</strong> contenant <strong>le trajet</strong> (une <em>liste</em> de <em>noms de villes</em>) et la <strong>distance</strong> correspondante à ce trajet.</p>
+<p>Complétez la fonction à trous <code>voyageur</code>, puis <strong>exécutez le programme</strong> avec <code>VILLE_DEPART = "Lyon"</code> et <code>NB_VILLES = 6</code> pour vérifier si vous obtenez bien le <strong>même résultat</strong> que dans <a href="../cours/#algorithme-glouton">le cours</a>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Exercice 6</p>
+<p>Toujours dans le programme <code>voyageur_commerce_glouton.py</code>, remplacez la valeur de <code>NB_VILLES</code> par <code>10</code>, et <strong>exécutez</strong> de nouveau le programme.<br>
+Quel est le <strong>temps d'exécution</strong> (en secondes) obtenu ?</p>
+<p>Même question avec <code>11</code> villes, puis avec <code>12</code> villes.</p>
+<p>Que peut-on dire de l'évolution <strong>du temps d'exécution</strong> à chaque ajout d'<strong>une seule</strong> ville, en comparaison avec la <strong>résolution par force brute</strong> ?</p>
 </div></div>
 
 
