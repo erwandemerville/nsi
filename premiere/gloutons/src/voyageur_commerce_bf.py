@@ -1,6 +1,10 @@
 from itertools import permutations
 from time import time
-        
+
+# =============================================================
+# ================> DÉFINITION DES FONCTIONS <=================
+# =============================================================
+
 def calculer_distance(trajet, distances):
     ''' Calculer et renvoyer la distance d'un trajet. '''
     distance_totale = 0
@@ -43,7 +47,9 @@ def voyageur_brute(villes, distances, ville_depart):
 
     return res
 
-# ====> Test de la fonction <=====
+# =============================================================
+# ===================> PROGRAMME PRINCIPAL <===================
+# =============================================================
 
 # Variables (constantes) pouvant être modifiées
 VILLE_DEPART = "Brest"  # indique la ville de départ
@@ -68,14 +74,15 @@ distances = [
     [1084, 655, 661, 81, 776, 514, 721, 998, 689, 1058, 1140, 716, 0, 576],
     [992, 654, 532, 492, 630, 316, 678, 678, 345, 688, 775, 313, 576, 0]
 ]
+# Modifier villes et distances pour ne garder que le nombre de villes indiqué dans NB_VILLES
 villes = villes[:NB_VILLES]  # réduire la liste des villes au nombre de villes indiqué
 distances = [[distances[i][j] for j in range(NB_VILLES)] for i in range(NB_VILLES)]  # réduire le tableau des distances au nombre de villes indiqué
 
 # Appel à la fonction et affichage des résultats
 temps_avant = time()  # mesure du temps avant exécution
-resultats = voyageur_brute(villes, distances, VILLE_DEPART)  # Appel à la fonction voyageur_brute
+resultats = voyageur_brute(villes, distances, VILLE_DEPART)  # appel à la fonction de résolution par force brute
 temps_apres = time()  # mesure du temps après exécution
 for distance, trajet in resultats:  # pour chaque trajet de la liste des résultats
     print("Distance totale parcourue:", distance, "km")  # afficher la distance parcourue
     print("Trajet:", trajet)  # afficher le trajet
-print("\nTEMPS D'EXÉCUTION : ", round(temps_apres - temps_avant, 6), "s")
+print("\nTEMPS D'EXÉCUTION : ", round(temps_apres - temps_avant, 6), "s")  # afficher le temps d'exécution

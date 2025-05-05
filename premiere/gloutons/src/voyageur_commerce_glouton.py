@@ -1,25 +1,29 @@
 from time import time
 
-def trouver_ville_suivante(ville_actuelle, villes_restantes, villes):
+# =============================================================
+# ================> DÉFINITION DES FONCTIONS <=================
+# =============================================================
+
+def trouver_ville_suivante(ville_actuelle, villes_restantes, dico_villes):
     ''' Trouve la ville, parmi celles qui restent à parcourir, ayant la plus
     petite distance avec la ville dans laquelle on se trouve actuellement.
     :param ville_actuelle: (str) la ville actuelle
     :param villes_restantes: (list[str]) liste des villes qui restent à parcourir
-    :param villes: (dict[dict]) le dictionnaire des villes et distances
+    :param dico_villes: (dict[dict]) le dictionnaire des villes et distances
     :return: (str) la ville de plus petite distance avec la ville actuelle '''
     
     ...
 
-def voyageur(villes, ville_depart):
+def voyageur(dico_villes, ville_depart):
     ''' Résolution du problème du voyageur de commerce.
-    :param villes: (dict[dict]) dictionnaire des villes et distances
+    :param dico_villes: (dict[dict]) dictionnaire des villes et distances
     :param ville_depart: (str) la ville de départ
     :return: (tuple) tuple contenant le trajet effectué (list[str]) et la distance totale parcourue (int) '''
     
     trajet = [...]  # le trajet effectué contient au début seulement la ville de départ
     distance_totale = 0  # la distance totale parcourue est initialement de 0 km
     ville_actuelle = ...  # la ville actuellement parcourue est la ville de départ
-    villes_restantes = [ville for ville in villes if ville != ...]  # liste des villes restantes à parcourir
+    villes_restantes = [ville for ville in dico_villes if ville != ...]  # liste des villes restantes à parcourir
 
     while ...:  # tant qu'il reste des villes à parcourir
         prochaine_ville = ...  # on récupère la prochaine ville à parcourir en appelant la fonction adéquate
@@ -52,7 +56,9 @@ def creer_dict(villes, distances):
                                  # d'indice i, avec la distances entre la ville i et j comme valeur
     return res
 
-# =====> PROGRAMME PRINCIPAL <=====
+# =============================================================
+# ===================> PROGRAMME PRINCIPAL <===================
+# =============================================================
 
 # Variables (constantes) pouvant être modifiées
 VILLE_DEPART = "Lyon"  # indique la ville de départ
@@ -77,17 +83,18 @@ distances = [
     [1084, 655, 661, 81, 776, 514, 721, 998, 689, 1058, 1140, 716, 0, 576],
     [992, 654, 532, 492, 630, 316, 678, 678, 345, 688, 775, 313, 576, 0]
 ]
+# Modifier villes et distances pour ne garder que le nombre de villes indiqué dans NB_VILLES
 villes = villes[:NB_VILLES]
 distances = [[distances[i][j] for j in range(NB_VILLES)] for i in range(NB_VILLES)]  # réduire le tableau des distances au nombre de villes indiqué
 
 # Création d'un dictionnaire des villes et distances
-v = creer_dict(villes, distances)
+dico_villes = creer_dict(villes, distances)
 
 # Appel à la fonction et affichage des résultats
 temps_avant = time()  # mesure du temps avant exécution
-resultat = voyageur(v, VILLE_DEPART)  # appel de la fonction de résolution gloutonne
+resultat = voyageur(dico_villes, VILLE_DEPART)  # appel à la fonction de résolution gloutonne
 temps_apres = time()  # mesure du temps après exécution
 trajet, distance_totale = resultat  # récupérer le trajet et la distance totale obtenus
-print("Trajet:", trajet)
-print("Distance totale parcourue:", distance_totale, "km")
-print("\nTEMPS D'EXÉCUTION : ", round(temps_apres - temps_avant, 6), "s")
+print("Trajet:", trajet)  # afficher le trajet obtenu
+print("Distance totale parcourue:", distance_totale, "km")  # afficher la distance totale parcourue
+print("\nTEMPS D'EXÉCUTION : ", round(temps_apres - temps_avant, 6), "s")  # afficher le temps d'exécution
