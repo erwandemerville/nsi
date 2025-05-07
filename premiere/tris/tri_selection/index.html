@@ -1,0 +1,5403 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/tris/tri_selection/">
+      
+      
+        <link rel="prev" href="../activite_preliminaire/">
+      
+      
+        <link rel="next" href="../tri_insertion/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Tri par sélection - Numérique et sciences informatiques</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+
+      
+    
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/styles/atom-one-light.min.css">
+<!-- Load CDNs : Pyodide (Python in WASM), Ace (Editor) and JQuery (Terminal) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.5.0/highlight.min.js"></script>    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ace.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.12.5/ext-language_tools.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.js"></script>
+<script src="https://cdn.jsdelivr.net/pyodide/v0.21.3/full/pyodide.asm.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/js-md5"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
+<link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
+<script src="../../../pyodide-mkdocs/utils.js"></script> 
+<script src="../../../pyodide-mkdocs/interpreter.js"></script> 
+
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+<link rel="stylesheet" href="../../../pyodide-mkdocs/pyoditeur.css">
+
+
+<input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
+
+
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="my_theme" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#le-tri-par-selection" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Numérique et sciences informatiques
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Tri par sélection
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="my_theme" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Passer en mode nuit"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Passer en mode nuit" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo"  aria-label="Passer en mode jour"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Passer en mode jour" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+    
+  
+  Accueil
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Première
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../terminale/" class="md-tabs__link">
+          
+  
+    
+  
+  Terminale
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../rendus/" class="md-tabs__link">
+        
+  
+    
+  
+  Rendu des travaux
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="https://bit.ly/nsipartage" class="md-tabs__link">
+        
+  
+    
+  
+  Partage de fichiers
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Numérique et sciences informatiques
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../.." class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Accueil
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            Accueil
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Première
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Première
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../bases_python/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Le langage Python
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Le langage Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction au Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les listes Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/n_uplets_dicos/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    n-uplets et dictionnaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_3" id="__nav_2_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Activités
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Activités
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/thonny/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Découverte de l'IDE Thonny
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/chassetresor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jeu - Chasse au trésor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/exercices_fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices sur les fonctions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/exercices_while/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices sur les boucles while
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/exercices_listes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices sur les listes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/rappels_fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rappels sur les fonctions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/notebooks/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notebooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/tamagotchi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP Tamagotchi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_4" id="__nav_2_2_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Corrections
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Corrections
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../bases_python/ds2_correction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Correction DS2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../representation_donnees/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Représentation des données
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Représentation des données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../representation_donnees/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../representation_donnees/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices et notebooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../archi/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Architecture matérielle
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_4" id="__nav_2_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_4">
+            <span class="md-nav__icon md-icon"></span>
+            Architecture matérielle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archi/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction à la logique booléenne
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archi/fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fonctions et expressions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../archi/circuits/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les circuits logiques
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../algorithmique/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Algorithmique
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_5">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithmique
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../algorithmique/rechercheseq/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Recherche séquentielle
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../traitement_donnees/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Traitement des données en tables
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_6" id="__nav_2_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_6">
+            <span class="md-nav__icon md-icon"></span>
+            Traitement des données en tables
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../traitement_donnees/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../traitement_donnees/pandas/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le module Pandas
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../interactions/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Interactions Homme-Machine
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_7" id="__nav_2_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_7">
+            <span class="md-nav__icon md-icon"></span>
+            Interactions Homme-Machine
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interactions/htmlcss/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours HTML et CSS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interactions/js/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le JavaScript
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interactions/clientserveur/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modèle client/serveur et HTTP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../interactions/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notebooks et exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../gloutons/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Algorithmes gloutons
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_8" id="__nav_2_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_8">
+            <span class="md-nav__icon md-icon"></span>
+            Algorithmes gloutons
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gloutons/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gloutons/src/gloutons_eleve.odt" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Fiche - Algos gloutons
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../gloutons/voyageur_commerce/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python - Voyageur de commerce
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_9" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Tris
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_9" id="__nav_2_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_9">
+            <span class="md-nav__icon md-icon"></span>
+            Tris
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../activite_preliminaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité préliminaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Tri par sélection
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Tri par sélection
+  </span>
+  
+
+      </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#presentation-du-tri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Présentation du tri
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Présentation du tri">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avec-un-jeu-de-cartes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec un jeu de cartes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-avec-des-barres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation avec des barres
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lalgorithme" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'algorithme
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-du-tri-par-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implémentation du tri par sélection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cout-du-tri-par-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coût du tri par sélection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminaison-du-tri-par-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminaison du tri par sélection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preuve-de-correction-du-tri-par-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preuve de correction du tri par sélection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifier-linvariant-avec-une-assertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vérifier l'invariant avec une assertion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tri_insertion/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tri par insertion
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../pyxel/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Le module Pyxel
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_2_10" id="__nav_2_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_10">
+            <span class="md-nav__icon md-icon"></span>
+            Le module Pyxel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../pyxel/snake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jeu de snake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Terminale
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Terminale
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/modularite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Modularité
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Modularité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/modularite/api/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité - Utilisation d'une API
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/modularite/modules/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Gestion de modules
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/mise_au_point/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Mise au point de programmes
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Mise au point de programmes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/preliminaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité préliminaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours et exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/activite_finale/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité finale
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/mise_au_point/ds1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Corrigé DS n°1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/poo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Programmation orientée objet
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Programmation orientée objet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/preliminaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité d'introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/pokemon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP - Un jeu Pokémon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/poo/tamagotchi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP Tamagotchi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/recursivite/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Récursivité
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Récursivité
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recursivite/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recursivite/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recursivite/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_6" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/listes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Listes chaînées
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            Listes chaînées
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/listes/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/listes/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_7" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/pilesfiles/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Piles et files
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            Piles et files
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/pilesfiles/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/arbres/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Arbres
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_8" id="__nav_3_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8">
+            <span class="md-nav__icon md-icon"></span>
+            Arbres
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8_2" id="__nav_3_8_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cours
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/vocabulaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Définitions et vocabulaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/parcours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parcours d'arbres binaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/type_abstrait/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Type abstrait "Arbre binaire"
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/abr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arbres binaires de recherche
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8_3" id="__nav_3_8_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Activités Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            Activités Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/implementation_arbres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implémentation d'un arbre binaire
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/implementation_abr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implémentation d'un arbre binaire de recherche
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_8_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_8_4" id="__nav_3_8_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_3_8_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_8_4">
+            <span class="md-nav__icon md-icon"></span>
+            Exercices
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/exercices_vocabulaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vocabulaire sur les arbres
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/exercices_parcours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parcours d'arbres binaires
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/exercices_abr/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Arbre binaires de recherche
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/arbres/implementations_arbres/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implémentations d'arbres binaires et ABR
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_9" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/routage/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Protocoles de routage
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_9" id="__nav_3_9_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_9">
+            <span class="md-nav__icon md-icon"></span>
+            Protocoles de routage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/routage/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/routage/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/routage/tp_filius/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP Filius
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_10" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/recherche_textuelle/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Recherche textuelle
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_10" id="__nav_3_10_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_10">
+            <span class="md-nav__icon md-icon"></span>
+            Recherche textuelle
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recherche_textuelle/tp_intro/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP d'introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/recherche_textuelle/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_11" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/bdd/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Bases de données
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_11" id="__nav_3_11_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_11">
+            <span class="md-nav__icon md-icon"></span>
+            Bases de données
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/bdd/introduction/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction aux bdd
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/bdd/modele_relationnel/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Modèle relationnel
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/bdd/sql/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Le langage SQL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/bdd/src/activite_movies.zip" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité - Une base de films
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/bdd/src/extrait_bac.pdf" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Entraînement - Extrait sujet de bac
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_12" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/diviserregner/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Diviser pour régner
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_12" id="__nav_3_12_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_12">
+            <span class="md-nav__icon md-icon"></span>
+            Diviser pour régner
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/diviserregner/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://capytale2.ac-paris.fr/web/c/ebe4-6210253" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Notebook - Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_13" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/graphes/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Graphes
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_13" id="__nav_3_13_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_13">
+            <span class="md-nav__icon md-icon"></span>
+            Graphes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/graphes/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Introduction aux graphes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/graphes/implementation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Implémentation en Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/graphes/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/e3c/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Sujet e3c
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_14">
+            <span class="md-nav__icon md-icon"></span>
+            Sujet e3c
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_15" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/entrainement_python/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Entraînement Python
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_15_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_15">
+            <span class="md-nav__icon md-icon"></span>
+            Entraînement Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_16" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/pyxel/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Le module Pyxel
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_16" id="__nav_3_16_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_16_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_16">
+            <span class="md-nav__icon md-icon"></span>
+            Le module Pyxel
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/pyxel/snake/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jeu de snake
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_17" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/epreuve_pratique/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Épreuve pratique de NSI
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_17" id="__nav_3_17_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_17_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_17">
+            <span class="md-nav__icon md-icon"></span>
+            Épreuve pratique de NSI
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../terminale/epreuve_pratique/entrainement/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sujets d'entraînement
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://sujets.examens-concours.gouv.fr/delos/public/bgt/nsi" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Banque de sujets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://glassus.github.io/terminale_nsi/T6_6_Epreuve_pratique/BNS_2025/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Corrections des sujets
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_18" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../../terminale/grand_oral/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Le « Grand oral »
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_18_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_18">
+            <span class="md-nav__icon md-icon"></span>
+            Le « Grand oral »
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../rendus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Rendu des travaux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://bit.ly/nsipartage" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Partage de fichiers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#presentation-du-tri" class="md-nav__link">
+    <span class="md-ellipsis">
+      Présentation du tri
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Présentation du tri">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#avec-un-jeu-de-cartes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Avec un jeu de cartes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#simulation-avec-des-barres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Simulation avec des barres
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lalgorithme" class="md-nav__link">
+    <span class="md-ellipsis">
+      L'algorithme
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#implementation-du-tri-par-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Implémentation du tri par sélection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cout-du-tri-par-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Coût du tri par sélection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminaison-du-tri-par-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Terminaison du tri par sélection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#preuve-de-correction-du-tri-par-selection" class="md-nav__link">
+    <span class="md-ellipsis">
+      Preuve de correction du tri par sélection
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verifier-linvariant-avec-une-assertion" class="md-nav__link">
+    <span class="md-ellipsis">
+      Vérifier l'invariant avec une assertion
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+
+                  
+
+
+<div><h1 id="le-tri-par-selection">Le tri par sélection<a class="headerlink" href="#le-tri-par-selection" title="Permanent link">¶</a></h1>
+<p>Le <strong>tri par sélection</strong> (du <strong>minimum</strong> ou du <strong>maximum</strong>) est un algorithme de tri par <strong>comparaisons</strong>.<br>
+Il s'agit d'un algorithme simple mais qui est, comme on le verra, <strong>inefficace</strong>.</p>
+<h2 id="presentation-du-tri">Présentation du tri<a class="headerlink" href="#presentation-du-tri" title="Permanent link">¶</a></h2>
+<h3 id="avec-un-jeu-de-cartes">Avec un jeu de cartes<a class="headerlink" href="#avec-un-jeu-de-cartes" title="Permanent link">¶</a></h3>
+<p>Pour comprendre le fonctionnement de ce tri, voici une petite activité à réaliser avec un <strong>jeu de cartes</strong> traditionnel.</p>
+<p>On souhaite trier <strong>une suite de 7 cartes</strong> arbitrairement choisies.<br>
+Par exemple :</p>
+<p><img alt="Une suite de 6 cartes" src="../images/suite_cartes.png"></p>
+<p>On ne se souciera ici que des <strong>valeurs</strong> des cartes et non de leurs <strong>couleurs</strong>.<br>
+Voici l'<strong>ordre</strong> des valeurs des cartes, de la <strong>moins forte</strong> à la <strong>plus forte</strong>, que l'on utilisera :</p>
+<p><img alt="Ordre des cartes" src="../images/ordre_cartes.png"></p>
+<p><em>Note</em> : Si la carte <em>Joker</em> existe dans votre jeu, on considèrera qu'elle est plus forte que toutes les autres cartes.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Principe du tri par sélection</p>
+<p>Le principe du <strong>tri par sélection</strong> du <strong>minimum</strong> est le suivant :</p>
+<ol>
+<li>Chercher l'<strong>indice</strong> de la <strong>plus faible carte</strong> de la suite (à partir de l'indice <strong>0</strong>) et <strong>échanger</strong> cette carte avec celle qui est placée en <strong>premier</strong>. La première carte est maintenant <strong>la plus faible</strong>.</li>
+<li>Chercher l'<strong>indice</strong> de la <strong>plus faible carte</strong> de la suite en partant du <strong>2ème élément</strong> (indice <strong>1</strong>) et <strong>échanger</strong> cette carte avec celle qui est placée en <strong>deuxième</strong>. Les <strong>deux premières cartes</strong> sont les plus faibles et sont maintenant <strong>triées</strong>.</li>
+<li>Poursuivre ainsi jusqu’à l’<strong>avant dernière carte</strong> de la suite.</li>
+</ol>
+</div>
+<figure>
+<p><img alt="Exemple de déroulement du tri sélection" src="../images/tri_selection.png">
+  </p>
+<figcaption>Exemple de déroulement du tri par sélection</figcaption>
+</figure>
+<h3 id="simulation-avec-des-barres">Simulation avec des barres<a class="headerlink" href="#simulation-avec-des-barres" title="Permanent link">¶</a></h3>
+<p>Voici une simulation du <strong>tri par sélection</strong> en utilisant des barres de différentes tailles comme éléments.<br>
+Le but est de trier les barres de la <strong>plus petite</strong> à <strong>la plus grande</strong>.</p>
+<div class="admonition success">
+<p class="admonition-title">Simulation du tri par sélection du minimum</p>
+<p></p><div id="controls">
+    <button id="run-button" class="md-button">Exécuter</button>
+    <button id="reinit-button" class="md-button">Réinitialiser</button>
+    <button id="speed-up-button" class="md-button">Accélérer</button>
+    <button id="speed-down-button" class="md-button">Ralentir</button>
+</div>
+<div id="bars-container"></div>
+<link rel="stylesheet" href="../stylesheets/style_animation_tri_selection.css">
+<script src="../javascripts/animation_tri_selection.js"></script>
+</div>
+<h2 id="lalgorithme">L'algorithme<a class="headerlink" href="#lalgorithme" title="Permanent link">¶</a></h2>
+<p>L'algorithme du <strong>tri par sélection</strong> peut être implémenté <strong>en place</strong> ou non.</p>
+<div class="admonition info">
+<p class="admonition-title">Tri en place</p>
+<p>Un tri est dit <em>en place</em> s'il modifie directement la structure qu’il est en train de trier, plutôt que de créer et de renvoyer une nouvelle structure.</p>
+</div>
+<p>Ici, on ne renverra pas de nouveau tableau, on modifiera directement le tableau donné en entrée.<br>
+Le tri s'effectuera par sélection <strong>du minimum</strong>.</p>
+<p>Pour simplifier les choses, on commence par séparer l'algorithme de tri en <strong>3 sous-algorithmes</strong> :</p>
+<ul>
+<li>l'algorithme principal <code>tri_selection(tableau)</code> permettant de trier un <strong>tableau d'éléments</strong> avec le <strong>tri par sélection</strong>,</li>
+<li>l'algorithme <code>minimum(tableau, debut)</code> permettant la recherche de l'indice de l'<strong>élément minimal</strong> du tableau à partir de l'indice <code>debut</code> donné,</li>
+<li>l'algorithme <code>echanger(tableau, i, j)</code> permettant d'échanger <strong>deux éléments</strong> d'indices <code>i</code> et <code>j</code> donnés.</li>
+</ul>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithme du tri par sélection</p>
+<p><strong>ALGORITHME</strong> : tri_selection<br>
+<strong>ENTRÉES</strong> :<br>
+    <code>tableau</code> : un <strong>tableau</strong> d'éléments pouvant être <strong>comparés</strong><br>
+<strong>SORTIE</strong> : aucune (tri <em>en place</em>)</p>
+<p><strong>DÉBUT</strong><br>
+  n ← longueur(tableau)<br>
+  <strong>POUR</strong> debut <strong>ALLANT DE</strong> 0 <strong>À</strong> n - 2<br>
+    indice_min ← minimum(tableau, debut)<br>
+    echanger(tableau, debut, indice_min)<br>
+  <strong>FIN POUR</strong> <br>
+  Renvoyer <strong>∅</strong><br>
+<strong>FIN ALGORITHME</strong></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithme de recherche du minimum</p>
+<p><strong>ALGORITHME</strong> : minimum<br>
+<strong>ENTRÉES</strong> :<br>
+    <code>tableau</code> : un <strong>tableau</strong> d'éléments<br>
+    <code>debut</code> : l'<strong>indice</strong> à partir duquel effectuer la recherche<br>
+<strong>SORTIE</strong> : l'<strong>indice</strong> de l'élément minimal dans l'intervalle <code>[debut, longueur(tableau) - 1]</code> du tableau</p>
+<p><strong>DÉBUT</strong><br>
+  indice_min ← debut<br>
+  <strong>POUR</strong> i <strong>ALLANT DE</strong> debut + 1 <strong>À</strong> longueur(tableau) - 1<br>
+   <strong>SI</strong> tableau[i] &lt; tableau[indice_min], <strong>ALORS</strong><br>
+    indice_min ← i<br>
+  <strong>FIN POUR</strong><br>
+  Renvoyer indice_min<br>
+<strong>FIN ALGORITHME</strong></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithme d'échange d'éléments</p>
+<p><strong>ALGORITHME</strong> : echanger<br>
+<strong>ENTRÉES</strong> :<br>
+    <code>tableau</code> : un <strong>tableau</strong> d'éléments<br>
+    <code>i</code> : l'<strong>indice</strong> d'un élément du tableau<br>
+    <code>j</code> : l'<strong>indice</strong> d'un autre élément du tableau<br>
+<strong>SORTIE</strong> : aucune (tri en place)</p>
+<p><strong>DÉBUT</strong><br>
+  temp ← tableau[i]<br>
+  tableau[i] ← tableau[j]<br>
+  tableau[j] ← temp<br>
+  Renvoyer <strong>∅</strong><br>
+<strong>FIN ALGORITHME</strong></p>
+</div>
+<p>Voici enfin une version en <strong>un seul</strong> algorithme :</p>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithme du tri par sélection</p>
+<p><strong>ALGORITHME</strong> : tri_selection<br>
+<strong>ENTRÉES</strong> :<br>
+    <code>tableau</code> : un <strong>tableau</strong> d'éléments pouvant être <strong>comparés</strong>.<br>
+<strong>SORTIE</strong> : aucune (tri <em>en place</em>)</p>
+<p><strong>DÉBUT</strong><br>
+  n ← longueur(tableau)<br>
+  <strong>POUR</strong> debut <strong>ALLANT DE</strong> 0 <strong>À</strong> n - 2<br>
+    indice_min ← debut<br>
+    <strong>POUR</strong> i <strong>ALLANT DE</strong> debut + 1 <strong>À</strong> n - 1<br>
+      <strong>SI</strong> tableau[i] &lt; tableau[indice_min], <strong>ALORS</strong><br>
+        indice_min ← i<br>
+    <strong>FIN POUR</strong><br>
+    temp ← tableau[debut]<br>
+    tableau[debut] ← tableau[indice_min]<br>
+    tableau[indice_min] ← temp<br>
+  <strong>FIN POUR</strong> <br>
+  Renvoyer <strong>∅</strong><br>
+<strong>FIN ALGORITHME</strong></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>La première boucle <strong>POUR</strong> s'arrête à <code>n - 2</code> car si tous les éléments de l'intervalle <code>[0, longueur(tableau) - 2]</code> sont <strong>triés</strong>, l'élément d'<strong>indice</strong> <code>longueur(tableau) - 1</code> est obligatoirement déjà à la <strong>bonne position</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Stabilité du tri</p>
+<p>Un <strong>tri</strong> est dit <strong>stable</strong> s'il préserve l’<strong>ordonnancement initial des éléments</strong> que l'ordre considère comme égaux.<br>
+Le tri par sélection est, dans le cas de notre algorithme, <strong>instable</strong> car en cas de valeurs identiques dans le tableau initial, leur ordre relatif peut être modifié.</p>
+<p><em>Exemple</em> : Avec le tableau <code>[2, 4a, 4b, 3, 7, 5]</code>, l'ordre des éléments de valeur <code>4</code> n'est pas conservé.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Sélection du maximum</p>
+<p>Si l'on souhait écrire cet algorithme en sélectionnant le <strong>maximum</strong> plutôt que le minimum, le principe serait le même, mais le parcours s'effectuerait du <strong>dernier élément</strong> au <strong>premier élément</strong> du tableau. Le tableau serait dans ce cas d'abord composé de la <strong>partie non triée</strong>, puis de la <strong>partie triée</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><span id="a_vous">À vous de jouer</span></p>
+<p><strong>Question 1</strong> : Déroulez le <strong>tri par sélection</strong> du minimum sur le tableau <code>[7, 1, 5, 3, 8, 5]</code> en vous aidant du tableau suivant :</p>
+<p><img alt="Tableau exo tri sélection" src="../images/tableau_exo_triselect.png"></p>
+<p><strong>Question 2</strong> : Faites de même sur le tableau <code>[5, 3, 1, 4, 6, 2]</code>.</p>
+<p><strong>Question 3</strong> : Même chose cette fois avec le tableau <code>['b', 'e', 'c', 'w', 'p', 'q']</code>. On utilisera l'ordre <strong>lexicographique</strong>.</p>
+</div>
+<h2 id="implementation-du-tri-par-selection">Implémentation du tri par sélection<a class="headerlink" href="#implementation-du-tri-par-selection" title="Permanent link">¶</a></h2>
+<p>On va maintenant implémenter l'algorithme du <strong>tri par sélection</strong> en <strong>Python</strong>.<br>
+Les <strong>tableaux</strong> seront représentés par des <strong>listes Python</strong> (objets de type <code>list</code>).</p>
+<div class="admonition note">
+<p class="admonition-title">Question préliminaire</p>
+<p>Les <strong>listes Python</strong> sont-elles des structures de données <strong>mutables</strong> ou non ?
+Citer 2 structures <strong>mutables</strong> et deux structures <strong>non-mutables</strong> en Python.</p>
+</div>
+<p><em>Note</em> : Pour simplifier, on parlera de <em>tableaux triés</em> pour parler de <em>tableaux triés dans l'ordre croissant</em>.</p>
+<div class="admonition success">
+<p class="admonition-title"><span id="fichiers_python">Fichiers Python</span></p>
+<ul>
+<li><a href="../src/tri_selection.py">tri_selection.py</a> : programme <strong>Python</strong> avec les fonctions à compléter.</li>
+<li><a href="../src/tri_selection_corr.py">tri_selection_corr.py</a> : correction de l'implémentation des fonctions.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question 1</p>
+<ol>
+<li>Compléter les fonctions : <ul>
+<li><code>minimum(tableau, debut)</code> : renvoie l'<strong>indice</strong> de l'élément de <strong>valeur minimale</strong> dans l'intervalle <code>[debut, len(tableau) - 1]</code>.</li>
+<li><code>echanger(tableau, i, j)</code> : échange les éléments d'indices <code>i</code> et <code>j</code> du tableau <code>tableau</code>.</li>
+</ul>
+</li>
+<li>Compléter la fonction <code>tri_selection(tableau)</code> qui effectue le <strong>tri par sélection</strong> des éléments d'un tableau <code>tableau</code> donné, en réutilisant les deux fonctions précédentes.</li>
+<li>Est-il nécessaire de mettre un <code>return None</code> ? Pourquoi ?</li>
+<li>Peut-on dire que la fonction <code>tri_selection</code> est une <strong>procédure</strong> ? Pourquoi ?</li>
+</ol>
+</div>
+<details class="tip">
+<summary>Correction question 1</summary>
+<p><strong>1</strong> -</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">minimum</span><span class="p">(</span><span class="n">tableau</span><span class="p">:</span> <span class="s1">'list[int]'</span><span class="p">,</span> <span class="n">debut</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="sd">''' Renvoie l'indice de la valeur minimale du tableau dans l'intervalle [debut, len(tableau) - 1].</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">:param tableau: (list[int]) un tableau d'entiers</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">:param debut: (int) l'indice à partir duquel on recherche le minimum</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">:return: (int) l'indice du minimum '''</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="n">indice_min</span> <span class="o">=</span> <span class="n">debut</span>  <span class="c1"># Initialiser l'indice du minimum à debut</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">debut</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tableau</span><span class="p">)):</span>  <span class="c1"># Parcourir tous les éléments du tableau à partir de debut + 1</span>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    <span class="k">if</span> <span class="n">tableau</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">tableau</span><span class="p">[</span><span class="n">indice_min</span><span class="p">]:</span>  <span class="c1"># Si l'élément d'indice i est inférieur à celui d'indice indice_min</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>        <span class="n">indice_min</span> <span class="o">=</span> <span class="n">i</span>  <span class="c1"># Le nouvel indice du minimum est i</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="k">return</span> <span class="n">indice_min</span>  <span class="c1"># Renvoyer l'indice du minimum</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="k">def</span> <span class="nf">echanger</span><span class="p">(</span><span class="n">tableau</span><span class="p">:</span> <span class="s1">'list[int]'</span><span class="p">,</span> <span class="n">i</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">j</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w">    </span><span class="sd">''' Echanger deux éléments d'un tableau</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="sd">    :param tableau: (list[int]) un tableau d'entiers</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="sd">    :param i: (int) l'indice d'un élément du tableau</span>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="sd">    :param j: (int) l'indice d'un élément du tableau '''</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>    <span class="n">temp</span> <span class="o">=</span> <span class="n">tableau</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+</span><span id="__span-0-20"><a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>    <span class="n">tableau</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="n">tableau</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
+</span><span id="__span-0-21"><a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>    <span class="n">tableau</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
+</span><span id="__span-0-22"><a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>
+</span><span id="__span-0-23"><a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="k">def</span> <span class="nf">tri_selection</span><span class="p">(</span><span class="n">tableau</span><span class="p">:</span> <span class="s1">'list[int]'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-0-24"><a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="w">    </span><span class="sd">''' Effectue le tri par sélection en place des éléments d'un tableau donné.</span>
+</span><span id="__span-0-25"><a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="sd">    :param tableau: (list[int]) un tableau d'entiers à trier '''</span>
+</span><span id="__span-0-26"><a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a>
+</span><span id="__span-0-27"><a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a>    <span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tableau</span><span class="p">)</span>  <span class="c1"># Récupérer la longueur du tableau</span>
+</span><span id="__span-0-28"><a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a>    <span class="k">for</span> <span class="n">debut</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># Parcourir tous les éléments jusqu'à l'avant dernier (*)</span>
+</span><span id="__span-0-29"><a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a>        <span class="n">indice_min</span> <span class="o">=</span> <span class="n">minimum</span><span class="p">(</span><span class="n">tableau</span><span class="p">,</span> <span class="n">debut</span><span class="p">)</span>  <span class="c1"># Récupérer l'indice du minimum</span>
+</span><span id="__span-0-30"><a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a>        <span class="n">echanger</span><span class="p">(</span><span class="n">tableau</span><span class="p">,</span> <span class="n">debut</span><span class="p">,</span> <span class="n">indice_min</span><span class="p">)</span>  <span class="c1"># Echanger les éléments d'indices debut et indice_min</span>
+</span></code></pre></div>
+<p><strong>2</strong> - Ce n'est pas nécessaire. Lorsqu'on ne met pas de <code>return</code>, cela revient à renvoyer <code>None</code> (c'est-à-dire <em>rien</em>).</p>
+<p><strong>3</strong> - La fonction <code>tri_selection</code> <strong>ne renvoie rien</strong>. Une fonction qui ne renvoie rien (et qui fonctionne donc uniquement par <em>effets de bord</em>) peut être appelée <strong>procédure</strong>. Attention toutefois, en <em>Python</em>, il n'existe pas de <strong>type 'procédure'</strong>, il n'existe que des <strong>fonctions</strong> (type <code>function</code>).</p>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Tester ma fonction</p>
+<p>Le programme est muni de <strong>tests</strong> (lignes <code>13</code> à <code>22</code>) exécutés par le module <em>Doctest</em>.<br>
+Vous pouvez donc <strong>tester vos fonctions</strong> en exécutant simplement le programme. Si rien ne se passe, c'est que tout est bon. Sinon, l'interpréteur indiquera les tests qui ont échoué.</p>
+<p>(Vous pouvez rajouter d'autres tests ou effectuer des tests sur l'interpréteur si vous le souhaitez.)</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question 2</p>
+<p>Compléter la fonction <code>tri_selection_tout_en_un(tableau)</code> en ré-écrivant le <strong>tri par sélection</strong> sans appeler d'autres fonctions (les <strong>recherches du minimum</strong> et les <strong>échanges</strong> sont effectués <strong>directement dans cette fonction</strong>).</p>
+</div>
+<details class="tip">
+<summary>Réponse question 2</summary>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">tri_selection_tout_en_un</span><span class="p">(</span><span class="n">tableau</span><span class="p">:</span> <span class="s1">'list[int]'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="sd">''' Effectue le tri par sélection en place des éléments d'un tableau donné.</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="sd">:param tableau: (list[int]) un tableau d'entiers à trier '''</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tableau</span><span class="p">)</span>  <span class="c1"># Récupérer la longueur du tableau</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="k">for</span> <span class="n">debut</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># Parcourir tous les éléments jusqu'à l'avant dernier (*)</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="n">indice_min</span> <span class="o">=</span> <span class="n">debut</span>  <span class="c1"># Initialiser l'indice du minimum à debut</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">debut</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tableau</span><span class="p">)):</span>  <span class="c1"># Parcourir tous les éléments du tableau à partir de debut + 1</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>        <span class="k">if</span> <span class="n">tableau</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">tableau</span><span class="p">[</span><span class="n">indice_min</span><span class="p">]:</span>  <span class="c1"># Si l'élément d'indice i est inférieur à celui d'indice indice_min</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>            <span class="n">indice_min</span> <span class="o">=</span> <span class="n">i</span>  <span class="c1"># Le nouvel indice du minimum est i</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    <span class="c1"># On effectue une permutation</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="n">temp</span> <span class="o">=</span> <span class="n">tableau</span><span class="p">[</span><span class="n">debut</span><span class="p">]</span>
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>    <span class="n">tableau</span><span class="p">[</span><span class="n">debut</span><span class="p">]</span> <span class="o">=</span> <span class="n">tableau</span><span class="p">[</span><span class="n">indice_min</span><span class="p">]</span>
+</span><span id="__span-1-15"><a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a>    <span class="n">tableau</span><span class="p">[</span><span class="n">indice_min</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
+</span></code></pre></div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Question 3</p>
+<p>Écrire la fonction <code>tri_selection_decroissant(tableau)</code> qui effectue le <strong>tri par sélection</strong> des éléments d'un tableau dans l'<strong>ordre décroissant</strong>.</p>
+</div>
+<details class="tip">
+<summary>Réponse question 3</summary>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">tri_selection_decroissant</span><span class="p">(</span><span class="n">tableau</span><span class="p">:</span> <span class="s1">'list[int]'</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="sd">''' Effectue le tri par sélection dans l'ordre décroissant des éléments d'un tableau donné.</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">:param tableau: (list[int]) un tableau d'entiers à trier '''</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="n">n</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tableau</span><span class="p">)</span>  <span class="c1"># Récupérer la longueur du tableau</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="k">for</span> <span class="n">debut</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">n</span> <span class="o">-</span> <span class="mi">1</span><span class="p">):</span>  <span class="c1"># Parcourir tous les éléments jusqu'à l'avant dernier (*)</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="n">indice_max</span> <span class="o">=</span> <span class="n">debut</span>  <span class="c1"># Initialiser l'indice du maximum à debut</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">debut</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">tableau</span><span class="p">)):</span>  <span class="c1"># Parcourir tous les éléments du tableau à partir de debut + 1</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="k">if</span> <span class="n">tableau</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">tableau</span><span class="p">[</span><span class="n">indice_max</span><span class="p">]:</span>  <span class="c1"># Si l'élément d'indice i est inférieur à celui d'indice indice_max</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>            <span class="n">indice_max</span> <span class="o">=</span> <span class="n">i</span>  <span class="c1"># Le nouvel indice du minimum est i</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="c1"># On effectue une permutation</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="n">temp</span> <span class="o">=</span> <span class="n">tableau</span><span class="p">[</span><span class="n">debut</span><span class="p">]</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="n">tableau</span><span class="p">[</span><span class="n">debut</span><span class="p">]</span> <span class="o">=</span> <span class="n">tableau</span><span class="p">[</span><span class="n">indice_max</span><span class="p">]</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="n">tableau</span><span class="p">[</span><span class="n">indice_max</span><span class="p">]</span> <span class="o">=</span> <span class="n">temp</span>
+</span></code></pre></div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Question 4</p>
+<p>Dans les <strong>tests</strong>, à la ligne <code>19</code>, on trouve l'instruction <code>l = [randint(0, 100) for _ in range(20)]</code>.<br>
+Que fait cette instruction ? Quel est le nom de la <strong>méthode</strong> de <strong>création de liste</strong> utilisée ?</p>
+</div>
+<details class="tip">
+<summary>Réponse question 4</summary>
+<p>Cette instruction crée une <strong>liste Python</strong> contenant <strong>20 entiers aléatoires</strong> compris entre <strong>0</strong> et <strong>100</strong>.<br>
+La création est effectuée <strong>par compréhension</strong>.</p>
+</details>
+<h2 id="cout-du-tri-par-selection">Coût du tri par sélection<a class="headerlink" href="#cout-du-tri-par-selection" title="Permanent link">¶</a></h2>
+<p>Voyons à présent quel est le <strong>coût</strong> du <strong>tri par sélection</strong>.  </p>
+<p>Le coût d'un algorithme peut être déterminé en comptant le nombre d'<strong>opérations élémentaires</strong> réalisées. Ces opérations peuvent être par exemple des <strong>affectations</strong>, des <strong>tests</strong>, des <strong>opérations arithmétiques</strong>, des <strong>accès à un élément d'une liste</strong>, etc.</p>
+<p>Dans notre cas, on ne prendra en compte que le <strong>nombre de comparaisons entre deux éléments</strong> effectué par notre algorithme.<br>
+Les comparaisons sont en l'occurence effectuées dans l'algorithme <code>minimum</code> :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>...
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>SI tableau[i] &lt; tableau[indice_min], ALORS
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>...
+</span></code></pre></div>
+<p>On rappelle l'algorithme du <strong>tri par sélection</strong> et de <strong>recherche du minimum</strong> :</p>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithme du tri par sélection</p>
+<p><strong>ALGORITHME</strong> : tri_selection<br>
+<strong>ENTRÉES</strong> :<br>
+    <code>tableau</code> : un <strong>tableau</strong> d'éléments pouvant être <strong>comparés</strong><br>
+<strong>SORTIE</strong> : aucune (tri <em>en place</em>)</p>
+<p><strong>DÉBUT</strong><br>
+  n ← longueur(tableau)<br>
+  <strong>POUR</strong> debut <strong>ALLANT DE</strong> 0 <strong>À</strong> n - 2<br>
+    indice_min ← minimum(tableau, debut)<br>
+    echanger(tableau, debut, indice_min)<br>
+  <strong>FIN POUR</strong> <br>
+  Renvoyer <strong>∅</strong><br>
+<strong>FIN ALGORITHME</strong></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithme de recherche du minimum</p>
+<p><strong>ALGORITHME</strong> : minimum<br>
+<strong>ENTRÉES</strong> :<br>
+    <code>tableau</code> : un <strong>tableau</strong> d'éléments<br>
+    <code>debut</code> : l'<strong>indice</strong> à partir duquel effectuer la recherche<br>
+<strong>SORTIE</strong> : l'<strong>indice</strong> de l'élément minimal dans l'intervalle <code>[debut, longueur(tableau) - 1]</code> du tableau</p>
+<p><strong>DÉBUT</strong><br>
+  indice_min ← debut<br>
+  <strong>POUR</strong> i <strong>ALLANT DE</strong> debut + 1 <strong>À</strong> longueur(tableau) - 1<br>
+   <strong>SI</strong> tableau[i] &lt; tableau[indice_min], <strong>ALORS</strong><br>
+    indice_min ← i<br>
+  <strong>FIN POUR</strong><br>
+  Renvoyer indice_min<br>
+<strong>FIN ALGORITHME</strong></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question 1</p>
+<p>On souhaite calculer le <strong>nombre de comparaisons</strong> effectué pour <strong>trier</strong> le tableau <code>[3, 7, 1, 6, 5, 2]</code>.</p>
+<p><strong>Compléter</strong> le tableau suivant en indiquant le <strong>nombre de comparaisons</strong> effectué après chaque <strong>itération</strong> de la <strong>boucle principale</strong> <code>POUR debut ALLANT DE 0 À n - 2</code>, c'est-à-dire le nombre de comparaisons effectué par l'algorithme <code>minimum(tableau, debut)</code> pour chaque valeur de <code>debut</code> de <code>0</code> à <code>n</code>, <code>n</code> étant la <strong>longueur du tableau</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>itération k =</th>
+<th><code>debut</code></th>
+<th>tableau après itération k</th>
+<th>nombre de comparaisons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>[1, <strong>7, 3, 6, 5, 2</strong>]</td>
+<td>...</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>[1, 2, <strong>3, 6, 5, 7</strong>]</td>
+<td>...</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>[1, 2, 3, <strong>6, 5, 7</strong>]</td>
+<td>...</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>[1, 2, 3, 5, <strong>6, 7</strong>]</td>
+<td>...</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4</td>
+<td>[1, 2, 3, 5, 6, <strong>7</strong>]</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<p>Calculer le nombre de comparaisons <strong>au total</strong>, noté <span class="arithmatex">\(C(6)\)</span>, effectué pour trier ce tableau.</p>
+</div>
+<details class="tip">
+<summary>Réponse question 1</summary>
+<table>
+<thead>
+<tr>
+<th>itération k =</th>
+<th><code>debut</code></th>
+<th>tableau après itération k</th>
+<th>nombre de comparaisons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>[1, <strong>7, 3, 6, 5, 2</strong>]</td>
+<td>5</td>
+</tr>
+<tr>
+<td>2</td>
+<td>1</td>
+<td>[1, 2, <strong>3, 6, 5, 7</strong>]</td>
+<td>4</td>
+</tr>
+<tr>
+<td>3</td>
+<td>2</td>
+<td>[1, 2, 3, <strong>6, 5, 7</strong>]</td>
+<td>3</td>
+</tr>
+<tr>
+<td>4</td>
+<td>3</td>
+<td>[1, 2, 3, 5, <strong>6, 7</strong>]</td>
+<td>2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>4</td>
+<td>[1, 2, 3, 5, 6, <strong>7</strong>]</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<p>Lors de la première itération, on effectue <strong>5 comparaisons</strong>. Lors de la seconde itération, on effectue <strong>4 comparaisons</strong>. Et ainsi de suite. Le <strong>nombre de comparaisons</strong> effectué au total pour un <strong>tableau de longueur</strong> <span class="arithmatex">\(n = 6\)</span> est donc :</p>
+<div class="arithmatex">\[
+C(6) = 5 + 4 + 3 + 2 + 1 = 15
+\]</div>
+<p>Pour un <strong>tableau de longueur</strong> <span class="arithmatex">\(n = 7\)</span> par exemple, le <strong>nombre de comparaisons</strong> serait :</p>
+<div class="arithmatex">\[
+C(7) = 6 + 5 + 4 + 3 + 2 + 1 = 6 + C(6) = 21
+\]</div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Question 2</p>
+<p>Si l'on change les éléments du tableau de la question précédente, le <strong>nombre de comparaisons</strong> change t-il ? Pourquoi ?</p>
+</div>
+<details class="tip">
+<summary>Réponse question 2</summary>
+<p><strong>Non</strong>, le tri par sélection effectue <strong>toujours</strong> une comparaison avec tous les éléments de la <strong>partie non-triée</strong> du tableau lors de la <strong>recherche du minimum</strong>. Le nombre de comparaisons effectué ne dépend que de la <strong>longueur</strong> du tableau, et non pas des éléments en eux-même.</p>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Question 3</p>
+<p>Calculer le <strong>nombre de comparaisons</strong>, noté <span class="arithmatex">\(C(n)\)</span>, pour un tableau de taille <span class="arithmatex">\(n\)</span>.<br>
+Finalement, quelle est la <strong>complexité</strong> du <strong>tri par sélection</strong> ? (Voir l'aide ci-dessous si nécessaire.)</p>
+</div>
+<details class="tip">
+<summary>Réponse question 3</summary>
+<div class="arithmatex">\[
+C(n) = 1 + 2 + [...] + (n - 2) + (n - 1) = \frac{(n - 1)n}{2}
+\]</div>
+<div class="arithmatex">\[
+C(n) = \sum_{x=1}^{n-1}x = \frac{(n - 1)n}{2}
+\]</div>
+<p>La complexité est donc <strong>quadratique</strong> (si l'on double la taille du tableau en entrée, le temps d'exécution sera multiplié par 4.)<br>
+Étant donné que la complexité est la même quels que soient les éléments du tableau fourni en entrée, on peut utiliser la notation <strong>grand-theta</strong>. On peut écrire que la complexité de l'algorithme du <strong>tri par sélection</strong> est en <span class="arithmatex">\(\Theta(n^2)\)</span>.</p>
+</details>
+<div class="admonition tip">
+<p class="admonition-title">Calcul de la somme des termes d'une suite arithmétique</p>
+<p>On rappelle la formule permettant de calculer la somme des <span class="arithmatex">\(n + 1\)</span> premiers termes d'une <strong>suite arithmétique</strong> :</p>
+<div class="arithmatex">\[
+S = u_0 + u_1 + ... + u_n
+\]</div>
+<div class="arithmatex">\[
+S = \frac{n+1}{2}(u_0 + u_n)
+\]</div>
+<div class="arithmatex">\[
+S = \frac{(1er~terme + dernier~terme) \times (nombre~de~termes)}{2}
+\]</div>
+<p>Par exemple :</p>
+<div class="arithmatex">\[
+S = 1 + 2 + ... + n = \frac{n(n+1)}{2}
+\]</div>
+<div class="arithmatex">\[
+S = \sum_{x=0}^{n}x = \frac{n(n+1)}{2}
+\]</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Rappel sur les complexités</p>
+<p>Voici un rappel sur les différentes complexités :</p>
+<ul>
+<li>Logarithmique <span class="arithmatex">\(Θ(log~n)\)</span> : la complexité évolue <strong>moins vite</strong> que le nombre <strong>n</strong> de données (par exemple : si on multiplie le nombre de données <strong>n</strong> par <strong>2</strong>, on ne rajoute qu'<strong>une seule</strong> opération).</li>
+<li>Linéaire <span class="arithmatex">\(Θ(n)\)</span> : la complexité évolue <strong>comme</strong> le nombre <strong>n</strong> de données (par exemple : si on multiplie le nombre de données <strong>n</strong> par <strong>2</strong>, le temps d'exécution est multiplié par <strong>2</strong>).</li>
+<li>Quasi-linéaire <span class="arithmatex">\(O(n~log~n)\)</span> : Intermédiaire entre linéaire et quadratique. En pratique, un algorithme de complexité quasi-linéaire a un comportement très proche d’un algorithme de complexité linéaire.</li>
+<li>Quadratique <span class="arithmatex">\(Θ(n^2)\)</span> : la complexité évolue <strong>comme le carré</strong> du nombre <strong>n</strong> de données (par exemple : si on multiplie le nombres de données <strong>n</strong> par <strong>2</strong>, le temps d'exécution est multiplié par <strong>4</strong>).</li>
+<li>Exponentielle <span class="arithmatex">\(Θ(2^n)\)</span> : la complexité évolue à terme <strong>beaucoup plus vite</strong> que n'importe quelle fonction polynomiale du nombre <strong>n</strong> de données (par exemple : si on multiplie le nombre de données <strong>n</strong> par <strong>100</strong>, le temps d'exécution est multiplié par <span class="arithmatex">\(2^{100}\)</span>, soit <strong>1267650600228229401496703205376</strong>).</li>
+</ul>
+<p><figure markdown>
+<center>
+<img alt="Graphe des complexités algorithmiques" src="../images/graphique_complexites.png">
+<figcaption>Courbes d'évolution des différentes complexités algorithmiques.<br>(généré avec <a href="../src/graphique_complexites.py" target="_blank">ce programme</a>)</figcaption>
+</center>
+</figure></p>
+</div>
+<div class="admonition success">
+<p class="admonition-title">À télécharger (facultatif)</p>
+<p>Récupérer le fichier <a href="../src/analyse_tri_selection.py">analyse_tri_selection.py</a>.</p>
+<p>Ce fichier permet de <strong>compter le nombre de comparaisons</strong> effectué par le <strong>tri par sélection</strong>, en utilisant une <strong>variable globale</strong> <code>CNT</code> incrémentée à chaque comparaison de deux éléments effectuée.</p>
+<p>Vous pouvez modifier l'instruction à la ligne <code>38</code> en changeant le tableau pour lequel vous souhaitez compter le nombre de comparaisons.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><span id="q4cout">Question 4</span></p>
+<p>Compléter ce tableau en indiquant le <strong>nombre de comparaisons</strong> entre éléments nécessaire pour trier un <strong>tableau</strong> de différentes <strong>tailles</strong> <span class="arithmatex">\(n\)</span> <strong>données</strong> avec l'algorithme de <strong>tri par sélection</strong>.</p>
+<table>
+<thead>
+<tr>
+<th>taille n=</th>
+<th>nombre de comparaisons</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td></td>
+</tr>
+<tr>
+<td>2</td>
+<td></td>
+</tr>
+<tr>
+<td>4</td>
+<td></td>
+</tr>
+<tr>
+<td>8</td>
+<td></td>
+</tr>
+<tr>
+<td>16</td>
+<td></td>
+</tr>
+<tr>
+<td>32</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Lorsque l'on <strong>double la taille du tableau</strong>, comment évolue le <strong>nombre de comparaisons</strong> ?
+Est-ce que cela confirme bien que la complexité est <strong>quadratique</strong> (voir le <em>Rappel sur les complexités</em> précédent si besoin) ?</p>
+</div>
+<h2 id="terminaison-du-tri-par-selection">Terminaison du tri par sélection<a class="headerlink" href="#terminaison-du-tri-par-selection" title="Permanent link">¶</a></h2>
+<div class="admonition success">
+<p class="admonition-title">Variant de boucle</p>
+<p>On appelle <strong>variant de boucle</strong> toute <strong>quantité</strong> <span class="arithmatex">\(v\)</span> (qui peut être déterminée en fonction des différentes <strong>variables</strong> du programme) telle que :</p>
+<ul>
+<li><span class="arithmatex">\(v\)</span> ne prend que des valeurs <strong>entières</strong>,</li>
+<li><span class="arithmatex">\(v\)</span> est initialement <strong>positive</strong>,</li>
+<li><span class="arithmatex">\(v\)</span> <strong>décroit strictement</strong> à chaque passage dans la boucle.</li>
+</ul>
+<p>On exhibe un <strong>variant de boucle</strong> pour démontrer qu'une boucle <strong>se termine</strong>, en un temps fini. <br>
+S'il existe plusieurs boucles dans un programme, il faut trouver autant de variants qu'il y en a.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Prouver la terminaison</p>
+<p>Concrètement, on peut prouver la <strong>terminaison</strong> d'un algorithme en montrant que les deux propositions suivantes sont <strong>vraies</strong> :</p>
+<ul>
+<li>Proposition A : les <strong>boucles</strong> peuvent s'exprimer sous la forme <strong>TANT QUE</strong> <span style="color:#23ab32">VARIANT</span> <strong>&gt; 0</strong></li>
+<li>Proposition B : le <span style="color:#23ab32">VARIANT</span> est une <strong>suite d'entiers strictement décroissante</strong>.</li>
+</ul>
+<p>Si les deux propositions <strong>A</strong> et <strong>B</strong> sont vraies (<span class="arithmatex">\(A \land B\)</span>), l'algorithme s'arrêtera <strong>toujours</strong>. Autrement (au moins l'une des deux propositions n'est pas vérifiée, <span class="arithmatex">\(\neg(A \land B)\)</span>), il existe au moins un cas où l'algorithme ne se terminera pas.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">Exemple</p>
+<p>Démontrons que la boucle <strong>POUR</strong> suivante se termine :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>POUR i ALLANT DE 10 à 49 AVEC UN PAS DE 5:
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    Instructions ne modifiant pas la valeur de i...
+</span></code></pre></div>
+<p>On peut ré-écrire cette boucle <strong>POUR</strong> avec une boucle <strong>TANT QUE</strong> :</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>i = 10
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>TANT QUE i &lt; 50:
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>    Instructions ne modifiant pas la valeur de i...
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>    i = i + 5
+</span></code></pre></div>
+<p>Si on note <span class="arithmatex">\(n\)</span> le <strong>nombre de tours de boucle</strong> effectué, on peut représenter les valeurs successives que va prendre <span class="arithmatex">\(i\)</span> sous la forme d'une suite arithmétique :<br>
+<span class="arithmatex">\(i_n = i_0 + r*n\)</span>, avec <span class="arithmatex">\(i_0\)</span> la <strong>valeur initiale</strong> de <span class="arithmatex">\(i_n\)</span> et <span class="arithmatex">\(r\)</span> la <strong>raison</strong> de la suite.</p>
+<p>Ici, <span class="arithmatex">\(i_0 = 10\)</span> et <span class="arithmatex">\(r = 5\)</span>.<br>
+Donc <span class="arithmatex">\(i_n = 10 + 5n\)</span>.</p>
+<p>On peut donc ré-écrire la condition <strong>TANT QUE</strong> de la manière suivante :</p>
+<p>TANT QUE <span class="arithmatex">\(i_n &lt; 50\)</span><br>
+TANT QUE <span class="arithmatex">\(10 + 5n &lt; 50\)</span><br>
+TANT QUE <span class="arithmatex">\(0 &lt; 50 - 10 - 5n\)</span><br>
+TANT QUE <span class="arithmatex">\(50 - 10 - 5n &gt; 0\)</span><br>
+TANT QUE <span class="arithmatex">\(40 - 5n &gt; 0\)</span></p>
+<p>On obtient donc notre <strong>variant</strong> <span class="arithmatex">\(v_n\)</span> qui prend la forme d'une nouvelle <strong>suite arithmétique</strong> :<br>
+<span class="arithmatex">\(v_n = v_0 - r*n\)</span> avec <span class="arithmatex">\(v_0 = 40\)</span> pour <strong>valeur initiale</strong> et <span class="arithmatex">\(r = -5\)</span> pour <strong>raison</strong> de la suite.<br>
+Donc :<br>
+<span class="arithmatex">\(v_n = 40 - 5n\)</span> est un <strong>variant de la boucle</strong> car il s'agit d'une suite <strong>d'entiers</strong>, <strong>initialement positive</strong> et qui <strong>décroit strictement</strong> à chaque tour de boucle (car la <strong>raison</strong> est <strong>négative</strong>).</p>
+<p>On a trouvé un <strong>variant</strong>, et donc <strong>démontré la terminaison de notre boucle</strong>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question 1</p>
+<p>Montrer la terminaison de l'algorithme de <strong>recherche du minimum</strong>.</p>
+<details class="abstract">
+<summary>Algorithme de recherche du minimum</summary>
+<p><strong>ALGORITHME</strong> : minimum<br>
+<strong>ENTRÉES</strong> :<br>
+    <code>tableau</code> : un <strong>tableau</strong> d'éléments<br>
+    <code>debut</code> : l'<strong>indice</strong> à partir duquel effectuer la recherche<br>
+<strong>SORTIE</strong> : l'<strong>indice</strong> de l'élément minimal dans l'intervalle <code>[debut, longueur(tableau) - 1]</code> du tableau</p>
+<p><strong>DÉBUT</strong><br>
+  indice_min ← debut<br>
+  <strong>POUR</strong> i <strong>ALLANT DE</strong> debut + 1 <strong>À</strong> longueur(tableau) - 1<br>
+   <strong>SI</strong> tableau[i] &lt; tableau[indice_min], <strong>ALORS</strong><br>
+    indice_min ← i<br>
+  <strong>FIN POUR</strong><br>
+  Renvoyer indice_min<br>
+<strong>FIN ALGORITHME</strong></p>
+</details>
+</div>
+<details class="tip">
+<summary>Astuce question 1</summary>
+<p>La démarche à suivre est similaire à celle de l'exemple précédent.</p>
+<ul>
+<li>Ré-écrire la boucle <strong>POUR</strong> sous la forme d'une boucle <strong>TANT QUE</strong>.</li>
+<li>Exprimer <span class="arithmatex">\(i\)</span> en fonction du nombre de tours de boucle <span class="arithmatex">\(n\)</span> sous la forme d'une <strong>suite entière arithmétique</strong> croissante (<span class="arithmatex">\(i_n = i_0 + r*n\)</span> où <span class="arithmatex">\(i_0\)</span> est le <strong>terme initial</strong> et <span class="arithmatex">\(r\)</span> est la <strong>raison</strong>).</li>
+<li>Écrire la condition du <strong>TANT QUE</strong> en partant de l'inégalité de départ et de l'expression de <span class="arithmatex">\(i_n\)</span>, et tenter d'obtenir une nouvelle inégalité de la forme <span class="arithmatex">\(v_n &gt; 0\)</span>, où <span class="arithmatex">\(v_n\)</span> est une <strong>suite d'entiers strictement décroissante</strong>.</li>
+<li>On a trouvé un <strong>variant</strong> <span class="arithmatex">\(v_n\)</span> : La boucle se termine !</li>
+</ul>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Question 2</p>
+<p>Montrer enfin la terminaison de l'algorithme du <strong>tri par sélection</strong>.</p>
+<details class="abstract">
+<summary>Algorithme du tri par sélection</summary>
+<p><strong>ALGORITHME</strong> : tri_selection<br>
+<strong>ENTRÉES</strong> :<br>
+    <code>tableau</code> : un <strong>tableau</strong> d'éléments pouvant être <strong>comparés</strong><br>
+<strong>SORTIE</strong> : aucune (tri <em>en place</em>)</p>
+<p><strong>DÉBUT</strong><br>
+  n ← longueur(tableau)<br>
+  <strong>POUR</strong> debut <strong>ALLANT DE</strong> 0 <strong>À</strong> n - 2<br>
+    indice_min ← minimum(tableau, debut)<br>
+    echanger(tableau, debut, indice_min)<br>
+  <strong>FIN POUR</strong> <br>
+  Renvoyer <strong>∅</strong><br>
+<strong>FIN ALGORITHME</strong></p>
+</details>
+</div>
+<details class="tip">
+<summary>Astuce question 2</summary>
+<ul>
+<li>On a montré que <code>minimum</code>se termine,</li>
+<li>la fonction <code>echanger</code> se termine (car il s'agit simplement de trois affectations),</li>
+<li>il ne reste plus qu'à montrer que la <strong>boucle principale</strong> se termine, avec la même démarche que précédemment.</li>
+</ul>
+</details>
+<h2 id="preuve-de-correction-du-tri-par-selection">Preuve de correction du tri par sélection<a class="headerlink" href="#preuve-de-correction-du-tri-par-selection" title="Permanent link">¶</a></h2>
+<p>Dans les deux parties précédentes, nous avons montré :</p>
+<ul>
+<li>Le <strong>coût algorithmique</strong> de l'algorithme du tri par sélection, qui est <strong>toujours quadratique</strong>, c'est-à-dire en <span class="arithmatex">\(\Theta(n^2)\)</span>. Cela signifie que si l'on <strong>double</strong> la taille de l'entrée, le temps d'exécution sera à peu près <strong>multiplié par 4</strong>.</li>
+<li>La <strong>terminaison</strong> de l'algorithme. On sait que l'algorithme finira toujours par se terminer.</li>
+</ul>
+<p>Il reste toutefois à démontrer que l'algorithme <strong>renvoie toujours un résultat correct</strong>.</p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>Dans notre implémentation en Python, on a effectué quelques tests (avec une <em>doctest</em> notamment) pour vérifier le fonctionnement de l'algorithme. Toutefois, cela <strong>ne prouve pas que l'algorithme est correct</strong>, seulement qu'il fonctionne avec un jeu de tests défini.</p>
+<p>Dans notre cas, il y a une <strong>infinité d'entrées</strong> possibles qui respectent la spécification, on ne peut donc pas démontrer la correction de notre algorithme en se contentant d'effectuer des tests.</p>
+</div>
+<p>La <strong>preuve de correction</strong> d'un algorithme permet d'affirmer :</p>
+<ul>
+<li>qu'il <strong>fournit toujours la bonne réponse</strong></li>
+<li>sur <strong>toutes les entrées valides</strong> qu'on lui donne (les entrées qui respectent les <strong>préconditions</strong>).</li>
+</ul>
+<p>Pour démontrer la correction, il faut déterminer un <strong>invariant de boucle</strong> pour la <strong>boucle principale</strong> de notre algorithme.</p>
+<div class="admonition tip">
+<p class="admonition-title">Invariant de boucle</p>
+<p>On appelle <strong>invariant de boucle</strong> une <strong>propriété</strong> <span class="arithmatex">\(P\)</span> qui est <strong>vraie avant et après chaque itération</strong> de la boucle.</p>
+</div>
+<p>L'invariant ainsi déterminé permettra de prouver que le résultat final après exécution est bien le résultat attendu.</p>
+<p>Il n'existe pas de méthodologie miracle permettant de déterminer systématiquement un <strong>invariant</strong>. Cela demande de chercher et de tester des choses jusqu'à trouver une propriété qui convienne.</p>
+<p>Une fois qu'une propriété a été déterminée, il faut la <strong>démontrer</strong> en utilisant un <strong>raisonnement par récurrence</strong>.</p>
+<div class="admonition tip">
+<p class="admonition-title">Démonstration de l'invariant par récurrence</p>
+<p>Pour montrer à l'aide d'une <strong>récurrence simple</strong> qu'une proposition <span class="arithmatex">\(P(k)\)</span> est vérifiée pour tout entier <span class="arithmatex">\(k \ge 0\)</span>, avec <span class="arithmatex">\(k\)</span> le nombre d'itérations de la boucle effectuées :</p>
+<ul>
+<li><strong>Initialisation</strong> : on vérifie que la proposition est <strong>vraie</strong> au <strong>rang initial</strong> <span class="arithmatex">\(0\)</span>, c'est-à-dire <strong>avant le premier passage</strong> dans la <strong>boucle</strong>.</li>
+<li><strong>Conservation</strong> : on suppose que la proposition est <strong>vraie à un certain rang</strong> <span class="arithmatex">\(k \ge 0\)</span> fixé, c'est-à-dire <strong>après</strong> <span class="arithmatex">\(k\)</span> <strong>tours de boucle</strong>, et on en déduit qu'elle est <strong>vraie</strong> au <strong>rang suivant</strong> <span class="arithmatex">\(k + 1\)</span>, c'est-à-dire après <strong>un tour de boucle en plus</strong>. On peut écrire <span class="arithmatex">\(P_k \implies P_{k+1}\)</span>.</li>
+<li><strong>Terminaison</strong> : on exploite les deux phases précédentes et on montre que la proposition est <strong>vraie</strong> sur <strong>toutes les données</strong> une fois la <strong>dernière itération</strong> de la <strong>boucle</strong> effectuée.</li>
+</ul>
+</div>
+<hr>
+<p>Dans la cas du tri par sélection, on peut décomposer le problème en :</p>
+<ul>
+<li>un <strong>sous-tableau trié</strong> à gauche,</li>
+<li>un <strong>sous-tableau non-trié</strong> à droite.</li>
+</ul>
+<p><img alt="Sous-tableaux" src="../images/sous-tableaux.png" width="80%"></p>
+<p>À chaque itération de la boucle principale, on <strong>sélectionne le minimum</strong> dans le <strong>sous-tableau non-trié</strong> et on le place à la fin du <strong>sous-tableau trié</strong>.</p>
+<p>Initialement (avant d'entrer la première fois dans la boucle), le <strong>sous-tableau trié</strong> est vide, et on y <strong>ajoute un élément</strong> à chaque tour de boucle.</p>
+<div class="admonition success">
+<p class="admonition-title">Une proposition d'invariant</p>
+<p>On propose l'invariant <span class="arithmatex">\(P_k\)</span> suivant : « après <span class="arithmatex">\(k\)</span> tours de boucle, <span class="arithmatex">\(k\)</span> <strong>éléments sont triés dans le sous-tableau</strong> <span class="arithmatex">\([0, k-1]\)</span> <strong>de gauche</strong>. »</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Algorithme du tri par sélection</p>
+<p><strong>ALGORITHME</strong> : tri_selection<br>
+<strong>ENTRÉES</strong> :<br>
+    <code>tableau</code> : un <strong>tableau</strong> d'éléments pouvant être <strong>comparés</strong><br>
+<strong>SORTIE</strong> : aucune (tri <em>en place</em>)</p>
+<p><strong>DÉBUT</strong><br>
+  n ← longueur(tableau)<br>
+  <strong>POUR</strong> debut <strong>ALLANT DE</strong> 0 <strong>À</strong> n - 2<br>
+    indice_min ← minimum(tableau, debut)<br>
+    echanger(tableau, debut, indice_min)<br>
+  <strong>FIN POUR</strong> <br>
+  Renvoyer <strong>∅</strong><br>
+<strong>FIN ALGORITHME</strong></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question 1 : Initialisation</p>
+<ul>
+<li>Après <strong>0 tour de boucle</strong>, c'est-à-dire avant d'entrer une première fois dans la boucle, combien y a t-il d'éléments dans le <strong>sous-tableau trié</strong> ?</li>
+<li>La proposition <span class="arithmatex">\(P_0\)</span> est-elle vérifiée ?</li>
+</ul>
+</div>
+<p>On a vu que l'invariant <strong>était bien vérifié</strong> pour <span class="arithmatex">\(P_0\)</span>, c'est-à-dire avant d'entrer une première fois dans la boucle.</p>
+<div class="admonition note">
+<p class="admonition-title">Question 2</p>
+<p>Quelle valeur va prendre <code>debut</code> lors de la <strong>première itération</strong> de la boucle principale ? Que va contenir <code>tableau[debut]</code> après <strong>la première itération</strong> de la boucle ? Combien d'éléments <span class="arithmatex">\(k\)</span> contiendra le <strong>sous-tableau trié</strong> après cette itération ?</p>
+<p>Quelle valeur va prendre <code>debut</code> lors de la <strong>seconde itération</strong> de la boucle principale ? Combien d'éléments <span class="arithmatex">\(k\)</span> seront ainsi triés après cette itération ?</p>
+<p>Établir une relation entre le nombre de tours de boucle <span class="arithmatex">\(k\)</span> et <code>debut</code>.</p>
+</div>
+<p>On fait maintenant l'hypotèse que <span class="arithmatex">\(P_k\)</span> est vraie pour un <span class="arithmatex">\(k \ge 0\)</span> fixé.<br>
+Après <span class="arithmatex">\(k\)</span> tours de boucle, le <strong>sous-tableau trié</strong> contient <span class="arithmatex">\(k\)</span> éléments et le tableau se compose :</p>
+<ul>
+<li>d'un <strong>sous-tableau trié</strong> sur <span class="arithmatex">\([0, k-1]\)</span></li>
+<li>d'un <strong>sous-tableau non-trié</strong> sur <span class="arithmatex">\([k, longueur(tableau) - 1]\)</span></li>
+</ul>
+<p>Démontrons maintenant la <strong>conservation</strong>.</p>
+<div class="admonition note">
+<p class="admonition-title">Question 3 : Conservation</p>
+<p>Montrer que l'implication <span class="arithmatex">\(P_k \implies P_{k+1}\)</span> est <strong>vraie</strong>.</p>
+</div>
+<details class="tip">
+<summary>Astuces question 3</summary>
+<p>Vous pouvez procéder comme suit :</p>
+<ul>
+<li>Définir l'<strong>état du système</strong> à la <strong>fin de l'itération</strong> <span class="arithmatex">\(k\)</span> de la <strong>boucle principal</strong>, notamment <strong>le nombre d'éléments triés</strong> (et l'intervalle correspondant) et le <strong>contenu de la variable</strong> <code>debut</code>.</li>
+<li>Supposer que la proposition <span class="arithmatex">\(P_k\)</span> est vraie. Détailler ce qu'il se passe lorsque l'on refait un <strong>tour de boucle</strong>.</li>
+<li>En déduire l'<strong>état du système</strong> à l'issue de l'itération <span class="arithmatex">\(k + 1\)</span> de la <strong>boucle principale</strong>.</li>
+</ul>
+</details>
+<p>Rappelons notre invariant <span class="arithmatex">\(P_k\)</span> : « après <span class="arithmatex">\(k\)</span> tours de boucle, <span class="arithmatex">\(k\)</span> <strong>éléments sont triés dans le sous-tableau</strong> <span class="arithmatex">\([0, k-1]\)</span> <strong>de gauche</strong> » et que :</p>
+<ul>
+<li>dans la phase d'<strong><u>initialisation</u></strong>, on a montré que l'<strong>invariant</strong> <span class="arithmatex">\(P_0\)</span> était <strong>vrai avant la première itération</strong> de la <strong>boucle POUR principale</strong>,</li>
+<li>avec la <strong><u>conservation</u></strong>, on a montré que l'implication <span class="arithmatex">\(P_k \implies P_{k+1}\)</span>, donc que l'<strong>invariant</strong> restait <strong>vrai après chaque tour de boucle</strong>.</li>
+</ul>
+<p>On rappelle que la relation entre <span class="arithmatex">\(k\)</span> et la variable de boucle <span class="arithmatex">\(debut\)</span> est <span class="arithmatex">\(k = debut + 1\)</span> et que :</p>
+<ul>
+<li>à la fin de la <strong>première itération</strong> <span class="arithmatex">\(k = 1\)</span>, <code>debut</code> vaut 0 et on a <strong>1 élément trié</strong>,</li>
+<li>à la fin de la <strong>seconde itération</strong> <span class="arithmatex">\(k = 2\)</span>, <code>debut</code> vaut 1 et on a <strong>2 éléments triés</strong>,</li>
+<li>à la fin de la <strong>troisième itération</strong> <span class="arithmatex">\(k = 3\)</span>, <code>debut</code> vaut 2 et on a <strong>3 éléments triés</strong>,</li>
+<li>et ainsi de suite...</li>
+</ul>
+<p><strong>DONC</strong>, à la fin de la boucle <code>POUR debut ALLANT DE 0 À n - 2</code>, <code>debut</code>vaut <span class="arithmatex">\(n - 2\)</span> avec <span class="arithmatex">\(n = longueur(tableau)\)</span> et donc :<br>
+<span class="arithmatex">\(k = debut + 1\)</span><br>
+<span class="arithmatex">\(k = longueur(tableau) - 2 + 1\)</span><br>
+<span class="arithmatex">\(k = longueur(tableau) - 1\)</span></p>
+<p>Cela signifie qu'il y a <span class="arithmatex">\(longueur(tableau) - 1\)</span> éléments triés, donc <strong>tous les éléments du tableau sauf le dernier sont triés</strong>.</p>
+<p>Or, <strong>si tous les éléments sur</strong> <span class="arithmatex">\([0, longueur(tableau) - 2]\)</span> sont <strong>triés</strong>, alors <strong>l'élément d'indice</strong> <span class="arithmatex">\(longueur(tableau) - 1\)</span> est lui aussi <strong>trié</strong>, puisque le dernier élément est <strong>supérieur</strong> (ou <em>égal</em>) à tous les éléments du <strong>sous-tableau trié</strong>. Il est donc déjà à la <strong>bonne position</strong>.</p>
+<p>On a donc ainsi démontré la <strong>correction de l'algorithme de tri par sélection</strong>.</p>
+<h2 id="verifier-linvariant-avec-une-assertion">Vérifier l'invariant avec une assertion<a class="headerlink" href="#verifier-linvariant-avec-une-assertion" title="Permanent link">¶</a></h2>
+<p>Vérifions la validité de notre <strong>invariant</strong> sur la fonction <code>tri_selection</code> réalisée précédemment en <strong>Python</strong>.</p>
+<p>La fonction <code>est_trie(tableau, fin)</code> renvoie <code>True</code> si les éléments du <strong>sous-tableau</strong> <code>[0, fin]</code> du tableau donné sont <strong>triés</strong>, <code>False</code> sinon. Si l'indice <code>fin</code> n'est pas donné, la fonction vérifie que l'<strong>entièreté</strong> du tableau est <strong>triée</strong>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="k">def</span> <span class="nf">est_trie</span><span class="p">(</span><span class="n">tableau</span><span class="p">:</span> <span class="nb">list</span><span class="p">[</span><span class="nb">int</span><span class="p">],</span> <span class="n">fin</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="kc">None</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">bool</span><span class="p">:</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="w">    </span><span class="sd">''' Renvoie True si les éléments du tableau dans [0, fin] sont triés, </span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="sd">    False sinon. Si pas d'indice de fin donné, vérifier tout le tableau.</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="sd">    :param tableau: (list[int]) tableau d'entiers à vérifier</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="sd">    :param debut: (int) indice jusqu'auquel vérifier les éléments</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="sd">    :return: (bool) True ou False selon si les éléments sont triés ou non. '''</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a>    <span class="k">if</span> <span class="n">fin</span> <span class="o">==</span> <span class="kc">None</span><span class="p">:</span> <span class="n">fin</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">tableau</span><span class="p">)</span> <span class="o">-</span> <span class="mi">1</span>
+</span><span id="__span-6-9"><a id="__codelineno-6-9" name="__codelineno-6-9" href="#__codelineno-6-9"></a>    <span class="k">return</span> <span class="nb">all</span><span class="p">(</span><span class="n">tableau</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="n">tableau</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">fin</span> <span class="o">+</span> <span class="mi">1</span><span class="p">))</span>
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Note</p>
+<p>La fonction native <code>all(iterable)</code> utilisée dans la fonction ci-dessus renvoie <code>True</code> si tous les éléments de <code>iterable</code> sont vrais (ou s'il est vide). Dès qu'un élément est faux, la fonction s'arrête et renvoie <code>False</code>.</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Question 1</p>
+<p>Modifier la fonction <code>tri_selection</code> en ajoutant une <strong>assertion</strong> (avec le mot-clé <code>assert</code>) vérifiant, en faisant appel à <code>est_trie</code>, qu'après chaque itération de la boucle, la propriété de l'<strong>invariant</strong> est respectée.</p>
+</div>
+<p>Dans l'<strong>interpréteur</strong> de <em>Thonny</em>, exécuter la commande suivante :<br>
+</p><div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">tri_selection</span><span class="p">([[</span><span class="mi">63</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">81</span><span class="p">,</span> <span class="mi">76</span><span class="p">,</span> <span class="mi">75</span><span class="p">,</span> <span class="mi">87</span><span class="p">,</span> <span class="mi">66</span><span class="p">,</span> <span class="mi">18</span><span class="p">,</span> <span class="mi">43</span><span class="p">,</span> <span class="mi">68</span><span class="p">,</span> <span class="mi">48</span><span class="p">,</span> <span class="mi">98</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">41</span><span class="p">,</span> <span class="mi">97</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">57</span><span class="p">,</span> <span class="mi">74</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">28</span><span class="p">]])</span>
+</span></code></pre></div>
+<div class="admonition note">
+<p class="admonition-title">Question 2</p>
+<p>Que se passe t-il ? Pourquoi ?</p>
+</div></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+<script src="../../../pyodide-mkdocs/ide.js"></script> 
+
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2023 - Erwan Demerville
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="../../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+        <script src="../../../js/open_in_new_tab.js"></script>
+      
+    
+  </body>
+</html>

@@ -236,6 +236,36 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://nsi.erwandemerville.fr/premiere/tris/</loc>
+         <lastmod>2025-05-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/premiere/tris/activite_preliminaire/</loc>
+         <lastmod>2025-05-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/premiere/tris/de_cote/</loc>
+         <lastmod>2025-05-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/premiere/tris/tri_insertion/</loc>
+         <lastmod>2025-05-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/premiere/tris/tri_selection/</loc>
+         <lastmod>2025-05-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://nsi.erwandemerville.fr/premiere/tris/tri_selection_corr/</loc>
+         <lastmod>2025-05-07</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://nsi.erwandemerville.fr/terminale/</loc>
          <lastmod>2025-05-07</lastmod>
          <changefreq>daily</changefreq>
