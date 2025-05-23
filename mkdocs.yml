@@ -64,6 +64,7 @@ nav:
         - Exercices sur les listes: premiere/bases_python/exercices_listes.md
         - Rappels sur les fonctions: premiere/bases_python/rappels_fonctions.md
         - Notebooks: premiere/bases_python/notebooks.md
+        - TP Tamagotchi: premiere/bases_python/tamagotchi.md
       - Corrections:
         - Correction DS2: premiere/bases_python/ds2_correction.md
     - Représentation des données:
@@ -91,7 +92,13 @@ nav:
     - Algorithmes gloutons:
       - premiere/gloutons/index.md
       - Cours: premiere/gloutons/cours.md
+      - Fiche - Algos gloutons: premiere/gloutons/src/gloutons_eleve.odt
       - Python - Voyageur de commerce: premiere/gloutons/voyageur_commerce.md
+    - Tris:
+      - premiere/tris/index.md
+      - Activité préliminaire: premiere/tris/activite_preliminaire.md
+      - Tri par sélection: premiere/tris/tri_selection.md
+      - Tri par insertion: premiere/tris/tri_insertion.md
     - Le module Pyxel:
       - premiere/pyxel/index.md
       - Jeu de snake: premiere/pyxel/snake.md
@@ -173,6 +180,8 @@ nav:
     - Le module Pyxel:
       - terminale/pyxel/index.md
       - Jeu de snake: terminale/pyxel/snake.md
+      - Projet jeu vidéo: terminale/pyxel/projetjv.md
+      - Réalisations: terminale/pyxel/realisations.md
     - Épreuve pratique de NSI:
       - terminale/epreuve_pratique/index.md
       - Sujets d'entraînement: terminale/epreuve_pratique/entrainement.md

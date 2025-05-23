@@ -8,59 +8,49 @@ Cliquez sur le **bouton** ++"Jouer"++ pour **lancer un jeu** sur votre navigateu
 ---
 
 <center>
-<span class="multitypepixel" style="font-size:2em">Shooter</span>
+<span class="multitypepixel" style="font-size:2em">Blindfall</span>
 
-![Shooter](images/jeuxTle/Shooter.png){ width="400" }
+![Shooter](images/jeuxTle/Blindfall.png){ width="400" }
 
-[Jouer :video_game:](#){ .md-button onclick="window.open('../jeux/Shooter.html', '_blank', 'scrollbars=yes,resizable=yes,width=1280,height=720')" }
+[Jouer :video_game:](#){ .md-button onclick="window.open('../jeux/Blindfall.html', '_blank', 'scrollbars=yes,resizable=yes,width=1280,height=720')" }
 </center>
 
 ---
 
 <center>
-<span class="multitypepixel" style="font-size:2em">Booooiing</span>
+<span class="multitypepixel" style="font-size:2em">Destructor</span>
 
-![Booooiing](images/jeuxTle/Booooiing.png){ width="400" }
+![Booooiing](images/jeuxTle/Destructor.png){ width="400" }
 
-[Jouer :video_game:](#){ .md-button onclick="window.open('../jeux/Booooiing.html', '_blank', 'scrollbars=yes,resizable=yes,width=1280,height=720')" }
+[Jouer :video_game:](#){ .md-button onclick="window.open('../jeux/Destructor.html', '_blank', 'scrollbars=yes,resizable=yes,width=1280,height=720')" }
 </center>
 
 ---
 
 <center>
-<span class="multitypepixel" style="font-size:2em">Don't touch the sun</span>
+<span class="multitypepixel" style="font-size:2em">PVP Gobelin</span>
 
-![Don't touch the sun](images/jeuxTle/Dont_touch_the_sun.png){ width="400" }
+![Don't touch the sun](images/jeuxTle/PVP_Gobelin.png){ width="400" }
 
-[Jouer :video_game:](#){ .md-button onclick="window.open('../jeux/Dont_Touch_the_Sun.html', '_blank', 'scrollbars=yes,resizable=yes,width=1280,height=720')" }
+[Jouer :video_game:](#){ .md-button onclick="window.open('../jeux/PVP_Gobelin', '_blank', 'scrollbars=yes,resizable=yes,width=1280,height=720')" }
 </center>
 
 ---
 
 <center>
-<span class="multitypepixel" style="font-size:2em">Tower Thralls</span>
+<span class="multitypepixel" style="font-size:2em">Sauvetage</span>
 
-![Tower Thralls](images/jeuxTle/Tower_Thralls.png){ width="400" }
+![Tower Thralls](images/jeuxTle/Sauvetage.png){ width="400" }
 
-[Jouer :video_game:](#){ .md-button onclick="window.open('../jeux/Tower_Thralls.html', '_blank', 'scrollbars=yes,resizable=yes,width=1280,height=720')" }
+[Jouer :video_game:](#){ .md-button onclick="window.open('../jeux/Sauvetage.html', '_blank', 'scrollbars=yes,resizable=yes,width=1280,height=720')" }
 </center>
 
 ---
 
 <center>
-<span class="multitypepixel" style="font-size:2em">Tank Le Mil</span>
+<span class="multitypepixel" style="font-size:2em">Shadow Sprint</span>
 
-![Tank Le Mil](images/jeuxTle/Tank_Le_Mil.png){ width="400" }
+![Tank Le Mil](images/jeuxTle/Shadow_Sprint.png){ width="400" }
 
-[Jouer :video_game:](#){ .md-button onclick="window.open('../jeux/Tank_Le_Mil.html', '_blank', 'scrollbars=yes,resizable=yes,width=1280,height=720')" }
-</center>
-
----
-
-<center>
-<span class="multitypepixel" style="font-size:2em">Pyxart</span>
-
-![Pyxart](images/jeuxTle/Pyxart.png){ width="400" }
-
-[Jouer :video_game:](#){ .md-button onclick="window.open('../jeux/Pyxart.html', '_blank', 'scrollbars=yes,resizable=yes,width=1280,height=720')" }
+[Jouer :video_game:](#){ .md-button onclick="window.open('../jeux/Shadow_Sprint.html', '_blank', 'scrollbars=yes,resizable=yes,width=1280,height=720')" }
 </center>

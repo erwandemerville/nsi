@@ -19,6 +19,7 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Traitement des données en tables](premiere/traitement_donnees/index.md) | Traitement des données en tables. |
 | [Interactions Homme-Machine sur le web](premiere/interactions/index.md) | Interactions Homme-Machine sur le web |
 | [Les algorithmes gloutons](premiere/gloutons/index.md) | Cours et exercices sur les **algorithmes gloutons**. |
+| [Algorithmes de tri](premiere/tris/index.md) | Tri par sélection et par insertion. |
 | [:video_game: Le module Pyxel](premiere/pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |
 
 ## NSI terminale

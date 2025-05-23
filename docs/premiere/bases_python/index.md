@@ -19,6 +19,7 @@
 | [Exercices sur les listes](exercices_listes.md) | Exercices sur les *listes* en Python. |
 | [:material-rewind: Rappels sur les fonctions](rappels_fonctions.md) | Exercices de **rappels** sur les **fonctions**. |
 | [Notebooks d'exercices](notebooks.md) | Des *notebooks Jupyter* pour vous exercer. |
+| [TP - Tamagotchi](tamagotchi.md) | Un petit **jeu de Tamagotchi**. |
 
 ## Corrections DM et DS
 

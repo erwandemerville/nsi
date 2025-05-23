@@ -61,14 +61,31 @@ Nous allons justement voir des problèmes de ce type, et nous y tenterons d'y r�
 !!! note "Q.1"
     Partons de **Lille**. Combien de destinations différentes peut-on choisir ?
 
+??? tip "Correction Q.1"
+    On peut choisir **5 destinations** à partir de **Lille**.
+
 !!! note "Q.2"
-    Partant de **Lille**, on choisit Bordeaux. Combien de destinations différentes peut-on choisir ensuite ?
+    Partant de **Lille**, on choisit **Bordeaux**. Combien de destinations différentes peut-on choisir ensuite ?
+
+??? tip "Correction Q.2"
+    On peut choisir **4 destinations** à partir de **Bordeaux**.
 
 !!! note "Q.3"
     Après avoir choisi **Lille - Bordeaux - Brest**, combien de destinations différentes peut-on choisir ensuite ?
 
+??? tip "Correction Q.3"
+    On peut choisir **3 destinations** à partir de **Brest**.
+
 !!! note "Q.4"
     Combien de **possibilités d'itinéraires différents** va-t-on avoir en partant d'une **première ville aléatoire** pour aller jusqu'à la **6e ville** ? Faire le **calcul**.
+
+??? tip "Correction Q.4"
+    Le nombre total d'itinéraires différents s'obtient par le calcul suivant :
+
+    $6 \times 5 \times 4 \times 3 \times 2 \times 1 = 6! = 720$ itinéraires.
+
+    En effet, il y a au début **6 villes** possibles, puis **5**, puis **4**, puis **3**, puis **2**, puis **une seule**.  
+    Le nombre d'itinéraires totale correspond donc à $6!$ (6 *factorielle*).
 
 Ici, il s'agit de trouver un **chemin fermé**, c'est un **cycle**.
 
@@ -80,8 +97,18 @@ Ici, il s'agit de trouver un **chemin fermé**, c'est un **cycle**.
 !!! note "Q.5"
     Combien de **possibilités** doit-on vraiment calculer en tenant compte des **deux simplifications** précédentes ?
 
+??? tip "Correction Q.5"
+    En tenant compte des **deux simplifications**, le calcul peut se ré-écrire de la manière suivante :
+
+    $\frac{5 \times 4 \times 3 \times 2 \times 1}{2} = \frac{5!}{2} = \frac{120}{2} = 60$ itinéraires.
+
 !!! note "Q.6"
-    Combien de **possibilités d'itinéraires différents** va-t-on avoir pour **12 villes** ? Juste deux petites villes en plus...
+    Combien de **possibilités d'itinéraires différents** va-t-on avoir pour **12 villes** ? Juste six petites villes en plus...
+
+??? tip "Correction Q.6"
+    En ajoutant **6 villes** supplémentaires, on aura donc $\frac{11!}{2} = \frac{39916800}{2} = 19~958~400$ itinéraires possibles, soit près de **20 millions** de trajets à vérifier !
+
+    On voit donc que la **résolution** par **force brute** peut vite devenir inenvisageable, tant le **temps de résolution** peut devenir très long...
 
 ### Résolution par force brute
 
@@ -136,14 +163,26 @@ On rappelle les distances :
 !!! note "Q.8"
     On décide de partir de Lyon. Choisir la ville suivante en prenant la ville la plus proche non encore visitée. Calculer la distance parcourue.
 
+??? tip "Correction Q.8"
+    On choisira **Marseille**, car c'est la ville la plus proche de **Lyon**.
+
 !!! note "Q.9"
-    On a fait Lyon-Marseille. Quelle ville choisir ensuite ?
+    On a fait **Lyon-Marseille**. Quelle ville choisir ensuite ?
+
+??? tip "Correction Q.9"
+    On choisira **Bordeaux**, car c'est la ville (non visitée) la plus proche de **Marseille**.
 
 !!! note "Q.10"
-    On a fait Lyon-Marseille-Bordeaux. Quelle ville choisir ensuite ?
+    On a fait **Lyon-Marseille-Bordeaux**. Quelle ville choisir ensuite ?
+
+??? tip "Correction Q.10"
+    On choisira **Paris**, car c'est la ville (non visitée) la plus proche de **Bordeaux**.
 
 !!! note "Q.11"
-    On a fait Lyon-Marseille-Bordeaux-Paris. Quelle ville choisir ensuite ?
+    On a fait **Lyon-Marseille-Bordeaux-Paris**. Quelle ville choisir ensuite ?
+
+??? tip "Correction Q.11"
+    On choisira **Lille**, car c'est la ville (non visitée) la plus proche de **Paris**.
 
 A partir de là, c'est fini. On fait **Lille-Brest** (c'est la seule destination disponible) puis **Brest-Lyon** pour revenir au **point de départ**.
 
@@ -310,7 +349,7 @@ On peut, pour cela, utiliser la fonction native `round()` qui permet d'**arrondi
         return res
     ```
 
-    **Question 1** : donner le contenu du tableau choix_en_cents après exécution de la ligne 4. Tenir compte du tableau fourni en ligne 1.
+    **Question 1** : donner le contenu du tableau `pieces_en_cents` après exécution de la ligne 4. Tenir compte du tableau fourni en ligne 1.
 
     **Question 2** : comment se nomme cette manière de créer un tableau : par *compréhension*, par *extension et ajouts successifs*, par *omission*, par *dissimulation* ?
 

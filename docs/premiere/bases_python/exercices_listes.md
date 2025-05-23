@@ -7,7 +7,7 @@
     - soit sur votre ordinateur avec **Thonny**, auquel cas, rendez vos *scripts Python* `.py` sur **Éléa**, sur la page de rendus intitulée *"Exercices sur les listes"*.
 
 !!! tip "Cours sur les listes"
-    Pensez à consulter le [cours sur les listes](cours.md/#les-listes){ target="_blank" } si vous avez besoin d'aide pour faire les exercices suivants.
+    Pensez à consulter le [cours sur les listes](listes.md){ target="_blank" } si vous avez besoin d'aide pour faire les exercices suivants.
 
 !!! note "Exercice 1"
     Écrire un **programme** qui :
