@@ -14,6 +14,8 @@
 | [Bases de données - représentations et applications](bdd/index.md) | Modèle relationnel, bases de données, SQL... |
 | [Diviser pour régner](diviserregner/index.md) | La méthode "Diviser pour régner" |
 | [Graphes](graphes/index.md) | Les graphes |
+| [Processus et ordonnancement](processus/index.md) | Gestion des processus sur un OS et ordonnancement |
+| [Programmation dynamique](progdyn/index.md) | La programmation dynamique |
 | [:material-pencil: Sujet e3c de rentrée corrigé](e3c/index.md) | Le sujet d'e3c de rentrée avec correction détaillée. |
 | [:material-language-python: Révisions / Entraînement Python](entrainement_python/index.md) | Quelques exercices pour vous exercer au langage Python. |
 | [:video_game: Le module Pyxel](pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |

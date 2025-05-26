@@ -38,6 +38,8 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Bases de données - représentations et applications](terminale/bdd/index.md) | Modèle relationnel, bases de données, SQL... |
 | [Diviser pour régner](terminale/diviserregner/index.md) | La méthode "Diviser pour régner" |
 | [Graphes](terminale/graphes/index.md) | Les graphes |
+| [Processus et ordonnancement](terminale/processus/index.md) | Gestion des processus sur un OS et ordonnancement |
+| [Programmation dynamique](terminale/progdyn/index.md) | La programmation dynamique |
 | [:material-pencil: Sujet e3c de rentrée corrigé](terminale/e3c/index.md) | Le sujet d'e3c de rentrée avec correction détaillée. |
 | [:material-language-python: Révisions / Entraînement Python](terminale/entrainement_python/index.md) | Quelques exercices pour vous exercer au langage Python. |
 | [:video_game: Le module Pyxel](terminale/pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |

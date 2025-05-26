@@ -173,6 +173,14 @@ nav:
       - Introduction aux graphes: terminale/graphes/cours.md
       - Implémentation en Python: terminale/graphes/implementation.md
       - Exercices: terminale/graphes/exercices.md
+    - Processus et ordonnancement:
+      - terminale/processus/index.md
+      - TD/TP découverte: terminale/processus/TDTP.md
+      - Sujet de bac: terminale/processus/sujet_bac.md
+    - Programmation dynamique:
+      - terminale/progdyn/index.md
+      - Cours: terminale/progdyn/cours.md
+      - Exercices: terminale/progdyn/exercices.md
     - Sujet e3c:
       - terminale/e3c/index.md
     - Entraînement Python:
