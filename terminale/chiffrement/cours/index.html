@@ -4263,6 +4263,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#chiffrement-asymetrique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chiffrement asymétrique
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -4919,6 +4928,15 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#chiffrement-asymetrique" class="md-nav__link">
+    <span class="md-ellipsis">
+      Chiffrement asymétrique
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -5076,7 +5094,32 @@ La <strong>clé</strong> de <strong>chiffrement/déchiffrement</strong> est ici 
 <li><a href="https://fr.wikipedia.org/wiki/Advanced_Encryption_Standard">AES</a> : Advanced Encryption Standard (standard de chiffrement avancé)</li>
 <li><strong>ChaCha20</strong></li>
 </ul>
-<p>Ils reposent toutefois également sur un chiffrement <strong>XOR</strong>.</p></div>
+<p>Ils reposent toutefois également sur un chiffrement <strong>XOR</strong>.</p>
+<h2 id="chiffrement-asymetrique">Chiffrement asymétrique<a class="headerlink" href="#chiffrement-asymetrique" title="Permanent link">¶</a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Problème du chiffrement symétrique</p>
+<p>Le chiffrement symétrique possède un <strong>défaut majeur</strong> :<br>
+Pour communiquer, il faut dans un premier temps <strong>transmettre la clé de chiffrement</strong> qui sera utilisée par les deux participants.</p>
+<p>Pour cela, deux solutions :</p>
+<ul>
+<li>par rencontre physique, ce qui n'est pas toujours très pratique,</li>
+<li>par <strong>transmission non sécurisée</strong> (et donc avec un risque d'interception).</li>
+</ul>
+</div>
+<p>Pour répondre à ce risque lié à la <strong>transmission</strong> d'une <strong>clé de chiffrement symétrique</strong>, des techniques de <strong>chiffrement asymétrique</strong> ont été développées dès les années <em>1970</em>.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Chiffrement asymétrique</p>
+<p>La <strong>cryptographie asymétrique</strong>, également appelée <strong>cryptographie à clé publique</strong> repose sur un <mark><strong>couple de clés</strong></mark> <strong>différentes</strong> mais <mark><strong>liées mathématiquement</strong></mark> pour garantir la <strong>confidentialité</strong> et l’<strong>authenticité</strong> des communications :</p>
+<ul>
+<li>une <mark><strong>clé publique</strong></mark>, qui peut être <strong>partagée</strong> avec tout le monde,</li>
+<li>une <mark><strong>clé privée</strong></mark>, qui doit rester <strong>secrète</strong>.</li>
+</ul>
+</div>
+<p>On présentera 3 méthodes de chiffrement asymétrique :
+* avec les <strong>puzzles de Merkle</strong>
+* avec la <strong>méthode de Diffie-Hellman</strong>
+* avec le <strong>système RSA</strong></p>
+<p>(suite à venir)</p></div>
 
 
 
