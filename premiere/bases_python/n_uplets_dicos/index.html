@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#preliminaire-les-n-uplets-et-dictionnaires" class="md-skip">
+        <a href="#les-n-uplets-et-dictionnaires" class="md-skip">
           Skip to content
         </a>
       
@@ -570,6 +570,8 @@
       
         
       
+        
+      
     
     
       
@@ -608,11 +610,32 @@
   
   
     <li class="md-nav__item">
-      <a href="../cours/" class="md-nav__link">
+      <a href="../introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
     Introduction au Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../fonctions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Les fonctions en Python
   </span>
   
 
@@ -703,6 +726,21 @@
       Les n-uplets
     </span>
   </a>
+  
+    <nav class="md-nav" aria-label="Les n-uplets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parcours-de-chaines-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parcours de chaînes de caractères
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -858,11 +896,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../chassetresor/" class="md-nav__link">
+      <a href="../exercices_introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Jeu - Chasse au trésor
+    Exercices d'introduction au Python
   </span>
   
 
@@ -884,27 +922,6 @@
   
   <span class="md-ellipsis">
     Exercices sur les fonctions
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../exercices_while/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Exercices sur les boucles while
   </span>
   
 
@@ -968,6 +985,27 @@
   
   <span class="md-ellipsis">
     Notebooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../chassetresor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jeu - Chasse au trésor
   </span>
   
 
@@ -4868,6 +4906,21 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="Les n-uplets">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#parcours-de-chaines-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parcours de chaînes de caractères
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
         <li class="md-nav__item">
@@ -4937,7 +4990,7 @@
                   
 
 
-<div><h1 id="preliminaire-les-n-uplets-et-dictionnaires">Préliminaire : Les n-uplets et dictionnaires<a class="headerlink" href="#preliminaire-les-n-uplets-et-dictionnaires" title="Permanent link">¶</a></h1>
+<div><h1 id="les-n-uplets-et-dictionnaires">Les n-uplets et dictionnaires<a class="headerlink" href="#les-n-uplets-et-dictionnaires" title="Permanent link">¶</a></h1>
 <p>Jusqu'à maintenant, on a vu comment utiliser les <strong>listes Python</strong> permettant de <strong>stocker</strong> des <strong>séquences d'éléments</strong> (de même nature ou non).</p>
 <div class="admonition quote">
 <p>Imaginons que nous souhaitions écrire un <strong>programme</strong> pour déterminer quel est le <strong>mois</strong> de l’<strong>année</strong> où <strong>le plus d’élèves du lycée sont nés</strong>. On suppose donnés, pour chaque élève, son <strong>nom</strong>, sous la forme d’une <strong>chaîne de caractères</strong>, et sa <strong>date de naissance</strong>, sous la forme de <strong>trois entiers</strong>. À l'aide des <strong>listes</strong>, on pourrait stocker ces informations de la manière suivante :</p>
@@ -4984,6 +5037,18 @@
 <p>On peut maintenant <strong>parcourir cette liste de tuples</strong> de différentes manières :</p>
 <div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_19715e5882728171db7a177c25cc5dabf53cce00" class="comment">###</span><div class="line" id="editor_19715e5882728171db7a177c25cc5dabf53cce00"></div><div id="term_editor_19715e5882728171db7a177c25cc5dabf53cce00" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_19715e5882728171db7a177c25cc5dabf53cce00","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_19715e5882728171db7a177c25cc5dabf53cce00","scripts/33")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_19715e5882728171db7a177c25cc5dabf53cce00').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_19715e5882728171db7a177c25cc5dabf53cce00" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_19715e5882728171db7a177c25cc5dabf53cce00")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_19715e5882728171db7a177c25cc5dabf53cce00")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
 <p><span id="content_editor_19715e5882728171db7a177c25cc5dabf53cce00" class="py_mk_hide">individus = [("Alice", 7, 1, 1941), ("Bob", 9, 12, 1909), ("Charles", 14, 12, 1965), ("Delphine", 11, 1, 1938)]bksl-nlbksl-nlfor e in individus:bksl-nl    print(f'Nom : {e[0]}, né(e) le {e[1]}/{e[2]}/{e[3]}')bksl-nlbksl-nlprint('-----')bksl-nlbksl-nlfor nom, jour, mois, annee in individus:bksl-nl    print(f'Nom : {nom}, né(e) le {jour}/{mois}/{annee}')bksl-nlbksl-nl</span><span id="corr_content_editor_19715e5882728171db7a177c25cc5dabf53cce00" class="py_mk_hide" data-strudel=""></span></p>
+<h3 id="parcours-de-chaines-de-caracteres">Parcours de chaînes de caractères<a class="headerlink" href="#parcours-de-chaines-de-caracteres" title="Permanent link">¶</a></h3>
+<p>Les <strong>chaînes de caractères</strong> offrent une ressemblance avec les <strong>tuples</strong>, dans le sens où l'on peut <strong>lire les caractères</strong> de la même manière que l'on <strong>lit les éléments d'un tuple</strong>, mais on ne peut pas <strong>modifier une chaîne de caractères</strong>.</p>
+<p>En particulier, on peut obtenir la <strong>taille d’une chaîne de caractères</strong>, c’est-à-dire son <strong>nombre de caractères</strong>, avec l’opération <code>len</code> et <strong>accéder au i-ième caractère</strong> d’une chaîne avec les <strong>crochets</strong> :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper_v"><span id="comment_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" class="comment">###</span><div class="line_v"><div id="editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7"></div></div><div id="term_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" class="term_editor_v"></div></div><button class="tooltip" onclick='play("editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7","_v")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7","scripts/28")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" class="py_mk_hide">s = "abcdefgh"bksl-nlbksl-nlprint(len(s))  # afficher la taille de la chaîne sbksl-nlbksl-nlprint(s[0])  # afficher le premier caractère de sbksl-nlbksl-nlprint(s[len(s) - 1])  # afficher le dernier caractère de sbksl-nl</span><span id="corr_content_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" class="py_mk_hide" data-strudel=""></span></p>
+<p>Voici deux manières dont on peut <strong>parcourir une chaîne de caractères</strong> pour <strong>afficher chaque caractère un à un</strong>, le principe est le même que pour les <strong>listes</strong> et les <strong>tuples</strong> :</p>
+<p>En récupérant directement <strong>chaque élément</strong> à <strong>chaque itération</strong> d'une <strong>boucle</strong> :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper_v"><span id="comment_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" class="comment">###</span><div class="line_v"><div id="editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f"></div></div><div id="term_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" class="term_editor_v"></div></div><button class="tooltip" onclick='play("editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f","_v")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f","scripts/26")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" class="py_mk_hide">s = "abcdefgh"bksl-nlbksl-nlfor car in s:bksl-nl    print(car)bksl-nl</span><span id="corr_content_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" class="py_mk_hide" data-strudel=""></span></p>
+<p>En récupérant chaque <strong>élément</strong> par son <strong>indice</strong> (la variable <code>i</code> de la <strong>boucle</strong> prendra les valeurs <code>0</code>, puis <code>1</code>, puis <code>2</code>, etc. jusqu'à l'indice du dernier élément):</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper_v"><span id="comment_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" class="comment">###</span><div class="line_v"><div id="editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99"></div></div><div id="term_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" class="term_editor_v"></div></div><button class="tooltip" onclick='play("editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99","_v")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99","scripts/27")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" class="py_mk_hide">s = "abcdefgh"bksl-nlbksl-nlfor i in range(len(s)):bksl-nl    print(s[i])bksl-nl</span><span id="corr_content_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" class="py_mk_hide" data-strudel=""></span></p>
 <h2 id="les-dictionnaires">Les dictionnaires<a class="headerlink" href="#les-dictionnaires" title="Permanent link">¶</a></h2>
 <p>La <strong>représentation</strong> précédente n'est très pratique, car on doit retenir la nature de chaque information.</p>
 <p>C'est pourquoi, une autre manière de représenter ces <strong>données</strong> est d'utiliser des <strong>n-uplets nommés</strong>, à l'aide d'une autre <strong>structure de données</strong> du langage <strong>Python</strong> appelé <strong><u>dictionnaire</u></strong>.</p>
@@ -5092,7 +5157,7 @@ On peut faire un <strong>parcours</strong> en récupérant <strong>chaque tuple<
 </span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prenom</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans"</span><span class="p">)</span>
 </span></code></pre></div>
 <p>On a ici utilisé des <em>f-strings</em> pour gérer les <strong>affichages</strong>.</p>
-<p>Pour des rappels concernant les différentes façons d'utiliser la fonction <code>print</code>, vous pouvez <a href="../cours/#affichage-sur-la-sortie-standard">consulter cette page de cours</a>.</p>
+<p>Pour des rappels concernant les différentes façons d'utiliser la fonction <code>print</code>, vous pouvez <a href="../introduction/#affichage-sur-la-sortie-standard">consulter cette page de cours</a>.</p>
 </details>
 <h2 id="exercices-dictionnaires">Exercices - Dictionnaires<a class="headerlink" href="#exercices-dictionnaires" title="Permanent link">¶</a></h2>
 <div class="admonition note">

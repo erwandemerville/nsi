@@ -8,28 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://nsi.erwandemerville.fr/terminale/processus/">
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/bases_python/fonctions/">
       
       
-        <link rel="prev" href="../graphes/exercices/">
+        <link rel="prev" href="../introduction/">
       
       
-        <link rel="next" href="TDTP/">
+        <link rel="next" href="../listes/">
       
       
-      <link rel="icon" href="../../assets/images/favicon.png">
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.39">
     
     
       
-        <title>Processus et ordonnancement - Numérique et sciences informatiques</title>
+        <title>Les fonctions en Python - Numérique et sciences informatiques</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -50,8 +50,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
-<script src="../../pyodide-mkdocs/utils.js"></script> 
-<script src="../../pyodide-mkdocs/interpreter.js"></script> 
+<script src="../../../pyodide-mkdocs/utils.js"></script> 
+<script src="../../../pyodide-mkdocs/interpreter.js"></script> 
 
     
       
@@ -63,9 +63,9 @@
       
     
     
-      <link rel="stylesheet" href="../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -73,7 +73,7 @@
     
     
 
-<link rel="stylesheet" href="../../pyodide-mkdocs/pyoditeur.css">
+<link rel="stylesheet" href="../../../pyodide-mkdocs/pyoditeur.css">
 
 
 <input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#processus-et-ordonnancement" class="md-skip">
+        <a href="#les-fonctions" class="md-skip">
           Skip to content
         </a>
       
@@ -112,7 +112,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -132,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Processus et ordonnancement
+              Les fonctions en Python
             
           </span>
         </div>
@@ -236,32 +236,12 @@
     
     
       <li class="md-tabs__item">
-        <a href="../.." class="md-tabs__link">
+        <a href="../../.." class="md-tabs__link">
           
   
     
   
   Accueil
-
-        </a>
-      </li>
-    
-  
-
-      
-        
-  
-  
-  
-    
-    
-      <li class="md-tabs__item">
-        <a href="../../premiere/" class="md-tabs__link">
-          
-  
-    
-  
-  Première
 
         </a>
       </li>
@@ -278,7 +258,27 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../" class="md-tabs__link">
+        <a href="../../" class="md-tabs__link">
+          
+  
+    
+  
+  Première
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../terminale/" class="md-tabs__link">
           
   
     
@@ -296,7 +296,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../rendus/" class="md-tabs__link">
+      <a href="../../../rendus/" class="md-tabs__link">
         
   
     
@@ -347,7 +347,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -386,7 +386,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../.." class="md-nav__link ">
+            <a href="../../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -418,6 +418,8 @@
       
   
   
+    
+  
   
   
     
@@ -448,19 +450,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/" class="md-nav__link ">
+            <a href="../../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -471,13 +476,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_2" id="__nav_2_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Première
@@ -490,6 +495,8 @@
                 
   
   
+    
+  
   
   
     
@@ -511,16 +518,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/bases_python/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -537,7 +544,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2">
             <span class="md-nav__icon md-icon"></span>
             Le langage Python
@@ -550,8 +557,10 @@
                 
   
   
+    
   
   
+  
     
     
       
@@ -569,11 +578,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_2" checked>
         
           
           <label class="md-nav__link" for="__nav_2_2_2" id="__nav_2_2_2_label" tabindex="0">
@@ -587,7 +596,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_2_2_2">
             <span class="md-nav__icon md-icon"></span>
             Cours
@@ -601,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/introduction/" class="md-nav__link">
+      <a href="../introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -619,10 +628,30 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../../premiere/bases_python/fonctions/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Les fonctions en Python
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -631,6 +660,55 @@
   
 
       </a>
+      
+        
+
+  
+
+<nav class="md-nav md-nav--secondary" aria-label="Sur cette page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fonctions-sans-parametres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions sans paramètres
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonctions-sans-valeur-de-retour-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions sans valeur de retour : procédures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-locales-et-globales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables locales et globales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -643,7 +721,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/listes/" class="md-nav__link">
+      <a href="../listes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -664,7 +742,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/n_uplets_dicos/" class="md-nav__link">
+      <a href="../n_uplets_dicos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -749,7 +827,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/thonny/" class="md-nav__link">
+      <a href="../thonny/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -770,7 +848,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/exercices_introduction/" class="md-nav__link">
+      <a href="../exercices_introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -791,7 +869,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/exercices_fonctions/" class="md-nav__link">
+      <a href="../exercices_fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -812,7 +890,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/exercices_listes/" class="md-nav__link">
+      <a href="../exercices_listes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -833,7 +911,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/rappels_fonctions/" class="md-nav__link">
+      <a href="../rappels_fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -854,7 +932,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/notebooks/" class="md-nav__link">
+      <a href="../notebooks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -875,7 +953,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/chassetresor/" class="md-nav__link">
+      <a href="../chassetresor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -896,7 +974,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/tamagotchi/" class="md-nav__link">
+      <a href="../tamagotchi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -967,7 +1045,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/bases_python/ds2_correction/" class="md-nav__link">
+      <a href="../ds2_correction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1029,7 +1107,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/representation_donnees/" class="md-nav__link ">
+            <a href="../../representation_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1062,7 +1140,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/representation_donnees/cours/" class="md-nav__link">
+      <a href="../../representation_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1083,7 +1161,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/representation_donnees/exercices/" class="md-nav__link">
+      <a href="../../representation_donnees/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1139,7 +1217,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/archi/" class="md-nav__link ">
+            <a href="../../archi/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1172,7 +1250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/archi/introduction/" class="md-nav__link">
+      <a href="../../archi/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1193,7 +1271,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/archi/fonctions/" class="md-nav__link">
+      <a href="../../archi/fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1214,7 +1292,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/archi/circuits/" class="md-nav__link">
+      <a href="../../archi/circuits/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1266,7 +1344,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/algorithmique/" class="md-nav__link ">
+            <a href="../../algorithmique/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1299,7 +1377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/algorithmique/rechercheseq/" class="md-nav__link">
+      <a href="../../algorithmique/rechercheseq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1353,7 +1431,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/traitement_donnees/" class="md-nav__link ">
+            <a href="../../traitement_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1386,7 +1464,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/traitement_donnees/cours/" class="md-nav__link">
+      <a href="../../traitement_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1407,7 +1485,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/traitement_donnees/pandas/" class="md-nav__link">
+      <a href="../../traitement_donnees/pandas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1465,7 +1543,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/interactions/" class="md-nav__link ">
+            <a href="../../interactions/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1498,7 +1576,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/interactions/htmlcss/" class="md-nav__link">
+      <a href="../../interactions/htmlcss/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1519,7 +1597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/interactions/js/" class="md-nav__link">
+      <a href="../../interactions/js/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1540,7 +1618,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/interactions/clientserveur/" class="md-nav__link">
+      <a href="../../interactions/clientserveur/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1561,7 +1639,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/interactions/exercices/" class="md-nav__link">
+      <a href="../../interactions/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1617,7 +1695,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/gloutons/" class="md-nav__link ">
+            <a href="../../gloutons/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1650,7 +1728,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/gloutons/cours/" class="md-nav__link">
+      <a href="../../gloutons/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1671,7 +1749,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/gloutons/src/gloutons_eleve.odt" class="md-nav__link">
+      <a href="../../gloutons/src/gloutons_eleve.odt" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1692,7 +1770,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/gloutons/voyageur_commerce/" class="md-nav__link">
+      <a href="../../gloutons/voyageur_commerce/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1748,7 +1826,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/tris/" class="md-nav__link ">
+            <a href="../../tris/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1781,7 +1859,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/tris/activite_preliminaire/" class="md-nav__link">
+      <a href="../../tris/activite_preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1802,7 +1880,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/tris/tri_selection/" class="md-nav__link">
+      <a href="../../tris/tri_selection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1823,7 +1901,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/tris/tri_insertion/" class="md-nav__link">
+      <a href="../../tris/tri_insertion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1875,7 +1953,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../premiere/pyxel/" class="md-nav__link ">
+            <a href="../../pyxel/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1908,7 +1986,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../premiere/pyxel/snake/" class="md-nav__link">
+      <a href="../../pyxel/snake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1941,8 +2019,6 @@
       
   
   
-    
-  
   
   
     
@@ -1997,22 +2073,19 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../../terminale/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2023,13 +2096,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Terminale
@@ -2070,7 +2143,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../modularite/" class="md-nav__link ">
+            <a href="../../../terminale/modularite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2103,7 +2176,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modularite/api/" class="md-nav__link">
+      <a href="../../../terminale/modularite/api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2124,7 +2197,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../modularite/modules/" class="md-nav__link">
+      <a href="../../../terminale/modularite/modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2182,7 +2255,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../mise_au_point/" class="md-nav__link ">
+            <a href="../../../terminale/mise_au_point/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2215,7 +2288,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mise_au_point/preliminaire/" class="md-nav__link">
+      <a href="../../../terminale/mise_au_point/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2236,7 +2309,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mise_au_point/cours/" class="md-nav__link">
+      <a href="../../../terminale/mise_au_point/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2257,7 +2330,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mise_au_point/activite_finale/" class="md-nav__link">
+      <a href="../../../terminale/mise_au_point/activite_finale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2278,7 +2351,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../mise_au_point/ds1/" class="md-nav__link">
+      <a href="../../../terminale/mise_au_point/ds1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2338,7 +2411,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../poo/" class="md-nav__link ">
+            <a href="../../../terminale/poo/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2371,7 +2444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../poo/preliminaire/" class="md-nav__link">
+      <a href="../../../terminale/poo/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2392,7 +2465,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../poo/cours/" class="md-nav__link">
+      <a href="../../../terminale/poo/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2413,7 +2486,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../poo/pokemon/" class="md-nav__link">
+      <a href="../../../terminale/poo/pokemon/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2434,7 +2507,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../poo/exercices/" class="md-nav__link">
+      <a href="../../../terminale/poo/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2455,7 +2528,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../poo/tamagotchi/" class="md-nav__link">
+      <a href="../../../terminale/poo/tamagotchi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2511,7 +2584,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../recursivite/" class="md-nav__link ">
+            <a href="../../../terminale/recursivite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2544,7 +2617,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recursivite/introduction/" class="md-nav__link">
+      <a href="../../../terminale/recursivite/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2565,7 +2638,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recursivite/cours/" class="md-nav__link">
+      <a href="../../../terminale/recursivite/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2586,7 +2659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recursivite/exercices/" class="md-nav__link">
+      <a href="../../../terminale/recursivite/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2640,7 +2713,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../listes/" class="md-nav__link ">
+            <a href="../../../terminale/listes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2673,7 +2746,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../listes/cours/" class="md-nav__link">
+      <a href="../../../terminale/listes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2694,7 +2767,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../listes/exercices/" class="md-nav__link">
+      <a href="../../../terminale/listes/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2746,7 +2819,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../pilesfiles/" class="md-nav__link ">
+            <a href="../../../terminale/pilesfiles/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2779,7 +2852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pilesfiles/cours/" class="md-nav__link">
+      <a href="../../../terminale/pilesfiles/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2835,7 +2908,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../arbres/" class="md-nav__link ">
+            <a href="../../../terminale/arbres/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2916,7 +2989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/vocabulaire/" class="md-nav__link">
+      <a href="../../../terminale/arbres/vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2937,7 +3010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/parcours/" class="md-nav__link">
+      <a href="../../../terminale/arbres/parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2958,7 +3031,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/type_abstrait/" class="md-nav__link">
+      <a href="../../../terminale/arbres/type_abstrait/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2979,7 +3052,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/abr/" class="md-nav__link">
+      <a href="../../../terminale/arbres/abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3052,7 +3125,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/implementation_arbres/" class="md-nav__link">
+      <a href="../../../terminale/arbres/implementation_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3073,7 +3146,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/implementation_abr/" class="md-nav__link">
+      <a href="../../../terminale/arbres/implementation_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3150,7 +3223,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/exercices_vocabulaire/" class="md-nav__link">
+      <a href="../../../terminale/arbres/exercices_vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3171,7 +3244,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/exercices_parcours/" class="md-nav__link">
+      <a href="../../../terminale/arbres/exercices_parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3192,7 +3265,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/exercices_abr/" class="md-nav__link">
+      <a href="../../../terminale/arbres/exercices_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3213,7 +3286,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../arbres/implementations_arbres/" class="md-nav__link">
+      <a href="../../../terminale/arbres/implementations_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3277,7 +3350,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../routage/" class="md-nav__link ">
+            <a href="../../../terminale/routage/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3310,7 +3383,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../routage/cours/" class="md-nav__link">
+      <a href="../../../terminale/routage/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3331,7 +3404,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../routage/exercices/" class="md-nav__link">
+      <a href="../../../terminale/routage/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3352,7 +3425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../routage/tp_filius/" class="md-nav__link">
+      <a href="../../../terminale/routage/tp_filius/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3406,7 +3479,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../recherche_textuelle/" class="md-nav__link ">
+            <a href="../../../terminale/recherche_textuelle/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3439,7 +3512,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recherche_textuelle/tp_intro/" class="md-nav__link">
+      <a href="../../../terminale/recherche_textuelle/tp_intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3460,7 +3533,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../recherche_textuelle/cours/" class="md-nav__link">
+      <a href="../../../terminale/recherche_textuelle/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3520,7 +3593,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../bdd/" class="md-nav__link ">
+            <a href="../../../terminale/bdd/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3553,7 +3626,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bdd/introduction/" class="md-nav__link">
+      <a href="../../../terminale/bdd/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3574,7 +3647,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bdd/modele_relationnel/" class="md-nav__link">
+      <a href="../../../terminale/bdd/modele_relationnel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3595,7 +3668,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bdd/sql/" class="md-nav__link">
+      <a href="../../../terminale/bdd/sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3616,7 +3689,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bdd/src/activite_movies.zip" class="md-nav__link">
+      <a href="../../../terminale/bdd/src/activite_movies.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3637,7 +3710,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../bdd/src/extrait_bac.pdf" class="md-nav__link">
+      <a href="../../../terminale/bdd/src/extrait_bac.pdf" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3691,7 +3764,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../diviserregner/" class="md-nav__link ">
+            <a href="../../../terminale/diviserregner/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3724,7 +3797,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../diviserregner/cours/" class="md-nav__link">
+      <a href="../../../terminale/diviserregner/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3801,7 +3874,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../graphes/" class="md-nav__link ">
+            <a href="../../../terminale/graphes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3834,7 +3907,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../graphes/cours/" class="md-nav__link">
+      <a href="../../../terminale/graphes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3855,7 +3928,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../graphes/implementation/" class="md-nav__link">
+      <a href="../../../terminale/graphes/implementation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3876,7 +3949,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../graphes/exercices/" class="md-nav__link">
+      <a href="../../../terminale/graphes/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3902,8 +3975,6 @@
                 
   
   
-    
-  
   
   
     
@@ -3923,16 +3994,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_14" >
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="./" class="md-nav__link md-nav__link--active">
+            <a href="../../../terminale/processus/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3943,13 +4014,13 @@
             </a>
             
               
-              <label class="md-nav__link md-nav__link--active" for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3_14" id="__nav_3_14_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_14_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_3_14">
             <span class="md-nav__icon md-icon"></span>
             Processus et ordonnancement
@@ -3965,7 +4036,7 @@
   
   
     <li class="md-nav__item">
-      <a href="TDTP/" class="md-nav__link">
+      <a href="../../../terminale/processus/TDTP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3986,7 +4057,7 @@
   
   
     <li class="md-nav__item">
-      <a href="sujet_bac/" class="md-nav__link">
+      <a href="../../../terminale/processus/sujet_bac/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4040,7 +4111,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../progdyn/" class="md-nav__link ">
+            <a href="../../../terminale/progdyn/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4073,7 +4144,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../progdyn/cours/" class="md-nav__link">
+      <a href="../../../terminale/progdyn/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4094,7 +4165,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../progdyn/exercices/" class="md-nav__link">
+      <a href="../../../terminale/progdyn/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4146,7 +4217,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../chiffrement/" class="md-nav__link ">
+            <a href="../../../terminale/chiffrement/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4179,7 +4250,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../chiffrement/cours/" class="md-nav__link">
+      <a href="../../../terminale/chiffrement/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4235,7 +4306,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../epreuve_pratique/" class="md-nav__link ">
+            <a href="../../../terminale/epreuve_pratique/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4268,7 +4339,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../epreuve_pratique/entrainement/" class="md-nav__link">
+      <a href="../../../terminale/epreuve_pratique/entrainement/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4431,7 +4502,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../grand_oral/" class="md-nav__link ">
+            <a href="../../../terminale/grand_oral/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4488,7 +4559,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../e3c/" class="md-nav__link ">
+            <a href="../../../terminale/e3c/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4545,7 +4616,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../entrainement_python/" class="md-nav__link ">
+            <a href="../../../terminale/entrainement_python/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4608,7 +4679,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../pyxel/" class="md-nav__link ">
+            <a href="../../../terminale/pyxel/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4641,7 +4712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyxel/snake/" class="md-nav__link">
+      <a href="../../../terminale/pyxel/snake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4662,7 +4733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyxel/projetjv/" class="md-nav__link">
+      <a href="../../../terminale/pyxel/projetjv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4683,7 +4754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../pyxel/realisations/" class="md-nav__link">
+      <a href="../../../terminale/pyxel/realisations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4719,7 +4790,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../rendus/" class="md-nav__link">
+      <a href="../../../rendus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4774,6 +4845,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Sur cette page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#fonctions-sans-parametres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions sans paramètres
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#fonctions-sans-valeur-de-retour-procedures" class="md-nav__link">
+    <span class="md-ellipsis">
+      Fonctions sans valeur de retour : procédures
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#variables-locales-et-globales" class="md-nav__link">
+    <span class="md-ellipsis">
+      Variables locales et globales
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -4788,25 +4894,43 @@
                   
 
 
-<div><h1 id="processus-et-ordonnancement">Processus et ordonnancement<a class="headerlink" href="#processus-et-ordonnancement" title="Permanent link">¶</a></h1>
-<table>
-<thead>
-<tr>
-<th>Liste des contenus</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="TDTP/">TD/TP Processus et ordonnancement</a></td>
-<td>Découverte de la notion de processus et des types d'ordonnancement.</td>
-</tr>
-<tr>
-<td><a href="sujet_bac/">Sujet de bac</a></td>
-<td>Un sujet de bac pour vous entraîner.</td>
-</tr>
-</tbody>
-</table></div>
+<div><h1 id="les-fonctions">Les fonctions<a class="headerlink" href="#les-fonctions" title="Permanent link">¶</a></h1>
+<p>Vous avez jusqu'ici utilisé plusieurs <strong>fonctions natives de Python</strong>, comme <code>print</code>, <code>input</code>, <code>int</code> (la fonction, pas le type), <code>range</code>...</p>
+<p>Les <strong>fonctions</strong> permettent de créer des <strong>fragments de code réutilisables</strong>. Cela va nous permettre d'aller beaucoup plus loin dans la conception de nos programmes, en créant des fonctions pour effectuer certaines tâches autant de fois qu'on le souhaite, et pour différentes valeurs d'entrée.</p>
+<p>Pour définir une fonction, on utilise le <strong>mot-clé</strong> <code>def</code>, suivi du <strong>nom de la fonction</strong>, suivi de <code>:</code>, puis vient ensuite (à la ligne, avec une <strong>identation</strong>) le bloc d'instructions à exécuter dans la fonction.</p>
+<div class="admonition note">
+<p class="admonition-title">Une fonction = une tâche</p>
+<p>Il est fortement conseillé, pour la clarté du code, de faire en sorte qu'<strong>une fonction ne représente qu'une seule tâche</strong>.</p>
+</div>
+<p>Par exemple, voici une fonction qui <strong>prend deux nombres entiers</strong> et <strong>renvoie la somme de ces deux nombres</strong> :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper_v"><span id="comment_editor_fbc04aab4676b6e5128ac3425fdb5d72ddb3fde5" class="comment">###</span><div class="line_v"><div id="editor_fbc04aab4676b6e5128ac3425fdb5d72ddb3fde5"></div></div><div id="term_editor_fbc04aab4676b6e5128ac3425fdb5d72ddb3fde5" class="term_editor_v"></div></div><button class="tooltip" onclick='play("editor_fbc04aab4676b6e5128ac3425fdb5d72ddb3fde5","_v")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_fbc04aab4676b6e5128ac3425fdb5d72ddb3fde5","scripts/14")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_fbc04aab4676b6e5128ac3425fdb5d72ddb3fde5').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_fbc04aab4676b6e5128ac3425fdb5d72ddb3fde5" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_fbc04aab4676b6e5128ac3425fdb5d72ddb3fde5")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_fbc04aab4676b6e5128ac3425fdb5d72ddb3fde5")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_fbc04aab4676b6e5128ac3425fdb5d72ddb3fde5" class="py_mk_hide">def somme(a, b):bksl-nl    ''' Fonction qui renvoie la somme des entiers a et b. '''bksl-nl    return a + bbksl-nl</span><span id="corr_content_editor_fbc04aab4676b6e5128ac3425fdb5d72ddb3fde5" class="py_mk_hide" data-strudel=""></span></p>
+<p>Pour <strong>tester cette fonction</strong>, vous pouvez l'<strong>appeler dans l'interpréteur</strong>  (en saisissant l'instruction d'appel après les trois chevrons <code>&gt;&gt;&gt;</code> et en appuyant sur la touche <code>Entrée</code>) après avoir exécuté le programme. Par exemple, <strong>entrez l'instruction</strong> <code>somme(3,5)</code> dans l'interpréteur ci-dessus après exécution du programme pour observer le résultat.</p>
+<p>Vous pouvez également <strong>appeller</strong> cette <strong>fonction</strong> directement dans le <strong>programme</strong>, mais pour afficher la valeur renvoyée, il faudra ajouter un <code>print</code> :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper_v"><span id="comment_editor_750b9c9c2c002402c9bd8adf3ef0477db8bc056f" class="comment">###</span><div class="line_v"><div id="editor_750b9c9c2c002402c9bd8adf3ef0477db8bc056f"></div></div><div id="term_editor_750b9c9c2c002402c9bd8adf3ef0477db8bc056f" class="term_editor_v"></div></div><button class="tooltip" onclick='play("editor_750b9c9c2c002402c9bd8adf3ef0477db8bc056f","_v")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_750b9c9c2c002402c9bd8adf3ef0477db8bc056f","scripts/16")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_750b9c9c2c002402c9bd8adf3ef0477db8bc056f').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_750b9c9c2c002402c9bd8adf3ef0477db8bc056f" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_750b9c9c2c002402c9bd8adf3ef0477db8bc056f")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_750b9c9c2c002402c9bd8adf3ef0477db8bc056f")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_750b9c9c2c002402c9bd8adf3ef0477db8bc056f" class="py_mk_hide">def somme(a, b):bksl-nl    ''' Fonction qui renvoie la somme des entiers a et b. '''bksl-nl    return a + bbksl-nlbksl-nlprint("La somme de 4 et de 8 vaut : ", somme(4, 8))bksl-nl</span><span id="corr_content_editor_750b9c9c2c002402c9bd8adf3ef0477db8bc056f" class="py_mk_hide" data-strudel=""></span></p>
+<p>La <strong>valeur renvoyée par la fonction</strong> est indiquée avec le <strong>mot-clé</strong> <code>return</code>. Lorsque le <code>return</code> est rencontré, on sort de la fonction. Ainsi, si vous rajoutez des instructions <strong>après</strong> ce <code>return</code>, elles ne seront pas exécutées, exemple :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper_v"><span id="comment_editor_03420ced4ad55953fb55b9ec807ecc60c952b3a5" class="comment">###</span><div class="line_v"><div id="editor_03420ced4ad55953fb55b9ec807ecc60c952b3a5"></div></div><div id="term_editor_03420ced4ad55953fb55b9ec807ecc60c952b3a5" class="term_editor_v"></div></div><button class="tooltip" onclick='play("editor_03420ced4ad55953fb55b9ec807ecc60c952b3a5","_v")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_03420ced4ad55953fb55b9ec807ecc60c952b3a5","scripts/15")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_03420ced4ad55953fb55b9ec807ecc60c952b3a5').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_03420ced4ad55953fb55b9ec807ecc60c952b3a5" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_03420ced4ad55953fb55b9ec807ecc60c952b3a5")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_03420ced4ad55953fb55b9ec807ecc60c952b3a5")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_03420ced4ad55953fb55b9ec807ecc60c952b3a5" class="py_mk_hide">def somme(a, b):bksl-nl    ''' Fonction qui renvoie la somme des entiers a et b. '''bksl-nl    return a + bbksl-nl    print("Ce message n'apparaitra pas.")bksl-nl</span><span id="corr_content_editor_03420ced4ad55953fb55b9ec807ecc60c952b3a5" class="py_mk_hide" data-strudel=""></span></p>
+<h2 id="fonctions-sans-parametres">Fonctions sans paramètres<a class="headerlink" href="#fonctions-sans-parametres" title="Permanent link">¶</a></h2>
+<p>Une fonction peut <strong>ne pas avoir de paramètres</strong>. Par exemple, voici une fonction qui renvoie une valeur aléatoire entre 1 et 100, en appelant la fonction <code>randint</code> du module <code>random</code> :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper_v"><span id="comment_editor_9ef75bc558a206ed58da826dacd47484db0e40e3" class="comment">###</span><div class="line_v"><div id="editor_9ef75bc558a206ed58da826dacd47484db0e40e3"></div></div><div id="term_editor_9ef75bc558a206ed58da826dacd47484db0e40e3" class="term_editor_v"></div></div><button class="tooltip" onclick='play("editor_9ef75bc558a206ed58da826dacd47484db0e40e3","_v")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_9ef75bc558a206ed58da826dacd47484db0e40e3","scripts/18")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_9ef75bc558a206ed58da826dacd47484db0e40e3').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_9ef75bc558a206ed58da826dacd47484db0e40e3" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_9ef75bc558a206ed58da826dacd47484db0e40e3")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_9ef75bc558a206ed58da826dacd47484db0e40e3")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_9ef75bc558a206ed58da826dacd47484db0e40e3" class="py_mk_hide">from random import randintbksl-nlbksl-nldef valeurpy-undaleatoire():bksl-nl    return randint(1,100)bksl-nlbksl-nlprint("Valeur aléatoire : ", valeurpy-undaleatoire())bksl-nl</span><span id="corr_content_editor_9ef75bc558a206ed58da826dacd47484db0e40e3" class="py_mk_hide" data-strudel=""></span></p>
+<p>Ici, on appelle la fonction sans lui fournir de valeurs, mais la fonction appelée renvoie bien une valeur (le mot-clé <code>return</code> est bien présent).</p>
+<h2 id="fonctions-sans-valeur-de-retour-procedures">Fonctions sans valeur de retour : procédures<a class="headerlink" href="#fonctions-sans-valeur-de-retour-procedures" title="Permanent link">¶</a></h2>
+<p>Il est également possible de créer une <strong>fonction</strong> qui ne contient <strong>pas de valeur de retour</strong> (pas de <code>return</code>). Par exemple :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_c23a72168d3e0a1982d943b611573bb908a76ee2" class="comment">###</span><div class="line" id="editor_c23a72168d3e0a1982d943b611573bb908a76ee2"></div><div id="term_editor_c23a72168d3e0a1982d943b611573bb908a76ee2" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_c23a72168d3e0a1982d943b611573bb908a76ee2","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_c23a72168d3e0a1982d943b611573bb908a76ee2","scripts/19")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_c23a72168d3e0a1982d943b611573bb908a76ee2').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_c23a72168d3e0a1982d943b611573bb908a76ee2" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_c23a72168d3e0a1982d943b611573bb908a76ee2")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_c23a72168d3e0a1982d943b611573bb908a76ee2")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_c23a72168d3e0a1982d943b611573bb908a76ee2" class="py_mk_hide">def hurler(message):bksl-nl    messagepy-undmaj = message.upper()  # mettre le message en majusculesbksl-nl    print(messagepy-undmaj)  # afficher le nouveau messagebksl-nlbksl-nlhurler("houraaaaa !!!")bksl-nl</span><span id="corr_content_editor_c23a72168d3e0a1982d943b611573bb908a76ee2" class="py_mk_hide" data-strudel=""></span></p>
+<p>On crée ici une fonction qui contient un paramètre <code>message</code>, et qui <strong>affiche</strong> avec <code>print</code> ce message, mais ne <strong>renvoie</strong> rien. La fonction est ensuite appelée, avec le message <code>"HOURAAAAAAAAAAA !!!"</code> qui est donc affiché.</p>
+<p>Les fonctions qui ne <strong>renvoient rien</strong> peuvent être appelées <strong><mark>procédures</mark></strong>. Toutefois, en <strong>Python</strong>, il n'y a techniquement pas de distinction entre les fonctions et les procédures, contrairement à d'autres langages comme le <strong>Java</strong> par exemple.</p>
+<h2 id="variables-locales-et-globales">Variables locales et globales<a class="headerlink" href="#variables-locales-et-globales" title="Permanent link">¶</a></h2>
+<p>Lorsque vous définissez une <strong>variable à l'intérieur</strong> d'une <strong>fonction</strong>, cette variable n'existe <strong>qu'à l'intérieur de la fonction</strong>. C'est également le cas pour les <strong>paramètres</strong> des fonctions.</p>
+<p>Par exemple, dans la fonction ci-dessous, on a créé une <strong>variable</strong> <code>resultat</code>. Cette <strong>variable</strong>, ainsi que les <strong>paramètres</strong> <code>a</code> et <code>b</code> (qui sont également des variables), ne sont définis qu'à l'<strong>intérieur de la fonction</strong>. :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_5916aa6e885f9c56aa1dfc6727d8cc731a8e2c2a" class="comment">###</span><div class="line" id="editor_5916aa6e885f9c56aa1dfc6727d8cc731a8e2c2a"></div><div id="term_editor_5916aa6e885f9c56aa1dfc6727d8cc731a8e2c2a" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_5916aa6e885f9c56aa1dfc6727d8cc731a8e2c2a","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_5916aa6e885f9c56aa1dfc6727d8cc731a8e2c2a","scripts/20")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_5916aa6e885f9c56aa1dfc6727d8cc731a8e2c2a').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_5916aa6e885f9c56aa1dfc6727d8cc731a8e2c2a" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_5916aa6e885f9c56aa1dfc6727d8cc731a8e2c2a")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_5916aa6e885f9c56aa1dfc6727d8cc731a8e2c2a")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_5916aa6e885f9c56aa1dfc6727d8cc731a8e2c2a" class="py_mk_hide">def produit(a, b):bksl-nl    resultat = 1bksl-nl    for py-und in range(b):bksl-nl        resultat = resultat py-str abksl-nl    return resultatbksl-nl</span><span id="corr_content_editor_5916aa6e885f9c56aa1dfc6727d8cc731a8e2c2a" class="py_mk_hide" data-strudel=""></span></p>
+<p>On peut donc très bien, par exemple, avoir une <strong>autre variable</strong> avec le nom <code>resultat</code> à l'<strong>extérieur</strong> de la <strong>fonction</strong>, qui contiendrait une <strong>autre valeur</strong> :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_cd2f10636f28512be25c4d41ca3235f3475982c9" class="comment">###</span><div class="line" id="editor_cd2f10636f28512be25c4d41ca3235f3475982c9"></div><div id="term_editor_cd2f10636f28512be25c4d41ca3235f3475982c9" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_cd2f10636f28512be25c4d41ca3235f3475982c9","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_cd2f10636f28512be25c4d41ca3235f3475982c9","scripts/20b")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_cd2f10636f28512be25c4d41ca3235f3475982c9').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_cd2f10636f28512be25c4d41ca3235f3475982c9" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_cd2f10636f28512be25c4d41ca3235f3475982c9")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_cd2f10636f28512be25c4d41ca3235f3475982c9")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_cd2f10636f28512be25c4d41ca3235f3475982c9" class="py_mk_hide">def produit(a, b):bksl-nl    resultat = 1bksl-nl    for py-und in range(b):bksl-nl        resultat = resultat py-str abksl-nl    return resultatbksl-nlbksl-nlresultat = produit(5, 6)  # appeler produit sur 5 et 6 et stocker la valeur de retour dans resultatbksl-nlprint(resultat)  # afficher le résultatbksl-nl</span><span id="corr_content_editor_cd2f10636f28512be25c4d41ca3235f3475982c9" class="py_mk_hide" data-strudel=""></span></p></div>
 
 
 
@@ -4820,7 +4944,7 @@
 
 
                 
-<script src="../../pyodide-mkdocs/ide.js"></script> 
+<script src="../../../pyodide-mkdocs/ide.js"></script> 
 
               </article>
             </div>
@@ -4859,18 +4983,18 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
       
-        <script src="../../javascripts/mathjax.js"></script>
+        <script src="../../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../js/open_in_new_tab.js"></script>
+        <script src="../../../js/open_in_new_tab.js"></script>
       
     
   </body>
