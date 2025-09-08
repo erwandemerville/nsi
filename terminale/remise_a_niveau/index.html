@@ -8,24 +8,28 @@
       
       
       
-        <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/interactions/interro_web/">
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/terminale/remise_a_niveau/">
       
       
+        <link rel="prev" href="../">
       
       
-      <link rel="icon" href="../../../assets/images/favicon.png">
+        <link rel="next" href="exercices/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.6.0, mkdocs-material-9.5.39">
     
     
       
-        <title>Interro web - Numérique et sciences informatiques</title>
+        <title>Remise à niveau Python - Numérique et sciences informatiques</title>
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.8c3ca2c6.min.css">
       
         
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
       
       
 
@@ -46,8 +50,8 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/js/jquery.terminal.min.js"></script>
 <link href="https://cdn.jsdelivr.net/npm/jquery.terminal@2.34.0/css/jquery.terminal.min.css" rel="stylesheet">
-<script src="../../../pyodide-mkdocs/utils.js"></script> 
-<script src="../../../pyodide-mkdocs/interpreter.js"></script> 
+<script src="../../pyodide-mkdocs/utils.js"></script> 
+<script src="../../pyodide-mkdocs/interpreter.js"></script> 
 
     
       
@@ -59,9 +63,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+      <link rel="stylesheet" href="../../stylesheets/extra.css">
     
-    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -69,7 +73,7 @@
     
     
 
-<link rel="stylesheet" href="../../../pyodide-mkdocs/pyoditeur.css">
+<link rel="stylesheet" href="../../pyodide-mkdocs/pyoditeur.css">
 
 
 <input id="ace_palette" autocomplete="off" class="md-toggle" data-ace-dark-mode="tomorrow_night_bright" data-ace-light-mode="crimson_editor" type="checkbox"></input>
@@ -93,6 +97,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#remise-a-niveau-python" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -103,7 +112,7 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../.." title="Numérique et sciences informatiques" class="md-header__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -123,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Interro web
+              Remise à niveau Python
             
           </span>
         </div>
@@ -227,7 +236,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../.." class="md-tabs__link">
+        <a href="../.." class="md-tabs__link">
           
   
     
@@ -247,7 +256,7 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../" class="md-tabs__link">
+        <a href="../../premiere/" class="md-tabs__link">
           
   
     
@@ -263,11 +272,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../../terminale/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -285,7 +296,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../rendus/" class="md-tabs__link">
+      <a href="../../rendus/" class="md-tabs__link">
         
   
     
@@ -336,7 +347,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
+    <a href="../.." title="Numérique et sciences informatiques" class="md-nav__button md-logo" aria-label="Numérique et sciences informatiques" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
@@ -375,7 +386,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../.." class="md-nav__link ">
+            <a href="../.." class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -449,7 +460,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../" class="md-nav__link ">
+            <a href="../../premiere/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -507,7 +518,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../bases_python/" class="md-nav__link ">
+            <a href="../../premiere/bases_python/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -588,7 +599,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bases_python/introduction/" class="md-nav__link">
+      <a href="../../premiere/bases_python/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -609,7 +620,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bases_python/fonctions/" class="md-nav__link">
+      <a href="../../premiere/bases_python/fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -630,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bases_python/listes/" class="md-nav__link">
+      <a href="../../premiere/bases_python/listes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -651,7 +662,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bases_python/n_uplets_dicos/" class="md-nav__link">
+      <a href="../../premiere/bases_python/n_uplets_dicos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -736,7 +747,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bases_python/thonny/" class="md-nav__link">
+      <a href="../../premiere/bases_python/thonny/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -757,7 +768,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bases_python/exercices_introduction/" class="md-nav__link">
+      <a href="../../premiere/bases_python/exercices_introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -778,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bases_python/exercices_fonctions/" class="md-nav__link">
+      <a href="../../premiere/bases_python/exercices_fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -799,7 +810,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bases_python/exercices_listes/" class="md-nav__link">
+      <a href="../../premiere/bases_python/exercices_listes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -820,7 +831,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bases_python/rappels_fonctions/" class="md-nav__link">
+      <a href="../../premiere/bases_python/rappels_fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -841,7 +852,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bases_python/notebooks/" class="md-nav__link">
+      <a href="../../premiere/bases_python/notebooks/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -862,7 +873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bases_python/chassetresor/" class="md-nav__link">
+      <a href="../../premiere/bases_python/chassetresor/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -883,7 +894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../bases_python/tamagotchi/" class="md-nav__link">
+      <a href="../../premiere/bases_python/tamagotchi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -945,7 +956,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../representation_donnees/" class="md-nav__link ">
+            <a href="../../premiere/representation_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -978,7 +989,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../representation_donnees/cours/" class="md-nav__link">
+      <a href="../../premiere/representation_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -999,7 +1010,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../representation_donnees/exercices/" class="md-nav__link">
+      <a href="../../premiere/representation_donnees/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1055,7 +1066,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../archi/" class="md-nav__link ">
+            <a href="../../premiere/archi/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1088,7 +1099,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archi/introduction/" class="md-nav__link">
+      <a href="../../premiere/archi/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1109,7 +1120,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archi/fonctions/" class="md-nav__link">
+      <a href="../../premiere/archi/fonctions/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1130,7 +1141,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../archi/circuits/" class="md-nav__link">
+      <a href="../../premiere/archi/circuits/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1182,7 +1193,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../algorithmique/" class="md-nav__link ">
+            <a href="../../premiere/algorithmique/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1215,7 +1226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../algorithmique/rechercheseq/" class="md-nav__link">
+      <a href="../../premiere/algorithmique/rechercheseq/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1269,7 +1280,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../traitement_donnees/" class="md-nav__link ">
+            <a href="../../premiere/traitement_donnees/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1302,7 +1313,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../traitement_donnees/cours/" class="md-nav__link">
+      <a href="../../premiere/traitement_donnees/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1323,7 +1334,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../traitement_donnees/pandas/" class="md-nav__link">
+      <a href="../../premiere/traitement_donnees/pandas/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1381,7 +1392,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../" class="md-nav__link ">
+            <a href="../../premiere/interactions/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1414,7 +1425,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../htmlcss/" class="md-nav__link">
+      <a href="../../premiere/interactions/htmlcss/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1435,7 +1446,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../js/" class="md-nav__link">
+      <a href="../../premiere/interactions/js/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1456,7 +1467,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../clientserveur/" class="md-nav__link">
+      <a href="../../premiere/interactions/clientserveur/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1477,7 +1488,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercices/" class="md-nav__link">
+      <a href="../../premiere/interactions/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1533,7 +1544,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../gloutons/" class="md-nav__link ">
+            <a href="../../premiere/gloutons/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1566,7 +1577,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gloutons/cours/" class="md-nav__link">
+      <a href="../../premiere/gloutons/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1587,7 +1598,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gloutons/src/gloutons_eleve.odt" class="md-nav__link">
+      <a href="../../premiere/gloutons/src/gloutons_eleve.odt" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1608,7 +1619,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../gloutons/voyageur_commerce/" class="md-nav__link">
+      <a href="../../premiere/gloutons/voyageur_commerce/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1664,7 +1675,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tris/" class="md-nav__link ">
+            <a href="../../premiere/tris/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1697,7 +1708,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tris/activite_preliminaire/" class="md-nav__link">
+      <a href="../../premiere/tris/activite_preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1718,7 +1729,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tris/tri_selection/" class="md-nav__link">
+      <a href="../../premiere/tris/tri_selection/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1739,7 +1750,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../tris/tri_insertion/" class="md-nav__link">
+      <a href="../../premiere/tris/tri_insertion/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1791,7 +1802,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../pyxel/" class="md-nav__link ">
+            <a href="../../premiere/pyxel/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1824,7 +1835,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../pyxel/snake/" class="md-nav__link">
+      <a href="../../premiere/pyxel/snake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1857,6 +1868,8 @@
       
   
   
+    
+  
   
   
     
@@ -1913,19 +1926,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1936,13 +1952,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Terminale
@@ -1955,6 +1971,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1974,16 +1992,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/remise_a_niveau/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -1994,13 +2012,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+              <label class="md-nav__link md-nav__link--active" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3_2">
             <span class="md-nav__icon md-icon"></span>
             Remise à niveau
@@ -2037,7 +2055,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/remise_a_niveau/exercices/" class="md-nav__link">
+      <a href="exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2091,7 +2109,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/modularite/" class="md-nav__link ">
+            <a href="../modularite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2124,7 +2142,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/modularite/api/" class="md-nav__link">
+      <a href="../modularite/api/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2145,7 +2163,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/modularite/modules/" class="md-nav__link">
+      <a href="../modularite/modules/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2203,7 +2221,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/mise_au_point/" class="md-nav__link ">
+            <a href="../mise_au_point/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2236,7 +2254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/mise_au_point/preliminaire/" class="md-nav__link">
+      <a href="../mise_au_point/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2257,7 +2275,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/mise_au_point/cours/" class="md-nav__link">
+      <a href="../mise_au_point/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2278,7 +2296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/mise_au_point/activite_finale/" class="md-nav__link">
+      <a href="../mise_au_point/activite_finale/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2299,7 +2317,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/mise_au_point/ds1/" class="md-nav__link">
+      <a href="../mise_au_point/ds1/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2359,7 +2377,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/poo/" class="md-nav__link ">
+            <a href="../poo/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2392,7 +2410,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/poo/preliminaire/" class="md-nav__link">
+      <a href="../poo/preliminaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2413,7 +2431,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/poo/cours/" class="md-nav__link">
+      <a href="../poo/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2434,7 +2452,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/poo/pokemon/" class="md-nav__link">
+      <a href="../poo/pokemon/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2455,7 +2473,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/poo/exercices/" class="md-nav__link">
+      <a href="../poo/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2476,7 +2494,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/poo/tamagotchi/" class="md-nav__link">
+      <a href="../poo/tamagotchi/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2532,7 +2550,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/recursivite/" class="md-nav__link ">
+            <a href="../recursivite/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2565,7 +2583,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/recursivite/introduction/" class="md-nav__link">
+      <a href="../recursivite/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2586,7 +2604,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/recursivite/cours/" class="md-nav__link">
+      <a href="../recursivite/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2607,7 +2625,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/recursivite/exercices/" class="md-nav__link">
+      <a href="../recursivite/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2661,7 +2679,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/listes/" class="md-nav__link ">
+            <a href="../listes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2694,7 +2712,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/listes/cours/" class="md-nav__link">
+      <a href="../listes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2715,7 +2733,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/listes/exercices/" class="md-nav__link">
+      <a href="../listes/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2767,7 +2785,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/pilesfiles/" class="md-nav__link ">
+            <a href="../pilesfiles/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2800,7 +2818,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/pilesfiles/cours/" class="md-nav__link">
+      <a href="../pilesfiles/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2856,7 +2874,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/arbres/" class="md-nav__link ">
+            <a href="../arbres/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -2937,7 +2955,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/arbres/vocabulaire/" class="md-nav__link">
+      <a href="../arbres/vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2958,7 +2976,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/arbres/parcours/" class="md-nav__link">
+      <a href="../arbres/parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2979,7 +2997,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/arbres/type_abstrait/" class="md-nav__link">
+      <a href="../arbres/type_abstrait/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3000,7 +3018,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/arbres/abr/" class="md-nav__link">
+      <a href="../arbres/abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3073,7 +3091,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/arbres/implementation_arbres/" class="md-nav__link">
+      <a href="../arbres/implementation_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3094,7 +3112,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/arbres/implementation_abr/" class="md-nav__link">
+      <a href="../arbres/implementation_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3171,7 +3189,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/arbres/exercices_vocabulaire/" class="md-nav__link">
+      <a href="../arbres/exercices_vocabulaire/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3192,7 +3210,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/arbres/exercices_parcours/" class="md-nav__link">
+      <a href="../arbres/exercices_parcours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3213,7 +3231,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/arbres/exercices_abr/" class="md-nav__link">
+      <a href="../arbres/exercices_abr/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3234,7 +3252,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/arbres/implementations_arbres/" class="md-nav__link">
+      <a href="../arbres/implementations_arbres/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3298,7 +3316,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/routage/" class="md-nav__link ">
+            <a href="../routage/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3331,7 +3349,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/routage/cours/" class="md-nav__link">
+      <a href="../routage/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3352,7 +3370,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/routage/exercices/" class="md-nav__link">
+      <a href="../routage/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3373,7 +3391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/routage/tp_filius/" class="md-nav__link">
+      <a href="../routage/tp_filius/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3427,7 +3445,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/recherche_textuelle/" class="md-nav__link ">
+            <a href="../recherche_textuelle/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3460,7 +3478,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/recherche_textuelle/tp_intro/" class="md-nav__link">
+      <a href="../recherche_textuelle/tp_intro/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3481,7 +3499,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/recherche_textuelle/cours/" class="md-nav__link">
+      <a href="../recherche_textuelle/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3541,7 +3559,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/bdd/" class="md-nav__link ">
+            <a href="../bdd/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3574,7 +3592,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/bdd/introduction/" class="md-nav__link">
+      <a href="../bdd/introduction/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3595,7 +3613,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/bdd/modele_relationnel/" class="md-nav__link">
+      <a href="../bdd/modele_relationnel/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3616,7 +3634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/bdd/sql/" class="md-nav__link">
+      <a href="../bdd/sql/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3637,7 +3655,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/bdd/src/activite_movies.zip" class="md-nav__link">
+      <a href="../bdd/src/activite_movies.zip" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3658,7 +3676,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/bdd/src/extrait_bac.pdf" class="md-nav__link">
+      <a href="../bdd/src/extrait_bac.pdf" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3712,7 +3730,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/diviserregner/" class="md-nav__link ">
+            <a href="../diviserregner/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3745,7 +3763,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/diviserregner/cours/" class="md-nav__link">
+      <a href="../diviserregner/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3822,7 +3840,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/graphes/" class="md-nav__link ">
+            <a href="../graphes/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3855,7 +3873,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/graphes/cours/" class="md-nav__link">
+      <a href="../graphes/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3876,7 +3894,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/graphes/implementation/" class="md-nav__link">
+      <a href="../graphes/implementation/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3897,7 +3915,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/graphes/exercices/" class="md-nav__link">
+      <a href="../graphes/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -3951,7 +3969,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/processus/" class="md-nav__link ">
+            <a href="../processus/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -3984,7 +4002,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/processus/TDTP/" class="md-nav__link">
+      <a href="../processus/TDTP/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4005,7 +4023,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/processus/sujet_bac/" class="md-nav__link">
+      <a href="../processus/sujet_bac/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4059,7 +4077,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/progdyn/" class="md-nav__link ">
+            <a href="../progdyn/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4092,7 +4110,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/progdyn/cours/" class="md-nav__link">
+      <a href="../progdyn/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4113,7 +4131,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/progdyn/exercices/" class="md-nav__link">
+      <a href="../progdyn/exercices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4165,7 +4183,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/chiffrement/" class="md-nav__link ">
+            <a href="../chiffrement/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4198,7 +4216,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/chiffrement/cours/" class="md-nav__link">
+      <a href="../chiffrement/cours/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4254,7 +4272,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/epreuve_pratique/" class="md-nav__link ">
+            <a href="../epreuve_pratique/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4287,7 +4305,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/epreuve_pratique/entrainement/" class="md-nav__link">
+      <a href="../epreuve_pratique/entrainement/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4450,7 +4468,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/grand_oral/" class="md-nav__link ">
+            <a href="../grand_oral/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4507,7 +4525,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/e3c/" class="md-nav__link ">
+            <a href="../e3c/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4564,7 +4582,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/entrainement_python/" class="md-nav__link ">
+            <a href="../entrainement_python/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4627,7 +4645,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../terminale/pyxel/" class="md-nav__link ">
+            <a href="../pyxel/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -4660,7 +4678,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/pyxel/snake/" class="md-nav__link">
+      <a href="../pyxel/snake/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4681,7 +4699,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/pyxel/projetjv/" class="md-nav__link">
+      <a href="../pyxel/projetjv/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4702,7 +4720,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../terminale/pyxel/realisations/" class="md-nav__link">
+      <a href="../pyxel/realisations/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4738,7 +4756,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../rendus/" class="md-nav__link">
+      <a href="../../rendus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -4790,6 +4808,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -4805,349 +4825,25 @@
                   
 
 
-<div><p></p><center><h1>Interrogation sur le web</h1></center>
-<div class="admonition note">
-<p class="admonition-title">Question 1</p>
-<p></p><p>Qu'est-ce que le web ?</p>
-<p></p><form>
-<input type="radio">
-<label>Un réseau mondial d'ordinateurs connectés.</label><br>
-<input type="radio">
-<label>Un des services d'Internet.</label><br>
-<input type="radio">
-<label>Un moteur de recherche.</label>
-</form> 
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 2</p>
-<p></p><p>Comment accède t-on à une page web ?</p>
-<p></p><form>
-<input type="radio">
-<label>En utilisant un système d'exploitation.</label><br>
-<input type="radio">
-<label>En utilisant un moteur de recherche.</label><br>
-<input type="radio">
-<label>En utilisant un navigateur web.</label>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 3</p>
-<p></p><p>Cochez <strong>trois exemples d'outils</strong> permettant de naviguer sur le web.</p>
-<p></p><form>
-<input type="checkbox">
-<label>Lilo</label>
-<input type="checkbox">
-<label>Chromium</label>
-<input type="checkbox">
-<label>Mozilla Firefox</label>
-<input type="checkbox">
-<label>Yahoo</label>
-<input type="checkbox">
-<label>Opera</label>
-<input type="checkbox">
-<label>Safari</label>
-<input type="checkbox">
-<label>Bing</label>
-<input type="checkbox">
-<label>Qwant</label>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 4</p>
-<p></p><p>Qui a créé la première page web ?</p>
-<p></p><form>
-<input type="radio">
-<label>Mark Zuckerberg</label><br>
-<input type="radio">
-<label>Tim Berners-Lee</label><br>
-<input type="radio">
-<label>Steve Jobs</label><br>
-<input type="radio">
-<label>Sergey Brin</label>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 5</p>
-<p></p><p>Comment s'appellent les outils que l'on utilise pour <strong>rechercher des pages web</strong> ?</p>
-<p></p><form>
-<input type="radio">
-<label>Les navigateurs web.</label><br>
-<input type="radio">
-<label>Les systèmes d'exploitation.</label><br>
-<input type="radio">
-<label>Les moteurs de recherche.</label><br>
-<input type="radio">
-<label>Les gestionnaires de pages web.</label>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 6</p>
-<p></p><p>Donner le nom d'un <strong>outil</strong> permettant de <strong>rechercher des pages web</strong>.</p>
-<p></p><form>
-<label>Votre réponse :</label> <input type="text" style="border:1px dotted black;padding:5px;"><br>
-</form> 
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 7</p>
-<p></p><p>Quelle est la différence principale entre un moteur de recherche comme Qwant et un moteur comme Google en termes de confidentialité ?</p><p></p>
-<p></p><form>
-<input type="radio">
-<label>Google ne collecte aucune donnée utilisateur, tandis que Qwant utilise des cookies intensivement.</label><br>
-<input type="radio">
-<label>Les deux moteurs de recherche collectent et stockent les mêmes informations sur les utilisateurs.</label><br>
-<input type="radio">
-<label>Qwant vend les données des utilisateurs, contrairement à Google.</label><br>
-<input type="radio">
-<label>Qwant ne stocke aucune information sur les utilisateurs, tandis que Google conserve des historiques de recherche personnalisés.</label>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 8</p>
-<p></p><p>La <strong>navigation privée</strong> permet de : (cocher toutes les bonnes réponses)</p>
-<p></p><form>
-<input type="checkbox">
-<label>Masquer son adresse IP.</label>
-<input type="checkbox">
-<label>Ne pas garder de traces de son historique de navigation sur son navigateur.</label>
-<input type="checkbox">
-<label>Ne transmettre aucune information aux sites web visités.</label>
-<input type="checkbox">
-<label>Éviter le suivi publicitaire en ne conservant pas les cookies.</label>
-<input type="checkbox">
-<label>Accéder aux sites web du darknet.</label>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 9</p>
-<p></p><p>Le <strong>HTML</strong> est un (cocher toutes les bonnes réponses) :</p>
-<p></p><form>
-<input type="checkbox">
-<label>Langage de programmation.</label>
-<input type="checkbox">
-<label>Langage de balisage.</label>
-<input type="checkbox">
-<label>Langage de feuilles de style.</label>
-<input type="checkbox">
-<label>Langage de description.</label>
-<input type="checkbox">
-<label>Langage utilisé dans la création de sites web.</label>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 10</p>
-<p>Voici 3 propositions d'<strong>en-têtes de pages web</strong>. Laquelle est correctement <strong>syntaxée</strong> ?</p>
-<p><strong>A</strong> :
-</p><div class="language-html highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"fr"</span><span class="p">&gt;</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Mon super site<span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"style.css"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span><span class="p">&gt;</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>        <span class="cm">&lt;!-- Corps de la page --&gt;</span>
-</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>  
-</span></code></pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 10 suite</p>
-<p><strong>B</strong> :
-</p><div class="language-html highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"fr"</span><span class="p">&gt;</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>        <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Mon super site<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"style.css"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span><span class="p">/&gt;</span>   
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="cm">&lt;!-- Corps de la page --&gt;</span> 
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</span></code></pre></div>
-<p><strong>C</strong> :
-</p><div class="language-html highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">&lt;!DOCTYPE html&gt;</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">"fr"</span><span class="p">&gt;</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Mon super site<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>    <span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>        <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span> <span class="na">href</span><span class="o">=</span><span class="s">"style.css"</span> <span class="na">type</span><span class="o">=</span><span class="s">"text/css"</span><span class="p">/&gt;</span>   
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>        <span class="cm">&lt;!-- Corps de la page --&gt;</span>  
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
-</span></code></pre></div>
-<p></p><form>
-<input type="radio">
-<label>A</label>
-<input type="radio">
-<label>B</label>
-<input type="radio">
-<label>C</label>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 11</p>
-<p>Quelle est la balise permettant d'<strong>insérer un paragraphe</strong> ?</p>
-<p></p><form>
-<input type="radio">
-<label><code>&lt;p1&gt;</code></label>
-<input type="radio">
-<label><code>&lt;par&gt;</code></label>
-<input type="radio">
-<label><code>&lt;p&gt;</code></label>
-<input type="radio">
-<label>Aucune des trois réponses.</label>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 12</p>
-<p>Parmi les balises suivantes, laquelle permet de faire un <strong>retour à la ligne</strong> ?</p>
-<p></p><form>
-<input type="radio">
-<label><code>&lt;linebreak /&gt;</code></label>
-<input type="radio">
-<label><code>&lt;br /&gt;</code></label>
-<input type="radio">
-<label><code>&lt;lb /&gt;</code></label>
-<input type="radio">
-<label><code>&lt;bl /&gt;</code></label>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 13</p>
-<p>Donner un exemple de <strong>balise auto-fermante</strong>, à l'exception de celle donnée en réponse à la question précédente :</p>
-<p></p><form>
-<label>Votre réponse :</label> <input type="text" style="border:1px dotted black;padding:5px;"><br>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 14</p>
-<p>On souhaite <strong>souligner tous les titres</strong> de <strong>niveau 1</strong> à l'aide d'une propriété <em>CSS</em>. Indiquez la bonne syntaxe :</p>
-<p><strong>A</strong> :
-</p><div class="language-css highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nt">h1</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nt">text-decoration</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nt">underline</span><span class="o">;</span>
-</span></code></pre></div>
-<p><strong>B</strong> :
-</p><div class="language-css highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="w">    </span><span class="err">text-decoration</span><span class="w"> </span><span class="err">=</span><span class="w"> </span><span class="err">underline</span><span class="p">;</span>
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">}</span>
-</span></code></pre></div>
-<p><strong>C</strong> :
-</p><div class="language-css highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nt">h1</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="w">    </span><span class="k">text-decoration</span><span class="p">:</span><span class="w"> </span><span class="kc">underline</span><span class="p">;</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">}</span>
-</span></code></pre></div>
-<p></p><form>
-<input type="radio">
-<label>A</label>
-<input type="radio">
-<label>B</label>
-<input type="radio">
-<label>C</label>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 15</p>
-<p>Proposez une <strong>propriété CSS</strong>, autre que <code>text-decoration</code>, et expliquez <strong>à quoi elle sert</strong>.</p>
-<p></p><form>
-<label>Propriété CSS :</label> <input type="text" style="border:1px dotted black;padding:5px;"><br>
-<label>À quoi sert-elle :</label> <input type="text" style="border:1px dotted black;padding:5px;">
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 16</p>
-<p>On dispose d'un <em>code HTML</em> contenant <strong>deux paragraphes</strong>, auxquels on souhaite attribuer <strong>deux styles différents</strong>. On propose pour cela de leur attribuer un <strong>identifiant</strong>. Indiquez quelle est la <strong>bonne syntaxe</strong> :</p>
-<p><strong>A</strong> :
-</p><div class="language-html highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">"par1"</span><span class="p">&gt;</span>Voici un premier paragraphe.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">"par2"</span><span class="p">&gt;</span>Voici un second paragraphe.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></code></pre></div>
-<p><strong>B</strong> :
-</p><div class="language-html highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"par1"</span><span class="p">&gt;</span>Voici un premier paragraphe.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">class</span><span class="o">=</span><span class="s">"par2"</span><span class="p">&gt;</span>Voici un second paragraphe.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></code></pre></div>
-<p><strong>C</strong> :
-</p><div class="language-html highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">par1</span><span class="p">&gt;</span>Voici un premier paragraphe.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="p">&lt;</span><span class="nt">p</span> <span class="na">par2</span><span class="p">&gt;</span>Voici un second paragraphe.<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span></code></pre></div>
-<p></p><form>
-<input type="radio">
-<label>A</label>
-<input type="radio">
-<label>B</label>
-<input type="radio">
-<label>C</label>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 17</p>
-<p>Expliquez la différence entre une <strong>classe</strong> et un <strong>identifiant</strong>.</p>
-<p></p><form>
-<label>Votre réponse :</label> <input type="text" style="border:1px dotted black;padding:40px;padding-right:300px;"><br>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 18</p>
-<p>On souhaite <strong>mettre en rose</strong> la <strong>couleur de fond</strong> de tous les éléments <em>HTML</em> ayant la <em>classe</em> <code>"fondrose"</code>. Indiquez la bonne <strong>syntaxe</strong> :</p>
-<p><strong>A</strong> :
-</p><div class="language-css highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nt">fondrose</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">    </span><span class="n">color-background</span><span class="p">:</span><span class="w"> </span><span class="kc">pink</span><span class="p">;</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="p">}</span>
-</span></code></pre></div>
-<p><strong>B</strong> :
-</p><div class="language-css highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="p">#</span><span class="nn">fondrose</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="w">    </span><span class="n">color-background</span><span class="p">:</span><span class="w"> </span><span class="kc">pink</span><span class="p">;</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="p">}</span>
-</span></code></pre></div>
-<p><strong>C</strong> :
-</p><div class="language-css highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">.</span><span class="nc">fondrose</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="w">    </span><span class="n">color-background</span><span class="p">:</span><span class="w"> </span><span class="kc">pink</span><span class="p">;</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="p">}</span>
-</span></code></pre></div>
-<p><strong>D</strong> : Aucun des trois.</p>
-<p></p><form>
-<input type="radio">
-<label>A</label>
-<input type="radio">
-<label>B</label>
-<input type="radio">
-<label>C</label>
-<input type="radio">
-<label>D</label>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 19</p>
-<p>Lorsque l'on met une <strong>image</strong> à l'aide de la balise <code>&lt;img /&gt;</code>, il est possible d'ajouter des <strong>attributs</strong> supplémentaires en plus de l'attribut <code>src</code> indiquant la <strong>source de l'image</strong>, comme par exemple un <strong>attribut</strong> <code>alt</code> permettant d'indiquer un <strong>texte alternatif</strong> à l'image, et un attribut <code>width</code> permettant de modifier la <strong>largeur de l'image</strong>.
-Indiquez quelle est la bonne syntaxe :</p>
-<p></p><form>
-<input type="radio">
-<label><code>&lt;img src="mon_image.jpg", alt="texte_alternatif", width="200px" /&gt;</code></label><br>
-<input type="radio">
-<label><code>&lt;img src="mon_image.jpg" alt="texte_alternatif" width="200pixels" /&gt;</code></label><br>
-<input type="radio">
-<label><code>&lt;img src="mon_image.jpg" width="200pixels" alt="texte_alternatif" /&gt;</code></label><br>
-<input type="radio">
-<label><code>&lt;img src="mon_image.jpg" width="200px" alt="texte_alternatif" /&gt;</code></label><br>
-</form>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Question 20</p>
-<p>Voici une portion de <em>code HTML</em> :</p>
-<div class="language-html highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="p">&lt;</span><span class="nt">section</span><span class="p">&gt;</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>    <span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span>Les <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Sphénisciformes<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> (Sphenisciformes) sont un ordre d'oiseaux de mer inaptes au vol 
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    vivant dans l'hémisphère sud et dont les membres sont appelés <span class="p">&lt;</span><span class="nt">i</span><span class="p">&gt;</span>manchots<span class="p">&lt;/</span><span class="nt">i</span><span class="p">&gt;</span>. Les 
-</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>manchots<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> à aigrettes (le genre Eudyptes) sont également nommés « gorfous ». Les 
-</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>    espèces modernes sont regroupées dans la famille des <span class="p">&lt;</span><span class="nt">b</span><span class="p">&gt;</span>Sphéniscidés<span class="p">&lt;/</span><span class="nt">b</span><span class="p">&gt;</span> (Spheniscidae).<span class="p">&lt;/</span><span class="nt">p</span><span class="p">&gt;</span>
-</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="p">&lt;/</span><span class="nt">section</span><span class="p">&gt;</span>
-</span></code></pre></div>
-<p>Par défaut, la <strong>balise</strong> <code>&lt;b&gt;</code> met le contenu <strong>en gras</strong>, et la <strong>balise</strong> <code>&lt;i&gt;</code> met le contenu <em>en italique</em>. On souhaite inverser ces comportements à l'aide d'une portion de code <em>CSS</em>.<br>
-Écrivez le code <em>CSS</em> permettant de réaliser cela.<br>
-Vous utiliserez la <strong>propriété</strong> <code>text-decoration</code>, qui peut prendre la valeur <code>bold</code> (<strong>gras</strong>) ou <code>italic</code> (<em>italique</em>).</p>
-<p></p><form>
-<label>Votre réponse :</label> <input type="text" style="border:1px dotted black;padding:100px;padding-right:200px;"><br>
-</form>
-</div></div>
+<div><h1 id="remise-a-niveau-python">Remise à niveau Python<a class="headerlink" href="#remise-a-niveau-python" title="Permanent link">¶</a></h1>
+<table>
+<thead>
+<tr>
+<th>Liste des contenus</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://capytale2.ac-paris.fr/web/c/a12b-4397105"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M7.157 22.201A1.784 1.799 0 0 1 5.374 24a1.784 1.799 0 0 1-1.784-1.799 1.784 1.799 0 0 1 1.784-1.799 1.784 1.799 0 0 1 1.783 1.799M20.582 1.427a1.415 1.427 0 0 1-1.415 1.428 1.415 1.427 0 0 1-1.416-1.428A1.415 1.427 0 0 1 19.167 0a1.415 1.427 0 0 1 1.415 1.427M4.992 3.336A1.047 1.056 0 0 1 3.946 4.39a1.047 1.056 0 0 1-1.047-1.055A1.047 1.056 0 0 1 3.946 2.28a1.047 1.056 0 0 1 1.046 1.056m7.336 1.517c3.769 0 7.06 1.38 8.768 3.424a9.36 9.36 0 0 0-3.393-4.547 9.24 9.24 0 0 0-5.377-1.728A9.24 9.24 0 0 0 6.95 3.73a9.36 9.36 0 0 0-3.394 4.547c1.713-2.04 5.004-3.424 8.772-3.424m.001 13.295c-3.768 0-7.06-1.381-8.768-3.425a9.36 9.36 0 0 0 3.394 4.547A9.24 9.24 0 0 0 12.33 21a9.24 9.24 0 0 0 5.377-1.729 9.36 9.36 0 0 0 3.393-4.547c-1.712 2.044-5.003 3.425-8.772 3.425Z"></path></svg></span> Notebook d'exercices</a></td>
+<td>Exercices de révision des bases du langage Python.</td>
+</tr>
+<tr>
+<td><a href="exercices/">Plus d'exercices</a></td>
+<td>D'autres exercices de révision.</td>
+</tr>
+</tbody>
+</table></div>
 
 
 
@@ -5161,7 +4857,7 @@ Vous utiliserez la <strong>propriété</strong> <code>text-decoration</code>, qu
 
 
                 
-<script src="../../../pyodide-mkdocs/ide.js"></script> 
+<script src="../../pyodide-mkdocs/ide.js"></script> 
 
               </article>
             </div>
@@ -5200,18 +4896,18 @@ Vous utiliserez la <strong>propriété</strong> <code>text-decoration</code>, qu
     </div>
     
     
-    <script id="__config" type="application/json">{"base": "../../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["announce.dismiss", "content.action.edit", "content.action.view", "content.code.annotate", "content.code.copy", "content.tooltips", "navigation.indexes", "navigation.tabs", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
       
-        <script src="../../../javascripts/mathjax.js"></script>
+        <script src="../../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
         <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
       
-        <script src="../../../js/open_in_new_tab.js"></script>
+        <script src="../../js/open_in_new_tab.js"></script>
       
     
   </body>
