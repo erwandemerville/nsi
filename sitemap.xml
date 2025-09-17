@@ -61,6 +61,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://nsi.erwandemerville.fr/premiere/bases_python/CORR_exercices_introduction/</loc>
+         <lastmod>2025-09-17</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://nsi.erwandemerville.fr/premiere/bases_python/chassetresor/</loc>
          <lastmod>2025-09-17</lastmod>
          <changefreq>daily</changefreq>
