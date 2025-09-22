@@ -11,6 +11,10 @@
         <link rel="canonical" href="https://nsi.erwandemerville.fr/terminale/poo/preliminaire/">
       
       
+        <link rel="prev" href="../">
+      
+      
+        <link rel="next" href="../cours/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -268,10 +272,12 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
+      <li class="md-tabs__item md-tabs__item--active">
         <a href="../../" class="md-tabs__link">
           
   
@@ -1073,6 +1079,8 @@
       
   
   
+    
+  
   
   
     
@@ -1088,17 +1096,22 @@
       
         
       
-    
-    
-      
+        
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           
@@ -1114,13 +1127,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             Terminale
@@ -1476,6 +1489,195 @@
 
               
             
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" checked>
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Programmation orientée objet
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Programmation orientée objet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Activité d'introduction
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pokemon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP - Un jeu Pokémon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tamagotchi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP Tamagotchi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -1572,7 +1774,7 @@ Après un intervalle de temps <span class="arithmatex">\(dt\)</span>, la <strong
 </ul>
 <p>Pour représenter le <strong>projectile</strong>, nous allons utiliser un <strong>nouveau type de données</strong> : un <mark><strong>objet</strong></mark>.</p>
 <p>Pour créer un <strong>objet</strong> représentant un <strong>projectile</strong>, il faut d’abord définir une <mark><strong>classe</strong></mark>, que l’on appellera ici <code>Projectile</code>.</p>
-<p>La fonction <code>Projectile()</code> <strong>renverra</strong> alors un <strong>nouvel objet</strong> de type <code>Projectile</code>, qui est comme une coquille vide.<br>
+<p>L'appel à la fonction <code>Projectile()</code> <strong>renverra</strong> alors un <strong>nouvel objet</strong> de type <code>Projectile</code>, qui est comme une coquille vide.<br>
 On peut ensuite « remplir » cette coquille avec des <mark><strong>attributs</strong></mark> qui représentent l’<strong>état du projectile</strong>, ici <code>x</code>, <code>y</code>, <code>vx</code> et <code>vy</code>, auxquels on accède par la <strong>notation pointée</strong> :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">class</span> <span class="nc">Projectile</span><span class="p">:</span>  <span class="c1"># déclarer une classe</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="k">pass</span>

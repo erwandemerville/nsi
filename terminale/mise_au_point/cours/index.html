@@ -1096,6 +1096,8 @@
       
         
       
+        
+      
     
     
       
@@ -1720,6 +1722,183 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_5" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../poo/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Programmation orientée objet
+  </span>
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_5" id="__nav_3_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_5">
+            <span class="md-nav__icon md-icon"></span>
+            Programmation orientée objet
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../poo/preliminaire/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Activité d'introduction
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../poo/cours/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cours
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../poo/pokemon/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP - Un jeu Pokémon
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../poo/exercices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Exercices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../poo/tamagotchi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    TP Tamagotchi
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -2109,33 +2288,37 @@
 <h3 id="deceler-lorigine-dun-bug">Déceler l'origine d'un bug<a class="headerlink" href="#deceler-lorigine-dun-bug" title="Permanent link">¶</a></h3>
 <p>Pour comprendre la cause d’un <strong>bug</strong>, il faut d'abord comprendre comment s’est déroulée l’<strong>exécution du programme</strong> qui a amené au bug. Il est important d'être capable de <strong>simuler à la main</strong> l'exécution du programme.</p>
 <p>Il est également important de connaître, pour chaque fonction, quelles sont les <strong>préconditions</strong>, c'est-à-dire les <strong>conditions sur les paramètres d'entrée</strong>. On peut pour cela définir des <strong>assertions</strong> à l'intérieur de nos fonctions pour vérifier les préconditions, ou <strong>au minimum</strong> définir les préconditions à l'intérieur de la <strong>docstring</strong> de nos fonctions.</p>
-<p>Par exemple, voici une fonction <code>maximum</code> renvoyant le maximum d'une liste de nombres <strong>positifs ou nuls</strong> :</p>
+<p>Par exemple, voici une fonction <code>maximum</code> renvoyant le maximum d'une liste d'<strong>entiers positifs ou nuls</strong> :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">maximum</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">'''</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">"""</span>
 </span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="sd">    Fonction renvoyant le maximum d’une liste.</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="sd">    :CU: la liste doit contenir des nombres exclusivement positifs ou nuls</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="sd">    '''</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>    <span class="n">valeur_max</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="k">for</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="k">if</span> <span class="n">valeur</span> <span class="o">&gt;</span> <span class="n">valeur_max</span><span class="p">:</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>            <span class="n">valeur_max</span> <span class="o">=</span> <span class="n">valeur</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>    <span class="k">return</span> <span class="n">valeur_max</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="sd">    :param liste: (list of int) liste d'entiers</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="sd">    :return: (int) maximum de la liste</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="sd">    :CU: la liste doit contenir des nombres exclusivement positifs ou nuls</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="sd">    """</span>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    <span class="n">valeur_max</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="k">for</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="k">if</span> <span class="n">valeur</span> <span class="o">&gt;</span> <span class="n">valeur_max</span><span class="p">:</span>
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>            <span class="n">valeur_max</span> <span class="o">=</span> <span class="n">valeur</span>
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>    <span class="k">return</span> <span class="n">valeur_max</span>
 </span></code></pre></div>
 <p>Ici, <code>CU</code> signifie "<strong>conditions d'utilisation</strong>" (on y indique les <strong>préconditions</strong> relatives aux <strong>paramètres</strong> d'entrée). Sur la forme de votre docstring, il n'y a pas de règle particulière. On aurait pu écrire <code>assert</code> ou encore <code>préconditions</code> au lieu de <code>CU</code>, par exemple.</p>
 <p>Si l'on ajoute des <strong>assertions</strong> à l'intérieur de notre fonction :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span> <span class="nf">maximum</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">'''</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">"""</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">    Fonction renvoyant le maximum d’une liste.</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">    :CU: la liste doit contenir des nombres exclusivement positifs ou nuls</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">    '''</span>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
-</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">el</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">)</span>
-</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>    <span class="n">valeur_max</span> <span class="o">=</span> <span class="mi">0</span>
-</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="k">for</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>        <span class="k">if</span> <span class="n">valeur</span> <span class="o">&gt;</span> <span class="n">valeur_max</span><span class="p">:</span>
-</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>            <span class="n">valeur_max</span> <span class="o">=</span> <span class="n">valeur</span>
-</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="k">return</span> <span class="n">valeur_max</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">    :param liste: (list of int) liste d'entiers</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="sd">    :return: (int) maximum de la liste</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="sd">    :CU: la liste doit contenir des nombres exclusivement positifs ou nuls</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="sd">    """</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="k">assert</span> <span class="nb">all</span><span class="p">(</span><span class="n">el</span> <span class="o">&gt;=</span> <span class="mi">0</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">)</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">valeur_max</span> <span class="o">=</span> <span class="mi">0</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="k">for</span> <span class="n">valeur</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>        <span class="k">if</span> <span class="n">valeur</span> <span class="o">&gt;</span> <span class="n">valeur_max</span><span class="p">:</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>            <span class="n">valeur_max</span> <span class="o">=</span> <span class="n">valeur</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="k">return</span> <span class="n">valeur_max</span>
 </span></code></pre></div>
 <p>Pour effectuer une analyse <strong>pas-à-pas</strong> de votre code, vous pouvez également utiliser un <strong>débogueur</strong>. De nombreux <strong>IDE</strong> sont dotés d'un <strong>débogueur</strong>, c'est le cas notamment de <strong>Thonny</strong>. (Pour débugguer un script avec <strong>Thonny</strong>, il faut cliquer sur la petite icône à droite de l'icône d'exécution du script courant.)</p>
 <figure>
@@ -2381,12 +2564,12 @@ type de test est de tester les différents cas prévus par le programme.</p>
 <p>On peut effectuer des tests à l'aide d'<strong>assertions</strong>.<br>
 Si rien ne se passe, les tests sont validés.</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">def</span> <span class="nf">trouver_indice</span><span class="p">(</span><span class="n">lst</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="sd">''' Fonction qui renvoie l'indice de l'entier n dans la liste lst.</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="w">    </span><span class="sd">""" Fonction qui renvoie l'indice de l'entier n dans la liste lst.</span>
 </span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="sd">    Si l'élément n est présent plusieurs fois, l'indice du premier est renvoyé.</span>
 </span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="sd">    :param lst: (list[int]) Liste d'entiers</span>
 </span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="sd">    :param n: (int) Entier à chercher</span>
 </span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="sd">    :return: (int) si élément trouvé, (None) sinon</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="sd">    '''</span>
+</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a><span class="sd">    """</span>
 </span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
 </span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a>    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)):</span>
 </span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a>        <span class="k">if</span> <span class="n">lst</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">==</span> <span class="n">n</span><span class="p">:</span>
