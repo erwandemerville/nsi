@@ -2027,7 +2027,24 @@ Un joueur peut rejouer s'il fait un <strong>double</strong>.</p>
 </span><span id="__span-17-5"><a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="n">Les</span> <span class="n">faces</span> <span class="n">sont</span> <span class="mi">6</span> <span class="n">et</span> <span class="mi">6</span> <span class="p">:</span> <span class="n">Avancez</span> <span class="n">de</span> <span class="mi">12</span> <span class="n">cases</span><span class="o">.</span>
 </span><span id="__span-17-6"><a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="n">Oups</span> <span class="err">!</span> <span class="n">Encore</span> <span class="n">un</span> <span class="n">double</span><span class="p">,</span> <span class="n">allez</span> <span class="n">en</span> <span class="n">prison</span> <span class="err">!</span>
 </span></code></pre></div>
-</div></div>
+</div>
+<details class="tip">
+<summary>Aide exercice 17 - Code à trous</summary>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a><span class="kn">from</span> <span class="nn">random</span> <span class="kn">import</span> <span class="n">randint</span>
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>
+</span><span id="__span-18-3"><a id="__codelineno-18-3" name="__codelineno-18-3" href="#__codelineno-18-3"></a><span class="n">de1</span> <span class="o">=</span> <span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>  <span class="c1"># simuler un premier lancer de dé</span>
+</span><span id="__span-18-4"><a id="__codelineno-18-4" name="__codelineno-18-4" href="#__codelineno-18-4"></a><span class="n">de2</span> <span class="o">=</span> <span class="o">...</span>            <span class="c1"># simuler un second lancer de dé</span>
+</span><span id="__span-18-5"><a id="__codelineno-18-5" name="__codelineno-18-5" href="#__codelineno-18-5"></a><span class="n">compteur</span> <span class="o">=</span> <span class="mi">0</span>         <span class="c1"># compteur du nombre de doubles, initialisé à 0</span>
+</span><span id="__span-18-6"><a id="__codelineno-18-6" name="__codelineno-18-6" href="#__codelineno-18-6"></a><span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>           <span class="c1"># afficher valeurs des dés et nombre de cases à parcourir</span>
+</span><span id="__span-18-7"><a id="__codelineno-18-7" name="__codelineno-18-7" href="#__codelineno-18-7"></a><span class="k">while</span> <span class="o">...</span> <span class="ow">and</span> <span class="o">...</span><span class="p">:</span>   <span class="c1"># TANT QUE (indiquer les deux conditions à vérifier)</span>
+</span><span id="__span-18-8"><a id="__codelineno-18-8" name="__codelineno-18-8" href="#__codelineno-18-8"></a>    <span class="o">...</span>              <span class="c1"># afficher le message "Il y a un double, rejouez."</span>
+</span><span id="__span-18-9"><a id="__codelineno-18-9" name="__codelineno-18-9" href="#__codelineno-18-9"></a>    <span class="n">de1</span> <span class="o">=</span> <span class="o">...</span>        <span class="c1"># re-simuler un premier lancer de dé</span>
+</span><span id="__span-18-10"><a id="__codelineno-18-10" name="__codelineno-18-10" href="#__codelineno-18-10"></a>    <span class="n">de2</span> <span class="o">=</span> <span class="o">...</span>        <span class="c1"># re-simuler un second lancer de dé</span>
+</span><span id="__span-18-11"><a id="__codelineno-18-11" name="__codelineno-18-11" href="#__codelineno-18-11"></a><span class="c1"># On sort de la boucle</span>
+</span><span id="__span-18-12"><a id="__codelineno-18-12" name="__codelineno-18-12" href="#__codelineno-18-12"></a><span class="k">if</span> <span class="o">...</span><span class="p">:</span>              <span class="c1"># s'il y a eu 3 doubles</span>
+</span><span id="__span-18-13"><a id="__codelineno-18-13" name="__codelineno-18-13" href="#__codelineno-18-13"></a>    <span class="o">...</span>              <span class="c1"># afficher le message "Vous allez en prison !"</span>
+</span></code></pre></div>
+</details></div>
 
 
 
