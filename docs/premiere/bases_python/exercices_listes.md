@@ -1,11 +1,5 @@
 # Exercices sur les listes
 
-!!! warning "Travail à la maison"
-    Pour les exercices à faire à la maison, vous pouvez les faire :
-
-    - soit sur une *feuille*, auquel cas, pensez à ramener votre feuille en classe.
-    - soit sur votre ordinateur avec **Thonny**, auquel cas, rendez vos *scripts Python* `.py` sur **Éléa**, sur la page de rendus intitulée *"Exercices sur les listes"*.
-
 !!! tip "Cours sur les listes"
     Pensez à consulter le [cours sur les listes](listes.md){ target="_blank" } si vous avez besoin d'aide pour faire les exercices suivants.
 

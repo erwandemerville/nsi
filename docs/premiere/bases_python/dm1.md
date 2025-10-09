@@ -30,7 +30,7 @@
     Ici, la valeur retour de l'`input` sera convertie en **nombre entier**. ```
 
     5. L’instruction `if ...` est une instruction conditionnelle.  
-    <span style="color:green">C'est ***vrai***. Les **instructions conditionnelles** permettent d'exécuter des blocs de code seulement **lorsqu'une condition est remplie**. Voir [cette partie du cours](cours.md#les-instructions-de-branchement){ target="_blank" }.</span>
+    <span style="color:green">C'est ***vrai***. Les **instructions conditionnelles** permettent d'exécuter des blocs de code seulement **lorsqu'une condition est remplie**. Voir [cette partie du cours](introduction.md#les-instructions-de-branchement){ target="_blank" }.</span>
 
     6. Avec `for i in range(10)`, la variable `i` prend **9 valeurs**, puisque la dernière est `9`.  
     <span style="color:green">C'est ***faux***. Une boucle `for ... in range(...)`, lorsque le `range` ne prend qu'une seule valeur, commence à l'indice `0` et se termine à l'indice indiqué dans le `range` **moins 1**. Ici, il y a donc **10 valeurs**, de **0** à **9**.</span>

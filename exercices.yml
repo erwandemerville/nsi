@@ -1,0 +1,31 @@
+premiere:
+  bases_python:
+    toc: false
+    chasse_tresor: false
+    fonctions:
+      exo1: false
+      exo2: false
+      exo3: false
+      exo4: false
+    introduction:
+      exo2: true
+      exo3: true
+      exo4: true
+      exo5: true
+      exo6: true
+      exo7: true
+      exo8: true
+      exo9: true
+      exo10: true
+      exo11: true
+      exo12: true
+      exo13: false
+terminale:
+  poo:
+    notebooks: false
+    exo_bac: false
+    pokemon: false
+
+toc_premiere: false
+
+toc_terminale: false

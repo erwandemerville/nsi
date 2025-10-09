@@ -1,0 +1,257 @@
+site_name: Numérique et sciences informatiques
+theme:
+  name: material
+  custom_dir: my_theme_customizations/
+  features:
+    - announce.dismiss
+    - content.action.edit
+    - content.action.view
+    - content.code.annotate
+    - content.code.copy
+    # - content.code.select
+    # - content.tabs.link
+    - content.tooltips
+    # - header.autohide
+    # - navigation.expand
+    # - navigation.footer
+    - navigation.indexes
+    # - navigation.instant
+    # - navigation.prune
+    # - navigation.sections
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    # - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - toc.follow
+    # - toc.integrate
+  palette:
+    # Palette toggle for light mode
+    - scheme: my_theme
+      toggle:
+        icon: material/weather-night
+        name: Passer en mode nuit
+    # Palette toggle for dark mode
+    - scheme: slate
+      primary: blue grey
+      toggle:
+        icon: material/weather-sunny
+        name: Passer en mode jour
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+site_url: https://nsi.erwandemerville.fr/
+copyright: Copyright &copy; 2023 - Erwan Demerville
+nav:
+  - Accueil:
+    - index.md
+  - Première:
+    - premiere/index.md
+    - Le langage Python:
+      - premiere/bases_python/index.md
+      - Cours:
+        - Introduction au Python: premiere/bases_python/introduction.md
+        - Les fonctions en Python: premiere/bases_python/fonctions.md
+        - Les listes Python: premiere/bases_python/listes.md
+        - n-uplets et dictionnaires: premiere/bases_python/n_uplets_dicos.md
+      - Activités:
+        - Exercices d'introduction au Python: premiere/bases_python/exercices_introduction.md
+        - Exercices sur les fonctions: premiere/bases_python/exercices_fonctions.md
+        - Exercices sur les listes: premiere/bases_python/exercices_listes.md
+        - Rappels sur les fonctions: premiere/bases_python/rappels_fonctions.md
+        - Notebooks: premiere/bases_python/notebooks.md
+        - Jeu - Chasse au trésor: premiere/bases_python/chassetresor.md
+        - TP Tamagotchi: premiere/bases_python/tamagotchi.md
+      - Utile:
+        - Découverte de l'IDE Thonny: premiere/bases_python/thonny.md
+    - Représentation des données:
+      - premiere/representation_donnees/index.md
+      - Cours: premiere/representation_donnees/cours.md
+      - Exercices et notebooks : premiere/representation_donnees/exercices.md
+    - Architecture matérielle:
+      - premiere/archi/index.md
+      - Introduction à la logique booléenne: premiere/archi/introduction.md
+      - Fonctions et expressions: premiere/archi/fonctions.md
+      - Les circuits logiques: premiere/archi/circuits.md
+    - Algorithmique:
+      - premiere/algorithmique/index.md
+      - Recherche séquentielle: premiere/algorithmique/rechercheseq.md
+    - Traitement des données en tables:
+      - premiere/traitement_donnees/index.md
+      - Cours: premiere/traitement_donnees/cours.md
+      - Le module Pandas: premiere/traitement_donnees/pandas.md
+    - Interactions Homme-Machine:
+      - premiere/interactions/index.md
+      - Cours HTML et CSS: premiere/interactions/htmlcss.md
+      - Le JavaScript: premiere/interactions/js.md
+      - Modèle client/serveur et HTTP: premiere/interactions/clientserveur.md
+      - Notebooks et exercices: premiere/interactions/exercices.md
+    - Algorithmes gloutons:
+      - premiere/gloutons/index.md
+      - Cours: premiere/gloutons/cours.md
+      - Fiche - Algos gloutons: premiere/gloutons/src/gloutons_eleve.odt
+      - Python - Voyageur de commerce: premiere/gloutons/voyageur_commerce.md
+    - Tris:
+      - premiere/tris/index.md
+      - Activité préliminaire: premiere/tris/activite_preliminaire.md
+      - Tri par sélection: premiere/tris/tri_selection.md
+      - Tri par insertion: premiere/tris/tri_insertion.md
+    - Le module Pyxel:
+      - premiere/pyxel/index.md
+      - Jeu de snake: premiere/pyxel/snake.md
+  - Terminale:
+    - terminale/index.md
+    - Remise à niveau:
+      - terminale/remise_a_niveau/index.md
+      - Notebook d'exercices: https://capytale2.ac-paris.fr/web/c/a12b-4397105
+      - Autres exercices: terminale/remise_a_niveau/exercices.md
+    - Modularité:
+      - terminale/modularite/index.md
+      - Activité - Utilisation d'une API: terminale/modularite/api.md
+      - Gestion de modules: terminale/modularite/modules.md
+    - Mise au point de programmes:
+      - terminale/mise_au_point/index.md
+      - Activité préliminaire: terminale/mise_au_point/preliminaire.md
+      - Cours et exercices: terminale/mise_au_point/cours.md
+      - Activité finale: terminale/mise_au_point/activite_finale.md
+    - Programmation orientée objet:
+      - terminale/poo/index.md
+      - Activité d'introduction: terminale/poo/preliminaire.md
+      - Cours: terminale/poo/cours.md
+      - TP - Un jeu Pokémon: terminale/poo/pokemon.md
+      - Exercices: terminale/poo/exercices.md
+      - TP Tamagotchi: terminale/poo/tamagotchi.md
+    - Récursivité:
+      - terminale/recursivite/index.md
+      - Introduction: terminale/recursivite/introduction.md
+      - Cours: terminale/recursivite/cours.md
+      - Exercices: terminale/recursivite/exercices.md
+    - Listes chaînées:
+      - terminale/listes/index.md
+      - Cours: terminale/listes/cours.md
+      - Exercices: terminale/listes/exercices.md
+    - Piles et files:
+      - terminale/pilesfiles/index.md
+      - Cours: terminale/pilesfiles/cours.md
+    - Arbres:
+      - terminale/arbres/index.md
+      - Cours:
+        - Définitions et vocabulaire: terminale/arbres/vocabulaire.md
+        - Parcours d'arbres binaires: terminale/arbres/parcours.md
+        - Type abstrait "Arbre binaire": terminale/arbres/type_abstrait.md
+        - Arbres binaires de recherche: terminale/arbres/abr.md
+      - Activités Python:
+        - Implémentation d'un arbre binaire: terminale/arbres/implementation_arbres.md
+        - Implémentation d'un arbre binaire de recherche: terminale/arbres/implementation_abr.md
+      - Exercices:
+        - Vocabulaire sur les arbres: terminale/arbres/exercices_vocabulaire.md
+        - Parcours d'arbres binaires: terminale/arbres/exercices_parcours.md
+        - Arbre binaires de recherche: terminale/arbres/exercices_abr.md
+        - Implémentations d'arbres binaires et ABR: terminale/arbres/implementations_arbres.md
+    - Protocoles de routage:
+      - terminale/routage/index.md
+      - Cours: terminale/routage/cours.md
+      - Exercices: terminale/routage/exercices.md
+      - TP Filius: terminale/routage/tp_filius.md
+    - Recherche textuelle:
+      - terminale/recherche_textuelle/index.md
+      - TP d'introduction: terminale/recherche_textuelle/tp_intro.md
+      - Cours: terminale/recherche_textuelle/cours.md
+    - Bases de données:
+      - terminale/bdd/index.md
+      - Introduction aux bdd: terminale/bdd/introduction.md
+      - Modèle relationnel: terminale/bdd/modele_relationnel.md
+      - Le langage SQL: terminale/bdd/sql.md
+      - Activité - Une base de films: terminale/bdd/src/activite_movies.zip
+      - Entraînement - Extrait sujet de bac: terminale/bdd/src/extrait_bac.pdf
+    - Diviser pour régner:
+      - terminale/diviserregner/index.md
+      - Cours: terminale/diviserregner/cours.md
+      - Notebook - Exercices: https://capytale2.ac-paris.fr/web/c/ebe4-6210253
+    - Graphes:
+      - terminale/graphes/index.md
+      - Introduction aux graphes: terminale/graphes/cours.md
+      - Implémentation en Python: terminale/graphes/implementation.md
+      - Exercices: terminale/graphes/exercices.md
+    - Processus et ordonnancement:
+      - terminale/processus/index.md
+      - TD/TP découverte: terminale/processus/TDTP.md
+      - Sujet de bac: terminale/processus/sujet_bac.md
+    - Programmation dynamique:
+      - terminale/progdyn/index.md
+      - Cours: terminale/progdyn/cours.md
+      - Exercices: terminale/progdyn/exercices.md
+    - Chiffrement:
+      - terminale/chiffrement/index.md
+      - Cours: terminale/chiffrement/cours.md
+    - Épreuve pratique de NSI:
+      - terminale/epreuve_pratique/index.md
+      - Sujets d'entraînement: terminale/epreuve_pratique/entrainement.md
+      - Banque de sujets: https://sujets.examens-concours.gouv.fr/delos/public/bgt/nsi
+      - Corrections des sujets: https://glassus.github.io/terminale_nsi/T6_6_Epreuve_pratique/BNS_2025/
+    - Sujets BAC:
+      - https://www.math93.com/annales-du-bac/bac-specialite-nsi/annales-nsi-2025/nsi-ecrit-2025.html
+    - Le « Grand oral »: 
+      - terminale/grand_oral/index.md
+    - Sujet e3c:
+      - terminale/e3c/index.md
+    - Entraînement Python:
+      - terminale/entrainement_python/index.md
+    - Le module Pyxel:
+      - terminale/pyxel/index.md
+      - Jeu de snake: terminale/pyxel/snake.md
+      - Projet jeu vidéo: terminale/pyxel/projetjv.md
+      - Réalisations: terminale/pyxel/realisations.md
+  - Rendu des travaux: rendus.md
+  - Partage de fichiers: https://bit.ly/nsipartage
+
+markdown_extensions:
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - toc:
+      title: Sur cette page
+      permalink: true
+  - admonition
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+  - pymdownx.details
+  - pymdownx.critic
+  - pymdownx.caret
+  - pymdownx.keys
+  - pymdownx.mark
+  - pymdownx.tilde
+  - attr_list
+  - md_in_html
+
+plugins:
+    - search
+    - macros
+    - mkdocs-video
+    - open-in-new-tab
+
+extra_css:
+  - stylesheets/extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+

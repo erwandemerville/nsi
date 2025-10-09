@@ -1,5 +1,5 @@
 ''' Programme qui calcule le nombre suivant celui
-donné par l'utilisateur. '''
+donné par un utilisateur. '''
 
 s = input()
 a = int(s)

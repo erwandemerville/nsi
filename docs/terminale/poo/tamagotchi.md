@@ -6,19 +6,19 @@ Voici un exemple du résultat attendu :
 
 ```
 Bienvenue dans le jeu Tamagotchi !
-Quel est le nom de ton Tamagotchi ? >> Pikachu
+Quel est le nom de ton Tamagotchi ? >> Titi
 
-État de Pikachu : humeur = 5, énergie = 5
+État de Titi : humeur = 5, énergie = 5
 
 Que veux-tu faire ? (jouer / manger / quitter) >> jouer
-Tu as joué avec Pikachu !
+Tu as joué avec Titi !
 
-État de Pikachu : humeur = 7, énergie = 4
+État de Titi : humeur = 7, énergie = 4
 
 Que veux-tu faire ? >> manger
-Tu as nourri Pikachu !
+Tu as nourri Titi !
 
-État de Pikachu : humeur = 7, énergie = 7
+État de Titi : humeur = 7, énergie = 7
 ...
 ```
 

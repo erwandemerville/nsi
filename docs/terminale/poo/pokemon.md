@@ -12,6 +12,7 @@ En particulier, on s'inspirera du jeu **Pokémon**.
 !!! success "À télécharger"
     - [tp_pokemons.zip](exercices/tp_pokemons.zip){ target="_blank" } - Fichiers **Python** à compléter.
 
+{% if exercices.terminale.poo.pokemon %}
 !!! tip "Correction + Un petit défi"
     Voici la **correction** de ce TP :
 
@@ -33,6 +34,7 @@ En particulier, on s'inspirera du jeu **Pokémon**.
     ```python
     degats_infliges = (puissance_attaque * attaquant.get_attaque()) / (cible.get_defense() * 2.4 + 1)
     ```
+{% endif %}
 
 Ce projet est constitué des fichiers suivants :
 

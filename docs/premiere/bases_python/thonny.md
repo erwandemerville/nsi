@@ -51,7 +51,7 @@ Tout au long de l'année, nous utiliserons un **IDE** (pour *integrated developm
     $D \leftarrow \frac{A + 6}{B + 3}$  
     $E \leftarrow C - D$
 
-    Transcrivez cet algorithme sous la forme d'**instructions Python**, en utilisant des variables nommées `a`, `b`, `c`, `d` et `e`, et saisissez-les dans la **zone de scripts** de Thonny. Enregistrez le script sous le nom `calcul.py`, puis **exécutez le script**.
+    Transcrivez cet algorithme sous la forme d'**instructions Python**, en utilisant des variables nommées `a`, `b`, `c`, `d` et `e`, et saisissez-les dans la **zone de script** de Thonny. Enregistrez le script sous le nom `calcul.py`, puis **exécutez le script**.
 
     Observez la **fenêtre des variables**, quelle est valeur associée à la variable `e` ?  
     Vous pouvez également voir le contenu de la variable en saisissant simplement `e` dans la **console** de Thonny. En effet, lorsque vous exécutez un script, vous pouvez exécuter des instructions dans la console en utilisant les variables définies suite à l'exécution du script.

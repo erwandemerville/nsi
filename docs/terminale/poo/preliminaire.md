@@ -13,7 +13,7 @@ Pour représenter le **projectile**, nous allons utiliser un **nouveau type de d
 
 Pour créer un **objet** représentant un **projectile**, il faut d’abord définir une ==**classe**==, que l’on appellera ici `Projectile`.
 
-La fonction `Projectile()` **renverra** alors un **nouvel objet** de type `Projectile`, qui est comme une coquille vide.  
+L'appel à la fonction `Projectile()` **renverra** alors un **nouvel objet** de type `Projectile`, qui est comme une coquille vide.  
 On peut ensuite « remplir » cette coquille avec des ==**attributs**== qui représentent l’**état du projectile**, ici `x`, `y`, `vx` et `vy`, auxquels on accède par la **notation pointée** :
 
 ```python

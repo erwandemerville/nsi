@@ -42,6 +42,7 @@ Voici quelques exercices portant sur les **fonctions** en *Python*.
         - les paramètres d'entrée et leur type,
         - la valeur de retour et son type.
 
+{% if exercices.premiere.bases_python.fonctions.exo1 %}
 ??? tip "Correction - Exercice 1"
     La fonction `est_pair` peut être écrite naïvement de la manière suivante :
 
@@ -102,6 +103,7 @@ Voici quelques exercices portant sur les **fonctions** en *Python*.
             somme += x  # ajouter x à la somme
         return somme  # renvoyer la somme des x
     ```
+{% endif %}
 
 !!! note "Exercice 2"
     Dans un nouveau **script Python**, écrire une fonction `compter_voyelles` qui reçoit une **chaîne de caractères** `mot` en entrée et **renvoie** le **nombre de voyelles** ("a", "e", "i", "o", "u", "y") présentes dans ce mot.
@@ -115,6 +117,7 @@ Voici quelques exercices portant sur les **fonctions** en *Python*.
 
     Ensuite, **en-dessous de la fonction**, écrire un **programme** qui demande à l'utilisateur de saisir un **mot**, puis afficher le **nombre de voyelles** de ce mot en faisant appel à `compter_voyelles`.
 
+{% if exercices.premiere.bases_python.fonctions.exo2 %}
 ??? tip "Correction - Exercice 2"
     Pour **compter** le **nombre de voyelles**, il faut **parcourir chaque caractère** du **mot** donné en **entrée** et **incrémenter un compteur** à chaque fois qu'une voyelle est trouvée.
 
@@ -138,6 +141,7 @@ Voici quelques exercices portant sur les **fonctions** en *Python*.
     nb_voyelles = compter_voyelles(m)  # calculer le nombre de voyelles du mot
     print("Le nombre de voyelles est : ", nb_voyelles)  # afficher le résultat obtenu
     ```
+{% endif %}
 
 !!! note "Exercice 3"
     Écrire une fonction `factorielle` qui reçoit **un nombre entier** `nombre` en **entrée** et **renvoie** la **factorielle** de ce nombre. [Cliquez ici](https://fr.wikipedia.org/wiki/Factorielle) pour un rappel de ce qu'est une **factorielle**.
@@ -151,6 +155,7 @@ Voici quelques exercices portant sur les **fonctions** en *Python*.
 
     Ensuite, **en-dessous de la fonction**, écrire un **programme** qui demande à l'utilisateur de saisir un **nombre entier**, puis qui affiche la **factorielle** de ce nombre en appelant `factorielle`.
 
+{% if exercices.premiere.bases_python.fonctions.exo3 %}
 ??? tip "Correction - Exercice 3"
     On peut écrire la **fonction** `factorielle` de la manière suivante :
 
@@ -172,6 +177,7 @@ Voici quelques exercices portant sur les **fonctions** en *Python*.
     nb = int(input("Saisissez un nombre entier positif : "))  # demander de saisir un entier positif
     print(factorielle(nb))  # appeler factorielle avec l'argument nb, et afficher la valeur renvoyée
     ```
+{% endif %}
 
 !!! note "Exercice 4"
     Écrire une fonction `trouver_le_nombre`, qui prend un **entier** `nombre` entre `1` et `100` en **entrée**, et qui :

@@ -28,10 +28,6 @@ $42 = 32 + 8 + 2$
     - $0100 1010_2$
     - $1111 0101_2$
 
-??? tip "Correction"
-    - $0100 1010_2 = 2^1 + 2^3 + 2^6 = 2 + 8 + 64 = 74_{10}$
-    - $1111 0101_2 = 2^0 + 2^2 + 2^4 + 2^5 + 2^6 + 2^7 = 1 + 2 + 16 + 32 + 64 + 128 = 243_{10}$
-
 Le **codage binaire** d'un nombre décimal consiste à passer de la **base 10** (base *décimale*) à la **base 2**, mais il existe d'autres bases comme la **base 8** (base *octale*), ou la **base 16** (base *hexadécimale*).
 
 !!! tip "Chiffres autorisés selon la base X de représentation"

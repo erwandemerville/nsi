@@ -107,14 +107,16 @@ Pour comprendre la cause d’un **bug**, il faut d'abord comprendre comment s’
 
 Il est également important de connaître, pour chaque fonction, quelles sont les **préconditions**, c'est-à-dire les **conditions sur les paramètres d'entrée**. On peut pour cela définir des **assertions** à l'intérieur de nos fonctions pour vérifier les préconditions, ou **au minimum** définir les préconditions à l'intérieur de la **docstring** de nos fonctions.
 
-Par exemple, voici une fonction `maximum` renvoyant le maximum d'une liste de nombres **positifs ou nuls** :
+Par exemple, voici une fonction `maximum` renvoyant le maximum d'une liste d'**entiers positifs ou nuls** :
 
 ```python
 def maximum(liste):
-    '''
+    """
     Fonction renvoyant le maximum d’une liste.
+    :param liste: (list of int) liste d'entiers
+    :return: (int) maximum de la liste
     :CU: la liste doit contenir des nombres exclusivement positifs ou nuls
-    '''
+    """
     
     valeur_max = 0
     for valeur in liste:
@@ -129,10 +131,12 @@ Si l'on ajoute des **assertions** à l'intérieur de notre fonction :
 
 ```python
 def maximum(liste):
-    '''
+    """
     Fonction renvoyant le maximum d’une liste.
+    :param liste: (list of int) liste d'entiers
+    :return: (int) maximum de la liste
     :CU: la liste doit contenir des nombres exclusivement positifs ou nuls
-    '''
+    """
 
     assert all(el >= 0 for el in liste)
     valeur_max = 0
@@ -432,12 +436,12 @@ Si rien ne se passe, les tests sont validés.
 
 ```python
 def trouver_indice(lst, n):
-    ''' Fonction qui renvoie l'indice de l'entier n dans la liste lst.
+    """ Fonction qui renvoie l'indice de l'entier n dans la liste lst.
     Si l'élément n est présent plusieurs fois, l'indice du premier est renvoyé.
     :param lst: (list[int]) Liste d'entiers
     :param n: (int) Entier à chercher
     :return: (int) si élément trouvé, (None) sinon
-    '''
+    """
     
     for i in range(len(lst)):
         if lst[i] == n:

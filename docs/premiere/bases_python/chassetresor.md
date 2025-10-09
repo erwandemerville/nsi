@@ -23,6 +23,7 @@
     [chasse_au_tresor.py](scripts/chasse_au_tresor.py)
     </center>
 
+{% if exercices.premiere.bases_python.chasse_tresor %}
 ??? tip "Corrigé"
     Voici le **corrigé détaillé** de ce programme :
 
@@ -34,6 +35,7 @@
     On a ajouté une **fonction** `desactiver_boutons_cliques()` qui permet de désactiver les boutons sur lesquels le joueur a cliqué (et ainsi éviter qu'il reclique dessus).
 
     En cas de difficultés de compréhension de certaines parties du programme, n'hésitez pas à me contacter.
+{% endif %}
 
 !!! info "Grille de jeu et coordonnées"
     La **grille de jeu** est **carrée**, il y a donc **autant** de **lignes** que de **colonnes**.  

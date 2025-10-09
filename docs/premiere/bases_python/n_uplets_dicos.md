@@ -1,4 +1,4 @@
-# Préliminaire : Les n-uplets et dictionnaires
+# Les n-uplets et dictionnaires
 
 Jusqu'à maintenant, on a vu comment utiliser les **listes Python** permettant de **stocker** des **séquences d'éléments** (de même nature ou non).
 
@@ -63,6 +63,24 @@ individus = [("Alice", 7, 1, 1941), ("Bob", 9, 12, 1909), ("Charles", 14, 12, 19
 On peut maintenant **parcourir cette liste de tuples** de différentes manières :
 
 {{ IDE('scripts/33.py') }}
+
+### Parcours de chaînes de caractères
+
+Les **chaînes de caractères** offrent une ressemblance avec les **tuples**, dans le sens où l'on peut **lire les caractères** de la même manière que l'on **lit les éléments d'un tuple**, mais on ne peut pas **modifier une chaîne de caractères**.
+
+En particulier, on peut obtenir la **taille d’une chaîne de caractères**, c’est-à-dire son **nombre de caractères**, avec l’opération `len` et **accéder au i-ième caractère** d’une chaîne avec les **crochets** :
+
+{{ IDEv('scripts/28.py') }}
+
+Voici deux manières dont on peut **parcourir une chaîne de caractères** pour **afficher chaque caractère un à un**, le principe est le même que pour les **listes** et les **tuples** :
+
+En récupérant directement **chaque élément** à **chaque itération** d'une **boucle** :
+
+{{ IDEv('scripts/26.py') }}
+
+En récupérant chaque **élément** par son **indice** (la variable `i` de la **boucle** prendra les valeurs `0`, puis `1`, puis `2`, etc. jusqu'à l'indice du dernier élément):
+
+{{ IDEv('scripts/27.py') }}
 
 ## Les dictionnaires
 
@@ -222,7 +240,7 @@ Enfin, tout comme pour les **listes**, il est possible de **construire un dictio
 
     On a ici utilisé des *f-strings* pour gérer les **affichages**.
 
-    Pour des rappels concernant les différentes façons d'utiliser la fonction `print`, vous pouvez [consulter cette page de cours](../bases_python/cours.md#affichage-sur-la-sortie-standard).
+    Pour des rappels concernant les différentes façons d'utiliser la fonction `print`, vous pouvez [consulter cette page de cours](../bases_python/introduction.md#affichage-sur-la-sortie-standard).
 
 ## Exercices - Dictionnaires
 

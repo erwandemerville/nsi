@@ -1,4 +1,5 @@
 # Debut copie
+import yaml
 import os
 import hashlib
 from math import log10
@@ -13,6 +14,13 @@ MAX_EMPTY_IDE = 10**8
 
 def define_env(env):
     "Hook function"
+
+    # Charger le fichier exercices.yml
+    with open("exercices.yml", "r", encoding="utf-8") as f:
+        exercices = yaml.safe_load(f)
+
+    # Injecter dans l'environnement des macros
+    env.variables["exercices"] = exercices
 
     @env.macro
     def script(lang: str, nom: str) -> str:

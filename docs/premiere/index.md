@@ -2,8 +2,9 @@
 
 | Liste des contenus                           | Description                         |
 | -------------------------------------------- | ----------------------------------- |
-| [Le langage Python](bases_python/index.md) | Les bases du langage Python. |
+| [Le langage Python](bases_python/index.md) | Les bases de la programmation en langage Python. |
 | [Représentation des données en machine](representation_donnees/index.md) | Représentation des entiers, réels, encodage du texte... |
+{% if exercices.toc_premiere %}
 | [Architecture matérielle](archi/index.md) | Circuits logiques, algèbre de Boole, modèle de Von Neumann... |
 | [Algorithmique](algorithmique/index.md) | Algorithmes et leur implémentation en langage Python (*recherche séquentielle*, *recherche dichotomique*, *algorithmes de tri*...) |
 | [Traitement des données en tables](traitement_donnees/index.md) | Traitement des données en tables. |
@@ -11,3 +12,4 @@
 | [Les algorithmes gloutons](gloutons/index.md) | Cours et exercices sur les **algorithmes gloutons**. |
 | [Algorithmes de tri](tris/index.md) | Tri par sélection et par insertion. |
 | [:video_game: Le module Pyxel](pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |
+{% endif %}

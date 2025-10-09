@@ -1,3 +1,6 @@
+??? quote "Version PDF de ce cours"
+    [Télécharger le cours en PDF](pdf/introduction_python.pdf)
+
 # Introduction à la programmation avec Python
 
 ## Vous avez dit "programme" ?
@@ -52,7 +55,7 @@ Le langage de programmation <u>**Python**</u> permet d'interagir avec la **machi
 Le mode interactif s'apparente à une **calculatrice**.  
 Les **trois chevrons** `>>>` indiquent que l'interpréteur **attend vos instructions**.
 
-Par exemple, si vous saisissez `1 + 2` après les **chevrons** et que vous appuyez sur la touche **Entrée**, l'**interpréteur** effectuera le calcul et affichera le résultat :
+Par exemple, si vous saisissez `1 + 2` après les **chevrons** et que vous appuyez sur la touche ++enter++, l'**interpréteur** effectuera le calcul et affichera le résultat :
 
 ```python
 >>> 1 + 2
@@ -63,6 +66,32 @@ Par exemple, si vous saisissez `1 + 2` après les **chevrons** et que vous appuy
     Saisissez dans l'interpréteur **Python** ci-dessous plusieurs expressions en utilisant les opérateurs `+` (*addition*), `-` (*soustraction*), `*` (*multiplication*) et `/` (*division*).
 
     {{ terminal() }}
+
+#### Les types de base en Python
+
+!!! abstract ""
+    Le langage Python intègre initialement plusieurs ==**types de données**==, que nous allons régulièrement utiliser.
+
+    | Type    | Explication                                                  |
+    | ------- | ------------------------------------------------------------ |
+    | `int`   | Permet de définir un **nombre entier relatif**, par exemple `0`, `5`, `-5`, `13402`... |
+    | `float` | Permet de définir un **nombre à virgule flottante** (ou *nombre flottant*), cela permet de représenter les **nombres réels**, comme par exemple `12.05`, `6.33333`, `42.0`... |
+    | `str`   | Permet de définir une **chaîne de caractères**, ce qui permet de représenter des **caractères** (par exemple `'L'`, `'e'`, `'!'`, `'5'`, `' '`), des **mots** (par exemple `"bonjour"`, `"Salut"`) ou encore des **phrases** (par exemple `"Salut tout le monde !"`). Les **chaînes de caractères** sont reconnaissables car elles **commencent et finissent** par un **apostrophe ou un guillemet**. |
+    | `bool`  | Permet de définir un **booléen**. Il n'y a que **deux valeurs booléennes** possibles : `True` (vrai) et `False` (faux). Voir la partie sur [Comparaisons, booléens, tests](#comparaisons-booleens-tests) pour en savoir plus. |
+
+Les nombres **entiers** peuvent être **de taille arbitraire**, et ne sont limités que par la **mémoire disponible** de la machine pour les stocker.  
+Les **nombres flottants** quant à eux ont **une capacité limitée**, et les nombres décimaux très grands et très petits ne sont **pas représentables**. (On reviendra plus tard sur la **représentation des nombres réels en machine**).
+
+**<u>Important</u>** : En **Python**, la virgule séparant la partie **entière** de la partie **décimale** doit être représentée par **un point**, auquel cas vous pourrez observer des comportements étranges de l'interpréteur.
+
+!!! abstract "Opérations sur les chaînes de caractères"
+    Une opération bien utile sur les **chaînes de caractères** est l'opération de **concaténation**. Cela permet de **créer une nouvelle chaîne** en combinant **deux chaînes de caractères** à l'aide du symbole `+`, par exemple (**exécutez** le script suivant pour observer le résultat de la concaténation de `a` et `b`):
+
+    {{ IDEv('scripts/29.py') }}
+
+    On peut également **chercher** un **caractère** ou même un **mot** dans une **chaîne de caractères** avec le mot-clé `in` :
+
+    {{ IDEv('scripts/30.py') }}
 
 #### Arithmétique
 
@@ -105,13 +134,6 @@ Par exemple :
     ZeroDivisionError: division by zero
     ```
 
-Les **nombres de Python** peuvent être **des nombres entiers relatifs**, de type `int`, et des **nombres décimaux**, que l'on appelle **flottants**, de type `float`.
-
-Les nombres **entiers** peuvent être **de taille arbitraire**, et ne sont limités que par la **mémoire disponible** de la machine pour les stocker.  
-Les **nombres flottants** quant à eux ont **une capacité limitée**, et les nombres décimaux très grands et très petits ne sont **pas représentables**. (On reviendra plus tard sur la **représentation des nombres réels en machine**).
-
-**<u>Important</u>** : En **Python**, la virgule séparant la partie **entière** de la partie **décimale** doit être représentée par **un point**, auquel cas vous pourrez observer des comportements étranges de l'interpréteur.
-
 !!! abstract "Différentes façons de diviser"
 
     Lorsque l'on utilise l'opérateur de division classique de Python `/`, on obtient un **nombre flottant** (type `float`) :
@@ -123,8 +145,8 @@ Les **nombres flottants** quant à eux ont **une capacité limitée**, et les no
     <class 'float'>
     ```
 
-    !!! tip "Les types de base"
-        Vous pouvez voir ci-dessus apparaître le mot-clé `class`. Les **classes** sont une notion qui n'est abordée qu'en **terminale**, mais en gros, il faut comprendre que tout ce qui est manipulé en Python est **objet**. Il y a des objets de type `int` (les **nombres entiers**), des objets de type `float` (les **nombres flottants**), des objets de type `str` (les **chaînes de caractères**, etc.)
+    !!! tip "Les classes en Python"
+        Vous pouvez voir ci-dessus apparaître le mot-clé `class`. La notion de "classe" n'est abordée qu'en **terminale**, mais pour simplifier, une **classe** permet de définir les **types** qui peuvent être utilisés en Python. Initialement, Python intègre des **classes** qui permettent de définir les **types de base** (`int`, `float`, `str`, etc.), mais il est possible, en créant de **nouvelles classes**, de définir de nouveaux **types d'éléments**, (éléments que l'on appelle également **objets**).
 
         Ici, on a utilisé une **fonction** appelée `type` afin de voir de **quel type** est l'objet qui résulte de l'opération `7 / 2`. (On a ici la confirmation que l'on obtient bien un **flottant**.)
 
@@ -213,16 +235,16 @@ L’instruction `z = x + y` associe la valeur de l’expression située à droit
     Vérifier en utilisant la console de Thonny.  
     Que constatez-vous de particulier sur la valeur contenue dans `x` ?
 
-??? tip "Réponse - À vous de jouer 2 !"
-    Normalement, la console devrait afficher la valeur `11.0`. On constate que l'on obtient ici un nombre **décimal**, et non pas un nombre **entier**. En fait, il existe plusieurs **types de données** que peuvent contenir les variables : les **entiers**, les **flottants** (nombres décimaux), mais également d'autres types de données que l'on verra plus tard, comme les **chaînes de caractères**, les **booléens**...
-
-    Si l'on avait utilisé l'opérateur `//`, c'est-à-dire si l'on avait saisi `z // 2`, on aurait obtenu le **quotient de la division euclidienne** entre les opérandes `z` et `2`, c'est-à-dire l'entier `11`. L'opérateur permettant d'obtenir le **reste d'une division euclidienne** est `%`.
-
 ### Mode programme
 
-Le **mode programme** de **Python** consiste à écrire une **suite d’instructions** dans un **fichier** et à les faire **exécuter** par l’**interpréteur Python**. Cette suite d’instructions s’appelle un **programme** (ou **code source**). Cela permet d'éviter d'avoir à ressaisir à chaque fois les instructions dans le mode interactif. Cela permet de faire la distinction entre le rôle de **programmeur** et celui d’**utilisateur** d’un programme.
+Le **mode programme** de **Python** consiste à écrire une **suite d’instructions** dans un **fichier** (d'extension `.py`) et à le faire **exécuter** par l’**interpréteur Python**. Un tel fichier est appelé ==**programme**== (ou **code source**).
 
-### Affichage sur la sortie standard
+Le **mode programme** permet :
+
+- de pouvoir **ré-exécuter** une **suite d'instructions** sans avoir à les ressaisir une par une dans l'**interpréteur** Python.
+- de faire la **distinction** entre le rôle de **programmeur** et celui d’**utilisateur** d’un programme. Un programme Python peut facilement être exécuté par une personne sans qu'elle n'ait besoin d'en visualiser le code.
+
+## Affichage sur la sortie standard
 
 Contrairement au **mode interactif**, en **mode programme**, les résultats des expressions calculées ne sont plus affichés à l’écran. Il faut utiliser pour ceci une instruction explicite d’affichage. En Python, elle s’appelle `print`. Par exemple :
 
@@ -315,6 +337,80 @@ On peut également passer la valeur de retour d'un `input` à l'intérieur d'un 
 
 !!! warning "Attention au type"
     Le `range` ne prend que des **entiers**. Si vous souhaitez lui passer la valeur de retour d'un `input`, il faut donc convertir cette valeur en valeur entière avec la fonction `int`.
+
+## Les boucles non bornées `while`
+
+Nous avons vu qu'il était possible de créer des **boucles bornées** à l'aide d'instructions utilisant le **mot-clé** `for`. Nous allons voir ici que l'on peut également créer des boucles **non bornées** à l'aide du **mot-clé** `while` (qui signifie *TANT QUE* en français).
+
+Une **boucle non bornée** permet d'exécuter un **bloc d'instructions** plusieurs fois, et de continuer **TANT QUE** une **condition donnée** est **vérifiée**.
+
+La **structure** d'une boucle `while` en Python est la suivante :
+
+```python
+while condition:
+    # Bloc d'instructions à répéter tant que la condition est vraie
+```
+
+La boucle `while` commence par **évaluer la condition** :
+
+- **Si** la **condition** est **vraie**, le **bloc d'instructions** à l'intérieur de la boucle est **exécuté**.
+- Après chaque exécution du bloc, la **condition** est à nouveau **évaluée** :
+    - **Tant que** la **condition** reste **vraie**, la boucle **continue de s'exécuter**.
+    - Dès que la **condition** devient **fausse**, la boucle **s'arrête**.
+
+Voici un premier <u>exemple</u> d'utilisation d'une boucle `while` (cliquez sur le premier bouton, *Lancer*, pour exécuter le programme):
+
+{{ IDEv('scripts/21.py') }}
+
+Dans cet exemple, la boucle `while` est utilisée pour **afficher les nombres de `1` à `5`**.  
+La variable `i` est initialisée à `1`, et la boucle continue **TANT QUE** `i` est **inférieur ou égal** à `5`. À **chaque itération de la boucle**, la valeur de `i` est ici **affichée** (à l'aide du `print`), puis est **incrémentée de `1`** à l'aide de l'instruction `i += 1`. La boucle **s'arrête** lorsque `i` atteint `6`, car **la condition devient fausse**.
+
+Voici un autre <u>exemple</u> un peu plus concret de l'utilisation d'une boucle `while` :
+
+{{ IDE('scripts/22.py') }}
+
+Dans cet exemple, une boucle `while` est utilisée pour **demander à l'utilisateur** (à l'aide de la fonction `input`) de **saisir un mot de passe** jusqu'à **trois essais**.  
+La boucle **continue tant qu'il reste des essais** (tant que `essais_restants > 0`) :
+
+- Si **l'utilisateur saisit le mot de passe correct** (c'est-à-dire lorsque `tentative == mot_de_passe`), la boucle **s'arrête** à l'aide de l'instruction `break`. L'instruction `break` permet de **sortir directement** de la boucle, et évite donc de ré-évaluer sa condition.
+- Sinon, le **nombre d'essais restants** est **décrémenté** (cela signifie que l'on **soustrait 1** à `essais_restants`), et un message est **affiché** (à l'aide de la fonction `print`) pour informer l'utilisateur du **nombre d'essais restants**.
+
+Une fois que l'on est **sorti de la boucle** (ce qui se produit soit si on a rencontré l'instruction `break`, soit si la **condition** de la boucle est **fausse**), on **affiche** un message d'accès refusé si le nombre maximal d'essais a été atteint.
+
+!!! warning "Attention aux boucles infinies !"
+    Dans une boucle non bornée `while`, contrairement à une boucle bornée `for`, il y a un risque de créer **boucle infinie**, c'est-à-dire une boucle dont la **condition n'est jamais évaluée à `False`**. Par exemple :
+
+    ```python
+    i = 1
+    while i < 5:
+        print(i)
+    ```
+
+    Ici, on n'a pas écrit d'instruction permettant d'**incrémenter** la variable `i`, donc la **condition** `i < 5` sera **toujours vraie**. Le programme ne s'arrêtera donc **jamais**.
+
+!!! note "À vous de jouer !"
+    Écrivez un **programme** en Python qui **demande à l'utilisateur** d'entrer un **nombre entier positif `n`**. Ensuite, utilisez une **boucle** `while` pour **calculer** la **somme de tous les entiers de `1` à `n`**. **Affichez** ensuite le **résultat**.
+
+    Voici un exemple d'exécution du programme :
+
+    ```yaml
+    Entrez un nombre entier positif : 5
+    La somme des entiers de 1 à 5 est : 15
+    ```
+
+    ??? tip "Cliquez ici pour afficher l'aide"
+        Voici comment procéder pour réaliser ce programme :
+
+        1. Utilisez la fonction `input` pour demander à l'utilisateur de **saisir** un **nombre entier positif**, vous stockerez la valeur saisie dans une **variable** que vous pourrez appeler `n`. N'oubliez de **convertir** cette valeur en **entier** à l'aide de la fonction `int`.
+        2. Créez une **variable** pour **accumuler la somme totale**, que vous **initialiserez** à `0` avant d'entrer dans la boucle.
+        3. Créez une **variable** que vous appelerez `i` par exemple, qui prendra chaque valeur de 1 à `n`.
+        4. Utilisez une boucle `while` qui continue **tant que** `i` est **inférieur ou égal à** `n`, pour **ajouter les entiers** de `1` à `n` à la **somme totale**.
+        5. N'oubliez pas d'**incrémenter la valeur de** `i` à **chaque itération de la boucle**.
+        6. Enfin, après la boucle, **affichez le résultat** à l'aide de la fonction `print`.
+
+    Vous pouvez réaliser ce programme sur ***Thonny*** ou dans l'**IDE ci-dessous** (vous pourrez *télécharger* votre programme en cliquant sur le *deuxième bouton* pour le conserver.)
+
+    {{ IDE() }}
 
 ## Comparaisons, booléens, tests
 
@@ -523,158 +619,3 @@ Les **opérateurs logiques** `and`, `or` et `not` permettent de combiner des **e
 | False | True    |
 
 Ces tables montrent que l'opérateur `and` ne renvoie `True` que si **les deux opérandes** sont **vraies**, tandis que l'opérateur `or` renvoie `True` si **au moins une** des opérandes est **vraie**. L'opérateur `not`, quant à lui, inverse la valeur booléenne.
-
-## Les fonctions
-
-Vous avez jusqu'ici utilisé plusieurs **fonctions natives de Python**, comme `print`, `input`, `int` (la fonction, pas le type), `range`...
-
-Les **fonctions** permettent de créer des **fragments de code réutilisables**. Cela va nous permettre d'aller beaucoup plus loin dans la conception de nos programmes, en créant des fonctions pour effectuer certaines tâches autant de fois qu'on le souhaite, et pour différentes valeurs d'entrée.
-
-Pour définir une fonction, on utilise le **mot-clé** `def`, suivi du **nom de la fonction**, suivi de `:`, puis vient ensuite (à la ligne, avec une **identation**) le bloc d'instructions à exécuter dans la fonction.
-
-!!! note "Une fonction = une tâche"
-    Il est fortement conseillé, pour la clarté du code, de faire en sorte qu'**une fonction ne représente qu'une seule tâche**.
-
-Par exemple, voici une fonction qui **prend deux nombres entiers** et **renvoie la somme de ces deux nombres** :
-
-{{ IDEv('scripts/14.py') }}
-
-Pour **tester cette fonction**, vous pouvez l'**appeler dans l'interpréteur**  (en saisissant l'instruction d'appel après les trois chevrons `>>>` et en appuyant sur la touche `Entrée`) après avoir exécuté le programme. Par exemple, **entrez l'instruction** `somme(3,5)` dans l'interpréteur ci-dessus après exécution du programme pour observer le résultat.
-
-Vous pouvez également **appeller** cette **fonction** directement dans le **programme**, mais pour afficher la valeur renvoyée, il faudra ajouter un `print` :
-
-{{ IDEv('scripts/16.py') }}
-
-La **valeur renvoyée par la fonction** est indiquée avec le **mot-clé** `return`. Lorsque le `return` est rencontré, on sort de la fonction. Ainsi, si vous rajoutez des instructions **après** ce `return`, elles ne seront pas exécutées, exemple :
-
-{{ IDEv('scripts/15.py') }}
-
-### Fonctions sans paramètres
-
-Une fonction peut **ne pas avoir de paramètres**. Par exemple, voici une fonction qui renvoie une valeur aléatoire entre 1 et 100, en appelant la fonction `randint` du module `random` :
-
-{{ IDEv('scripts/18.py') }}
-
-Ici, on appelle la fonction sans lui fournir de valeurs, mais la fonction appelée renvoie bien une valeur (le mot-clé `return` est bien présent).
-
-### Fonctions sans valeur de retour : procédures
-
-Il est également possible de créer une **fonction** qui ne contient **pas de valeur de retour** (pas de `return`). Par exemple :
-
-{{ IDE('scripts/19.py') }}
-
-On crée ici une fonction qui contient un paramètre `message`, et qui **affiche** avec `print` ce message, mais ne **renvoie** rien. La fonction est ensuite appelée, avec le message `"HOURAAAAAAAAAAA !!!"` qui est donc affiché.
-
-Les fonctions qui ne **renvoient rien** peuvent être appelées **==procédures==**. Toutefois, en **Python**, il n'y a techniquement pas de distinction entre les fonctions et les procédures, contrairement à d'autres langages comme le **Java** par exemple.
-
-### Variables locales et globales
-
-Lorsque vous définissez une **variable à l'intérieur** d'une **fonction**, cette variable n'existe **qu'à l'intérieur de la fonction**. C'est également le cas pour les **paramètres** des fonctions.
-
-Par exemple, dans la fonction ci-dessous, on a créé une **variable** `resultat`. Cette **variable**, ainsi que les **paramètres** `a` et `b` (qui sont également des variables), ne sont définis qu'à l'**intérieur de la fonction**. :
-
-{{ IDE('scripts/20.py') }}
-
-On peut donc très bien, par exemple, avoir une **autre variable** avec le nom `resultat` à l'**extérieur** de la **fonction**, qui contiendrait une **autre valeur** :
-
-{{ IDE('scripts/20b.py') }}
-
-## Les boucles non bornées `while`
-
-Nous avons vu qu'il était possible de créer des **boucles bornées** à l'aide d'instructions utilisant le **mot-clé** `for`. Nous allons voir ici que l'on peut également créer des boucles **non bornées** à l'aide du **mot-clé** `while` (qui signifie *TANT QUE* en français).
-
-Une **boucle non bornée** permet d'exécuter un **bloc d'instructions** plusieurs fois, et de continuer **TANT QUE** une **condition donnée** est **vérifiée**.
-
-La **structure** d'une boucle `while` en Python est la suivante :
-
-```python
-while condition:
-    # Bloc d'instructions à répéter tant que la condition est vraie
-```
-
-La boucle `while` commence par **évaluer la condition** :
-
-- **Si** la **condition** est **vraie**, le **bloc d'instructions** à l'intérieur de la boucle est **exécuté**.
-- Après chaque exécution du bloc, la **condition** est à nouveau **évaluée** :
-    - **Tant que** la **condition** reste **vraie**, la boucle **continue de s'exécuter**.
-    - Dès que la **condition** devient **fausse**, la boucle **s'arrête**.
-
-Voici un premier <u>exemple</u> d'utilisation d'une boucle `while` (cliquez sur le premier bouton, *Lancer*, pour exécuter le programme):
-
-{{ IDEv('scripts/21.py') }}
-
-Dans cet exemple, la boucle `while` est utilisée pour **afficher les nombres de `1` à `5`**.  
-La variable `i` est initialisée à `1`, et la boucle continue **TANT QUE** `i` est **inférieur ou égal** à `5`. À **chaque itération de la boucle**, la valeur de `i` est ici **affichée** (à l'aide du `print`), puis est **incrémentée de `1`** à l'aide de l'instruction `i += 1`. La boucle **s'arrête** lorsque `i` atteint `6`, car **la condition devient fausse**.
-
-Voici un autre <u>exemple</u> un peu plus concret de l'utilisation d'une boucle `while` :
-
-{{ IDE('scripts/22.py') }}
-
-Dans cet exemple, une boucle `while` est utilisée pour **demander à l'utilisateur** (à l'aide de la fonction `input`) de **saisir un mot de passe** jusqu'à **trois essais**.  
-La boucle **continue tant qu'il reste des essais** (tant que `essais_restants > 0`) :
-
-- Si **l'utilisateur saisit le mot de passe correct** (c'est-à-dire lorsque `tentative == mot_de_passe`), la boucle **s'arrête** à l'aide de l'instruction `break`. L'instruction `break` permet de **sortir directement** de la boucle, et évite donc de ré-évaluer sa condition.
-- Sinon, le **nombre d'essais restants** est **décrémenté** (cela signifie que l'on **soustrait 1** à `essais_restants`), et un message est **affiché** (à l'aide de la fonction `print`) pour informer l'utilisateur du **nombre d'essais restants**.
-
-Une fois que l'on est **sorti de la boucle** (ce qui se produit soit si on a rencontré l'instruction `break`, soit si la **condition** de la boucle est **fausse**), on **affiche** un message d'accès refusé si le nombre maximal d'essais a été atteint.
-
-!!! warning "Attention aux boucles infinies !"
-    Dans une boucle non bornée `while`, contrairement à une boucle bornée `for`, il y a un risque de créer **boucle infinie**, c'est-à-dire une boucle dont la **condition n'est jamais évaluée à `False`**. Par exemple :
-
-    ```python
-    i = 1
-    while i < 5:
-        print(i)
-    ```
-
-    Ici, on n'a pas écrit d'instruction permettant d'**incrémenter** la variable `i`, donc la **condition** `i < 5` sera **toujours vraie**. Le programme ne s'arrêtera donc **jamais**.
-
-!!! note "À vous de jouer !"
-    Écrivez un **programme** en Python qui **demande à l'utilisateur** d'entrer un **nombre entier positif `n`**. Ensuite, utilisez une **boucle** `while` pour **calculer** la **somme de tous les entiers de `1` à `n`**. **Affichez** ensuite le **résultat**.
-
-    Voici un exemple d'exécution du programme :
-
-    ```yaml
-    Entrez un nombre entier positif : 5
-    La somme des entiers de 1 à 5 est : 15
-    ```
-
-    ??? tip "Cliquez ici pour afficher l'aide"
-        Voici comment procéder pour réaliser ce programme :
-
-        1. Utilisez la fonction `input` pour demander à l'utilisateur de **saisir** un **nombre entier positif**, vous stockerez la valeur saisie dans une **variable** que vous pourrez appeler `n`. N'oubliez de **convertir** cette valeur en **entier** à l'aide de la fonction `int`.
-        2. Créez une **variable** pour **accumuler la somme totale**, que vous **initialiserez** à `0` avant d'entrer dans la boucle.
-        3. Créez une **variable** que vous appelerez `i` par exemple, qui prendra chaque valeur de 1 à `n`.
-        4. Utilisez une boucle `while` qui continue **tant que** `i` est **inférieur ou égal à** `n`, pour **ajouter les entiers** de `1` à `n` à la **somme totale**.
-        5. N'oubliez pas d'**incrémenter la valeur de** `i` à **chaque itération de la boucle**.
-        6. Enfin, après la boucle, **affichez le résultat** à l'aide de la fonction `print`.
-
-    Vous pouvez réaliser ce programme sur ***Thonny*** ou dans l'**IDE ci-dessous** (vous pourrez *télécharger* votre programme en cliquant sur le *deuxième bouton* pour le conserver.)
-
-    {{ IDE() }}
-
-## Les chaînes de caractères
-
-Les **chaînes de caractères** offrent une certaine ressemblance avec les **tuples**, dans le sens où l'on peut **lire les caractères** de la même manière que l'on **lit les éléments d'un tuple**, mais on ne peut pas **modifier une chaîne de caractères**.
-
-En particulier, on peut obtenir la **taille d’une chaîne de caractères**, c’est-à-dire son **nombre de caractères**, avec l’opération `len` et **accéder au i-ième caractère** d’une chaîne avec les **crochets** :
-
-{{ IDEv('scripts/28.py') }}
-
-Voici deux manière dont on peut **parcourir une chaîne de caractères** pour **afficher chaque caractère un à un**, le principe est le même que pour les **listes** et les **tuples** :
-
-En récupérant directement chaque **élément** à chaque **itération** d'une **boucle** :
-
-{{ IDEv('scripts/26.py') }}
-
-En récupérant chaque **élément** par son **indice** (la variable `i` de la **boucle** prendra les valeurs `0`, puis `1`, puis `2`, juste qu'à l'indice du dernier élément):
-
-{{ IDEv('scripts/27.py') }}
-
-Une autre opération bien utile sur les **chaînes de caractères** est l'opération de **concaténation**. Cela permet de **créer une nouvelle chaîne** en combinant **deux chaînes de caractères** à l'aide du symbole `+`, par exemple (**exécutez** le script suivant pour observer le résultat de la concaténation de `a` et `b`):
-
-{{ IDEv('scripts/29.py') }}
-
-On peut également **chercher** un **caractère** ou même un **mot** dans une **chaîne de caractères** avec le mot-clé `in` :
-
-{{ IDEv('scripts/30.py') }}
