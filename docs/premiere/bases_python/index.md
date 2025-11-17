@@ -22,6 +22,12 @@
 | [:material-rewind: Rappels sur les fonctions](rappels_fonctions.md) | Exercices de **rappels** sur les **fonctions**. |
 {% endif %}
 
+## Devoirs maison
+
+| Liste des contenus                           | Description                         |
+| -------------------------------------------- | ----------------------------------- |
+| [DM n°1](dm1.md) | DM n°1 (facultatif). |
+
 ## Utile
 
 | Liste des contenus                           | Description                         |

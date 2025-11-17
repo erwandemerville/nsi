@@ -32,8 +32,8 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Modularité](terminale/modularite/index.md) | Création et utilisation de modules et d'API. |
 | [Mise au point des programmes](terminale/mise_au_point/index.md) | Types de données, annotations, tests... |
 | [Programmation orientée objet](terminale/poo/index.md) | Découverte des classes en Python. |
-{% if exercices.toc_terminale %}
 | [Récursivité](terminale/recursivite/index.md) | Utilisation de la récursivité en langage Python. |
+{% if exercices.toc_terminale %}
 | [Les listes chaînées](terminale/listes/index.md) | Structure de liste chaînée et implémentation. |
 | [Piles et files](terminale/pilesfiles/index.md) | Structures de piles et de files et implémentations. |
 | [Les arbres](terminale/arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |

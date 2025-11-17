@@ -5,11 +5,11 @@ Les liens suivants redirigent vers la plateforme **Capytale**.
 
 | Notebooks                              | Contenu                             |
 | -------------------------------------------- | ----------------------------------- |
-| [TD1 sur la POO](https://capytale2.ac-paris.fr/web/c/d983-3872028) | Premier TD sur la POO (exercices faciles). |
-| [TD2 sur la POO](https://capytale2.ac-paris.fr/web/c/925e-3872057) | Second TD sur la POO (exercices plus difficiles). |
+| [TD sur la POO](https://capytale2.ac-paris.fr/web/c/d983-3872028) | TD sur la POO. |
+| [DM d'entraînement](https://capytale2.ac-paris.fr/web/c/925e-3872057) | Devoir maison d'entraînement à la POO. |
 {% if exercices.terminale.poo.notebooks %}
-| [:octicons-check-16: Correction TD1 sur la POO](https://capytale2.ac-paris.fr/web/c/685e-4063464) | Correction du premier TD sur la POO. |
-| [:octicons-check-16: Correction TD1 sur la POO](https://capytale2.ac-paris.fr/web/c/96a6-4063474) | Correction du premier TD sur la POO. |
+| [:octicons-check-16: Correction TD sur la POO](https://capytale2.ac-paris.fr/web/c/685e-4063464) | Correction du TD sur la POO. |
+| [:octicons-check-16: Correction DM sur la POO](https://capytale2.ac-paris.fr/web/c/96a6-4063474) | Correction du DM sur la POO. |
 {% endif %}
 
 ## Sujets pratiques du bac

@@ -20,6 +20,7 @@ premiere:
       exo11: true
       exo12: true
       exo13: false
+    dm1: false
 terminale:
   poo:
     notebooks: false

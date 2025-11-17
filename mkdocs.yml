@@ -62,6 +62,8 @@ nav:
         - Exercices sur les fonctions: premiere/bases_python/exercices_fonctions.md
         - Exercices sur les listes: premiere/bases_python/exercices_listes.md
         - Notebooks: premiere/bases_python/notebooks.md
+      - Devoirs maison:
+        - DM n°1: premiere/bases_python/dm1.md
       - Utile:
         - Découverte de l'IDE Thonny: premiere/bases_python/thonny.md
     - Représentation des données:
@@ -90,8 +92,15 @@ nav:
       - Exercices: terminale/poo/exercices.md
       - TP - Un jeu Pokémon: terminale/poo/pokemon.md
       - TP Tamagotchi: terminale/poo/tamagotchi.md
+      - Interrogation corrigée: terminale/poo/interro.md
+    - Récursivité:
+      - terminale/recursivite/index.md
+      - Introduction: terminale/recursivite/introduction.md
+      - Cours: terminale/recursivite/cours.md
+      - Exercices: terminale/recursivite/exercices.md
   - Rendu des travaux: rendus.md
   - Partage de fichiers: https://bit.ly/nsipartage
+  - 🌐 Site en anglais: https://nsi-erwandemerville-fr.translate.goog/?_x_tr_sl=fr&_x_tr_tl=en&_x_tr_hl=fr&_x_tr_pto=wapp
 
 markdown_extensions:
   - pymdownx.arithmatex:
