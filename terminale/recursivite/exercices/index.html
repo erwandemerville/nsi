@@ -1880,6 +1880,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exercice-triangle-de-pascal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice : Triangle de Pascal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercice-les-tours-de-hanoi" class="md-nav__link">
     <span class="md-ellipsis">
       Exercice : Les tours de Hanoï
@@ -2019,6 +2028,15 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#exercice-triangle-de-pascal" class="md-nav__link">
+    <span class="md-ellipsis">
+      Exercice : Triangle de Pascal
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#exercice-les-tours-de-hanoi" class="md-nav__link">
     <span class="md-ellipsis">
       Exercice : Les tours de Hanoï
@@ -2061,6 +2079,69 @@
 <a href="https://capytale2.ac-paris.fr/web/c/4bce-4291104">Accéder au notebook d'exercices</a>
 </center>
 </div>
+<h2 id="exercice-triangle-de-pascal">Exercice : Triangle de Pascal<a class="headerlink" href="#exercice-triangle-de-pascal" title="Permanent link">¶</a></h2>
+<p>Le <strong>triangle de Pascal</strong> (nommé ainsi en l'honneur du mathématicien français <em>Blaise Pascal</em>) est une présentation des coefficients binomiaux sous la forme d’un triangle :</p>
+<figure>
+  <img alt="Triangle de Pascal" src="../images/drawit-diagram-14.png">
+  <figcaption>Source de l'image : <a href="https://info.blaisepascal.fr/nsi-exercices-recursivite/">info.blaisepascal.fr</a></figcaption>
+</figure>
+<p>On peut le définir par <strong>récurrence</strong> de la manière suivante :</p>
+<div class="arithmatex">\[
+C(n,p)=
+\begin{cases}
+1, &amp; \text{si } n = p \text{ ou } p = 0,\\[6pt]
+C(n-1,p-1) + C(n-1,p), &amp; \text{sinon}.
+\end{cases}
+\]</div>
+<p>avec <span class="arithmatex">\(0 \lt p \le n\)</span>.</p>
+<div class="admonition note">
+<p class="admonition-title">Exercice 1</p>
+<p>Écrire une <strong>fonction récursive</strong> <code>pascal(n, p)</code> qui <strong>renvoie</strong> la valeur de <span class="arithmatex">\(C(n, p)\)</span>, le paramètre <code>n</code> étant l'indice d'une <em>ligne</em> et <code>p</code> l'indice d'une <em>colonne</em> du <strong>triangle de Pascal</strong>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">def</span> <span class="nf">pascal</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">    </span><span class="sd">""" Renvoie la valeur de C(n, p).</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="sd">    :param n: (int) indice d'une ligne</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="sd">    :param p: (int) indice d'une colonne</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="sd">    :return: (int) valeur du coefficient d'indices (n, p)</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="sd">    """</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>    <span class="o">...</span>
+</span></code></pre></div>
+</div>
+<details class="tip">
+<summary>Correction exercice 1</summary>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">def</span> <span class="nf">pascal</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">):</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">    </span><span class="sd">""" Renvoie la valeur de C(n, p).</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="sd">    :param n: (int) indice d'une ligne</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="sd">    :param p: (int) indice d'une colonne</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="sd">    :return: (int) valeur du coefficient d'indices (n, p)</span>
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="sd">    """</span>
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>    <span class="k">if</span> <span class="n">n</span> <span class="o">==</span> <span class="n">p</span> <span class="ow">or</span> <span class="n">p</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>  <span class="c1"># cas de base</span>
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>        <span class="k">return</span> <span class="mi">1</span>
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    <span class="k">else</span><span class="p">:</span>                 <span class="c1"># cas général (récursif)</span>
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>        <span class="k">return</span> <span class="n">pascal</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span> <span class="o">+</span> <span class="n">pascal</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">p</span><span class="p">)</span>
+</span></code></pre></div>
+</details>
+<div class="admonition note">
+<p class="admonition-title">Exercice 2</p>
+<p>Complétez le <strong>programme</strong> suivant qui <strong>affiche</strong> le <strong>triangle de Pascal</strong> sur un <em>nombre de lignes</em> qu'on définira avec une <strong>variable globale</strong> <code>NB_LIGNES</code>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">NB_LIGNES</span> <span class="o">=</span> <span class="mi">6</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="k">for</span> <span class="o">...</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">for</span> <span class="o">...</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">...</span><span class="p">):</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="nb">print</span><span class="p">(</span><span class="o">...</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>    <span class="nb">print</span><span class="p">()</span>
+</span></code></pre></div>
+</div>
+<details class="tip">
+<summary>Correction exercice 2</summary>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">NB_LIGNES</span> <span class="o">=</span> <span class="mi">6</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">NB_LIGNES</span><span class="p">):</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>    <span class="k">for</span> <span class="n">p</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="o">+</span><span class="mi">1</span><span class="p">):</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>        <span class="nb">print</span><span class="p">(</span><span class="n">pascal</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">p</span><span class="p">),</span> <span class="n">end</span><span class="o">=</span><span class="s2">" "</span><span class="p">)</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>    <span class="nb">print</span><span class="p">()</span>
+</span></code></pre></div>
+<p>Pour rappel, le paramètre <code>end</code> de la fonction <code>print</code> permet de remplacer le retour à la ligne après un affichage par un autre caractère (ici un espace).</p>
+</details>
 <h2 id="exercice-les-tours-de-hanoi">Exercice : Les tours de Hanoï<a class="headerlink" href="#exercice-les-tours-de-hanoi" title="Permanent link">¶</a></h2>
 <p><em>Source : <a href="https://www.codingame.com/playgrounds/56923/apprendre-les-bases-de-python-pour-reussir-en-n-s-i-/tours-de-hanoi" target="_blank">https://www.codingame.com/playgrounds/56923/apprendre-les-bases-de-python-pour-reussir-en-n-s-i-/tours-de-hanoi</a></em>.</p>
 <p>Les tours de Hanoï est un casse-tête composé de trois tours et une pile de disques rangés du plus grand au plus petit comme sur la photo ci-dessous :</p>
@@ -2092,7 +2173,10 @@
 <h2 id="sujets-de-bac">Sujets de bac<a class="headerlink" href="#sujets-de-bac" title="Permanent link">¶</a></h2>
 <div class="admonition success">
 <p class="admonition-title">À télécharger</p>
-<p><a href="sujet_02.pdf" target="_blank">Extrait du sujet zéro B - 2023</a></p>
+<ul>
+<li><a href="sujet_02.pdf" target="_blank">Extrait du sujet zéro B - 2023</a></li>
+<li><a href="sujet_polynesie_2022.pdf" target="_blank">Extrait du sujet Polynésie J1 - 2022</a></li>
+</ul>
 </div></div>
 
 
