@@ -2198,7 +2198,7 @@ C(n-1,p-1) + C(n-1,p), &amp; \text{sinon}.
 <p>Ici, il faut distinguer :</p>
 <ul>
 <li>le <strong><u>cas général</u></strong> (récursif), lorsque <span class="arithmatex">\(n &gt; 0\)</span>, auquel cas on <strong>affiche le message</strong>, puis on <strong>appelle récursivement</strong> la fonction sur <span class="arithmatex">\(n - 1\)</span> (décrémentation de <span class="arithmatex">\(n\)</span>) de manière à <strong>converger</strong> vers le <strong>cas de base</strong>.</li>
-<li>le <strong>cas de base</strong>, lorsque <span class="arithmatex">\(n = 0\)</span>, auquel cas on <strong>ne fait rien</strong>.</li>
+<li>le <strong><u>cas de base</u></strong>, lorsque <span class="arithmatex">\(n = 0\)</span>, auquel cas on <strong>ne fait rien</strong>.</li>
 </ul>
 <p>Reprenez le code suivant et complétez les deux lignes manquantes :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span> <span class="nf">F</span><span class="p">(</span><span class="n">n</span><span class="p">):</span>
@@ -2237,8 +2237,8 @@ S_n = S_{n-1} + \frac{1}{n^2}
 Si <span class="arithmatex">\(n = 1\)</span>, <span class="arithmatex">\(S_1 = \frac{1}{1^2} = \frac{1}{1} = 1\)</span>.</p>
 <p>Finalement, on distingue :</p>
 <ul>
-<li>un <strong>cas de base</strong>, lorsque <span class="arithmatex">\(n = 1\)</span>, auquel cas on <strong>renvoie</strong> la valeur de <span class="arithmatex">\(S_1\)</span>, c'est-à-dire <span class="arithmatex">\(1\)</span>.</li>
-<li>un <strong>cas général</strong> sinon, auquel cas on renvoie <span class="arithmatex">\(S_{n-1} + \frac{1}{n^2}\)</span>.</li>
+<li>un <strong><u>cas de base</u></strong>, lorsque <span class="arithmatex">\(n = 1\)</span>, auquel cas on <strong>renvoie</strong> la valeur de <span class="arithmatex">\(S_1\)</span>, c'est-à-dire <span class="arithmatex">\(1\)</span>.</li>
+<li>un <strong><u>cas général</u></strong> sinon, auquel cas on renvoie <span class="arithmatex">\(S_{n-1} + \frac{1}{n^2}\)</span>.</li>
 </ul>
 </details>
 <div class="admonition note">
