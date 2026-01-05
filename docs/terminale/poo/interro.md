@@ -293,7 +293,7 @@ On a créé une classe `Pays` :
         - La couleur attribuée à cette région est la première couleur disponible dans son tableau de couleurs disponibles.
         - Pour chaque région voisine de la région :
             - si la couleur choisie est présente dans le tableau des couleurs disponibles de la région voisine alors on la retire de ce tableau.
-        – On récupère à nouveau la région non coloriée qui possède le plus de voisines.
+        - On récupère à nouveau la région non coloriée qui possède le plus de voisines.
 
 ??? tip "Réponse question 11"
     Ici, il faut réutiliser les différentes **méthodes** définies précédemment.

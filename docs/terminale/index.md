@@ -6,10 +6,10 @@
 | [Modularité](modularite/index.md) | Création et utilisation de modules et d'API. |
 | [Mise au point des programmes](mise_au_point/index.md) | Types de données, annotations, tests... |
 | [Programmation orientée objet](poo/index.md) | Découverte des classes en Python. |
-{% if exercices.toc_terminale %}
 | [Récursivité](recursivite/index.md) | Utilisation de la récursivité en langage Python. |
 | [Les listes chaînées](listes/index.md) | Structure de liste chaînée et implémentation. |
 | [Piles et files](pilesfiles/index.md) | Structures de piles et de files et implémentations. |
+{% if exercices.toc_terminale %}
 | [Les arbres](arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |
 | [Protocoles de routage](routage/index.md) | Protocoles de routage RIP et OSPF. |
 | [Recherche textuelle](recherche_textuelle/index.md) | Algorithmes de recherche dans un texte. |

@@ -26,6 +26,13 @@ terminale:
     notebooks: false
     exo_bac: false
     pokemon: false
+  pilesfiles:
+    cours:
+      p1_1: false
+      p1_2: false
+      p2_1: false
+      p2_2: false
+      exos: false
 
 toc_premiere: false
 

@@ -194,6 +194,7 @@ Ainsi, notre classe `Pile` contiendra **un seul attribut**, que nous nommerons `
 
     Les **annotations de type** servent juste d'**indications** et n'ont aucun effet sur l'exécution du programme.
 
+{% if exercices.terminale.pilesfiles.cours.p1_1 %}
 ??? tip "Voir l'implémentation complète"
     Voici finalement notre implémentation :
 
@@ -243,6 +244,7 @@ Ainsi, notre classe `Pile` contiendra **un seul attribut**, que nous nommerons `
                 raise ValueError("Erreur : La pile est vide !")
             return self.contenu[self.nombre_elements() - 1]
     ```
+{% endif %}
 
 ### Avec une liste chaînée
 
@@ -318,6 +320,7 @@ Initialement, l'**attribut** `contenu` sera donc égal à `None`, représentant 
             pass
     ```
 
+{% if exercices.terminale.pilesfiles.cours.p1_2 %}
 ??? tip "Voir l'implémentation complète"
 
     ```python
@@ -380,6 +383,7 @@ Initialement, l'**attribut** `contenu` sera donc égal à `None`, représentant 
                 raise ValueError("Erreur : La pile est vide !")
             return self.contenu.valeur
     ```
+{% endif %}
 
 ## Implémentations d'une file
 
@@ -446,6 +450,7 @@ Ici, on représentera le **contenu de la file** avec une **liste Python** (qui s
             ...
     ```
 
+{% if exercices.terminale.pilesfiles.cours.p2_1 %}
 ??? tip "Voir l'implémentation complète"
 
     ```python
@@ -498,6 +503,7 @@ Ici, on représentera le **contenu de la file** avec une **liste Python** (qui s
             else:
                 return self.contenu[0]
     ```
+{% endif %}
 
 ### Avec une liste chaînée
 
@@ -552,6 +558,7 @@ Ainsi :
             ...
     ```
 
+{% if exercices.terminale.pilesfiles.cours.p2_2 %}
 ??? tip "Voir l'implémentation complète"
 
     ```python
@@ -597,6 +604,8 @@ Ainsi :
                 self.queue = None  # cela signifie que la liste chaînée est vide, donc la queue vaut aussi None
             return j  # on renvoie la valeur de l'ancienne cellule tête que l'on avait stocké dans j
     ```
+{% endif %}
+
 ## Exercices
 
 !!! note "Exercice 1"
@@ -620,6 +629,7 @@ Ainsi :
     
     *Attention* : cette fonction ne doit pas renvoyer de résultat si l'expression est mal écrite. 
 
+{% if exercices.terminale.pilesfiles.cours.exos %}
 ??? tip "Correction exercice 1"
 
     ```python
@@ -655,3 +665,4 @@ Ainsi :
         assert pile.est_vide()
         return res
     ```
+{% endif %}
