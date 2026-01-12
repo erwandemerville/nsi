@@ -25,3 +25,8 @@ class Pile:
         if self.est_vide():
             raise ValueError("Erreur : Impossible de dépiler sur une pile vide !")
         return self.contenu.pop()
+    
+    def obtenir_element(self: 'Pile') -> int:
+        ''' Renvoie l'élément au sommet de la pile NON VIDE SANS LE SUPPRIMER. '''
+
+        return self.contenu[self.nombre_elements() - 1]
