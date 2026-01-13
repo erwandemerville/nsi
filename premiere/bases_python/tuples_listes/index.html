@@ -8,13 +8,13 @@
       
       
       
-        <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/bases_python/listes/">
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/bases_python/tuples_listes/">
       
       
         <link rel="prev" href="../fonctions/">
       
       
-        <link rel="next" href="../n_uplets_dicos/">
+        <link rel="next" href="../dicos/">
       
       
       <link rel="icon" href="../../../assets/images/favicon.png">
@@ -22,7 +22,7 @@
     
     
       
-        <title>Les listes Python - Numérique et sciences informatiques</title>
+        <title>Les tuples et listes en Python - Numérique et sciences informatiques</title>
       
     
     
@@ -98,7 +98,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#les-listes-en-langage-python" class="md-skip">
+        <a href="#les-tuples-et-listes-en-langage-python" class="md-skip">
           Skip to content
         </a>
       
@@ -132,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Les listes Python
+              Les tuples et listes en Python
             
           </span>
         </div>
@@ -670,7 +670,7 @@
           
   
   <span class="md-ellipsis">
-    Les listes Python
+    Les tuples et listes en Python
   </span>
   
 
@@ -681,7 +681,7 @@
         
   
   <span class="md-ellipsis">
-    Les listes Python
+    Les tuples et listes en Python
   </span>
   
 
@@ -705,14 +705,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#les-n-uplets-tuples-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les n-uplets (tuples en Python)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parcours-de-chaines-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parcours de chaînes de caractères
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-listes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les listes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les listes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#creation-dune-liste" class="md-nav__link">
     <span class="md-ellipsis">
       Création d'une liste
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Création d'une liste">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#creer-une-liste-vide" class="md-nav__link">
@@ -732,12 +759,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#acces-aux-elements-dune-liste" class="md-nav__link">
     <span class="md-ellipsis">
       Accès aux éléments d'une liste
@@ -745,8 +767,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#modification-des-elements-dune-liste" class="md-nav__link">
     <span class="md-ellipsis">
       Modification des éléments d'une liste
@@ -754,8 +776,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ajout-et-suppression-delements" class="md-nav__link">
     <span class="md-ellipsis">
       Ajout et suppression d'éléments
@@ -763,8 +785,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#parcours-dune-liste-avec-des-boucles" class="md-nav__link">
     <span class="md-ellipsis">
       Parcours d'une liste avec des boucles
@@ -772,13 +794,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#a-vous-de-jouer" class="md-nav__link">
     <span class="md-ellipsis">
       À vous de jouer !
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -798,11 +825,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../n_uplets_dicos/" class="md-nav__link">
+      <a href="../dicos/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    n-uplets et dictionnaires
+    Ddictionnaires en Python
   </span>
   
 
@@ -917,7 +944,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercices_listes/" class="md-nav__link">
+      <a href="../exercices_tuples_listes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2306,14 +2333,41 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#les-n-uplets-tuples-en-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les n-uplets (tuples en Python)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#parcours-de-chaines-de-caracteres" class="md-nav__link">
+    <span class="md-ellipsis">
+      Parcours de chaînes de caractères
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-listes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Les listes
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Les listes">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
   <a href="#creation-dune-liste" class="md-nav__link">
     <span class="md-ellipsis">
       Création d'une liste
     </span>
   </a>
   
-    <nav class="md-nav" aria-label="Création d'une liste">
-      <ul class="md-nav__list">
+</li>
         
           <li class="md-nav__item">
   <a href="#creer-une-liste-vide" class="md-nav__link">
@@ -2333,12 +2387,7 @@
   
 </li>
         
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
+          <li class="md-nav__item">
   <a href="#acces-aux-elements-dune-liste" class="md-nav__link">
     <span class="md-ellipsis">
       Accès aux éléments d'une liste
@@ -2346,8 +2395,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#modification-des-elements-dune-liste" class="md-nav__link">
     <span class="md-ellipsis">
       Modification des éléments d'une liste
@@ -2355,8 +2404,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#ajout-et-suppression-delements" class="md-nav__link">
     <span class="md-ellipsis">
       Ajout et suppression d'éléments
@@ -2364,8 +2413,8 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#parcours-dune-liste-avec-des-boucles" class="md-nav__link">
     <span class="md-ellipsis">
       Parcours d'une liste avec des boucles
@@ -2373,13 +2422,18 @@
   </a>
   
 </li>
-      
-        <li class="md-nav__item">
+        
+          <li class="md-nav__item">
   <a href="#a-vous-de-jouer" class="md-nav__link">
     <span class="md-ellipsis">
       À vous de jouer !
     </span>
   </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -2399,66 +2453,110 @@
                   
 
 
-<div><h1 id="les-listes-en-langage-python">Les listes en langage Python<a class="headerlink" href="#les-listes-en-langage-python" title="Permanent link">¶</a></h1>
+<div><h1 id="les-tuples-et-listes-en-langage-python">Les tuples et listes en langage Python<a class="headerlink" href="#les-tuples-et-listes-en-langage-python" title="Permanent link">¶</a></h1>
+<h2 id="les-n-uplets-tuples-en-python">Les n-uplets (tuples en Python)<a class="headerlink" href="#les-n-uplets-tuples-en-python" title="Permanent link">¶</a></h2>
+<div class="admonition success">
+<p class="admonition-title">n-uplets en Python <em>(tuples)</em></p>
+<p>Une meilleure solution ici sera donc d'utiliser les <strong>n-uplets</strong> fournis par Python. Comme en <strong>mathématiques</strong>, un <strong>n-uplet</strong> est un <strong>ensemble de valeurs</strong> écrites entre <strong>parenthèses</strong> et <strong>séparées par des virgules</strong>. On peut, par exemple, affecter à une variable <code>x</code> un quadruplet de la manière suivante :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1941</span><span class="p">)</span>
+</span></code></pre></div>
+<p><strong><u>Opérations sur les n-uplets</u></strong> :</p>
+<p>Les opérations sont similaires à celles sur les listes :</p>
+<ul>
+<li><code>len(x)</code> renvoit la <strong>longueur du tuple</strong> stocké dans <code>x</code>, ici <code>4</code>,</li>
+<li><code>x[0]</code> renvoit le <strong>premier élément du tuple</strong> stocké dans <code>x</code>, ici <code>"Alice"</code>,</li>
+<li>on peut <strong>parcourir un tuple</strong> avec une <strong>boucle</strong> :<ul>
+<li><code>for i in range(len(x))</code> pour parcourir par <strong>indice</strong>,</li>
+<li><code>for element in x</code> pour parcourir directement les <strong>éléments</strong>.</li>
+</ul>
+</li>
+</ul>
+<p>Par contre, <span style="color:rgb(200,0,0)">on ne peut pas <strong>modifier un élément</strong> d'un <strong>tuple</strong></span>.</p>
+<p>Si on essaie, on obtient une <strong>erreur</strong> de type <code>TypeError</code> (erreur de <strong>type</strong>) :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">File</span> <span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="ne">TypeError</span><span class="p">:</span> <span class="s1">'tuple'</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
+</span></code></pre></div>
+</div>
+<p>Ainsi, si on reprend nos données précédentes, on peut écrire, en utilisant des <strong>tuples</strong> :</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">individus</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1941</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Bob"</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1909</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Charles"</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1965</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Delphine"</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1938</span><span class="p">)]</span>
+</span></code></pre></div>
+<p>On peut maintenant <strong>parcourir cette liste de tuples</strong> de différentes manières :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_19715e5882728171db7a177c25cc5dabf53cce00" class="comment">###</span><div class="line" id="editor_19715e5882728171db7a177c25cc5dabf53cce00"></div><div id="term_editor_19715e5882728171db7a177c25cc5dabf53cce00" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_19715e5882728171db7a177c25cc5dabf53cce00","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_19715e5882728171db7a177c25cc5dabf53cce00","scripts/33")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_19715e5882728171db7a177c25cc5dabf53cce00').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_19715e5882728171db7a177c25cc5dabf53cce00" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_19715e5882728171db7a177c25cc5dabf53cce00")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_19715e5882728171db7a177c25cc5dabf53cce00")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_19715e5882728171db7a177c25cc5dabf53cce00" class="py_mk_hide">individus = [("Alice", 7, 1, 1941), ("Bob", 9, 12, 1909), ("Charles", 14, 12, 1965), ("Delphine", 11, 1, 1938)]bksl-nlbksl-nlfor e in individus:bksl-nl    print(f'Nom : {e[0]}, né(e) le {e[1]}/{e[2]}/{e[3]}')bksl-nlbksl-nlprint('-----')bksl-nlbksl-nlfor nom, jour, mois, annee in individus:bksl-nl    print(f'Nom : {nom}, né(e) le {jour}/{mois}/{annee}')bksl-nlbksl-nl</span><span id="corr_content_editor_19715e5882728171db7a177c25cc5dabf53cce00" class="py_mk_hide" data-strudel=""></span></p>
+<h2 id="parcours-de-chaines-de-caracteres">Parcours de chaînes de caractères<a class="headerlink" href="#parcours-de-chaines-de-caracteres" title="Permanent link">¶</a></h2>
+<p>Les <strong>chaînes de caractères</strong> offrent une ressemblance avec les <strong>tuples</strong>, dans le sens où l'on peut <strong>lire les caractères</strong> de la même manière que l'on <strong>lit les éléments d'un tuple</strong>, mais on ne peut pas <strong>modifier une chaîne de caractères</strong>.</p>
+<p>En particulier, on peut obtenir la <strong>taille d’une chaîne de caractères</strong>, c’est-à-dire son <strong>nombre de caractères</strong>, avec l’opération <code>len</code> et <strong>accéder au i-ième caractère</strong> d’une chaîne avec les <strong>crochets</strong> :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper_v"><span id="comment_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" class="comment">###</span><div class="line_v"><div id="editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7"></div></div><div id="term_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" class="term_editor_v"></div></div><button class="tooltip" onclick='play("editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7","_v")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7","scripts/28")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" class="py_mk_hide">s = "abcdefgh"bksl-nlbksl-nlprint(len(s))  # afficher la taille de la chaîne sbksl-nlbksl-nlprint(s[0])  # afficher le premier caractère de sbksl-nlbksl-nlprint(s[len(s) - 1])  # afficher le dernier caractère de sbksl-nl</span><span id="corr_content_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" class="py_mk_hide" data-strudel=""></span></p>
+<p>Voici deux manières dont on peut <strong>parcourir une chaîne de caractères</strong> pour <strong>afficher chaque caractère un à un</strong>, le principe est le même que pour les <strong>listes</strong> et les <strong>tuples</strong> :</p>
+<p>En récupérant directement <strong>chaque élément</strong> à <strong>chaque itération</strong> d'une <strong>boucle</strong> :</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper_v"><span id="comment_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" class="comment">###</span><div class="line_v"><div id="editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f"></div></div><div id="term_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" class="term_editor_v"></div></div><button class="tooltip" onclick='play("editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f","_v")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f","scripts/26")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" class="py_mk_hide">s = "abcdefgh"bksl-nlbksl-nlfor car in s:bksl-nl    print(car)bksl-nl</span><span id="corr_content_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" class="py_mk_hide" data-strudel=""></span></p>
+<p>En récupérant chaque <strong>élément</strong> par son <strong>indice</strong> (la variable <code>i</code> de la <strong>boucle</strong> prendra les valeurs <code>0</code>, puis <code>1</code>, puis <code>2</code>, etc. jusqu'à l'indice du dernier élément):</p>
+<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper_v"><span id="comment_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" class="comment">###</span><div class="line_v"><div id="editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99"></div></div><div id="term_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" class="term_editor_v"></div></div><button class="tooltip" onclick='play("editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99","_v")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99","scripts/27")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
+<p><span id="content_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" class="py_mk_hide">s = "abcdefgh"bksl-nlbksl-nlfor i in range(len(s)):bksl-nl    print(s[i])bksl-nl</span><span id="corr_content_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" class="py_mk_hide" data-strudel=""></span></p>
+<h2 id="les-listes">Les listes<a class="headerlink" href="#les-listes" title="Permanent link">¶</a></h2>
 <p>En programmation en langage <strong>Python</strong>, les <strong>listes</strong> sont l'une des <strong>structures de données</strong> les plus couramment utilisées. Une <strong>liste</strong> (<strong>objet</strong> de type <code>list</code>) est une <strong>collection ordonnée d'éléments</strong> pouvant être de différents <strong>types</strong> (<em>nombres entiers</em>, <em>flottants</em>, <em>chaînes de caractères</em>, <em>objets</em>, etc.). Les listes sont extrêmement flexibles et permettent de stocker et de manipuler des données de manière efficace.</p>
-<h2 id="creation-dune-liste">Création d'une liste<a class="headerlink" href="#creation-dune-liste" title="Permanent link">¶</a></h2>
+<h3 id="creation-dune-liste">Création d'une liste<a class="headerlink" href="#creation-dune-liste" title="Permanent link">¶</a></h3>
 <p>Pour <strong>créer une liste</strong> en Python, on utilise les <strong>crochets</strong> <code>[]</code>.</p>
 <h3 id="creer-une-liste-vide">Créer une liste vide<a class="headerlink" href="#creer-une-liste-vide" title="Permanent link">¶</a></h3>
 <p>Une <strong>liste vide</strong> est créée simplement avec des crochets vides <code>[]</code>.</p>
 <p>Si l'on veut <strong>stocker</strong> une <strong>nouvelle liste vide</strong> dans une <strong>variable</strong>, par exemple dans une variable appelée <code>ma_liste_vide</code>, il suffit de faire une <strong>affectation</strong> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste_vide</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste_vide</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">[]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste_vide</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste_vide</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="p">[]</span>
 </span></code></pre></div>
 <h3 id="creer-une-liste-non-vide">Créer une liste non vide<a class="headerlink" href="#creer-une-liste-non-vide" title="Permanent link">¶</a></h3>
 <p>On peut également <strong>créer une liste</strong> et directement y mettre des <strong>éléments</strong>, en les séparant par des <strong>virgules</strong>. Voici un exemple :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </span></code></pre></div>
 <p>On aurait également pu créer cette <strong>liste</strong> en utilisant la méthode de <strong>création de liste par compréhension</strong>, en utilisant une <strong>boucle</strong> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">)]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </span></code></pre></div>
 <p>Si l'on voulait créer une <strong>liste</strong> contenant <strong>tous les nombres pairs de 2 à 98</strong> en utilisant la méthode <strong>par compréhension</strong>, on aurait écrit :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">,</span> <span class="mi">2</span><span class="p">)]</span>
 </span></code></pre></div>
 <p>ou bien, en ajoutant une <strong>condition</strong> <code>if</code> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span> <span class="k">if</span> <span class="n">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="n">v</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">99</span><span class="p">)</span> <span class="k">if</span> <span class="n">v</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">]</span>
 </span></code></pre></div>
 <p>Une liste peut contenir <strong>n'importe quel type d'élément</strong>, y compris <strong>d'autres listes</strong>. Par exemple :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">liste_mixte</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"texte"</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]]</span>
-</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">liste_mixte</span>
-</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"texte"</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">liste_mixte</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"texte"</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]]</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">liste_mixte</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"texte"</span><span class="p">,</span> <span class="mf">3.14</span><span class="p">,</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">]]</span>
 </span></code></pre></div>
-<h2 id="acces-aux-elements-dune-liste">Accès aux éléments d'une liste<a class="headerlink" href="#acces-aux-elements-dune-liste" title="Permanent link">¶</a></h2>
+<h3 id="acces-aux-elements-dune-liste">Accès aux éléments d'une liste<a class="headerlink" href="#acces-aux-elements-dune-liste" title="Permanent link">¶</a></h3>
 <p>Vous pouvez <strong>accéder</strong> aux <strong>éléments individuels d'une liste</strong> en utilisant leur <strong>indice</strong> (<em>position</em>) dans la <strong>liste</strong>. L'indice <strong>commence à <code>0</code></strong> pour le <strong>premier élément</strong>, puis aumgente de <code>1</code> en <code>1</code>.</p>
 <figure>
   <img alt="Principe des indices" src="../images/listes_indices.png" width="600">
   <figcaption>Une liste d'éléments avec les indices (en vert) associés.</figcaption>
 </figure>
 <p>Voici comment accéder aux éléments d'une liste :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>  <span class="c1"># création d'une liste</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># accès au premier élément (indice 0)</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="mi">10</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># accès au troisième élément (indice 2)</span>
-</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="mi">30</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>  <span class="c1"># création d'une liste</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># accès au premier élément (indice 0)</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="mi">10</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># accès au troisième élément (indice 2)</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="mi">30</span>
 </span></code></pre></div>
 <p>On peut bien sûr stocker ces éléments dans de nouvelles <strong>variables</strong> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>  <span class="c1"># création d'une liste</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">el</span> <span class="o">=</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># accès au quatrième élément (indice 3)</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">el</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="mi">40</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>  <span class="c1"># création d'une liste</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">el</span> <span class="o">=</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>  <span class="c1"># accès au quatrième élément (indice 3)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">el</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="mi">40</span>
 </span></code></pre></div>
 <div class="admonition info">
 <p class="admonition-title">La fonction <code>len</code></p>
 <p>La <strong>fonction</strong> <code>len</code> est une fonction permettant d'obtenir le <strong>nombre d'éléments</strong> d'une <strong>liste</strong>, d'un <strong>tuple</strong>, d'un <strong>dictionnaire</strong> ou encore d'une <strong>chaîne de caractères</strong>.</p>
 <p>Il suffit d'appeler <code>len</code> en lui donnant comme <strong>entrée</strong> une <strong>liste</strong> dont on cherche à déterminer le nombre d'éléments, et la fonction <strong>renverra</strong> le <strong>nombre d'éléments</strong> de la liste.</p>
 <p><em>Exemple</em> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="mi">6</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">lst</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">]</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">lst</span><span class="p">)</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="mi">6</span>
 </span></code></pre></div>
 </div>
 <p>Si l'on dipose d'une <strong>liste</strong> dont on ne sait pas <strong>combien elle contient d'éléments</strong>, et qu'on souhaite trouver le <strong>dernier élément de cette liste</strong>, on peut alors utiliser la fonction <code>len</code> pour trouver l'<strong>indice</strong> de cet élément, et ainsi <strong>accéder à l'élément</strong>.</p>
@@ -2468,16 +2566,16 @@
 <p class="admonition-title">Explication</p>
 <p>Pour obtenir l'<strong>indice</strong> du <strong>dernier élément</strong> d'une <strong>liste</strong>, il suffit donc de <strong>retirer 1</strong> à la <strong>taille de cette liste</strong>.</p>
 </div>
-<h2 id="modification-des-elements-dune-liste">Modification des éléments d'une liste<a class="headerlink" href="#modification-des-elements-dune-liste" title="Permanent link">¶</a></h2>
+<h3 id="modification-des-elements-dune-liste">Modification des éléments d'une liste<a class="headerlink" href="#modification-des-elements-dune-liste" title="Permanent link">¶</a></h3>
 <p>Les éléments d'une liste peuvent être <strong>modifiés</strong> en à l'aide d'une simple <strong>affectation</strong>.<br>
 Il suffit de connaître l'<strong>indice</strong> de l'<strong>élément à modifier</strong>.</p>
 <p>Par <em>exemple</em> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span>  <span class="c1"># modification du deuxième élément (indice 1)</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">25</span>  <span class="c1"># modification du deuxième élément (indice 1)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="p">[</span><span class="mi">10</span><span class="p">,</span> <span class="mi">25</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">50</span><span class="p">]</span>
 </span></code></pre></div>
-<h2 id="ajout-et-suppression-delements">Ajout et suppression d'éléments<a class="headerlink" href="#ajout-et-suppression-delements" title="Permanent link">¶</a></h2>
+<h3 id="ajout-et-suppression-delements">Ajout et suppression d'éléments<a class="headerlink" href="#ajout-et-suppression-delements" title="Permanent link">¶</a></h3>
 <div class="admonition info">
 <p class="admonition-title">Une <em>méthode</em>, kézako ?</p>
 <p>Une <strong>méthode</strong> est une <strong>fonction</strong> associée à un <strong>type d'éléments</strong> spécifique.<br>
@@ -2485,30 +2583,30 @@ Pour <strong>appeler</strong> une <strong>méthode</strong>, on écrit une instr
 <p>Par exemple, le <strong>type</strong> <code>list</code> de <em>Python</em> dispose d'une <strong>méhode</strong> appelée <code>append</code> qui permet d'<strong>ajouter un élément</strong> à une <strong>liste</strong>.  </p>
 </div>
 <p>Pour <strong>ajouter un élément à la fin d'une liste</strong>, vous pouvez utiliser la <strong>méthode</strong> <code>append()</code> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
 </span></code></pre></div>
 <p>On peut utiliser <code>append</code> dans une <strong>boucle</strong> pour <strong>créer une liste</strong> contenant beaucoup d'éléments. Il s'agit d'une solution alternative à la création de liste <strong>"par compréhension"</strong> vue précédemment.</p>
 <p>Par exemple, si l'on souhaite <strong>créer une liste</strong> dans une variable <code>lst</code> qui contient <strong>tous les entiers</strong> de <code>1</code> à <code>100</code>, on peut procéder comme suit (cliquez sur <em>Lancer</em> pour voir le résultat) :</p>
 <div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_d3626d6b06d434e523e33d22fc258f78b0d3f5e8" class="comment">###</span><div class="line" id="editor_d3626d6b06d434e523e33d22fc258f78b0d3f5e8"></div><div id="term_editor_d3626d6b06d434e523e33d22fc258f78b0d3f5e8" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_d3626d6b06d434e523e33d22fc258f78b0d3f5e8","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_d3626d6b06d434e523e33d22fc258f78b0d3f5e8","scripts/31")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_d3626d6b06d434e523e33d22fc258f78b0d3f5e8').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_d3626d6b06d434e523e33d22fc258f78b0d3f5e8" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_d3626d6b06d434e523e33d22fc258f78b0d3f5e8")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_d3626d6b06d434e523e33d22fc258f78b0d3f5e8")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
 <p><span id="content_editor_d3626d6b06d434e523e33d22fc258f78b0d3f5e8" class="py_mk_hide">lst = []  # créer une liste videbksl-nlfor i in range(1, 101):  # itérer de 1 jusqu'à 100bksl-nl    lst.append(i)  # ajouter l'entier ibksl-nlbksl-nlprint(lst)  # afficher la liste lstbksl-nl</span><span id="corr_content_editor_d3626d6b06d434e523e33d22fc258f78b0d3f5e8" class="py_mk_hide" data-strudel=""></span></p>
 <p>Pour <strong>supprimer un élément</strong> en fonction de <strong>sa valeur</strong>, vous pouvez utiliser la <strong>méthode</strong> <code>remove()</code> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">ma_liste</span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
 </span></code></pre></div>
 <p>Pour <strong>supprimer un élément</strong> en fonction de <strong>son indice</strong>, vous pouvez utiliser la <strong>méthode</strong> <code>pop</code>, qui <strong>supprime</strong> et <strong>renvoie</strong> l'<strong>élément</strong> de la liste dont l'indice est donné en entrée :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="k">del</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># La liste devient maintenant [1, 2, 4, 5]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">ma_liste</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="k">del</span> <span class="n">ma_liste</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>  <span class="c1"># La liste devient maintenant [1, 2, 4, 5]</span>
 </span></code></pre></div>
 <div class="admonition warning">
 <p class="admonition-title">Hors-programme</p>
 <p>À noter que la <strong>suppression d'éléments dans une liste</strong> n'est pas au programme de <em>première</em>, ni même de <em>terminale</em>. Vous ne serez donc pas interrogé dessus, mais cela peut s'avérer bien utile tout de même.</p>
 </div>
-<h2 id="parcours-dune-liste-avec-des-boucles">Parcours d'une liste avec des boucles<a class="headerlink" href="#parcours-dune-liste-avec-des-boucles" title="Permanent link">¶</a></h2>
+<h3 id="parcours-dune-liste-avec-des-boucles">Parcours d'une liste avec des boucles<a class="headerlink" href="#parcours-dune-liste-avec-des-boucles" title="Permanent link">¶</a></h3>
 <p>Les <strong>listes</strong> sont souvent parcourues à l'aide de <strong>boucles bornées</strong> <code>for</code>. Voici comment <strong>parcourir une liste</strong> et <strong>afficher ses éléments</strong> :</p>
 <div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_e4f776bc305fd3f71d2a09d1cd4c9dbde173eb6f" class="comment">###</span><div class="line" id="editor_e4f776bc305fd3f71d2a09d1cd4c9dbde173eb6f"></div><div id="term_editor_e4f776bc305fd3f71d2a09d1cd4c9dbde173eb6f" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_e4f776bc305fd3f71d2a09d1cd4c9dbde173eb6f","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_e4f776bc305fd3f71d2a09d1cd4c9dbde173eb6f","scripts/25")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_e4f776bc305fd3f71d2a09d1cd4c9dbde173eb6f').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_e4f776bc305fd3f71d2a09d1cd4c9dbde173eb6f" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_e4f776bc305fd3f71d2a09d1cd4c9dbde173eb6f")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_e4f776bc305fd3f71d2a09d1cd4c9dbde173eb6f")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
 <p><span id="content_editor_e4f776bc305fd3f71d2a09d1cd4c9dbde173eb6f" class="py_mk_hide">mapy-undliste = [10, 20, 30, 40, 50]bksl-nlbksl-nlfor element in mapy-undliste:bksl-nl    print(element)bksl-nl</span><span id="corr_content_editor_e4f776bc305fd3f71d2a09d1cd4c9dbde173eb6f" class="py_mk_hide" data-strudel=""></span></p>
@@ -2524,7 +2622,7 @@ Ensuite, nous avons utilisé une boucle <code>for</code> pour <strong>parcourir<
 <div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_fcd05d8beb31c41b5491fa160c6a5880d0e3af5e" class="comment">###</span><div class="line" id="editor_fcd05d8beb31c41b5491fa160c6a5880d0e3af5e"></div><div id="term_editor_fcd05d8beb31c41b5491fa160c6a5880d0e3af5e" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_fcd05d8beb31c41b5491fa160c6a5880d0e3af5e","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_fcd05d8beb31c41b5491fa160c6a5880d0e3af5e","scripts/24")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_fcd05d8beb31c41b5491fa160c6a5880d0e3af5e').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_fcd05d8beb31c41b5491fa160c6a5880d0e3af5e" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_fcd05d8beb31c41b5491fa160c6a5880d0e3af5e")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_fcd05d8beb31c41b5491fa160c6a5880d0e3af5e")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
 <p><span id="content_editor_fcd05d8beb31c41b5491fa160c6a5880d0e3af5e" class="py_mk_hide">mapy-undliste = [10, 20, 30, 40, 50]bksl-nlbksl-nl# Utilisez une boucle for avec la fonction range() pour générer des indicesbksl-nlfor i in range(len(mapy-undliste)):bksl-nl    element = mapy-undliste[i]bksl-nl    print(f"Élément à l'indice {i} : {element}")bksl-nl</span><span id="corr_content_editor_fcd05d8beb31c41b5491fa160c6a5880d0e3af5e" class="py_mk_hide" data-strudel=""></span></p>
 <p>Ici, on a mis directement <code>len(ma_liste)</code> à l'intérieur du <code>range</code>, ce qui évite de créer une <strong>variable</strong> supplémentaire.</p>
-<h2 id="a-vous-de-jouer">À vous de jouer !<a class="headerlink" href="#a-vous-de-jouer" title="Permanent link">¶</a></h2>
+<h3 id="a-vous-de-jouer">À vous de jouer !<a class="headerlink" href="#a-vous-de-jouer" title="Permanent link">¶</a></h3>
 <div class="admonition note">
 <p class="admonition-title">Exercice : Manipulation de listes</p>
 <p>Créez un <strong>programme</strong> en réalisant les tâches suivantes :</p>
@@ -2537,22 +2635,22 @@ Ensuite, nous avons utilisé une boucle <code>for</code> pour <strong>parcourir<
 <details class="tip">
 <summary>Aide - Code à trous</summary>
 <p>Pour vous aider, vous pouvez réutiliser ce programme à trous :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c1"># Créer une liste contenant les entiers de 1 à 5</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="n">nombres</span> <span class="o">=</span> <span class="o">.......</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>
-</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="c1"># Parcourir la liste et afficher chaque élément</span>
-</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Liste d'origine :"</span><span class="p">)</span>
-</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="o">.......</span><span class="p">:</span>
-</span><span id="__span-13-7"><a id="__codelineno-13-7" name="__codelineno-13-7" href="#__codelineno-13-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="o">.......</span><span class="p">)</span>
-</span><span id="__span-13-8"><a id="__codelineno-13-8" name="__codelineno-13-8" href="#__codelineno-13-8"></a>
-</span><span id="__span-13-9"><a id="__codelineno-13-9" name="__codelineno-13-9" href="#__codelineno-13-9"></a><span class="c1"># Modifier la liste pour qu'elle contienne les carrés des nombres de 1 à 5</span>
-</span><span id="__span-13-10"><a id="__codelineno-13-10" name="__codelineno-13-10" href="#__codelineno-13-10"></a><span class="k">for</span> <span class="o">...</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">.......</span><span class="p">):</span>
-</span><span id="__span-13-11"><a id="__codelineno-13-11" name="__codelineno-13-11" href="#__codelineno-13-11"></a>    <span class="n">nombres</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">.......</span> <span class="o">**</span> <span class="mi">2</span>
-</span><span id="__span-13-12"><a id="__codelineno-13-12" name="__codelineno-13-12" href="#__codelineno-13-12"></a>
-</span><span id="__span-13-13"><a id="__codelineno-13-13" name="__codelineno-13-13" href="#__codelineno-13-13"></a><span class="c1"># Parcourir la liste mise à jour et afficher chaque élément</span>
-</span><span id="__span-13-14"><a id="__codelineno-13-14" name="__codelineno-13-14" href="#__codelineno-13-14"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Liste mise à jour :"</span><span class="p">)</span>
-</span><span id="__span-13-15"><a id="__codelineno-13-15" name="__codelineno-13-15" href="#__codelineno-13-15"></a><span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="o">.......</span><span class="p">:</span>
-</span><span id="__span-13-16"><a id="__codelineno-13-16" name="__codelineno-13-16" href="#__codelineno-13-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="o">.......</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="c1"># Créer une liste contenant les entiers de 1 à 5</span>
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a><span class="n">nombres</span> <span class="o">=</span> <span class="o">.......</span>
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1"># Parcourir la liste et afficher chaque élément</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"Liste d'origine :"</span><span class="p">)</span>
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="o">.......</span><span class="p">:</span>
+</span><span id="__span-16-7"><a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a>    <span class="nb">print</span><span class="p">(</span><span class="o">.......</span><span class="p">)</span>
+</span><span id="__span-16-8"><a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a>
+</span><span id="__span-16-9"><a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="c1"># Modifier la liste pour qu'elle contienne les carrés des nombres de 1 à 5</span>
+</span><span id="__span-16-10"><a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="k">for</span> <span class="o">...</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">.......</span><span class="p">):</span>
+</span><span id="__span-16-11"><a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a>    <span class="n">nombres</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">=</span> <span class="o">.......</span> <span class="o">**</span> <span class="mi">2</span>
+</span><span id="__span-16-12"><a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+</span><span id="__span-16-13"><a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="c1"># Parcourir la liste mise à jour et afficher chaque élément</span>
+</span><span id="__span-16-14"><a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="nb">print</span><span class="p">(</span><span class="s2">"</span><span class="se">\n</span><span class="s2">Liste mise à jour :"</span><span class="p">)</span>
+</span><span id="__span-16-15"><a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a><span class="k">for</span> <span class="n">nombre</span> <span class="ow">in</span> <span class="o">.......</span><span class="p">:</span>
+</span><span id="__span-16-16"><a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>    <span class="nb">print</span><span class="p">(</span><span class="o">.......</span><span class="p">)</span>
 </span></code></pre></div>
 </details>
 <p>Vous pouvez réaliser ce programme sur <strong><em>Thonny</em></strong> ou dans l'<strong>IDE ci-dessous</strong> (vous pourrez <em>télécharger</em> votre programme en cliquant sur le <em>deuxième bouton</em> pour le conserver.)</p>

@@ -8,10 +8,10 @@
       
       
       
-        <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/bases_python/n_uplets_dicos/">
+        <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/bases_python/dicos/">
       
       
-        <link rel="prev" href="../listes/">
+        <link rel="prev" href="../tuples_listes/">
       
       
         <link rel="next" href="../exercices_introduction/">
@@ -22,7 +22,7 @@
     
     
       
-        <title>n-uplets et dictionnaires - Numérique et sciences informatiques</title>
+        <title>Ddictionnaires en Python - Numérique et sciences informatiques</title>
       
     
     
@@ -132,7 +132,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              n-uplets et dictionnaires
+              Ddictionnaires en Python
             
           </span>
         </div>
@@ -657,11 +657,11 @@
   
   
     <li class="md-nav__item">
-      <a href="../listes/" class="md-nav__link">
+      <a href="../tuples_listes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
-    Les listes Python
+    Les tuples et listes en Python
   </span>
   
 
@@ -691,7 +691,7 @@
           
   
   <span class="md-ellipsis">
-    n-uplets et dictionnaires
+    Ddictionnaires en Python
   </span>
   
 
@@ -702,7 +702,7 @@
         
   
   <span class="md-ellipsis">
-    n-uplets et dictionnaires
+    Ddictionnaires en Python
   </span>
   
 
@@ -726,26 +726,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#les-n-uplets" class="md-nav__link">
+  <a href="#presentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Les n-uplets
+      Présentation
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Les n-uplets">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parcours-de-chaines-de-caracteres" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parcours de chaînes de caractères
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -914,7 +899,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../exercices_listes/" class="md-nav__link">
+      <a href="../exercices_tuples_listes/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -2303,26 +2288,11 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#les-n-uplets" class="md-nav__link">
+  <a href="#presentation" class="md-nav__link">
     <span class="md-ellipsis">
-      Les n-uplets
+      Présentation
     </span>
   </a>
-  
-    <nav class="md-nav" aria-label="Les n-uplets">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#parcours-de-chaines-de-caracteres" class="md-nav__link">
-    <span class="md-ellipsis">
-      Parcours de chaînes de caractères
-    </span>
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -2394,6 +2364,7 @@
 
 
 <div><h1 id="les-n-uplets-et-dictionnaires">Les n-uplets et dictionnaires<a class="headerlink" href="#les-n-uplets-et-dictionnaires" title="Permanent link">¶</a></h1>
+<h2 id="presentation">Présentation<a class="headerlink" href="#presentation" title="Permanent link">¶</a></h2>
 <p>Jusqu'à maintenant, on a vu comment utiliser les <strong>listes Python</strong> permettant de <strong>stocker</strong> des <strong>séquences d'éléments</strong> (de même nature ou non).</p>
 <div class="admonition quote">
 <p>Imaginons que nous souhaitions écrire un <strong>programme</strong> pour déterminer quel est le <strong>mois</strong> de l’<strong>année</strong> où <strong>le plus d’élèves du lycée sont nés</strong>. On suppose donnés, pour chaque élève, son <strong>nom</strong>, sous la forme d’une <strong>chaîne de caractères</strong>, et sa <strong>date de naissance</strong>, sous la forme de <strong>trois entiers</strong>. À l'aide des <strong>listes</strong>, on pourrait stocker ces informations de la manière suivante :</p>
@@ -2404,118 +2375,75 @@
 </span></code></pre></div>
 <p>Mais cette <strong>représentation</strong> n'est pas idéale. Si par exemple on souhaite trier les individus par <strong>année de naissance</strong>, on sera obligé de réorganiser les éléments dans les <strong>quatre listes</strong>, ce qui n'est pas le plus intuitif et le moins coûteux.</p>
 </div>
-<h2 id="les-n-uplets">Les n-uplets<a class="headerlink" href="#les-n-uplets" title="Permanent link">¶</a></h2>
 <p>Une première manière de répondre à cette problématique est de créer <strong>une liste unique</strong> dans lequel <strong>chaque élément</strong> contiendra <strong>toutes les informations</strong> sur la personne.</p>
 <p>On pourrait faire ceci en utilisant des <strong>listes de listes</strong>, ce qui donnerait :</p>
 <div class="language-python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">individus</span> <span class="o">=</span> <span class="p">[[</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1941</span><span class="p">],</span> <span class="p">[</span><span class="s2">"Bob"</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1909</span><span class="p">],</span> <span class="p">[</span><span class="s2">"Charles"</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1965</span><span class="p">],</span> <span class="p">[</span><span class="s2">"Delphine"</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1938</span><span class="p">]]</span>
 </span></code></pre></div>
 <p>Mais ce n'est pas l'idéal non plus car il est préférable qu'une <strong>liste Python</strong> contienne des <strong>éléments homogènes</strong> (c'est-à-dire de même type), ce qui n'est pas le cas ici.</p>
-<div class="admonition success">
-<p class="admonition-title">n-uplets en Python <em>(tuples)</em></p>
-<p>Une meilleure solution ici sera donc d'utiliser les <strong>n-uplets</strong> fournis par Python. Comme en <strong>mathématiques</strong>, un <strong>n-uplet</strong> est un <strong>ensemble de valeurs</strong> écrites entre <strong>parenthèses</strong> et <strong>séparées par des virgules</strong>. On peut, par exemple, affecter à une variable <code>x</code> un quadruplet de la manière suivante :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="n">x</span> <span class="o">=</span> <span class="p">(</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1941</span><span class="p">)</span>
-</span></code></pre></div>
-<p><strong><u>Opérations sur les n-uplets</u></strong> :</p>
-<p>Les opérations sont similaires à celles sur les listes :</p>
-<ul>
-<li><code>len(x)</code> renvoit la <strong>longueur du tuple</strong> stocké dans <code>x</code>, ici <code>4</code>,</li>
-<li><code>x[0]</code> renvoit le <strong>premier élément du tuple</strong> stocké dans <code>x</code>, ici <code>"Alice"</code>,</li>
-<li>on peut <strong>parcourir un tuple</strong> avec une <strong>boucle</strong> :<ul>
-<li><code>for i in range(len(x))</code> pour parcourir par <strong>indice</strong>,</li>
-<li><code>for element in x</code> pour parcourir directement les <strong>éléments</strong>.</li>
-</ul>
-</li>
-</ul>
-<p>Par contre, <span style="color:rgb(200,0,0)">on ne peut pas <strong>modifier un élément</strong> d'un <strong>tuple</strong></span>.</p>
-<p>Si on essaie, on obtient une <strong>erreur</strong> de type <code>TypeError</code> (erreur de <strong>type</strong>) :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="mi">8</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="n">File</span> <span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="ne">TypeError</span><span class="p">:</span> <span class="s1">'tuple'</span> <span class="nb">object</span> <span class="n">does</span> <span class="ow">not</span> <span class="n">support</span> <span class="n">item</span> <span class="n">assignment</span>
-</span></code></pre></div>
-</div>
-<p>Ainsi, si on reprend nos données précédentes, on peut écrire, en utilisant des <strong>tuples</strong> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="n">individus</span> <span class="o">=</span> <span class="p">[(</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1941</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Bob"</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1909</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Charles"</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">12</span><span class="p">,</span> <span class="mi">1965</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Delphine"</span><span class="p">,</span> <span class="mi">11</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1938</span><span class="p">)]</span>
-</span></code></pre></div>
-<p>On peut maintenant <strong>parcourir cette liste de tuples</strong> de différentes manières :</p>
-<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_19715e5882728171db7a177c25cc5dabf53cce00" class="comment">###</span><div class="line" id="editor_19715e5882728171db7a177c25cc5dabf53cce00"></div><div id="term_editor_19715e5882728171db7a177c25cc5dabf53cce00" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_19715e5882728171db7a177c25cc5dabf53cce00","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_19715e5882728171db7a177c25cc5dabf53cce00","scripts/33")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_19715e5882728171db7a177c25cc5dabf53cce00').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_19715e5882728171db7a177c25cc5dabf53cce00" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_19715e5882728171db7a177c25cc5dabf53cce00")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_19715e5882728171db7a177c25cc5dabf53cce00")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
-<p><span id="content_editor_19715e5882728171db7a177c25cc5dabf53cce00" class="py_mk_hide">individus = [("Alice", 7, 1, 1941), ("Bob", 9, 12, 1909), ("Charles", 14, 12, 1965), ("Delphine", 11, 1, 1938)]bksl-nlbksl-nlfor e in individus:bksl-nl    print(f'Nom : {e[0]}, né(e) le {e[1]}/{e[2]}/{e[3]}')bksl-nlbksl-nlprint('-----')bksl-nlbksl-nlfor nom, jour, mois, annee in individus:bksl-nl    print(f'Nom : {nom}, né(e) le {jour}/{mois}/{annee}')bksl-nlbksl-nl</span><span id="corr_content_editor_19715e5882728171db7a177c25cc5dabf53cce00" class="py_mk_hide" data-strudel=""></span></p>
-<h3 id="parcours-de-chaines-de-caracteres">Parcours de chaînes de caractères<a class="headerlink" href="#parcours-de-chaines-de-caracteres" title="Permanent link">¶</a></h3>
-<p>Les <strong>chaînes de caractères</strong> offrent une ressemblance avec les <strong>tuples</strong>, dans le sens où l'on peut <strong>lire les caractères</strong> de la même manière que l'on <strong>lit les éléments d'un tuple</strong>, mais on ne peut pas <strong>modifier une chaîne de caractères</strong>.</p>
-<p>En particulier, on peut obtenir la <strong>taille d’une chaîne de caractères</strong>, c’est-à-dire son <strong>nombre de caractères</strong>, avec l’opération <code>len</code> et <strong>accéder au i-ième caractère</strong> d’une chaîne avec les <strong>crochets</strong> :</p>
-<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper_v"><span id="comment_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" class="comment">###</span><div class="line_v"><div id="editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7"></div></div><div id="term_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" class="term_editor_v"></div></div><button class="tooltip" onclick='play("editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7","_v")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7","scripts/28")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
-<p><span id="content_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" class="py_mk_hide">s = "abcdefgh"bksl-nlbksl-nlprint(len(s))  # afficher la taille de la chaîne sbksl-nlbksl-nlprint(s[0])  # afficher le premier caractère de sbksl-nlbksl-nlprint(s[len(s) - 1])  # afficher le dernier caractère de sbksl-nl</span><span id="corr_content_editor_c4119711ec21a3de6225d752fe4de6e4b6da86f7" class="py_mk_hide" data-strudel=""></span></p>
-<p>Voici deux manières dont on peut <strong>parcourir une chaîne de caractères</strong> pour <strong>afficher chaque caractère un à un</strong>, le principe est le même que pour les <strong>listes</strong> et les <strong>tuples</strong> :</p>
-<p>En récupérant directement <strong>chaque élément</strong> à <strong>chaque itération</strong> d'une <strong>boucle</strong> :</p>
-<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper_v"><span id="comment_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" class="comment">###</span><div class="line_v"><div id="editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f"></div></div><div id="term_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" class="term_editor_v"></div></div><button class="tooltip" onclick='play("editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f","_v")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f","scripts/26")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
-<p><span id="content_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" class="py_mk_hide">s = "abcdefgh"bksl-nlbksl-nlfor car in s:bksl-nl    print(car)bksl-nl</span><span id="corr_content_editor_0bd2a95f44da4e2a2ec1b0f059808164c08b9d2f" class="py_mk_hide" data-strudel=""></span></p>
-<p>En récupérant chaque <strong>élément</strong> par son <strong>indice</strong> (la variable <code>i</code> de la <strong>boucle</strong> prendra les valeurs <code>0</code>, puis <code>1</code>, puis <code>2</code>, etc. jusqu'à l'indice du dernier élément):</p>
-<div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper_v"><span id="comment_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" class="comment">###</span><div class="line_v"><div id="editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99"></div></div><div id="term_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" class="term_editor_v"></div></div><button class="tooltip" onclick='play("editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99","_v")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99","scripts/27")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
-<p><span id="content_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" class="py_mk_hide">s = "abcdefgh"bksl-nlbksl-nlfor i in range(len(s)):bksl-nl    print(s[i])bksl-nl</span><span id="corr_content_editor_126df96860d9e4cd47065b26734bbcfd2fd3ed99" class="py_mk_hide" data-strudel=""></span></p>
 <h2 id="les-dictionnaires">Les dictionnaires<a class="headerlink" href="#les-dictionnaires" title="Permanent link">¶</a></h2>
 <p>La <strong>représentation</strong> précédente n'est très pratique, car on doit retenir la nature de chaque information.</p>
 <p>C'est pourquoi, une autre manière de représenter ces <strong>données</strong> est d'utiliser des <strong>n-uplets nommés</strong>, à l'aide d'une autre <strong>structure de données</strong> du langage <strong>Python</strong> appelé <strong><u>dictionnaire</u></strong>.</p>
 <p>Un <strong>dictionnaire</strong> est une <strong>structure</strong> qui associe des <strong><u>valeurs</u></strong> à des <strong><u>clés</u></strong>. Ainsi, le dictionnaire</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="p">{</span><span class="s2">"nom"</span><span class="p">:</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="s2">"jour"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span> <span class="s2">"mois"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"annee"</span><span class="p">:</span><span class="mi">1941</span><span class="p">}</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="p">{</span><span class="s2">"nom"</span><span class="p">:</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="s2">"jour"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span> <span class="s2">"mois"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"annee"</span><span class="p">:</span><span class="mi">1941</span><span class="p">}</span>
 </span></code></pre></div>
 <p>contient <strong>quatre clés</strong>, ici les <strong>chaînes de caractères</strong> <code>"nom"</code>, <code>"jour"</code>, <code>"mois"</code> et <code>"année"</code>, auxquelles sont respectivement associées les <strong>valeurs</strong> <code>"Alice"</code>, <code>7</code>, <code>1</code> et <code>1941</code>.</p>
 <div class="admonition abstract">
 <p>Si l'on souhaite représenter les données de <code>individus</code> dans un <strong>dictionnaire</strong>, on peut écrire :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="n">individus</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">'nom'</span><span class="p">:</span> <span class="s2">"Alice"</span><span class="p">,</span> <span class="s1">'jour'</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">'mois'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'annee'</span><span class="p">:</span> <span class="mi">1941</span><span class="p">},</span>
-</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>            <span class="p">{</span><span class="s1">'nom'</span><span class="p">:</span> <span class="s2">"Bob"</span><span class="p">,</span> <span class="s1">'jour'</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">'mois'</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">'annee'</span><span class="p">:</span> <span class="mi">1909</span><span class="p">},</span>
-</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>            <span class="p">{</span><span class="s1">'nom'</span><span class="p">:</span> <span class="s2">"Charles"</span><span class="p">,</span> <span class="s1">'jour'</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s1">'mois'</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">'annee'</span><span class="p">:</span> <span class="mi">1965</span><span class="p">},</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>            <span class="p">{</span><span class="s1">'nom'</span><span class="p">:</span> <span class="s2">"Delphine"</span><span class="p">,</span> <span class="s1">'jour'</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">'mois'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'annee'</span><span class="p">:</span> <span class="mi">1938</span><span class="p">}]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="n">individus</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">'nom'</span><span class="p">:</span> <span class="s2">"Alice"</span><span class="p">,</span> <span class="s1">'jour'</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span> <span class="s1">'mois'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'annee'</span><span class="p">:</span> <span class="mi">1941</span><span class="p">},</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>            <span class="p">{</span><span class="s1">'nom'</span><span class="p">:</span> <span class="s2">"Bob"</span><span class="p">,</span> <span class="s1">'jour'</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span> <span class="s1">'mois'</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">'annee'</span><span class="p">:</span> <span class="mi">1909</span><span class="p">},</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>            <span class="p">{</span><span class="s1">'nom'</span><span class="p">:</span> <span class="s2">"Charles"</span><span class="p">,</span> <span class="s1">'jour'</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span> <span class="s1">'mois'</span><span class="p">:</span> <span class="mi">12</span><span class="p">,</span> <span class="s1">'annee'</span><span class="p">:</span> <span class="mi">1965</span><span class="p">},</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>            <span class="p">{</span><span class="s1">'nom'</span><span class="p">:</span> <span class="s2">"Delphine"</span><span class="p">,</span> <span class="s1">'jour'</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span> <span class="s1">'mois'</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">'annee'</span><span class="p">:</span> <span class="mi">1938</span><span class="p">}]</span>
 </span></code></pre></div>
 </div>
 <p>Contrairement à un <strong>tableau</strong> (représenté avec une <strong>liste</strong> en <em>Python</em>), les <strong>clés</strong> d’un <strong>dictionnaire</strong> ne sont pas limitées à un ensemble d’entiers de la forme <code>0</code>, <code>1</code>, . . . , <code>n − 1</code>.</p>
 <p>Un dictionnaire peut être construit en donnant explicitement toutes ses <strong>entrées</strong>, comme c'est le cas pour le <strong>dictionnaire</strong> précédent représentant l’élève <code>Alice</code>.<br>
 On peut également en construire un à partir du <strong>dictionnaire vide</strong>, noté <code>{}</code>, en y ajoutant peu à peu des <strong>entrées</strong> avec des <strong>affectations</strong> de la forme <code>d[clé] = valeur</code>.</p>
-<p></p><div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
-</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Homer"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"le mari de Marge"</span>
-</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Marge"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"la femme d’Homer"</span>
-</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Lisa"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"la fille de Marge et Homer"</span>
-</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
-</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="p">{</span><span class="s1">'Homer'</span><span class="p">:</span> <span class="s1">'le mari de Marge'</span><span class="p">,</span> <span class="s1">'Marge'</span><span class="p">:</span> <span class="s1">'la femme d’Homer'</span><span class="p">,</span> <span class="s1">'Lisa'</span><span class="p">:</span> <span class="s1">'la fille de Marge et Homer'</span><span class="p">}</span>
-</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="mi">3</span>
+<p></p><div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span> <span class="o">=</span> <span class="p">{}</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Homer"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"le mari de Marge"</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Marge"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"la femme d’Homer"</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Lisa"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"la fille de Marge et Homer"</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a><span class="p">{</span><span class="s1">'Homer'</span><span class="p">:</span> <span class="s1">'le mari de Marge'</span><span class="p">,</span> <span class="s1">'Marge'</span><span class="p">:</span> <span class="s1">'la femme d’Homer'</span><span class="p">,</span> <span class="s1">'Lisa'</span><span class="p">:</span> <span class="s1">'la fille de Marge et Homer'</span><span class="p">}</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a><span class="mi">3</span>
 </span></code></pre></div>
 L'ordre d'insertion <strong>n'a pas d'importance</strong>, puisque contrairement à une <strong>liste</strong> ou à un <strong>tuple</strong>, les <strong>éléments</strong> d'un <strong>dictionnaire</strong> ne sont <strong>pas ordonnés</strong>, ils sont affichés dans un <strong>ordre arbitraire</strong>.
 <p>On peut <strong>accéder</strong> à la <strong>valeur associée</strong> à une <strong>clé</strong> avec la construction <code>d[clé]</code> et on peut <strong>tester</strong> si le <strong>dictionnaire possède une entrée</strong> pour une certaine <strong>clé</strong> avec la construction <code>clé in d</code>.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Lisa"</span><span class="p">]</span>
-</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="err">’</span><span class="n">la</span> <span class="n">fille</span> <span class="n">de</span> <span class="n">Marge</span> <span class="n">et</span> <span class="n">Homer</span><span class="err">’</span>
-</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="s2">"Lisa"</span> <span class="ow">in</span> <span class="n">d</span>
-</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="kc">True</span>
-</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="s2">"Bart"</span> <span class="ow">in</span> <span class="n">d</span>
-</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="kc">False</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Lisa"</span><span class="p">]</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="err">’</span><span class="n">la</span> <span class="n">fille</span> <span class="n">de</span> <span class="n">Marge</span> <span class="n">et</span> <span class="n">Homer</span><span class="err">’</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="o">&gt;&gt;&gt;</span> <span class="s2">"Lisa"</span> <span class="ow">in</span> <span class="n">d</span>
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="kc">True</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="o">&gt;&gt;&gt;</span> <span class="s2">"Bart"</span> <span class="ow">in</span> <span class="n">d</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="kc">False</span>
 </span></code></pre></div>
 <div class="admonition success">
 <p>Tester si un <strong>dictionnaire</strong> possède une <strong>clé</strong> donnée se fait de manière <strong>quasiment instantanée</strong> (en <em>temps constant</em>), ce qui est donc <strong>moins coûteux</strong> que de <strong>chercher un élément dans une liste</strong>, où la complexité est <strong>linéaire</strong> dans le <em>pire des cas</em> (puisqu'il faut parcourir chaque élément jusqu'à trouver le bon).</p>
 <p>Sans rentrer dans les détails, cela s'explique parce que les <strong>dictionnaires</strong>, tout comme les <strong>ensembles</strong> en <em>Python</em> (une autre structure qui n'est pas au programme) sont, en <em>interne</em>, implémentés à l'aide d'une <em>table de hachage</em>, une structure de données très efficace pour la <strong>recherche</strong> et l'<strong>insertion</strong> d'éléments.</p>
 </div>
 <p>Si on tente d’obtenir la <strong>valeur associée</strong> à une <strong>clé</strong> qui <strong>n’est pas dans le dictionnaire</strong>, cela lève une <strong>erreur</strong>. Par exemple :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Bart"</span><span class="p">]</span>
-</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
-</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="n">File</span> <span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
-</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="ne">KeyError</span><span class="p">:</span> <span class="err">’</span><span class="n">Bart</span><span class="err">’</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Bart"</span><span class="p">]</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">Traceback</span> <span class="p">(</span><span class="n">most</span> <span class="n">recent</span> <span class="n">call</span> <span class="n">last</span><span class="p">):</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">File</span> <span class="s2">"&lt;stdin&gt;"</span><span class="p">,</span> <span class="n">line</span> <span class="mi">1</span><span class="p">,</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="ne">KeyError</span><span class="p">:</span> <span class="err">’</span><span class="n">Bart</span><span class="err">’</span>
 </span></code></pre></div>
 <p>Comme pour une <strong>liste</strong>, le contenu d’un dictionnaire peut être <strong>modifié</strong> après sa création, en remplaçant la <strong>valeur associée à une clé</strong> par une <strong>autre valeur</strong>, par exemple :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Lisa"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"modèle de La Joconde"</span>
-</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="mi">3</span>
-</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Lisa"</span><span class="p">]</span>
-</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="err">’</span><span class="n">modèle</span> <span class="n">de</span> <span class="n">La</span> <span class="n">Joconde</span><span class="err">’</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Lisa"</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"modèle de La Joconde"</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="mi">3</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Lisa"</span><span class="p">]</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="err">’</span><span class="n">modèle</span> <span class="n">de</span> <span class="n">La</span> <span class="n">Joconde</span><span class="err">’</span>
 </span></code></pre></div>
 <p>Il est également possible de <strong>supprimer une entrée du dictionnaire</strong> avec l’instruction <code>del</code>.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Lisa"</span><span class="p">]</span>
-</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="s2">"Lisa"</span> <span class="ow">in</span> <span class="n">d</span>
-</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="kc">False</span>
-</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
-</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="mi">2</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="k">del</span> <span class="n">d</span><span class="p">[</span><span class="s2">"Lisa"</span><span class="p">]</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="o">&gt;&gt;&gt;</span> <span class="s2">"Lisa"</span> <span class="ow">in</span> <span class="n">d</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="kc">False</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="o">&gt;&gt;&gt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">d</span><span class="p">)</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="mi">2</span>
 </span></code></pre></div>
 <h3 id="parcourir-un-dictionnaire">Parcourir un dictionnaire<a class="headerlink" href="#parcourir-un-dictionnaire" title="Permanent link">¶</a></h3>
 <p>Le <strong>parcours des éléments</strong> d'un dictionnaire peut se faire de <strong>différentes façons</strong>.</p>
 <p>Si l'on prend le dictionnaire suivant :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"nom"</span><span class="p">:</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="s2">"jour"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span> <span class="s2">"mois"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"annee"</span><span class="p">:</span><span class="mi">1941</span><span class="p">}</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="n">d</span> <span class="o">=</span> <span class="p">{</span><span class="s2">"nom"</span><span class="p">:</span><span class="s2">"Alice"</span><span class="p">,</span> <span class="s2">"jour"</span><span class="p">:</span><span class="mi">7</span><span class="p">,</span> <span class="s2">"mois"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s2">"annee"</span><span class="p">:</span><span class="mi">1941</span><span class="p">}</span>
 </span></code></pre></div>
 <p>On peut parcourir les <strong>clés</strong> de la façon suivante :</p>
 <div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_ace5d4cad28f9b983fdd0fb35b86aa3e35b3da8c" class="comment">###</span><div class="line" id="editor_ace5d4cad28f9b983fdd0fb35b86aa3e35b3da8c"></div><div id="term_editor_ace5d4cad28f9b983fdd0fb35b86aa3e35b3da8c" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_ace5d4cad28f9b983fdd0fb35b86aa3e35b3da8c","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_ace5d4cad28f9b983fdd0fb35b86aa3e35b3da8c","scripts/34")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_ace5d4cad28f9b983fdd0fb35b86aa3e35b3da8c').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_ace5d4cad28f9b983fdd0fb35b86aa3e35b3da8c" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_ace5d4cad28f9b983fdd0fb35b86aa3e35b3da8c")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_ace5d4cad28f9b983fdd0fb35b86aa3e35b3da8c")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
@@ -2531,33 +2459,33 @@ L'ordre d'insertion <strong>n'a pas d'importance</strong>, puisque contrairement
 <p><span id="content_editor_8b55cc459e62de2f7d4ddcc81d9a3a59e1bfd3fa" class="py_mk_hide">d = {"nom":"Alice", "jour":7, "mois":1, "annee":1941}bksl-nlbksl-nl# Afficher chaque clé du dictionnairebksl-nlfor cle, val in d.items():bksl-nl    print(f'{cle} : {val}')bksl-nlbksl-nl# Autre possibilitébksl-nlfor el in d.items():bksl-nl    print(el)bksl-nlbksl-nl# Créer une liste de tuples (clé, valeur)bksl-nlelements = list(d.items())bksl-nlprint(elements)bksl-nl</span><span id="corr_content_editor_8b55cc459e62de2f7d4ddcc81d9a3a59e1bfd3fa" class="py_mk_hide" data-strudel=""></span></p>
 <h3 id="dictionnaires-par-comprehension">Dictionnaires par compréhension<a class="headerlink" href="#dictionnaires-par-comprehension" title="Permanent link">¶</a></h3>
 <p>Enfin, tout comme pour les <strong>listes</strong>, il est possible de <strong>construire un dictionnaire par compréhension</strong>, par exemple :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="p">{</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">}</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">16</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="p">{</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">}</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">16</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
 </span></code></pre></div>
 <h2 id="exercices-tuples">Exercices - Tuples<a class="headerlink" href="#exercices-tuples" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Exercice 1</p>
 <p>Écrire une fonction <code>afficher(liste)</code> qui prend en entrée une <strong>liste de tuples</strong> représentant des données sur des élèves, de la forme :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="p">[(</span><span class="s2">"Bastien"</span><span class="p">,</span> <span class="s2">"Dubois"</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Stéphane"</span><span class="p">,</span> <span class="s2">"Carlier"</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Vincent"</span><span class="p">,</span> <span class="s2">"Duboeuf"</span><span class="p">,</span> <span class="mi">15</span><span class="p">)]</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">[(</span><span class="s2">"Bastien"</span><span class="p">,</span> <span class="s2">"Dubois"</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Stéphane"</span><span class="p">,</span> <span class="s2">"Carlier"</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Vincent"</span><span class="p">,</span> <span class="s2">"Duboeuf"</span><span class="p">,</span> <span class="mi">15</span><span class="p">)]</span>
 </span></code></pre></div>
 <p>Et qui effectue un <strong>affichage</strong> comme suit (en prenant l'exemple de la liste ci-dessus) :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="n">Bastien</span> <span class="n">Dubois</span> <span class="o">-</span> <span class="mi">15</span> <span class="n">ans</span>
-</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="n">Stéphane</span> <span class="n">Carlier</span> <span class="o">-</span> <span class="mi">16</span> <span class="n">ans</span>
-</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a><span class="n">Vincent</span> <span class="n">Duboeuf</span> <span class="o">-</span> <span class="mi">15</span> <span class="n">ans</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">Bastien</span> <span class="n">Dubois</span> <span class="o">-</span> <span class="mi">15</span> <span class="n">ans</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">Stéphane</span> <span class="n">Carlier</span> <span class="o">-</span> <span class="mi">16</span> <span class="n">ans</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">Vincent</span> <span class="n">Duboeuf</span> <span class="o">-</span> <span class="mi">15</span> <span class="n">ans</span>
 </span></code></pre></div>
 </div>
 <details class="tip">
 <summary>Correction exercice 1</summary>
 <p>Il y a plusieurs solutions pour écrire cette fonction.<br>
 On peut faire un <strong>parcours</strong> en récupérant <strong>chaque tuple</strong> contenu dans la <strong>liste</strong> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="k">def</span> <span class="nf">afficher</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>    <span class="k">for</span> <span class="n">infos</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">infos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">infos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">infos</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2"> ans"</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">def</span> <span class="nf">afficher</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="k">for</span> <span class="n">infos</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">infos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">infos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">infos</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2"> ans"</span><span class="p">)</span>
 </span></code></pre></div>
 <p>On peut également récupérer directement <strong>chaque information</strong> des tuples (<em>prénom</em>, <em>nom</em> et <em>âge</em>) dans des <strong>variables différentes</strong> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="k">def</span> <span class="nf">afficher</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span><span id="__span-17-2"><a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a>    <span class="k">for</span> <span class="n">prenom</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-</span><span id="__span-17-3"><a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prenom</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans"</span><span class="p">)</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">def</span> <span class="nf">afficher</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="k">for</span> <span class="n">prenom</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prenom</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans"</span><span class="p">)</span>
 </span></code></pre></div>
 <p>On a ici utilisé des <em>f-strings</em> pour gérer les <strong>affichages</strong>.</p>
 <p>Pour des rappels concernant les différentes façons d'utiliser la fonction <code>print</code>, vous pouvez <a href="../introduction/#affichage-sur-la-sortie-standard">consulter cette page de cours</a>.</p>
