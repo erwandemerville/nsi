@@ -2931,7 +2931,7 @@ Ces machines ont pour rôle de <strong>relayer les paquets</strong> dans le <str
 <li>Découverte d'une nouvelle route vers un sous-réseau inconnu : le routeur l'ajoute à sa table.</li>
 <li>Découverte d'une route plus courte vers un sous-réseau connu : le routeur met à jour sa table en remplaçant l'ancienne route par la nouvelle.</li>
 <li>Réception d'une nouvelle route plus longue : le routeur ignore cette information.</li>
-<li>Réception d'une route existante, mais plus longue, vers un routeur passant par le même voisin : le routeur met à jour sa table en tenant compte de cette nouvelle route.</li>
+<li>Réception d'une route existante, mais plus longue, vers un réseau passant par le même voisin : le routeur met à jour sa table en tenant compte de cette nouvelle route.</li>
 </ol>
 <p>Les <strong>distances associées</strong> aux routes sont ajustées en fonction du <strong>chemin</strong> parcouru, et la <strong>distance maximale est limitée à 15 routeurs intermédiaires</strong>. Au-delà de cette <strong>limite</strong>, la route est <strong>ignorée</strong> ou <strong>supprimée des tables de routage</strong>.</p>
 <p>En répétant ces échanges et en mettant à jour les tables de routage à intervalle fixe (l'intervalle de mise à jour par défaut pour le RIP est de 30 secondes.), les routeurs convergent vers une vision commune du réseau, déterminant ainsi les meilleures routes pour acheminer les paquets vers leurs destinations.</p>
