@@ -511,6 +511,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://nsi.erwandemerville.fr/terminale/pilesfiles/ds_piles_files/</loc>
+         <lastmod>2026-03-12</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://nsi.erwandemerville.fr/terminale/pilesfiles/exos_piles/</loc>
          <lastmod>2026-03-12</lastmod>
          <changefreq>daily</changefreq>
