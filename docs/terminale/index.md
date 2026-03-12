@@ -10,8 +10,9 @@
 | [Les listes chaînées](listes/index.md) | Structure de liste chaînée et implémentation. |
 | [Piles et files](pilesfiles/index.md) | Structures de piles et de files et implémentations. |
 | [Protocoles de routage](routage/index.md) | Protocoles de routage RIP et OSPF. |
-{% if exercices.toc_terminale %}
 | [Les arbres](arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |
+| [:material-account-voice: Le « Grand oral »](grand_oral/index.md) | Ressources concernant l'examen du « Grand oral ». |
+{% if exercices.toc_terminale %}
 | [Recherche textuelle](recherche_textuelle/index.md) | Algorithmes de recherche dans un texte. |
 | [Bases de données - représentations et applications](bdd/index.md) | Modèle relationnel, bases de données, SQL... |
 | [Diviser pour régner](diviserregner/index.md) | La méthode "Diviser pour régner" |
@@ -21,7 +22,6 @@
 | [Chiffrement](chiffrement/index.md) | Les méthodes de chiffrement et le protocole HTTPS |
 | [:material-note-text: Sujets de bac 2025](https://www.math93.com/annales-du-bac/bac-specialite-nsi/annales-nsi-2025/nsi-ecrit-2025.html) | Sujets et corrigés des sujets de baccalauréat 2025. |
 | [:fontawesome-solid-computer: Épreuve pratique de NSI](epreuve_pratique/index.md) | Ressources concernant l'épreuve pratique de NSI. |
-| [:material-account-voice: Le « Grand oral »](grand_oral/index.md) | Ressources concernant l'examen du « Grand oral ». |
 | [:material-pencil: Sujet e3c de rentrée corrigé](e3c/index.md) | Le sujet d'e3c de rentrée avec correction détaillée. |
 | [:material-language-python: Révisions / Entraînement Python](entrainement_python/index.md) | Quelques exercices pour vous exercer au langage Python. |
 | [:video_game: Le module Pyxel](pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |
