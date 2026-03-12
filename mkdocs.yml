@@ -55,12 +55,12 @@ nav:
       - Cours:
         - Introduction au Python: premiere/bases_python/introduction.md
         - Les fonctions en Python: premiere/bases_python/fonctions.md
-        - Les listes Python: premiere/bases_python/listes.md
-        - n-uplets et dictionnaires: premiere/bases_python/n_uplets_dicos.md
+        - Les tuples et listes en Python: premiere/bases_python/tuples_listes.md
+        - Ddictionnaires en Python: premiere/bases_python/dicos.md
       - Activités:
         - Exercices d'introduction au Python: premiere/bases_python/exercices_introduction.md
         - Exercices sur les fonctions: premiere/bases_python/exercices_fonctions.md
-        - Exercices sur les listes: premiere/bases_python/exercices_listes.md
+        - Exercices sur les tuples et les listes: premiere/bases_python/exercices_tuples_listes.md
         - Notebooks: premiere/bases_python/notebooks.md
       - Devoirs maison:
         - DM n°1: premiere/bases_python/dm1.md
@@ -70,6 +70,11 @@ nav:
       - premiere/representation_donnees/index.md
       - Cours: premiere/representation_donnees/cours.md
       - Exercices et notebooks : premiere/representation_donnees/exercices.md
+    - Architecture matérielle:
+      - premiere/archi/index.md
+      - Introduction à la logique booléenne: premiere/archi/introduction.md
+      - Fonctions et expressions: premiere/archi/fonctions.md
+      - Les circuits logiques: premiere/archi/circuits.md
   - Terminale:
     - terminale/index.md
     - Remise à niveau:
@@ -98,6 +103,20 @@ nav:
       - Introduction: terminale/recursivite/introduction.md
       - Cours: terminale/recursivite/cours.md
       - Exercices: terminale/recursivite/exercices.md
+    - Listes chaînées:
+      - terminale/listes/index.md
+      - Cours: terminale/listes/cours.md
+      - Exercices: terminale/listes/exercices.md
+    - Piles et files:
+      - terminale/pilesfiles/index.md
+      - TD/TP papier sur les piles: terminale/pilesfiles/td_tp_piles.md
+      - Cours/TP piles et files: terminale/pilesfiles/cours.md
+      - Exercices sur les piles: terminale/pilesfiles/exos_piles.md
+    - Protocoles de routage:
+      - terminale/routage/index.md
+      - Cours: terminale/routage/cours.md
+      - Exercices: terminale/routage/exercices.md
+      - TP Filius: terminale/routage/tp_filius.md
   - Rendu des travaux: rendus.md
   - Partage de fichiers: https://bit.ly/nsipartage
   - 🌐 Site en anglais: https://nsi-erwandemerville-fr.translate.goog/?_x_tr_sl=fr&_x_tr_tl=en&_x_tr_hl=fr&_x_tr_pto=wapp

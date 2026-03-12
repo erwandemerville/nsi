@@ -1,5 +1,7 @@
 # Les n-uplets et dictionnaires
 
+## Présentation
+
 Jusqu'à maintenant, on a vu comment utiliser les **listes Python** permettant de **stocker** des **séquences d'éléments** (de même nature ou non).
 
 !!! quote ""
@@ -14,8 +16,6 @@ Jusqu'à maintenant, on a vu comment utiliser les **listes Python** permettant d
 
     Mais cette **représentation** n'est pas idéale. Si par exemple on souhaite trier les individus par **année de naissance**, on sera obligé de réorganiser les éléments dans les **quatre listes**, ce qui n'est pas le plus intuitif et le moins coûteux.
 
-## Les n-uplets
-
 Une première manière de répondre à cette problématique est de créer **une liste unique** dans lequel **chaque élément** contiendra **toutes les informations** sur la personne.
 
 On pourrait faire ceci en utilisant des **listes de listes**, ce qui donnerait :
@@ -25,62 +25,6 @@ individus = [["Alice", 7, 1, 1941], ["Bob", 9, 12, 1909], ["Charles", 14, 12, 19
 ```
 
 Mais ce n'est pas l'idéal non plus car il est préférable qu'une **liste Python** contienne des **éléments homogènes** (c'est-à-dire de même type), ce qui n'est pas le cas ici.
-
-!!! success "n-uplets en Python *(tuples)*"
-    Une meilleure solution ici sera donc d'utiliser les **n-uplets** fournis par Python. Comme en **mathématiques**, un **n-uplet** est un **ensemble de valeurs** écrites entre **parenthèses** et **séparées par des virgules**. On peut, par exemple, affecter à une variable `x` un quadruplet de la manière suivante :
-
-    ```python
-    x = ("Alice", 7, 1, 1941)
-    ```
-
-    **<u>Opérations sur les n-uplets</u>** :
-
-    Les opérations sont similaires à celles sur les listes :
-
-    - `len(x)` renvoit la **longueur du tuple** stocké dans `x`, ici `4`,
-    - `x[0]` renvoit le **premier élément du tuple** stocké dans `x`, ici `"Alice"`,
-    - on peut **parcourir un tuple** avec une **boucle** :
-        - `for i in range(len(x))` pour parcourir par **indice**,
-        - `for element in x` pour parcourir directement les **éléments**.
-
-    Par contre, <span style="color:rgb(200,0,0)">on ne peut pas **modifier un élément** d'un **tuple**</span>.
-
-    Si on essaie, on obtient une **erreur** de type `TypeError` (erreur de **type**) :
-
-    ```python
-    >>> x[1] = 8
-    Traceback (most recent call last):
-    File "<stdin>", line 1, in <module>
-    TypeError: 'tuple' object does not support item assignment
-    ```
-
-Ainsi, si on reprend nos données précédentes, on peut écrire, en utilisant des **tuples** :
-
-```python
-individus = [("Alice", 7, 1, 1941), ("Bob", 9, 12, 1909), ("Charles", 14, 12, 1965), ("Delphine", 11, 1, 1938)]
-```
-
-On peut maintenant **parcourir cette liste de tuples** de différentes manières :
-
-{{ IDE('scripts/33.py') }}
-
-### Parcours de chaînes de caractères
-
-Les **chaînes de caractères** offrent une ressemblance avec les **tuples**, dans le sens où l'on peut **lire les caractères** de la même manière que l'on **lit les éléments d'un tuple**, mais on ne peut pas **modifier une chaîne de caractères**.
-
-En particulier, on peut obtenir la **taille d’une chaîne de caractères**, c’est-à-dire son **nombre de caractères**, avec l’opération `len` et **accéder au i-ième caractère** d’une chaîne avec les **crochets** :
-
-{{ IDEv('scripts/28.py') }}
-
-Voici deux manières dont on peut **parcourir une chaîne de caractères** pour **afficher chaque caractère un à un**, le principe est le même que pour les **listes** et les **tuples** :
-
-En récupérant directement **chaque élément** à **chaque itération** d'une **boucle** :
-
-{{ IDEv('scripts/26.py') }}
-
-En récupérant chaque **élément** par son **indice** (la variable `i` de la **boucle** prendra les valeurs `0`, puis `1`, puis `2`, etc. jusqu'à l'indice du dernier élément):
-
-{{ IDEv('scripts/27.py') }}
 
 ## Les dictionnaires
 

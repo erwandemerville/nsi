@@ -9,9 +9,9 @@
 | [Récursivité](recursivite/index.md) | Utilisation de la récursivité en langage Python. |
 | [Les listes chaînées](listes/index.md) | Structure de liste chaînée et implémentation. |
 | [Piles et files](pilesfiles/index.md) | Structures de piles et de files et implémentations. |
+| [Protocoles de routage](routage/index.md) | Protocoles de routage RIP et OSPF. |
 {% if exercices.toc_terminale %}
 | [Les arbres](arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |
-| [Protocoles de routage](routage/index.md) | Protocoles de routage RIP et OSPF. |
 | [Recherche textuelle](recherche_textuelle/index.md) | Algorithmes de recherche dans un texte. |
 | [Bases de données - représentations et applications](bdd/index.md) | Modèle relationnel, bases de données, SQL... |
 | [Diviser pour régner](diviserregner/index.md) | La méthode "Diviser pour régner" |

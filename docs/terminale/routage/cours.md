@@ -8,12 +8,12 @@
 
 # Cours - Protocoles de routage
 
-## Rappels sur l'adressage IP
+## Rappels de première
 
-Voici une petite activité (sous la forme d'un notebook) de rappel sur l'**adressage IP et les masques de sous-réseau** :
+Voici une petite activité (sous la forme d'un notebook) de rappels de première sur l'**adressage IP et les masques de sous-réseaux** :
     
 <center>
-[:material-cursor-default-click: Télécharger l'activité d'introduction](https://capytale2.ac-paris.fr/web/c/c925-5308509)
+[:material-cursor-default-click: Télécharger l'activité d'introduction](https://capytale2.ac-paris.fr/web/c/cde6-9359203)
 </center>
 
 !!! tip "Adresses *broadcast* et *multicast*"
@@ -22,7 +22,7 @@ Voici une petite activité (sous la forme d'un notebook) de rappel sur l'**adres
 
 ## Rappels - Qu'est-ce qu'un réseau ?
 
-Vous pouvez dans un premier temps essayer de faire l'[exercice 1](#exercices) pour tester vos connaissances sur les composants d'un réseau.
+Vous pouvez dans un premier temps essayer de faire l'[exercice de rappels](exercices.md/#exercice-de-rappels) pour tester vos connaissances sur les composants d'un réseau.
 
 Voici une petite vidéo résumant la **constitution d'un réseau** (et plus généralement du **réseau mondial**) :
 
@@ -96,8 +96,8 @@ En revanche, si l'**hôte source** et l'**hôte de destination** ne sont **pas s
     
     Les **routeurs** utilisent des **tables de routage**, qui peuvent être établies de deux manières :
     
-    - par un ==**routage statique**== : chaque ligne doit être renseignée "à la main". Cette solution est seulement envisageable pour des très petits réseaux de réseaux.
-    - par un ==**routage dynamique**== : tout se fait "automatiquement", en utilisant des **protocoles** tels que **RIP** (*Routing Information Protocol*) ou **OSPF** (*Open Shortest Path First*)==, qui vont permettre de "découvrir" les **différentes routes automatiquement** afin de pouvoir **remplir la table de routage** tout aussi **automatiquement**.
+    - par un ==**routage statique**== : chaque ligne doit être renseignée "à la main". Cette solution est seulement envisageable pour de très petits réseaux de réseaux.
+    - par un ==**routage dynamique**== : tout se fait "automatiquement", en utilisant des **protocoles** tels que **RIP** (*Routing Information Protocol*) ou **OSPF** (*Open Shortest Path First*), qui vont permettre de "découvrir" les **différentes routes automatiquement** afin de pouvoir **remplir la table de routage** tout aussi **automatiquement**.
 
 !!! abstract "Une tableau de routage"
     Voici à quoi ressemble une **table de routage** (source : [Wikipédia](https://fr.wikipedia.org/wiki/Table_de_routage){ target="_blank" }) :
@@ -115,7 +115,7 @@ En revanche, si l'**hôte source** et l'**hôte de destination** ne sont **pas s
     Sur votre ordinateur, vous pouvez **afficher la table de routage** utilisée par **votre système** en utilisant les commandes suivantes :
 
     - Sous **Windows** : `route print` ou `netsh int ipv4/ipv6 sh route`
-    - Sous **Unix/OS X** : `netstat -rn
+    - Sous **Unix/OS X** : `netstat -rn`
     - Sous **Linux** : `ip -4/-6 route`
 
 !!! note "Exemple de table de routage"
@@ -162,14 +162,14 @@ Initialement, les **informations** dont dispose un **routeur** concernent **ses 
 !!! abstract "Principe du protocole RIP"
     Le **protocole RIP** s'appuie sur l'==**algorithme de Bellman-Ford**== (un algorithme utilisant le principe de **programmation dynamique**), permettant de **calculer les plus courts chemins** dans un graphe.
 
-    L'**algorithme** du **protocole RIP** repose sur le **partage d'informations entre routeurs** pour déterminer les **meilleures routes vers différents sous-réseaux**. Chaque **routeur** communique avec ses **voisins** en échangeant des ==**vecteurs de distance**==, c'est-à-dire des ==couples `(adresse, distance)`==, qui représentent la distance en **nombre de sauts** vers une **machine spécifique**. Ces échanges permettent aux routeurs de **construire** et **mettre à jour** leurs tables de routage.
+    L'**algorithme** du **protocole RIP** repose sur le **partage d'informations entre routeurs** pour déterminer les **meilleures routes vers différents sous-réseaux**. Chaque **routeur** communique avec ses **voisins** en échangeant des ==**vecteurs de distance**==, c'est-à-dire des ==couples `(adresse réseau, distance)`==, qui représentent la **distance** en **nombre de sauts** vers un **réseau spécifique**. Ces échanges permettent aux routeurs de **construire** et **mettre à jour** leurs tables de routage.
 
     Dans la phase d'**initialisation**, chaque routeur **transmet les adresses de ses voisins** et les **distances associées**. Ces informations sont utilisées pour former des **vecteurs de distance**. À partir de là, le **protocole RIP** continue par des **échanges périodiques** de **demandes** et de **réponses** entre les **routeurs**. Lorsqu'un **routeur** reçoit une réponse de son **voisin**, plusieurs scénarios peuvent se produire :
 
     1. Découverte d'une nouvelle route vers un sous-réseau inconnu : le routeur l'ajoute à sa table.
     2. Découverte d'une route plus courte vers un sous-réseau connu : le routeur met à jour sa table en remplaçant l'ancienne route par la nouvelle.
     3. Réception d'une nouvelle route plus longue : le routeur ignore cette information.
-    4. Réception d'une route existante, mais plus longue, vers un routeur passant par le même voisin : le routeur met à jour sa table en tenant compte de cette nouvelle route.
+    4. Réception d'une route existante, mais plus longue, vers un réseau passant par le même voisin : le routeur met à jour sa table en tenant compte de cette nouvelle route.
 
     Les **distances associées** aux routes sont ajustées en fonction du **chemin** parcouru, et la **distance maximale est limitée à 15 routeurs intermédiaires**. Au-delà de cette **limite**, la route est **ignorée** ou **supprimée des tables de routage**.
 

@@ -25,7 +25,9 @@ Pour les **exercices 1 et 3** suivants, on utilisera la **figure suivante** :
     Voici une **fiche d'exercices** portant sur **quelques rappels de première** (trouver l'*adresse d'un réseau* à partir d'un *masque*, calculer le nombre d'*adresses IP disponibles* sur un *réseau*) et sur le **protocole RIP**.
 
     - [Fiche d'exercices](src/exercices_RIP.pdf){ target="_blank" } - Fiche d'exercices au format *PDF*.
+    {% if exercices.terminale.routage.exercices.ficherip %}
     - [Correction fiche d'exercices](src/exercices_RIP_correction.pdf){ target="_blank" } - Fiche d'exercices corrigée.
+    {% endif %}
 
 !!! note "Exercice 1"
     On considère le réseau de la **figure précédente**.
@@ -46,6 +48,7 @@ Pour les **exercices 1 et 3** suivants, on utilisera la **figure suivante** :
     | F       | G           |            |           |          |
     | G       | G           |            |           |          |
 
+{% if exercices.terminale.routage.exercices.exo1 %}
 ??? tip "Correction exercice 1"
     | machine | destination | passerelle | interface | distance |
     | ------- | ----------- | ---------- | --------- | -------- |
@@ -56,6 +59,7 @@ Pour les **exercices 1 et 3** suivants, on utilisera la **figure suivante** :
     | E       | G           | F          | eth1      | 2        |
     | F       | G           | G          | eth1      | 1        |
     | G       | G           |            | (non indiqué)          | 0        |
+{% endif %}
 
 !!! note "Exercice 2"
     On considère le **réseau** de la **figure précédente** ainsi que le **tableau** trouvé en **solution de l'exercice 2**.
@@ -69,6 +73,7 @@ Pour les **exercices 1 et 3** suivants, on utilisera la **figure suivante** :
           3. Le **routeur D** transmet le **vecteur `(G,3)`** à **C**.
     3. Après le **dernier cas ci-dessus**, quel **vecteur** est transmis par **C** à **A et B** ?
 
+{% if exercices.terminale.routage.exercices.exo2 %}
 ??? tip "Correction exercice 2"
     ==Ici encore, pour simplifier, on écrira les **vecteurs de distances** avec les **noms des routeurs** plutôt que les **adresses IP des réseaux**.==
 
@@ -81,6 +86,7 @@ Pour les **exercices 1 et 3** suivants, on utilisera la **figure suivante** :
         **D** possède une **déjà une route pour G** passant par **E** de **distance 3**. Il **ignore donc cette information** car la **nouvelle route a une plus grande distance**. Il s'agit du **cas 3**.
         3. **C** reçoit le vecteur `(G, 3)` de **D**. Il possède actuellement dans sa table de routage un **chemin vers G** passant par **B** et **de longueur 16** (suite au vecteur `(G, 16)` qu'il avait reçu de **B**). Il remplace donc son **ancien chemin vers G** : la **passerelle** devient **D** (c'est-à-dire le routeur qui lui a transmis l'information) et la **distance** devient **4** (on **incrémente** la **distance reçue**).
      3. Le routeur **C** envoie `(G, 4)` à **A et B**. Ces derniers **mettent à jour leur table** pour inscire la **nouvelle information de routage** : la **route vers G** passe maintenant par **C** et est de **distance 5**.
+{% endif %}
 
 ## Exercices de conversion d'unités
 

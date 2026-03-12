@@ -22,6 +22,11 @@ On aura donc **un seul constucteur** pouvant être appelé de **deux façons dif
     
     * [windows_graphviz.zip](src/windows_graphviz.zip){: target="_blank" } - Décompressez l'archive **dans le répertoire où se trouvent vos fichiers Python**. Vous devez avoir `arbre_binaire.py`, `dessin.py` et un dossier `Graphviz` au même endroit.<br />Contient les exécutables de *Graphviz*.
 
+??? success "Correction opérations base"
+    Voici la classe `Arbre` incluant la correction des **opérations de base** :
+
+    * [arbre_binaire_base.py](src/arbre_binaire_base.py){: target="_blank" }
+
 ??? note "Installation de *Graphviz* sur votre machine personnelle"
 	Pour utiliser la fonction `dessiner`, le module `Graphviz` et les exécutables associés doivent être installés sur votre machine. Voici comment procéder.
 	

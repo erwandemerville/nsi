@@ -14,8 +14,8 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | -------------------------------------------- | ----------------------------------- |
 | [Le langage Python](premiere/bases_python/index.md) | Les bases de la programmation en langage Python. |
 | [Représentation des données en machine](premiere/representation_donnees/index.md) | Représentation des entiers, réels, encodage du texte... |
-{% if exercices.toc_premiere %}
 | [Architecture matérielle](premiere/archi/index.md) | Circuits logiques, algèbre de Boole, modèle de Von Neumann... |
+{% if exercices.toc_premiere %}
 | [Algorithmique](premiere/algorithmique/index.md) | Algorithmes et leur implémentation en langage Python (*recherche séquentielle*, *recherche dichotomique*, *algorithmes de tri*...) |
 | [Traitement des données en tables](premiere/traitement_donnees/index.md) | Traitement des données en tables. |
 | [Interactions Homme-Machine sur le web](premiere/interactions/index.md) | Interactions Homme-Machine sur le web |
@@ -35,9 +35,9 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Récursivité](terminale/recursivite/index.md) | Utilisation de la récursivité en langage Python. |
 | [Les listes chaînées](terminale/listes/index.md) | Structure de liste chaînée et implémentation. |
 | [Piles et files](terminale/pilesfiles/index.md) | Structures de piles et de files et implémentations. |
+| [Protocoles de routage](terminale/routage/index.md) | Protocoles de routage RIP et OSPF. |
 {% if exercices.toc_terminale %}
 | [Les arbres](terminale/arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |
-| [Protocoles de routage](terminale/routage/index.md) | Protocoles de routage RIP et OSPF. |
 | [Recherche textuelle](terminale/recherche_textuelle/index.md) | Algorithmes de recherche dans un texte. |
 | [Bases de données - représentations et applications](terminale/bdd/index.md) | Modèle relationnel, bases de données, SQL... |
 | [Diviser pour régner](terminale/diviserregner/index.md) | La méthode "Diviser pour régner" |

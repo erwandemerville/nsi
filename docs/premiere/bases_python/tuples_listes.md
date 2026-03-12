@@ -1,8 +1,71 @@
-# Les listes en langage Python
+# Les tuples et listes en langage Python
+
+!!! tip "TD/Cours sur les tuples et les listes"
+    Voici le [TD/Cours sur les tuples et listes](pdf/les_tuples_et_les_listes_partie_tuples_corrige.pdf){ target="_blank" } qui vous a été donné en classe en version **corrigée**.
+
+## Les n-uplets (tuples en Python)
+
+!!! success "n-uplets en Python *(tuples)*"
+    Une meilleure solution ici sera donc d'utiliser les **n-uplets** fournis par Python. Comme en **mathématiques**, un **n-uplet** est un **ensemble de valeurs** écrites entre **parenthèses** et **séparées par des virgules**. On peut, par exemple, affecter à une variable `x` un quadruplet de la manière suivante :
+
+    ```python
+    x = ("Alice", 7, 1, 1941)
+    ```
+
+    **<u>Opérations sur les n-uplets</u>** :
+
+    Les opérations sont similaires à celles sur les listes :
+
+    - `len(x)` renvoit la **longueur du tuple** stocké dans `x`, ici `4`,
+    - `x[0]` renvoit le **premier élément du tuple** stocké dans `x`, ici `"Alice"`,
+    - on peut **parcourir un tuple** avec une **boucle** :
+        - `for i in range(len(x))` pour parcourir par **indice**,
+        - `for element in x` pour parcourir directement les **éléments**.
+
+    Par contre, <span style="color:rgb(200,0,0)">on ne peut pas **modifier un élément** d'un **tuple**</span>.
+
+    Si on essaie, on obtient une **erreur** de type `TypeError` (erreur de **type**) :
+
+    ```python
+    >>> x[1] = 8
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    TypeError: 'tuple' object does not support item assignment
+    ```
+
+Ainsi, si on reprend nos données précédentes, on peut écrire, en utilisant des **tuples** :
+
+```python
+individus = [("Alice", 7, 1, 1941), ("Bob", 9, 12, 1909), ("Charles", 14, 12, 1965), ("Delphine", 11, 1, 1938)]
+```
+
+On peut maintenant **parcourir cette liste de tuples** de différentes manières :
+
+{{ IDE('scripts/33.py') }}
+
+## Parcours de chaînes de caractères
+
+Les **chaînes de caractères** offrent une ressemblance avec les **tuples**, dans le sens où l'on peut **lire les caractères** de la même manière que l'on **lit les éléments d'un tuple**, mais on ne peut pas **modifier une chaîne de caractères**.
+
+En particulier, on peut obtenir la **taille d’une chaîne de caractères**, c’est-à-dire son **nombre de caractères**, avec l’opération `len` et **accéder au i-ième caractère** d’une chaîne avec les **crochets** :
+
+{{ IDEv('scripts/28.py') }}
+
+Voici deux manières dont on peut **parcourir une chaîne de caractères** pour **afficher chaque caractère un à un**, le principe est le même que pour les **listes** et les **tuples** :
+
+En récupérant directement **chaque élément** à **chaque itération** d'une **boucle** :
+
+{{ IDEv('scripts/26.py') }}
+
+En récupérant chaque **élément** par son **indice** (la variable `i` de la **boucle** prendra les valeurs `0`, puis `1`, puis `2`, etc. jusqu'à l'indice du dernier élément):
+
+{{ IDEv('scripts/27.py') }}
+
+## Les listes
 
 En programmation en langage **Python**, les **listes** sont l'une des **structures de données** les plus couramment utilisées. Une **liste** (**objet** de type `list`) est une **collection ordonnée d'éléments** pouvant être de différents **types** (*nombres entiers*, *flottants*, *chaînes de caractères*, *objets*, etc.). Les listes sont extrêmement flexibles et permettent de stocker et de manipuler des données de manière efficace.
 
-## Création d'une liste
+### Création d'une liste
 
 Pour **créer une liste** en Python, on utilise les **crochets** `[]`.
 
@@ -56,7 +119,7 @@ Une liste peut contenir **n'importe quel type d'élément**, y compris **d'autre
 [1, "texte", 3.14, [10, 20, 30]]
 ```
 
-## Accès aux éléments d'une liste
+### Accès aux éléments d'une liste
 
 Vous pouvez **accéder** aux **éléments individuels d'une liste** en utilisant leur **indice** (*position*) dans la **liste**. L'indice **commence à `0`** pour le **premier élément**, puis aumgente de `1` en `1`.
 
@@ -104,7 +167,7 @@ Si l'on dipose d'une **liste** dont on ne sait pas **combien elle contient d'él
 !!! note "Explication"
     Pour obtenir l'**indice** du **dernier élément** d'une **liste**, il suffit donc de **retirer 1** à la **taille de cette liste**.
 
-## Modification des éléments d'une liste
+### Modification des éléments d'une liste
 
 Les éléments d'une liste peuvent être **modifiés** en à l'aide d'une simple **affectation**.  
 Il suffit de connaître l'**indice** de l'**élément à modifier**.
@@ -118,7 +181,7 @@ Par *exemple* :
 [10, 25, 30, 40, 50]
 ```
 
-## Ajout et suppression d'éléments
+### Ajout et suppression d'éléments
 
 !!! info "Une *méthode*, kézako ?"
     Une **méthode** est une **fonction** associée à un **type d'éléments** spécifique.  
@@ -161,7 +224,7 @@ del ma_liste[2]  # La liste devient maintenant [1, 2, 4, 5]
 !!! warning "Hors-programme"
     À noter que la **suppression d'éléments dans une liste** n'est pas au programme de *première*, ni même de *terminale*. Vous ne serez donc pas interrogé dessus, mais cela peut s'avérer bien utile tout de même.
 
-## Parcours d'une liste avec des boucles
+### Parcours d'une liste avec des boucles
 
 Les **listes** sont souvent parcourues à l'aide de **boucles bornées** `for`. Voici comment **parcourir une liste** et **afficher ses éléments** :
 
@@ -185,7 +248,7 @@ On aurait pu écrire ce programme de manière plus simple, comme ceci :
 
 Ici, on a mis directement `len(ma_liste)` à l'intérieur du `range`, ce qui évite de créer une **variable** supplémentaire.
 
-## À vous de jouer !
+### À vous de jouer !
 
 !!! note "Exercice : Manipulation de listes"
     Créez un **programme** en réalisant les tâches suivantes :

@@ -20,6 +20,9 @@ premiere:
       exo11: true
       exo12: true
       exo13: false
+    tuples:
+      exo1: true
+      exo2: true
     dm1: false
 terminale:
   poo:
@@ -28,11 +31,18 @@ terminale:
     pokemon: false
   pilesfiles:
     cours:
-      p1_1: false
+      p1_1: true
       p1_2: false
       p2_1: false
       p2_2: false
-      exos: false
+    exercices:
+      exo1: false
+      exo2: false
+  routage:
+    exercices:
+      ficherip: false
+      exo1: false
+      exo2: false
 
 toc_premiere: false
 
