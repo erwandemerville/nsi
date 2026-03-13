@@ -4062,6 +4062,70 @@ Ainsi, <strong>R4</strong> communique à <strong>toutes les autres zones</strong
 <p></p><center>
 <a href="../src/deroulement_Dijkstra.pdf" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.9.9 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.76.76 0 0 0-.49-.18M15 10V8h5v2zm-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83zM10 0h2v5h-2zM3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83zm0-11.32 1.41-1.41 2.83 2.83-1.41 1.41zM7 10H2V8h5z"></path></svg></span> Télécharger <code>deroulement_Dijkstra.pdf</code></a>
 </center>
+<p>Voici une <strong>version simplifiée</strong> :</p>
+<p><style type="text/css">
+.tg  {border-collapse:collapse;border-spacing:0;}
+.tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+.tg .tg-baqh{text-align:center;vertical-align:top}
+.tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+.tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+.tg .tg-0lax{text-align:left;vertical-align:top}
+</style>
+</p><table class="tg"><thead>
+<tr>
+    <th class="tg-7btt">A</th>
+    <th class="tg-7btt">B</th>
+    <th class="tg-7btt">C</th>
+    <th class="tg-7btt">D</th>
+    <th class="tg-7btt">E</th>
+    <th class="tg-baqh"><span style="font-weight:bold">Explications</span></th>
+</tr></thead>
+<tbody>
+<tr>
+    <td class="tg-7btt">0</td>
+    <td class="tg-c3ow">+∞</td>
+    <td class="tg-c3ow">+∞</td>
+    <td class="tg-c3ow">+∞</td>
+    <td class="tg-c3ow">+∞</td>
+    <td class="tg-0lax">Initialement, seule la distance minimale de A à A est connue, dist<sub>min</sub>(A) = 0.<br>Les autres distances sont au départ infinies.<br>On explore le sommet avec la distance minimale par rapport à A, ici A.<br>En effet, 0 est plus petit que l'infini.</td>
+</tr>
+<tr>
+    <td class="tg-c3ow">-</td>
+    <td class="tg-c3ow">135A</td>
+    <td class="tg-c3ow"><span style="font-weight:bold">4A</span></td>
+    <td class="tg-c3ow">+∞</td>
+    <td class="tg-c3ow">+∞</td>
+    <td class="tg-0lax">Depuis le sommet A, on accède aux sommets B et C.<br>On calcule les nouvelles distances minimales de B et de C.<br>dist<sub>min</sub>(B) = dist<sub>min</sub>(A) + dist(A-B) = 0 + 135 = 135<br>dist<sub>min</sub>(C) = dist<sub>min</sub>(A) + dist(A-C) = 0 + 4 = 4<br>Puisque 135 &lt; +∞ et que 4 &lt; +∞, on remplace les anciennes valeurs.<br> Le sommet avec la plus petite distance par rapport à A est maintenant C.<br>En effet, 4 &lt; 135 &lt; +∞.</td>
+</tr>
+<tr>
+    <td class="tg-c3ow">-</td>
+    <td class="tg-c3ow">135A</td>
+    <td class="tg-c3ow">-</td>
+    <td class="tg-c3ow"><span style="font-weight:bold">6C</span></td>
+    <td class="tg-c3ow">165C</td>
+    <td class="tg-0lax">Depuis le sommet C, on accède aux sommets D et E.<br>On calcule les nouvelles distances minimales de D et de E.<br>dist<sub>min</sub>(D) = dist<sub>min</sub>(C) + dist(C-D) = 4 + 2 = 6<br>dist<sub>min</sub>(E) = dist<sub>min</sub>(C) + dist(C-E) = 4 + 161 = 165<br>Puisque 6 &lt; +∞ et que 165 &lt; +∞, on remplace les anciennes valeurs.<br>Le sommet avec la plus petite distance par rapport à A est maintenant D.</td>
+</tr>
+<tr>
+    <td class="tg-c3ow">-</td>
+    <td class="tg-c3ow">135A</td>
+    <td class="tg-c3ow">-</td>
+    <td class="tg-c3ow">-</td>
+    <td class="tg-c3ow"><span style="font-weight:bold">9D</span></td>
+    <td class="tg-0lax">Depuis le sommet D, on accède au sommet E.<br>dist<sub>min</sub>(E) = dist<sub>min</sub>(D) + dist(D-E) = 6 + 3 = 9<br>Puisque 9 &lt; 165 (l'ancienne dist<sub>min</sub>(E)), on remplace l'ancienne valeur.<br>Le sommet avec la plus petite distance par rapport à A est E (9 &lt; 135).<br>On explore E, qui est le sommet <b>auquel on voulait arriver</b> !<br>On pourrait s'arrêter là, mais continuons quand même.</td>
+</tr>
+<tr>
+    <td class="tg-c3ow">-</td>
+    <td class="tg-7btt">14E</td>
+    <td class="tg-c3ow">-</td>
+    <td class="tg-c3ow">-</td>
+    <td class="tg-c3ow">-</td>
+    <td class="tg-0lax">Depuis le sommet E, on accède au sommet B.<br>dist<sub>min</sub>(B) = dist<sub>min</sub>(E) + dist(E-B) = 9 + 5 = 14<br>Puisque 14 &lt; 135 (l'ancienne dist<sub>min</sub>(B)), on remplace l'ancienne valeur.<br>Le sommet avec la plus petite distance par rapport à A est B.<br>On a exploré tous les sommets. <b>FIN</b> !</td>
+</tr>
+</tbody></table>
+<p>Finalement, <b>dist<sub>min</sub>(E) = dist(A-C) + dist(C-D) + dist(D-E) = 4 + 2 + 3 = 9</b>.</p>
 </details>
 <div class="admonition note">
 <p class="admonition-title">Entrainement</p>
@@ -4127,6 +4191,7 @@ font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
 </tr>
 </tbody></table>
 </center>
+<p>Vous pourrez vous aider de l'<strong>exemple d'application</strong> précédent.</p>
 </div>
 <h2 id="le-champ-ttl">Le champ TTL<a class="headerlink" href="#le-champ-ttl" title="Permanent link">¶</a></h2>
 <p>Étant donné que tous les réseaux ne sont pas administrés par des <strong>protocoles dynamiques</strong> tels que <strong>RIP</strong> ou <strong>OSPF</strong>, il est envisageable que des <strong>boucles de routage</strong> existent. C'est particulièrement le cas dans des réseaux où les tables sont <strong>configurées manuellement</strong> (routage <em>statique</em>). Pour éviter qu'un paquet ne circule indéfiniment dans de tels scénarios, les protocoles de communication comme <strong>IP</strong> ont mis en place un <strong>mécanisme</strong> basé sur un <strong>compteur de durée de vie</strong>.</p>
