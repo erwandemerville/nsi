@@ -1,3 +1,4 @@
+show: false
 premiere:
   bases_python:
     toc: false

@@ -530,6 +530,73 @@ Voici une petite vidéo expliquant le principe de cet algorithme :
     [:material-cursor-default-click: Télécharger `deroulement_Dijkstra.pdf`](src/deroulement_Dijkstra.pdf){ target="_blank" }
     </center>
 
+    Voici une **version simplifiée** :
+
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-baqh{text-align:center;vertical-align:top}
+    .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+    .tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+    .tg .tg-0lax{text-align:left;vertical-align:top}
+    </style>
+    <table class="tg"><thead>
+    <tr>
+        <th class="tg-7btt">A</th>
+        <th class="tg-7btt">B</th>
+        <th class="tg-7btt">C</th>
+        <th class="tg-7btt">D</th>
+        <th class="tg-7btt">E</th>
+        <th class="tg-baqh"><span style="font-weight:bold">Explications</span></th>
+    </tr></thead>
+    <tbody>
+    <tr>
+        <td class="tg-7btt">0</td>
+        <td class="tg-c3ow">+∞</td>
+        <td class="tg-c3ow">+∞</td>
+        <td class="tg-c3ow">+∞</td>
+        <td class="tg-c3ow">+∞</td>
+        <td class="tg-0lax">Initialement, seule la distance minimale de A à A est connue, dist<sub>min</sub>(A) = 0.<br />Les autres distances sont au départ infinies.<br />On explore le sommet avec la distance minimale par rapport à A, ici A.<br />En effet, 0 est plus petit que l'infini.</td>
+    </tr>
+    <tr>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">135A</td>
+        <td class="tg-c3ow"><span style="font-weight:bold">4A</span></td>
+        <td class="tg-c3ow">+∞</td>
+        <td class="tg-c3ow">+∞</td>
+        <td class="tg-0lax">Depuis le sommet A, on accède aux sommets B et C.<br />On calcule les nouvelles distances minimales de B et de C.<br />dist<sub>min</sub>(B) = dist<sub>min</sub>(A) + dist(A-B) = 0 + 135 = 135<br>dist<sub>min</sub>(C) = dist<sub>min</sub>(A) + dist(A-C) = 0 + 4 = 4<br>Puisque 135 < +∞ et que 4 < +∞, on remplace les anciennes valeurs.<br /> Le sommet avec la plus petite distance par rapport à A est maintenant C.<br />En effet, 4 < 135 < +∞.</td>
+    </tr>
+    <tr>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">135A</td>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow"><span style="font-weight:bold">6C</span></td>
+        <td class="tg-c3ow">165C</td>
+        <td class="tg-0lax">Depuis le sommet C, on accède aux sommets D et E.<br />On calcule les nouvelles distances minimales de D et de E.<br />dist<sub>min</sub>(D) = dist<sub>min</sub>(C) + dist(C-D) = 4 + 2 = 6<br>dist<sub>min</sub>(E) = dist<sub>min</sub>(C) + dist(C-E) = 4 + 161 = 165<br>Puisque 6 < +∞ et que 165 < +∞, on remplace les anciennes valeurs.<br />Le sommet avec la plus petite distance par rapport à A est maintenant D.</td>
+    </tr>
+    <tr>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">135A</td>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow"><span style="font-weight:bold">9D</span></td>
+        <td class="tg-0lax">Depuis le sommet D, on accède au sommet E.<br />dist<sub>min</sub>(E) = dist<sub>min</sub>(D) + dist(D-E) = 6 + 3 = 9<br>Puisque 9 < 165 (l'ancienne dist<sub>min</sub>(E)), on remplace l'ancienne valeur.<br>Le sommet avec la plus petite distance par rapport à A est E (9 < 135).<br />On explore E, qui est le sommet <b>auquel on voulait arriver</b> !<br />On pourrait s'arrêter là, mais continuons quand même.</td>
+    </tr>
+    <tr>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-7btt">14E</td>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-0lax">Depuis le sommet E, on accède au sommet B.<br />dist<sub>min</sub>(B) = dist<sub>min</sub>(E) + dist(E-B) = 9 + 5 = 14<br>Puisque 14 < 135 (l'ancienne dist<sub>min</sub>(B)), on remplace l'ancienne valeur.<br>Le sommet avec la plus petite distance par rapport à A est B.<br />On a exploré tous les sommets. <b>FIN</b> !</td>
+    </tr>
+    </tbody></table>
+
+    Finalement, <b>dist<sub>min</sub>(E) = dist(A-C) + dist(C-D) + dist(D-E) = 4 + 2 + 3 = 9</b>.
+
 !!! note "Entrainement"
     À votre tour, exécutez l'**algorithme de Dijkstra** pour déterminer la **distance minimale** entre le *noeud A* et **tous les noeuds du graphe suivant** :
 
@@ -537,6 +604,67 @@ Voici une petite vidéo expliquant le principe de cet algorithme :
     ![Un graphe](images/graphe.png){ width="400" }
     <figcaption>Un graphe</figcaption>
     </figure>
+
+    Vous **recopierez** et **compléterez** les `...` dans le **tableau suivant** :
+
+    <style type="text/css">
+    .tg  {border-collapse:collapse;border-spacing:0;}
+    .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+    font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+    .tg .tg-c3ow{border-color:inherit;text-align:center;vertical-align:top}
+    .tg .tg-7btt{border-color:inherit;font-weight:bold;text-align:center;vertical-align:top}
+    </style>
+    <center>
+    <table class="tg"><thead>
+    <tr>
+        <th class="tg-7btt">A</th>
+        <th class="tg-7btt">B</th>
+        <th class="tg-7btt">C</th>
+        <th class="tg-7btt">D</th>
+        <th class="tg-7btt">E</th>
+    </tr></thead>
+    <tbody>
+    <tr>
+        <td class="tg-7btt">0</td>
+        <td class="tg-c3ow">+∞</td>
+        <td class="tg-c3ow">+∞</td>
+        <td class="tg-c3ow">+∞</td>
+        <td class="tg-c3ow">+∞</td>
+    </tr>
+    <tr>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-7btt">0.5A</td>
+        <td class="tg-c3ow">+∞</td>
+        <td class="tg-c3ow">+∞</td>
+        <td class="tg-c3ow">1.5A</td>
+    </tr>
+    <tr>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">...</td>
+        <td class="tg-c3ow">...</td>
+        <td class="tg-c3ow">...</td>
+    </tr>
+    <tr>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">...</td>
+        <td class="tg-c3ow">...</td>
+    </tr>
+    <tr>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">-</td>
+        <td class="tg-c3ow">...</td>
+    </tr>
+    </tbody></table>
+    </center>
+
+    Vous pourrez vous aider de l'**exemple d'application** précédent.
 
 ## Le champ TTL
 

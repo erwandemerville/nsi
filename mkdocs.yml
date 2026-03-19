@@ -75,6 +75,10 @@ nav:
       - Introduction à la logique booléenne: premiere/archi/introduction.md
       - Fonctions et expressions: premiere/archi/fonctions.md
       - Les circuits logiques: premiere/archi/circuits.md
+    - Traitement des données en tables:
+      - premiere/traitement_donnees/index.md
+      - Cours: premiere/traitement_donnees/cours.md
+      - Le module Pandas: premiere/traitement_donnees/pandas.md
   - Terminale:
     - terminale/index.md
     - Remise à niveau:
@@ -112,6 +116,8 @@ nav:
       - TD/TP papier sur les piles: terminale/pilesfiles/td_tp_piles.md
       - Cours/TP piles et files: terminale/pilesfiles/cours.md
       - Exercices sur les piles: terminale/pilesfiles/exos_piles.md
+      - Sujet de bac sur les files: terminale/pilesfiles/docs/files_NSIJ1AN1.pdf
+      - DS - Piles et files: terminale/pilesfiles/ds_piles_files.md
     - Protocoles de routage:
       - terminale/routage/index.md
       - Cours: terminale/routage/cours.md
@@ -130,10 +136,51 @@ nav:
         - Parcours d'arbres binaires: terminale/arbres/exercices_parcours.md
         - Arbre binaires de recherche: terminale/arbres/exercices_abr.md
         - Implémentations d'arbres binaires et ABR: terminale/arbres/implementations_arbres.md
+    - Recherche textuelle:
+      - terminale/recherche_textuelle/index.md
+      - TP d'introduction: terminale/recherche_textuelle/tp_intro.md
+      - Cours: terminale/recherche_textuelle/cours.md
+    - Bases de données:
+      - terminale/bdd/index.md
+      - Introduction aux bdd: terminale/bdd/introduction.md
+      - Modèle relationnel: terminale/bdd/modele_relationnel.md
+      - Le langage SQL: terminale/bdd/sql.md
+      - Activité - Une base de films: terminale/bdd/src/activite_movies.zip
+      - Entraînement - Extrait sujet de bac: terminale/bdd/src/extrait_bac.pdf
+    - Diviser pour régner:
+      - terminale/diviserregner/index.md
+      - Cours: terminale/diviserregner/cours.md
+      - Notebook - Exercices: https://capytale2.ac-paris.fr/web/c/ebe4-6210253
+    - Graphes:
+      - terminale/graphes/index.md
+      - Introduction aux graphes: terminale/graphes/cours.md
+      - Implémentation en Python: terminale/graphes/implementation.md
+      - Exercices: terminale/graphes/exercices.md
+    - Processus et ordonnancement:
+      - terminale/processus/index.md
+      - TD/TP découverte: terminale/processus/TDTP.md
+      - Sujet de bac: terminale/processus/sujet_bac.md
+    - Programmation dynamique:
+      - terminale/progdyn/index.md
+      - Cours: terminale/progdyn/cours.md
+      - Exercices: terminale/progdyn/exercices.md
+    - Chiffrement:
+      - terminale/chiffrement/index.md
+      - Cours: terminale/chiffrement/cours.md
+    - Sujets BAC: https://www.math93.com/annales-du-bac/bac-specialite-nsi/annales-nsi-2025/nsi-ecrit-2025.html
     - Le « Grand oral »: 
       - terminale/grand_oral/index.md
+    - Sujet e3c:
+      - terminale/e3c/index.md
+    - Entraînement Python:
+      - terminale/entrainement_python/index.md
+    - Le module Pyxel:
+      - terminale/pyxel/index.md
+      - Jeu de snake: terminale/pyxel/snake.md
+      - Projet jeu vidéo: terminale/pyxel/projetjv.md
+      - Réalisations: terminale/pyxel/realisations.md
   - Rendu des travaux: rendus.md
-  - Partage de fichiers: https://bit.ly/nsipartage
+  - Partage de fichiers: https://nuage08.apps.education.fr/index.php/s/L4tsfM2y7MsL3fL
   - 🌐 Site en anglais: https://nsi-erwandemerville-fr.translate.goog/?_x_tr_sl=fr&_x_tr_tl=en&_x_tr_hl=fr&_x_tr_pto=wapp
 
 markdown_extensions:

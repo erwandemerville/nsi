@@ -15,9 +15,9 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Le langage Python](premiere/bases_python/index.md) | Les bases de la programmation en langage Python. |
 | [Représentation des données en machine](premiere/representation_donnees/index.md) | Représentation des entiers, réels, encodage du texte... |
 | [Architecture matérielle](premiere/archi/index.md) | Circuits logiques, algèbre de Boole, modèle de Von Neumann... |
+| [Traitement des données en tables](premiere/traitement_donnees/index.md) | Traitement des données en tables. |
 {% if exercices.toc_premiere %}
 | [Algorithmique](premiere/algorithmique/index.md) | Algorithmes et leur implémentation en langage Python (*recherche séquentielle*, *recherche dichotomique*, *algorithmes de tri*...) |
-| [Traitement des données en tables](premiere/traitement_donnees/index.md) | Traitement des données en tables. |
 | [Interactions Homme-Machine sur le web](premiere/interactions/index.md) | Interactions Homme-Machine sur le web |
 | [Les algorithmes gloutons](premiere/gloutons/index.md) | Cours et exercices sur les **algorithmes gloutons**. |
 | [Algorithmes de tri](premiere/tris/index.md) | Tri par sélection et par insertion. |
@@ -37,8 +37,6 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Piles et files](terminale/pilesfiles/index.md) | Structures de piles et de files et implémentations. |
 | [Protocoles de routage](terminale/routage/index.md) | Protocoles de routage RIP et OSPF. |
 | [Les arbres](terminale/arbres/index.md) | Arbres, arbres binaires et arbres binaires de recherche. |
-| [:material-account-voice: Le « Grand oral »](terminale/grand_oral/index.md) | Ressources concernant l'examen du « Grand oral ». |
-{% if exercices.toc_terminale %}
 | [Recherche textuelle](terminale/recherche_textuelle/index.md) | Algorithmes de recherche dans un texte. |
 | [Bases de données - représentations et applications](terminale/bdd/index.md) | Modèle relationnel, bases de données, SQL... |
 | [Diviser pour régner](terminale/diviserregner/index.md) | La méthode "Diviser pour régner" |
@@ -46,9 +44,11 @@ En cas de questionnements concernant un cours, un exercice, ou quoi que ce soit,
 | [Processus et ordonnancement](terminale/processus/index.md) | Gestion des processus sur un OS et ordonnancement |
 | [Programmation dynamique](terminale/progdyn/index.md) | La programmation dynamique |
 | [Chiffrement](terminale/chiffrement/index.md) | Les méthodes de chiffrement et le protocole HTTPS |
+| [:material-account-voice: Le « Grand oral »](terminale/grand_oral/index.md) | Ressources concernant l'examen du « Grand oral ». |
+{% if exercices.hide %}
 | [:fontawesome-solid-computer: Épreuve pratique de NSI](terminale/epreuve_pratique/index.md) | Ressources concernant l'épreuve pratique de NSI. |
+{% endif %}
 | [:material-note-text: Sujets de bac 2025](https://www.math93.com/annales-du-bac/bac-specialite-nsi/annales-nsi-2025/nsi-ecrit-2025.html) | Sujets et corrigés des sujets de baccalauréat 2025. |
 | [:material-pencil: Sujet e3c de rentrée corrigé](terminale/e3c/index.md) | Le sujet d'e3c de rentrée avec correction détaillée. |
 | [:material-language-python: Révisions / Entraînement Python](terminale/entrainement_python/index.md) | Quelques exercices pour vous exercer au langage Python. |
 | [:video_game: Le module Pyxel](terminale/pyxel/index.md) | Activités et projet autour du module de création de jeux vidéo *Pyxel*. |
-{% endif %}
