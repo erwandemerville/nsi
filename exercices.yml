@@ -33,17 +33,17 @@ terminale:
   pilesfiles:
     cours:
       p1_1: true
-      p1_2: false
-      p2_1: false
-      p2_2: false
+      p1_2: true
+      p2_1: true
+      p2_2: true
     exercices:
-      exo1: false
-      exo2: false
+      exo1: true
+      exo2: true
   routage:
     exercices:
-      ficherip: false
-      exo1: false
-      exo2: false
+      ficherip: true
+      exo1: true
+      exo2: true
 
 toc_premiere: false
 
