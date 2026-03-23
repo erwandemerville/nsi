@@ -5318,7 +5318,12 @@ D = <code>..........</code></p>
 <summary>Fiche d'exercices sur RIP</summary>
 <p>Voici une <strong>fiche d'exercices</strong> portant sur <strong>quelques rappels de première</strong> (trouver l'<em>adresse d'un réseau</em> à partir d'un <em>masque</em>, calculer le nombre d'<em>adresses IP disponibles</em> sur un <em>réseau</em>) et sur le <strong>protocole RIP</strong>.</p>
 <ul>
-<li><a href="../src/exercices_RIP.pdf" target="_blank">Fiche d'exercices</a> - Fiche d'exercices au format <em>PDF</em>.</li>
+<li>
+<p><a href="../src/exercices_RIP.pdf" target="_blank">Fiche d'exercices</a> - Fiche d'exercices au format <em>PDF</em>.</p>
+</li>
+<li>
+<p><a href="../src/exercices_RIP_correction.pdf" target="_blank">Correction fiche d'exercices</a> - Fiche d'exercices corrigée.</p>
+</li>
 </ul>
 </details>
 <div class="admonition note">
@@ -5391,6 +5396,71 @@ Même chose pour les <strong>passerelles</strong>, on a indiqué les <strong>nom
 </tbody>
 </table>
 </div>
+<details class="tip">
+<summary>Correction exercice 1</summary>
+<table>
+<thead>
+<tr>
+<th>machine</th>
+<th>destination</th>
+<th>passerelle</th>
+<th>interface</th>
+<th>distance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>G</td>
+<td>B</td>
+<td>eth0</td>
+<td>3</td>
+</tr>
+<tr>
+<td>B</td>
+<td>G</td>
+<td>F</td>
+<td>eth0</td>
+<td>2</td>
+</tr>
+<tr>
+<td>C</td>
+<td>G</td>
+<td>B</td>
+<td>eth2</td>
+<td>3</td>
+</tr>
+<tr>
+<td>D</td>
+<td>G</td>
+<td>E</td>
+<td>eth1</td>
+<td>3</td>
+</tr>
+<tr>
+<td>E</td>
+<td>G</td>
+<td>F</td>
+<td>eth1</td>
+<td>2</td>
+</tr>
+<tr>
+<td>F</td>
+<td>G</td>
+<td>G</td>
+<td>eth1</td>
+<td>1</td>
+</tr>
+<tr>
+<td>G</td>
+<td>G</td>
+<td></td>
+<td>(non indiqué)</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</details>
 <div class="admonition note">
 <p class="admonition-title">Exercice 2</p>
 <p>On considère le <strong>réseau</strong> de la <strong>figure précédente</strong> ainsi que le <strong>tableau</strong> trouvé en <strong>solution de l'exercice 2</strong>.</p>
@@ -5406,6 +5476,24 @@ Même chose pour les <strong>passerelles</strong>, on a indiqué les <strong>nom
 <li>Après le <strong>dernier cas ci-dessus</strong>, quel <strong>vecteur</strong> est transmis par <strong>C</strong> à <strong>A et B</strong> ?</li>
 </ol>
 </div>
+<details class="tip">
+<summary>Correction exercice 2</summary>
+<p><mark>Ici encore, pour simplifier, on écrira les <strong>vecteurs de distances</strong> avec les <strong>noms des routeurs</strong> plutôt que les <strong>adresses IP des réseaux</strong>.</mark></p>
+<ol>
+<li><strong>B</strong> envoie le vecteur <code>(G, 16)</code>, indiquant ainsi que la route qu'il connaissait pour atteindre <strong>G</strong> est de <strong>taille « infinie »</strong>.</li>
+<li>
+<ol>
+<li><strong>A</strong> et <strong>C</strong> reçoivent de <strong>B</strong> le vecteur <code>(G, 16)</code>.<br>
+Ils reçoivent donc une route <strong>plus longue</strong> pour <strong>G</strong> de la part de leur <strong>voisin censé transmettre les paquets vers G</strong> (<strong>B</strong> est la <strong>passerelle</strong> de <strong>A</strong> et <strong>C</strong>).<br>
+Nous sommes dans le <strong>cas 4</strong>. Les <strong>routeurs A et C mettent à jour leur route vers G</strong>, de manière à propager l'<strong>information de la panne</strong> (ils changent donc la <strong>distance</strong> en la remplaçant par <strong>16</strong>).</li>
+<li><strong>C</strong> envoie le vecteur <code>(G, 16)</code> à <strong>D</strong>.<br>
+<strong>D</strong> possède une <strong>déjà une route pour G</strong> passant par <strong>E</strong> de <strong>distance 3</strong>. Il <strong>ignore donc cette information</strong> car la <strong>nouvelle route a une plus grande distance</strong>. Il s'agit du <strong>cas 3</strong>.</li>
+<li><strong>C</strong> reçoit le vecteur <code>(G, 3)</code> de <strong>D</strong>. Il possède actuellement dans sa table de routage un <strong>chemin vers G</strong> passant par <strong>B</strong> et <strong>de longueur 16</strong> (suite au vecteur <code>(G, 16)</code> qu'il avait reçu de <strong>B</strong>). Il remplace donc son <strong>ancien chemin vers G</strong> : la <strong>passerelle</strong> devient <strong>D</strong> (c'est-à-dire le routeur qui lui a transmis l'information) et la <strong>distance</strong> devient <strong>4</strong> (on <strong>incrémente</strong> la <strong>distance reçue</strong>).</li>
+</ol>
+</li>
+<li>Le routeur <strong>C</strong> envoie <code>(G, 4)</code> à <strong>A et B</strong>. Ces derniers <strong>mettent à jour leur table</strong> pour inscire la <strong>nouvelle information de routage</strong> : la <strong>route vers G</strong> passe maintenant par <strong>C</strong> et est de <strong>distance 5</strong>.</li>
+</ol>
+</details>
 <h2 id="exercices-de-conversion-dunites">Exercices de conversion d'unités<a class="headerlink" href="#exercices-de-conversion-dunites" title="Permanent link">¶</a></h2>
 <div class="admonition info">
 <p class="admonition-title">Ecritures des unités utilisées</p>

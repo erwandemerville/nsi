@@ -5151,6 +5151,19 @@
 <p class="admonition-title">Aide exercice 1</p>
 <p>En cas de difficulté, vous pouvez jeter un oeil à la <em>partie 3</em> du <a href="../docs/LES_PILES.pdf">TD/TP papier sur les piles</a>. Vous y trouverez une proposition d'<strong>algorithme</strong> écrit en <em>pseudo-code</em>.</p>
 </div>
+<details class="tip">
+<summary>Correction exercice 1</summary>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">est_bien_parenthesee</span><span class="p">(</span><span class="n">chaine</span><span class="p">):</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>    <span class="n">pile</span> <span class="o">=</span> <span class="n">Pile</span><span class="p">()</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>    <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">chaine</span><span class="p">:</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>        <span class="k">if</span> <span class="n">c</span> <span class="o">==</span> <span class="s2">"("</span><span class="p">:</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>            <span class="n">pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>        <span class="k">elif</span> <span class="n">c</span> <span class="o">==</span> <span class="s2">")"</span><span class="p">:</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a>            <span class="k">if</span> <span class="n">pile</span><span class="o">.</span><span class="n">est_vide</span><span class="p">():</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>                <span class="k">return</span> <span class="kc">False</span>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a>    <span class="k">return</span> <span class="n">pile</span><span class="o">.</span><span class="n">est_vide</span><span class="p">()</span>
+</span></code></pre></div>
+</details>
 <div class="admonition note">
 <p class="admonition-title">Exercice 2</p>
 <p>L'écriture polonaise inverse des expressions arithmétiques place l'opérateur après ses opérandes. Cette notation ne nécessite aucune parenthèse ni aucune règle de priorité. Ainsi, l'expression polonaise inverse décrite par la chaîne de caractères <code>1 2 3 * + 4 *</code> désigne l'expression traditionnellement notée <span class="arithmatex">\((1 + 2 \times 3) \times 4\)</span>. </p>
@@ -5162,18 +5175,38 @@
 <p>Si l'expression était bien écrite, il y a bien toujours deux nombres sur la pile lorsque l'on voit un opérateur, et à la fin du processus il reste exactement un nombre sur la pile, qui est le résultat.</p>
 <p><strong>Écrire</strong> une <strong>fonction</strong> prenant en <strong>paramètre</strong> une <strong>chaîne de caractères</strong> représentant une expression en <strong>notation polonaise inverse</strong> composée d'<strong>additions</strong> et de <strong>multiplications</strong> de <strong>nombres entiers</strong> et <strong>renvoyant la valeur de cette expression</strong>. On supposera que les éléments de l'expression sont séparés par des <strong>espaces</strong>.</p>
 <p><em>Attention</em> : cette fonction ne doit pas renvoyer de résultat si l'expression est mal écrite.</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">polonaise</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="w">    </span><span class="sd">''' Renvoie la valeur d'une expression polonaise inverse.</span>
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="sd">    :liste: (lst) une expresion sous forme d'une liste</span>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="sd">    :return: (int ou float) résultat de l'expression '''</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
-</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>    <span class="o">...</span>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">polonaise</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">    </span><span class="sd">''' Renvoie la valeur d'une expression polonaise inverse.</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="sd">    :liste: (lst) une expresion sous forme d'une liste</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="sd">    :return: (int ou float) résultat de l'expression '''</span>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>    <span class="o">...</span>
 </span></code></pre></div>
 </div>
 <div class="admonition tip">
 <p class="admonition-title">Aide exercice 2</p>
 <p>En cas de difficulté, vous pouvez jeter un oeil à la <em>partie 4</em> du <a href="../docs/LES_PILES.pdf">TD/TP papier sur les piles</a>. Vous y trouverez une proposition d'<strong>algorithme</strong> écrit en <em>pseudo-code</em>.</p>
-</div></div>
+</div>
+<details class="tip">
+<summary>Correction exercice 2</summary>
+<p>On <strong>itère</strong> sur les <strong>éléments obtenus</strong> en <strong>découpant la chaîne</strong> au niveau des <strong>espaces</strong>. 
+On isole d'abord les cas des opérateurs, qui sont les plus faciles à identifier, et on suppose que tout ce qui n'est pas <code>+</code> ou <code>*</code> est un <strong>entier</strong> (cette branche échouera si on trouve encore autre chose dans l'expression).</p>
+<p>À la fin, on <strong>dépile</strong> le <strong>dernier élément</strong> et on <strong>vérifie</strong> que la <strong>pile</strong> est bien <strong>vide</strong> avant de <strong>renvoyer ce résultat</strong>. Si à un moment donné, il était <strong>impossible de dépiler</strong>, alors le programme aura de toute façon <strong>échoué</strong>.</p>
+<div class="language-python highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">eval_polonaise_inverse</span><span class="p">(</span><span class="n">s</span><span class="p">):</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>    <span class="n">pile</span> <span class="o">=</span> <span class="n">Pile</span><span class="p">()</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>    <span class="k">for</span> <span class="n">e</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">" "</span><span class="p">):</span>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>        <span class="k">if</span> <span class="n">e</span> <span class="o">==</span> <span class="s2">"+"</span> <span class="ow">or</span> <span class="n">e</span> <span class="o">==</span> <span class="s2">"*"</span><span class="p">:</span>
+</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>            <span class="n">x</span> <span class="o">=</span> <span class="n">pile</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>            <span class="n">y</span> <span class="o">=</span> <span class="n">pile</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a>            <span class="n">z</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span> <span class="k">if</span> <span class="n">e</span> <span class="o">==</span> <span class="s2">"+"</span> <span class="k">else</span> <span class="n">x</span> <span class="o">*</span> <span class="n">y</span>
+</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>            <span class="n">pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="n">z</span><span class="p">)</span>
+</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>        <span class="k">else</span><span class="p">:</span>
+</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a>            <span class="n">pile</span><span class="o">.</span><span class="n">empiler</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">e</span><span class="p">))</span>
+</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>    <span class="n">res</span> <span class="o">=</span> <span class="n">pile</span><span class="o">.</span><span class="n">depiler</span><span class="p">()</span>
+</span><span id="__span-4-12"><a id="__codelineno-4-12" name="__codelineno-4-12" href="#__codelineno-4-12"></a>    <span class="k">assert</span> <span class="n">pile</span><span class="o">.</span><span class="n">est_vide</span><span class="p">()</span>
+</span><span id="__span-4-13"><a id="__codelineno-4-13" name="__codelineno-4-13" href="#__codelineno-4-13"></a>    <span class="k">return</span> <span class="n">res</span>
+</span></code></pre></div>
+</details></div>
 
 
 
