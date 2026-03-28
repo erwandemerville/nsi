@@ -91,4 +91,5 @@ Par exemple, si l'on parcourt l'arbre suivant **en largeur**, les **nœuds** ser
 !!! note "Exercice 6"
     Si l'on implémentait l'algorithme de **parcours en largeur**, on aurait besoin d'une structure de données permettant d'y stocker à chaque fois les prochains **nœuds à visiter** (qui contiendrait initialement la **racine de l'arbre**), de manière à ce que ***le premier nœud ajouté soit le premier nœud visité***.
 
-    À votre avis, quelle **structure de données linéaire** pourrait-on utiliser pour implémenter le **parcours en largeur** ?
+    1. À votre avis, quelle **structure de données linéaire** pourrait-on utiliser pour implémenter le **parcours en largeur** ?
+    2. Déroulez l'algorithme de **parcours en largeur** en représentant l'**état** de la file `à_visiter` (qui contient initialement la racine de l'arbre) et de la liste `visités` à chaque étape (au début, puis après chaque **visite d'un noeud**).
