@@ -5288,8 +5288,7 @@
 <p>Le <strong>triangle de Pascal</strong> (nommé ainsi en l'honneur du mathématicien français <em>Blaise Pascal</em>) est une présentation des coefficients binomiaux sous la forme d’un triangle :</p>
 <figure>
   <img alt="Triangle de Pascal" src="../images/drawit-diagram-14.png">
-<br>
-<figcaption>Source de l'image : <a href="https://info.blaisepascal.fr/nsi-exercices-recursivite/">info.blaisepascal.fr</a></figcaption>
+  <figcaption>Source de l'image : <a href="https://info.blaisepascal.fr/nsi-exercices-recursivite/">info.blaisepascal.fr</a></figcaption>
 </figure>
 <p>On peut le définir par <strong>récurrence</strong> de la manière suivante :</p>
 <div class="arithmatex">\[
@@ -5351,15 +5350,13 @@ C(n-1,p-1) + C(n-1,p), &amp; \text{sinon}.
 <h2 id="exercice-les-tours-de-hanoi">Exercice : Les tours de Hanoï<a class="headerlink" href="#exercice-les-tours-de-hanoi" title="Permanent link">¶</a></h2>
 <p><em>Source : <a href="https://www.codingame.com/playgrounds/56923/apprendre-les-bases-de-python-pour-reussir-en-n-s-i-/tours-de-hanoi" target="_blank">https://www.codingame.com/playgrounds/56923/apprendre-les-bases-de-python-pour-reussir-en-n-s-i-/tours-de-hanoi</a></em>.</p>
 <p>Les tours de Hanoï est un casse-tête composé de trois tours et une pile de disques rangés du plus grand au plus petit comme sur la photo ci-dessous :</p>
-<center>
-![Tours de Hanoï](images/Tower_of_Hanoi.jpeg)
+<p></p><center>
+<img alt="Tours de Hanoï" src="../images/Tower_of_Hanoi.jpeg">
 </center>
-
 <p>Le but est de déplacer la pile de disques sur la tour de droite en ne déplaçant à chaque fois qu'un seul disque et un disque ne peut pas être posé sur un disque plus petit. Voici une animation de ce qu'il faut faire dans le cas où il y a 4 disques.</p>
-<center>
-![Déplacement disque](images/Tower_of_Hanoi_4.gif)
+<p></p><center>
+<img alt="Déplacement disque" src="../images/Tower_of_Hanoi_4.gif">
 </center>
-
 <p>Vous pouvez consulter <a href="https://fr.wikipedia.org/wiki/Tours_de_Hano%C3%AF" target="_blank">Wikipédia</a> par exemple pour plus d'informations.</p>
 <p>Nous allons voir qu'il est très simple de créer un programme récursif qui nous dit quoi faire pour résoudre le problème. Tout d'abord on appelle les tours <code>A</code>, <code>B</code> et <code>C</code>. On appelle <code>n</code> le <strong>nombre de disque</strong> présents au départ dans la tour <code>A</code>. Pour <strong>déplacer tous les disques</strong> de la tour <code>A</code> vers la tour <code>C</code>, on peut raisonner comme suit :</p>
 <ul>

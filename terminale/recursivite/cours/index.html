@@ -5563,12 +5563,11 @@
 <h3 id="plusieurs-cas-recursifs">Plusieurs cas récursifs<a class="headerlink" href="#plusieurs-cas-recursifs" title="Permanent link">¶</a></h3>
 <p>Il est également possible de définir une fonction <strong>avec plusieurs cas récursifs</strong>. Par exemple, on souhaite proposer une fonction <code>puissance(x, n)</code>, <strong>renvoyant</strong> le résultat de <span class="arithmatex">\(x^n\)</span>, en distinguant <strong>deux cas</strong> en fonction de la <strong>parité</strong> de <code>n</code>.</p>
 <p>Mathématiquement, on peut définir <span class="arithmatex">\(x^n\)</span> de la façon suivante :</p>
-<center>
-$x^n=\left\{ \begin{array}{lll} 1 \;si \; n=0\\
+<p></p><center>
+<span class="arithmatex">\(x^n=\left\{ \begin{array}{lll} 1 \;si \; n=0\\
 {(x^\frac{n}{2})}^2 \;si \; n \geq 1 \;et\; n \;pair\\
-x \times (x^{\frac{(n-1)}{2}})^2 \;si \; n \geq 1 \;et\; n \;impair \end{array} \right.$
+x \times (x^{\frac{(n-1)}{2}})^2 \;si \; n \geq 1 \;et\; n \;impair \end{array} \right.\)</span>
 </center>
-
 <p>On a donc ici <strong>un cas de base</strong> (non récursif) et <strong>deux cas récursifs</strong> selon si <code>n</code> est <strong>pair</strong> ou <strong>impair</strong>.</p>
 <p>L'opération de <strong>division</strong> est ici supposée être la <strong>division entière</strong> (on utilisera le symbole <code>//</code> en <strong>Python</strong>).</p>
 <p>On écrira pour implémenter cela :</p>
@@ -5576,12 +5575,11 @@ x \times (x^{\frac{(n-1)}{2}})^2 \;si \; n \geq 1 \;et\; n \;impair \end{array} 
 <li>une fonction <code>carre(x)</code> qui renvoie le <strong>carré d'un nombre <code>x</code> donné</strong>,</li>
 <li>une fonction <code>puissance(x, n)</code> définie de la manière suivante :</li>
 </ul>
-<center>
-$puissance(x,n)=\left\{ \begin{array}{lll} 1 \;si \; n=0\\
+<p></p><center>
+<span class="arithmatex">\(puissance(x,n)=\left\{ \begin{array}{lll} 1 \;si \; n=0\\
 carre(puissance(x,\frac{n}{2})) \;si \; n \geq 1 \;et\; n \;pair\\
-x \times carre(puissance(x,\frac{n-1}{2}) \;si \; n \geq 1 \;et\; n \;impair \end{array} \right.$
+x \times carre(puissance(x,\frac{n-1}{2}) \;si \; n \geq 1 \;et\; n \;impair \end{array} \right.\)</span>
 </center>
-
 <div class="py_mk_ide" data-max="5" data-exclude="eval,exec"><div class="wrapper"><span id="comment_editor_b6f4832db013a0308bffbc4d93c912986a1ef891" class="comment">###</span><div class="line" id="editor_b6f4832db013a0308bffbc4d93c912986a1ef891"></div><div id="term_editor_b6f4832db013a0308bffbc4d93c912986a1ef891" class="term_editor"></div></div><button class="tooltip" onclick='play("editor_b6f4832db013a0308bffbc4d93c912986a1ef891","")'>            <img src="../../../pyodide-mkdocs/icons8-play-64.png">            <span class="tooltiptext">Lancer</span>            </button><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='download("editor_b6f4832db013a0308bffbc4d93c912986a1ef891","scripts/04")'>            <img src="../../../pyodide-mkdocs/icons8-download-64.png">            <span class="tooltiptext">Télécharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick="document.getElementById('input_editor_b6f4832db013a0308bffbc4d93c912986a1ef891').click()">            <img src="../../../pyodide-mkdocs/icons8-upload-64.png">            <span class="tooltiptext">Téléverser</span>            </button>                <input type="file" id="input_editor_b6f4832db013a0308bffbc4d93c912986a1ef891" name="file" enctype="multipart/form-data" class="py_mk_hide"><span style="display: inline-block; width:1em"></span><button class="tooltip" onclick='restart("editor_b6f4832db013a0308bffbc4d93c912986a1ef891")'>            <img src="../../../pyodide-mkdocs/icons8-restart-64.png">            <span class="tooltiptext">Recharger</span>            </button><span style="display: inline-block; width:0.3em"></span><button class="tooltip" onclick='save("editor_b6f4832db013a0308bffbc4d93c912986a1ef891")'>            <img src="../../../pyodide-mkdocs/icons8-save-64.png">            <span class="tooltiptext">Sauvegarder</span>            </button><span style="display: inline-block; width:1em"></span></div>
 <p><span id="content_editor_b6f4832db013a0308bffbc4d93c912986a1ef891" class="py_mk_hide">def carre(x):bksl-nl    ''' Renvoie le carré d'un nombre x.bksl-nl    :param x: (int|float) nombre à mettre au carrébksl-nl    :return (int|float): le carré de x '''bksl-nl    bksl-nl    return xpy-strxbksl-nlbksl-nldef puissance(x,n):bksl-nl    ''' Calcule la puissance n-ième de x.bksl-nl    :param x: (int|float) nombre à mettre à la puissance nbksl-nl    :param n: (int) la puissancebksl-nl    :return (int|float): la puissance n-ième de x '''bksl-nlbksl-nl    if n==0:bksl-nl        return 1bksl-nl    elif n%2 == 0:bksl-nl        return carre(puissance(x,n/2))bksl-nl    else :bksl-nl        return xpy-strcarre(puissance(x,(n-1)/2))bksl-nl    bksl-nlassert(puissance(2,0)==1)bksl-nlassert(puissance(4,1)==4)bksl-nlassert(puissance(3,3)==27)bksl-nl</span><span id="corr_content_editor_b6f4832db013a0308bffbc4d93c912986a1ef891" class="py_mk_hide" data-strudel=""></span></p>
 <p>On constate donc que les seules <strong>opérations arithmétiques</strong> sont effectuées dans la fonction <code>carre(x)</code>, et dans le cas où <code>n</code> est <strong>impair</strong> dans la fonction <code>puissance(x,n)</code>. Les <strong>appels récursifs</strong> font que ces opérations sont répétées autant de fois qu'il faut pour calculer <span class="arithmatex">\(x^n\)</span>.</p>

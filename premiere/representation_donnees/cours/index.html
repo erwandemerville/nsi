@@ -6473,10 +6473,9 @@ Le <strong>complément à 2</strong> de <span class="arithmatex">\(14_{10} = 000
 <p>Avec cette approche, pour encoder les <strong>nombres réels négatifs</strong>, on utilise simplement le <strong>complément à 2</strong> après avoir effectué le codage en virgule fixe du nombre positif équivalent.</p>
 <p>Cependant, cette méthode présente des limitations importantes. Tout d'abord, l'intervalle de nombres que l'on peut représenter reste restreint, correspondant à la plage d'entiers sur 8 bits, c'est-à-dire <span class="arithmatex">\([-128, +127]\)</span>. De plus, la représentation de la <strong>partie décimale</strong> est également <strong>limitée</strong>, avec la possibilité de représenter seulement <span class="arithmatex">\(256\)</span> valeurs distinctes. En conséquence il devient impossible de représenter tous les nombres réels, tous les nombres décimaux, et même des nombres "simples" tels que <span class="arithmatex">\(0,1\)</span> de manière exacte.<br>
 Seules quelques valeurs décimales spécifiques peuvent être représentées précisément, tandis que d'autres doivent être approximées. Ces approximations sont la principale source d'erreurs de calcul.</p>
-<center>
-:material-arrow-right-box: [Voir des exemples d'encodage en virgule fixe](https://iut-info.univ-reims.fr/users/nourrit/codages/page11.html){ target="_blank" }
+<p></p><center>
+<span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M5 21a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2zm1-8h8.5L11 16.5l1.42 1.42L18.34 12l-5.92-5.92L11 7.5l3.5 3.5H6z"></path></svg></span> <a href="https://iut-info.univ-reims.fr/users/nourrit/codages/page11.html" target="_blank">Voir des exemples d'encodage en virgule fixe</a>
 </center>
-
 <h3 id="codage-en-virgule-flottante-norme-ieee-754">Codage en virgule flottante - Norme IEEE 754<a class="headerlink" href="#codage-en-virgule-flottante-norme-ieee-754" title="Permanent link">¶</a></h3>
 <p>La <strong>norme IEEE 754</strong> définit un <strong>format standardisé</strong> qui vise à unifier la représentation des nombres flottants, qui est très diverse selon les constructeurs.</p>
 <div class="admonition abstract">
@@ -6617,17 +6616,15 @@ représenter les <strong>nombres décimaux</strong> compris (approximativement) 
 </table>
 <h4 id="nombres-denormalises">Nombres dénormalisés<a class="headerlink" href="#nombres-denormalises" title="Permanent link">¶</a></h4>
 <p>Comme vu précédemment, si l’<strong>exposant</strong> <span class="arithmatex">\(e\)</span> d’un <strong>nombre flottant</strong> (sur <strong>32 bits</strong>) est compris entre <span class="arithmatex">\(1\)</span> et <span class="arithmatex">\(254\)</span>, la valeur représentée par l’encodage est :</p>
-<center>
-$(−1)^s \times 1, f \times 2^{(e−127)}$
+<p></p><center>
+<span class="arithmatex">\((−1)^s \times 1, f \times 2^{(e−127)}\)</span>
 </center>
-
 <p>Les nombres représentés ainsi sont dits <strong>normalisés</strong>. Avec cet encodage, le <strong>plus petit nombre décimal positif représentable</strong> est donc <span class="arithmatex">\(2^{−126}\)</span> (soit <span class="arithmatex">\(∼ 10^{−38}\)</span>).</p>
 <p>Étant donné que la <strong>mantisse</strong> est <strong>implicitement</strong> de la forme <span class="arithmatex">\(1, f\)</span> , il n’y a pas de nombres représentables dans l’intervalle <span class="arithmatex">\([0, 2^{−126} [\)</span>, là où il y en a <span class="arithmatex">\(2^{23}\)</span> dans l’intervalle <span class="arithmatex">\([1 × 2^{−126} , 2 \times 2^{−126}]\)</span> = <span class="arithmatex">\([2^{−126} , 2^{−125}]\)</span>.</p>
 <p>Afin de pouvoir représenter des <strong>très petits nombres</strong>, la norme <strong><em>IEEE 754</em></strong> permet d’encoder des nombres de la forme suivante, avec une <strong>mantisse</strong> commençant <strong>implicitement</strong> par un <span class="arithmatex">\(0\)</span> au lieu d'un <span class="arithmatex">\(1\)</span> :</p>
-<center>
-$(−1)^s \times 0, f \times 2^{−126}$
+<p></p><center>
+<span class="arithmatex">\((−1)^s \times 0, f \times 2^{−126}\)</span>
 </center>
-
 <p>On appelle ces nombres flottants des <strong>nombres dénormalisés</strong>, dont :</p>
 <ul>
 <li>l'<strong>exposant</strong> <span class="arithmatex">\(e\)</span> est à <span class="arithmatex">\(0\)</span>,</li>

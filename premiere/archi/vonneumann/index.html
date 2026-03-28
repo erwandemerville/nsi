@@ -5293,10 +5293,9 @@
 <h2 id="introduction-histoire-des-ordinateurs">Introduction : Histoire des ordinateurs<a class="headerlink" href="#introduction-histoire-des-ordinateurs" title="Permanent link">¶</a></h2>
 <p>Avant d'en arriver à nos <strong>ordinateurs modernes</strong>, de nombreuses <strong>machines</strong> ont été réalisées depuis l'<strong>Antiquité</strong> pour effectuer des <strong>calculs</strong>.</p>
 <p>Visionnez la petit vidéo suivante sur l'<strong>histoire de l'architecture des ordinateurs</strong> :</p>
-<center>
-[:octicons-video-16: Visionner la vidéo sur *Lumni*](https://www.lumni.fr/video/une-histoire-de-l-architecture-des-ordinateurs){ target="_blank" }
+<p></p><center>
+<a href="https://www.lumni.fr/video/une-histoire-de-l-architecture-des-ordinateurs" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 16 16"><path d="M0 3.75C0 2.784.784 2 1.75 2h12.5c.966 0 1.75.784 1.75 1.75v8.5A1.75 1.75 0 0 1 14.25 14H1.75A1.75 1.75 0 0 1 0 12.25Zm1.75-.25a.25.25 0 0 0-.25.25v8.5c0 .138.112.25.25.25h12.5a.25.25 0 0 0 .25-.25v-8.5a.25.25 0 0 0-.25-.25Z"></path><path d="M6 10.559V5.442a.25.25 0 0 1 .379-.215l4.264 2.559a.25.25 0 0 1 0 .428l-4.264 2.559A.25.25 0 0 1 6 10.559"></path></svg></span> Visionner la vidéo sur <em>Lumni</em></a>
 </center>
-
 <div class="admonition note">
 <p class="admonition-title">Exercice 1</p>
 <p>En vous basant sur la partie de la vidéo ci-dessus, répondez aux <strong>questions</strong> suivantes :</p>
@@ -5662,19 +5661,19 @@ Si la valeur contenue dans le registre R1 est strictement supérieure à 0 alors
 <p>Les opérandes peuvent prendre la forme de <strong>valeurs immédiates</strong>, de <strong>registres du CPU</strong>, ou de <strong>données en mémoire vive</strong>.</p>
 <h3 id="assembleur">Assembleur<a class="headerlink" href="#assembleur" title="Permanent link">¶</a></h3>
 <p>L'<strong>assembleur</strong> facilite la lisibilité des <strong>instructions</strong> en remplaçant les <strong>mots binaires</strong> par des <strong>symboles mnémoniques</strong>.</p>
-<p>Par exemple, l'<strong>instruction binaire</strong> suivante :  </p>
-<center>
-$111000101000~0010~0001~000001111101$  
+<p>Par exemple, l'<strong>instruction binaire</strong> suivante :<br>
+</p><center>
+<span class="arithmatex">\(111000101000~0010~0001~000001111101\)</span><br>
 </center>
-<p>signifie :  </p>
+signifie :<br>
 <center>
-« additionne le nombre 125 et la valeur située dans le registre R2 , range le résultat dans le registre R1 »  
+« additionne le nombre 125 et la valeur située dans le registre R2 , range le résultat dans le registre R1 »<br>
 </center>
-<p>et se traduit en <strong>assembleur</strong> par :  </p>
+et se traduit en <strong>assembleur</strong> par :<br>
 <center>
-=="ADD R1, R2, #125"==  
+<mark>"ADD R1, R2, #125"</mark><br>
 </center>
-<p>Cela préserve ainsi la représentation binaire sous-jacente tout en simplifiant la programmation.</p>
+Cela préserve ainsi la représentation binaire sous-jacente tout en simplifiant la programmation.
 <div class="admonition tip">
 <p>Il est à noter que chaque élément de l'instruction occupe une quantité de mémoire bien définie, par exemple, en architecture <strong>ARM</strong> :</p>
 <ul>

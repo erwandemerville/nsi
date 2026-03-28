@@ -5283,10 +5283,9 @@ La première ligne définit les <strong>descripteurs</strong> (également appel�
 <p>On peut récupérer les <strong>données</strong> d'un <strong>fichier</strong> avec les fonctions de base de Python.</p>
 <p>Pour cela, on va utiliser la fonction <code>open</code> pour <strong>ouvrir un fichier</strong> et les fonctions <code>readlines</code> et <code>readline</code> afin d'en récupérer le contenu.</p>
 <p>Voici un fichier <code>lire_ecrire.py</code> contenant une <strong>fonction</strong> <code>lire_fichier</code> permettant de <strong>lire une table de données</strong> (en <code>.csv</code> ou <code>.txt</code>) et qui <strong>renvoie</strong> une <strong>liste de dictionnaires</strong>, et un fichier <code>ecrire_fichier</code> qui <strong>crée un fichier</strong> à partir d'une <strong>table de données</strong>.</p>
-<center>
-[:material-cursor-default-click: Télécharger le fichier `lire_ecrire.py`](src/lire_ecrire.py){ target="_blank" }
+<p></p><center>
+<a href="../src/lire_ecrire.py" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.9.9 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.76.76 0 0 0-.49-.18M15 10V8h5v2zm-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83zM10 0h2v5h-2zM3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83zm0-11.32 1.41-1.41 2.83 2.83-1.41 1.41zM7 10H2V8h5z"></path></svg></span> Télécharger le fichier <code>lire_ecrire.py</code></a>
 </center>
-
 <p>En reprenant le <strong>CSV précédent</strong> :</p>
 <div class="language-lua highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="nv">Nom</span><span class="p">,</span><span class="nv">Prenom</span><span class="p">,</span><span class="nv">Age</span><span class="p">,</span><span class="nv">Date</span><span class="w"> </span><span class="nv">naissance</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="nv">Demerville</span><span class="p">,</span><span class="nv">Erwan</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">03</span><span class="o">/</span><span class="mi">05</span><span class="o">/</span><span class="mi">95</span>
@@ -5331,10 +5330,9 @@ On peut utiliser des fonctions comme <strong>int()</strong>, <strong>float()</st
 </div>
 <h2 id="interroger-les-bases-de-donnees">Interroger les bases de données<a class="headerlink" href="#interroger-les-bases-de-donnees" title="Permanent link">¶</a></h2>
 <p>Pour cette partie, on travaillera avec la <strong>base de données</strong> des "<em>Effectifs dans les enseignements de spécialités en Terminale générale par spécialités et selon les principales doublettes</em>", proposée par <a href="https://data.education.gouv.fr/explore/dataset/fr-en-effectifs-specialites-doublettes-terminale-generale/table/" target="_blank">data.education.gouv.fr</a>.</p>
-<center>
-[:material-cursor-default-click: Télécharger `fr-en-effectifs-specialites-doublettes-terminale-generale.csv`](src/fr-en-effectifs-specialites-doublettes-terminale-generale.csv){ target="_blank" }
+<p></p><center>
+<a href="../src/fr-en-effectifs-specialites-doublettes-terminale-generale.csv" target="_blank"><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24"><path d="M10.76 8.69a.76.76 0 0 0-.76.76V20.9c0 .42.34.76.76.76.19 0 .35-.06.48-.16l1.91-1.55 1.66 3.62c.13.27.4.43.69.43.11 0 .22 0 .33-.08l2.76-1.28c.38-.18.56-.64.36-1.01L17.28 18l2.41-.45a.9.9 0 0 0 .43-.26c.27-.32.23-.79-.12-1.08l-8.74-7.35-.01.01a.76.76 0 0 0-.49-.18M15 10V8h5v2zm-1.17-5.24 2.83-2.83 1.41 1.41-2.83 2.83zM10 0h2v5h-2zM3.93 14.66l2.83-2.83 1.41 1.41-2.83 2.83zm0-11.32 1.41-1.41 2.83 2.83-1.41 1.41zM7 10H2V8h5z"></path></svg></span> Télécharger <code>fr-en-effectifs-specialites-doublettes-terminale-generale.csv</code></a>
 </center>
-
 <div class="admonition danger">
 <p>Ce fichier <strong>CSV</strong> utilise le <strong>point-virgule</strong> comme <strong>délimiteur</strong>.<br>
 Il ne faudra pas se tromper de délimiteur lorsque l'on lira le fichier.</p>
