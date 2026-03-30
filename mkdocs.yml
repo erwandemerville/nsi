@@ -55,8 +55,8 @@ nav:
       - Cours:
         - Introduction au Python: premiere/bases_python/introduction.md
         - Les fonctions en Python: premiere/bases_python/fonctions.md
-        - Les tuples et listes en Python: premiere/bases_python/tuples_listes.md
-        - Ddictionnaires en Python: premiere/bases_python/dicos.md
+        - Les listes et tuples en Python: premiere/bases_python/listes_tuples.md
+        - Dictionnaires en Python: premiere/bases_python/dicos.md
       - Activités:
         - Exercices d'introduction au Python: premiere/bases_python/exercices_introduction.md
         - Exercices sur les fonctions: premiere/bases_python/exercices_fonctions.md

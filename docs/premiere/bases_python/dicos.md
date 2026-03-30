@@ -1,4 +1,4 @@
-# Les n-uplets et dictionnaires
+# Les dictionnaires en Python
 
 ## Présentation
 
@@ -146,45 +146,6 @@ Enfin, tout comme pour les **listes**, il est possible de **construire un dictio
 >>> { x*x : x for x in range(10) }
 {0: 0, 1: 1, 4: 2, 16: 4, 9: 3}
 ```
-
-## Exercices - Tuples
-
-!!! note "Exercice 1"
-    Écrire une fonction `afficher(liste)` qui prend en entrée une **liste de tuples** représentant des données sur des élèves, de la forme :
-
-    ```python
-    [("Bastien", "Dubois", 15), ("Stéphane", "Carlier", 16), ("Vincent", "Duboeuf", 15)]
-    ```
-
-    Et qui effectue un **affichage** comme suit (en prenant l'exemple de la liste ci-dessus) :
-
-    ```python
-    Bastien Dubois - 15 ans
-    Stéphane Carlier - 16 ans
-    Vincent Duboeuf - 15 ans
-    ```
-
-??? tip "Correction exercice 1"
-    Il y a plusieurs solutions pour écrire cette fonction.  
-    On peut faire un **parcours** en récupérant **chaque tuple** contenu dans la **liste** :
-
-    ```python
-    def afficher(liste):
-        for infos in liste:
-            print(f"{infos[0]} {infos[1]} - {infos[2]} ans")
-    ```
-
-    On peut également récupérer directement **chaque information** des tuples (*prénom*, *nom* et *âge*) dans des **variables différentes** :
-
-    ```python
-    def afficher(liste):
-        for prenom, nom, age in liste:
-            print(f"{prenom} {nom} - {age} ans")
-    ```
-
-    On a ici utilisé des *f-strings* pour gérer les **affichages**.
-
-    Pour des rappels concernant les différentes façons d'utiliser la fonction `print`, vous pouvez [consulter cette page de cours](../bases_python/introduction.md#affichage-sur-la-sortie-standard).
 
 ## Exercices - Dictionnaires
 

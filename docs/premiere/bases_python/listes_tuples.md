@@ -1,65 +1,7 @@
-# Les tuples et listes en langage Python
+# Les listes et tuples en langage Python
 
 !!! tip "TD/Cours sur les tuples et les listes"
     Voici le [TD/Cours sur les tuples et listes](pdf/les_tuples_et_les_listes_partie_tuples_corrige.pdf){ target="_blank" } qui vous a été donné en classe en version **corrigée**.
-
-## Les n-uplets (tuples en Python)
-
-!!! success "n-uplets en Python *(tuples)*"
-    Une meilleure solution ici sera donc d'utiliser les **n-uplets** fournis par Python. Comme en **mathématiques**, un **n-uplet** est un **ensemble de valeurs** écrites entre **parenthèses** et **séparées par des virgules**. On peut, par exemple, affecter à une variable `x` un quadruplet de la manière suivante :
-
-    ```python
-    x = ("Alice", 7, 1, 1941)
-    ```
-
-    **<u>Opérations sur les n-uplets</u>** :
-
-    Les opérations sont similaires à celles sur les listes :
-
-    - `len(x)` renvoit la **longueur du tuple** stocké dans `x`, ici `4`,
-    - `x[0]` renvoit le **premier élément du tuple** stocké dans `x`, ici `"Alice"`,
-    - on peut **parcourir un tuple** avec une **boucle** :
-        - `for i in range(len(x))` pour parcourir par **indice**,
-        - `for element in x` pour parcourir directement les **éléments**.
-
-    Par contre, <span style="color:rgb(200,0,0)">on ne peut pas **modifier un élément** d'un **tuple**</span>.
-
-    Si on essaie, on obtient une **erreur** de type `TypeError` (erreur de **type**) :
-
-    ```python
-    >>> x[1] = 8
-    Traceback (most recent call last):
-    File "<stdin>", line 1, in <module>
-    TypeError: 'tuple' object does not support item assignment
-    ```
-
-Ainsi, si on reprend nos données précédentes, on peut écrire, en utilisant des **tuples** :
-
-```python
-individus = [("Alice", 7, 1, 1941), ("Bob", 9, 12, 1909), ("Charles", 14, 12, 1965), ("Delphine", 11, 1, 1938)]
-```
-
-On peut maintenant **parcourir cette liste de tuples** de différentes manières :
-
-{{ IDE('scripts/33.py') }}
-
-## Parcours de chaînes de caractères
-
-Les **chaînes de caractères** offrent une ressemblance avec les **tuples**, dans le sens où l'on peut **lire les caractères** de la même manière que l'on **lit les éléments d'un tuple**, mais on ne peut pas **modifier une chaîne de caractères**.
-
-En particulier, on peut obtenir la **taille d’une chaîne de caractères**, c’est-à-dire son **nombre de caractères**, avec l’opération `len` et **accéder au i-ième caractère** d’une chaîne avec les **crochets** :
-
-{{ IDEv('scripts/28.py') }}
-
-Voici deux manières dont on peut **parcourir une chaîne de caractères** pour **afficher chaque caractère un à un**, le principe est le même que pour les **listes** et les **tuples** :
-
-En récupérant directement **chaque élément** à **chaque itération** d'une **boucle** :
-
-{{ IDEv('scripts/26.py') }}
-
-En récupérant chaque **élément** par son **indice** (la variable `i` de la **boucle** prendra les valeurs `0`, puis `1`, puis `2`, etc. jusqu'à l'indice du dernier élément):
-
-{{ IDEv('scripts/27.py') }}
 
 ## Les listes
 
@@ -283,3 +225,103 @@ Ici, on a mis directement `len(ma_liste)` à l'intérieur du `range`, ce qui év
     Vous pouvez réaliser ce programme sur ***Thonny*** ou dans l'**IDE ci-dessous** (vous pourrez *télécharger* votre programme en cliquant sur le *deuxième bouton* pour le conserver.)
 
     {{ IDE() }}
+
+## Les n-uplets (tuples en Python)
+
+### Présentation
+
+!!! success "n-uplets en Python *(tuples)*"
+    Comme en **mathématiques**, un **n-uplet** est un **ensemble de valeurs** écrites entre **parenthèses** et **séparées par des virgules**. On peut, par exemple, affecter à une variable `x` un quadruplet de la manière suivante :
+
+    ```python
+    x = ("Alice", 7, 1, 1941)
+    ```
+
+    **<u>Opérations sur les n-uplets</u>** :
+
+    Les opérations sont similaires à celles sur les **listes** :
+
+    - `len(x)` renvoit la **longueur du tuple** stocké dans `x`, ici `4`,
+    - `x[0]` renvoit le **premier élément du tuple** stocké dans `x`, ici `"Alice"`,
+    - on peut **parcourir un tuple** avec une **boucle** :
+        - `for i in range(len(x))` pour parcourir par **indice**,
+        - `for element in x` pour parcourir directement les **éléments**.
+
+    Par contre, ==on ne peut pas **modifier un élément** d'un **tuple**==.  
+    Il s'agit là de la principale différence avec les listes.
+
+    Si on essaie, on obtient une **erreur** de type `TypeError` (erreur de **type**) :
+
+    ```python
+    >>> x[1] = 8
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    TypeError: 'tuple' object does not support item assignment
+    ```
+
+Une structure de données peut en contenir une autre, voici par exemple une **liste** `individus` qui contient elle-même des **tuples** :
+
+```python
+individus = [("Alice", 7, 1, 1941), ("Bob", 9, 12, 1909), ("Charles", 14, 12, 1965), ("Delphine", 11, 1, 1938)]
+```
+
+On peut **parcourir cette liste de tuples** de différentes manières :
+
+{{ IDE('scripts/33.py') }}
+
+### À vous de jouer !
+
+!!! note "Exercice"
+    Écrire une fonction `afficher(liste)` qui prend en entrée une **liste de tuples** représentant des données sur des élèves, de la forme :
+
+    ```python
+    [("Bastien", "Dubois", 15), ("Stéphane", "Carlier", 16), ("Vincent", "Duboeuf", 15)]
+    ```
+
+    Et qui effectue un **affichage** comme suit (en prenant l'exemple de la liste ci-dessus) :
+
+    ```python
+    Bastien Dubois - 15 ans
+    Stéphane Carlier - 16 ans
+    Vincent Duboeuf - 15 ans
+    ```
+
+??? tip "Correction exercice"
+    Il y a plusieurs solutions pour écrire cette fonction.  
+    On peut faire un **parcours** en récupérant **chaque tuple** contenu dans la **liste** :
+
+    ```python
+    def afficher(liste):
+        for infos in liste:
+            print(f"{infos[0]} {infos[1]} - {infos[2]} ans")
+    ```
+
+    On peut également récupérer directement **chaque information** des tuples (*prénom*, *nom* et *âge*) dans des **variables différentes** :
+
+    ```python
+    def afficher(liste):
+        for prenom, nom, age in liste:
+            print(f"{prenom} {nom} - {age} ans")
+    ```
+
+    On a ici utilisé des *f-strings* pour gérer les **affichages**.
+
+    Pour des rappels concernant les différentes façons d'utiliser la fonction `print`, vous pouvez [consulter cette page de cours](../bases_python/introduction.md#affichage-sur-la-sortie-standard).
+
+## Parcours de chaînes de caractères
+
+Les **chaînes de caractères** offrent une ressemblance avec les **tuples**, dans le sens où l'on peut **lire les caractères** de la même manière que l'on **lit les éléments d'un tuple**, mais on ne peut pas **modifier une chaîne de caractères**.
+
+En particulier, on peut obtenir la **taille d’une chaîne de caractères**, c’est-à-dire son **nombre de caractères**, avec l’opération `len` et **accéder au i-ième caractère** d’une chaîne avec les **crochets** :
+
+{{ IDEv('scripts/28.py') }}
+
+Voici deux manières dont on peut **parcourir une chaîne de caractères** pour **afficher chaque caractère un à un**, le principe est le même que pour les **listes** et les **tuples** :
+
+En récupérant directement **chaque élément** à **chaque itération** d'une **boucle** :
+
+{{ IDEv('scripts/26.py') }}
+
+En récupérant chaque **élément** par son **indice** (la variable `i` de la **boucle** prendra les valeurs `0`, puis `1`, puis `2`, etc. jusqu'à l'indice du dernier élément):
+
+{{ IDEv('scripts/27.py') }}
