@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://nsi.erwandemerville.fr/premiere/bases_python/dicos/">
       
       
-        <link rel="prev" href="../tuples_listes/">
+        <link rel="prev" href="../listes_tuples/">
       
       
         <link rel="next" href="../exercices_introduction/">
@@ -25,7 +25,7 @@
     
     
       
-        <title>Ddictionnaires en Python - Numérique et sciences informatiques</title>
+        <title>Dictionnaires en Python - Numérique et sciences informatiques</title>
       
     
     
@@ -100,7 +100,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#les-n-uplets-et-dictionnaires" class="md-skip">
+        <a href="#les-dictionnaires-en-python" class="md-skip">
           Skip to content
         </a>
       
@@ -134,7 +134,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Ddictionnaires en Python
+              Dictionnaires en Python
             
           </span>
         </div>
@@ -737,14 +737,14 @@
   
   
     <li class="md-nav__item">
-      <a href="../tuples_listes/" class="md-nav__link">
+      <a href="../listes_tuples/" class="md-nav__link">
         
   
   
   <span class="md-ellipsis">
     
   
-    Les tuples et listes en Python
+    Les listes et tuples en Python
   
 
     
@@ -781,7 +781,7 @@
   <span class="md-ellipsis">
     
   
-    Ddictionnaires en Python
+    Dictionnaires en Python
   
 
     
@@ -799,7 +799,7 @@
   <span class="md-ellipsis">
     
   
-    Ddictionnaires en Python
+    Dictionnaires en Python
   
 
     
@@ -873,17 +873,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#exercices-tuples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercices - Tuples
-      
-    </span>
-  </a>
   
 </li>
       
@@ -5272,17 +5261,6 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exercices-tuples" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Exercices - Tuples
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#exercices-dictionnaires" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -5311,7 +5289,7 @@
 
 
 
-<div><h1 id="les-n-uplets-et-dictionnaires">Les n-uplets et dictionnaires<a class="headerlink" href="#les-n-uplets-et-dictionnaires" title="Permanent link">¶</a></h1>
+<div><h1 id="les-dictionnaires-en-python">Les dictionnaires en Python<a class="headerlink" href="#les-dictionnaires-en-python" title="Permanent link">¶</a></h1>
 <h2 id="presentation">Présentation<a class="headerlink" href="#presentation" title="Permanent link">¶</a></h2>
 <p>Jusqu'à maintenant, on a vu comment utiliser les <strong>listes Python</strong> permettant de <strong>stocker</strong> des <strong>séquences d'éléments</strong> (de même nature ou non).</p>
 <div class="admonition quote">
@@ -5410,34 +5388,6 @@ L'ordre d'insertion <strong>n'a pas d'importance</strong>, puisque contrairement
 <div class="language-python highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="o">&gt;&gt;&gt;</span> <span class="p">{</span> <span class="n">x</span><span class="o">*</span><span class="n">x</span> <span class="p">:</span> <span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span> <span class="p">}</span>
 </span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="p">{</span><span class="mi">0</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">16</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span> <span class="mi">3</span><span class="p">}</span>
 </span></code></pre></div>
-<h2 id="exercices-tuples">Exercices - Tuples<a class="headerlink" href="#exercices-tuples" title="Permanent link">¶</a></h2>
-<div class="admonition note">
-<p class="admonition-title">Exercice 1</p>
-<p>Écrire une fonction <code>afficher(liste)</code> qui prend en entrée une <strong>liste de tuples</strong> représentant des données sur des élèves, de la forme :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="p">[(</span><span class="s2">"Bastien"</span><span class="p">,</span> <span class="s2">"Dubois"</span><span class="p">,</span> <span class="mi">15</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Stéphane"</span><span class="p">,</span> <span class="s2">"Carlier"</span><span class="p">,</span> <span class="mi">16</span><span class="p">),</span> <span class="p">(</span><span class="s2">"Vincent"</span><span class="p">,</span> <span class="s2">"Duboeuf"</span><span class="p">,</span> <span class="mi">15</span><span class="p">)]</span>
-</span></code></pre></div>
-<p>Et qui effectue un <strong>affichage</strong> comme suit (en prenant l'exemple de la liste ci-dessus) :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="n">Bastien</span> <span class="n">Dubois</span> <span class="o">-</span> <span class="mi">15</span> <span class="n">ans</span>
-</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="n">Stéphane</span> <span class="n">Carlier</span> <span class="o">-</span> <span class="mi">16</span> <span class="n">ans</span>
-</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="n">Vincent</span> <span class="n">Duboeuf</span> <span class="o">-</span> <span class="mi">15</span> <span class="n">ans</span>
-</span></code></pre></div>
-</div>
-<details class="tip">
-<summary>Correction exercice 1</summary>
-<p>Il y a plusieurs solutions pour écrire cette fonction.<br>
-On peut faire un <strong>parcours</strong> en récupérant <strong>chaque tuple</strong> contenu dans la <strong>liste</strong> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">afficher</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>    <span class="k">for</span> <span class="n">infos</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">infos</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">infos</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">infos</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="si">}</span><span class="s2"> ans"</span><span class="p">)</span>
-</span></code></pre></div>
-<p>On peut également récupérer directement <strong>chaque information</strong> des tuples (<em>prénom</em>, <em>nom</em> et <em>âge</em>) dans des <strong>variables différentes</strong> :</p>
-<div class="language-python highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="k">def</span><span class="w"> </span><span class="nf">afficher</span><span class="p">(</span><span class="n">liste</span><span class="p">):</span>
-</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>    <span class="k">for</span> <span class="n">prenom</span><span class="p">,</span> <span class="n">nom</span><span class="p">,</span> <span class="n">age</span> <span class="ow">in</span> <span class="n">liste</span><span class="p">:</span>
-</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">prenom</span><span class="si">}</span><span class="s2"> </span><span class="si">{</span><span class="n">nom</span><span class="si">}</span><span class="s2"> - </span><span class="si">{</span><span class="n">age</span><span class="si">}</span><span class="s2"> ans"</span><span class="p">)</span>
-</span></code></pre></div>
-<p>On a ici utilisé des <em>f-strings</em> pour gérer les <strong>affichages</strong>.</p>
-<p>Pour des rappels concernant les différentes façons d'utiliser la fonction <code>print</code>, vous pouvez <a href="../introduction/#affichage-sur-la-sortie-standard">consulter cette page de cours</a>.</p>
-</details>
 <h2 id="exercices-dictionnaires">Exercices - Dictionnaires<a class="headerlink" href="#exercices-dictionnaires" title="Permanent link">¶</a></h2>
 <div class="admonition note">
 <p class="admonition-title">Notebooks</p>
